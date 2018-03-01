@@ -1,1 +1,16 @@
-<html><h1>Test</h1><p>This is for testing.</p></html>
+---
+layout: default
+title: OpenPrinting Test
+---
+<div class="blurb">
+  <h1>Test</h1>
+  <p>This is for testing.</p>
+</div><!-- /.blurb -->
+<div class="posts">
+  <h1>News</h1>
+  {% for post in site.posts limit:2 %}
+  <h2><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h2>
+  <p>{{ post.date | date_to_string | replace: ' ', '&nbsp;' }}</p>
+  <p><em>{{ post.abstract }}</em></p>
+  {% endfor %}
+</div>

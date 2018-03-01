@@ -1,0 +1,5 @@
+name: OpenPrinting
+markdown: kramdown
+permalink: /news/:year/:month/:day/:title
+paginate: 2
+paginate_path: "/news/page:num/"
