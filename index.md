@@ -9,21 +9,21 @@ header:
   actions:
     - label: "Learn More"
       url: "/terms/"
-excerpt: "Make printing just work!"
+excerpt: "Making printing just work!"
 intro: 
   - excerpt: 'We have resources to help with printing under free operating systems like GNU/Linux and the BSDs or under commercial UNIX-like systems such as Solaris and Mac OS X.'
 feature_row:
   - image_path: assets/images/gsoc.jpeg
-    alt: "placeholder image 1"
+    alt: "GSOC projects"
     title: "Past projects"
     excerpt: "OpenPrinting has been participating in the GSOC programme under its umbrella organization the Linux Foundation."
     url: "#test-link"
     btn_label: "Read More"
     btn_class: "btn--primary"
-  - image_path: /assets/images/unsplash-gallery-image-2-th.jpg
-    alt: "placeholder image 2"
-    title: "Placeholder 2"
-    excerpt: "This is some sample content that goes here with **Markdown** formatting."
+  - image_path: /assets/images/OpenPrintingBox.png
+    alt: "More about us"
+    title: "More about us"
+    excerpt: "Short one line intro here"
     url: "#test-link"
     btn_label: "Read More"
     btn_class: "btn--primary"
