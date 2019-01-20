@@ -1,14 +1,29 @@
 # main links links
 main:
-  - title: "About"
-    url: https://mmistakes.github.io/minimal-mistakes/about/
-  - title: "Blog"
-    url: /year-archive/
+  #- title: "About"
+  #  url: https://mmistakes.github.io/minimal-mistakes/about/
+  #- title: "Blog"
+  #  url: /year-archive/
+  #- title: "Downloads"
+  #  url: /collection-archive/
+  #- title: "Contribute"
+  #  url: /sitemap/
   - title: "Downloads"
-    url: /collection-archive/
-  - title: "Contribute"
-    url: /sitemap/
-
+    url: /downloads/
+  - title: "Tutorials"
+    url: /tutorials/
+  - title: "Blogs"
+    url: /blogs/
+  - title: "Projects"
+    url: /projects/
+  - title: "News/Events"
+    url: /news/
+  - title: "Driverless Printing"
+    url: /driverless/
+  - title: "Contact"
+    url: /contact/
+  - title: "Donation"
+    url: /donation/
 # sidebar navigation list sample
 sidebar-sample:
   - title: "Parent Page A"
