@@ -216,6 +216,9 @@ plugins:
 
 # Collections
 collections:
+  gsoc2019:
+    output: true
+    permalink: /:collection/:path/
   recipes:
     output: true
     permalink: /:collection/:path/
@@ -246,6 +249,14 @@ defaults:
     values:
       layout: single
       author_profile: true
+  # _gsoc2019
+  - scope:
+      path: ""
+      type: gsoc2019
+    values:
+      layout: single
+      author_profile: false
+      share: false
   # _recipes
   - scope:
       path: ""
