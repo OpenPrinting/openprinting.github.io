@@ -6,8 +6,8 @@ main:
   #  url: /year-archive/
   #- title: "Downloads"
   #  url: /collection-archive/
-  #- title: "Contribute"
-  #  url: /sitemap/
+  - title: "Contribute"
+    url: /contribute-website/
   - title: "Downloads"
     url: /downloads/
   - title: "Tutorials"
