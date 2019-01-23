@@ -6,21 +6,19 @@ main:
   #  url: /year-archive/
   #- title: "Downloads"
   #  url: /collection-archive/
-  - title: "Contribute"
-    url: /contribute-website/
-  - title: "Downloads"
-    url: /downloads/
-  - title: "Tutorials"
-    url: /tutorials/
-  - title: "Blogs"
-    url: /blogs/
+  # - title: "Contribute"
+  #   url: /contribute-website/
+  - title: "About Us"
+    url: /about/
+  - title: "News and Events"
+    url: /news/
   - title: "Projects"
     url: /projects/
-  - title: "News/Events"
-    url: /news/
+  - title: "Downloads"
+    url: /downloads/
   - title: "Driverless Printing"
     url: /driverless/
-  - title: "Contact"
+  - title: "Contact Us"
     url: /contact/
   - title: "Donation"
     url: /donation/
