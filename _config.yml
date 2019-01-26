@@ -26,8 +26,8 @@ minimal_mistakes_skin    : "air" # "air", "aqua", "contrast", "dark", "dirt", "n
 locale                   : "en-US"
 title                    : "OpenPrinting"
 title_separator          : "-"
-name                     : "Your Name"
-description              : "Minimal Mistakes theme test."
+name                     : "OpenPrinting"
+description              : "Making Printing Just Work."
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "openprinting/openprinting.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -104,23 +104,23 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
-  avatar           : "/assets/images/bio-photo.jpg"
-  bio              : "I am an amazing person."
-  location         : "Somewhere"
+  name             : "OpenPrinting"
+#  avatar           : "/assets/images/logo.png"
+  bio              : "Making Printing Just Work!"
+  location         : "Linux Foundation"
   links:
-    - label: "Your Website"
+    - label: "Website"
       icon: "fas fa-fw fa-link"
-      url: "https://your-site.com"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
+      url: "https://openprinting.github.io"
+    # - label: "Twitter"
+    #   icon: "fab fa-fw fa-twitter-square"
+    #   url: "https://twitter.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
+      url: "https://github.com/openprinting"
+    # - label: "Instagram"
+    #   icon: "fab fa-fw fa-instagram"
+    #   url: "https://instagram.com/"
 
 
 # Site Footer
@@ -205,7 +205,7 @@ sass:
 # Outputting
 permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
-paginate_path: /page:num/
+# paginate_path: /blog/page:num/
 timezone: # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
@@ -213,6 +213,10 @@ timezone: # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 plugins:
   - jekyll-feed
   - jekyll-include-cache
+  # - jekyll-paginate
+
+# paginate: 5
+# paginate_path: "/blog/page:num"
 
 # Collections
 collections:
