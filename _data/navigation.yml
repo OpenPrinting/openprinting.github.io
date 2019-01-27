@@ -1,13 +1,5 @@
 # main links links
 main:
-  #- title: "About"
-  #  url: https://mmistakes.github.io/minimal-mistakes/about/
-  #- title: "Blog"
-  #  url: /year-archive/
-  #- title: "Downloads"
-  #  url: /collection-archive/
-  # - title: "Contribute"
-  #   url: /contribute-website/
   - title: "About Us"
     url: /about/
   - title: "News and Events"
@@ -20,8 +12,8 @@ main:
     url: /driverless/
   - title: "Contact Us"
     url: /contact/
-  - title: "Donation"
-    url: /donation/
+  - title: "Donations"
+    url: /donations/
 # sidebar navigation list sample
 sidebar-sample:
   - title: "Parent Page A"
