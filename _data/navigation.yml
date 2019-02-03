@@ -15,7 +15,7 @@
 # main links links
 main:
   - title: "About Us"
-    url: /about/
+    url: /about-us/
   - title: "News and Events"
     url: /news/
   - title: "Projects"
