@@ -13,3 +13,34 @@
 .left-space{
 	padding-right:4em;
 }
+.container{
+	margin-left: 6em;
+	margin-top: 3em;
+	margin-right: 6em;
+	margin-bottom: 10em;
+	height: 100%;
+}
+.post{
+	padding-left: 1em;
+	padding-right: 1em;
+	padding-top:0.5em;
+/*	margin-top:1em;
+	margin-bottom: 1em; */
+	border: 1px solid transparent;
+	box-shadow: 0 0px 0px rgba(0,0,0,0.15);
+	border-radius: 5px;
+	transition: all 0.2s ease-in-out;
+	-webkit-transition: all 0.2s ease-in-out;
+	a:link,:visited	{
+		color: #0092ca;
+	}
+	a:hover	{
+		color: #03A9F4;
+	}
+}
+.post:hover{
+	border: 1px solid #999999;
+	box-shadow: 0 0px 15px rgba(0,0,0,0.15);
+	transition: all 0.2s ease-in-out;
+	-webkit-transition: all 0.2s ease-in-out;
+}
