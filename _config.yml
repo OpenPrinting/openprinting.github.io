@@ -257,6 +257,11 @@ defaults:
       layout: single
       author_profile: false
       share: false
+      excerpt: ""
+      toc: true
+      toc_label: "On This Page"
+      sidebar:
+        nav: "gsoc19"
   # _recipes
   - scope:
       path: ""
