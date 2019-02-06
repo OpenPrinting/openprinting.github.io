@@ -1,0 +1,18 @@
+.side-nav-li{
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-break: break-all;
+}
+.side-nav-li:hover{
+	overflow:visible;
+	white-space: normal;
+	height: auto;
+	font-weight: bold;
+}
+.nav__list{
+	
+}
+.sidebar p{
+	font-size: 1em;
+}

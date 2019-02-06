@@ -28,47 +28,81 @@ main:
     url: /contact/
   - title: "Donations"
     url: /donations/
+
+gsoc19:
+  - title: "GSOC 2019"
+    children:
+      - title: "GSOC 2019 HomePage"
+        url: /gsoc2019/
+      - title: "Generic Framework to turn legacy drivers consisting of CUPS filters and PPDs into Printer Applications"
+        url: /gsoc2019/01-legacy-drivers-to-printer-applications/
+      - title: "IPP scan (or virtual MF device) server (Scanner Application)"
+        url: /gsoc2019/02-ipp-scan-server/
+      - title: "SANE module for IPP driverless scanning"
+        url: /gsoc2019/03-sane-module/
+      - title: "IPP - ipptool test suite for IPP System Service"
+        url: /gsoc2019/04-ipp-test-tool-for-ipp-system-service/
+      - title: "IPP - ipptool test suite for IPP Errata Updates"
+        url: /gsoc2019/05-ipp-test-tool-for-ipp-errata-updates/
+      - title: "Linux GUI application (can be part of GNOME printer tool) to admin MF devices using IPP System Service."
+        url: /gsoc2019/06-linux-gui-application/
+      - title: "Improve the pdftoraster filter to not need copying Poppler source code or using unstable APIs"
+        url: /gsoc2019/07-pdftoraster-filter/
+      - title: "Foomatic Generating CUPS PPD generator (/usr/share/cups/drv/*.drv files) from Foomatic data"
+        url: /gsoc2019/08-foomatic-generating-cups-ppd-generator/
+      - title: "Add printer output backends to MuPDF"
+        url: /gsoc2019/09-add-printer-output-backends-to-mupdf/
+      - title: "Common Print Dialog Qt implementation"
+        url: /gsoc2019/10-common-print-dialog/
+      - title: "Turn the scp-dbus-service of system-config-printer into C"
+        url: /gsoc2019/11-scp-dbus-service-into-c/
+      - title: "Google Cloud Print - Desktop-integrated solution for registering local CUPS printers"
+        url: /gsoc2019/12-gcp-desktop-solution-for-local-cups-printers/
+      - title: "Printing of files directly from the file manager"
+        url: /gsoc2019/13-print-files-from-file-manager/
+      - title: "Get the cairo color management code upstream"
+        url: /gsoc2019/14-cairo-color-management-code/
 # sidebar navigation list sample
-sidebar-sample:
-  - title: "Parent Page A"
-    children:
-      - title: "Child Page A1"
-        url: /child-page-a1/
-      - title: "Child Page A2"
-        url: /child-page-a2/
-      - title: "Child Page A3"
-        url: /child-page-a3/
-      - title: "Child Page A4"
-        url: /child-page-a4/
-  - title: "Parent Page B"
-    children:
-      - title: "Child Page B1"
-        url: /child-page-b1/
-      - title: "Child Page B2"
-        url: /child-page-b2/
-      - title: "Child Page B3"
-        url: /child-page-b3/
-      - title: "Child Page B4"
-        url: /child-page-b4/
-      - title: "Child Page B5"
-        url: /child-page-b5/
-  - title: "Parent Page C"
-    children:
-      - title: "Child Page C1"
-        url: /child-page-c1/
-      - title: "Child Page C2"
-        url: /child-page-c2/
-      - title: "Child Page C3"
-        url: /child-page-c3/
-      - title: "Child Page C4"
-        url: /child-page-c4/
-      - title: "Child Page C5"
-        url: /child-page-c5/
-  - title: "Parent Page D"
-    children:
-      - title: "Child Page D1"
-        url: /child-page-d1/
-      - title: "Child Page D2"
-        url: /child-page-d2/
-      - title: "Child Page D3 (External)"
-        url: https://your-domain.com
+# sidebar-sample:
+#   - title: "Parent Page A"
+#     children:
+#       - title: "Child Page A1"
+#         url: /child-page-a1/
+#       - title: "Child Page A2"
+#         url: /child-page-a2/
+#       - title: "Child Page A3"
+#         url: /child-page-a3/
+#       - title: "Child Page A4"
+#         url: /child-page-a4/
+#   - title: "Parent Page B"
+#     children:
+#       - title: "Child Page B1"
+#         url: /child-page-b1/
+#       - title: "Child Page B2"
+#         url: /child-page-b2/
+#       - title: "Child Page B3"
+#         url: /child-page-b3/
+#       - title: "Child Page B4"
+#         url: /child-page-b4/
+#       - title: "Child Page B5"
+#         url: /child-page-b5/
+#   - title: "Parent Page C"
+#     children:
+#       - title: "Child Page C1"
+#         url: /child-page-c1/
+#       - title: "Child Page C2"
+#         url: /child-page-c2/
+#       - title: "Child Page C3"
+#         url: /child-page-c3/
+#       - title: "Child Page C4"
+#         url: /child-page-c4/
+#       - title: "Child Page C5"
+#         url: /child-page-c5/
+#   - title: "Parent Page D"
+#     children:
+#       - title: "Child Page D1"
+#         url: /child-page-d1/
+#       - title: "Child Page D2"
+#         url: /child-page-d2/
+#       - title: "Child Page D3 (External)"
+#         url: https://your-domain.com

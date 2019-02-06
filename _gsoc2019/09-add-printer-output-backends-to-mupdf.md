@@ -2,8 +2,7 @@
 title: Add printer output backends to MuPDF
 ---
 
-<div>
-
+### Introduction
 <p>
 MuPDF is a lightweight PDF renderer made by Artifex, the company behind Ghostscript. In contrary to Ghostscript, MuPDF is a pure PDF renderer. It does not contain a PostScript interpreter nor parts of it are written in PostScript. This makes it smaller, faster, and less resource-consuming, the ideal solution for mobile devices like tablets or smartphones.
 </p>
@@ -28,16 +27,17 @@ Note that you have to assign copyright on your code to Artifex, as otherwise the
 This project can be split to be worked on by more than one student.
 </p>
 
+### Mentors
 <p>
-Mentors: MuPDF developers TBD, Till Kamppeter, Project Leader OpenPrinting (till at linux dot com)
+MuPDF developers TBD, Till Kamppeter, Project Leader OpenPrinting (till at linux dot com)
 </p>
 
+### Desired Knowledge
 <p>
-Desired knowledge: C and/or C++ programming
+C and/or C++ programming
 </p>
 
+### Code License
 <p>
-Code License: <abbr title="GNU General Public License">GPL</abbr>
+<abbr title="GNU General Public License">GPL</abbr>
 </p>
-
-</div>

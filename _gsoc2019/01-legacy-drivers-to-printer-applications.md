@@ -1,8 +1,8 @@
 ---
 title: Generic Framework to turn legacy drivers consisting of CUPS filters and PPDs into Printer Applications
 ---
-<div>
-
+<!--<div>-->
+### Introduction
 <p>
 Classic printer drivers for CUPS-based printing environment consist of print filters which convert a known page data format (like CUPS/PWG Raster, PostScript, PDF, …) into the printer&#039;s native data format and PPD (PostScript Printer Description) files which describe the printer&#039;s capabilities, user-settable options, and the way how the print filters are used.
 </p>
@@ -22,6 +22,8 @@ The solution, suggested by Michael Sweet, the author of CUPS, are Printer Applic
 <p>
 The IP connection between CUPS and the Printer Application allows both being in different sandboxes (for example being installed from different Snap packages) and the printer setup is completely automatic. When the Printer Application&#039;s daemon is running and the printer is connected and turned on, the daemon discovers the printer and automatically advertises it on the local machine via <abbr title="Domain Name System">DNS</abbr>-SD. Then CUPS discovers the printer and automatically sets up a print queue with an auto-generated PPD file.
 </p>
+
+### Student Tasks
 
 <p>
 The student&#039;s tasks here are
@@ -45,16 +47,22 @@ Existing free software which could be used to accomplish this task are <a href="
 The tasks can be distributed to more than one student if needed.
 </p>
 
-<p>
-Mentors: Till Kamppeter, Project Leader OpenPrinting (till at linux dot com), TBD
-</p>
+### Mentors
 
 <p>
-Desired knowledge: C programming, <abbr title="Domain Name System">DNS</abbr>-SD, IPP
+Till Kamppeter, Project Leader OpenPrinting (till at linux dot com), TBD
 </p>
+
+### Desired Knowledge
 
 <p>
-Code License: Apache 2.0, MIT
+C programming, <abbr title="Domain Name System">DNS</abbr>-SD, IPP
 </p>
 
-</div>
+### Code License
+
+<p>
+Apache 2.0, MIT
+</p>
+
+<!-- </div> -->
