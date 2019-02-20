@@ -19,11 +19,6 @@ author_profile: false
         <ul>
             <li><a href="https://lists.linux-foundation.org/mailman/listinfo/printing-architecture" title="http://lists.linux-foundation.org/mailman/listinfo/printing-architecture"  rel="nofollow">Architecture</a></li>
             <hr>
-            <br>
-            <li><a href="https://lists.linux-foundation.org/mailman/listinfo/printing-japan" title="https://lists.linux-foundation.org/mailman/listinfo/printing-japan"  rel="nofollow">Asia/Pacific Regional Group(in Japanese)</a></li>
-            <hr>
-            <br>
-            <li><a href="https://lists.linux-foundation.org/mailman/listinfo/printing-foomatic" title="https://lists.linux-foundation.org/mailman/listinfo/printing-foomatic"  rel="nofollow">Foomatic</a></li>
         </ul>
     </p>
     <p>
