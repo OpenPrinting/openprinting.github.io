@@ -62,6 +62,16 @@ gsoc19:
         url: /gsoc2019/13-print-files-from-file-manager/
       - title: "Get the cairo color management code upstream"
         url: /gsoc2019/14-cairo-color-management-code/
+
+driverless:
+  - title: "Driverless Printing"
+    children:
+      - title: "Introduction to Driverless Printing"
+        url: /driverless/
+      - title: "Standards And their PDLS"
+        url: /driverless/01-standards-and-their-pdls/
+      - title: "Workflow of Driverless Printing"
+        url: /driverless/02-workflow/
 # sidebar navigation list sample
 # sidebar-sample:
 #   - title: "Parent Page A"

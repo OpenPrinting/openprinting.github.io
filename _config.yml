@@ -219,6 +219,9 @@ collections:
   gsoc2019:
     output: true
     permalink: /:collection/:path/
+  driverless:
+    output: true
+    permalink: /:collection/:path/
   recipes:
     output: true
     permalink: /:collection/:path/
@@ -265,6 +268,19 @@ defaults:
       toc_label: "On This Page"
       sidebar:
         nav: "gsoc19"
+  #_driverless
+  - scope:
+      path: ""
+      type: driverless
+    values:
+      layout: single
+      author_profile: false
+      share: false
+      excerpt: ""
+      sidebar:
+      - image: /assets/images/logo _ipp.png
+        image_alt: "Driverless Printing"
+        nav: "driverless"      
   # _recipes
   - scope:
       path: ""
