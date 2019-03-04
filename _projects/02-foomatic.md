@@ -22,9 +22,13 @@ Foomatic consists of three packages:
 	<i class="fas fa-fw fa-link" aria-hidden="true"></i>
 	Downloads
 	</a>
-* <a href="http://www.openprinting.org/printer/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+* <a href="http://www.openprinting.org/printers/" itemprop="sameAs" rel="nofollow noopener noreferrer">
 	<i class="fas fa-fw fa-link" aria-hidden="true"></i>
 	OpenPrinting - Printers
+	</a>
+* <a href="http://www.openprinting.org/drivers/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+	<i class="fas fa-fw fa-link" aria-hidden="true"></i>
+	OpenPrinting - Drivers
 	</a>
 * <a href="http://www.openprinting.org/download/kpfeifle/LinuxKongress2002/Tutorial/IV.Foomatic-Developer/IV.tutorial-handout-foomatic-development.html" itemprop="sameAs" rel="nofollow noopener noreferrer">
 	<i class="fas fa-fw fa-link" aria-hidden="true"></i>
