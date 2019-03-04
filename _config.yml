@@ -228,6 +228,9 @@ collections:
   portfolio:
     output: true
     permalink: /:collection/:path/
+  projects:
+    output: true
+    permalink: /:collection/:path/
 
 
 # Defaults
@@ -281,3 +284,15 @@ defaults:
       layout: single
       author_profile: false
       share: true
+  # _projects
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: single
+      author_profile: false
+      share: false
+      excerpt: ""
+      # toc: true
+      # sidebar:
+      #   nav: "projects"
