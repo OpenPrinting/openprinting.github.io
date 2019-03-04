@@ -46,8 +46,7 @@ feature_row:
     url: "http://www.openprinting.org/download/ijs/"
     btn_label: "Download"
     btn_class: "btn--primary"
-
- 
+author_profile: false 
 ---
 {% include feature_row id="intro" type="center" %}
 
