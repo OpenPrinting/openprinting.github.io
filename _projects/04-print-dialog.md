@@ -22,8 +22,4 @@ If one opens the print dialog, the dialog will not talk directly to CUPS, Google
 * <a href="https://github.com/OpenPrinting/cpdb-backend-file" itemprop="sameAs" rel="nofollow noopener noreferrer">
    	<i class="fab fa-fw fa-github" aria-hidden="true"></i>GitHub - File(PDF) Backend
   	</a>
-
-* <a href="https://wiki.ubuntu.com/CommonPrintingDialog" itemprop="sameAs" rel="nofollow noopener noreferrer">
-	<i class="fas fa-fw fa-link" aria-hidden="true"></i>
-	Ubuntu Wiki
-	</a>
+  
