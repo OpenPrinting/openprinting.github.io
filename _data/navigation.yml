@@ -24,6 +24,10 @@ main:
     url: /downloads/
   - title: "Driverless Printing"
     url: /driverless/
+  - title: "Printers"
+    url: "https://openprinting.org/printers"
+  - title: "Printer Drivers"
+    url: "https://openprinting.org/drivers"
   - title: "Contact Us"
     url: /contact/
   - title: "Donations"

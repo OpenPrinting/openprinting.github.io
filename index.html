@@ -47,8 +47,39 @@ feature_row:
     url: "/contribute"
     btn_label: "Read More"
     btn_class: "btn--primary"
+  
+database-intro:
+  - excerpt: "OpenPrinting hosts a Printer Compatibility Database. It contains entries from both the Foomatic Package and the community."
+
+database:
+  - image_path: /assets/images/Configuration.png
+    alt: "Printer Compatibility Database"
+    title: "Printer Compatibility Database"
+    excerpt: "The OpenPrinting database contains a wealth of information about specific printers, along with extensive driver information, 
+    the drivers themselves, basic specifications, and an associated set of configuration tools."
+    url: "http://openprinting.org/database"
+    btn_label: "Read More"
+    btn_class: "btn--primary"
+  - image_path: /assets/images/printer.png
+    alt: "Foomatic Printer Database"
+    title: "Printer Database"
+    excerpt: "OpenPrinting's Printer Database"
+    url: "https://openprinting.org/printers"
+    btn_label: "Browse"
+    btn_class: "btn--primary"
+  - image_path: /assets/images/files.png
+    alt: "Foomatic Driver Database"
+    title: "Printer Driver Database"
+    excerpt: "OpenPrinting's Printer Driver Database"
+    url: "https://openprinting.org/drivers"
+    btn_label: "Browse"
+    btn_class: "btn--primary"
 ---
 
 {% include feature_row id="intro" type="center" %}
 
 {% include feature_row %}
+
+{% include feature_row id="database-intro" type="center" %}
+
+{% include feature_row id="database" %}
