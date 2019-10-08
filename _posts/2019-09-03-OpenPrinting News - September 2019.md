@@ -186,14 +186,14 @@ CHANGES IN V1.25.5
       return a pointer to a local variable (clang warning, Issue
       #150).
     - cups-browsed: If a locally generated queue (usually with
-          "implicitclass://..." URI) left over from a previous
-          (crashed) session is picked up on startup, do not set the
-          URI as the remote printer's URI and do not cause a fatal
-          error on a failed get-printer-attributes IPP request (Issue
-          #148, Debian bug #939316).
+      "implicitclass://..." URI) left over from a previous
+      (crashed) session is picked up on startup, do not set the
+      URI as the remote printer's URI and do not cause a fatal
+      error on a failed get-printer-attributes IPP request (Issue
+      #148, Debian bug #939316).
     - pdftopdf: Do not preserve encryption, since the output
-          already goes into the printer (Issue #146, Pull request
-          #147).
+      already goes into the printer (Issue #146, Pull request
+      #147).
 
 CHANGES IN V1.25.4
 
