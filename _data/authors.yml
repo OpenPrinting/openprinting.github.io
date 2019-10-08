@@ -1,3 +1,12 @@
+Till:
+  name    : "Till Kamppeter"
+  bio     : "OpenPrinting Project Leader"
+  avatar  : "https://avatars.githubusercontent.com/tillkamppeter"
+  email  : "till.kamppeter@gmail.com"
+  github : "tillkamppeter"
+  location  : "Vienna,Austria"
+#   stackoverflow: ""
+#
 Dheeraj:
   name    : "Dheeraj"
   bio     : "Sub Coordinator, Programming Club, IIT Mandi"
@@ -9,4 +18,4 @@ Dheeraj:
   uri    : "https://dheeraj135.github.io"
   location  : "Mandi,175001,India"
 #   stackoverflow: ""
-#   
+#

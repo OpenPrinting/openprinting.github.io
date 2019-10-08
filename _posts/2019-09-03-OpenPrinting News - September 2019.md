@@ -1,7 +1,7 @@
 ---
 title: OpenPrinting News - September 2019
 layout: single
-author: tillkamppeter
+author: Till
 excerpt: End of Google Summer of Code 2019, Avahi, OpenPrinting web site work, CUPS 2.3.0 released, cups-filters 1.25.4, cpdb-backend-cups workaround for CUPS bug
 ---
 
