@@ -1,4 +1,5 @@
 ---
+title: OpenPrinting News - September 2019
 layout: single
 author: tillkamppeter
 ---
@@ -16,7 +17,7 @@ For OpenPrinting there started 5 students and and 1 failed in the final evaluati
 Here are the projects with their submitted work product links:
 
 
-#### 1. Generic Framework to turn legacy drivers consisting of CUPS filters and PPDs into Printer Applications
+### 1. Generic Framework to turn legacy drivers consisting of CUPS filters and PPDs into Printer Applications
 
 Student: Dheeraj Yadav
 Mentor: Till Kamppeter
@@ -26,7 +27,7 @@ PASSED
 
 Dheeraj will soon work with Sahil to get his Printer Application framework documented on the new OpenPrinting web site.
 
-#### 2. Improve the pdftoraster filter to not use undocumented/unstable APIs of Poppler
+### 2. Improve the pdftoraster filter to not use undocumented/unstable APIs of Poppler
 
 Student: Tanmay Anand
 Mentor: Sahil Arora
@@ -37,7 +38,7 @@ PASSED
 Tanmay completed his original project already in the first month. We asked him whether he would take a project for the rest of the time and he accepted. So he worked also on the adapter backend for the GTK3 print dialog to use the Common Print Dialog Backends (CPDB). Mentor for this project is Dongxu Li. He did not complete this at the end of the GSoC but promised to complete it after GSoC.
 
 
-#### 3. IPP: ipptool test suite updates for IPP errata updates
+### 3. IPP: ipptool test suite updates for IPP errata updates
 
 Student: Sharad Shukla
 Mentors: Smith Kennedy, Ira McDonald, Danny Brennan
@@ -48,7 +49,7 @@ PASSED
 Sharad will soon complete his not yet completed assignment of the bannertopdf filter also supporting the old bannertops input format.
 
 
-#### 4. ipptool test suite for IPP System Service
+### 4. ipptool test suite for IPP System Service
 
 Student: Aakash Lahoti
 Mentors: Smith Kennedy, Ira McDonald, Danny Brennan
@@ -57,7 +58,7 @@ Mentors: Smith Kennedy, Ira McDonald, Danny Brennan
 PASSED
 
 
-#### 5. Turn the scp-dbus-service of system-config-printer into C
+### 5. Turn the scp-dbus-service of system-config-printer into C
 
 Student: Sobhan Mondal
 Mentors: Zdenek Dohnal
