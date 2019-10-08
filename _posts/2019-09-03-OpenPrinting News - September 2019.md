@@ -3,7 +3,7 @@ layout: single
 author: tillkamppeter
 ---
 
-##Google Summer of Code 2019
+## Google Summer of Code 2019
 
 Coding ended and the final evaluations are completed, the completed projects officially announced by Google.
 
@@ -16,7 +16,7 @@ For OpenPrinting there started 5 students and and 1 failed in the final evaluati
 Here are the projects with their submitted work product links:
 
 
-####1. Generic Framework to turn legacy drivers consisting of CUPS filters and PPDs into Printer Applications
+#### 1. Generic Framework to turn legacy drivers consisting of CUPS filters and PPDs into Printer Applications
 
 Student: Dheeraj Yadav
 Mentor: Till Kamppeter
@@ -26,7 +26,7 @@ PASSED
 
 Dheeraj will soon work with Sahil to get his Printer Application framework documented on the new OpenPrinting web site.
 
-####2. Improve the pdftoraster filter to not use undocumented/unstable APIs of Poppler
+#### 2. Improve the pdftoraster filter to not use undocumented/unstable APIs of Poppler
 
 Student: Tanmay Anand
 Mentor: Sahil Arora
@@ -37,7 +37,7 @@ PASSED
 Tanmay completed his original project already in the first month. We asked him whether he would take a project for the rest of the time and he accepted. So he worked also on the adapter backend for the GTK3 print dialog to use the Common Print Dialog Backends (CPDB). Mentor for this project is Dongxu Li. He did not complete this at the end of the GSoC but promised to complete it after GSoC.
 
 
-####3. IPP: ipptool test suite updates for IPP errata updates
+#### 3. IPP: ipptool test suite updates for IPP errata updates
 
 Student: Sharad Shukla
 Mentors: Smith Kennedy, Ira McDonald, Danny Brennan
@@ -48,7 +48,7 @@ PASSED
 Sharad will soon complete his not yet completed assignment of the bannertopdf filter also supporting the old bannertops input format.
 
 
-####4. ipptool test suite for IPP System Service
+#### 4. ipptool test suite for IPP System Service
 
 Student: Aakash Lahoti
 Mentors: Smith Kennedy, Ira McDonald, Danny Brennan
@@ -57,7 +57,7 @@ Mentors: Smith Kennedy, Ira McDonald, Danny Brennan
 PASSED
 
 
-####5. Turn the scp-dbus-service of system-config-printer into C
+#### 5. Turn the scp-dbus-service of system-config-printer into C
 
 Student: Sobhan Mondal
 Mentors: Zdenek Dohnal
@@ -71,7 +71,7 @@ Sobhan promised to complete his work after GSoC.
 The project results will also get added to the new OpenPrinting web site.
 
 
-##Avahi
+## Avahi
 
 Mike Sweet has posted on [Avahi GitHub Issue #125](https://github.com/lathiat/avahi/issues/125) and he is of the same opinion as me that the DNS-SD records of local services via the loopback ("lo") device should carry the "localhost" host name and not the network host name of the machine:
 
@@ -82,7 +82,7 @@ Mike Sweet has posted on [Avahi GitHub Issue #125](https://github.com/lathiat/av
 No reaction from Trent Lloyd yet.
 
 
-##OpenPrinting web site
+## OpenPrinting web site
 
 Now with the GSoC completed we are resuming our work on the web site with Sahil leading the project.
 
@@ -91,7 +91,7 @@ Most of the site is in place, most important part to add now are the results of 
 Also we need to link to the OpenPrinting database interface web app ([Issue #55](https://github.com/OpenPrinting/openprinting.github.io/issues/55)). We will continue using this web app and the MySQL database (which we now feed from the foomatic-db repository on GitHub) as it is not worthwhile (possible?) to implement a replacement on it running on GitHub. The web app needs to get the outfit of our new web site ([Issue #58](https://github.com/OpenPrinting/openprinting.github.io/issues/58)).
 
 
-##CUPS
+## CUPS
 
 2.3.0 released.
 
@@ -155,7 +155,7 @@ Changes in CUPS v2.3.0
 No changes on 2.2.x branch.
 
 
-##cups-filters
+## cups-filters
 
 Currently released is 1.25.4.
 
@@ -258,12 +258,12 @@ CHANGES IN V1.25.2
       and the other "localhost" as host name (Issue #136).
 ```
 
-##ippusbxd
+## ippusbxd
 
 No further news.
 
 
-##Common Print Dialog Backends
+## Common Print Dialog Backends
 
 When packaging CUPS 2.2.12 for Ubuntu Eoan (19.10) the automatic tests of Ubuntu's build servers failed cpdb-libs and after several days of debugging I found out that libcups is not initializing some glbal variables with default host name, port, domain socket file for the local CUPS server in some cases. This prevented the CUPS backend from accessing the printer's capabilities via get-printer-attributes IPP request and I had to apply a workaround in the cpdb-backend-cups project.
 
