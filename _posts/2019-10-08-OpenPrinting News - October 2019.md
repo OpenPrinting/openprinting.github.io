@@ -18,7 +18,7 @@ Here we have discussed the current work of OpenPrinting:
 - Future of Printer Setup Tools
 - 3D Printing
 
-Unfortunately, we did not get many visitors in our conference room (Plumber's is very kernel-oriented), but Jake Edge wrote an [excellent article on LWN](https://lwn.net/SubscriberLink/798916/300a5c0bc4caa815/).
+Jake Edge wrote an [excellent article on LWN](https://lwn.net/SubscriberLink/798916/300a5c0bc4caa815/).
 
 Thanks to Kate Stewart and Jeff Licquia for inviting us.
 
