@@ -19,8 +19,8 @@ Here are the projects with their submitted work product links:
 
 ### 1. Generic Framework to turn legacy drivers consisting of CUPS filters and PPDs into Printer Applications
 
-Student: Dheeraj Yadav
-Mentor: Till Kamppeter
+Student: Dheeraj Yadav<br>
+Mentor: Till Kamppeter<br>
 [Work Product](https://gist.github.com/dheeraj135/852733a6944d2f7ede670fe9d3d0ac6a)
 
 PASSED
@@ -29,8 +29,8 @@ Dheeraj will soon work with Sahil to get his Printer Application framework docum
 
 ### 2. Improve the pdftoraster filter to not use undocumented/unstable APIs of Poppler
 
-Student: Tanmay Anand
-Mentor: Sahil Arora
+Student: Tanmay Anand<br>
+Mentor: Sahil Arora<br>
 [Work Product](https://github.com/tanmayanand44/cups-filters-gsoc19/wiki/Google-Summer-of-Code-2019-%7C-The-Linux-Foundation-%7C-Improving-pdftoraster-filter-to-use-stable-Poppler-APIs)
 
 PASSED
@@ -40,8 +40,8 @@ Tanmay completed his original project already in the first month. We asked him w
 
 ### 3. IPP: ipptool test suite updates for IPP errata updates
 
-Student: Sharad Shukla
-Mentors: Smith Kennedy, Ira McDonald, Danny Brennan
+Student: Sharad Shukla<br>
+Mentors: Smith Kennedy, Ira McDonald, Danny Brennan<br>
 [Work Product](https://github.com/Sharadd15/ippsample/wiki/Gsoc-2k19-%7C-OpenPrinting-%7C-The-Linux-Foundation-%7C-Ipptool-test-suite-updates-for-IPP-errata-updates)
 
 PASSED
@@ -51,8 +51,8 @@ Sharad will soon complete his not yet completed assignment of the bannertopdf fi
 
 ### 4. ipptool test suite for IPP System Service
 
-Student: Aakash Lahoti
-Mentors: Smith Kennedy, Ira McDonald, Danny Brennan
+Student: Aakash Lahoti<br>
+Mentors: Smith Kennedy, Ira McDonald, Danny Brennan<br>
 [Work Product](https://github.com/aakashlahoti/Google-Summer-Of-Code-2019-The-Linux-Foundation)
 
 PASSED
@@ -60,8 +60,8 @@ PASSED
 
 ### 5. Turn the scp-dbus-service of system-config-printer into C
 
-Student: Sobhan Mondal
-Mentors: Zdenek Dohnal
+Student: Sobhan Mondal<br>
+Mentors: Zdenek Dohnal<br>
 [Work Product](https://github.com/sobhaniiest/scp-dbus-service)
 
 FAILED (final evaluation)
@@ -273,5 +273,6 @@ We have reported [Issue #5642](https://github.com/apple/cups/issues/5642) on the
 Released cpdb-backend-cups 1.1.1 with the fix:
 
 ```
-- Added "ippPort()" call to the beginning of the program, to initialize libcups (Issue #2)
+- Added "ippPort()" call to the beginning of the program, to initialize
+  libcups (Issue #2)
 ```
