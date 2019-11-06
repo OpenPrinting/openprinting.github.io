@@ -7,6 +7,7 @@ excerpt: The Linux Foundation applied for Google Code-In 2019 but did not get se
 
 ## Google Code-In 2019
 Aveek Basu and Till Kamppeter have conducted an application for the Linux Foundation as mentoring organization in the [Google Code-In 2019](https://codein.withgoogle.com/). A [web page](https://wiki.linuxfoundation.org/gsoc/google-code-in-2019) got set up for the application, containing sample tasks of several work groups of the Linux Foundation, including many of OpenPrinting. The web page will stay available as a start for an application next year.
+
 We try to find out why we did not get selected but have no results yet.
 
 ## Google Summer of Code 2019
@@ -17,7 +18,9 @@ We need to start with the student selection process soon, so that we can let the
 
 ## Future work of OpenPrinting: Printer/Scanner Applications and IPP System Service
 We need to concentrate on Printer/Scanner Applications and IPP System Service from know on. This is urgently needed as Michael Sweet (Apple?) plans to drop PPD file support in CUPS 2.4.x (next cycle, ~1 year from now), at least according to the warning message which one gets from `lpadmin` when one creates a print queue with PPD file (`-P` or `-m` option, except `-m everywhere`).
+
 This is a substantial change in the printing architecture on Posix-style operating systems.
+
 Especially we need to create libraries to allow easy creation of Printer/Scanner Applications. They should provide:
 - Acquisition of a port on localhost (or on all network interfaces for sharing). Managing the port numbers in a useful way.
 - DNS-SD advertising of the services (printer, scanner, fax, config interfaces, ...)
@@ -36,6 +39,7 @@ Additional things to do:
 
 ## Avahi local service support
 No further progress this month.
+
 We urgently need the localhost support for the Printer/Scanner Applications, as PPD support will go away within a year.
 
 ## OpenPrinting web site
@@ -46,6 +50,7 @@ We need to go through the new site now and look for things which are still missi
 No further release.
 
 The development cycle of Ubuntu 20.04 LTS (Focal Fossa) has started and CUPS 2.3.0 is now synced into Ubuntu from Debian, meaning that 20.04 will be released with CUPS 2.3.x.
+
 The `lpadmin` command issues a warning message telling that PPD support will get removed in the next CUPS cycle (2.4.x) when one creates a print queue with PPD file (`-P` or `-m` option, except `-m everywhere`). Therefore we need to get Printer Applications working by then.
 
 ## cups-filters
@@ -53,6 +58,7 @@ The `lpadmin` command issues a warning message telling that PPD support will get
 Currently released is 1.25.11.
 
 Many releases happened during the short time to get bug fixes into Ubuntu 19.10 (Eoan), which was released on Thu, Oct 17.
+
 The upcomimg 1.25.12 release contains many fixes on the pdftops filter, especially to solve problems with grayscale jobs when Poppler is used as PDF renderer. These jobs print now reliably but can come out in color on color printers. To assure that grayscale printing on color PostScript printers works correctly, use Ghostscript or MuPDF (these are able to convert color to grayscale). See [Issue #169](https://github.com/OpenPrinting/cups-filters/issues/169). 1.25.12 also builds with no compiler warnings now (tested on Ubuntu 19.10).
 
 1.25.11:
@@ -127,4 +133,5 @@ CHANGES IN V1.25.8
 
 ## ippusbxd
 David Valleau from Chrome OS/Google cotributed some minor fixes. Thanks to him for this contribution.
+
 An important problem of ippusbxd is that while it is running, the printer is exclusively accessible via IPP-over-USB. Classic USB access in parallel (or at least when there is no ongoing IPP communication) is not possible. This makes the use of ippusbxd on multi-function devices awkward, as IPP-over-USB currently only works with printing and not with scanning, due to the fact that manufacturers did not adopt the driverless IPP scanning standard of the [PWG](http://www.pwg.org/) yet ([Issue #9](https://github.com/OpenPrinting/ippusbxd/issues/9)). David Valleau will look into implementing this.
