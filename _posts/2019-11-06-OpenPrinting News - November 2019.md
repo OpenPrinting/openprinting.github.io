@@ -24,18 +24,24 @@ This is a substantial change in the printing architecture on Posix-style operati
 Especially we need to create libraries to allow easy creation of Printer/Scanner Applications. They should provide:
 - Acquisition of a port on localhost (or on all network interfaces for sharing). Managing the port numbers in a useful way.
 - DNS-SD advertising of the services (printer, scanner, fax, config interfaces, ...)
-- IPP server: Answering all types of requests and calling functions to do the needed interactions with the printer and the application-internal printer capability data.
+- IPP server: Answering all types of requests and calling functions to do the needed interactions with the printer/scanner and the application-internal printer/scanner capability data.
 - Processing and filtering the incoming job data: Printer Applications will take PDF and raster formats as input and convert to the printer's native format. Functionality of the filters in cups-filters should be moved into a library, to be available as API functions.
+- Legacy interface functions: For filters/PPDs and for SANE drivers.
 - Communication with printers and scanners, functionality of the CUPS backends.
 - IPP System Service as a server, to allow configuration of the Printer/Scanner Application via an external GUI (IPP System Service client). Then there can even be a Printer Application for a legacy printer which cannot be auto-discovered in the network. The application starts only providing IPP System Service. As soon as the user has entered the printer's IP address via the configuration interface, the application connects to the printer and starts to offer IPP print service.
 - Perhaps also a web server for legacy clients. Then commodity functions of the library for building up a configuration interface should add each interface element to both the IPP System Service server and the web server.
 - IPP System Service as a client, for GUI (and also CLI) apps to configure IPP printers and also Printer/Scanner Applications. This will be a central part of printer setup tools in the future.
 
-For testing this we should create a native Printer Application from Gutenprint for example, or one for PostScript printers for which we have PPD files.
+For testing this we should create a native Printer Application from Gutenprint for example, or one for PostScript printers for which we have PPD files. We also should create a native Scanner Application wrapping SANE with its current driver collection.
 
 Additional things to do:
 - Turn cups-browsed into a Printer Application: Instead of creating a local CUPS queue for a printer cluster emulate an IPP printer which prints to the cluster (and local CUPS picks it up automatically, but how to prevent local CUPS from seeing the member printers directly?). We can also pick up legacy CUPS broadcasts (or BrowsePoll from legacy servers) and provide these printers as IPP printers. Configuration of cups-browsed then also via IPP System Service.
 - Overtake PPD support API functions and pstops filter as soon as they get dropped from CUPS, for legacy support in Printer Aplications and cups-browsed.
+- SANE driver for IPP scanners, so that applications accessing scanners via SANE can also access IPP scanners and Scanner Applications.
+
+Documentation/Community reach-out:
+- Design guidelines for printer and scanner drivers as Printer/Scanner Applications, instructions to do this with our new libraries.
+- As soon as SANE is wrapped into Scanner Applications, move GUI developers to base their scan frontends on IPP scanning and not SANE any more.
 
 ## Avahi local service support
 No further progress this month.
