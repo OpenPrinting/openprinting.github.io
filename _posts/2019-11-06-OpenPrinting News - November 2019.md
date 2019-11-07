@@ -6,7 +6,7 @@ excerpt: The Linux Foundation applied for Google Code-In 2019 but did not get se
 ---
 
 ## Google Code-In 2019
-Aveek Basu and Till Kamppeter have conducted an application for the Linux Foundation as mentoring organization in the [Google Code-In 2019](https://codein.withgoogle.com/). A [web page](https://wiki.linuxfoundation.org/gsoc/google-code-in-2019) got set up for the application, containing sample tasks of several work groups of the Linux Foundation, including many of OpenPrinting. The web page will stay available as a start for an application next year.
+Aveek Basu and Till Kamppeter have conducted an application for the Linux Foundation as mentoring organization in the [Google Code-In 2019](https://codein.withgoogle.com/) and, unfortunately, did not get selected. A [web page](https://wiki.linuxfoundation.org/gsoc/google-code-in-2019) got set up for the application, containing sample tasks of several work groups of the Linux Foundation, including many of OpenPrinting. The web page will stay available as a start for an application next year.
 
 We try to find out why we did not get selected but have no results yet.
 
