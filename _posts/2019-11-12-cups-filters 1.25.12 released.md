@@ -15,4 +15,4 @@ Bug fix release, to address a bug of grayscale jobs not printed on PostScript pr
 - pdftops: Do not use the ugly "pdftops -level1 ..." workaround to get grayscale PostScript output from Poppler. It leads to huge output files with Poppler's "pdftops" utility and does not work at all with "pdftocairo".  Poppler itself does not support PostScript output converted to grayscale. Issue a warning with the hint to use Ghostscript or MuPDF as PDF renderer (Issue #169).
 - libcupsfilters: In the cupsRasterParseIPPOptions() accept also "Mono", "Monochrome", and "Gray" as color space names.
 
-[##More Details and Download##](https://github.com/OpenPrinting/cups-filters/releases/tag/release-1-25-12)
+[**More Details and Download**](https://github.com/OpenPrinting/cups-filters/releases/tag/release-1-25-12)
