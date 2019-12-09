@@ -9,7 +9,7 @@ excerpt: "Learn more about OpenPrinting"
 ---
 ## A Brief History
 
-Before 2006, Linuxprinting.org and Free Software Group's OpenPrinting WorkGroup were working on printing architecture on Linux. Till Kamppeter was the manager of Linuxprinting.org and FSG's OpenPrinting WG was led by Tom Hastings, Micheal Sweet, Ira McDonald, and Claudia Alimpich. Linuxprinting.org was known as the *de facto* standard repository for printer drivers on Linux. In parallel, FSG's OpenPrinting workgroup designed standard APIs for Linux/Unix printing workflow.
+Before 2006, Linuxprinting.org and Free Software Group's OpenPrinting WorkGroup were working on printing architecture on Linux. Till Kamppeter was the manager of Linuxprinting.org and FSG's OpenPrinting WG was led by Tom Hastings, Michael Sweet, Ira McDonald, Claudia Alimpich, Glen Petrie and Norm Jacobs. Linuxprinting.org was known as the *de facto* standard repository for printer drivers on Linux. In parallel, FSG's OpenPrinting workgroup designed standard APIs for Linux/Unix printing workflow.
 
 In July 2006 Linuxprinting.org merged with FSG's OP WorkGroup and Till Kamppeter was hired to oversee OpenPrinting. On January 22, 2007, the FSG and the Open Source Development Labs(OSDL) merged to form **The Linux Foundation**. Now, OpenPrinting is a free software organization under The Linux Foundation.
 
