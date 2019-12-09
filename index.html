@@ -74,9 +74,40 @@ database:
     url: "https://openprinting.org/drivers"
     btn_label: "Browse"
     btn_class: "btn--primary"
+
 ---
 
 {% include feature_row id="intro" type="center" %}
+
+<div class = "container-fluid row" id= "news" >
+  <div class="feature__wrapper">
+      {% for post in site.posts limit:3 %}
+          <div class="col-lg-4">
+            <div class="post">
+              <div class="list__item">
+                <a href="{{post.url}}">
+                <h2 style="margin-top: 0px" class="archive__item-title">{{ post.title }} </h2>
+                </a>
+                {% if post.read_time %}
+                  <p class="page__meta">
+                    Author: <b>{{ post.author }}</b>
+                    Date: <b>{{post.date | date: '%B %d, %Y'}}</b>
+                  </p>
+                {% endif %}
+
+                {% if post.excerpt %}
+                  <p class="archive__item-excerpt" itemprop="description">
+                  {{ post.excerpt | markdownify | strip_html | truncate:160}}
+                  </p>
+                {% endif %}
+
+              </div>
+            </div>
+            <br>
+          </div>
+      {% endfor %}
+  </div>
+</div>
 
 {% include feature_row %}
 
