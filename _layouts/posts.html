@@ -22,7 +22,7 @@ layout: archive
     <div class="entries-{{ page.entries_layout | default: 'list' }}">
       {% for post in year.items %}
         <div class="post">
-          {% include archive-single.html type=page.entries_layout %}
+          {% include archive-single-post.html type=page.entries_layout %}
         </div>
       {% endfor %}
     </div>
