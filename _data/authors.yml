@@ -4,7 +4,15 @@ Till:
   avatar  : "https://openprinting.github.io/assets/images/till-kamppeter.jpg"
   email  : "till.kamppeter@gmail.com"
   github : "tillkamppeter"
-  location  : "Vienna,Austria"
+  location  : "Vienna, Austria"
+#
+Aveek:
+  name    : "Aveek Basu"
+  bio     : "OpenPrinting Program Manager"
+#  avatar  : "https://openprinting.github.io/assets/images/aveek-basu.jpg"
+  email  : "basu.aveek@gmail.com"
+  github : "AveekBasu"
+  location  : "Kolkata, India"
 #   stackoverflow: ""
 #
 Dheeraj:
@@ -16,6 +24,6 @@ Dheeraj:
   github : "dheeraj135"
   linkedin  : "dheeraj-yadav-282330154"
   uri    : "https://dheeraj135.github.io"
-  location  : "Mandi,175001,India"
+  location  : "Mandi, 175001, India"
 #   stackoverflow: ""
 #
