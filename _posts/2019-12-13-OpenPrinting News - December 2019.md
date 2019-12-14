@@ -15,7 +15,7 @@ We need to start with the student selection process soon, so that we can let the
 The mentoring organization application time window for the Google Summer of Code 2010 got announced. It is from January 14th to February 5th, 2020.
 
 ## Avahi local service support
-Trent has added a [comment](https://github.com/lathiat/avahi/issues/125#issuecomment-562586275] to the [Upstream issue](https://github.com/lathiat/avahi/issues/125) with some questions on December 6th, 2019 and I (amd Michael Sweet) have answered. No further action after that.
+Trent has added a [comment](https://github.com/lathiat/avahi/issues/125#issuecomment-562586275) to the [Upstream issue](https://github.com/lathiat/avahi/issues/125) with some questions on December 6th, 2019 and I (amd Michael Sweet) have answered. No further action after that.
 
 This has raised the idea in me to make cups-filters (cups-browsed and the "driverless" utility) use DNS-SD-service-name-based IPP URIs, like CUPS does. Compared to the standard host-name-based ones they are independent of network interfaces and ports and so make it easier to implement local IPP services (like Printer Applications). I have implemented this in cups-filters 1.26.0 (see below).
 
