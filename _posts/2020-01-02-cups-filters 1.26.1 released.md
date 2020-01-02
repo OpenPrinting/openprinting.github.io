@@ -1,5 +1,5 @@
 ---
-title: cups-filters 1.26.0 released!
+title: cups-filters 1.26.1 released!
 layout: single
 author: Till
 excerpt: Bug fix release, to make the cups-browsed-generated local print queues actually work on all OS distributions and to get legacy (not actually designed for driverless IPP) printers better working
