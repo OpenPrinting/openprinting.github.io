@@ -135,7 +135,9 @@ footer:
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook"
       url: "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fopenprinting.github.io%2F&amp;src=sdkpreparse"
-
+    - label: "Code of Conduct"
+      icon: "fas fa-file-contract"
+      url: "/codeofconduct/"
 
 # Reading Files
 include:
