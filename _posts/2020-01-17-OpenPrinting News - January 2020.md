@@ -2,7 +2,7 @@
 title: OpenPrinting News - January 2020
 layout: single
 author: Till
-excerpt: cups-filters 1.26.2 released, lots of bug fixes for cups-browsed, GSoC 2020 org application for the Linux Foundation submitted and project idea list posted
+excerpt: Driverless scanning and AirScan, ippusbxd problems solved, cups-filters 1.26.2 released, lots of bug fixes for cups-browsed, GSoC 2020 org application for the Linux Foundation submitted and project idea list posted
 ---
 ## Google Summer of Code 2020
 The application period for mentoring organizations has started on Jan 14 and we have submitted our application for the Linux Foundation as mentoring organization.
