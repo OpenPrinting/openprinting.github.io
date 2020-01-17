@@ -22,3 +22,5 @@ OpenPrinting:
 * maintains cups-filters which allows CUPS to be used on any Unix-based (non-macOS) system.
 * is responsible for the Foomatic database.
 * is working on Common Print Dialog Backends project.
+
+### Our Code of Conduct: [Code of Conduct](/codeofconduct/)
