@@ -13,6 +13,9 @@ We still need to (preliminarily) assign mentors to the projects. We are currentl
 
 We have started looking for students for this yaer and some are already working on assignments.
 
+## Google Summer of Code 2019
+Tanmay Anand is working on the Common Print Dialog Backends (CPDB) support for the GTK print dialog which he did not finish withing the GSoC. Here is his [GitHub repository](https://github.com/tanmayanand44/cpdb-gtk-adaptor-backend-gsoc19/).
+
 ## Avahi local service support
 Trent Lloyd has given another [sign of life](https://github.com/lathiat/avahi/issues/125#issuecomment-568229662) in the [localhost-support issue](https://github.com/lathiat/avahi/issues/125) on GitHub. This time he tells that he will merge the patch but fix [this issue](https://github.com/lathiat/avahi/pull/161#issuecomment-532048820) first.
 
