@@ -4,7 +4,7 @@ title: "Driverless Printing"
 permalink: /driverless/
 author_profile: false
 sidebar:
-  - image: /assets/images/logo _ipp.png/
+  - image: /assets/images/logo _ipp.png
     image_alt: "Driverless Printing"
     nav: "driverless"
 ---
