@@ -2,7 +2,7 @@
 title: cups-filters 1.27.1 released!
 layout: single
 author: Till
-excerpt: Bug fix release: All filters support zero-page jobs now, option and choice names in PPDs are changed to work around a bug in CUPS when generating IPP attributes, cups-browsed creates queues for all emote IPP printers by default, and several smaller fixes in the filters
+excerpt: Bug fix release - All filters support zero-page jobs now, option and choice names in PPDs are changed to work around a bug in CUPS when generating IPP attributes, cups-browsed creates queues for all emote IPP printers by default, and several smaller fixes in the filters
 ---
 Bug fix release: All filters support zero-page jobs now, option and choice names in PPDs are changed to work around a bug in CUPS when generating IPP attributes, cups-browsed creates queues for all emote IPP printers by default, and several smaller fixes in the filters
 - libcupsfilters: Let the PPD generator not put any dashes into the PPD option and choice names when translating them from IPP attribute names, to avoid that on the back-translation by CUPS no double-dashes are generated. This broke paper tray selections with tray names like "tray-1", "tray-2", ... (Issue #192, Issue #201, Debian bug #949315).
