@@ -30,7 +30,7 @@ Alexander Pevzner, author of the Go-based ippusbxd alternative [ipp-usb](https:/
 Update: Finally, Trent has [merged the patch](https://github.com/lathiat/avahi/commit/2fd76baeb8298ef1b5b177bf7fd70f6cda3eab00)!
 
 ## New projects on the OpenPrinting GitHub
-Due to the importance for the free software printing stack and for the future directions of development 3 new projects got added to OpenPrinting:
+Due to the importance for the free software printing stack and for the future directions of development 4 new projects got added to OpenPrinting:
 
 ### [ipp-usb](https://github.com/OpenPrinting/ipp-usb)
 This is a Go-based alternative for [ippusbxd](https://github.com/OpenPrinting/ippusbxd) from Alexander Pevzner, who I discovered through his ["airscan" eSCL SANE backend](https://github.com/alexpevzner/sane-airscan/) and when discussing the support of these scanners via IPP-over-USB with him he started this great project, a better, more reliable implementation of the IPP-over-USB standard in Go. The ippusbxd project will get continued though as not all OS distributions accept Go projects.
@@ -43,9 +43,7 @@ The future of printer drivers is supplying them as Printer Applications, running
 
 This project provides the base for snapping legacy printer drivers consisting of filters and PPDs.
 
-The following project will get added soon:
-
-### [pyppd](https://github.com/vitorbaptista/pyppd)
+### [pyppd](https://github.com/OpenPrinting/pyppd)
 pyppd was created as a GSoC project many years ago with the intention to make the thousands of PPD files included in a Linux distribution as compact as possible, as uncompressed the made up a substantial part of the size of a typical Linux distribution. PPDs get xz-compressed in a self-extracting archive from which CUPS can automatically list them and grab the desired PPDs as needed.
 
 Nowadays in the age of Printer Application this project gets useful again, to make the Snaps for legacy drivers with thousands of PPDs (Foomatic, PostScript, ...) as compact as possible.
