@@ -48,7 +48,11 @@ A Printer Application should work like this:
 - Fire up the daemon after installation of the Snap and after each subsequent boot (declare as "daemon: simple" in snapcraft.yaml).
 - Check whether there is an "lp" system user available. If yes, let daemon drop privileges fully or partially, depending whether root is needed to access the hardware device. Opening the socket and filtering can always be done as "lp".
 - Open the socket, at least localhost:PORT, only one single socket on one single port. Depending on configuration settings the socket is also opened on the network: HOST:PORT. For simplicity I will only mention localhost in the next steps, also only http and ipp and not https and ipps.
-- Fire up the web admin interface, http://localhost:PORT/. It should always be there, even if no supported printer or scanner gets discovered or manually set up. Make also a command line interface and optionally an IPP System Service interface available.
+- Fire up the web admin interface:
+```
+   http://localhost:PORT/
+```
+It should always be there, even if no supported printer or scanner gets discovered or manually set up. Make also a command line interface and optionally an IPP System Service interface available.
 - Observe devices appearing and disappearing through the whole life of the daemon process. Auto-setup USB- and DNS-SD-discovered devices when they are not already set up and when configuration does not suppress auto setup of a certain device or generally. Do not wake up hardware devices during auto-setup. Use only the information of device IDs and DNS-SD records plus the knowledge of the Printer Application itself (driver) for the initial configuration of the device. Do not use SNMP for auto-setup, it causes more problems than benefits. Mark queues online and offline on devices appearing and disappearing.
 - For each hardware device create an IPP device emulation with an URI as follows:
 ```
@@ -82,7 +86,7 @@ He will also mentor a student on the [IPP Scan server/Scanner Application projec
 ## Printing Stack Snap
 I have been on a Canonical Engineering Sprint in Frankfurt as my last trip right before the Corona virus shutdown and talked with the developers of the Snap infrastructure about the CUPS Snap integration.
 
-For the [Printing Stack Snap](https://github.com/OpenPrinting/printing-stack-snap)) I have posted the following requests on the [Snapcraft Forum](https://forum.snapcraft.io/):
+For the [Printing Stack Snap](https://github.com/OpenPrinting/printing-stack-snap) I have posted the following requests on the [Snapcraft Forum](https://forum.snapcraft.io/):
 
 - **[Interface request: “cups-control” on CUPS snap and including D-Bus](https://forum.snapcraft.io/t/interface-request-cups-control-on-cups-snap-and-including-d-bus/):** Snaps are a form of sandboxed software packages. The packaged software is inside an enclosure to allow detailed control of the interaction between this software and the outside world. To define the allowed communication Snaps use interfaces which describe what is allowed. These interfaces are defined in snapd, the central control entity for the Snaps on a system. For the CUPS printing Snap we need a specialized interface allowing the communication channels of CUPS. its TCP socket, its domain socket, and its D-Bus services. This is a request to the snapd developers to add an appropriate interface.
 - **[Hardware-associated snaps - Snap Store search by hardware signature](https://forum.snapcraft.io/t/hardware-associated-snaps-snap-store-search-by-hardware-signature/):** The main reason for which we are developing Printer Applications is to provide printer drivers in a way that we can used sandboxed packaging for security and for making the driver packages working on any Linux distribution, not needing to build them for each distribution individually. But when the Printer Applications are put up as Snaps in the Snap Store, users would need to find the corrct Snap for their device to install it. Adding a hardware signature list could make the finding of the correct driver automatic, by hardware info being sent to the Snap Store as search term. This is the appropriate feature request for snapcraft and the Snap Store.
@@ -92,7 +96,7 @@ No further releases.
 
 Still no commits on the [CUPS GitHub](https://github.com/apple/cups) since Dec 18, 2019.
 
-But now I got the first sign of life from Apple after Michael Sweet has left. I got answers on my two bug reports, [one about mangling IPP attribute names](https://github.com/apple/cups/issues/5740), and [one about `cupsctl` corrupting the `cupsd.conf` file.
+But now I got the first sign of life from Apple after Michael Sweet has left. I got answers on my two bug reports, [one about mangling IPP attribute names](https://github.com/apple/cups/issues/5740), and [one about `cupsctl` corrupting the `cupsd.conf` file](https://github.com/apple/cups/issues/5744).
 
 ## cups-filters
 Currently released is 1.27.3.
