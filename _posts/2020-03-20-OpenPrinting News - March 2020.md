@@ -8,7 +8,7 @@ excerpt: Virtual OpenPrinting Summit/PWG Meeting, LF Member Summit 2020 cancelle
 
 On May 5-7 we will have our annual meeting again, the [OpenPrinting Summit/PWG Meeting](http://www.pwg.org/chair/meeting-info/may-2020-virtual.html).
 
-Because of the Corona virus situation we have turned it into a virtual meeting using WebEx instead of actually coming together in Lexington, KY. The originally planned schedules will not change.
+Because of the Corona virus situation we have turned it into a virtual meeting using WebEx instead of actually coming together in Lexington, KY. The originally planned schedules are slightly changed to get shorter meeting days.
 
 ## Linux Foundation Member Summit 2020 has been cancelled
 Unfortunately, the Linux Foundation Member Summit 2020 in Lake Tahoe, California, has been cancelled due to the Corona virus as many other events got cancelled.
