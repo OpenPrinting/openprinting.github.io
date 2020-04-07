@@ -33,6 +33,46 @@ main:
   - title: "Donations"
     url: /donations/
 
+gsoc20:
+  - title: "GSOC 2020"
+    children:
+      - title: "GSOC 2020 Homepage"
+        url: /gsoc2020/
+      - title: "Linux GUI application (can be part of GNOME printer tool) to admin MF devices using IPP System Service."
+        url: /gsoc2020/01-Linux-GUI-Application/
+      - title: "Common Print Dialog Qt implementation"
+        url: gsoc2020/02-common-print-dialog/
+      - title: "IPP scan (or virtual MF device) server (Scanner Application)"
+        url: gsoc2020/03-ipp-scan-application/
+      - title: "SANE module for IPP driverless scanning"
+        url: /gsoc2020/04-sane-module/
+      - title: "General Printer SDK"
+        url: /gsoc2020/05-general-printer-sdk/
+      - title: "Make Printer Applications Configurable"
+        url: /gsoc2020/06-make-printer-application-configurable/
+      - title: "Turn cups-browsed into printer application"
+        url: /gsoc2020/07-cups-browsed-printer-app/
+      - title: "Speed/Scaling optimization of cups browsed"
+        url: /gsoc2020/08-optimization-cups-browsed/
+      - title: "Wrapping Proprietary Drivers into Printer Applications"
+        url: /gsoc2020/09-wrapping-proprietary-drivers/
+      - title: "Gutenprint Printer Application"
+        url: /gsoc2020/10-gutenprint-printer-application/
+      - title: "Support for IPP Fax Out"
+        url: /gsoc2020/11-ipp-fax-out/
+      - title: "Turn the scp-dbus-service methods - GetBestDrivers and MissingExecutables - of system-config-printer into C"
+        url: /gsoc2020/12-scp-dbus-service-into-c/
+      - title: "Extract Raster data from PDFs for direct printing"
+        url: /gsoc2020/13-extract-raster-from-pdf/
+      - title: "Real roll paper support in cups-filters"
+        url: /gsoc2020/14-roll-paper-support/
+      - title: "Add Printer output backend to MuPDF"
+        url: /gsoc2020/15-printer-output-backendto-mupdf/
+      - title: "Printing of files directly from the file manager"
+        url: /gsoc2020/16-print-files-directly-from-manager/
+      - title: "Get the Cairo color management code upstream"
+        url: /gsoc2020/17-get-cairo-code-upstream/
+
 gsoc19:
   - title: "GSOC 2019"
     children:

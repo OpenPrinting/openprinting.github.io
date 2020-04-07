@@ -1,4 +1,4 @@
-# Copyright 2019 OpenPrinting
+# Copyright 2020 OpenPrinting
 
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -218,6 +218,9 @@ plugins:
 
 # Collections
 collections:
+  gsoc2020:
+    output: true
+    permalink: /:collection/:path/
   gsoc2019:
     output: true
     permalink: /:collection/:path/
@@ -257,7 +260,20 @@ defaults:
     values:
       layout: single
       author_profile: true
-  # _gsoc2019
+  # _gsoc2020
+  - scope:
+      path: ""
+      type: gsoc2020
+    values:
+      layout: single
+      author_profile: false
+      share: false
+      excerpt: ""
+      toc: true
+      toc_label: "On This Page"
+      sidebar:
+        nav: "gsoc20"
+
   - scope:
       path: ""
       type: gsoc2019
