@@ -2,7 +2,7 @@
 title: OpenPrinting News - April 2020
 layout: single
 author: Till
-excerpt: GSoC 2020: Most probably 5 students; Google Season of Docs 2020: LF will apply; Progress of PAPPL, Driverless, and CUPS Snap, cups-filters 1.27.4
+excerpt: Most probably 5 students for GSoC 2020; Google Season of Docs 2020: LF will apply; Progress of PAPPL, Driverless, and CUPS Snap, cups-filters 1.27.4
 ---
 
 ## Google Summer of Code 2020
