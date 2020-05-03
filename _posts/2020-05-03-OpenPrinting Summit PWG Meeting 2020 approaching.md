@@ -4,7 +4,7 @@ layout: single
 author: Till
 excerpt: The virtual OpenPrinting Summit/PWG Meeting will take place this week, from Tuesday, May 5 to Friday, May 8, Tuesday is OpenPrinting day
 ---
-On Tuesday our annual meeting will start again. During 4 days we will discuss our plans how we will continue the development printing (and scanning) with free software on Linux and similar operating systems and also about free printing-related standards, especially the Internet Printing Protocol (IPP).
+On Tuesday our annual meeting will start again. During 4 days we will discuss, together with the [Printer Working Group (PWG)](http://www.pwg.org), our plans how we will continue the development printing (and scanning) with free software on Linux and similar operating systems and also about free printing-related standards, especially the Internet Printing Protocol (IPP).
 
 The OpenPrinting-related part is the first day (Tue, May 5). See the [agenda](http://www.pwg.org/chair/meeting-info/may-2020-virtual.html).
 
