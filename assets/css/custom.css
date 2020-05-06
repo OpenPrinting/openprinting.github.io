@@ -49,5 +49,25 @@
 	.col-lg-6 {
 		width: 50%;
 	}
+	.col-lg-3 {
+		width: 25%;
+	}
 }
 
+.centered {
+    text-align: center;
+    margin-left: auto;
+	margin-right: auto;
+}
+
+.centered h4{
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
+
+.img-circle {
+	border-radius: 50%;
+	width: 150px;
+	height: 150px;
+	vertical-align: middle;
+}
