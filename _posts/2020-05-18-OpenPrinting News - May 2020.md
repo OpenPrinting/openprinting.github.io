@@ -18,32 +18,32 @@ On May 4 Google has officially announced the accepted student projects, and we w
 
 These are the 7 student projects working with us this summer:
 
-**Linux GUI application (can be part of GNOME printer tool) to admin MF devices using IPP System Service**
-Student: Lakshay Bandlish
+**Linux GUI application (can be part of GNOME printer tool) to admin MF devices using IPP System Service**<br>
+Student: Lakshay Bandlish<br>
 Mentors: Rithvik Patibandla, Michael Sweet, Ira McDonald, Smith Kennedy, Danny Brennan
 
-**Common Print Dialog Backends (CPDB) Qt implementation**
-Student: Priydarshi Singh
+**Common Print Dialog Backends (CPDB) Qt implementation**<br>
+Student: Priydarshi Singh<br>
 Mentors: Dongxu Li, Nilanjana Lodh, Till Kamppeter, Deepak Patankar
 
-**IPP scan (or virtual MF device) server (Scanner Application)**
-Student: Aakash Lahoti
+**IPP scan (or virtual MF device) server (Scanner Application)**<br>
+Student: Aakash Lahoti<br>
 Mentors: Alexander Pevzner, Thierry Hucahrd, Michael Sweet, Ira McDonald, Smith Kennedy, TIll Kamppeter
 
-**General Printer Application SDK (PAPPL-based)**
-Student: Jai Luthra
+**General Printer Application SDK (PAPPL-based)**<br>
+Student: Jai Luthra<br>
 Mentors: Dheeraj Yadav, Michael Sweet, Ira McDonald, Till Kamppeter
 
-**Make Printer Applications configurable (via PAPPL)**
-Student: Sambhav Dusad
+**Make Printer Applications configurable (via PAPPL)**<br>
+Student: Sambhav Dusad<br>
 Mentors: Michael Sweet, Dheeraj Yadav, Ira McDonald, Till Kamppeter, Sahil Arora
 
-**Speed/scaling optimization of cups-browsed**
-Student: Mohit Mohan
+**Speed/scaling optimization of cups-browsed**<br>
+Student: Mohit Mohan<br>
 Mentors: Till Kamppeter, Deepak Patankar
 
-**Extract raster data from PDFs for direct printing**
-Student: Vikrant Malik
+**Extract raster data from PDFs for direct printing**<br>
+Student: Vikrant Malik<br>
 Mentors: Sahil Arora, Alexander Pevzner, Thierry Hucahrd, Till Kamppeter
 
 They all started getting into their projects now and some have even startet coding.
