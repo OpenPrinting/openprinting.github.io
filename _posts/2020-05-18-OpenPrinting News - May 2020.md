@@ -63,11 +63,13 @@ Especially we want to get a tutorial written so that printer and scanner manufac
 Michael Sweet is not alone any more on the [PAPPL](https://github.com/michaelrsweet/pappl/) project. After some e-mail exchange with Michael and me both Jai Luthra and Sambhav Dusad have started coding on their GSoC projects and Michael has accepted their first pull requests. Sambhav has added buttons for handling jobs and Jai has added DNS-SD discovery.
 
 ## Driverless scanning
-Alexander continued the development of his "airscan" SANE backend, having many users testing their devices making up a longer and longer [list of supported devices](https://github.com/alexpevzner/sane-airscan-wsd#compatibility).
+Alexander continued the development of his "airscan" SANE backend, having many users testing their devices making up a longer and longer [list of devices known to work](https://github.com/alexpevzner/sane-airscan#compatibility).
 
 Especially now there will be only one entry per physical device even if it supports both eSCL and WSD and discovery is also much faster and the exact behavior is configurable via the configuration file.
 
 In addition, there is now the new `airscan-discover` utility included, to simply discover supported devices via command line. In contrary to the former separate tool this one is written in C now.
+
+And the WSD support got merged into the [stable "airscan" GitHub branch](https://github.com/alexpevzner/sane-airscan). So we can count on a release and also on the start of the IPP Scan support development soon.
 
 ## Printing Stack Snap
 On the snapd interface for the [Printing Stack Snap](https://github.com/OpenPrinting/printing-stack-snap) we came to a solution. [We settled on going the PulseAudio way](https://forum.snapcraft.io/t/interface-request-cups-control-on-cups-snap-and-including-d-bus/15233/19), [patching the CUPS daemon](https://forum.snapcraft.io/t/interface-request-cups-control-on-cups-snap-and-including-d-bus/15233/23) to check whether the inquiry is administrative, and if yes, if the client process is of a Snap which is not under classic confinement. In this case we reject the inquiry if the client Snap is not plugging the "cups-control" interface. The appropriate [patch for CUPS](https://github.com/OpenPrinting/printing-stack-snap/commit/2e5817f57a64f80029d18fb7331426a0b7dc1b12) I have committed to the CUPS Snap's GitHub. The snapd team is [now working](https://forum.snapcraft.io/t/interface-request-cups-control-on-cups-snap-and-including-d-bus/15233/47) on the new interfaces.
