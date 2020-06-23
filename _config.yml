@@ -20,6 +20,7 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 remote_theme             : "mmistakes/minimal-mistakes"
+#theme: minimal-mistakes-jekyll
 minimal_mistakes_skin    : "air" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
@@ -37,7 +38,7 @@ words_per_minute         : 200
 comments:
   provider               : "disqus" # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "utterances", "custom"
   disqus:
-    shortname            : openprintingorg # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
+    shortname            : openprinting-org # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
   discourse:
     server               : # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
   facebook:
@@ -253,6 +254,7 @@ defaults:
       read_time: true
       share: true
       related: true
+      comments: true
   # _pages
   - scope:
       path: "_pages"
@@ -260,6 +262,7 @@ defaults:
     values:
       layout: single
       author_profile: true
+      # comments: true
   # _gsoc2020
   - scope:
       path: ""
@@ -273,6 +276,7 @@ defaults:
       toc_label: "On This Page"
       sidebar:
         nav: "gsoc20"
+      # comments: true
 
   - scope:
       path: ""
@@ -286,6 +290,8 @@ defaults:
       toc_label: "On This Page"
       sidebar:
         nav: "gsoc19"
+      # comments: true
+
   #_driverless
   - scope:
       path: ""
@@ -299,7 +305,7 @@ defaults:
       - image: /assets/images/logo _ipp.png
         image_alt: "Driverless Printing"
         nav: "driverless"      
-      comments: true
+      # comments: true
   # _recipes
   - scope:
       path: ""
@@ -333,6 +339,7 @@ defaults:
       author_profile: false
       share: false
       excerpt: ""
+      # comments: true
       # toc: true
       # sidebar:
       #   nav: "projects"
