@@ -1,0 +1,6 @@
+---
+title: Printer Applications - A new way to print in Linux
+---
+Most modern general-purpose printers are IPP printers which allow driverless printing. They advertise themselves via DNS-SD, clients can poll the capability information of them via IPP requests, and they use standard data formats for print jobs. Printers not providing this functionality, usually legacy or specialty printers need a printer driver. The driver, the so-called Printer Application, emulates a driverless IPP printer, so that the printing system does not need to distinguish, it simply needs to support driverless IPP printers and that's it.
+This way we avoid deprecated and awkward methods, like using PPD (Postscript Printer Description) files on non-PostScript printers but also allow sandboxed packaging which allows providing OS-distribution-independent driver packages and improves security.
+We will introduce the PAPPL Printer Application framework and discuss the process of creating printer driver packages in the new format.

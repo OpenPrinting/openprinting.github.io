@@ -22,6 +22,8 @@ main:
     url: /projects/
   - title: "Downloads"
     url: /downloads/
+  - title: "Upcoming Technologies"
+    url: /upcoming-technologies/
   - title: "Driverless Printing"
     url: /driverless/
   - title: "Printers"
