@@ -150,7 +150,7 @@ One known raster-only PDF format is PCLm and therefore Vikrant has started his w
 
 Many bug fixes in cups-browsed, the filters, and the sample PPDs have been performed, often with the help of our GSoC students or candidates doing assignments. Thanks to all of them.
 
-Not also that the sample PPD files have moved to the new [ppdfiles/](https://github.com/OpenPrinting/cups-filters/tree/master/ppdfiles) subdirectory. 
+Note also that the sample PPD files have moved to the new [ppdfiles/](https://github.com/OpenPrinting/cups-filters/tree/master/ppdfiles) subdirectory. 
 
 ```
 CHANGES IN V1.28.0
