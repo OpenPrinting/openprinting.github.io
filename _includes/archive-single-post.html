@@ -30,14 +30,15 @@
         <a href="{{ post.url | relative_url }}" rel="permalink">{{ title }}</a>
       {% endif %}
     </h2>
-    {% if post.read_time %}
+    {% include post__meta.html type=include.type %}
+    {% comment %} {% if post.read_time %}
       <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> {% include read-time.html %}
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       Author: <b>{{post.author}}</b>
       &nbsp;&nbsp;&nbsp;
       Date: <b>{{post.date | date: '%B %d, %Y'}}</b>
       </p>
-    {% endif %}
+    {% endif %} {% endcomment %}
     {% if post.excerpt %}<p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify | strip_html | truncate: 160 }}</p>{% endif %}
   </article>
 </div>
