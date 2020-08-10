@@ -222,6 +222,9 @@ collections:
   gsoc2020:
     output: true
     permalink: /:collection/:path/
+  lfmp2020:
+    output: true
+    permalink: /:collection/:path/
   gsoc2019:
     output: true
     permalink: /:collection/:path/
@@ -293,6 +296,21 @@ defaults:
       toc_label: "On This Page"
       sidebar:
         nav: "gsoc19"
+      # comments: true
+
+    # _lfmp2020
+  - scope:
+      path: ""
+      type: lfmp2020
+    values:
+      layout: single
+      author_profile: false
+      share: false
+      excerpt: ""
+      toc: true
+      toc_label: "On This Page"
+      sidebar:
+        nav: "lfmp20"
       # comments: true
 
   #_driverless
