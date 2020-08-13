@@ -77,9 +77,11 @@ Special thanks to Jai for his work on the [PCL sample Printer Application](http:
 
 **Priydarshi Singh**
 
->     All the major features of the project have been completed. The project can take user's options and print according to those options.
->     There are some minor things left, like dealing with unused options, fixing some bugs, adding documentation to the code, and making it strictly follow the Qt Coding style.
->     The code is available in the "cpdb" branch of my fork of qtbase ([https://github.com/dryairship/qtbase/tree/cpdb](https://github.com/dryairship/qtbase/tree/cpdb)).
+> All the major features of the project have been completed. The project can take user's options and print according to those options.
+> 
+> There are some minor things left, like dealing with unused options, fixing some bugs, adding documentation to the code, and making it strictly follow the Qt Coding style.
+> 
+> The code is available in the "cpdb" branch of my fork of qtbase ([https://github.com/dryairship/qtbase/tree/cpdb](https://github.com/dryairship/qtbase/tree/cpdb)).
 
 **Lakshay Bandlish**
 
