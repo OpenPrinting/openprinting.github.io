@@ -175,7 +175,7 @@ Note that for participating in these discussions you have to [subscribe to the p
 
 
 ## Driverless Scanning and IPP-over-USB
-[ipp-usb](https://github.com/OpenPrinting/ipp-usb) and [sane-airscan](https://github.com/alexpevzner/sane-airscan/) are making it into Debian and Ubuntu. They are both already in Ubuntu Universe and a planned to be promoted into Ubuntu Main for Ubuntu 20.10, so that driverless printing and scanning both via network connection and USB work reliably right out of the box for everyone. A [Main Inclusion Request](https://bugs.launchpad.net/ubuntu/+source/ipp-usb/+bug/1891157) to promote ipp-usb into Ubuntu Main is already posted, sane-airscan will follow soon. ipp-usb should replace ippusbxd as standard IPP-over-USB implementation in Ubuntu 20.10.
+[ipp-usb](https://github.com/OpenPrinting/ipp-usb) and [sane-airscan](https://github.com/alexpevzner/sane-airscan/) are making it into Debian and Ubuntu. They are both already in Ubuntu Universe and a planned to be promoted into Ubuntu Main for Ubuntu 20.10, so that driverless printing and scanning both via network connection and USB work reliably right out of the box for everyone. A [Main Inclusion Request](https://bugs.launchpad.net/ubuntu/+source/ipp-usb/+bug/1891157) to promote ipp-usb into Ubuntu Main is already posted, sane-airscan will follow soon (**Update:** [Main Inclusion Request for sane-airscan](https://bugs.launchpad.net/ubuntu/+source/sane-airscan/+bug/1891682)). ipp-usb should replace ippusbxd as standard IPP-over-USB implementation in Ubuntu 20.10.
 
 In Debian, both [ipp-usb](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=961218) and [sane-airscan](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=964446) are already in Unstable.
 
