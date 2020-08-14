@@ -171,6 +171,8 @@ This made me starting some discussion on the [printing-architecture mailing list
 
 Here I have found the answers to many of my questions, introduced libppd and also the filter functions concept, gave guidelines to program filter functions, got told that PostScript is deprecated/obsolete and will not be used without PPDs ...
 
+Note that for participating in these discussions you have to [subscribe to the printing-architecture mailing list](https://lists.linuxfoundation.org/mailman/listinfo/printing-architecture).
+
 
 ## Driverless Scanning and IPP-over-USB
 [ipp-usb](https://github.com/OpenPrinting/ipp-usb) and [sane-airscan](https://github.com/alexpevzner/sane-airscan/) are making it into Debian and Ubuntu. They are both already in Ubuntu Universe and a planned to be promoted into Ubuntu Main for Ubuntu 20.10, so that driverless printing and scanning both via network connection and USB work reliably right out of the box for everyone. A [Main Inclusion Request](https://bugs.launchpad.net/ubuntu/+source/ipp-usb/+bug/1891157) to promote ipp-usb into Ubuntu Main is already posted, sane-airscan will follow soon. ipp-usb should replace ippusbxd as standard IPP-over-USB implementation in Ubuntu 20.10.
