@@ -291,7 +291,7 @@ CHANGES IN V2.0.0
 ## IPP-over-USB: ippusbxd and ipp-usb
 With [ipp-usb](https://github.com/OpenPrinting/ipp-usb) making it into the major Linux distributions, [ippusbxd](https://github.com/OpenPrinting/ippusbxd) will get more and more deprecated, probably only the Chrome OS team will hang on it. Hints on how to solve the problems of ippusbxd are discussed in Issue [#15](https://github.com/OpenPrinting/ippusbxd/issues/15).
 
-**Update:** The Chrome OS developers also have written a replacement for, ippusbxd, [ippusb_bridge](https://github.com/dgreid/platform2/tree/master/ippusb_bridge), in Rust, implementing only a subset of ipp-usb but enough for the needs of Chrome OS. This means that we can deprecate ippusbxd for now. This will not mean that we remove ippusbxd's repository, you can play with the code and contribute fixes, but we will not put effort in it like GSoC projects for example. Thanks to Alexander Pevzner for the hint.
+**Update:** The Chrome OS developers also have written a replacement for ippusbxd, [ippusb_bridge](https://github.com/dgreid/platform2/tree/master/ippusb_bridge), in Rust, implementing only a subset of ipp-usb but enough for the needs of Chrome OS. This means that we can deprecate ippusbxd for now. This will not mean that we remove ippusbxd's repository, you can play with the code and contribute fixes, but we will not put effort in it like GSoC projects for example. Thanks to Alexander Pevzner for the hint.
 
 [ipp-usb](https://github.com/OpenPrinting/ipp-usb) is more and more recognized as the better, more reliable implementation of IPP-over-USB. Thanks to Alexander Pevzner for this great tool.
 
