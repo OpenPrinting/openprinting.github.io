@@ -17,6 +17,14 @@ As already back in [2019](https://openprinting.github.io/OpenPrinting-Microconfe
 
 But it has also one big advantage: It is much easier to get the desired speakers, as one does not need to get their travel funded. So we will have Michael Sweet, Ira McDonald, Aveek Basu, Alexander Pevzner, and Rithvik Patibandla on our virtual stage, and me naturally, too.
 
+We will talk about the following [subjects](https://openprinting.github.io/upcoming-technologies/):
+
+- [Printer Applications - A new way to print in Linux](https://openprinting.github.io/upcoming-technologies/01-printer-application/)
+- [IPP scan (or virtual MF device) server (Scanner Application)](https://openprinting.github.io/upcoming-technologies/02-ipp-scan/)
+- [3D Printing](https://openprinting.github.io/upcoming-technologies/03-3d-printing/)
+- [IPP Fax Out - A new reality](https://openprinting.github.io/upcoming-technologies/04-ipp-fax/)
+- [Designing and Packaging Printer and Scanner Drivers](https://openprinting.github.io/upcoming-technologies/05-designing-packaging-drivers/)
+
 The conference takes place from Monday, August 24 to Friday, August 28, every day from 2pm - 6pm UTC. Our day will be the Friday, August 28, with hour microconference to span all the 4 hours. Everyone attending the Linux Plumbers Conference is invited to visit us and discuss the future of printing and scanning.
 
 
