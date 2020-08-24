@@ -25,7 +25,9 @@ We will talk about the following [subjects](https://openprinting.github.io/upcom
 - [IPP Fax Out - A new reality](https://openprinting.github.io/upcoming-technologies/04-ipp-fax/)
 - [Designing and Packaging Printer and Scanner Drivers](https://openprinting.github.io/upcoming-technologies/05-designing-packaging-drivers/)
 
-The conference takes place from Monday, August 24 to Friday, August 28, every day from 2pm - 6pm UTC. Our day will be the Friday, August 28, with hour microconference to span all the 4 hours. Everyone attending the Linux Plumbers Conference is invited to visit us and discuss the future of printing and scanning.
+The conference takes place from **Monday, August 24 to Friday, August 28, every day from 2pm - 6pm UTC**. Our day will be the **Friday, August 28**, with our microconference to span all the 4 hours. Everyone is invited to visit us.
+
+If you are actually attending the Linux Plumbers Conference, please visit the **OpenPrinting MC on Friday** and participate in the discussion of the future of printing and scanning. If you are not registered, please listen in via **[YouTube Live Stream](https://linuxplumbersconf.org/event/7/page/100-watch-live-free) for free**. The links to the YouTube streams will appear on this page shortly before the sessions start.
 
 
 ## Google Summer of Code 2020
