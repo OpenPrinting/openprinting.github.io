@@ -31,7 +31,7 @@ Most distributions did not show much interest but MandrakeSoft from Paris (later
 
 By the way, on that LinuxTag I also met Richard Stallman, who invented the free software concept, and he also suffered a printing problem, and that led him to that step, as I also had a problem with printing, and got what I am today.
 
-## MadakeSoft in Paris
+## MandrakeSoft in Paris
 
 So in the beginning of July 2000 I was on the LinuxTag and on Aug 1 2000 I lived in Paris, not knowing any word of French. Inside MandrakeSoft we were speaking English as they hired many people from other countries and they sent us all to French classes. My first task was to switch Mandrake Linux to the CUPS printing system and I succeeded already with the first release after my employment, which came out in fall 2000.
 
