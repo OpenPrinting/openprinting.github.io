@@ -11,7 +11,7 @@ See [how all began](https://openprinting.github.io/How-did-this-all-begin/).
 
 
 ## OpenPrinting Microconference on Linux Plumbers Conference 2020
-**Update:** [Live Stream on YouTube](https://youtu.be/MPGh9FUW4as) on August 28, 2pm - 6pm UTC, recording afterwards
+**Update:** [Recording on YouTube](https://youtu.be/MPGh9FUW4as)
 
 As already back in [2019](https://openprinting.github.io/OpenPrinting-Microconference-on-Linux-Plumbers-Conference-2019/) we are holding a Microconference on the [Linux Plumbers 2020](https://www.linuxplumbersconf.org/), this year in ...
 

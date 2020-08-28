@@ -4,7 +4,7 @@ layout: single
 author: Till
 excerpt: We are on the Plumbers again! And this time with live stream on YouTube!
 ---
-**Update:** [Live Stream on YouTube](https://youtu.be/MPGh9FUW4as) on August 28, 2pm - 6pm UTC, recording afterwards
+**Update:** [Recording on YouTube](https://youtu.be/MPGh9FUW4as)
 
 As already back in [2019](https://openprinting.github.io/OpenPrinting-Microconference-on-Linux-Plumbers-Conference-2019/) we are holding a Microconference on the [Linux Plumbers 2020](https://www.linuxplumbersconf.org/), this year in ...
 
