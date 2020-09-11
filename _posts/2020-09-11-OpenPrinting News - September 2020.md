@@ -102,7 +102,7 @@ Mentors: Michael Sweet, Alexander Pevzner
 
 WITHDRAWN (shortly after first evaluation)
 
-We have replaced this project by a 2-student LFMP project (see below).
+We have replaced this project by a 2-student LFMP project ([see below](#linux-foundation-mentorship-program)).
 
 
 
@@ -127,7 +127,7 @@ In the printer setup tool you find your printer under the discovered network pri
 
 Nidhi was supposed to add fax support to the Common Print Dialog Backends (CPDB) now, but as development did not make it far enough to do so and due to the withdrawal of Dipanshu we have asked her to carry on on retro-fitting classic printer drivers into Printer Applications.
 
-As a replacement for our incomplete GSoC project on IPP Scan we are running our [second LFMP project](https://people.communitybridge.org/project/7f416728-2578-471b-9c7a-2136ebdb1e46). Here we have selected our students now and they have started working in the beginning of this month:
+As a replacement for our incomplete GSoC project on IPP Scan we are running our [second LFMP project](https://people.communitybridge.org/project/55cdb4a1-76bd-423a-ab48-3bdf1502a171). Here we have selected our students now and they have started working in the beginning of this month:
 
 **Expand PAPPL for scan support, Scanner Applications (IPP Scan as a server)**<br>
 Student: Abhik Chakraborty
@@ -185,7 +185,7 @@ Special thanks go to Vikrant Malik and Jai Luthra for thei work on the filter fu
 
 To allow further releases of cups-filters during the transition from 1.x to 2.x I have created a [1.x branch](https://github.com/OpenPrinting/cups-filters/tree/1.x) into which I cherry-pick all the bug fixes and some smaller feature additions. This branch is especially the source for the current cups-filters packages in Debian and Ubuntu.
 
-Here I have especially added the driverless fax support and the IPP/IPPS support in the `driverless` utility, from Nidhi Jain's LFMP project (see above). Also many bug fixes, especially crashes and memory leaks of cups-browsed, are included here.
+Here I have especially added the driverless fax support and the IPP/IPPS support in the `driverless` utility, from Nidhi Jain's LFMP project ([see above](#linux-foundation-mentorship-program)). Also many bug fixes, especially crashes and memory leaks of cups-browsed, are included here.
 
 [1.28.2](https://github.com/OpenPrinting/cups-filters/releases/tag/1.28.2):
 
