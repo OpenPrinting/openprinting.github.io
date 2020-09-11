@@ -144,7 +144,7 @@ Currently, I am mentoring both. Depending of the further needs other mentors cou
 
 They have both started at the beginning of August and will work until end of October.
 
-As a replacement for our incomplete GSoC project for IPP Scan we got accepted in the next round (September - November) of LFMP for a [2-student project on IPP Scan](https://people.communitybridge.org/project/7f416728-2578-471b-9c7a-2136ebdb1e46) letting one student to extend [PAPPL](https://github.com/michaelrsweet/pappl) for Scanner Applications (IPP Scan as a server) and the other student expand the driverless scanning SANE backend [sane-airscan](https://github.com/alexpevzner/sane-airscan) to also support IPP Scan in addition to the already supported eSCL and WSD (IPP Scan as a client).
+As a replacement for our incomplete GSoC project for IPP Scan we got accepted in the next round (September - November) of LFMP for a [2-student project on IPP Scan](https://people.communitybridge.org/project/55cdb4a1-76bd-423a-ab48-3bdf1502a171) letting one student to extend [PAPPL](https://github.com/michaelrsweet/pappl) for Scanner Applications (IPP Scan as a server) and the other student expand the driverless scanning SANE backend [sane-airscan](https://github.com/alexpevzner/sane-airscan) to also support IPP Scan in addition to the already supported eSCL and WSD (IPP Scan as a client).
 
 Principal mentors will be Michael Sweet and Alexander Pevzner, the same mentors as of the former GSoC project.
 
