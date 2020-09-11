@@ -141,7 +141,7 @@ Abhik will get primarily mentored by Michael Sweet and Rishabh by Alexander Pevz
 ## CUPS Snap
 The [CUPS Snap](https://github.com/OpenPrinting/cups-snap) project is currently waiting for the [snapd project to add the needed API extensions](https://trello.com/c/9IJToylf/1215-snapd-api-for-checking-client-snaps-whether-they-plug-a-given-interface).
 
-The [Pull Request](https://github.com/snapcore/snapd/pull/8920) for the implementation of the [new "cuos" and "cups-control" interfaces](https://openprinting.github.io/OpenPrinting-News-August-2020/#cups-snap) got merged into snapd.
+The [Pull Request](https://github.com/snapcore/snapd/pull/8920) for the implementation of the [new "cups" and "cups-control" interfaces](https://openprinting.github.io/OpenPrinting-News-August-2020/#cups-snap) got merged into snapd.
 
 The [pull request](https://github.com/snapcore/snapd/pull/9132) for adding the API functionality so that a Snap can check whether a client Snap plugs the needed interfaces is still in the works.
 
