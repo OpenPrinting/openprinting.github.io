@@ -125,7 +125,7 @@ Nidhi Jain has successfully expanded the `driverless` tool of cups-filters (whic
 
 In the printer setup tool you find your printer under the discovered network printers (also if it is connected via USB, as IPP-over-USB is used then). Select this entry and when it comes to select the driver, select the entry with "Fax, driverless". If you want to fax print the document to this queue and in the print dialog (GTK/GNOME or LibreOffice) select "Custom" in the "Phone Number" option and enter the destination fax number. Parameters like sender info on the fax, default prefixes, repetition of failure, ... you configure with the devices web admin interface.
 
-Nidhi was supposed to add fax support to the Common Print Dialog Backends (CPDB) now, but as development did not make it far enough to do so and due to the withdrawal of Dipanshu we have asked her to carry on on retro-fitting classic printer drivers into Printer Applications.
+Nidhi was supposed to add fax support to the Common Print Dialog Backends (CPDB) now, but as development did not make it far enough to do so and due to the withdrawal of Dipanshu we have asked her to carry on on retro-fitting classic printer drivers into Printer Applications. **Update:** Nidhi agreed and will now work on retro-fitting classic printer drivers.
 
 As a replacement for our incomplete GSoC project on IPP Scan we are running our [second LFMP project](https://people.communitybridge.org/project/55cdb4a1-76bd-423a-ab48-3bdf1502a171). Here we have selected our students now and they have started working in the beginning of this month:
 
