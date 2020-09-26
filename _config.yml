@@ -249,6 +249,9 @@ collections:
   upcoming-technologies:
     output: true
     permalink: /:collection/:path/
+  documentation:
+    output: true
+    permalink: /:collection/:path/
 
 
 # Defaults
@@ -344,12 +347,23 @@ defaults:
       - image: /assets/images/logo _ipp.png
         image_alt: "Driverless Printing"
         nav: "driverless"
+  #upcoming-technologies
   - scope:
       path: ""
       type: upcoming-technologies
     values:
       layout: single
       author_profile: false
+      share: true
+      excerpt: ""
+      comments: true
+  #documentation
+  - scope:
+      path: ""
+      type: documentation
+    values:
+      layout: single
+      author_profile: true
       share: true
       excerpt: ""
       comments: true
