@@ -7,6 +7,21 @@
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
 
+/** For showing the blue links */
+.collection-list a:link,:visited	{
+	color: #0092ca;
+}
+.collection-list a:hover	{
+	color: #03A9F4;
+}
+
+.page__content a:link,:visited	{
+	color: #0092ca;
+}
+.page__content a:hover	{
+	color: #03A9F4;
+}
+
 .nav-logo{
 	height:2.2em;
 }
