@@ -7,18 +7,25 @@
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
 
-/** For showing the blue links */
-.collection-list a:link,:visited	{
-	color: #0092ca;
+/** For showling blue color in links etc */
+.archive__item-title a:link	{
+	color: #0092ca !important;
 }
-.collection-list a:hover	{
-	color: #03A9F4;
+.archive__item-title a:visited	{
+	color: #0092ca !important;
+}
+.archive__item-title a:hover	{
+	color: #03A9F4 !important;
 }
 
-.page__content a:link,:visited	{
+/** Specialy for gsoc links */
+a[href*="gsoc"]:link {
 	color: #0092ca;
 }
-.page__content a:hover	{
+a[href*="gsoc"]:visited {
+	color: #0092ca;
+}
+a[href*="gsoc"]:hover {
 	color: #03A9F4;
 }
 
