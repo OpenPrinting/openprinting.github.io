@@ -9,8 +9,9 @@ __Table of Contents__
 1. **[Introduction](#introduction)**
 2. **[Components for PAPPL-based Printer Driver](#components)**
 3. **[Designing Components](#design)**
-4. **[Template for PAPPL-based Printer Driver](#template)**
-5. **[Resources](#resources)**
+4. **[Add Support for Non-Raster Printers](#non-raster)**
+5. **[Template for PAPPL-based Printer Driver](#template)**
+6. **[Resources](#resources)**
 
 <h2 id="introduction"> Introduction </h2>
 
@@ -28,6 +29,19 @@ The following tutorial helps you to understand how to design each component and 
 
 * ### papplMainLoop
 
+    papplMainLoop is the main entry point for the application. It runs a standard main loop with a [system callback](#system_cb()). Also allows the printer application to define its own [usage callback](#usage_cb()) and have an [application specific subcommand](#subcmd_cb()).
+
+        int papplMainloop(
+            int                  argc,
+            char                 *argv[],
+            const char           *version,
+            pappl_ml_usage_cb_t  usage_cb,  
+            const char           *subcmd_name,
+            pappl_ml_subcmd_cb_t subcmd_cb,
+            pappl_ml_system_cb_t system_cb,
+            void                 *data
+        )
+
     1. ### Version number
 
         This argument is simply a string literal, denoting the version of the printer driver.
@@ -35,7 +49,7 @@ The following tutorial helps you to understand how to design each component and 
         Examples of valid version number are "1.0", "2.1", etc.
     <br>
 
-    2. ### Usage Callback
+    2. <h3 id="usage_cb()">  Usage Callback </h3>
 
         This function helps the user to know about the capabilities of your printer by showing the set of sub-commands and options supported by your printer. For retrieving the output of this function, the user needs to pass the `--help` argument.
 
@@ -96,7 +110,7 @@ The following tutorial helps you to understand how to design each component and 
 
         If your printer doesn't support any additional sub-command, you may specify the argument as `NULL`.
 
-    4. ### Sub-command callback
+    4. <h3 id="subcmd_cb()">  Sub-command Callback </h3>
 
         This callback argument is the function that is to be executed when the sub-command(other than the default sub-commands) is specified.
         
@@ -104,9 +118,9 @@ The following tutorial helps you to understand how to design each component and 
 
         If you wish to support additional sub-command, then specify the name of the sub-command in the **sub-command name** argument and design a function using the **[design sub-command callback](#subcommandcallback)** guidelines.
 
-    5. ### System Callback
+    5. <h3 id="system_cb()"> System Callback </h3>
 
-        **[Design system callback](#systemcallback)** guidlines.
+        The System Callback function creates a system object and allows restoring the previous system configuration(if any). Hence, it cannot be `NULL`. Kindly refer to the **[Design system callback](#systemcallback)** guidlines for retrieving more information about System Callback function.
 
     6. ### Data
 
@@ -122,11 +136,13 @@ The following tutorial helps you to understand how to design each component and 
 
     The usage callback function receives only one argument, i.e. the callback data.
     
-    The function objective is to show the usage details of the printer. Hence it prints the list of supported sub-commands and options. It can then return.
+    The function objective is to show the usage details of the printer. Hence, the design guidelines of this function is quite trivial. It consists of a series of `printf` statements describing each supported sub-command and option. It can then return.
 
 ___
 
 * <h3 id = "subcommandcallback"> Sub-Command Callback </h3>
+
+    This function allows the printer application to have an application specific subcommand.
 
         pappl_ml_subcmd_cb_t subcmd_cb (
             const char      *base_name,
@@ -153,6 +169,8 @@ ___
 
     The system callback function receives three arguments Number of options, Options, and Callback data. It then returns a new system object.
 
+    **Design Guidelines:**
+
     1. **Declare Objects and Variables**
     
         The following objects and variables have to be declared:
@@ -178,7 +196,7 @@ ___
 
     2. **Fetch values using cupsGetOption**
 
-        From the above listed objects/variables, the following variables can get their values from corressponding option name, using cupsGetOption PAPPL utility: 
+        From the above listed objects/variables, the following variables can get their values from corressponding option name, using `cupsGetOption` PAPPL utility: 
 
         | Variable Name | Option name     |
         |---------------|-----------------|
@@ -188,15 +206,15 @@ ___
         | system_name   | system-name     |
         | port          | server-port     | 
 
-        The syntax for using cupsGetOption is:
+        The syntax for using `cupsGetOption` is:
 
             <variable_name> = cupsGetOption(<option_name>, num_options, options)
         
         Notes:
 
-        * The return type for cupsGetOption utility is char*. Hence for "log-level" and "server-port" options, first fetch them into the `val` variable.
+        * The return type for `cupsGetOption` utility is char*. Hence for "log-level" and "server-port" options, first fetch them into the `val` variable.
         
-        * The values taken by `loglevel` variable based on value returned by "log-level" cupsGetOption can be summarised using the following table:
+        * The values taken by `loglevel` variable based on value returned by "log-level" `cupsGetOption` can be summarised using the following table:
 
             | log-level Option | Value for loglevel variable |
             |------------------|-----------------------------|
@@ -227,7 +245,21 @@ ___
                 bool                tls_only
             );
         
-        * The `soptions` variable is passed as the first argument.
+        * The `soptions` variable is passed as the first argument, which is an bitwise `ORed` of the following options:
+        
+            |        System Option        |                            Significance                            |
+            |:---------------------------:|:------------------------------------------------------------------:|
+            | PAPPL_SOPTIONS_DNSSD_HOST   | Use hostname in DNS-SD service names instead of serial number/UUID |
+            | PAPPL_SOPTIONS_LOG          | Include link to log file                                           |
+            | PAPPL_SOPTIONS_MULTI_QUEUE  | Support multiple printers                                          |
+            | PAPPL_SOPTIONS_NETWORK      | Include network settings page                                      |
+            | PAPPL_SOPTIONS_NONE         | No options                                                         |
+            | PAPPL_SOPTIONS_RAW_SOCKET   | Accept jobs via raw sockets                                        |
+            | PAPPL_SOPTIONS_REMOTE_ADMIN | Allow remote queue management (vs. localhost only)                 |
+            | PAPPL_SOPTIONS_SECURITY     | Include user/password settings page                                |
+            | PAPPL_SOPTIONS_STANDARD     | Include the standard web pages                                     |
+            | PAPPL_SOPTIONS_TLS          | Include TLS settings page                                          |
+                    
         * The `system_name` variable fetched in 2<sup>nd</sup> Step is passed as second argument. Note that the system-name might be `NULL`. So, don't forget to add a check and pass a default value, in case the fetched system-name is `NULL`.
         * The port number is passed as the third argument. You may pass it as `0` for auto.
         * The 4th argument is a string literal that signifies DNS-SD sub-types. One may pass `NULL` for none.
@@ -235,8 +267,10 @@ ___
         * The 8th argument signifies the PAM authentication service. You may pass `auth_service` variable fetched in 2<sup>nd</sup> Step or `NULL` for none.
         * If the system only supports TLS connection, pass true in the 9th argument, else false. 
 
-    4. **Add listeners and hostname to system**
 
+    4. **Add system configurations**
+
+        The system object has tons of configurable attributes and correspondingly a huge number of PAPPL utilities to configure them. These include utilities like Setting Hostname, Setting the footer HTML for the web interface, etc. A detailed list of these function can be found at <a href="../pappl-system-utilities/">PAPPL System Utilities</a>. 
 
 
     5. **Call the [Driver setup function](#setup)**
@@ -251,11 +285,15 @@ ___
 
 * <h3 id = "setup"> Driver setup Function </h3>
     
+    This function defines the list of printer drivers and [driver callback function](#callback).
+
         void pcl_setup (
             pappl_system_t *system
         );
     
     The Driver setup function receives only one argument, i.e. system object.
+
+    **Design Guidelines:**
 
     1. **Define Drivers name and description**
 
@@ -282,6 +320,8 @@ ___
 
 * <h3 id = "callback"> Callback Function </h3>
 
+    This function tells the printer application what functions to call when performing job functions like starting a job, starting a page, writing a line, ending a page, ending a job, printing a raw job. Driver capability information and defaults(such as resolution, color etc.) are also provided here.
+
         bool pcl_callback (
             pappl_system_t          *system,
             const char              *driver_name,
@@ -290,14 +330,18 @@ ___
             ipp_t                   **driver_attrs,
             void                    *data
         );
-    
+
     The callback function receives six arguments System object, Driver name, Device URI, Driver data, Driver Attributes, and Callback data. It then returns either `true` on success or `false` on failure.
 
+    **Design Guidelines:**
+    
     1. **Add suitable checks**
 
         You may check that the passed values of `driver_name`, `device_uri`, `driver_data`, and `data` variable is non-NULL. Further, you must verify that the callback data is the same as the `data` variable.
 
     2. **Assign values to common `driver_data` members**
+
+        All the required information is stored in the `pappl_pdriver_data_t` <a href="#structdriverdata"><sup>[1]</sup></a> structure. These are a few examples of common driver attributes. For the entire list of attributes that can be provided, please look at the `pappl_pdriver_data_t` <a href="#structdriverdata"><sup>[1]</sup></a> structure.
 
         | Member             | Significance                                         |
         |--------------------|------------------------------------------------------|
@@ -317,19 +361,142 @@ ___
 
     3. **Assign rest of the values `driver_data` members based on `driver_name`**
 
+        Here is the list of all the attributes of `pappl_pdriver_data_t` structure, used to describe driver capability information and defaults. The ones that were not assigned in the previous step may be assigned depending on the name of driver.
+
+        <table id = "structdriverdata"><tbody>
+        <tr><th>bin[PAPPL_MAX_BIN] </th>
+                <td >Output bins</td></tr>
+        <tr><th>bin_default </th>
+                <td >Default output bin</td></tr>
+        <tr><th>borderless </th>
+                <td >Borderless margins supported?</td></tr>
+        <tr><th>bottom_top </th>
+                <td >Bottom and top margins in hundredths of millimeters</td></tr>
+        <tr><th>color_default </th>
+                <td >&quot;print-color-mode-default&quot; value</td></tr>
+        <tr><th>content_default </th>
+                <td >&quot;print-content-default&quot; value</td></tr>
+        <tr><th>darkness_supported </th>
+                <td >printer/print-darkness-supported (0 for none)</td></tr>
+        <tr><th>duplex </th>
+                <td >Duplex printing modes supported</td></tr>
+        <tr><th>features[PAPPL_MAX_VENDOR] </th>
+                <td >&quot;ipp-features-supported&quot; values</td></tr>
+        <tr><th>finishings </th>
+                <td >&quot;finishings-supported&quot; values</td></tr>
+        <tr><th>force_raster_type </th>
+                <td >Force a particular raster type?</td></tr>
+        <tr><th>format </th>
+                <td >Printer-specific format</td></tr>
+        <tr><th>gdither </th>
+                <td >, 'text', and 'graphic' dither array</td></tr>
+        <tr><th>icons[3] </th>
+                <td >&quot;printer-icons&quot; values</td></tr>
+        <tr><th>identify </th>
+                <td >Identify-Printer function</td></tr>
+        <tr><th>identify_supported </th>
+                <td >&quot;identify-actions-supported&quot; values</td></tr>
+        <tr><th>kind </th>
+                <td >&quot;printer-kind&quot; values</td></tr>
+        <tr><th>make_and_model[128] </th>
+                <td >&quot;printer-make-and-model&quot; value</td></tr>
+        <tr><th>media[PAPPL_MAX_MEDIA] </th>
+                <td >Supported media</td></tr>
+        <tr><th>media_ready[PAPPL_MAX_SOURCE] </th>
+                <td >Ready media</td></tr>
+        <tr><th>mode_supported </th>
+                <td >label-mode-supported</td></tr>
+        <tr><th>num_bin </th>
+                <td >Number of output bins</td></tr>
+        <tr><th>num_features </th>
+                <td >Number of &quot;ipp-features-supported&quot; values</td></tr>
+        <tr><th>num_media </th>
+                <td >Number of supported media</td></tr>
+        <tr><th>num_source </th>
+                <td >Number of media sources (trays/rolls)</td></tr>
+        <tr><th>num_type </th>
+                <td >Number of media types</td></tr>
+        <tr><th>num_vendor </th>
+                <td >Number of vendor attributes</td></tr>
+        <tr><th>orient_default </th>
+                <td >&quot;orientation-requested-default&quot; value</td></tr>
+        <tr><th>output_face_up </th>
+                <td >Does output media come out face-up?</td></tr>
+        <tr><th>pdither </th>
+                <td >dither array</td></tr>
+        <tr><th>ppm_color </th>
+                <td >&quot;pages-per-minute-color&quot; value, if any</td></tr>
+        <tr><th>print </th>
+                <td >Print (file) function</td></tr>
+        <tr><th>quality_default </th>
+                <td >&quot;print-quality-default&quot; value</td></tr>
+        <tr><th>raster_types </th>
+                <td >&quot;pwg-raster-document-type-supported&quot; values</td></tr>
+        <tr><th>rendjob </th>
+                <td >End raster job function</td></tr>
+        <tr><th>rendpage </th>
+                <td >End raster page function</td></tr>
+        <tr><th>rstartjob </th>
+                <td >Start raster job function</td></tr>
+        <tr><th>rstartpage </th>
+                <td >Start raster page function</td></tr>
+        <tr><th>rwrite </th>
+                <td >Write raster line function</td></tr>
+        <tr><th>scaling_default </th>
+                <td >&quot;print-scaling-default&quot; value</td></tr>
+        <tr><th>sides_default </th>
+                <td >&quot;sides-default&quot; value</td></tr>
+        <tr><th>source[PAPPL_MAX_SOURCE] </th>
+                <td >Media sources</td></tr>
+        <tr><th>speed_default </th>
+                <td >print-speed-default</td></tr>
+        <tr><th>status </th>
+                <td >Status function</td></tr>
+        <tr><th>tear_offset_supported[2] </th>
+                <td >label-tear-offset-supported (0,0 for none)</td></tr>
+        <tr><th>top_offset_supported[2] </th>
+                <td >media-top-offset-supported (0,0 for none)</td></tr>
+        <tr><th>tracking_supported </th>
+                <td >media-tracking-supported</td></tr>
+        <tr><th>type[PAPPL_MAX_TYPE] </th>
+                <td >Media types</td></tr>
+        <tr><th>vendor[PAPPL_MAX_VENDOR] </th>
+                <td >Vendor attribute names</td></tr>
+        <tr><th>y_default </th>
+                <td >Default resolution</td></tr>
+        </tbody></table>
+
+    <br>
+
+    **Difference between [print](#print) and [write](#writeline) function**
+
+    Both the print and write function execute similar task, they are invoked by the printer application in different situation.
+
+    If the printer specific format, i.e. the format which is understood by the printer and the format of the Job supplied is same, then the `print` function is invoked. One may rightly guess that this is the case of raw print since no format conversion or processing is required.
+
+    In the other case the `write` function is used. This is complemented using other function such as `rstartpage`, `rendpage`, `rstartjob` and `rendjob`.  
+
+    ![writevsprint (2)](https://user-images.githubusercontent.com/43112419/94988119-a234ea00-0588-11eb-9228-d9c64d86314e.png)
+
 ___
 
 * <h3 id = "identify"> Identify Function </h3>
-        
+    
+     The function helps to identify a printer using display, flash, sound, or speech.
+
         void pcl_identify(
             pappl_printer_t          *printer,
             pappl_identify_actions_t actions,
             const char               *message
         );
 
+    The Identify function receives three arguments that are the Printer, Actions to take, and Messages (if any).
+
 ___
 
 * <h3 id = "print"> Print Function </h3>
+
+    It is used to print a raw job - called if the job format is the same as the format specified by the [driver callback](#callback).
 
         bool pcl_print(
             pappl_job_t      *job,
@@ -337,9 +504,13 @@ ___
             pappl_device_t   *device
         );
 
+    The Print function receives three arguments that are Job, Job Options, and device. The function returns true on success and false on failure.
+
 ___
 
 * <h3 id = "rendjob"> End Job Function </h3>
+
+    This function is called to end a job.
 
         bool pcl_rendjob(
             pappl_job_t      *job,
@@ -347,9 +518,15 @@ ___
             pappl_device_t   *device
         );
 
+    The End Job function receives three arguments that are Job, Job Options, and device. The function returns true on success and false on failure.
+
+    Note that the job data set by [Start Job Function](#rstartjob) must be freed in this function.
+
 ___
 
 * <h3 id = "rendpage"> End Page Function </h3>
+
+    This function is called each time a page is completed. It helps in resetting the buffers used by the driver.
 
         bool pcl_rendpage(
             pappl_job_t      *job,
@@ -357,10 +534,14 @@ ___
             pappl_device_t   *device,
             unsigned         page
         )
+    
+    The End Page function receives four arguments that are Job, Job Options, Device, and Page Number. The function returns true on success and false on failure.
 
 ___
 
 * <h3 id = "rstartjob"> Start Job Function </h3>
+
+    This function is called when starting a job. The job data is stored with the job.
 
         bool pcl_rstartjob(
             pappl_job_t      *job,
@@ -368,9 +549,13 @@ ___
             pappl_device_t   *device
         );
 
+    The Start Job function, like the End Job Function receives three arguments that are Job, Job Options, and device. The function returns true on success and false on failure.
+
 ___
 
 * <h3 id = "rstartpage"> Start Page Function </h3>
+
+    This function is called when starting a page. Information regarding the page is obtained from the page header and attributes like resolution, margins, page size, orientation and graphics are set appropriately.
 
         bool pcl_rstartpage(
             pappl_job_t      *job,
@@ -379,9 +564,13 @@ ___
             unsigned         page
         )
 
+    The Start Page function receives four arguments that are Job, Job Options, Device, and Page Number. The function returns true on success and false on failure.
+
 ___
 
 * <h3 id = "writeline"> Write Line Function </h3>
+
+    This function writes a line of graphics.
 
         bool pcl_rwrite(
             pappl_job_t         *job,
@@ -391,15 +580,65 @@ ___
             const unsigned char *pixels
         )
 
+    The Write Line function receives five arguments that are Job, Job Options, Device, Line number, and Line. The function returns true on success and false on failure.
+
 ___
 
 * <h3 id = "status"> Printer Status Function </h3>
+
+    This function gets the printer status.
 
         bool pcl_status(
             pappl_printer_t *printer
         )
 
-___
+    The Printer Status Function recieves only one argument and that is the printer. It returns true on success and false on failure.
+
+
+<h2 id="non-raster"> Add Support for Non-Raster Printers</h2>
+
+Currently PAPPL supports only raster printers and that too for very few specific input formats like JPEG and PNG. For adding support for non-raster printers like PDF and PostScript printers, you need to supply external utility that converts the whole job's data into a data stream which the printer understands. Refer to the below-mentioned steps to know how to implement the same.
+
+* **Set the printer-specific format in [callback function](#callback).**
+
+    You need to set `driver_data.format` in [callback function](#callback) to the printer-specific format. A few examples could be "application/postscript", "application/pdf", etc.
+
+* **Add a filter callback**
+
+    You need to add filter callback from format recieved by the printer application to printer-specific format using `papplSystemAddMIMEFilter` utility.
+
+        void papplSystemAddMIMEFilter(
+            pappl_system_t *system,
+            const char *srctype,
+            const char *dsttype,
+            pappl_mime_filter_cb_t cb,
+            void *data
+        );
+
+    | Parameter | Significance                                  |
+    |-----------|-----------------------------------------------|
+    | system    | System                                        |
+    | srctype   | Source MIME media type (constant) string      |
+    | dsttype   | Destination MIME media type (constant) string |
+    | cb        | [Filter callback function](#filtercallback)                       |
+    | data      | Filter callback data                          |
+
+    This utility is added in [system callback](#systemcallback) after calling [setup function](#setup) in Step 5.
+
+* <h4 id="filtercallback" style="font-weight: bold;"> Define filter callback function</h4>
+
+    The filter callback function converts the whole job's data into a data stream which the printer understands.
+
+        bool papplJobFilter(
+            pappl_job_t    *job,
+            pappl_device_t *device,
+            void           *data
+        )
+
+    The filter callback function recieves 3 parameters, that are the Job, the Device and the Filter data.
+
+    Depending upon the features, stability, ease of use, documentation, pricing and license you may use any third party API to perform this task of conversion. CUPS Snap also provides 
+
 
 <h2 id="template"> Template for PAPPL-based Printer Driver </h2>
 
