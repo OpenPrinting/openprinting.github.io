@@ -1,5 +1,6 @@
 ---
 title: PAPPL System Utilities
+permalink: /pappl-system-utilities/
 ---
 
 * ### papplSystemAddListeners
