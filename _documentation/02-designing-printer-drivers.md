@@ -155,8 +155,6 @@ ___
 
     The Sub-Command callback function receives six arguments Basename, Number of options, Options, Number of files, Name of files, and Callback data. It then returns a new sub-command object.
 
-    **Design Guidelines to be understood**
-
 ___
 
 * <h3 id = "systemcallback"> System Callback </h3>
@@ -270,7 +268,7 @@ ___
 
     4. **Add system configurations**
 
-        The system object has tons of configurable attributes and correspondingly a huge number of PAPPL utilities to configure them. These include utilities like Setting Hostname, Setting the footer HTML for the web interface, etc. A detailed list of these function can be found at <a href="../pappl-system-utilities/">PAPPL System Utilities</a>. 
+        The system object has tons of configurable attributes and correspondingly a huge number of PAPPL utilities to configure them. These include utilities like Setting Hostname, Setting the footer HTML for the web interface, etc. A detailed list of these function can be found at <a href="../../pappl-system-utilities/">PAPPL System Utilities</a>. 
 
 
     5. **Call the [Driver setup function](#setup)**
@@ -363,108 +361,59 @@ ___
 
         Here is the list of all the attributes of `pappl_pdriver_data_t` structure, used to describe driver capability information and defaults. The ones that were not assigned in the previous step may be assigned depending on the name of driver.
 
-        <table id = "structdriverdata"><tbody>
-        <tr><th>bin[PAPPL_MAX_BIN] </th>
-                <td >Output bins</td></tr>
-        <tr><th>bin_default </th>
-                <td >Default output bin</td></tr>
-        <tr><th>borderless </th>
-                <td >Borderless margins supported?</td></tr>
-        <tr><th>bottom_top </th>
-                <td >Bottom and top margins in hundredths of millimeters</td></tr>
-        <tr><th>color_default </th>
-                <td >&quot;print-color-mode-default&quot; value</td></tr>
-        <tr><th>content_default </th>
-                <td >&quot;print-content-default&quot; value</td></tr>
-        <tr><th>darkness_supported </th>
-                <td >printer/print-darkness-supported (0 for none)</td></tr>
-        <tr><th>duplex </th>
-                <td >Duplex printing modes supported</td></tr>
-        <tr><th>features[PAPPL_MAX_VENDOR] </th>
-                <td >&quot;ipp-features-supported&quot; values</td></tr>
-        <tr><th>finishings </th>
-                <td >&quot;finishings-supported&quot; values</td></tr>
-        <tr><th>force_raster_type </th>
-                <td >Force a particular raster type?</td></tr>
-        <tr><th>format </th>
-                <td >Printer-specific format</td></tr>
-        <tr><th>gdither </th>
-                <td >, 'text', and 'graphic' dither array</td></tr>
-        <tr><th>icons[3] </th>
-                <td >&quot;printer-icons&quot; values</td></tr>
-        <tr><th>identify </th>
-                <td >Identify-Printer function</td></tr>
-        <tr><th>identify_supported </th>
-                <td >&quot;identify-actions-supported&quot; values</td></tr>
-        <tr><th>kind </th>
-                <td >&quot;printer-kind&quot; values</td></tr>
-        <tr><th>make_and_model[128] </th>
-                <td >&quot;printer-make-and-model&quot; value</td></tr>
-        <tr><th>media[PAPPL_MAX_MEDIA] </th>
-                <td >Supported media</td></tr>
-        <tr><th>media_ready[PAPPL_MAX_SOURCE] </th>
-                <td >Ready media</td></tr>
-        <tr><th>mode_supported </th>
-                <td >label-mode-supported</td></tr>
-        <tr><th>num_bin </th>
-                <td >Number of output bins</td></tr>
-        <tr><th>num_features </th>
-                <td >Number of &quot;ipp-features-supported&quot; values</td></tr>
-        <tr><th>num_media </th>
-                <td >Number of supported media</td></tr>
-        <tr><th>num_source </th>
-                <td >Number of media sources (trays/rolls)</td></tr>
-        <tr><th>num_type </th>
-                <td >Number of media types</td></tr>
-        <tr><th>num_vendor </th>
-                <td >Number of vendor attributes</td></tr>
-        <tr><th>orient_default </th>
-                <td >&quot;orientation-requested-default&quot; value</td></tr>
-        <tr><th>output_face_up </th>
-                <td >Does output media come out face-up?</td></tr>
-        <tr><th>pdither </th>
-                <td >dither array</td></tr>
-        <tr><th>ppm_color </th>
-                <td >&quot;pages-per-minute-color&quot; value, if any</td></tr>
-        <tr><th>print </th>
-                <td >Print (file) function</td></tr>
-        <tr><th>quality_default </th>
-                <td >&quot;print-quality-default&quot; value</td></tr>
-        <tr><th>raster_types </th>
-                <td >&quot;pwg-raster-document-type-supported&quot; values</td></tr>
-        <tr><th>rendjob </th>
-                <td >End raster job function</td></tr>
-        <tr><th>rendpage </th>
-                <td >End raster page function</td></tr>
-        <tr><th>rstartjob </th>
-                <td >Start raster job function</td></tr>
-        <tr><th>rstartpage </th>
-                <td >Start raster page function</td></tr>
-        <tr><th>rwrite </th>
-                <td >Write raster line function</td></tr>
-        <tr><th>scaling_default </th>
-                <td >&quot;print-scaling-default&quot; value</td></tr>
-        <tr><th>sides_default </th>
-                <td >&quot;sides-default&quot; value</td></tr>
-        <tr><th>source[PAPPL_MAX_SOURCE] </th>
-                <td >Media sources</td></tr>
-        <tr><th>speed_default </th>
-                <td >print-speed-default</td></tr>
-        <tr><th>status </th>
-                <td >Status function</td></tr>
-        <tr><th>tear_offset_supported[2] </th>
-                <td >label-tear-offset-supported (0,0 for none)</td></tr>
-        <tr><th>top_offset_supported[2] </th>
-                <td >media-top-offset-supported (0,0 for none)</td></tr>
-        <tr><th>tracking_supported </th>
-                <td >media-tracking-supported</td></tr>
-        <tr><th>type[PAPPL_MAX_TYPE] </th>
-                <td >Media types</td></tr>
-        <tr><th>vendor[PAPPL_MAX_VENDOR] </th>
-                <td >Vendor attribute names</td></tr>
-        <tr><th>y_default </th>
-                <td >Default resolution</td></tr>
-        </tbody></table>
+
+        | Member                        | Significance                                        |
+        |-------------------------------|-----------------------------------------------------|
+        | bin[PAPPL_MAX_BIN]            | Output bins                                         |
+        | bin_default                   | Default output bin                                  |
+        | borderless                    | Borderless margins supported?                       |
+        | bottom_top                    | Bottom and top margins in hundredths of millimeters |
+        | color_default                 | "print-color-mode-default" value                    |
+        | content_default               | "print-content-default" value                       |
+        | darkness_supported            | printer/print-darkness-supported (0 for none)       |
+        | duplex                        | Duplex printing modes supported                     |
+        | features[PAPPL_MAX_VENDOR]    | "ipp-features-supported" values                     |
+        | finishings                    | "finishings-supported" values                       |
+        | force_raster_type             | Force a particular raster type?                     |
+        | format                        | Printer-specific format                             |
+        | gdither                       | , 'text', and 'graphic' dither array                |
+        | icons[3]                      | "printer-icons" values                              |
+        | identify                      | Identify-Printer function                           |
+        | identify_supported            | "identify-actions-supported" values                 |
+        | kind                          | "printer-kind" values                               |
+        | make_and_model[128]           | "printer-make-and-model" value                      |
+        | media[PAPPL_MAX_MEDIA]        | Supported media                                     |
+        | media_ready[PAPPL_MAX_SOURCE] | Ready media                                         |
+        | mode_supported                | label-mode-supported                                |
+        | num_bin                       | Number of output bins                               |
+        | num_features                  | Number of "ipp-features-supported" values           |
+        | num_media                     | Number of supported media                           |
+        | num_source                    | Number of media sources (trays/rolls)               |
+        | num_type                      | Number of media types                               |
+        | num_vendor                    | Number of vendor attributes                         |
+        | orient_default                | "orientation-requested-default" value               |
+        | output_face_up                | Does output media come out face-up?                 |
+        | pdither                       | dither array                                        |
+        | ppm_color                     | "pages-per-minute-color" value, if any              |
+        | print                         | Print (file) function                               |
+        | quality_default               | "print-quality-default" value                       |
+        | raster_types                  | "pwg-raster-document-type-supported" values         |
+        | rendjob                       | End raster job function                             |
+        | rendpage                      | End raster page function                            |
+        | rstartjob                     | Start raster job function                           |
+        | rstartpage                    | Start raster page function                          |
+        | rwrite                        | Write raster line function                          |
+        | scaling_default               | "print-scaling-default" value                       |
+        | sides_default                 | "sides-default" value                               |
+        | source[PAPPL_MAX_SOURCE]      | Media sources                                       |
+        | speed_default                 | print-speed-default                                 |
+        | status                        | Status function                                     |
+        | tear_offset_supported[2]      | label-tear-offset-supported (0,0 for none)          |
+        | top_offset_supported[2]       | media-top-offset-supported (0,0 for none)           |
+        | tracking_supported            | media-tracking-supported                            |
+        | type[PAPPL_MAX_TYPE]          | Media types                                         |
+        | vendor[PAPPL_MAX_VENDOR]      | Vendor attribute names                              |
+        | y_default                     | Default resolution                                  |
 
     <br>
 
@@ -601,11 +550,11 @@ Currently PAPPL supports only raster printers and that too for very few specific
 
 * **Set the printer-specific format in [callback function](#callback).**
 
-    You need to set `driver_data.format` in [callback function](#callback) to the printer-specific format. A few examples could be "application/postscript", "application/pdf", etc.
+    You need to set `driver_data.format` in [callback function](#callback) to the printer-specific format, i.e. the format/language accepted by the printer. A few examples could be "application/postscript", "application/pdf", etc.
 
 * **Add a filter callback**
 
-    You need to add filter callback from format recieved by the printer application to printer-specific format using `papplSystemAddMIMEFilter` utility.
+    You need to add filter callback from format recieved by the printer application(formats which you wish your printer can support and accept the job in) to printer-specific format(format/languages that the printer actually understands) using `papplSystemAddMIMEFilter` utility.
 
         void papplSystemAddMIMEFilter(
             pappl_system_t *system,
