@@ -144,6 +144,7 @@ footer:
 include:
   - .htaccess
   - _pages
+  - _docpages
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
@@ -270,6 +271,14 @@ defaults:
   # _pages
   - scope:
       path: "_pages"
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+      # comments: true
+  # _docpages
+  - scope:
+      path: "_docpages"
       type: pages
     values:
       layout: single
