@@ -8,7 +8,7 @@ excerpt: GSoC final results, Linux Plumbers recording, GSoD, LFMP, CUPS temporar
 
 We successfully did our second OpenPrinting microconference!
 
-There is a [complete recording on YouTube](https://youtu.be/MPGh9FUW4as) (same links as for the live broadcast during the conference). But note that this one is created automatically by the video conference system, and edited version will get posted later.
+There is a [complete recording on YouTube](https://youtu.be/MPGh9FUW4as) (same links as for the live broadcast during the conference). But note that this one is created automatically by the video conference system, and the edited version will get posted later.
 
 We talked about the following [topics](https://linuxplumbersconf.org/event/7/sessions/83/#20200828) (links to the slides in PDF format):
 
@@ -54,7 +54,7 @@ Mentors: Michael Sweet, Till Kamppeter<br>
 
 PASSED
 
-Jai has principally worked on PAPPL but also done an HP PCL sample Printer Application. In gthe end he has also worked on converting filters of cups-filters into filter functions.
+Jai has principally worked on PAPPL but also done an HP PCL sample Printer Application. In the end he has also worked on converting filters of cups-filters into filter functions.
 
 
 ### 3. Linux GUI application to admin MF devices using IPP System Service
@@ -151,7 +151,7 @@ On the Printer Apllications side Sambhav Dusad, GSoC 2020 student, has started t
 
 We also have already the following filter functions in cups-filters: pstops, pdftops, pdftopdf, ghostscript (replaces gstoraster, gstopdf, gstopxl), pclmtoraster, rastertopdf (replaces rastertopdf amd rastertopcl), rastertops, and filterChain
 
-Special thanks go to Vikrant Malik and Jai Luthra for thei work on the filter functions.
+Special thanks go to Vikrant Malik and Jai Luthra for their work on the filter functions.
 
 On the [printing-architecture mailing list](https://lists.linuxfoundation.org/mailman/listinfo/printing-architecture) at OpenPrinting we had a discussion about whether CUPS is still needed with Printer Applications and IPP devices in place:
 
@@ -163,7 +163,7 @@ Note that for participating in these discussions you have to [subscribe to the p
 ## Driverless Scanning and IPP-over-USB
 The Main Inclusion Requests (MIR) to get [ipp-usb](https://bugs.launchpad.net/ubuntu/+source/ipp-usb/+bug/1891157) and [sane-airscan](https://bugs.launchpad.net/ubuntu/+source/sane-airscan/+bug/1891682) into Ubuntu Main have passed the general checks of the Ubuntu MIR team and are waiting for the reviews of the Ubuntu security team.
 
-Alexander Pevzner is continuing to take user eports and make the packages working with as many devices as possible.
+Alexander Pevzner is continuing to take user reports and make the packages working with as many devices as possible.
 
 IPP Scan support is currently added to sane-airscan as a LFMP project.
 
@@ -197,7 +197,7 @@ Bug fix release to fix several bugs in the new IPP Fax Out support by the "drive
 
 [1.28.0](https://github.com/OpenPrinting/cups-filters/releases/tag/1.28.0):
 
-Feature release (probably the last one before 2.0.0) which adds IPP Fax Out support, IPPS support, and a command line option to reveal satndard IPP URIs to the "driverless" utility, added log file size limitation and command line options to control what happens to generated queues on shutdown to cups-browsed, fixed several bugs when printing PostScript input files, several bugs and memory leaks in cups-browsed, crashes on the presence of certain fonts, and many more fixes.
+Feature release (probably the last one before 2.0.0) which adds IPP Fax Out support, IPPS support, and a command line option to reveal standard IPP URIs to the "driverless" utility, added log file size limitation and command line options to control what happens to generated queues on shutdown to cups-browsed, fixed several bugs when printing PostScript input files, several bugs and memory leaks in cups-browsed, crashes on the presence of certain fonts, and many more fixes.
 
 ```
 CHANGES IN V2.0.0
