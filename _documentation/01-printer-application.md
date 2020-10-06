@@ -6,6 +6,8 @@ Ever wondered how a Printer works? What are the different steps involved between
 
 The following document contains information about the history of printing and its evolution. It describes Printer Applications. What were the issues with the previous methodologies? How Printer Applications helped in solving them? Why it has been referred to as the "Technology for Future"? In the end, it also contains roles of different entities including OpenPrinting, Manufacturers, and the User.  
 
+<div id="table-of-content" markdown="1">
+
 __Table of Contents__
 
 
@@ -14,7 +16,7 @@ __Table of Contents__
 3. **[Advantages of Printer Applications](#advantages)**
 4. **[Roles and Responsiblities](#roles)**
 5. **[Resources](#resources)**
-
+</div>
 
 
 <h2 id="brief-history"> Brief History </h2>
