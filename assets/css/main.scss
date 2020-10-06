@@ -55,3 +55,12 @@
 	transition: all 0.2s ease-in-out;
 	-webkit-transition: all 0.2s ease-in-out;
 }
+
+@media (min-width: 1496px) {
+	#table-of-content {
+		position: fixed;
+		width: 320px;
+		top: 120px;
+		right: 8%;
+	}
+}
