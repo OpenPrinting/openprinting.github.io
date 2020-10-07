@@ -6,15 +6,6 @@ h_range: [1,2]
 ---
 **This document contains a complete tutorial as well as information for manufacturers with examples for designing printer drivers. If you are looking for information regarding the use of printer drivers, kindly refer to <a href="../05-User-Manual/">User Manual</a>**  
 
-__Table of Contents__
-
-
-1. **[Introduction](#introduction)**
-2. **[Components for PAPPL-based Printer Driver](#components)**
-3. **[Designing Components](#design)**
-4. **[Add Support for Non-Raster Printers](#non-raster)**
-5. **[Template for PAPPL-based Printer Driver](#template)**
-6. **[Resources](#resources)**
 
 <h2 id="introduction"> Introduction </h2>
 
