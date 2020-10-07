@@ -36,7 +36,22 @@ layout: default
           <aside class="sidebar__right {% if page.toc_sticky %}sticky{% endif %}">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-{{ page.toc_icon | default: 'file-alt' }}"></i> {{ page.toc_label | default: site.data.ui-text[site.locale].toc_label | default: "On this page" }}</h4></header>
-              {% include toc.html sanitize=true html=content h_min=1 h_max=6 class="toc__menu" %}
+              <!-- h_min is h_range[0] and h_max is h_range[1] -->
+              {% if page.h_range %}
+                <!-- YES h_min-->
+                {% if page.h_range[0]<=page.h_range[1] %}
+                  <!-- if you provided h_min and h_max take care you have h_min is smaller than or equal to h_max -->
+                  {% assign hmin = page.h_range[0] %}
+                  {% assign hmax = page.h_range[1] %}
+                  {% include toc.html sanitize=true html=content h_min=hmin h_max=hmax class="toc__menu" %}
+                {% else %}
+                  <!-- Default h range used as h_min is larger than h_max -->
+                  {% include toc.html sanitize=true html=content h_min=1 h_max=6 class="toc__menu" %}
+                {% endif %}
+              {% else %}
+                <!-- Default h range used -->
+                {% include toc.html sanitize=true html=content h_min=1 h_max=6 class="toc__menu" %}
+              {% endif %}
             </nav>
           </aside>
         {% endif %}

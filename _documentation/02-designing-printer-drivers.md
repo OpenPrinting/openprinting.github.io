@@ -1,5 +1,8 @@
 ---
 title: Designing Printer Drivers
+toc: true
+toc_sticky: true
+h_range: [1,2]
 ---
 **This document contains a complete tutorial as well as information for manufacturers with examples for designing printer drivers. If you are looking for information regarding the use of printer drivers, kindly refer to <a href="../05-User-Manual/">User Manual</a>**  
 
