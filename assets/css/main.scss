@@ -56,11 +56,8 @@
 	-webkit-transition: all 0.2s ease-in-out;
 }
 
-@media (min-width: 1496px) {
-	#table-of-content {
-		position: fixed;
-		width: 320px;
-		top: 120px;
-		right: 8%;
+@media (min-width: 1284px) {
+	.sidebar__right {
+		margin-right: -400px; // Makes the Table of Content to more right than usual
 	}
 }
