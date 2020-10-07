@@ -1,7 +1,7 @@
 ---
 title: Designing Printer Drivers
 ---
-**This document contains a complete tutorial as well as information for manufacturers along with examples for designing printer drivers. If you are looking for information regarding the use of printer drivers, kindly refer to <a href="../05-User-Manual/">User Manual</a>**  
+**This document contains a complete tutorial as well as information for manufacturers with examples for designing printer drivers. If you are looking for information regarding the use of printer drivers, kindly refer to <a href="../05-User-Manual/">User Manual</a>**  
 
 __Table of Contents__
 
@@ -17,7 +17,7 @@ __Table of Contents__
 
 A driver is a code or data specific to a certain model or group of hardware devices, needed to make the hardware work with the hardware-model-independent code of the operating system. Printing in Linux has moved towards [Driverless Printing](https://openprinting.github.io/driverless/), which means there is no need for any hardware-model-specific code or data. However, there are some problems with the current framework. For example, some printers(especially the old ones) that cannot handle IPP requests are devoid of driverless printing capability. Printer Applications help to address these issues. Kindly refer <a href="../01-printer-application/">Printer Applications - A new way to print in Linux</a> to learn more about Printer Applications, its working and benefits.
 
-For Designing the Printer Application Driver, it would be a lot of re-inventing the wheel if everyone who wants to create a printer driver has to implement all things from scratch. Therefore Michael Sweet has created <a href="https://github.com/michaelrsweet/pappl/">PAPPL</a>, a library that provides all the common functionality which is needed in every Printer Application.
+For Designing the Printer Application Driver, it would be a lot of re-inventing the wheel if everyone who wants to create a printer driver has to implement all things from scratch. Therefore Michael Sweet has developed <a href="https://github.com/michaelrsweet/pappl/">PAPPL</a>, a library that provides all the common functionality which is required in every Printer Application.
 
 The flowchart below mentions the components of the driver that needs to be designed by you (boxes in blue color), along with the PAPPL utilities (boxes in red color) that would be used by your designed components.
 
@@ -120,7 +120,7 @@ The following tutorial helps you to understand how to design each component and 
 
     5. <h3 id="system_cb()"> System Callback </h3>
 
-        The System Callback function creates a system object and allows restoring the previous system configuration(if any). Hence, it cannot be `NULL`. Kindly refer to the **[Design system callback](#systemcallback)** guidlines for retrieving more information about System Callback function.
+        The System Callback function creates a system object and allows restoring the previous system configuration(if any). Hence, it cannot be `NULL`. Kindly refer to the **[Design system callback](#systemcallback)** guidelines for retrieving more information about the System Callback function.
 
     6. ### Data
 
@@ -136,13 +136,13 @@ The following tutorial helps you to understand how to design each component and 
 
     The usage callback function receives only one argument, i.e. the callback data.
     
-    The function objective is to show the usage details of the printer. Hence, the design guidelines of this function is quite trivial. It consists of a series of `printf` statements describing each supported sub-command and option. It can then return.
+    The function objective is to show the usage details of the printer. Hence, the design guidelines for this function is quite trivial. It consists of a series of `printf` statements describing each supported sub-command and option. It can then return.
 
 ___
 
 * <h3 id = "subcommandcallback"> Sub-Command Callback </h3>
 
-    This function allows the printer application to have an application specific subcommand.
+    This function allows the printer application to have an application-specific subcommand.
 
         pappl_ml_subcmd_cb_t subcmd_cb (
             const char      *base_name,
@@ -318,7 +318,7 @@ ___
 
 * <h3 id = "callback"> Callback Function </h3>
 
-    This function tells the printer application what functions to call when performing job functions like starting a job, starting a page, writing a line, ending a page, ending a job, printing a raw job. Driver capability information and defaults(such as resolution, color etc.) are also provided here.
+    This function tells the printer application what functions to call when performing job functions like starting a job, starting a page, writing a line, ending a page, ending a job, printing a raw job. Driver capability information and defaults(such as resolution, color, etc.) are also provided here.
 
         bool pcl_callback (
             pappl_system_t          *system,
@@ -359,7 +359,7 @@ ___
 
     3. **Assign rest of the values `driver_data` members based on `driver_name`**
 
-        Here is the list of all the attributes of `pappl_pdriver_data_t` structure, used to describe driver capability information and defaults. The ones that were not assigned in the previous step may be assigned depending on the name of driver.
+        Here is the list of all the attributes of `pappl_pdriver_data_t` structure, used to describe driver capability information and defaults. The ones that were not assigned in the previous step may be assigned depending on the name of the driver.
 
 
         | Member                        | Significance                                        |
@@ -419,11 +419,11 @@ ___
 
     **Difference between [print](#print) and [write](#writeline) function**
 
-    Both the print and write function execute similar task, they are invoked by the printer application in different situation.
+    Both the print and write functions execute a similar task, but they are invoked by the printer application in a different situation.
 
-    If the printer specific format, i.e. the format which is understood by the printer and the format of the Job supplied is same, then the `print` function is invoked. One may rightly guess that this is the case of raw print since no format conversion or processing is required.
+    If the printer-specific format, i.e. the format which is understood by the printer and the format of the Job supplied is the same, then the `print` function is invoked. One may rightly guess that this is the case of raw print since no format conversion or processing is required.
 
-    In the other case the `write` function is used. This is complemented using other function such as `rstartpage`, `rendpage`, `rstartjob` and `rendjob`.  
+    In the other case, the `write` function is used. This is complemented using other functions such as `rstartpage`, `rendpage`, `rstartjob`, and `rendjob`.  
 
     ![writevsprint (2)](https://user-images.githubusercontent.com/43112419/94988119-a234ea00-0588-11eb-9228-d9c64d86314e.png)
 
@@ -498,13 +498,13 @@ ___
             pappl_device_t   *device
         );
 
-    The Start Job function, like the End Job Function receives three arguments that are Job, Job Options, and device. The function returns true on success and false on failure.
+    The Start-Job function, like the End Job Function, receives three arguments that are Job, Job Options, and device. The function returns true on success and false on failure.
 
 ___
 
 * <h3 id = "rstartpage"> Start Page Function </h3>
 
-    This function is called when starting a page. Information regarding the page is obtained from the page header and attributes like resolution, margins, page size, orientation and graphics are set appropriately.
+    This function is called when starting a page. Information regarding the page is obtained from the page header and attributes like resolution, margins, page size, orientation, and graphics are set appropriately.
 
         bool pcl_rstartpage(
             pappl_job_t      *job,
@@ -541,12 +541,12 @@ ___
             pappl_printer_t *printer
         )
 
-    The Printer Status Function recieves only one argument and that is the printer. It returns true on success and false on failure.
+    The Printer Status Function receives only one argument and that is the printer. It returns true on success and false on failure.
 
 
 <h2 id="non-raster"> Add Support for Non-Raster Printers</h2>
 
-Currently PAPPL supports only raster printers and that too for very few specific input formats like JPEG and PNG. For adding support for non-raster printers like PDF and PostScript printers, you need to supply external utility that converts the whole job's data into a data stream which the printer understands. Refer to the below-mentioned steps to know how to implement the same.
+Currently, PAPPL supports only raster printers and that too for very few specific input formats like JPEG and PNG. For adding support for non-raster printers like PDF and PostScript printers, you need to supply an external utility that converts the whole job's data into a data stream which the printer understands. Refer to the below-mentioned steps to know how to implement the same.
 
 * **Set the printer-specific format in [callback function](#callback).**
 
@@ -554,7 +554,7 @@ Currently PAPPL supports only raster printers and that too for very few specific
 
 * **Add a filter callback**
 
-    You need to add filter callback from format recieved by the printer application(formats which you wish your printer can support and accept the job in) to printer-specific format(format/languages that the printer actually understands) using `papplSystemAddMIMEFilter` utility.
+    You need to add filter callback from format received by the printer application(formats which you wish your printer can support and accept the job in) to printer-specific format(format/languages that the printer actually understands) using `papplSystemAddMIMEFilter` utility.
 
         void papplSystemAddMIMEFilter(
             pappl_system_t *system,
@@ -584,15 +584,17 @@ Currently PAPPL supports only raster printers and that too for very few specific
             void           *data
         )
 
-    The filter callback function recieves 3 parameters, that are the Job, the Device and the Filter data.
+    The filter callback function receives 3 parameters, that are the Job, the Device, and the Filter data.
 
-    Depending upon the features, stability, ease of use, documentation, pricing and license you may use any third party API to perform this task of conversion. CUPS Snap also provides 
+    Depending upon the features, stability, ease of use, documentation, pricing, and license you may use any third party API to perform this task of conversion.
+
+    The default filter callback function added in PAPPL are `_papplJobFilterJPEG` and `_papplJobFilterPNG` which can be found in the file [Job-Filter.c](https://github.com/michaelrsweet/pappl/blob/master/pappl/job-filter.c) and can be referenced for writing your own callback function.
 
 
 <h2 id="template"> Template for PAPPL-based Printer Driver </h2>
 
     //
-    // Include neccessary headers
+    // Include necessary headers
     //
     # include <pappl/pappl.h>
 
@@ -678,7 +680,7 @@ Currently PAPPL supports only raster printers and that too for very few specific
         pappl_identify_actions_t actions,   // I - Actions to take
         const char               *message)  // I - Message, if any
     {
-    // Identify a printer using display, flash, sound or speech.
+    // Identify a printer using display, flash, sound, or speech.
     }
 
 
@@ -814,6 +816,8 @@ Currently PAPPL supports only raster printers and that too for very few specific
 <br>
 [3] <a href="https://github.com/michaelrsweet/pappl/">PAPPL</a>
 <br>
-[4] <a href="../04-packaging-drivers/">Packaging Drivers and Uploading them to Snap Store</a>
+[4] <a href="../../pappl-system-utilities/">PAPPL System Utilities</a>
 <br>
-[5] <a href="../05-User-Manual/">User Manual</a>
+[5] <a href="../04-packaging-drivers/">Packaging Drivers and Uploading them to Snap Store</a>
+<br>
+[6] <a href="../05-User-Manual/">User Manual</a>

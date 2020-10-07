@@ -4,7 +4,7 @@ title: Printer Applications - A new way to print in Linux
 
 Ever wondered how a Printer works? What are the different steps involved between the print command and the final output?
 
-The following document contains information about the history of printing and its evolution. It describes Printer Applications. What were the issues with the previous methodologies? How Printer Applications helped in solving them? Why it has been referred as the "Technology for Future"? In the end, it also contains roles of different entities including OpenPrinting, Manufacturers and the User.  
+The following document contains information about the history of printing and its evolution. It describes Printer Applications. What were the issues with the previous methodologies? How Printer Applications helped in solving them? Why it has been referred to as the "Technology for Future"? In the end, it also contains roles of different entities including OpenPrinting, Manufacturers, and the User.  
 
 __Table of Contents__
 
@@ -28,9 +28,9 @@ This format was adopted because in that time printing under Linux and Unix worke
 
 **CUPS** made the move from built-in printer drivers in Ghostscript to CUPS filters, with the help of the CUPS Raster device-independent print raster format. CUPS raster drivers used **PPD files** because it used **Ghostscript** or (on IRIX) **Impressario** (a version of Adobe's PostScript interpreter) to produce raster data for printing, and they could use embedded PostScript commands to control page size, colour space, etc.  Since both PostScript and raster printers could then use PPD files, Michael Sweet adopted PPD as a common printer description format, which also got used for his company's ESP Print Pro (GUI) software and then later macOS and GNOME/KDE. CUPS provides reserved directories to drop these **PPD files** and **filters** into, so adding a printer driver was rather easy.
 
-Nowadays applications send jobs in PDF and CUPS does the **PDF-centric** processing, already for 8 years, since the first release of cups-filters back in 2012. So PPD files do not really fit in the picture any more, and they also had their shortcomings, especially being rather unflexible in the possible types of user-settable options. Also, the need to drop filters and PPDs into reserved directories of CUPS makes it difficult to provide CUPS and printer drivers in sandboxed packages, like **Snaps**.
+Nowadays applications send jobs in PDF and CUPS does the **PDF-centric** processing, already for 8 years, since the first release of cups-filters back in 2012. So PPD files do not really fit in the picture anymore, and they also had their shortcomings, especially being rather unflexible in the possible types of user-settable options. Also, the need to drop filters and PPDs into reserved directories of CUPS makes it difficult to provide CUPS and printer drivers in sandboxed packages, like **Snaps**.
 
-Already several years ago, mainly due to the advent of smartphones and the desire to also print from these devices, printers got equipped with **driverless IPP** printing functionality: [AirPrint](https://support.apple.com/en-in/HT201311)(released in 2010), IPP Everywhere, Mopria, Wi-Fi Direct Print. These standards are practically all the same, the printer advertises its presence, its network address, and basic capabilities via DNS-SD (aka BonJour, mDNS, zero-conf, implemented with Avahi in Linux), accepts communication and jobs from clients via **IPP (Internet Printing Protocol)**, from the [Printer Working Group](http://www.pwg.org/), supplies complete capability info to clients via IPP and uses only common Page Description Languages (PDLs) for jobs: PDF, Apple Raster, PWG Raster, PCLm.
+Already several years ago, mainly due to the advent of smartphones and the desire to also print from these devices, printers got equipped with **driverless IPP** printing functionality: [AirPrint](https://support.apple.com/en-in/HT201311)(released in 2010), IPP Everywhere, [Mopria](https://mopria.org/), Wi-Fi Direct Print. These standards are practically all the same, the printer advertises its presence, its network address, and basic capabilities via DNS-SD (aka BonJour, mDNS, zero-conf, implemented with Avahi in Linux), accepts communication and jobs from clients via **IPP (Internet Printing Protocol)**, from the [Printer Working Group](http://www.pwg.org/), supplies complete capability info to clients via IPP and uses only common Page Description Languages (PDLs) for jobs: PDF, Apple Raster, PWG Raster, PCLm.
 
 
 <h2 id="printer-application">What is a Printer Application?</h2>
@@ -41,7 +41,7 @@ The Printer Application emulates a driverless IPP printer, so that the printing 
 
 In a **sandboxed package**, we cannot modify directory contents once it is built. Our system is no more modular. We cannot choose which printer driver package to install. Printer Applications address this problem of modularity and give us the same freedom as in the case of printer drivers.
 
-A **Printer Application's Web Interface** provides configurability and makes it more accessible to the user. Instead of the web interface, one can also use the standard interface IPP System Service. This allows defining configurable parameters which a device-independent client can poll from the IPP server and display in a GUI so that the user can change them appropriate to his needs. It allows creation and deletion of printers, viewing active and completed jobs, cancellation of job/jobs, configuring the loaded media and network settings, requesting software updates, etc. The underlying mechanism involves adding custom pages and contents using callbacks, static resources, or external files and directories.
+A **Printer Application's Web Interface** provides configurability and makes it more accessible to the user. Instead of the web interface, one can also use the standard interface IPP System Service. This allows defining configurable parameters that a device-independent client can poll from the IPP server and display in a GUI so that the user can change them appropriate to his needs. It allows creation and deletion of printers, viewing active and completed jobs, cancellation of job/jobs, configuring the loaded media and network settings, requesting software updates, etc. The underlying mechanism involves adding custom pages and contents using callbacks, static resources, or external files and directories.
 
 
 <h2 id="advantages">Advantages of Printer Applications</h2>
@@ -54,7 +54,7 @@ A **Printer Application's Web Interface** provides configurability and makes it 
 <br>
 <li> <strong>Good Bye PPD!</strong> PPD files which were earlier used to describe the printer's capabilities and which filters to use to produce the data format needed by the printer are not required by Printer Application.</li>
 <br>
-<li> <strong>Diversified Nature</strong> Printer Applications have a lot in common. Therefore Michael Sweet has created PAPPL, a library which provides all the common functionality which is needed in every Printer Application. However, the manufacturer is expected to write the drivers on their own (using PAPPL) and defining functions like identifying the start of the page, the start of a line, etc, leading to Printer Application's Diversified Nature.</li>
+<li> <strong>Diversified Nature</strong> Printer Applications have a lot in common. Therefore Michael Sweet has created PAPPL, a library that provides all the common functionality which is needed in every Printer Application. However, the manufacturer is expected to write the drivers on their own (using PAPPL) and defining functions like identifying the start of the page, the start of a line, etc, leading to Printer Application's Diversified Nature.</li>
 <br>
 <li> <strong>Technology for Future</strong> As we know, Linux is moving to sandboxed packaging (Snap for example) and printing is also moving in that direction. In a sandboxed package, we cannot modify directory contents once it is built. Our system is no more modular. We cannot choose which printer driver package to install. Printer Applications address this problem of modularity and give us the same freedom as in the case of printer drivers. </li>
 </ul>
@@ -79,7 +79,7 @@ A **Printer Application's Web Interface** provides configurability and makes it 
 The Manufacturer besides manufacturing Printers and Scanners, is also expected to design drivers for the same. They can use PAPPL<sup><a href="https://github.com/michaelrsweet/pappl/">[3]</a></sup> library which certainly reduces their task to an great extent. Also they could take help from the documentation and tutorial developed by the OpenPrinting team. <sup> <a href="../02-designing-printer-drivers/">[4]</a></sup> 
 <sup> <a href="../03-designing-scanner-drivers/">[5]</a></sup>  
 
-After designing the drivers, they need to package them and Upload it to Snap Store. Again, documentation and tutorial for the same have developed by OpenPrinting team which could be referred.<sup> <a href="../04-packaging-drivers/">[6]</a></sup> 
+After designing the drivers, they need to package them and Upload it to Snap Store. Again, documentation and tutorial for the same have developed by the OpenPrinting team which could be referred.<sup> <a href="../04-packaging-drivers/">[6]</a></sup> 
 
 
 <h3>User</h3>
