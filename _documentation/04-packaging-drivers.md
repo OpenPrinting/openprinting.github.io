@@ -24,7 +24,7 @@ Snaps are app packages for desktop, cloud and IoT that are easy to install, secu
 
 * A snap is a bundle of an app and its dependencies that works without modification across many different Linux distributions.
 
-* Snaps are more secure. Every package with all its libraries and files in its own sandbox, fine-grained control for communication between packages.
+* Snaps are more secure. Every package with all its libraries and files in its own sandbox(isolated from other snaps and the host system), fine-grained control for communication between packages.
 
 * Snaps are easily discoverable and installable from the Snap Store, an app store with an audience of millions who can browse and install snaps graphically in the Snap Store or from the command-line.
 
@@ -36,7 +36,103 @@ Most Snaps we create are driven using `snapcraft.yaml`. This file describes a sn
 
 As a distributer, you would create a `snapcraft.yaml` file and upload the same on Snap Store. When the user runs `snap install`, snapcraft will fetch and open the corressponding `snapcraft.yaml`, interpret it, figure out what to do and build your application.
 
-<h2 id="snapcraft"> snapcraft.yaml </h2> 
+To start building your snap, the initial step is to install snapcraft. Kindly refer the <a href="https://snapcraft.io/docs/installing-snapcraft">installation guidelines</a> to follow the same.
+
+After installation, navigate to the directory containing your application and use the following command.
+
+    snapcraft init
+
+This creates a buildable snapcraft.yaml template within a snap sub-directory relative to your current filesystem location. 
+
+<h2 id="snapcraft"> snapcraft.yaml Format </h2> 
+
+The `snapcraft.yaml` file starts with a small amount of human-readable metadata. This data is used in the presentation of your app in the Snap Store. The former keys define the build dependencies and run-time requirements.
+
+* **name** 
+<br>This is the identifying name of the snap. It must start with an ASCII character and can only contain letters in lower case, numbers, and hyphens, and it can’t start or end with a hyphen. The name must be unique if you want to publish to the Snap Store.
+
+    In this field, you may wish to use the name of your organisation along the part it is designed for. 
+    
+        name: hp-printer-app
+    
+    For help on choosing a name and registering it on the Snap Store, see <a href="https://snapcraft.io/docs/registering-your-app-name">Registering your app name</a>.
+
+___
+
+* **base**
+<br>The base keyword declares which base snap to use with your project. A base snap is a special kind of snap that provides a run-time environment alongside a minimal set of libraries that are common to most applications:
+
+        base: core18
+
+    As used above, core18 is the current standard base for snap building and is based on Ubuntu 18.04 LTS.
+
+    See <a href="https://snapcraft.io/docs/base-snaps">Base snaps</a> for more details.
+
+___
+
+* **version**
+<br>A human readable string(enclosed within single-quotes) of maximum size 32 characters, represents the version number of your snap. A higher version number generally corresponds to a new application. 
+
+        version: '1.0'
+
+___
+
+* **summary**
+<br>A single line summary that may be 79 characters long, describes the snap in short and simple terms. It is used when users are searching through the Store for your application.
+
+        summary: HP Printer Application
+
+___
+
+* **description**
+<br>Description is used to provide a little more detail about your application. You could as many lines as you want in this field.
+
+        description: |
+            HP Printer Application is a PAPPL (Printer Application Framework) based printer application
+            to support hp printers.
+            PAPPL is a simple C-based framework/library for developing CUPS
+            Printer Applications, which are the recommended replacement for
+            printer drivers.
+
+___
+
+* **grade**
+<br> Grade defines the quality grade of the snap. It can have two values.
+    
+    * **devel**: a development version of the snap, so not to be published to the stable or candidate channels.
+
+    * **stable**: a stable release or release candidate, which can be released to all channels.
+
+    We would be using the grade value as stable.
+
+        grade: stable
+
+___
+
+* **confinement**
+<br>Confinement determines if the snap should be restricted in access or not. It could have three possible values.
+
+    * **strict**: for no access outside of declared interfaces through plugs. Can be published easily and installed without any special command-line argument.
+    
+    * **devmode**: for unrestricted access to system resources. Snaps having this confinement cannot be published to Snap Store.
+    
+    * **classic**: Allows access to your system’s resources in much the same way traditional packages do. To safeguard against abuse, publishing a classic snap requires manual approval, and installation requires the --classic command line argument.
+
+    We would be using the confinement value as strict.
+
+        confinement: strict
+
+___
+
+* **apps**
+
+___
+
+* **parts**
+
+___
+
+There are other keys that could be used to provide more information to snapcraft besides the above listed keys. One may refer to <a href="https://snapcraft.io/docs/snapcraft-format">Snapcraft format documentation</a> to know about these. 
 
 <h2 id="template"> Template </h2>
 
@@ -45,11 +141,11 @@ As a distributer, you would create a `snapcraft.yaml` file and upload the same o
     version: '1.0'
     summary: HP Printer Application
     description: |
-    HP Printer Application is a PAPPL (Printer Application Framework) based printer application
-    to support hp printers.
-    PAPPL is a simple C-based framework/library for developing CUPS
-    Printer Applications, which are the recommended replacement for
-    printer drivers.
+        HP Printer Application is a PAPPL (Printer Application Framework) based printer application
+        to support hp printers.
+        PAPPL is a simple C-based framework/library for developing CUPS
+        Printer Applications, which are the recommended replacement for
+        printer drivers.
 
     grade: stable
     confinement: strict
