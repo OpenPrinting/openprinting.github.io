@@ -44,7 +44,7 @@ After installation, navigate to the directory containing your application and us
 
 This creates a buildable snapcraft.yaml template within a snap sub-directory relative to your current filesystem location. 
 
-<h2 id="snapcraft"> snapcraft.yaml Format </h2> 
+<h2 id="snapcraft"> Format snapcraft.yaml </h2> 
 
 The `snapcraft.yaml` file starts with a small amount of human-readable metadata. This data is used in the presentation of your app in the Snap Store. The former keys define the build dependencies and run-time requirements.
 
@@ -129,6 +129,78 @@ ___
 ___
 
 * **parts**
+<br>The most important part of the snap, that declares build dependencies and run-time requirements that will be pulled into your snap package. The `parts` key and value in snapcraft.yaml detail how `parts` are configured and built by the snapcraft.
+
+    Each `part` is an independent building block, defined by a name and corressponding combinations of keys and values. These are some of the keys that could be used.
+
+    * **plugin**
+    <br>The plugin that will drive the build-process for this `part`.
+
+    * **source**
+    <br>A URL or path to a source tree to build. This can be a local path or remote and can refer to a directory tree, a compressed archive, or a revision control repository.
+
+    * **source-type**
+    <br>Used when the type of `source` entry cannot be detected.
+
+    * **build-packages**
+    <br>A list of packages required to build a snap.
+
+    * **stage-packages**
+    <br>A list of packages required at runtime by a snap.
+
+    * **after**
+    <br>Ensures that all the `parts` listed in after are staged before this `part` begins its lifecycle.
+
+    These are only few keys that are must to use in a printer / scanner application. The other keys can be referred from <a href="https://snapcraft.io/docs/snapcraft-parts-metadata">Snapcraft parts documentation</a>.
+
+    Your Application will contain atleast these 3 `parts`:
+    * PAPPL dependency (jpeglib)
+    * PAPPL
+    * Application
+    
+    Other `parts` includes additional dependencies, if needed by your application.
+
+    **Default Parts for Application**
+    <br>These `parts` must be included in every application. They do not require modification and the developers may consider using it as a boilerplate code for their applications.
+
+    1. JPEGLIB
+    
+        PAPPL supports `JPEG` and `PNG` format and for loading the image data, it uses `jpeglib` library. Hence it is a dependency for PAPPL and built using `autotool` plugin. The Tape Archive (TAR) file can be fetched from the below-mentioned URL.
+
+            jpeglib:
+                plugin: autotools
+                source: https://www.ijg.org/files/jpegsrc.v9d.tar.gz
+                source-type: tar
+    <br>
+
+    2. PAPPL
+    
+        It is the most important part of an application and is also built using `autotool` plugin. It is fetched from Michael's github repository using the "git" source-type. The build-packages and stage-packages are mentioned below.
+
+        *Note the `after` key is essential as `jpeglib` is a building dependency for PAPPL. Hence PAPPL must be staged after `jpeglib`.*
+
+            pappl:
+                plugin: autotools
+                configflags: [--enable-libjpeg,--enable-libpng,--enable-libusb,--with-dnssd=avahi]
+                source: https://github.com/michaelrsweet/pappl
+                source-type: git
+                build-packages: [libavahi-client-dev, libcups2-dev, libcupsimage2-dev, libgnutls28-dev, libjpeg-dev, libpam-dev, libpng-dev, libusb-1.0-0-dev, zlib1g-dev]
+                stage-packages: [libavahi-client3, libcups2, libcupsimage2, libpng16-16, libusb-1.0-0]
+                after: [jpeglib]
+    
+    <br>
+
+    **Non-Default Parts for Application**
+
+    1. Application Dependency (Optional)
+    
+        Your application may use different libraries / Utilities / APIs, for example the ones used for converting one format of data to another format, especially in the case of non-raster printers. In this case, those libraries are a dependency for the application, which needs to be specified in the `parts` section.
+
+    2. Application
+    
+        The core of the snap.
+
+        *Note that the application has a dependency on libraries as well as PAPPL. Hence don't forget to add the `after` key so that the application must be staged at the last.*
 
 ___
 
