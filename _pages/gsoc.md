@@ -9,6 +9,6 @@ permalink: /gsoc/
 
 ### 2. [GSOC 2019](/gsoc2019/)
 
-## Year-Wise GSoC Stdents
+## Year-Wise GSoC Students
 
 ### 1. [GSOC 2020](/gsoc-2020-students/)
