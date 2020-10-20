@@ -14,7 +14,6 @@ sidebar:
 <ul>
     <li>Print directly from an application on the client.</li>
     <li>Use AirPrint or IPP Everywhere printing.</li>
-    <li>Use a cloud service such as Google Cloud Print (GCP).</li>
     <li>Send the job as an email attachment to a special address.</li>
     <li>Web print. The document is uploaded from a web browser via a web form style interface.</li>
 </ul>
