@@ -34,7 +34,7 @@ You are encouraged to dive deep into the official <a href="https://snapcraft.io/
 
 Most Snaps we create are driven using `snapcraft.yaml`. This file describes a snap’s build dependencies and run-time requirements, it integrates remote repositories and extensions and runs custom scripts and hooks for better integration with CI systems.
 
-As a distributor, you would create a `snapcraft.yaml` file and upload the same on Snap Store. When the user runs `snap install`, snapcraft will fetch and open the corresponding `snapcraft.yaml`, interpret it, figure out what to do, and build your application.
+As a distributor, you would create a `snapcraft.yaml` file. This will be used by the `snapcraft` command to build your snap. Next, you would upload this `.snap` file to the Snap Store and release it on the stable channel.
 
 To start building your snap, the initial step is to install snapcraft. Kindly refer the <a href="https://snapcraft.io/docs/installing-snapcraft">installation guidelines</a> to follow the same.
 
@@ -126,7 +126,7 @@ ___
 
 ___
 
-There are other metadata that could be used to provide more information to snapcraft besides the above-listed ones. One may refer to <a href="https://snapcraft.io/docs/snapcraft-top-level-metadata">Snapcraft top-level format documentation</a> to know about these.
+There is other metadata that can be used to provide more information to snapcraft besides the above-listed ones. One may refer to <a href="https://snapcraft.io/docs/snapcraft-top-level-metadata">Snapcraft top-level format documentation</a> to know about it.
 
 ___
 
@@ -146,7 +146,7 @@ In most of the applications, command will be: `bin/<app-name>`.
 * **plugs**
 <br>A list of plugs for <a href="https://snapcraft.io/docs/interface-management">interfaces</a> to connect to. 
 
-There other snapcraft `apps` metadata may be referred from <a href='https://snapcraft.io/docs/snapcraft-app-and-service-metadata'>Snapcraft Apps Metadata Documentation</a>.
+Other snapcraft `apps` metadata may be referred from <a href='https://snapcraft.io/docs/snapcraft-app-and-service-metadata'>Snapcraft Apps Metadata Documentation</a>.
 
 A most basic example for writing `apps` metadata is given below: 
 
@@ -182,7 +182,7 @@ Each `part` is an independent building block, defined by a name and correspondin
 * **after**
 <br>Ensures that all the `parts` listed in after are staged before this `part` begins its lifecycle.
 
-These are only a few `parts` metadata that is must be used in a printer/scanner application. The other metadata can be referred from <a href="https://snapcraft.io/docs/snapcraft-parts-metadata">Snapcraft parts documentation</a>.
+Here is only a few `parts` metadata that is must to be used in a printer/scanner application. The other metadata can be referred from <a href="https://snapcraft.io/docs/snapcraft-parts-metadata">Snapcraft parts documentation</a>.
 
 Your Application will contain at least these 3 `parts`:
 * PAPPL dependency (jpeglib)
