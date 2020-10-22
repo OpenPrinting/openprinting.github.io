@@ -802,6 +802,42 @@ Currently, PAPPL supports only raster printers and that too for very few specifi
 
     }
 
+<h2 id="guidelines"> Design Guidelines </h2>
+
+* **1 Printer/Scanner Application = 1 Snap:**
+Don't make a Snap which contains tons of different printer and scanner applications. This is to ensure that you don't occupy lots of ports and network resources when you have many printer and scanner applications.
+
+* **Printer/Scanner/Fax support can be in a single application:**
+To support multi-function devices you can put all the printer, scanner, and fax support into one application.
+For example, we recommend [HPLIP](https://developers.hp.com/hp-linux-imaging-and-printing) to be put into one single application.  
+
+* **Recommended: 1 Printer/Scanner Application per project or manufacturer/product line:**
+It may be possible that a multi-function device may be served by different applications for printing and scanning. For example for legacy devices, scanning may be supported by retrofitted sane-airscan scanner application while printing is supported by the Gutenprint printer application. But here it is easier and better for the project, organization, and management that each project has its own printer/scanner application snap. So SANE will maintain a SANE scanner application snap and they put it on the Snap Store. Similarly, Gutenprint, HPLIP, foo2zjs, Epson, Canon, Ricoh, and so on will do the same.
+
+* **NOT make 1 Printer/Scanner Application for each device:** 
+For example, HP Laserjet 4 and HP Laserjet 5 should not have different applications. Otherwise, Snap Store will be cluttered with thousands of applications, and spotting the real application would be difficult. Also, it would result in a lot of code duplication, requiring more storage on the user's machine.
+
+* **1 Printer/Scanner Application = 1 Port:**
+If there are several devices connected to the system and they are served by one printer/scanner application, do not open ports for each device. Because you may run out of ports. Also, ports are not always the same on each boot as other applications may start up before on the next boot.
+
+* **For more than 1 device on 1 Application use URI: ipp://localhost:\<PORT\>/ipp/print/\<NAME\>**
+This is the recommended way to cope up with several devices by only using a single port.
+
+* **DNS-SD service names must be always the same:**
+They must be independent of order application start at boot or of device discovery. To make sure that a printer application can serve several devices of the same model include the DNS-SD service name the CEON number of the devices.
+
+* **Web admin interface should allow:**
+    1. **suppressing auto-setup for selected devices:**
+    Auto detecting devices might be unsuitable for some cases. For example, if two printer applications support the same device, the user must be able to select with which application you wish to print. So web interface must contain the option to somehow blacklist a printer application.
+
+    2. **manual setup of additional devices/instances**
+    Necessary for legacy printers that cannot be auto-discovered in the network. 
+
+    3. **configuration of options not accessible via IPP**
+    Many manufacturers have options that cannot be translated into IPP attributes. So web interface has to provide the option to set up these options.
+
+* **sane-airscan in SANE Scanner Application must be built without IPP Scan to avoid recursive discovery infinite loop (“Scanner bomb”)**
+
 <h2 id="resources"> Resources </h2>
 
 [1] <a href="../01-printer-application/">Printer Application</a>
