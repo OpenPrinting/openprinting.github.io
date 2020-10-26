@@ -8,7 +8,7 @@ excerpt: PostScript Printer Application, GSoC 2012, GSoD, LFMP, PAPPL, CUPS fork
 
 It was exactly one year ago, October 2019, when I posted my [first monthly OpenPrinting news](https://openprinting.github.io/OpenPrinting-News-October-2019/) here on [our web site](https://openprinting.github.io/news/)!
 
-Some will tell me now that I already started in September 2019, but the {September 2019 news post](https://openprinting.github.io/OpenPrinting-News-September-2019/) was only a test for the new platform and it was already October when I wrote it as an exact copy of the [original mailing list news post](https://lists.linuxfoundation.org/pipermail/printing-architecture/2019/003733.html).
+Some will tell me now that I already started in September 2019, but the [September 2019 news post](https://openprinting.github.io/OpenPrinting-News-September-2019/) was only a test for the new platform and it was already October when I wrote it as an exact copy of the [original mailing list news post](https://lists.linuxfoundation.org/pipermail/printing-architecture/2019/003733.html).
 
 ## Google Summer of Code 2020 Mentor Summit
 
@@ -38,7 +38,7 @@ In our [first LFMP project](https://people.communitybridge.org/project/7f416728-
 
 Our [second LFMP project](https://people.communitybridge.org/project/55cdb4a1-76bd-423a-ab48-3bdf1502a171) about IPP Scan is going on. [Abhik Chakraborty on the server side](https://github.com/Abhik1998/pappl/commits/master) and [Rishabh Arya on the client side](https://github.com/RishabhArya/sane-airscan-ipp/commits/master) are in the middle of their work and have passed their first evaluations.
 
-We had between Alexander Pevzner, Michael Sweet, and me whether we should actually use IPP Scan as network protocol for sandboxed packaging of scanner drivers/Scanner Applications or better eSCL instead, as eSCL is already implemented as [client](https://github.com/alexpevzner/sane-airscan) and as [server](https://github.com/SimulPiscator/AirSane), but we came to the final conclusion of continuing with IPP Scan.
+We had some discussion between Alexander Pevzner, Michael Sweet, and me whether we should actually use IPP Scan as network protocol for sandboxed packaging of scanner drivers/Scanner Applications or better eSCL instead, as eSCL is already implemented as [client](https://github.com/alexpevzner/sane-airscan) and as [server](https://github.com/SimulPiscator/AirSane), but we came to the final conclusion of continuing with IPP Scan.
 
 We only will move the assignment of the remaining work somewhat. Alexander will complete the IPP Scan support in [sane-airscan](https://github.com/alexpevzner/sane-airscan) by himself and both students will work on the server side.
 
