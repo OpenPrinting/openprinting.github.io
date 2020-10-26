@@ -85,6 +85,7 @@ Due to dormant [upstream development](https://github.com/apple/cups/) we have cr
 
 Michael Sweet has already committed a lot of changes and fixes and Debian has put the first packages of the fork into Experimental.
 
+Apple having stopped CUPS development got also talked about at [Phoronix](https://www.phoronix.com/forums/forum/software/desktop-linux/1212363-cups-printing-system-open-source-development-has-seemingly-dried-up), at the German [Linux Magazin](https://www.linux-magazin.de/news/ist-die-cups-entwicklung-eingeschlafen/), and on [the Register](https://www.theregister.com/2020/10/15/apple_cups_develoment/). I have answered on the former two, telling that we have started the fork and that CUPS will live on.
 
 ## cups-filters
 Currently released is 1.28.5.
