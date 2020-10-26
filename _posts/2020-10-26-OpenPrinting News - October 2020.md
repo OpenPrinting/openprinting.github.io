@@ -2,7 +2,7 @@
 title: OpenPrinting News - October 2020
 layout: single
 author: Till
-excerpt: PostScript Printer Application, GSoC 2012, GSoD, LFMP, PAPPL, CUPS fork, cups-filters 1.28.5
+excerpt: PostScript Printer Application, GSoC 2021, GSoD, LFMP, PAPPL, CUPS fork, cups-filters 1.28.5
 ---
 ## First year of monthly news posts completed!
 
