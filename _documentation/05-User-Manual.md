@@ -35,6 +35,12 @@ Once `snap` is installed, you can easily install any driver. Find the name of th
 <br>
 *Note: Driver auto-installation i.e. when a printer on the system is discovered, the driver can be found on the Snap Store and even can be automatically installed using the hardware signature, is under development. We will update this work on our website as soon as this is completed. Until then you have to install drivers manually.*
 
+Many interfaces are automatically connected when a snap is installed, and this ability is a property of either the interface itself, or the snap. Interfaces not connected automatically require the user to make a manual connection using the `snap connect` command.
+
+    snap connect <snap>:<plug interface> <snap>:<slot interface>
+
+Information regarding which interfaces require manual connection will be mentioned by the manufacturer.
+
 ## Web Interface
 
 The embedded server can also provide a web interface to the Printer/Scanner Application, and PAPPL includes a standard web interface that can be customized and/or overridden. Aside from the usual status monitoring functionality, the web interface can be configured to allow remote users (with proper authentication) to:
@@ -161,11 +167,15 @@ ___
 
     ![Webp net-resizeimage (14)](https://user-images.githubusercontent.com/43112419/97453631-ef279880-195b-11eb-819a-e24f2c7820ee.png)
 
+    The option can be used to configure networking settings such as the hostname and also see the list of interfaces/addresses. 
+
 * **Security**
 
     Resource path: /security
     
     ![Webp net-resizeimage (15)](https://user-images.githubusercontent.com/43112419/97453648-f2bb1f80-195b-11eb-8a60-b5ff358123d2.png)
+
+    You may use this option for setting access password.
 
 ___
 
