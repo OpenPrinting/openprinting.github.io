@@ -131,9 +131,60 @@ ___
 
     ![Webp net-resizeimage (10)](https://user-images.githubusercontent.com/43112419/97261802-9c5bbd00-1845-11eb-9618-5907372c0755.png)
 
-    
+    Many manufacturers have options that cannot be translated into IPP attributes. So web interface provides the option to set up these options in this segment.
+
+    The printing defaults are automatically fetched for each job and user is not required to pass them each and every time using the command-line.
+
 * **Media**
 
     Resource path: /\<printer_name\>/media
 
     ![Webp net-resizeimage (9)](https://user-images.githubusercontent.com/43112419/97261806-a087da80-1845-11eb-8bb9-b189f4f4553f.png)
+
+    You can use this segment to configure the loaded media including the size, offset and rolls.
+
+___
+
+### Set Location and DNS-SD name
+
+Resource path: /config
+
+![Webp net-resizeimage (13)](https://user-images.githubusercontent.com/43112419/97453115-70326000-195b-11eb-98e0-f7083ed4e1e7.png)
+
+___
+
+### Configure Networking Settings
+
+* **Networking**
+
+    Resource path: /network
+
+    ![Webp net-resizeimage (14)](https://user-images.githubusercontent.com/43112419/97453631-ef279880-195b-11eb-819a-e24f2c7820ee.png)
+
+* **Security**
+
+    Resource path: /security
+    
+    ![Webp net-resizeimage (15)](https://user-images.githubusercontent.com/43112419/97453648-f2bb1f80-195b-11eb-8a60-b5ff358123d2.png)
+
+___
+
+### Printer Specific Utilities
+
+Apart form configuring printing defaults for the printer, these are the other printer specific utilities.
+
+1. **Supplies** (*Only avilable for Office Printers*)
+
+    Resource path: /\<printer_name\>/supplies
+
+    ![Webp net-resizeimage (11)](https://user-images.githubusercontent.com/43112419/97263666-7e905700-1849-11eb-9f26-f326abb4fcb4.png)
+
+    This utility helps the user to know the remaining supplies of different inks in the cartridge of Office Printers.
+
+2. **Identify Printers**
+
+    This option supports printer identification, usually a sound or a light on the printer, which is a requirement for IPP Everywhere™ and is used to visually or audibly isolate a particular printer for the user.
+
+3. **Print Test Page**
+
+    This option helps in testing printer functionality, by issuing a print command for a sample test page. 
