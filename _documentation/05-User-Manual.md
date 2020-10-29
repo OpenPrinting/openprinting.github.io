@@ -5,18 +5,18 @@ toc_sticky: true
 h_range: [1,3]
 ---
 
-**This document will be an user manual, containing information about installing printer/scanner application drivers, installing CUPS-Snap, configuring and using Web Interface options and finally use the printer or scanner to print and scan respectively.**
+**This document will be a user manual, containing information about installing drivers provided as Printer/Scanner Applications, installing the CUPS Snap, configuring and using Web Interface options and finally use the printer or scanner to print and scan respectively.**
 
 ## Introduction
 
-The user is relieved from most of the complexities as compared to the manufacturer and OpenPrinting in this switch to new technology. They are just required to install Printer/Scanner Application Driver (based on the manufacturer and model) and use the same to get their devices working.
+The user is relieved from most of the complexities as compared to the manufacturer and OpenPrinting in this switch to new technology. They are just required to install the driver provided as a Printer/Scanner Application (based on the manufacturer and model) and use the same to get their devices working.
 
-Further, many manufacturers have options that cannot be translated into IPP attributes. So the users have the option to change their printer/scanner properties through the Web GUI provided with Printer/Scanner Application.
+Further, many manufacturer's devices have options that cannot be translated into IPP attributes. So the users have the possibility to change their printer/scanner properties through the Web GUI provided with the Printer/Scanner Application.
 
 
 ## Installation
 
-For installing Printer/Scanner Applications, you should have `snap` installed on your system.
+For installing Printer/Scanner Applications, you should have `snap` installed on your system. On many systems snap is already installed (for example Ubuntu), if not you can usually easily install it.
 
 ### Snap
 
@@ -28,12 +28,12 @@ Alternatively, `snapd` can be installed from the command line:
 
 ### Applications
 
-Once `snap` is installed, you can easily install any driver. Find the name of the application compatible with your device. This information will be provided by your device manufacturer. You can install the application from the command line:
+Once `snap` is installed, you can easily install any driver. Find the name of the application compatible with your device. This information will be provided by your device manufacturer. You can install the application browsing the Snap Store or from the command line:
 
     snap install <application-name>
 
 <br>
-*Note: Driver auto-installation i.e. when a printer on the system is discovered, the driver can be found on the Snap Store and even can be automatically installed using the hardware signature, is under development. We will update this work on our website as soon as this is completed. Until then you have to install drivers manually.*
+*Note: Driver auto-installation i.e. when a printer on the system is discovered, the driver can be found on the Snap Store and even can be automatically installed using the hardware signature, is [under development](https://forum.snapcraft.io/t/hardware-associated-snaps-snap-store-search-by-hardware-signature/). We will update this work on our website as soon as this is completed. Until then you have to install drivers manually.*
 
 Many interfaces are automatically connected when a snap is installed, and this ability is a property of either the interface itself, or the snap. Interfaces not connected automatically require the user to make a manual connection using the `snap connect` command.
 
@@ -72,9 +72,12 @@ ___
     Addition of printer requires only the following attributes:
     1. **Name** of the printer
     2. **Device** can be one from the following:
-        * [Label Printer](https://en.wikipedia.org/wiki/Label_printer)
+        * Label Printer
         * Office Printer
-        * [Network Printer](https://www.computerhope.com/jargon/n/netwprin.htm#:~:text=A%20network%20printer%20is%20a,to%20a%20single%2C%20dedicated%20computer.)
+        * Network Printer
+
+        The choices here vary with the Printer Application and the available printer devices. Usually here you will see printers which were discovered on your system, both local (USB and also manufacturer-specific or legacy connection types) and network printers. ideally only the ones actually supported by this Printer Application. Sometimes also manual options, like "Network Printer" with the possibility to eneter a host name/IP in the next field, are available, too.
+
     3. **Hostname/IP Address** of the printer required only in the case of Network Printer.
     4. **Driver Name** needs to be selected from the available list of drivers provided by the manufacturer.
 
@@ -137,9 +140,9 @@ ___
 
     ![Webp net-resizeimage (10)](https://user-images.githubusercontent.com/43112419/97261802-9c5bbd00-1845-11eb-9618-5907372c0755.png)
 
-    Many manufacturers have options that cannot be translated into IPP attributes. So web interface provides the option to set up these options in this segment.
+    Many manufacturer's devices have options that cannot be translated into IPP attributes. So the web interface provides the possibility to set up these options.
 
-    The printing defaults are automatically fetched for each job and user is not required to pass them each and every time using the command-line.
+    The printing defaults are automatically fetched for each job and the user is not required to pass them each and every time using the command-line.
 
 * **Media**
 
@@ -167,7 +170,7 @@ ___
 
     ![Webp net-resizeimage (14)](https://user-images.githubusercontent.com/43112419/97453631-ef279880-195b-11eb-819a-e24f2c7820ee.png)
 
-    The option can be used to configure networking settings such as the hostname and also see the list of interfaces/addresses. 
+    The option can be used to configure networking settings such as the hostname and also to see the list of interfaces/addresses. 
 
 * **Security**
 
@@ -175,13 +178,13 @@ ___
     
     ![Webp net-resizeimage (15)](https://user-images.githubusercontent.com/43112419/97453648-f2bb1f80-195b-11eb-8a60-b5ff358123d2.png)
 
-    You may use this option for setting access password.
+    You may use this option for setting the access password.
 
 ___
 
 ### Printer Specific Utilities
 
-Apart form configuring printing defaults for the printer, these are the other printer specific utilities.
+Apart from configuring printing defaults for the printer, these are the other printer specific utilities.
 
 1. **Supplies** (*Only avilable for Office Printers*)
 
@@ -189,7 +192,7 @@ Apart form configuring printing defaults for the printer, these are the other pr
 
     ![Webp net-resizeimage (11)](https://user-images.githubusercontent.com/43112419/97263666-7e905700-1849-11eb-9f26-f326abb4fcb4.png)
 
-    This utility helps the user to know the remaining supplies of different inks in the cartridge of Office Printers.
+    This utility helps the user to know the remaining supplies of different inks in the cartridge(s) of the printer.
 
 2. **Identify Printers**
 
