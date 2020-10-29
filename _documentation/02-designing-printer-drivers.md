@@ -828,13 +828,13 @@ They must be independent of order application start at boot or of device discove
 
 * **Web admin interface should allow:**
     1. **suppressing auto-setup for selected devices:**
-    Auto detecting devices might be unsuitable for some cases. For example, if two printer applications support the same device, the user must be able to select with which application you wish to print. So web interface must contain the option to somehow blacklist a printer application.
+    Auto detecting devices might be unsuitable for some cases. For example, if two printer applications support the same device, the user must be able to select with which application he wishes to print. So web interface must contain the option to somehow blacklist a printer application.
 
     2. **manual setup of additional devices/instances**
     Necessary for legacy printers that cannot be auto-discovered in the network. 
 
     3. **configuration of options not accessible via IPP**
-    Many manufacturers have options that cannot be translated into IPP attributes. So web interface has to provide the option to set up these options.
+    Many manufacturers have options that cannot be translated into IPP attributes. So web interface has to provide the possibility to set up these options.
 
 * **sane-airscan in SANE Scanner Application must be built without IPP Scan to avoid recursive discovery infinite loop (“Scanner bomb”)**
 
