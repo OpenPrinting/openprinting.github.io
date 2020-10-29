@@ -57,7 +57,7 @@ The embedded server can also provide a web interface to the Printer/Scanner Appl
 
 * Update the TLS certificates used by the server
 
-![Webp net-resizeimage (1)](https://user-images.githubusercontent.com/43112419/97160934-1850f900-17a3-11eb-93cd-fe881c5816b7.png)
+![Interface](../../assets/images/Web-Interface/interface.png)
 
 ___
 
@@ -67,7 +67,7 @@ ___
 
     Resource path: /addprinter
 
-    ![Webp net-resizeimage (4)](https://user-images.githubusercontent.com/43112419/97161428-d2e0fb80-17a3-11eb-856b-b56752f4995e.png)
+    ![Add Printer](../../assets/images/Web-Interface/addPrinter.png)
 
     Addition of printer requires only the following attributes:
     1. **Name** of the printer
@@ -94,7 +94,7 @@ ___
 
 Resource path: /logs
 
-![Webp net-resizeimage](https://user-images.githubusercontent.com/43112419/97160724-c7d99b80-17a2-11eb-8986-eb0b34733147.png)
+![Logs](../../assets/images/Web-Interface/logs.png)
 
 The complete system logs can be viewed here. If you prefer to read the txt file instead, use the resource path: /logfile.txt.
 
@@ -108,7 +108,7 @@ Following are the options that can be used to update the Transport Layer Securit
 
     Resource path: /tls-new-crt
 
-    ![Webp net-resizeimage (7)](https://user-images.githubusercontent.com/43112419/97260304-adef9580-1842-11eb-860b-d30552b9a5cd.png)
+    ![Create New TLS Certificate](../../assets/images/Web-Interface/create_TLS_Certificate.png)
 
     This form creates a new 'self-signed' TLS certificate for secure printing. Self-signed certificates are not automatically trusted by web browsers.
 
@@ -117,7 +117,7 @@ Following are the options that can be used to update the Transport Layer Securit
 
     Resource path: /tls-new-csr
 
-    ![Webp net-resizeimage (8)](https://user-images.githubusercontent.com/43112419/97261055-07a48f80-1844-11eb-94cb-3ac1443853bb.png)
+    ![Create TLS Certificate](../../assets/images/Web-Interface/create_TLS.png)
     
     This form creates a certificate signing request ('CSR') that you can send to a Certificate Authority ('CA') to obtain a trusted TLS certificate. The private key is saved separately for use with the certificate you get from the CA.
 
@@ -126,7 +126,7 @@ Following are the options that can be used to update the Transport Layer Securit
 
     Resource path: /tls-install-crt
 
-    ![Webp net-resizeimage (5)](https://user-images.githubusercontent.com/43112419/97259946-efcc0c00-1841-11eb-936d-6f9159d184ac.png)
+    ![TLS Install](../../assets/images/Web-Interface/install_TLS.png)
 
     This form will install a trusted TLS certificate you have obtained from a Certificate Authority ('CA'). Once installed, it will be used immediately.
 
@@ -138,7 +138,7 @@ ___
 
     Resource path: /\<printer_name\>/printing
 
-    ![Webp net-resizeimage (10)](https://user-images.githubusercontent.com/43112419/97261802-9c5bbd00-1845-11eb-9618-5907372c0755.png)
+    ![Printing Defaults](../../assets/images/Web-Interface/printing_defaults.png)
 
     Many manufacturer's devices have options that cannot be translated into IPP attributes. So the web interface provides the possibility to set up these options.
 
@@ -148,7 +148,7 @@ ___
 
     Resource path: /\<printer_name\>/media
 
-    ![Webp net-resizeimage (9)](https://user-images.githubusercontent.com/43112419/97261806-a087da80-1845-11eb-8bb9-b189f4f4553f.png)
+    ![Media Config](../../assets/images/Web-Interface/media_config.png)
 
     You can use this segment to configure the loaded media including the size, offset and rolls.
 
@@ -158,7 +158,7 @@ ___
 
 Resource path: /config
 
-![Webp net-resizeimage (13)](https://user-images.githubusercontent.com/43112419/97453115-70326000-195b-11eb-98e0-f7083ed4e1e7.png)
+![Config](../../assets/images/Web-Interface/config.png)
 
 ___
 
@@ -168,7 +168,7 @@ ___
 
     Resource path: /network
 
-    ![Webp net-resizeimage (14)](https://user-images.githubusercontent.com/43112419/97453631-ef279880-195b-11eb-819a-e24f2c7820ee.png)
+    ![Networking](../../assets/images/Web-Interface/networking.png)
 
     The option can be used to configure networking settings such as the hostname and also to see the list of interfaces/addresses. 
 
@@ -176,7 +176,7 @@ ___
 
     Resource path: /security
     
-    ![Webp net-resizeimage (15)](https://user-images.githubusercontent.com/43112419/97453648-f2bb1f80-195b-11eb-8a60-b5ff358123d2.png)
+    ![Security](../../assets/images/Web-Interface/security.png)
 
     You may use this option for setting the access password.
 
@@ -190,7 +190,7 @@ Apart from configuring printing defaults for the printer, these are the other pr
 
     Resource path: /\<printer_name\>/supplies
 
-    ![Webp net-resizeimage (11)](https://user-images.githubusercontent.com/43112419/97263666-7e905700-1849-11eb-9f26-f326abb4fcb4.png)
+    ![Supplies](../../assets/images/Web-Interface/supplies.png)
 
     This utility helps the user to know the remaining supplies of different inks in the cartridge(s) of the printer.
 
