@@ -851,3 +851,5 @@ They must be independent of order application start at boot or of device discove
 [5] <a href="../04-packaging-drivers/">Packaging Drivers and Uploading them to Snap Store</a>
 <br>
 [6] <a href="../05-User-Manual/">User Manual</a>
+<br>
+[7] <a href="https://github.com/OpenPrinting/ps-printer-app">PS Printer App Example</a>
