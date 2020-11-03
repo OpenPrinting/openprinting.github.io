@@ -201,3 +201,125 @@ Apart from configuring printing defaults for the printer, these are the other pr
 3. **Print Test Page**
 
     This option helps in testing printer functionality, by issuing a print command for a sample test page. 
+
+## Working with Command-Line
+
+Before start working with your device, you must know about the capabilities of your printer/scanner by viewing the set of sub-commands and options supported by your printer/scanner. For retrieving this information, you need to pass the `--help` argument:
+
+    <application-name> --help
+
+Although, each application may have a different usage-callback function, the default list of sub-commands and options available with all applications is shown below.
+
+    Usage: <application-name> SUB-COMMAND [OPTIONS] [FILENAME]
+        <application-name> [OPTIONS] [FILENAME]
+        <application-name> [OPTIONS] -
+
+    Sub-commands:
+    *add PRINTER      Add a printer.
+    *cancel           Cancel one or more jobs.
+    *default          Set the default printer.
+    *delete           Delete a printer.
+    *devices          List devices.
+    *drivers          List drivers.
+    *jobs             List jobs.
+    *modify           Modify a printer.
+    *options          List printer options.
+    *printers         List printers.
+    *server           Run a server.
+    *shutdown         Shutdown a running server.
+    *status           Show server/printer/job status.
+    submit           Submit a file for printing.
+
+    Options:
+    -a               Cancel all jobs (cancel).
+    -d PRINTER       Specify printer.
+    -j JOB-ID        Specify job ID (cancel).
+    -m DRIVER-NAME   Specify driver (add/modify).
+    -n COPIES        Specify number of copies (submit).
+    -o NAME=VALUE    Specify option (add,modify,server,submit).
+    -u URI           Specify ipp: or ipps: printer/server.
+    -v DEVICE-URI    Specify socket: or usb: device (add/modify).
+
+### Server Daemon
+
+* **Start Server**
+    <br>Before adding devices and submitting jobs, you must start the application as a server daemon:
+
+        <application-name> server [-o <NAME> = <VALUE>]
+
+* **Close Server**
+    <br>You can close the daemon using the following command:
+
+        <application-name> shutdown
+
+### Devices
+
+* **Adding Device**
+    <br> Add a printer queue.
+
+        <application-name> add -d <DEVICE_NAME> -m <DRIVER-NAME> -v <DEVICE-URI> [-o <NAME> = <VALUE>]
+
+* **Setting Default Device**
+
+        <application-name> default -d <DEVICE_NAME>
+
+* **Modifying Printer**
+
+        <application-name> modify -d <DEVICE_NAME> -m <DRIVER-NAME> -v <DEVICE-URI> [-o <NAME> = <VALUE>]
+
+* **Deleting Device**
+
+        <application-name> delete -d <DEVICE_NAME>
+
+### Handling Jobs
+
+* **Submit Jobs**
+
+        <application-name> submit <FILE> [-n <COPIES>] [-o <NAME> = <VALUE>]
+
+* **Cancel Jobs**
+    
+    * All jobs
+
+            <application-name> cancel -a
+
+    * Specific Job
+
+            <application-name> cancel -j <JOB-ID>
+
+### Other Utilities 
+
+* **List devices**
+
+        <application-name> devices
+
+* **List drivers**
+
+        <application-name> drivers
+
+* **List jobs**
+
+        <application-name> jobs
+
+* **List printer options**
+
+        <application-name> options
+
+* **List printers**
+
+        <application-name> printers
+
+* **Status**
+<br>Show server/printer/job status
+
+        <application-name> status
+
+## Resources
+
+[1] <a href="../01-printer-application/">Printer Application</a>
+<br>
+[2] <a href="https://snapcraft.io/docs">Snap Documentation</a>
+<br>
+[3] <a href="https://github.com/OpenPrinting/ps-printer-app/blob/master/README.md">PS Printer App README</a>
+<br>
+[4] <a href="https://github.com/michaelrsweet/hp-printer-app/blob/master/hp-printer-app.1">HP Printer App Man Page</a>
