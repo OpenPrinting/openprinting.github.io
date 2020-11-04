@@ -5,13 +5,13 @@ toc_sticky: true
 h_range: [1,3]
 ---
 
-**This document will be a user manual, containing information about installing drivers provided as Printer/Scanner Applications, installing the CUPS Snap, configuring and using Web Interface options and finally use the printer or scanner to print and scan respectively.**
+**This document will be a user manual, containing information about installing drivers provided as Printer/Scanner Applications, installing the CUPS Snap, configuring and using Web Interface options, and finally use the printer or scanner to print and scan respectively.**
 
 ## Introduction
 
 The user is relieved from most of the complexities as compared to the manufacturer and OpenPrinting in this switch to new technology. They are just required to install the driver provided as a Printer/Scanner Application (based on the manufacturer and model) and use the same to get their devices working.
 
-Further, many manufacturer's devices have options that cannot be translated into IPP attributes. So the users have the possibility to change their printer/scanner properties through the Web GUI provided with the Printer/Scanner Application.
+Further, many manufacturer's devices have options that cannot be translated into IPP attributes. So the users can change their printer/scanner properties through the Web GUI provided with the Printer/Scanner Application.
 
 
 ## Installation
@@ -35,7 +35,7 @@ Once `snap` is installed, you can easily install any driver. Find the name of th
 <br>
 *Note: Driver auto-installation i.e. when a printer on the system is discovered, the driver can be found on the Snap Store and even can be automatically installed using the hardware signature, is [under development](https://forum.snapcraft.io/t/hardware-associated-snaps-snap-store-search-by-hardware-signature/). We will update this work on our website as soon as this is completed. Until then you have to install drivers manually.*
 
-Many interfaces are automatically connected when a snap is installed, and this ability is a property of either the interface itself, or the snap. Interfaces not connected automatically require the user to make a manual connection using the `snap connect` command.
+Many interfaces are automatically connected when a snap is installed, and this ability is a property of either the interface itself or the snap. Interfaces not connected automatically require the user to make a manual connection using the `snap connect` command.
 
     snap connect <snap>:<plug interface> <snap>:<slot interface>
 
@@ -69,16 +69,16 @@ ___
 
     ![Add Printer](../../assets/images/Web-Interface/addPrinter.png)
 
-    Addition of printer requires only the following attributes:
+    The addition of a printer requires only the following attributes:
     1. **Name** of the printer
-    2. **Device** can be one from the following:
+    2. **Device** can be one of the following:
         * Label Printer
         * Office Printer
         * Network Printer
 
-        The choices here vary with the Printer Application and the available printer devices. Usually here you will see printers which were discovered on your system, both local (USB and also manufacturer-specific or legacy connection types) and network printers. ideally only the ones actually supported by this Printer Application. Sometimes also manual options, like "Network Printer" with the possibility to eneter a host name/IP in the next field, are available, too.
+        The choices here vary with the Printer Application and the available printer devices. Usually, here you will see printers which were discovered on your system, both local (USB and also manufacturer-specific or legacy connection types) and network printers. ideally only the ones supported by this Printer Application. Sometimes also manual options, like "Network Printer" with the possibility to enter a hostname/IP in the next field, are available, too.
 
-    3. **Hostname/IP Address** of the printer required only in the case of Network Printer.
+    3. **Hostname/IP Address** of the printer required only in the case of a Network Printer.
     4. **Driver Name** needs to be selected from the available list of drivers provided by the manufacturer.
 
 <br />
@@ -86,7 +86,7 @@ ___
 
     Resource path: /\<printer_name\>/delete
 
-    This option can be exercised by pressing the delete button on the right side of the name of the printer, followed by pressing button of confirmation.
+    This option can be exercised by pressing the delete button on the right side of the name of the printer, followed by pressing the button of confirmation.
 
 ___
 
@@ -96,7 +96,7 @@ Resource path: /logs
 
 ![Logs](../../assets/images/Web-Interface/logs.png)
 
-The complete system logs can be viewed here. If you prefer to read the txt file instead, use the resource path: /logfile.txt.
+The complete system logs can be viewed here. If you prefer to read the text file instead, use the resource path: /logfile.txt.
 
 ___
 
@@ -132,7 +132,7 @@ Following are the options that can be used to update the Transport Layer Securit
 
 ___
 
-### Configure Priting Defaults
+### Configure Printing Defaults
 
 * **Printing**
 
@@ -142,7 +142,7 @@ ___
 
     Many manufacturer's devices have options that cannot be translated into IPP attributes. So the web interface provides the possibility to set up these options.
 
-    The printing defaults are automatically fetched for each job and the user is not required to pass them each and every time using the command-line.
+    The printing defaults are automatically fetched for each job and the user is not required to pass them each time using the command-line.
 
 * **Media**
 
@@ -150,7 +150,7 @@ ___
 
     ![Media Config](../../assets/images/Web-Interface/media_config.png)
 
-    You can use this segment to configure the loaded media including the size, offset and rolls.
+    You can use this segment to configure the loaded media including the size, offset, and rolls.
 
 ___
 
@@ -184,9 +184,9 @@ ___
 
 ### Printer Specific Utilities
 
-Apart from configuring printing defaults for the printer, these are the other printer specific utilities.
+Apart from configuring printing defaults for the printer, these are the other printer-specific utilities.
 
-1. **Supplies** (*Only avilable for Office Printers*)
+1. **Supplies** (*Only available for Office Printers*)
 
     Resource path: /\<printer_name\>/supplies
 
@@ -201,3 +201,179 @@ Apart from configuring printing defaults for the printer, these are the other pr
 3. **Print Test Page**
 
     This option helps in testing printer functionality, by issuing a print command for a sample test page. 
+
+## Working with Command-Line
+
+Before start working with your device, you must know about the capabilities of your printer/scanner by viewing the set of sub-commands and options supported by your printer/scanner. For retrieving this information, you need to pass the `--help` argument:
+
+    <application-name> --help
+
+Although each application may have a different usage-callback function, the default list of sub-commands and options available with all applications is shown below.
+
+    Usage: <application-name> SUB-COMMAND [OPTIONS] [FILENAME]
+        <application-name> [OPTIONS] [FILENAME]
+        <application-name> [OPTIONS] -
+
+    Sub-commands:
+    add PRINTER      Add a printer.
+    cancel           Cancel one or more jobs.
+    default          Set the default printer.
+    delete           Delete a printer.
+    devices          List devices.
+    drivers          List drivers.
+    jobs             List jobs.
+    modify           Modify a printer.
+    options          List printer options.
+    printers         List printers.
+    server           Run a server.
+    shutdown         Shutdown a running server.
+    status           Show server/printer/job status.
+    submit           Submit a file for printing.
+
+    Options:
+    -a               Cancel all jobs (cancel).
+    -d PRINTER       Specify printer.
+    -j JOB-ID        Specify job ID (cancel).
+    -m DRIVER-NAME   Specify driver (add/modify).
+    -n COPIES        Specify number of copies (submit).
+    -o NAME=VALUE    Specify option (add,modify,server,submit).
+    -u URI           Specify ipp: or ipps: printer/server.
+    -v DEVICE-URI    Specify socket: or usb: device (add/modify).
+
+### Server Daemon
+
+* **Start Server**
+    <br>Before adding devices and submitting jobs, you must start the application as a server daemon:
+
+        <application-name> server [-o <NAME>=<VALUE>]
+
+    The list of options you could use are:
+
+    | Option          | Significance         |
+    |-----------------|----------------------|
+    | spool-directory | Spool directory      |
+    | log-file        | Log File             |
+    | server-hostname | Hostname             |
+    | log-level       | Log Level            |
+    | server-port     | Port                 |
+    | admin-group     | Administrative Group |
+
+* **Close Server**
+    <br>You can close the daemon using the following command:
+
+        <application-name> shutdown
+
+___
+
+### Devices
+
+* **Adding Device**
+    
+    Add a printer queue. The following fields are required to be mentioned for creating a printer queue:
+
+    1. Device name
+    2. Device URI
+    3. Driver Name
+    4. Default Options (Optional)
+    
+            <application-name> add -d <DEVICE_NAME> -m <DRIVER-NAME> -v <DEVICE-URI> [-o <NAME>=<VALUE>]
+
+* **Setting Default Device**
+    
+    Get/Set the default the printer queue. The default device is used when the device is not inputted along with the job. 
+
+    * Get the Default Device
+
+            <application-name> default
+
+    * Set the Default Device
+
+            <application-name> default -d <DEVICE_NAME>
+
+* **Modifying Printer**
+
+    Modify a printer queue by changing the following fields:
+
+    1. Device URI
+    2. Driver Name
+    3. Default Options
+
+            <application-name> modify -d <DEVICE_NAME> [-m <DRIVER-NAME>] [-v <DEVICE-URI>] [-o <NAME> = <VALUE>]
+
+* **Deleting Device**
+
+    Delete a printer queue.
+
+        <application-name> delete -d <DEVICE_NAME>
+
+___
+
+### Handling Jobs
+
+* **Submit Jobs**
+
+    Submit a file for printing.
+
+        <application-name> submit <FILE> [-n <COPIES>] [-o <NAME> = <VALUE>]
+
+* **Cancel Jobs**
+    
+    * All jobs
+
+            <application-name> cancel -a
+
+    * Specific Job
+
+            <application-name> cancel -j <JOB-ID>
+
+___
+
+### Other Utilities 
+
+* **List devices**
+
+    List connected printers.
+
+        <application-name> devices
+
+* **List drivers**
+
+    List the supported drivers.
+
+        <application-name> drivers
+
+* **List jobs**
+
+    List pending print jobs.
+
+        <application-name> jobs
+
+* **List printer options**
+
+    List supported options.
+
+        <application-name> options
+
+* **List printers**
+
+    List the printer queues.
+
+        <application-name> printers
+
+* **Status**
+
+    Show server/printer/job status.
+
+        <application-name> status
+
+## Resources
+
+[1] <a href="../01-printer-application/">Printer Application</a>
+<br>
+[2] <a href="https://snapcraft.io/docs">Snap Documentation</a>
+<br>
+[3] <a href="https://github.com/OpenPrinting/ps-printer-app/blob/master/README.md">PS Printer App README</a>
+<br>
+[4] <a href="https://github.com/michaelrsweet/hp-printer-app/blob/master/hp-printer-app.1">HP Printer App Man Page</a>
+<br>
+[5] <a href="https://github.com/michaelrsweet/pappl/tree/master/doc">PAPPL Documentation</a>
