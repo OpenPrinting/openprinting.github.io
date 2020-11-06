@@ -208,7 +208,7 @@ Before start working with your device, you must know about the capabilities of y
 
     <application-name> --help
 
-Although each application may have a different usage-callback function, the default list of sub-commands and options available with all applications is shown below.
+The default list of sub-commands and options available with all applications is shown below.
 
     Usage: <application-name> SUB-COMMAND [OPTIONS] [FILENAME]
         <application-name> [OPTIONS] [FILENAME]
@@ -239,6 +239,8 @@ Although each application may have a different usage-callback function, the defa
     -o NAME=VALUE    Specify option (add,modify,server,submit).
     -u URI           Specify ipp: or ipps: printer/server.
     -v DEVICE-URI    Specify socket: or usb: device (add/modify).
+
+*Note: Printer Application can have additional sub-commands. You can get the information about them using the `--help` argument.*
 
 ### Server Daemon
 
@@ -277,6 +279,14 @@ ___
     4. Default Options (Optional)
     
             <application-name> add -d <DEVICE_NAME> -m <DRIVER-NAME> -v <DEVICE-URI> [-o <NAME>=<VALUE>]
+
+    You can obtain the possible list of `<DRIVER-NAME>` values via the call with the `drivers` sub-command:
+
+        <application-name> drivers
+
+    You can also obtain the possible list of `<DEVICE-URI>` values via the call with the `devices` sub-command:
+
+        <application-name> devices
 
 * **Setting Default Device**
     
@@ -332,7 +342,7 @@ ___
 
 * **List devices**
 
-    List connected printers.
+    List the connected printers.
 
         <application-name> devices
 
@@ -350,7 +360,7 @@ ___
 
 * **List printer options**
 
-    List supported options.
+    List the supported options.
 
         <application-name> options
 
