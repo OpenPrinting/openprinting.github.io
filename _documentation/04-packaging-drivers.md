@@ -293,3 +293,5 @@ The further steps are extensively covered in the official documentation of Snaps
 [5] <a href="https://github.com/OpenPrinting/cups-snap">CUPS Snap</a>
 <br>
 [6] <a href="https://github.com/michaelrsweet/hp-printer-app">HP Printer App Example</a>
+<br>
+[7] <a href="https://github.com/OpenPrinting/ps-printer-app">PS Printer App Example</a>
