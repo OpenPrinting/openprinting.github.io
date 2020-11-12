@@ -20,7 +20,7 @@ Our OpenPrinting project is continuing well. Most pages of [Piyush Goyal's proje
 Next steps for the time being until IPP Scan gets far enough for being documented is to check whether everything is correct, recent API changes in PAPPL taken into account, design of existing Printer Applications, like the [HP PCL](https://github.com/michaelrsweet/hp-printer-app/) and the [PostScript](https://github.com/OpenPrinting/ps-printer-app) Printer Applications explained, ...
 
 ## Linux Foundation Mentorship Program
-Our [second LFMP project](https://people.communitybridge.org/project/55cdb4a1-76bd-423a-ab48-3bdf1502a171) about IPP Scan is going on, with both Abhik Chakraborty and Rishabh Arya woring on the IPP Scan server/Scanner Application. Abhik is introducing Rishabh into PAPPL and the IPP server work. Mentoring will be mainly done by Michael Sweet.
+Our [second LFMP project](https://mentorship.lfx.linuxfoundation.org/project/55cdb4a1-76bd-423a-ab48-3bdf1502a171) about IPP Scan is going on, with both Abhik Chakraborty and Rishabh Arya woring on the IPP Scan server/Scanner Application. Abhik is introducing Rishabh into PAPPL and the IPP server work. Mentoring will be mainly done by Michael Sweet.
 
 ## PAPPL first beta release
 PAPPL made it to its first beta release, [1.0b1](https://github.com/michaelrsweet/pappl/releases/tag/v1.0b1)!
