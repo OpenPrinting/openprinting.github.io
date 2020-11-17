@@ -48,7 +48,9 @@ The scanner interface returns a single page at a time as uncompressed (or lossle
 
 ## Designing Components
 
-PAPPL provides callbacks for most of the events including submitting print/scan jobs, querying printer/scanner status and capabilities, and so forth to reduce the manufacturer's job and hence designing scanner applications is very much similar to designing printer application. The only difference if the additional callback support provided for the scan command. 
+PAPPL provides callbacks for most of the events including submitting print/scan jobs, querying printer/scanner status and capabilities, and so forth to reduce the manufacturer's job and hence designing scanner applications is very much similar to designing printer application. The only difference if the additional callback support provided for the scan command. Since this support is added in PAPPL, you as a manufacturer do not need to worry about this implementation as well.
+
+Hence refer to <a href="../02-designing-printer-drivers/">Tutorial to Design Printer Drivers</a> and follow the same for Designing Scanner Applications as well.
 
 ## Example for PAPPL-based Scanner Driver
 
