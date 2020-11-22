@@ -4,19 +4,19 @@ toc: true
 toc_sticky: true
 h_range: [1,3]
 ---
-**Currently PAPPL only provides framework for Printer Application. The codebase is currently under development and will be expanded in a future version of PAPPL to incorporate Multi Function Printer (MFP) functionalities such as scanning.** 
+**Currently PAPPL only provides framework for Printer Applications. The codebase is currently under development and will be expanded in a future version of PAPPL to incorporate Multi Function Printer (MFP) functionalities such as scanning.** 
 
-**This document contains information for manufacturers for designing scanner drivers. Note that since the codebase is still under development, the document describes things as planned to be executed. In case of any changes, it will be updated as soon as possible. Also a complete tutorial along examples will be documented after the support for MFP functionalities is released.**
+**This document contains information for manufacturers for designing scanner drivers. Note that since the codebase is still under development, the document describes things as planned to be executed. In case of any changes, it will be updated as soon as possible. Also a complete tutorial along with examples will be provided after the support for MFP functionality is released.**
 
 ## Introduction
 
-A driver is a code or data specific to a certain model or group of hardware devices, needed to make the hardware work with the hardware-model-independent code of the operating system. Printing in Linux has moved towards [Driverless Printing](https://openprinting.github.io/driverless/) and so does Scanning, which means there is no need for any hardware-model-specific code or data. 
+A driver is code or data specific to a certain model or group of hardware devices, needed to make the hardware work with the hardware-model-independent code of the operating system. Printing in Linux has moved towards [Driverless Printing](https://openprinting.github.io/driverless/) and so does Scanning, which means there is no need for any hardware-model-specific code or data. 
 
-Kindly refer to <a href="../02-designing-printer-drivers/">Tutorial to Design Printer Drivers</a> know more about Printer Applications and their designing. Designing Scanner Applications is very much similar and expects the manufacturers to use PAPPL framework to reduce their effort in implementing all things from scratch.
+Kindly refer to <a href="../02-designing-printer-drivers/">Tutorial to Design Printer Drivers</a> to know more about Printer Applications and their designing. Designing Scanner Applications is very similar and expects the manufacturers to use the PAPPL framework to reduce their effort in implementing all things from scratch..
 
-## Working of PAPPL-based Scanner Driver
+## How a PAPPL-based Scanner Driver should work
 
-PAPPL provides support for the below mentioned commands by default:
+PAPPL provides support for the below-mentioned sub-commands by default:
 
 * add
 * cancel
@@ -34,9 +34,9 @@ PAPPL provides support for the below mentioned commands by default:
 * status
 * submit
 
-Once the User issues any of the following Sub-command, The printer/scanner application converts these commands (or corresponding IPP requests) into the necessary USB/network/etc. communications to perform a scan, get capabilities, and so forth.
+Once the User issues any of the following sub-commands, the printer/scanner application converts these commands (or corresponding IPP requests) into the necessary USB/network/etc. communication to perform a scan, get capabilities, and so forth.
 
-The class of device that we are supporting for PAPPL, the scanner will only produce raster data. It might provide native `TIFF` support, but that is probably about it.
+In the class of device that we are supporting with PAPPL, the scanner will only produce raster data. It might provide native TIFF support, but that is probably all about it. PDF for example is not supported.
 
 The PAPPL scan interface should pull image data for the current page in one of three formats: 1-bit grayscale, 8-bit grayscale, and 24-bit sRGB. It will then be up to PAPPL to deliver the pages to the Client in `PNG`, `JPEG`, `TIFF`, or `PDF` format.  For `PNG` and `JPEG`, each page is a separate document in the scan job.  For `TIFF` and `PDF`, a single document is generated and streamed to the Client in response to the Get-Next-Document-Data operation.
 
@@ -48,7 +48,7 @@ The scanner interface returns a single page at a time as uncompressed (or lossle
 
 ## Designing Components
 
-PAPPL provides callbacks for most of the events including submitting print/scan jobs, querying printer/scanner status and capabilities, and so forth to reduce the manufacturer's job and hence designing scanner applications is very much similar to designing printer application. The only difference if the additional callback support provided for the scan command. Since this support is added in PAPPL, you as a manufacturer do not need to worry about this implementation as well.
+PAPPL provides callbacks for most of the events including submitting print/scan jobs, querying printer/scanner status and capabilities, and so forth to reduce the manufacturer's workload and hence designing scanner applications is very much similar to designing printer applications. The only difference is the additional callback support provided for the scan command. Since this support is added in PAPPL, you as a manufacturer do not need to worry about this implementation as well.
 
 Hence refer to <a href="../02-designing-printer-drivers/">Tutorial to Design Printer Drivers</a> and follow the same for Designing Scanner Applications as well.
 
