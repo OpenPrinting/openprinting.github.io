@@ -25,67 +25,97 @@ The following tutorial helps you to understand how to design each component and 
 
     papplMainLoop is the main entry point for the application. It runs a standard main loop with a [system callback](#system_cb()). Also allows the printer application to define its own [usage callback](#usage_cb()) and have an [application specific subcommand](#subcmd_cb()).
 
-        int papplMainloop(
-            int                  argc,
-            char                 *argv[],
-            const char           *version,
-            pappl_ml_usage_cb_t  usage_cb,  
-            const char           *subcmd_name,
-            pappl_ml_subcmd_cb_t subcmd_cb,
-            pappl_ml_system_cb_t system_cb,
-            void                 *data
-        )
+    The `papplMainloop` function runs until all processing for the current sub-command is complete, returning the exit status for the program.
+
+    ```c
+    int					        // O - Exit status
+    papplMainloop(
+        int                   argc,		// I - Number of command line arguments
+        char                  *argv[],	        // I - Command line arguments
+        const char            *version,	        // I - Version number
+        const char            *footer_html,	// I - Footer HTML or `NULL` for none
+        int                   num_drivers,	// I - Number of drivers
+        pappl_pr_driver_t     *drivers,	        // I - Drivers
+        pappl_pr_driver_cb_t  driver_cb,	        // I - Driver callback
+        pappl_ml_autoadd_cb_t autoadd_cb,	        // I - Auto-add callback or `NULL` for none
+        const char            *subcmd_name,	// I - Sub-command name or `NULL` for none
+        pappl_ml_subcmd_cb_t  subcmd_cb,	        // I - Sub-command callback or `NULL` for none
+        pappl_ml_system_cb_t  system_cb,	        // I - System callback or `NULL` for default
+        pappl_ml_usage_cb_t   usage_cb,	        // I - Usage callback or `NULL` for default
+        void                  *data               // I - Context pointer
+    )
+    ```
+
+    Before looking at the arguments, you must be aware that there are two ways to configure the papplMainloop:
+
+    1. **Use system callback argument**
+
+        The system is an object of type `pappl_system_t` that manages client and device connections, listeners, the log, printers, and resources. In addition, it provides an optional embedded web interface, raw socket printing, and USB printer gadget (Linux only).
+
+        The system callback argument specifies a function that will create a new system, i.e. a `pappl_system_t` object. You can use the callback function to customisably configure system properties using the <a href="../../pappl-system-utilities/">PAPPL System Utilities</a>. This includes configuring Footer HTML on your web interface and setting up drivers.
+        
+        You can refer [designing system callback](#systemcallback) guidelines for retrieving more information about the System Callback function.
+
+    2. **Without system callback function** 
+
+        PAPPL allows the manufacture to refrain from the hardships of designing a system callback to create a system. You can specify the system callback as `NULL` and pass on only a few arguments:
+            
+        * [Footer HTML](#footer)
+        * [Number of drivers](#num-of-driver)
+        * [Drivers](#drivers)
+        * [Driver Callback](#driver-callback)
+
+
+        If the "system_cb" argument is passed as `NULL`, PAPPL automatically sets up the list of drivers passed as "drivers" arguments and add the Footer HTML for the web interface (in "footer" argument is not `NULL`). A default system object is created for the printer application, which supports multiple printers and a web interface.
+
+    ___
+
+    The `argc` and `argv` arguments for `papplMainLoop` are those provided to the `main` function. Other arguments are given below. 
 
     1. ### Version number
 
-        This argument is simply a string literal, denoting the version of the printer driver.
+        This argument is simply a string literal, denoting the numeric version of the printer driver that conforms to semantic versioning guidelines with up to four numbers, for example "1.2.3.4"
         
         Examples of valid version number are "1.0", "2.1", etc.
-    <br>
+    
+    2. <h3 id="footer">  Footer HTML </h3>
 
-    2. <h3 id="usage_cb()">  Usage Callback </h3>
+        The "footer_html" argument can be provided to override the default footer text that appears at the bottom of the web interface. 
 
-        This function helps the user to know about the capabilities of your printer by showing the set of sub-commands and options supported by your printer. For retrieving the output of this function, the user needs to pass the `--help` argument.
+        As mentioned above, you can pass this argument as `NULL` and add the footer in system callback function. If system callback and "footer_html" argument both are `NULL` the default is used.
 
-        One may specify the usage callback argument as `NULL` in the papplMainloop function. The `default` function is utilized in this situation. The default function shows the default list of sub-commands and options. The output of the default usage callback function is shown below.
-            
-            Usage: <basename> SUB-COMMAND [OPTIONS] [FILENAME]
-                <basename> [OPTIONS] [FILENAME]
-                <basename> [OPTIONS] -
+    3. <h3 id="num-of-driver">  Number of drivers </h3>
 
-            Sub-commands:
-            add PRINTER      Add a printer.
-            cancel           Cancel one or more jobs.
-            default          Set the default printer.
-            delete           Delete a printer.
-            devices          List devices.
-            drivers          List drivers.
-            jobs             List jobs.
-            modify           Modify a printer.
-            options          List printer options.
-            printers         List printers.
-            server           Run a server.
-            shutdown         Shutdown a running server.
-            status           Show server/printer/job status.
-            submit           Submit a file for printing.
+        The "num_drivers" argument specifies the number of drivers for printers. Specify `0` if the drivers are configured in the system callback.
 
-            Options:
-            -a               Cancel all jobs (cancel).
-            -d PRINTER       Specify printer.
-            -j JOB-ID        Specify job ID (cancel).
-            -m DRIVER-NAME   Specify driver (add/modify).
-            -n COPIES        Specify number of copies (submit).
-            -o NAME=VALUE    Specify option (add,modify,server,submit).
-            -u URI           Specify ipp: or ipps: printer/server.
-            -v DEVICE-URI    Specify socket: or usb: device (add/modify).
+    4. <h3 id="drivers"> Drivers </h3>
+
+        The drivers list is a collection of names, descriptions, IEEE-1284 device IDs, and extension pointers. You can pass this argument as `NULL` if the drivers are configured in the system callback.
         
+        A valid example for HP DeskJet, HP LaserJet, and a generic PCL driver, looks like this:
 
-        If your printer supports only the default set of sub-commands, you can use the default usage callback function. If you wish to output different information when the user uses --help command-line argument, follow the designing **[usage callback function](#usagecallback)** guidelines.
+        ```c
+        static pappl_pr_driver_t pcl_drivers[] =// Driver information
+        {   /* name */          /* description */       /* device ID */ /* extension */
+        { "hp_deskjet",       "HP Deskjet",           NULL,           NULL },
+        { "hp_generic",       "Generic PCL",          "CMD:PCL;",     NULL },
+        { "hp_laserjet",      "HP LaserJet",          NULL,           NULL }
+        };
+        ```
 
+    5. <h3 id="driver-callback"> Driver Callback </h3>
 
-    3. ### Sub-command name
+        The driver callback is responsible for providing the data associated with each driver and is called when the system is creating a new printer. It also responsible for letting the application know what functions to call when performing job functions like starting a job, starting a page, writing a line, ending a page, ending a job, printing a raw job, etc.
 
-        This argument is a string literal that denotes the sub-command supported by your printer driver. By default, PAPPL helps each driver to support the following sub-commands:
+        You can pass this argument as `NULL` if the drivers are configured in the system callback. Else, for designing the driver callback function, refer to the [design driver callback](#callback) guidelines.  
+
+    6. ### Autoadd Callback
+
+        The "autoadd_cb" argument specifies a callback for automatically adding new printers with the "autoadd" sub-command. It tells PAPPL which driver to use for the printers it finds.
+
+    7. ### Sub-command name
+
+        This argument is a string literal that denotes the additional custom sub-command supported by your printer driver. By default, PAPPL helps each driver to support the following sub-commands:
 
         * add
         * cancel
@@ -102,9 +132,9 @@ The following tutorial helps you to understand how to design each component and 
         * status
         * submit
 
-        If your printer doesn't support any additional sub-command, you may specify the argument as `NULL`.
+        If your printer doesn't support any additional custom sub-command, you may specify the argument as `NULL`.
 
-    4. <h3 id="subcmd_cb()">  Sub-command Callback </h3>
+    8. <h3 id="subcmd_cb()">  Sub-command Callback </h3>
 
         This callback argument is the function that is to be executed when the sub-command(other than the default sub-commands) is specified.
         
@@ -112,13 +142,57 @@ The following tutorial helps you to understand how to design each component and 
 
         If you wish to support additional sub-command, then specify the name of the sub-command in the **sub-command name** argument and design a function using the **[design sub-command callback](#subcommandcallback)** guidelines.
 
-    5. <h3 id="system_cb()"> System Callback </h3>
+    9. <h3 id="system_cb()"> System Callback </h3>
 
-        The System Callback function creates a system object and allows restoring the previous system configuration(if any). Hence, it cannot be `NULL`. Kindly refer to the **[Design system callback](#systemcallback)** guidelines for retrieving more information about the System Callback function.
+        The System Callback function creates a system object and allows restoring the previous system configuration(if any). Kindly refer to the **[Design system callback](#systemcallback)** guidelines for retrieving more information about the System Callback function.
 
-    6. ### Data
+    10. <h3 id="usage_cb()">  Usage Callback </h3>
 
-        This argument is a string literal and signifies the context of the printer driver.  
+        This function helps the user to know about the capabilities of your printer by showing the set of sub-commands and options supported by your printer. For retrieving the output of this function, the user needs to pass the `--help` argument.
+
+        One may specify the usage callback argument as `NULL` in the papplMainloop function. The `default` function is utilized in this situation. The default function shows the default list of sub-commands and options. The output of the default usage callback function is shown below.
+        
+        ```c
+        Usage: <basename> SUB-COMMAND [OPTIONS] [FILENAME]
+                <basename> [OPTIONS] [FILENAME]
+                <basename> [OPTIONS] -
+
+        Sub-commands:
+            add PRINTER      Add a printer.
+            [autoadd          Automatically add supported printers.]
+            cancel           Cancel one or more jobs.
+            default          Set the default printer.
+            delete           Delete a printer.
+            devices          List devices.
+            drivers          List drivers.
+            jobs             List jobs.
+            modify           Modify a printer.
+            options          List printer options.
+            printers         List printers.
+            server           Run a server.
+            shutdown         Shutdown a running server.
+            status           Show server/printer/job status.
+            submit           Submit a file for printing.
+
+        Options:
+            -a               Cancel all jobs (cancel).
+            -d PRINTER       Specify printer.
+            -j JOB-ID        Specify job ID (cancel).
+            -m DRIVER-NAME   Specify driver (add/modify).
+            -n COPIES        Specify number of copies (submit).
+            -o NAME=VALUE    Specify option (add,modify,server,submit).
+            -u URI           Specify ipp: or ipps: printer/server.
+            -v DEVICE-URI    Specify socket: or usb: device (add/modify).
+        ```
+        
+
+        If your printer supports only the default set of sub-commands, you can use the default usage callback function. If you wish to output different information when the user uses --help command-line argument, follow the designing **[usage callback function](#usagecallback)** guidelines.
+
+
+    11. ### Data
+
+        This argument is a string literal and provides the application-specific data for any of the callback functions.
+
 
 <h2 id="design"> Designing Components </h2>
 
