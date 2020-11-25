@@ -15,7 +15,7 @@ For Designing the Printer Application Driver, it would be a lot of re-inventing 
 
 The flowchart below mentions the components of the driver that needs to be designed by you (boxes in blue color), along with the PAPPL utilities (boxes in red color) that would be used by your designed components.
 
-![Untitled Diagram (3)](https://user-images.githubusercontent.com/43112419/93055564-cb98df00-f688-11ea-9cbd-a6b9d40230c1.png)  
+![Flowchart](../../assets/images/flowchart.png) 
 
 The following tutorial helps you to understand how to design each component and integrate the PAPPL Utilities to reduce your work. 
 
@@ -493,7 +493,8 @@ ___
 
     In the other case, the `write` function is used. This is complemented using other functions such as `rstartpage`, `rendpage`, `rstartjob`, and `rendjob`.  
 
-    ![writevsprint (2)](https://user-images.githubusercontent.com/43112419/94988119-a234ea00-0588-11eb-9228-d9c64d86314e.png)
+    ![rwriteVSrprint](../../assets/images/rwriteVsrprint.png) 
+
 
 ___
 
