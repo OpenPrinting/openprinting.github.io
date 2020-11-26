@@ -198,9 +198,11 @@ The following tutorial helps you to understand how to design each component and 
 
 * <h3 id = "usagecallback"> Usage Callback </h3>
 
-        pappl_ml_usage_cb_t  usage_cb (
-            void *data
-        );
+    ```c
+    pappl_ml_usage_cb_t  usage_cb (
+        void *data
+    );
+    ```
 
     The usage callback function receives only one argument, i.e. the callback data.
     
@@ -212,26 +214,30 @@ ___
 
     This function allows the printer application to have an application-specific subcommand.
 
-        pappl_ml_subcmd_cb_t subcmd_cb (
-            const char      *base_name,
-            int             options,
-            cups_option_t   *options,
-            int             num_files,
-            char            **files,
-            void            *data
-        );
+    ```c
+    pappl_ml_subcmd_cb_t subcmd_cb (
+        const char      *base_name,
+        int             options,
+        cups_option_t   *options,
+        int             num_files,
+        char            **files,
+        void            *data
+    );
+    ```
 
     The Sub-Command callback function receives six arguments Basename, Number of options, Options, Number of files, Name of files, and Callback data. It then returns a new sub-command object.
 
 ___
 
 * <h3 id = "systemcallback"> System Callback </h3>
-        
-        pappl_ml_system_cb_t *system_cb (
-            int             num_options,
-            cups_option_t   *options,
-            void            *data
-        );
+
+    ```c 
+    pappl_ml_system_cb_t *system_cb (
+        int             num_options,
+        cups_option_t   *options,
+        void            *data
+    );
+    ```
 
     The system callback function receives three arguments Number of options, Options, and Callback data. It then returns a new system object.
 
@@ -273,9 +279,11 @@ ___
         | port          | server-port     | 
 
         The syntax for using `cupsGetOption` is:
-
-            <variable_name> = cupsGetOption(<option_name>, num_options, options)
         
+        ```c
+        <variable_name> = cupsGetOption(<option_name>, num_options, options)
+        ```
+
         Notes:
 
         * The return type for `cupsGetOption` utility is char*. Hence for "log-level" and "server-port" options, first fetch them into the `val` variable.
@@ -299,17 +307,21 @@ ___
 
         The variables defined and fetched above are passed to papplSystemCreate utility to create a system.
 
-            pappl_system_t* papplSystemCreate(
-                pappl_soptions_t    options,
-                const char          *name,
-                int                 port,
-                const char          *subtypes,
-                const char          *spooldir,
-                const char          *logfile,
-                pappl_loglevel_t    loglevel,
-                const char          *auth_service,
-                bool                tls_only
-            );
+        The system is an object of type `pappl_system_t` that manages client and device connections, listeners, the log, printers, and resources.  It implements a subset of the IPP System Service ([PWG 5100.22](https://ftp.pwg.org/pub/pwg/candidates/cs-ippsystem10-20191122-5100.22.pdf)) with each printer implementing IPP Everywhere™ ([PWG 5100.14](https://ftp.pwg.org/pub/pwg/candidates/cs-ippeve11-20200515-5100.14.pdf)) and some extensions to provide compatibility with the full range of mobile and desktop client devices.  In addition, it provides an optional embedded web interface, raw socket printing, and USB printer gadget (Linux only).
+
+        ```c
+        pappl_system_t* papplSystemCreate(
+            pappl_soptions_t    options,
+            const char          *name,
+            int                 port,
+            const char          *subtypes,
+            const char          *spooldir,
+            const char          *logfile,
+            pappl_loglevel_t    loglevel,
+            const char          *auth_service,
+            bool                tls_only
+        );
+        ```
         
         * The `soptions` variable is passed as the first argument, which is an bitwise `ORed` of the following options:
         
@@ -353,9 +365,11 @@ ___
     
     This function defines the list of printer drivers and [driver callback function](#callback).
 
-        void pcl_setup (
-            pappl_system_t *system
-        );
+    ```c
+    void pcl_setup (
+        pappl_system_t *system
+    );
+    ```
     
     The Driver setup function receives only one argument, i.e. system object.
 
@@ -367,35 +381,40 @@ ___
 
     2. **Call papplSystemSetPrintDrivers**
 
-            void papplSystemSetPrintDrivers(
-                pappl_system_t      *system,
-                int                 num_names,
-                const char * const  *names,
-                const char * const  *desc,
-                pappl_pdriver_cb_t  cb,
-                void                *data
-            );
+        ```c
+        void papplSystemSetPrintDrivers(
+            pappl_system_t      *system,
+            int                 num_names,
+            const char * const  *names,
+            const char * const  *desc,
+            pappl_pdriver_cb_t  cb,
+            void                *data
+        );
+        ```
 
         * The received pappl_system_t object is passed as the first argument.
         * Pass the number of drivers as the second argument
         * The defined driver name and description array are passed as the third and fourth arguments respectively. 
-        * Pass the [Callback Function](#callback) as fifth argument.
+        * Pass the [Driver Callback Function](#callback) as fifth argument.
         * Pass the callback data as the 6th argument. 
 
 ___
 
-* <h3 id = "callback"> Callback Function </h3>
+* <h3 id = "callback"> Driver Callback Function </h3>
 
     This function tells the printer application what functions to call when performing job functions like starting a job, starting a page, writing a line, ending a page, ending a job, printing a raw job. Driver capability information and defaults(such as resolution, color, etc.) are also provided here.
 
-        bool pcl_callback (
-            pappl_system_t          *system,
-            const char              *driver_name,
-            const char              *device_uri,
-            pappl_pdriver_data_t    *driver_data,
-            ipp_t                   **driver_attrs,
-            void                    *data
-        );
+    ```c
+    bool pcl_callback (
+        pappl_system_t          *system,
+        const char              *driver_name,
+        const char              *device_uri,
+        const char              *device_id,
+        pappl_pdriver_data_t    *driver_data,
+        ipp_t                   **driver_attrs,
+        void                    *data
+    );
+    ```
 
     The callback function receives six arguments System object, Driver name, Device URI, Driver data, Driver Attributes, and Callback data. It then returns either `true` on success or `false` on failure.
 
@@ -502,41 +521,70 @@ ___
     
      The function helps to identify a printer using display, flash, sound, or speech.
 
-        void pcl_identify(
-            pappl_printer_t          *printer,
-            pappl_identify_actions_t actions,
-            const char               *message
-        );
+    ```c
+    void pcl_identify(
+        pappl_printer_t          *printer,
+        pappl_identify_actions_t actions,
+        const char               *message
+    );
+    ```
 
     The Identify function receives three arguments that are the Printer, Actions to take, and Messages (if any).
+
+    The Identification methods are summarised in the table:
+    
+    | Identification Method          | Action                         |
+    |--------------------------------|--------------------------------|
+    | PAPPL_IDENTIFY_ACTIONS_SOUND   | Make a sound                   |
+    | PAPPL_IDENTIFY_ACTIONS_DISPLAY | display a message (argument)   |
+    | PAPPL_IDENTIFY_ACTIONS_SPEAK   | speak a message (argument)     |
+    | PAPPL_IDENTIFY_ACTIONS_FLASH   | flashes a light on the printer |
 
 ___
 
 * <h3 id = "print"> Print Function </h3>
 
-    It is used to print a raw job - called if the job format is the same as the format specified by the [driver callback](#callback).
+    It is used to print a raw job (printer-ready) file, i.e. if the job format is the same as the format specified by the [driver callback](#callback).
 
-        bool pcl_print(
-            pappl_job_t      *job,
-            pappl_poptions_t *options,
-            pappl_device_t   *device
-        );
+    ```c
+    bool pcl_print(
+        pappl_job_t      *job,
+        pappl_poptions_t *options,
+        pappl_device_t   *device
+    );
+    ```
 
-    The Print function receives three arguments that are Job, Job Options, and device. The function returns true on success and false on failure.
+    The Print function receives three arguments that are Job, Job Options, and device.
+    
+    * The "job" argument provides the current job object.
+    * The "options" pointer provides the current [print job options](#pappl_pr_options_s).
+    * The "device" argument is a pointer used to send data to the printer. 
+    
+    The function returns true on success and false on failure.
+
+    This callback will sometimes send some printer initialization commands followed by the job file and then any cleanup commands. It may also be able to count the number of pages (impressions) in the file, although that is not a requirement.
 
 ___
 
 * <h3 id = "rendjob"> End Job Function </h3>
 
-    This function is called to end a job.
+    This function is called at the end of each page where the driver will typically eject the current page.
 
-        bool pcl_rendjob(
-            pappl_job_t      *job,
-            pappl_poptions_t *options,
-            pappl_device_t   *device
-        );
+    ```c
+    bool pcl_rendjob(
+        pappl_job_t      *job,
+        pappl_poptions_t *options,
+        pappl_device_t   *device
+    );
+    ```
 
-    The End Job function receives three arguments that are Job, Job Options, and device. The function returns true on success and false on failure.
+    The End Job function receives three arguments that are Job, Job Options, and device. 
+    
+    * The "job" argument provides the current job object.
+    * The "options" pointer provides the current [print job options](#pappl_pr_options_s). 
+    * The "device" argument is a pointer used to send data to the printer. 
+    
+    The function returns true on success and false on failure.
 
     Note that the job data set by [Start Job Function](#rstartjob) must be freed in this function.
 
@@ -546,72 +594,112 @@ ___
 
     This function is called each time a page is completed. It helps in resetting the buffers used by the driver.
 
-        bool pcl_rendpage(
-            pappl_job_t      *job,
-            pappl_poptions_t *options,
-            pappl_device_t   *device,
-            unsigned         page
-        )
+    ```c
+    bool pcl_rendpage(
+        pappl_job_t      *job,
+        pappl_poptions_t *options,
+        pappl_device_t   *device,
+        unsigned         page
+    )
+    ```
     
-    The End Page function receives four arguments that are Job, Job Options, Device, and Page Number. The function returns true on success and false on failure.
+    The End Page function receives four arguments that are Job, Job Options, Device, and Page Number. 
+    
+    * The "job" argument provides the current job object.
+    * The "options" pointer provides the current [print job options](#pappl_pr_options_s). 
+    * The "device" argument is a pointer used to send data to the printer. 
+    * The "page" argument specifies the current page number staring at `0`.
+    
+    The function returns true on success and false on failure.
 
 ___
 
 * <h3 id = "rstartjob"> Start Job Function </h3>
 
-    This function is called when starting a job. The job data is stored with the job.
+    This function is called at the beginning of a job to allow the driver to initialize the printer for the current job.
 
-        bool pcl_rstartjob(
-            pappl_job_t      *job,
-            pappl_poptions_t *options,
-            pappl_device_t   *device
-        );
+    ```c
+    bool pcl_rstartjob(
+        pappl_job_t      *job,
+        pappl_poptions_t *options,
+        pappl_device_t   *device
+    );
+    ```
 
-    The Start-Job function, like the End Job Function, receives three arguments that are Job, Job Options, and device. The function returns true on success and false on failure.
+    The Start-Job function, like the End Job Function, receives three arguments that are Job, Job Options, and device.
+
+    * The "job" argument provides the current job object.
+    * The "options" pointer provides the current [print job options](#pappl_pr_options_s). 
+    * The "device" argument is a pointer used to send data to the printer. 
+    
+    The function returns true on success and false on failure.
 
 ___
 
 * <h3 id = "rstartpage"> Start Page Function </h3>
 
-    This function is called when starting a page. Information regarding the page is obtained from the page header and attributes like resolution, margins, page size, orientation, and graphics are set appropriately.
+    This function is called when starting a page to allow the driver to do any per-page initialization and/or memory allocations and send any printer commands that are necessary to start a new page. Information regarding the page is obtained from the page header and attributes like resolution, margins, page size, orientation, and graphics are set appropriately.
 
-        bool pcl_rstartpage(
-            pappl_job_t      *job,
-            pappl_poptions_t *options,
-            pappl_device_t   *device,
-            unsigned         page
-        )
+    ```c
+    bool pcl_rstartpage(
+        pappl_job_t      *job,
+        pappl_poptions_t *options,
+        pappl_device_t   *device,
+        unsigned         page
+    )
+    ```
 
-    The Start Page function receives four arguments that are Job, Job Options, Device, and Page Number. The function returns true on success and false on failure.
+    The Start Page function receives four arguments that are Job, Job Options, Device, and Page Number.
+
+    * The "job" argument provides the current job object.
+    * The "options" pointer provides the current [print job options](#pappl_pr_options_s). 
+    * The "device" argument is a pointer used to send data to the printer. 
+    * The "page" argument specifies the current page number staring at `0`.
+    
+    The function returns true on success and false on failure.
 
 ___
 
 * <h3 id = "writeline"> Write Line Function </h3>
 
-    This function writes a line of graphics.
+    This function writes a line of graphics and is called for each raster line on the page. It is typically responsible for dithering and compressing the raster data for the printer.
 
-        bool pcl_rwrite(
-            pappl_job_t         *job,
-            pappl_poptions_t    *options,
-            pappl_device_t      *device,
-            unsigned            y,
-            const unsigned char *pixels
-        )
+    ```c
+    bool pcl_rwrite(
+        pappl_job_t         *job,
+        pappl_poptions_t    *options,
+        pappl_device_t      *device,
+        unsigned            y,
+        const unsigned char *pixels
+    )
+    ```
 
-    The Write Line function receives five arguments that are Job, Job Options, Device, Line number, and Line. The function returns true on success and false on failure.
+    The Write Line function receives five arguments that are Job, Job Options, Device, Line number, and Line.
+
+    * The "job" argument provides the current job object.
+    * The "options" pointer provides the current [print job options](#pappl_pr_options_s). 
+    * The "device" argument is a pointer used to send data to the printer. 
+    * The "y" argument specifies the current line number.
+    * The "pixels" argument is a pointer to the content of current line.
+    
+    The function returns true on success and false on failure.
 
 ___
 
 * <h3 id = "status"> Printer Status Function </h3>
 
-    This function gets the printer status.
+    The PAPPL status callback is used to update the printer state, supply levels, and/or ready media for the printer:
 
-        bool pcl_status(
-            pappl_printer_t *printer
-        )
+
+    ```c
+    bool pcl_status(
+        pappl_printer_t *printer
+    )
+    ```
 
     The Printer Status Function receives only one argument and that is the printer. It returns true on success and false on failure.
 
+    The callback can open a connection to the printer using the `papplPrinterOpenDevice` function.
 
 <h2 id="non-raster"> Add Support for Non-Raster Printers</h2>
 
@@ -625,13 +713,15 @@ Currently, PAPPL supports only raster printers and that too for very few specifi
 
     You need to add filter callback from format received by the printer application(formats which you wish your printer can support and accept the job in) to printer-specific format(format/languages that the printer actually understands) using `papplSystemAddMIMEFilter` utility.
 
-        void papplSystemAddMIMEFilter(
-            pappl_system_t *system,
-            const char *srctype,
-            const char *dsttype,
-            pappl_mime_filter_cb_t cb,
-            void *data
-        );
+    ```c
+    void papplSystemAddMIMEFilter(
+        pappl_system_t *system,
+        const char *srctype,
+        const char *dsttype,
+        pappl_mime_filter_cb_t cb,
+        void *data
+    );
+    ```
 
     | Parameter | Significance                                  |
     |-----------|-----------------------------------------------|
@@ -647,11 +737,13 @@ Currently, PAPPL supports only raster printers and that too for very few specifi
 
     The filter callback function converts the whole job's data into a data stream which the printer understands.
 
-        bool papplJobFilter(
-            pappl_job_t    *job,
-            pappl_device_t *device,
-            void           *data
-        )
+    ```c
+    bool papplJobFilter(
+        pappl_job_t    *job,
+        pappl_device_t *device,
+        void           *data
+    )
+    ```
 
     The filter callback function receives 3 parameters, that are the Job, the Device, and the Filter data.
 
