@@ -6,6 +6,14 @@ Till:
   github : "tillkamppeter"
   location  : "Vienna, Austria"
 #
+Mike:
+  name    : "Michael Sweet"
+  bio     : "Author of CUPS and PAPPL"
+  avatar  : "https://openprinting.github.io/assets/images/michael-sweet.jpg"
+#  email  : "msweet@msweet.org"
+  github : "michaelrsweet"
+  location  : "Canada"
+#
 Aveek:
   name    : "Aveek Basu"
   bio     : "OpenPrinting Program Manager"
