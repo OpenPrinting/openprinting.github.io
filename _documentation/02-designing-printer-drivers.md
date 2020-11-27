@@ -754,220 +754,248 @@ Currently, PAPPL supports only raster printers and that too for very few specifi
 
 <h2 id="template"> Template for PAPPL-based Printer Driver </h2>
 
-    //
-    // Include necessary headers
-    //
-    # include <pappl/pappl.h>
+```c
+//
+// Include necessary headers...
+//
+# include <pappl/pappl.h>
 
 
-    // Declare structure for Job Data
+// Declare structure for Job Data
 
 
-    // Declare supported media sizes for different models of printers
+// Declare supported media sizes for different models of printers
 
 
-    //
-    // Declare local functions
-    //
+//
+// Declare local functions
+//
 
-    static bool   callback(pappl_system_t *system, const char *driver_name, const char *device_uri, pappl_pdriver_data_t *driver_data, ipp_t **driver_attrs, void *data);
-    static void   compress_data(pappl_job_t *job, pappl_device_t *device, unsigned char *line, unsigned length, unsigned plane, unsigned type);
-    static void   identify(pappl_printer_t *printer, pappl_identify_actions_t actions, const char *message);
-    static bool   print(pappl_job_t *job, pappl_poptions_t *options, pappl_device_t *device);
-    static bool   rendjob(pappl_job_t *job, pappl_poptions_t *options, pappl_device_t *device);
-    static bool   rendpage(pappl_job_t *job, pappl_poptions_t *options, pappl_device_t *device, unsigned page);
-    static bool   rstartjob(pappl_job_t *job, pappl_poptions_t *options, pappl_device_t *device);
-    static bool   rstartpage(pappl_job_t *job, pappl_poptions_t *options, pappl_device_t *device, unsigned page);
-    static bool   rwrite(pappl_job_t *job, pappl_poptions_t *options, pappl_device_t *device, unsigned y, const unsigned char *pixels);
-    static void   setup(pappl_system_t *system);
-    static bool   status(pappl_printer_t *printer);
-    static pappl_system_t   *system_cb(int num_options, cups_option_t *options, void *data);
-
-
-    //
-    // 'main()' - Main entry for the hp-printer-app.
-    //
-
-    int
-    main(int  argc,             // I - Number of command-line arguments
-        char *argv[])           // I - Command-line arguments
-    {
-    papplMainloop(argc, argv, "1.0", NULL, NULL, NULL, system_cb, "hp_printer_app");
-    return (0);
-    }
+static const char *pcl_autoadd(const char *device_info, const char *device_uri, const char *device_id, void *data);
+static bool   pcl_callback(pappl_system_t *system, const char *driver_name, const char *device_uri, const char *device_id, pappl_pr_driver_data_t *driver_data, ipp_t **driver_attrs, void *data);
+static void   pcl_compress_data(pappl_job_t *job, pappl_device_t *device, unsigned char *line, unsigned length, unsigned plane, unsigned type);
+static bool   pcl_print(pappl_job_t *job, pappl_pr_options_t *options, pappl_device_t *device);
+static bool   pcl_rendjob(pappl_job_t *job, pappl_pr_options_t *options, pappl_device_t *device);
+static bool   pcl_rendpage(pappl_job_t *job, pappl_pr_options_t *options, pappl_device_t *device, unsigned page);
+static bool   pcl_rstartjob(pappl_job_t *job, pappl_pr_options_t *options, pappl_device_t *device);
+static bool   pcl_rstartpage(pappl_job_t *job, pappl_pr_options_t *options, pappl_device_t *device, unsigned page);
+static bool   pcl_rwriteline(pappl_job_t *job, pappl_pr_options_t *options, pappl_device_t *device, unsigned y, const unsigned char *pixels);
+static void   pcl_setup(pappl_system_t *system);
+static bool   pcl_status(pappl_printer_t *printer);
+static void   setup(pappl_system_t *system);
+static pappl_system_t   *system_cb(int num_options, cups_option_t *options, void *data);
 
 
-    //
-    // 'callback()' - PCL callback.
-    //
+//
+// 'main()' - Main entry for the application.
+//
 
-    static bool                // O - `true` on success, `false` on failure
-    callback(
-        pappl_system_t       *system,      // I - System
-        const char           *driver_name,   // I - Driver name
-        const char           *device_uri,      // I - Device URI
-        pappl_pdriver_data_t *driver_data,   // O - Driver data
-        ipp_t                **driver_attrs, // O - Driver attributes
-        void                 *data)    // I - Callback data
-    {
-
-    }
-
-
-    //
-    // 'compress_data()' - Compress a line of graphics.
-    //
-
-    static void
-    compress_data(
-        pappl_job_t    *job,        // I - Job object
-        pappl_device_t *device,     // I - Device
-        unsigned char  *line,       // I - Data to compress
-        unsigned       length,      // I - Number of bytes
-        unsigned       plane,       // I - Color plane
-        unsigned       type)        // I - Type of compression
-    {
-    
-    }
+int
+main(int  argc,				// I - Number of command-line arguments
+     char *argv[])			// I - Command-line arguments
+{
+  return (papplMainloop(argc, argv,
+                        /*version*/"1.0",
+                        /*footer_html*/NULL,
+                        (int)(sizeof(pcl_drivers) / sizeof(pcl_drivers[0])),
+                        pcl_drivers, pcl_callback, pcl_autoadd,
+                        /*subcmd_name*/NULL, /*subcmd_cb*/NULL,
+                        /*system_cb*/NULL,
+                        /*usage_cb*/NULL,
+                        /*data*/NULL));
+}
 
 
-    //
-    // 'identify()' - Identify the printer.
-    //
+//
+// 'pcl_autoadd()' - Auto-add PCL printers.
+//
 
-    static void
-    identify(
-        pappl_printer_t          *printer,  // I - Printer
-        pappl_identify_actions_t actions,   // I - Actions to take
-        const char               *message)  // I - Message, if any
-    {
-    // Identify a printer using display, flash, sound, or speech.
-    }
+static const char *			// O - Driver name or `NULL` for none
+pcl_autoadd(const char *device_info,	// I - Device name
+            const char *device_uri,	// I - Device URI
+            const char *device_id,	// I - IEEE-1284 device ID
+            void       *data)		// I - Callback data (not used)
+{
 
-
-    //
-    // 'print()' - Print file.
-    //
-
-    static bool                           // O - `true` on success, `false` on failure
-    print(
-        pappl_job_t      *job,            // I - Job
-        pappl_poptions_t *options,        // I - Options
-        pappl_device_t   *device)         // I - Device
-    {
-
-    }
+}
 
 
-    //
-    // 'rendjob()' - End a job.
-    //
+//
+// 'pcl_callback()' - PCL callback.
+//
 
-    static bool                     // O - `true` on success, `false` on failure
-    rendjob(
-        pappl_job_t      *job,      // I - Job
-        pappl_poptions_t *options,  // I - Options
-        pappl_device_t   *device)   // I - Device
-    {
+static bool				// O - `true` on success, `false` on failure
+pcl_callback(
+    pappl_system_t         *system,	// I - System
+    const char             *driver_name,
+					// I - Driver name
+    const char             *device_uri,// I - Device URI (not used)
+    const char             *device_id,	// I - IEEE-1284 device ID (not used)
+    pappl_pr_driver_data_t *driver_data,
+					// O - Driver data
+    ipp_t                  **driver_attrs,
+					// O - Driver attributes (not used)
+    void                   *data)	// I - Callback data (not used)
+{
 
-    }
-
-
-    //
-    // 'rendpage()' - End a page.
-    //
-
-    static bool                     // O - `true` on success, `false` on failure
-    rendpage(
-        pappl_job_t      *job,      // I - Job
-        pappl_poptions_t *options,  // I - Job options
-        pappl_device_t   *device,   // I - Device
-        unsigned         page)      // I - Page number
-    {
-
-    }
+}
 
 
-    //
-    // 'rstartjob()' - Start a job.
-    //
+//
+// 'pcl_compress_data()' - Compress a line of graphics.
+//
 
-    static bool                     // O - `true` on success, `false` on failure
-    rstartjob(
-        pappl_job_t      *job,      // I - Job
-        pappl_poptions_t *options,  // I - Job options
-        pappl_device_t   *device)   // I - Device
-    {
+static void
+pcl_compress_data(
+    pappl_job_t    *job,		// I - Job object
+    pappl_device_t *device,		// I - Device
+    unsigned char  *line,		// I - Data to compress
+    unsigned       length,		// I - Number of bytes
+    unsigned       plane,		// I - Color plane
+    unsigned       type)		// I - Type of compression
+{
 
-    }
-
-
-    //
-    // 'rstartpage()' - Start a page.
-    //
-
-    static bool                      // O - `true` on success, `false` on failure
-    rstartpage(
-        pappl_job_t       *job,       // I - Job
-        pappl_poptions_t  *options,   // I - Job options
-        pappl_device_t    *device,    // I - Device
-        unsigned          page)       // I - Page number
-    {
-
-    }
+}
 
 
-    //
-    // 'rwrite()' - Write a line.
-    //
+//
+// 'identify()' - Identify the printer.
+//
 
-    static bool             // O - `true` on success, `false` on failure
-    rwrite(
-        pappl_job_t         *job,       // I - Job
-        pappl_poptions_t    *options,   // I - Job options
-        pappl_device_t      *device,    // I - Device
-        unsigned            y,      // I - Line number
-        const unsigned char *pixels)    // I - Line
-    {
-
-    }
+static void
+identify(
+    pappl_printer_t          *printer,  // I - Printer
+    pappl_identify_actions_t actions,   // I - Actions to take
+    const char               *message)  // I - Message, if any
+{
+// Identify a printer using display, flash, sound, or speech.
+}
 
 
-    //
-    // 'setup()' - Setup PCL drivers.
-    //
+//
+// 'pcl_print()' - Print file.
+//
 
-    static void
-    setup(
-        pappl_system_t *system)      // I - System
-    {
-    
-    }
+static bool				// O - `true` on success, `false` on failure
+pcl_print(
+    pappl_job_t      *job,		// I - Job
+    pappl_pr_options_t *options,		// I - Options
+    pappl_device_t   *device)		// I - Device
+{
 
-
-    //
-    // 'status()' - Get printer status.
-    //
-
-    static bool                   // O - `true` on success, `false` on failure
-    status(
-        pappl_printer_t *printer) // I - Printer
-    {
-
-    }
+}
 
 
-    //
-    // 'system_cb()' - System callback.
-    //
+//
+// 'pcl_rendjob()' - End a job.
+//
 
-    pappl_system_t *            // O - New system object
-    system_cb(int           num_options,    // I - Number of options
-        cups_option_t *options, // I - Options
-        void          *data)        // I - Callback data
-    {
+static bool				// O - `true` on success, `false` on failure
+pcl_rendjob(
+    pappl_job_t      *job,		// I - Job
+    pappl_pr_options_t *options,		// I - Options
+    pappl_device_t   *device)		// I - Device
+{
 
-    }
+}
+
+
+//
+// 'pcl_rendpage()' - End a page.
+//
+
+static bool				// O - `true` on success, `false` on failure
+pcl_rendpage(
+    pappl_job_t      *job,		// I - Job
+    pappl_pr_options_t *options,		// I - Job options
+    pappl_device_t   *device,		// I - Device
+    unsigned         page)		// I - Page number
+{
+
+}
+
+
+//
+// 'pcl_rstartjob()' - Start a job.
+//
+
+static bool				// O - `true` on success, `false` on failure
+pcl_rstartjob(
+    pappl_job_t      *job,		// I - Job
+    pappl_pr_options_t *options,		// I - Job options
+    pappl_device_t   *device)		// I - Device
+{
+
+}
+
+
+//
+// 'pcl_rstartpage()' - Start a page.
+//
+
+static bool				// O - `true` on success, `false` on failure
+pcl_rstartpage(
+    pappl_job_t      *job,		// I - Job
+    pappl_pr_options_t *options,		// I - Job options
+    pappl_device_t   *device,		// I - Device
+    unsigned         page)		// I - Page number
+{
+
+}
+
+
+//
+// 'pcl_rwriteline()' - Write a line.
+//
+
+static bool				// O - `true` on success, `false` on failure
+pcl_rwriteline(
+    pappl_job_t         *job,		// I - Job
+    pappl_pr_options_t    *options,	// I - Job options
+    pappl_device_t      *device,	// I - Device
+    unsigned            y,		// I - Line number
+    const unsigned char *pixels)	// I - Line
+{
+
+}
+
+
+//
+// 'pcl_status()' - Get printer status.
+//
+
+static bool				// O - `true` on success, `false` on failure
+pcl_status(
+    pappl_printer_t *printer)		// I - Printer
+{
+
+}
+
+
+//
+// 'setup()' - Setup PCL drivers.
+//
+
+static void
+setup(
+    pappl_system_t *system)      // I - System
+{
+
+}
+
+
+//
+// 'system_cb()' - System callback.
+//
+
+pappl_system_t *            // O - New system object
+system_cb(int           num_options,    // I - Number of options
+    cups_option_t *options, // I - Options
+    void          *data)        // I - Callback data
+{
+
+}
+```
 
 <h2 id="guidelines"> Design Guidelines </h2>
 
