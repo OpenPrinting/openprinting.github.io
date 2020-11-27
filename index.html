@@ -24,7 +24,7 @@ header:
     - label: "Learn More"
       url: "/about-us/"
 excerpt: "Making printing just work!"
-intro: 
+intro:
   - excerpt: 'OpenPrinting works on the development of printing technology for Linux and Unix-style operating systems. We collaborate with IEEE-ISTO Printer Working Group(PWG) for Internet Printing Protocol(IPP) projects.'
 feature_row:
   - image_path: assets/images/gsod.jpg
@@ -61,7 +61,7 @@ feature_row:
     url: "/contribute"
     btn_label: "Read More"
     btn_class: "btn--primary"
-  
+
 database-intro:
   - excerpt: "OpenPrinting hosts a Printer Compatibility Database. It contains entries from both the Foomatic Package and the community."
 
@@ -69,7 +69,7 @@ database:
   - image_path: /assets/images/Configuration.png
     alt: "Printer Compatibility Database"
     title: "Printer Compatibility Database"
-    excerpt: "The OpenPrinting database contains a wealth of information about specific printers, along with extensive driver information, 
+    excerpt: "The OpenPrinting database contains a wealth of information about specific printers, along with extensive driver information,
     the drivers themselves, basic specifications, and an associated set of configuration tools."
     url: "http://openprinting.org/database"
     btn_label: "Read More"
@@ -111,7 +111,7 @@ database:
 
                 {% if post.excerpt %}
                   <p class="archive__item-excerpt" itemprop="description">
-                  {{ post.excerpt | markdownify | strip_html | truncate:160}}
+                  {{ post.excerpt | markdownify | strip_html | truncate:200}}
                   </p>
                 {% endif %}
 
