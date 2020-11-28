@@ -53,8 +53,7 @@ A **Printer Application's Web Interface** provides configurability and makes it 
 
 <h2 id="roles">Roles and Responsiblities</h2>
 
-
-![printerapp (1)](https://user-images.githubusercontent.com/43112419/87853120-229e6400-c925-11ea-89b4-a0dbcfdb9b49.jpg)
+![Roles Flowchart](../../assets/images/roles-flowchart.jpg) 
 
 <h3>OpenPrinting</h3>
 <ul>
