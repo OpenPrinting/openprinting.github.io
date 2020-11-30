@@ -210,35 +210,37 @@ Before start working with your device, you must know about the capabilities of y
 
 The default list of sub-commands and options available with all applications is shown below.
 
-    Usage: <application-name> SUB-COMMAND [OPTIONS] [FILENAME]
-        <application-name> [OPTIONS] [FILENAME]
-        <application-name> [OPTIONS] -
+```c
+Usage: <application-name> SUB-COMMAND [OPTIONS] [FILENAME]
+    <application-name> [OPTIONS] [FILENAME]
+    <application-name> [OPTIONS] -
 
-    Sub-commands:
-    add PRINTER      Add a printer.
-    cancel           Cancel one or more jobs.
-    default          Set the default printer.
-    delete           Delete a printer.
-    devices          List devices.
-    drivers          List drivers.
-    jobs             List jobs.
-    modify           Modify a printer.
-    options          List printer options.
-    printers         List printers.
-    server           Run a server.
-    shutdown         Shutdown a running server.
-    status           Show server/printer/job status.
-    submit           Submit a file for printing.
+Sub-commands:
+add PRINTER      Add a printer.
+cancel           Cancel one or more jobs.
+default          Set the default printer.
+delete           Delete a printer.
+devices          List devices.
+drivers          List drivers.
+jobs             List jobs.
+modify           Modify a printer.
+options          List printer options.
+printers         List printers.
+server           Run a server.
+shutdown         Shutdown a running server.
+status           Show server/printer/job status.
+submit           Submit a file for printing.
 
-    Options:
-    -a               Cancel all jobs (cancel).
-    -d PRINTER       Specify printer.
-    -j JOB-ID        Specify job ID (cancel).
-    -m DRIVER-NAME   Specify driver (add/modify).
-    -n COPIES        Specify number of copies (submit).
-    -o NAME=VALUE    Specify option (add,modify,server,submit).
-    -u URI           Specify ipp: or ipps: printer/server.
-    -v DEVICE-URI    Specify socket: or usb: device (add/modify).
+Options:
+-a               Cancel all jobs (cancel).
+-d PRINTER       Specify printer.
+-j JOB-ID        Specify job ID (cancel).
+-m DRIVER-NAME   Specify driver (add/modify).
+-n COPIES        Specify number of copies (submit).
+-o NAME=VALUE    Specify option (add,modify,server,submit).
+-u URI           Specify ipp: or ipps: printer/server.
+-v DEVICE-URI    Specify socket: or usb: device (add/modify).
+```
 
 *Note: Printer Application can have additional sub-commands. You can get the information about them using the `--help` argument.*
 
