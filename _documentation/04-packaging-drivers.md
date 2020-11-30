@@ -76,7 +76,6 @@ ___
 <br>A human-readable string(enclosed within single-quotes) of maximum size 32 characters, represents the version number of your snap. A higher version number generally corresponds to a new application. 
 
         version: '1.0'
-
 ___
 
 * **summary**
@@ -89,12 +88,14 @@ ___
 * **description**
 <br>Description is used to provide a little more detail about your application. You could as many lines as you want in this field.
 
-        description: |
-            HP Printer Application is a PAPPL (Printer Application Framework) based printer application
-            to support hp printers.
-            PAPPL is a simple C-based framework/library for developing CUPS
-            Printer Applications, which are the recommended replacement for
-            printer drivers.
+    ```c
+    description: |
+        HP Printer Application is a PAPPL (Printer Application Framework) based printer application
+        to support hp printers.
+        PAPPL is a simple C-based framework/library for developing CUPS
+        Printer Applications, which are the recommended replacement for
+        printer drivers.
+    ```
 
 ___
 
@@ -150,10 +151,12 @@ Other snapcraft `apps` metadata may be referred from <a href='https://snapcraft.
 
 A most basic example for writing `apps` metadata is given below: 
 
-    apps:
-        hp-printer-app:
-            command: bin/hp-printer-app
-            plugs: [avahi-observe, home, log-observe, network, network-bind, network-manager, raw-usb]
+```c
+apps:
+    hp-printer-app:
+        command: bin/hp-printer-app
+        plugs: [avahi-observe, home, log-observe, network, network-bind, network-manager, raw-usb]
+```
 
 Note that you must specify the `<snap-name>` same as `<app-name>` so that it can be invoked by just specifying the `<app-name>`. However, if they differ, the program will be exposed as `<snap-name>.<app-name>`. 
 
@@ -197,11 +200,13 @@ Other `parts` includes additional dependencies if needed by your application.
 1. JPEGLIB
 
     PAPPL supports `JPEG` and `PNG` format and for loading the image data, it uses the `jpeglib` library. Hence it is a dependency for PAPPL and built using the `autotool` plugin. The Tape Archive (TAR) file can be fetched from the below-mentioned URL.
-
-        jpeglib:
-            plugin: autotools
-            source: https://www.ijg.org/files/jpegsrc.v9d.tar.gz
-            source-type: tar
+    
+    ```c
+    jpeglib:
+        plugin: autotools
+        source: https://www.ijg.org/files/jpegsrc.v9d.tar.gz
+        source-type: tar
+    ```
 
 
 2. PAPPL
@@ -210,14 +215,16 @@ Other `parts` includes additional dependencies if needed by your application.
 
     *Note the `after` key is essential as `jpeglib` is a building dependency for PAPPL. Hence PAPPL must be staged after `jpeglib`.*
 
-        pappl:
-            plugin: autotools
-            configflags: [--enable-libjpeg,--enable-libpng,--enable-libusb,--with-dnssd=avahi]
-            source: https://github.com/michaelrsweet/pappl
-            source-type: git
-            build-packages: [libavahi-client-dev, libcups2-dev, libcupsimage2-dev, libgnutls28-dev, libjpeg-dev, libpam-dev, libpng-dev, libusb-1.0-0-dev, zlib1g-dev]
-            stage-packages: [libavahi-client3, libcups2, libcupsimage2, libpng16-16, libusb-1.0-0]
-            after: [jpeglib]
+    ```c
+    pappl:
+        plugin: autotools
+        configflags: [--enable-libjpeg,--enable-libpng,--enable-libusb,--with-dnssd=avahi]
+        source: https://github.com/michaelrsweet/pappl
+        source-type: git
+        build-packages: [libavahi-client-dev, libcups2-dev, libcupsimage2-dev, libgnutls28-dev, libjpeg-dev, libpam-dev, libpng-dev, libusb-1.0-0-dev, zlib1g-dev]
+        stage-packages: [libavahi-client3, libcups2, libcupsimage2, libpng16-16, libusb-1.0-0]
+        after: [jpeglib]
+    ```
 
 <br>
 
@@ -236,44 +243,46 @@ Other `parts` includes additional dependencies if needed by your application.
 
 <h2 id="template"> Template </h2>
 
-    name: hp-printer-app
-    base: core18
-    version: '1.0'
-    summary: HP Printer Application
-    description: |
-        HP Printer Application is a PAPPL (Printer Application Framework) based printer application
-        to support hp printers.
-        PAPPL is a simple C-based framework/library for developing CUPS
-        Printer Applications, which are the recommended replacement for
-        printer drivers.
+```c
+name: hp-printer-app
+base: core18
+version: '1.0'
+summary: HP Printer Application
+description: |
+    HP Printer Application is a PAPPL (Printer Application Framework) based printer application
+    to support hp printers.
+    PAPPL is a simple C-based framework/library for developing CUPS
+    Printer Applications, which are the recommended replacement for
+    printer drivers.
 
-    grade: stable
-    confinement: strict
+grade: stable
+confinement: strict
 
-    apps:
-        hp-printer-app:
-            command: bin/hp-printer-app
-            plugs: [avahi-observe, home, log-observe, network, network-bind, network-manager, raw-usb]
+apps:
+    hp-printer-app:
+        command: bin/hp-printer-app
+        plugs: [avahi-observe, home, log-observe, network, network-bind, network-manager, raw-usb]
 
-    parts:
-        jpeglib:
-            plugin: autotools
-            source: https://www.ijg.org/files/jpegsrc.v9d.tar.gz
-            source-type: tar
+parts:
+    jpeglib:
+        plugin: autotools
+        source: https://www.ijg.org/files/jpegsrc.v9d.tar.gz
+        source-type: tar
 
-        pappl:
-            plugin: autotools
-            configflags: [--enable-libjpeg,--enable-libpng,--enable-libusb,--with-dnssd=avahi]
-            source: https://github.com/michaelrsweet/pappl
-            source-type: git
-            build-packages: [libavahi-client-dev, libcups2-dev, libcupsimage2-dev, libgnutls28-dev, libjpeg-dev, libpam-dev, libpng-dev, libusb-1.0-0-dev, zlib1g-dev]
-            stage-packages: [libavahi-client3, libcups2, libcupsimage2, libpng16-16, libusb-1.0-0]
-            after: [jpeglib]
+    pappl:
+        plugin: autotools
+        configflags: [--enable-libjpeg,--enable-libpng,--enable-libusb,--with-dnssd=avahi]
+        source: https://github.com/michaelrsweet/pappl
+        source-type: git
+        build-packages: [libavahi-client-dev, libcups2-dev, libcupsimage2-dev, libgnutls28-dev, libjpeg-dev, libpam-dev, libpng-dev, libusb-1.0-0-dev, zlib1g-dev]
+        stage-packages: [libavahi-client3, libcups2, libcupsimage2, libpng16-16, libusb-1.0-0]
+        after: [jpeglib]
 
-        hp-printer-app:
-            plugin: make
-            source: .
-            after: [pappl]
+    hp-printer-app:
+        plugin: make
+        source: .
+        after: [pappl]
+```
 
 <h2 id="release"> Releasing to Snap Store </h2>
 
