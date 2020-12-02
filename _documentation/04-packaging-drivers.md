@@ -88,7 +88,7 @@ ___
 * **description**
 <br>Description is used to provide a little more detail about your application. You could as many lines as you want in this field.
 
-    ```c
+    ```
     description: |
         HP Printer Application is a PAPPL (Printer Application Framework) based printer application
         to support hp printers.
@@ -151,7 +151,7 @@ Other snapcraft `apps` metadata may be referred from <a href='https://snapcraft.
 
 A most basic example for writing `apps` metadata is given below: 
 
-```c
+```
 apps:
     hp-printer-app:
         command: bin/hp-printer-app
@@ -201,7 +201,7 @@ Other `parts` includes additional dependencies if needed by your application.
 
     PAPPL supports `JPEG` and `PNG` format and for loading the image data, it uses the `jpeglib` library. Hence it is a dependency for PAPPL and built using the `autotool` plugin. The Tape Archive (TAR) file can be fetched from the below-mentioned URL.
     
-    ```c
+    ```
     jpeglib:
         plugin: autotools
         source: https://www.ijg.org/files/jpegsrc.v9d.tar.gz
@@ -215,7 +215,7 @@ Other `parts` includes additional dependencies if needed by your application.
 
     *Note the `after` key is essential as `jpeglib` is a building dependency for PAPPL. Hence PAPPL must be staged after `jpeglib`.*
 
-    ```c
+    ```
     pappl:
         plugin: autotools
         configflags: [--enable-libjpeg,--enable-libpng,--enable-libusb,--with-dnssd=avahi]
@@ -243,7 +243,7 @@ Other `parts` includes additional dependencies if needed by your application.
 
 <h2 id="template"> Template </h2>
 
-```c
+```
 name: hp-printer-app
 base: core18
 version: '1.0'
