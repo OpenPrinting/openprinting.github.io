@@ -56,12 +56,18 @@ A **Printer Application's Web Interface** provides configurability and makes it 
 ![Roles Flowchart](../../assets/images/roles-flowchart.jpg) 
 
 <h3>OpenPrinting</h3>
-<ul>
+
 <li><strong>CUPS Snap <sup><a href="https://github.com/OpenPrinting/cups-snap">[2]</a></sup></strong> This is a complete printing stack in a Snap. It contains not only CUPS but also cups-filters, Ghostscript, and Poppler. It is everything which is required for printing, except Printer Drivers. Till Kamppeter has created this in order to provide a complete printing stack for a purely Snap-based Operating System.</li>
 <br>
 <li><strong>PAPPL <sup><a href="https://github.com/michaelrsweet/pappl/">[3]</a></sup></strong> Printer Applications have a lot in common. It would be a lot of re-inventing the wheel if everyone who wants to create a printer driver has to implement all this. Therefore Michael Sweet has created PAPPL, a library which provides all the common functionality which is needed in every Printer Application.</li>
 <br>
 <li><strong>Web Interface</strong> Printer Applications also provide a Web Interface to easily configure Printer's Capabilities. This GUI helps people who were unaware to change printer properties directly in PPD files and were forced to pass the similar printing options through Command line, each and every time.</li>
+<br>
+<li><strong>CUPS filters <sup><a href="https://github.com/OpenPrinting/cups-filters">[8]</a></sup></strong> These are APIs that can be utilized to perform the conversion of data of files from one format to another. 
+
+Currently, PAPPL supports only raster printers and that too for very few specific input formats like JPEG and PNG. For adding support for non-raster printers like PDF and PostScript printers, you need to supply an external utility that converts the whole job’s data into a data stream which the printer understands. Openprinting and CUPS Filters again come to the rescue here.
+
+The Manufacturer can use CUPS Filters to design these external utilities and decide which APIs to use and the order in which these should be invoked depending upon the efficiency and input-output fo.</li>
 <br>
 <li><strong>Providing Sufficient Guidance</strong> OpenPrinting also helps the manufacturer about designing of printer <sup> <a href="../02-designing-printer-drivers/">[4]</a></sup> and scanner drivers.<sup><a href="../03-designing-scanner-drivers/">[5]</a></sup> It also guides them about packaging those drivers and uploading on Snap Store. <sup> <a href="../04-packaging-drivers/">[6]</a></sup>  It also educated users about using Printer Application Drivers. It provides neccessary documentation and tutorial for all the above mentioned things.<sup> <a href="../05-User-Manual/">[7]</a></sup></li>
 </ul>
@@ -96,6 +102,7 @@ The OpenPrintring team has also worked out documentation and tutorials about ins
 [6] <a href="../04-packaging-drivers/">Packaging Drivers and Uploading them to Snap Store</a>
 <br>
 [7] <a href="../05-User-Manual/">User Manual</a>
-
+<br>
+[8] <a href="https://github.com/OpenPrinting/cups-filters">CUPS Filters</a>
 </ul>
 
