@@ -45,7 +45,7 @@ The devlopment of the [PostScript Printer Application](https://github.com/OpenPr
 
 The PostScript Printer Application got several new featrures:
 - Automatic selection of the printer model by simply selecting "Auto-detect Driver" (the default) for the driver instead o weeding through a long list (currently around 4000 models), also the `autoadd` option of the command line interface uses this functionality.
-- Auto-selecting the printer model and the "autoadd" option always check whether the printer actually supports PostScript, independent whether it is in the list of explicitly supported model, for generic support of models not explicitly supported and to make sure that an optional PostScript add-on is actually installed.
+- Auto-selecting the printer model and the `autoadd` option always check whether the printer actually supports PostScript, independent whether it is in the list of explicitly supported model, for generic support of models not explicitly supported and to make sure that an optional PostScript add-on is actually installed.
 - Quick 1-bit-dithered raster output for monochrome/grayscale jobs in draft
 print quality. This reduces the raster data sent to the printer a lot and this way speeds up the jobs significantly.
 - Not only the standard options of the PPD files, which can be represented by IPP attributes, but also vendor-specific PPD options are suppprted now. The latter can at least be controlled by the "Printing Defaults" page of the web interface and by supplying them when submitting a job via the Printer Application's command line interface.
