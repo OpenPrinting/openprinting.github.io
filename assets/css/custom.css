@@ -11,7 +11,7 @@
 	font-weight: bold;
 }
 .nav__list{
-	
+
 }
 .sidebar p{
 	font-size: 1em;
@@ -75,4 +75,70 @@
 	width: 150px;
 	height: 150px;
 	vertical-align: middle;
+}
+
+/* Dark mode overrides */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: black;
+    color: #ccc;
+  }
+  .masthead {
+    background: #333;
+    border: solid thin #ccc;
+  }
+  .masthead__inner-wrap, .greedy-nav {
+    background: #333;
+  }
+  a.site-title, a.site-title:visited, li.masthead__menu-item a, li.masthead__menu-item a:visited {
+    color: #ccc;
+  }
+  a.site-title:hover, li.masthead__menu-item a:hover {
+    color: #aaa;
+  }
+  a.site-title:active, li.masthead__menu-item a:active {
+    color: #999;
+  }
+  .greedy-nav .hidden-links, li.masthead__menu-item, li.masthead__menu-item a, li.masthead__menu-item a:visited {
+    background: #333;
+    color: #ccc;
+  }
+  li.masthead__menu-item a:hover, li.masthead__menu-item a:active {
+    background: #ccc;
+    color: #333;
+  }
+  .page__hero--overlay {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('/assets/images/rotation_pantone.jpg') !important;
+  }
+  .page__hero--overlay .page__title, .page__hero--overlay .page__lead, .page__hero--overlay .btn {
+    color: #ccc;
+  }
+  .btn--light-outline {
+    border 1px solid #ccc;
+  }
+  a:link, a:visited {
+    color: #88a;
+  }
+  a:hover, a:active {
+    color: #779;
+  }
+  .page__meta {
+    color: #727c8c;
+  }
+  .btn--primary, .btn--primary:visited, .page__footer {
+    background: #002E40;
+    border: solid thin #0092ca;
+    color: #ccc;
+  }
+  .btn--primary:hover, .btn--primary:active {
+    background: #002533;
+    border: solid thin #0075a2;
+    color: #ccc;
+  }
+  ::selection {
+    color: #ccc;
+  }
+  .page__footer {
+    color: #ccc !important;
+  }
 }
