@@ -5,7 +5,7 @@ author: Till
 excerpt: PAPPL 1.0.1, PostScript Printer Application, GSoC 2021, LFMP projects ended, CUPS, cups-filters
 ---
 ## Google Summer of Code 2021
-The time window for the mentoring organizations to [apply](https://summerofcode.withgoogle.com/) will be Jan 29 - Feb 19, 2021. See also the [complete timeline](https://developers.google.com/open-source/gsoc/timeline). We will again apply for the Linux Foundation as mentoring organization, as in the previpus years, OpenPrinting being one of the sub groups.
+The time window for the mentoring organizations to [apply](https://summerofcode.withgoogle.com/) will be Jan 29 - Feb 19, 2021. See also the [complete timeline](https://developers.google.com/open-source/gsoc/timeline). We will again apply for the Linux Foundation as mentoring organization, as in the previous years, OpenPrinting being one of the sub groups.
 
 We are still looking for project ideas to get a good number lined up before applying.
 
@@ -15,18 +15,18 @@ As mentioned [already in October](https://openprinting.github.io/OpenPrinting-Ne
 Our [IPP Scan LFMP project](https://mentorship.lfx.linuxfoundation.org/project/55cdb4a1-76bd-423a-ab48-3bdf1502a171) has ended, with both Abhik Chakraborty and Rishabh Arya having completed their work successfully and preparing their final reports. Their work of adding IPP Scan as a server to PAPPL is currently available in [Abhik's GitHub repository](https://github.com/Abhik1998/pappl) and Rishabh's earlier work on [sane-airscan](https://github.com/alexpevzner/sane-airscan/) in the [IPP Scan repository of sane-airscan](https://github.com/alexpevzner/sane-airscan-ipp/).
 
 ## PostScript Printer Application
-The devlopment of the [PostScript Printer Application](https://github.com/OpenPrinting/ps-printer-app) is going on and has driven the development of PAPPL forward.
+The development of the [PostScript Printer Application](https://github.com/OpenPrinting/ps-printer-app) is going on and has driven the development of PAPPL forward.
 
 The PostScript Printer Application got several new features:
-- Extra per-printer web interface page "Device Settings", for configuration of which optional hardware add-ons are actually installed ("Installable Options" group in the PPD files). So the user selects which add-ons (extra trays, duplex unit, finishers, ...) are installed and the options and choises on the "Printing Defaults" page and also the capabilities reported as response to a get-printer-attributes IPP request from a client get appropriately adapted.
+- Extra per-printer web interface page "Device Settings" for configuration of which optional hardware add-ons are actually installed ("Installable Options" group in the PPD files). The user selects which add-ons (extra trays, duplex unit, finishers, ...) are installed and the options and choices on the "Printing Defaults" page and also the capabilities reported as response to a get-printer-attributes IPP request from a client get appropriately adapted.
 - Polling add-on setup and option defaults from the printer, triggered by buttons on the "Device Settings" web interface page.
-- New "Add PPDs" web interface page for user to add extra PPD files to the Printer Application, to use PostScript printers not supported by the already included PPDs. Especially important when the PPD for a printer is not available under a free license.
+- New "Add PPDs" web interface page for the user to add extra PPD files to the Printer Application, to use PostScript printers not supported by the already included PPDs. Especially important when the PPD for a printer is not available under a free license.
 - Support for collated copies (PDF or PostScript input only)
-- Support for custom page sizes (but currently [the size can only be set in inches](https://github.com/michaelrsweet/pappl/issues/118).
+- Support for custom page sizes (but currently [the size can only be set in inches](https://github.com/michaelrsweet/pappl/issues/118)).
 - Made "Identify Printer" work, simply by sending a zero-page job with a certain delay between beginning and end, to make the printer light up its display and make noise (and perhaps also show job info on the display).
 
 Next steps will be:
-- When auto-selecting driver prefer user-added PPDs (the user added them because he wants to use them) and also prefer PPDs in the system's language or at least English.
+- When auto-selecting driver prefer user-added PPDs (the user added them because he wants to use them) and also prefer PPDs in the system's language or at least in English.
 - Display results of PPD upload: Errors, warnings, successful uploads, issue a warning also for PPDs with `*cupsFilter(2): ...` lines.
 - Display all user-added PPD files with checkboxes for deleting them.
 - Ignore PPD options which do not have PostScript or PJL code snippets for the option choices.
@@ -43,7 +43,9 @@ As other retro-fitting Printer Applications also use most of what we have in the
 ## CUPS
 Currently released is 2.3.3op1.
 
-This release made it already into Debian and Ubuntu. Fedora/Red Hat is using the OpenPrinting fork of CUPS, too and we already have some contributions from Zdenek Dohnal from Red Hat, meaning that the distribution patches get merged in the fork.
+This release made it already into Debian and Ubuntu.
+
+Fedora/Red Hat is using the OpenPrinting fork of CUPS, too, and we already have some contributions from Zdenek Dohnal from Red Hat, meaning that the patches of the different distributions get merged in the fork.
 
 ```
 Changes in CUPS v2.3.3op2
@@ -65,7 +67,7 @@ On the way towards 2.0.0 and driven by the further development of the [PostScrip
 - Let the filter functions not load the PPD and not mark options in the PPD files to make them better usable with Printer Applications and to avoid race conditions in filter chains.
 
 Important bug fixes, applied to both 1.x and 2.x are
-- The `driverless` utility does not check the printers for driverless support quality any more. Each printer got polled with up to 3 get-printer-attributes IPP and this takes significant time, especially when there are many printers, making [CUPS timing out and do not show any available driver at all](https://github.com/OpenPrinting/cups/issues/65).
+- The `driverless` utility does not check the printers for driverless support quality any more. Each printer got polled with up to 3 get-printer-attributes IPP requests and this takes significant time, especially when there are many printers, making [CUPS timing out and do not show any available driver at all](https://github.com/OpenPrinting/cups/issues/65).
 - In the PPD generator for setting up driverless IPP printers with CUPS prefer Apple Raster instead of PDF due to [compatibility problems with some printers](https://github.com/OpenPrinting/cups-filters/issues/331).
 
 [1.28.7](https://github.com/OpenPrinting/cups-filters/releases/tag/1.28.7):
