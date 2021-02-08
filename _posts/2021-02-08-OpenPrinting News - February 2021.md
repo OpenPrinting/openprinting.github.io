@@ -2,12 +2,12 @@
 title: OpenPrinting News - February 2021
 layout: single
 author: Till
-excerpt: PostScript Printer Application, GSoC 2021 project ideas, IPP Scan, CUPS 2.3.3op2, cups-filters, PAPPL
+excerpt: PostScript Printer Application, Driver retro-fit library, GSoC 2021 project ideas, IPP Scan, CUPS 2.3.3op2
 ---
 ## Google Summer of Code 2021
 The time window for the mentoring organizations to [apply](https://summerofcode.withgoogle.com/) has opened and the deadline is Feb 19, 2021 ([Timeline](https://developers.google.com/open-source/gsoc/timeline)). We are applying again for the Linux Foundation as mentoring organization, as in the previous years, OpenPrinting being one of the sub groups.
 
-OpenPrinting's project ideas are [posted](https://wiki.linuxfoundation.org/gsoc/google-summer-code-2021-openprinting-projects), but further ideas are still welcome. Note that the projects are half-length this year, 175 hours instead of 350 hours (see our October news](https://openprinting.github.io/OpenPrinting-News-October-2020/#google-summer-of-code-2021). Larger projects we should run in the under the Linux Foundation Mentoring Program instead of GSoC.
+OpenPrinting's project ideas are [posted](https://wiki.linuxfoundation.org/gsoc/google-summer-code-2021-openprinting-projects), but further ideas are still welcome. Note that the projects are half-length this year, 175 hours instead of 350 hours (see our [October news](https://openprinting.github.io/OpenPrinting-News-October-2020/#google-summer-of-code-2021). Larger projects we should run in the under the Linux Foundation Mentoring Program instead of GSoC.
 
 ## IPP Scan in PAPPL
 The students of our [IPP Scan LFMP project](https://mentorship.lfx.linuxfoundation.org/project/55cdb4a1-76bd-423a-ab48-3bdf1502a171) did not do all points needed to complete the IPP Scan server support, but are still working on the missing points. Michael Sweet posted [on the PAPPL GitHub](https://github.com/michaelrsweet/pappl/projects/3) what is still needs to be done.
@@ -45,6 +45,9 @@ With appropriate features added to PAPPL we will be able to also add the followi
 
 Once having these features implemented, the PostScript Printer Application is complete so far.
 
+I will soon put it into the Snap Store.
+
+## CUPS Driver Retro-fit library
 As other retro-fitting Printer Applications also use most of what we have in the PostScript Printer Application now (as PPDs are used) I will create a new library for retro-fitting printer drivers into PAPPL-based Printer Applications (perhaps called `libpappl-retrofit`?). I will then move functions of the PostScript Printer Application which are useful also in other driver-retro-fitting Printer Applications into the new library, here I am especially thinking about PPD-file-related functions and PostScript-related functions.
 
 The ideas of renaming the "ps-printer-app" project into "retro-fit-printer-app" and adding conditional compiling I have dropped now.
