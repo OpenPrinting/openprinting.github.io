@@ -50,7 +50,7 @@ I will soon put it into the Snap Store.
 ## CUPS Driver Retro-fit library
 As other retro-fitting Printer Applications also use most of what we have in the PostScript Printer Application now (as PPDs are used) I will create a new library for retro-fitting printer drivers into PAPPL-based Printer Applications (perhaps called `libpappl-retrofit`?). I will then move functions of the PostScript Printer Application which are useful also in other driver-retro-fitting Printer Applications into the new library, here I am especially thinking about PPD-file-related functions and PostScript-related functions.
 
-The ideas of renaming the "ps-printer-app" project into "retro-fit-printer-app" and adding conditional compiling I have dropped now.
+The idea of renaming the "ps-printer-app" project into "retro-fit-printer-app" and adding conditional compiling I have dropped now.
 
 ## CUPS
 Currently released is [2.3.3op2](https://github.com/OpenPrinting/cups/releases/tag/v2.3.3op2).
