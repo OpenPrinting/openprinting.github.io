@@ -1,3 +1,8 @@
+/** Reduce margins around centered items **/
+.feature__item--center .archive__item-body {
+  width: 90%;
+}
+
 .side-nav-li{
 	white-space: nowrap;
 	overflow: hidden;

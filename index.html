@@ -25,8 +25,32 @@ header:
       url: "/about-us/"
 excerpt: "Making printing just work!"
 intro:
-  - excerpt: 'OpenPrinting works on the development of printing technology for Linux and Unix-style operating systems. We collaborate with IEEE-ISTO Printer Working Group(PWG) for Internet Printing Protocol(IPP) projects.'
+  - excerpt: 'OpenPrinting works on the development of printing technology for Linux® and Unix®-style operating systems. We collaborate with IEEE-ISTO Printer Working Group (PWG) on Internet Printing Protocol (IPP) projects.'
 feature_row:
+  - image_path: /assets/images/OpenPrintingBox.png
+    alt: "About Us"
+    title: "About Us"
+    excerpt: "Learn more about OpenPrinting, how it works, the people involved and the projects maintained by it"
+    url: "/about-us"
+    btn_label: "Read More"
+    btn_class: "btn--primary"
+  - image_path: /assets/images/contribute.png
+    title: "Contribute"
+    excerpt: "Know how you can be part of an excellent community and help improve printing experience for millions of users"
+    url: "/contribute"
+    btn_label: "Read More"
+    btn_class: "btn--primary"
+  - image_path: /assets/images/cups.png
+    title: "CUPS"
+    excerpt: "CUPS is the standards-based, open source printing system that is used on Linux® and other operating systems."
+    url: "https://openprinting.github.io/cups/"
+    btn_label: "Read More"
+    btn_class: "btn--primary"
+
+collaboration_intro:
+  - excerpt: "OpenPrinting collaborates with the community to advance printing and scanning on Linux® and Unix®-style operating systems."
+
+collaboration_row:
   - image_path: assets/images/gsod.jpg
     alt: "GSoD - OpenPrinting"
     title: "GSoD - OpenPrinting"
@@ -48,43 +72,29 @@ feature_row:
     url: "/gsoc/"
     btn_label: "Read More"
     btn_class: "btn--primary"
-  - image_path: /assets/images/OpenPrintingBox.png
-    alt: "About Us"
-    title: "About Us"
-    excerpt: "Learn more about OpenPrinting, how it works, the people involved and the projects maintained by it"
-    url: "/about-us"
-    btn_label: "Read More"
-    btn_class: "btn--primary"
-  - image_path: /assets/images/contribute.png
-    title: "Contribute"
-    excerpt: "Know how you can be part of an excellent community and help improve printing experience for millions of users"
-    url: "/contribute"
-    btn_label: "Read More"
-    btn_class: "btn--primary"
 
-database-intro:
-  - excerpt: "OpenPrinting hosts a Printer Compatibility Database. It contains entries from both the Foomatic Package and the community."
+database_intro:
+  - excerpt: "OpenPrinting hosts a printer compatibility database with entries from both the Foomatic package and the community."
 
-database:
+database_row:
   - image_path: /assets/images/Configuration.png
     alt: "Printer Compatibility Database"
-    title: "Printer Compatibility Database"
-    excerpt: "The OpenPrinting database contains a wealth of information about specific printers, along with extensive driver information,
-    the drivers themselves, basic specifications, and an associated set of configuration tools."
+    title: "Compatibility Database"
+    excerpt: "A wealth of information about specific printers, drivers, specifications, and configuration tools."
     url: "http://openprinting.org/database"
     btn_label: "Read More"
     btn_class: "btn--primary"
   - image_path: /assets/images/printer.png
     alt: "Foomatic Printer Database"
     title: "Printer Database"
-    excerpt: "OpenPrinting's Printer Database"
+    excerpt: "The Foomatic printer database lists all of the printers that are supported by the Foomatic printer driver package."
     url: "https://openprinting.org/printers"
     btn_label: "Browse"
     btn_class: "btn--primary"
   - image_path: /assets/images/files.png
     alt: "Foomatic Driver Database"
     title: "Printer Driver Database"
-    excerpt: "OpenPrinting's Printer Driver Database"
+    excerpt: "The printer driver database lists all of the printer drivers that are used by the Foomatic printer driver package."
     url: "https://openprinting.org/drivers"
     btn_label: "Browse"
     btn_class: "btn--primary"
@@ -125,6 +135,10 @@ database:
 
 {% include feature_row %}
 
-{% include feature_row id="database-intro" type="center" %}
+{% include feature_row id="collaboration_intro" type="center" %}
 
-{% include feature_row id="database" %}
+{% include feature_row id="collaboration_row" %}
+
+{% include feature_row id="database_intro" type="center" %}
+
+{% include feature_row id="database_row" %}
