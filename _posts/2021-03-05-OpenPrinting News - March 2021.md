@@ -52,7 +52,7 @@ You can simply install it now and it is immediately ready to use, no manual conn
 
 The only new feature added after the February news post is:
 
-- In the Snap use [pyppd](https://github.com/OpenPrinting/pyppd] to compress the included PPD files from 60 MB in tarballs (`.tar.gz`) to 5 MB in pyppd'd self-extracting archives.
+- In the Snap use [pyppd](https://github.com/OpenPrinting/pyppd) to compress the included PPD files from 60 MB in tarballs (`.tar.gz`) to 5 MB in pyppd'd self-extracting archives.
 
 Otherwise a lot of testing of the Snap was done and a lot of things got fixed:
 
