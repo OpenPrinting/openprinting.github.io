@@ -27,7 +27,11 @@ Please see the [README.md](https://github.com/OpenPrinting/cups-snap/blob/master
 
 Note also that one cannot install classic CUPS printer drivers into a snapped CUPS system. You need to use driverless IPP printers (AirPrint, IPP Everywhere, Mopria, Wi-Fi Direct Print, those on which you can print from a phone without dedicated app), remote CUPS printers, or PostScript printers (using the [PostScript Printer Application](https://github.com/OpenPrinting/ps-printer-app), [Snap Store](https://snapcraft.io/ps-printer-app)). More Printer Applications to provide additional drivers are on the way. Automatic migration to the CUPS Snap by OS distributions will only happen if enough drivers are available as Printer Applications.
 
-I will also soon post a "Call for Testing" on [Discourse](https://discourse.ubuntu.com/c/desktop/snap-store/) and update here as soon as it is up.
+**Update**
+
+**Call for Testing**
+
+I have now posted a "[Call for Testing](https://discourse.ubuntu.com/t/cups-snap-call-for-testing/)" for both the CUPS Snap and the PostScript Printer Application on [Discourse](https://discourse.ubuntu.com/c/desktop/snap-store/). Please try everything out, following the instructions and post your experience there.
 
 Features and fixes in the past month:
 
@@ -49,6 +53,12 @@ Main TODOs are:
 **The [PostScript Printer Application](https://github.com/OpenPrinting/ps-printer-app) is also in the [Snap Store](https://snapcraft.io/ps-printer-app) now!**
 
 You can simply install it now and it is immediately ready to use, no manual connection of any interfaces is requiredas [everything got approved](https://forum.snapcraft.io/t/request-postscript-printer-application-snap-ps-printer-app-auto-connection-to-avahi-control-raw-usb-interfaces/). After installation you only need to set up your printers via the web interface or command line interface. If needed you can also upload your own PPD file into the Application. See the [README.md](https://github.com/OpenPrinting/ps-printer-app/blob/master/README.md) for detailed instructions.
+
+**Update**
+
+**Call for Testing**
+
+I have now posted a "[Call for Testing](https://discourse.ubuntu.com/t/cups-snap-call-for-testing/)" for both the CUPS Snap and the PostScript Printer Application on [Discourse](https://discourse.ubuntu.com/c/desktop/snap-store/). Please try everything out, following the instructions and post your experience there.
 
 The only new feature added after the February news post is:
 
