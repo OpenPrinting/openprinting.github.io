@@ -14,6 +14,8 @@ CUPS has a [new home page](https://openprinting.github.io/cups/) now and what wa
 First feature additions have already happened, all Snap support which the [CUPS Snap](https://github.com/OpenPrinting/cups-snap) and the Ubuntu package of CUPS received as package-specific patches is now upstream in CUPS.
 
 ## Google Summer of Code 2021
+**Update: The Linux Foundation got accepted as mentoring organization by Google!**
+
 We have applied again  for the Linux Foundation as mentoring organization, as in the previous years, for the [Google Summer of Code](https://summerofcode.withgoogle.com/). The accepted organizations will be announced by Google on Tue, March 9, 2021 ([Timeline](https://developers.google.com/open-source/gsoc/timeline)).
 
 OpenPrinting's project ideas are [posted](https://wiki.linuxfoundation.org/gsoc/google-summer-code-2021-openprinting-projects), but further ideas are still welcome. Note that the projects are half-length this year, 175 hours instead of 350 hours (see our [October news](https://openprinting.github.io/OpenPrinting-News-October-2020/#google-summer-of-code-2021). Larger projects we should run in the Linux Foundation Mentoring Program instead of in the GSoC.
