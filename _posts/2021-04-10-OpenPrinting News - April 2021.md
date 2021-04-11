@@ -4,18 +4,18 @@ layout: single
 author: Till
 excerpt: OpenPrinting Summit/PWG Meeting, GSoC, GSoD, CUPS Snap proxy mode, PostScript Printer Application, CUPS
 ---
-## OpenPrinting Summit/PWG Meeting VirtualPermalink
+## OpenPrinting Summit/PWG Meeting
 
 On May 4-7 we will have our annual meeting again, the [OpenPrinting Summit/PWG Meeting](https://www.pwg.org/chair/meeting-info/may-2021-virtual.html).
 
-Because of the Corona virus situation we will again have a virtual meeting, with the side effect that everyone can participate, without needing to travel. Instruction's for participation via WebEx are on the meeting's page.
+Because of the Corona virus situation we will again have a virtual meeting, with the side effect that everyone can participate, without needing to travel. Instructions for participation via WebEx are on the meeting's page.
 
-The [agenda](https://www.pwg.org/chair/meeting-info/may-2021-virtual.html) is already put up, with the OpenPrinting part on the first two days. Links to the slides will be added on the meeting page and we will link to any summary/outcome here in the next month's newa.
+The [agenda](https://www.pwg.org/chair/meeting-info/may-2021-virtual.html) is already put up, with the OpenPrinting part on the first two days. Links to the slides will be added on the meeting page and we will link to any summary/outcome here in the next month's news.
 
 ## Google Summer of Code 2021
-With the Linux Foundation being accepted as mentoring organization we are now receiving the student's proposals until the deadline on April 13 ([Timeline](https://developers.google.com/open-source/gsoc/timeline)). After that we have to select the students/projects we want to do.
+With the Linux Foundation being accepted as mentoring organization we are now receiving the student's proposals until the deadline on April 13 ([Timeline](https://developers.google.com/open-source/gsoc/timeline)). After that we have to select the students/projects we want to work with.
 
-OpenPrinting's project ideas are [posted](https://wiki.linuxfoundation.org/gsoc/google-summer-code-2021-openprinting-projects), but further ideas are still welcome. Note that the projects are half-length this year, 175 hours instead of 350 hours (see our [October news](https://openprinting.github.io/OpenPrinting-News-October-2020/#google-summer-of-code-2021). Larger projects we should run in the Linux Foundation Mentoring Program instead of in the GSoC.
+OpenPrinting's project ideas are [posted](https://wiki.linuxfoundation.org/gsoc/google-summer-code-2021-openprinting-projects), but further ideas are still welcome. Note that the projects are half-length this year, 175 hours instead of 350 hours (see our [October news](https://openprinting.github.io/OpenPrinting-News-October-2020/#google-summer-of-code-2021)). Larger projects we should run in the Linux Foundation Mentoring Program instead of in the GSoC.
 
 ## Google Season of Docs 2021
 We have also applied as mentoring organization in this year’s [Google Season of Docs](https://developers.google.com/season-of-docs/).
@@ -27,7 +27,7 @@ Our project this year is [User and Developer Documentation for cups-filters](htt
 ## CUPS Snap
 **[CUPS Snap](https://github.com/OpenPrinting/cups-snap) in the [Snap Store](https://snapcraft.io/cups), Call for testing on the [snapcraft.io forum](https://forum.snapcraft.io/t/call-for-testing-openprintings-cups-snap/) and on the [Ubuntu Discourse](https://discourse.ubuntu.com/t/cups-snap-call-for-testing/)**
 
-Now, with the CUPS Snap in the Snap Store and [all interfaces connecting automatically](https://forum.snapcraft.io/t/request-cups-snap-cups-auto-connection-to-of-cups-cups-control-to-cups-admin-and-also-of-the-network-manager-observe-interface/) we started discussing [how the `cups` interface for client Snaps is supposed to work](https://forum.snapcraft.io/t/handling-of-the-cups-plug-by-snapd-especially-auto-connection/) and found out that if a Snap which pluhs `cups` for printing is installed on an older Ubuntu or a non-Ubuntu distribution with classically installed CUPS that there is no protection against administrative action on CUPS, as the CUPS damon has no Snap mediation (CUPS daemon checks whether client is Snap and then requires `cups-control` for admin tasks).
+Now, with the CUPS Snap in the Snap Store and [all interfaces connecting automatically](https://forum.snapcraft.io/t/request-cups-snap-cups-auto-connection-to-of-cups-cups-control-to-cups-admin-and-also-of-the-network-manager-observe-interface/) we started discussing [how the `cups` interface for client Snaps is supposed to work](https://forum.snapcraft.io/t/handling-of-the-cups-plug-by-snapd-especially-auto-connection/) and found out that if a Snap which plugs `cups` for printing is installed on an older Ubuntu or a non-Ubuntu distribution with classically installed CUPS that there is no protection against administrative action on CUPS, as the CUPS damon has no Snap mediation (CUPS daemon checks whether client is Snap and then requires `cups-control` for admin tasks).
 
 To close this security hole snapd developer [Ian Johnson](https://forum.snapcraft.io/u/ijohnson/summary) picked up some [weird hypothetic idea from me](https://github.com/snapcore/snapd/pull/10023#issuecomment-799425764) and [suggested to implement it this way](https://forum.snapcraft.io/t/handling-of-the-cups-plug-by-snapd-especially-auto-connection/23419/3?u=till.kamppeter): The snapped cupsd (has Snap mediation) as a firewall for the classic cupsd on the system (does not always have Snap mediation)!
 
@@ -35,7 +35,7 @@ So after some weeks of thinking about the best way to implement it and of coding
 
 If a Snap of an application which prints (plugs `cups`) is installed, the CUPS Snap gets force-installed like a package dependency ("default-provider" for [content interface](https://snapcraft.io/docs/content-interface)) and the snapped application only communicates with the CUPS Snap for printing, never with a classically installed CUPS if one is there. The CUPS Snap works stand-alone as system's CUPS if there is no classic CUPS and it goes into the new proxy mode if there is a classic CUPS.
 
-The snapped CUPS in proxy mode mirrors all the queues of the classic CUPS, copying the PPD options for the client's print dialogs to show all options and passing on jobs to the classic CUPS and letting the classic CUPS applying its printer drivers so that the user continues with his habitual queues and drivers. This all goes automatically and transparently without user intervention needed, nor any changes being done on the classic CUPS.
+The snapped CUPS in proxy mode mirrors all the queues of the classic CUPS, copying the PPD options for the client's print dialogs to show all options, passes on jobs to the classic CUPS, and lets the classic CUPS apply its printer drivers so that the user continues with his habitual queues and drivers. This all goes automatically and transparently without user intervention needed, nor any changes being done on the classic CUPS.
 
 See the [technical details of the proxy mode](https://forum.snapcraft.io/t/handling-of-the-cups-plug-by-snapd-especially-auto-connection/23419/16?u=till.kamppeter).
 
@@ -91,7 +91,7 @@ Once having these features implemented, the PostScript Printer Application is co
 ## CUPS
 Currently released is [2.3.3op2](https://github.com/OpenPrinting/cups/releases/tag/v2.3.3op2).
 
-Development of CUPS 2.4 is in progress, currently mainly fixing of bugs which were reported to Apple's CUPS GitHub in the lat 15 months.
+Development of CUPS 2.4 is in progress, currently mainly fixing of bugs which were reported to Apple's CUPS GitHub in the last 15 months.
 
 Ubuntu Hirsute Hippo (21.04) will ship with CUPS 2.3.3op2, the CUPS Snap uses the current GIT master.
 
