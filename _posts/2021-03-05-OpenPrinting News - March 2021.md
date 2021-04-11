@@ -33,7 +33,7 @@ Note also that one cannot install classic CUPS printer drivers into a snapped CU
 
 **Call for Testing**
 
-I have now posted a "[Call for Testing](https://discourse.ubuntu.com/t/cups-snap-call-for-testing/)" for both the CUPS Snap and the PostScript Printer Application on [Discourse](https://discourse.ubuntu.com/c/desktop/snap-store/). Please try everything out, following the instructions and post your experience there.
+I have now posted a "[Call for Testing](https://discourse.ubuntu.com/t/cups-snap-call-for-testing/)" for both the CUPS Snap and the PostScript Printer Application on [Discourse](https://discourse.ubuntu.com/t/cups-snap-call-for-testing/). Please try everything out, following the instructions and post your experience there.
 
 Features and fixes in the past month:
 
@@ -60,7 +60,7 @@ You can simply install it now and it is immediately ready to use, no manual conn
 
 **Call for Testing**
 
-I have now posted a "[Call for Testing](https://discourse.ubuntu.com/t/cups-snap-call-for-testing/)" for both the CUPS Snap and the PostScript Printer Application on [Discourse](https://discourse.ubuntu.com/c/desktop/snap-store/). Please try everything out, following the instructions and post your experience there.
+I have now posted a "[Call for Testing](https://discourse.ubuntu.com/t/cups-snap-call-for-testing/)" for both the CUPS Snap and the PostScript Printer Application on [Discourse](https://discourse.ubuntu.com/t/cups-snap-call-for-testing/). Please try everything out, following the instructions and post your experience there.
 
 The only new feature added after the February news post is:
 
