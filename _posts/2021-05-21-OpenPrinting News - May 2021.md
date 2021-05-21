@@ -62,7 +62,7 @@ Main TODOs are:
 - Turn classic CUPS drivers into Printer Applications
 - Add a migration script so that OS distributions can easily switch over from classic packages to the CUPS Snap.
 
-Up to now, the CUPS Snap got installed from the Snap Store **more than 1600 timeds!** Note that it is still only on the Edge channel, there is not yet an "official" release.
+Up to now, the CUPS Snap got installed from the Snap Store **more than 1600 times!** Note that it is still only on the Edge channel, there is not yet an "official" release.
 
 ## PostScript Printer Application
 **[PostScript Printer Application](https://github.com/OpenPrinting/ps-printer-app) in the [Snap Store](https://snapcraft.io/ps-printer-app), Call for testing on the [snapcraft.io forum](https://forum.snapcraft.io/t/call-for-testing-openprintings-cups-snap/) and on the [Ubuntu Discourse](https://discourse.ubuntu.com/t/cups-snap-call-for-testing/)**
