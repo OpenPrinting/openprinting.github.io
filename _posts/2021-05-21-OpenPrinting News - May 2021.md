@@ -117,7 +117,7 @@ Michael Sweet [presented his plans on CUPS 2.4.x and 3.x](https://ftp.pwg.org/pu
 
 CUPS 2.4.x is supposed to get shared printers reporting all required attributes/keys/values, OAuth 2.0/OpenID authentication, pkg-config support, snapcraft support, "job-sheets-col" and better "media-col" attribute support, TLS and X.509 improvements, and deprecate cups-config and Kerberos authentication.
 
-CUPS 3.x will be a major change in architecture, having the CUPS daemon split in two, a user daermon to handle local printing to USB printers and printers in the local network and a system daemon to share printers.
+CUPS 3.x will be a major change in architecture, having the CUPS daemon split in two, a user daemon to handle local printing to USB printers and printers in the local network and a system daemon to share printers.
 
 Development of CUPS 2.4 is in progress, currently mainly fixing of bugs which were reported to Apple's CUPS GitHub in the last 17 months.
 
