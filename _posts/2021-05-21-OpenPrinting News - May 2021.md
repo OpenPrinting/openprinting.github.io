@@ -78,15 +78,15 @@ Features and fixes in the past month:
 - Updated the built-in QPDF to 10.3.1 and Ghostscript to 9.54.
 - Some clean-up in `snapcraft.yaml`.
 
-Unfortunately, some things in the PostScript Printer Application are not working as expected due to bugs in PAPPL:
+Unfortunately, some things in the PostScript Printer Application are not working as expected due to bugs in PAPPL and/or in printer firmware:
 
-- [USB connection only uni-directional](https://github.com/michaelrsweet/pappl/issues/153) (This especially leads to polling option defaults and installable accessory configuration not working)
-- [When creating a print queue via command line, I cannot auto-select the driver](https://github.com/michaelrsweet/pappl/issues/154) (You cannot use `-m auto` when creating a print queue via command line)
+- [USB connection only uni-directional](https://github.com/michaelrsweet/pappl/issues/153) (This especially leads to polling option defaults and installable accessory configuration not working): This seems to be a problem (firmware bug) of my HP OfficeJet Pro 8730, for other printer models it is reported to work.
+- [When creating a print queue via command line, I cannot auto-select the driver](https://github.com/michaelrsweet/pappl/issues/154) (You cannot use `-m auto` when creating a print queue via command line): This works for USB-connected devices now, but for network devices [a further fix is needed](https://github.com/michaelrsweet/pappl/issues/95).
 
 For creation of GUI tools to easily find Printer Applications and set up printers we would need these improvements:
 
 - [Extend "ps-printer-app drivers" to also show supported device IDs](https://github.com/michaelrsweet/pappl/issues/157)
-- [Add subcommand to simply ask whether a given printer is supported](https://github.com/michaelrsweet/pappl/issues/158): This works for USB-connected devices now, but for network devices [a further fix is needed](https://github.com/michaelrsweet/pappl/issues/95).
+- [Add subcommand to simply ask whether a given printer is supported](https://github.com/michaelrsweet/pappl/issues/158)
 
 With appropriate features added to PAPPL we will be able to also add the following:
 - Human-readable strings for vendor options. Needs [support in PAPPL](https://github.com/michaelrsweet/pappl/issues/58).
@@ -187,9 +187,9 @@ I have also [presented my work on cups-filters](https://ftp.pwg.org/pub/pwg/liai
 
 I have removed the duplicate PPD generator (for CUPS queues for driverless IPP printers) from libppd, keeping the one in libcupsfilters. In this one I have cleaned up the obtaining of human-readable strings, taking them from a PWF IPP standard repository which is included in the translation string files of CUPS. See the [OpenPrinting mailing list thread](https://lists.linuxfoundation.org/pipermail/printing-architecture/2021/003991.html) about this.
 
-Currently I am working on improving the handling of color spaces and depths when printing to a driverless printer in Apple or PWG Raster foirmat. Formerly, the auto-generated PPD files of cups-filters provided choices in their "ColorModel" option to select color space and depth manually. To make the "ColorModel" option in the PPD mirror the "print-color-mode" IPP attribute and to make printing easier for the user I am switching to automatic selection. See [this thread](https://lists.linuxfoundation.org/pipermail/printing-architecture/2021/003997.html) on the [OpenPrinting mailing list](https://lists.linuxfoundation.org/pipermail/printing-architecture/2021/thread.html).
+Currently I am working on improving the handling of color spaces and depths when printing to a driverless printer in Apple or PWG Raster foirmat. Formerly, the auto-generated PPD files of cups-filters provided choices in their "ColorModel" option to select color space and depth manually. To make the "ColorModel" option in the PPD mirror the "print-color-mode" IPP attribute and to make printing easier for the user I am switching to automatic selection. See [this thread](https://lists.linuxfoundation.org/pipermail/printing-architecture/2021/003997.html) on the [OpenPrinting mailing list](https://lists.linuxfoundation.org/pipermail/printing-architecture/2021/thread.html) and [this thread](https://ghostscript.com/pipermail/gs-devel/2021-May/010439.html) on the [Ghostscript developer mailing list](https://ghostscript.com/pipermail/gs-devel/2021-May/thread.html). **Update: [First version, applied to `ghostscript()` filter function, posted](https://github.com/OpenPrinting/cups-filters/commit/b06d4899cee74f22be98b8a9382e11aab14c358c) ([Details](https://lists.linuxfoundation.org/pipermail/printing-architecture/2021/004027.html))**
 
-Please [subscribe here](https://lists.linuxfoundation.org/mailman/listinfo/printing-architecture) to participate in the discussions.
+Please subscribe to the [OpenPrinting mailing list](https://lists.linuxfoundation.org/mailman/listinfo/printing-architecture) and/or to the [Ghostscript mailing list](https://ghostscript.com/cgi-bin/mailman/listinfo/gs-devel) to participate in the discussions.
 
 I have also merged Mohit Mohan's GSoC 2021 project of [multi-threading support for cups-browsed](https://github.com/mohitmo/GSoC-2020-Documentation) and fixed several bugs in cups-browsed and the filters, many were fixed by GSoC student candidates as assignments.
 
@@ -198,10 +198,34 @@ Ubuntu Hirsute Hippo (21.04) comes with cups-filters 1.28.8, also the CUPS Snap 
 ```
 CHANGES IN V2.0.0
 
+	- libcupsfilters: Changed "ColorModel" option in the PPDs from
+	  the PPD generator to mirror the print-color-mode IPP
+	  attribute instead of providing all color space/depth combos
+	  for manual selection. Color space and depth are now
+	  auto-selected by the urf-supported and
+	  pwg-raster-document-type-supported printer IPP attributes
+	  and the settings of print-color-mode and print-quality.
+	  This is now implemented in the ghostscript() filter function
+	  both for use of the auto-generated PPD file for driverless
+	  iPP printers and use without PPD, based on IPP attributes.
+	  For this the new library functions cupsRasterPrepareHeader()
+	  to create a header for Raster output and
+	  cupsRasterSetColorSpace() to auto-select color space and
+	  depth were created.
 	- libcupsfilters: In the ghostscript() filter function fixed
 	  Ghostscript command line for counting pages as it took too
 	  long on PDFs from evince when printing DjVu files (Issue
 	  #354, Pull request #371, Ubuntu bug #1920730).
+	- cups-browsed: Renamed ldap_connect() due to conflict in
+	  new openldap (Issue #367, Pull request #370).
+	- libcupsfilters: Clean-up of human-readable string handling
+	  in the PPD generator.
+	- libcupsfilters: Function name clean-up for the PPD
+	  generator.
+	- libppd: Removed ppdCreateFromIPPCUPS(), we have a better one
+	  in libcupsfilters.
+	- pdftoraster: Free color data after processing of each page
+	  (Pull request #363).
 	- imagetopdf, imagetops, imagetoraster: Removed support for
 	  asymmetric image resolutions ("ppi=XXXxYYY") as CUPS does
 	  not support this (Issue #347, Pull request #361,
