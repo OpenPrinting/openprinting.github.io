@@ -223,6 +223,9 @@ collections:
   gsoc2020:
     output: true
     permalink: /:collection/:path/
+  gsoc2021:
+    output: true
+    permalink: /:collection/:path/
   lfmp2020:
     output: true
     permalink: /:collection/:path/
@@ -284,6 +287,22 @@ defaults:
       layout: single
       author_profile: true
       # comments: true
+  
+  # _gsoc2021
+  - scope:
+      path: ""
+      type: gsoc2021
+    values:
+      layout: single
+      author_profile: false
+      share: false
+      excerpt: ""
+      toc: true
+      toc_label: "On This Page"
+      sidebar:
+        nav: "gsoc21"
+      # comments: true
+
   # _gsoc2020
   - scope:
       path: ""

@@ -37,6 +37,22 @@ main:
   - title: "Donations"
     url: /donations/
 
+gsoc21:
+  - title: "GSOC 2021"
+    children:
+      - title: "GSOC 2021 Homepage"
+        url: /gsoc2021/
+      - title: "Make All Filter Functions Work Well Even Without PPD Files."
+        url: /gsoc2021/01-Filter_withour-PPD/
+      - title: "GUI for listing and managing available IPP services"
+        url: gsoc2021/02-GUI-for-IPP/
+      - title: "Firmware and other file handling in PAPPL"
+        url: gsoc2021/03-File-Handling-in-PAPPL/
+      - title: "Create a single universal CUPS filter to replace the chain of individual filters"
+        url: /gsoc2021/04-Single-universal-filter/
+      - title: "CUPS Filters: Converting Filters to Filter Functions"
+        url: /gsoc2021/05-Filters-to-Filter//
+
 gsoc20:
   - title: "GSOC 2020"
     children:
