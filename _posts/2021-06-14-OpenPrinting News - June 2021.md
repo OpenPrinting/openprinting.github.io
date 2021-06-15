@@ -118,6 +118,12 @@ Feature additions are principally done forretro-fitting classic CUPS drivers, se
 Also some bug fixes were done, especially letting the `driverless` utility not
 error-exit if no supported printer got discovered.
 
+**Update:**
+
+[1.28.9](https://github.com/OpenPrinting/cups-filters/releases/tag/1.28.9)
+
+Bug fix release, fixes backported from the master (2.x) branch (see below)
+
 Ubuntu Hirsute Hippo (21.04) comes with cups-filters 1.28.8, also the CUPS Snap currently uses this version. The PostScript Printer Application Snap uses the current GIT master of cups-filters.
 
 ```
@@ -140,6 +146,34 @@ CHANGES IN V2.0.0
 	  method to check whether a PostScript input file is non-empty
 	  to only need to read and buffer the input up to the first
 	  page.
+```
+
+```
+CHANGES IN V1.28.9
+
+	- libcupsfilters: Silenced compiler warnings
+	- libcupsfilters: Removed duplicate code in the
+	  apply_filters() function.
+	- driverless: If there are no driverless IPP printers
+	  available let "driverless" terminate with exit code 0 and
+	  not 1, to follow CUPS' standard of backends in discovery
+	  mode terminating with 0 if there are no appropriate printers
+	  found (Issue #375).
+	- gstoraster, foomatic-rip: Fixed Ghostscript command line for
+	  counting pages as it took too long on PDFs from evince when
+	  printing DjVu files (Issue #354, Pull request #371, Ubuntu
+	  bug #1920730).
+	- cups-browsed: Renamed ldap_connect() due to conflict in
+	  new openldap (Issue #367, Pull request #370).
+	- pdftoraster: Free color data after processing of each page
+	  (Pull request #363).
+	- cups-browsed: Always save "...-default" option entries
+	  from printers.conf, regardless of presence or absense
+	  of PPD file (Pull request #359).
+	- cups-browsed: Start after network-online.target (Pull
+	  request #360).
+	- texttopdf: Set default margins when no PPD file is used
+	  (Pull request #356).
 ```
 
 ## PAPPL
