@@ -2,7 +2,7 @@
 title: OpenPrinting News - June 2021
 layout: single
 author: Till
-excerpt: GSoC, PostScript Printer Application and PIN-based printing, Retro-fitting CUPS printer drivers
+excerpt: GSoC, PostScript Printer Application and PIN-based printing, Retro-fitting CUPS printer drivers, cups-filters 1.28.9
 ---
 ## Want more news?
 Are you always eagerly waiting until I issue my next news post here after a month?
