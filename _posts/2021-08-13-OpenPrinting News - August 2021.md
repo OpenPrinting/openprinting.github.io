@@ -35,6 +35,8 @@ Also Bhavna and Divyasheel made good progress.
 
 On this month's OpenPrinting conference call all students participated again giving a short screen-share-based presentation of their GSoC projects.
 
+There will be also a presentation of the GSoC projects on the [PWG August 2021 Face-to-Face Meeting](https://www.pwg.org/chair/meeting-info/august-2021-virtual.html) which takes place online on August 17-19, 2021. The GSoC presentation will be on August 18, 10AM to 10:30AM EDT (UTC−04:00), with video demos of the students.
+
 Here is some short summary about what got done:
 
 **cups-filters: Make sure all filter functions work without PPD files**<br>
