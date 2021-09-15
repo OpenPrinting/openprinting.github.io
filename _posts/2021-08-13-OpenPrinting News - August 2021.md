@@ -5,7 +5,7 @@ author: Till
 excerpt: Ubuntu Indaba, Linux Plumbers, GSoC progress, Retro-fitting CUPS drivers with easy option setting and backends, CUPS, cups-filters
 ---
 ## The Ubuntu Desktop Indabas and OpenPrinting
-From the [announcement](https://discourse.ubuntu.com/t/announcing-the-ubuntu-desktop-team-indaba-ama-august-27-2021-5pm-utc/):
+From the [announcement](https://discourse.ubuntu.com/t/ubuntu-desktop-team-indaba-ama-august-27-2021-5pm-utc/):
 
 > Heather Ellsworth:
 >
@@ -15,7 +15,7 @@ From the [announcement](https://discourse.ubuntu.com/t/announcing-the-ubuntu-des
 
 In this month's edition, on Friday, August 27, 5PM UTC (2 weeks from now) it is all about printing and what's new in this area. Therefore the special guests will be me and Michael Sweet (author of CUPS, PAPPL, did important part of IPP and driverless printing) and we will present the newest state-of-the-art and we will be open for the questions of the Ubuntu users.
 
-The event will be streamed live on YouTube and Twitch, both with live chat (links on the [announcement page](https://discourse.ubuntu.com/t/announcing-the-ubuntu-desktop-team-indaba-ama-august-27-2021-5pm-utc/)).
+The event will be streamed live on YouTube and Twitch, both with live chat (links on the [announcement page](https://discourse.ubuntu.com/t/ubuntu-desktop-team-indaba-ama-august-27-2021-5pm-utc/)).
 
 Thanks a lot to the creator and main organizer of the Ubuntu Indabas, Heather Ellsworth, and also to the others from the team, Monica Ayhens-Madon and Rhys Davies.
 

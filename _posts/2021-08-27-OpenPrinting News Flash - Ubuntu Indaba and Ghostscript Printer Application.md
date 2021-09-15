@@ -9,7 +9,7 @@ A lot of new things to talk about, so I do not want tolet you wait until the Sep
 
 
 ## The Ubuntu Desktop Indabas and OpenPrinting - The Recording
-Today's episode of the monthly Ubuntu Indabas was all about printing, with Michael Sweet (author of CUPS an PAPPL, one of the founders of IPP) and me as speakers, as announced 2 weeks ago [here in the August news](/OpenPrinting-News-August-2021/) and on the [Ubuntu Discourse](https://discourse.ubuntu.com/t/announcing-the-ubuntu-desktop-team-indaba-ama-august-27-2021-5pm-utc/).
+Today's episode of the monthly Ubuntu Indabas was all about printing, with Michael Sweet (author of CUPS an PAPPL, one of the founders of IPP) and me as speakers, as announced 2 weeks ago [here in the August news](/OpenPrinting-News-August-2021/) and on the [Ubuntu Discourse](https://discourse.ubuntu.com/t/ubuntu-desktop-team-indaba-ama-august-27-2021-5pm-utc/).
 
 The Ubuntu Indabas are live events to present features of Ubuntu Linux to the users and give them the possibilty to ask questions to the developers.
 
