@@ -116,7 +116,7 @@ The driver's files (PPDs, filters, backends) only need to get placed in the appr
 
 Then one can create print queues with the printers being auto-discovered (by PAPPL's backend and/or included CUPS backends) and the model/driver (PPD file) can be automatically or manually selected (each "Driver Name" drop-down entry on the "Add Printer" web interface page is one PPD file).
 
-When printing a job the IPP attributes are automatically mapped to the best-fitting PPD option settings, to easily allow to make use of the features of the printer, but the web interface also allows to manually set defaults for all PPD options for more detailed control. Even options requiring CUPS PPD extensions, numeric, string, password, fax number, ... options are supported.
+When printing a job the IPP attributes are automatically mapped to the best-fitting PPD option settings, to easily allow to make use of the features of the printer, even on clients with limited print dialogs, like phones or IoT devices. The web interface also allows to manually set defaults for all PPD options for more detailed control. Even options requiring CUPS PPD extensions, numeric, string, password, fax number, ... options are supported.
 
 All current retro-fitting Printer Applications ([PostScript](https://github.com/OpenPrinting/ps-printer-app/), [Ghostscript](https://github.com/OpenPrinting/ghostscript-printer-app/), and [HPLIP](https://github.com/OpenPrinting/hplip-printer-app/)) are using this library now.
 
@@ -135,7 +135,7 @@ If you want to use an (older) printer which is not a modern driverless IPP print
  
 It supports ~5000 different printer models, mainly with drivers from the well-known [Ghostscript](http://www.ghostscript.com/) but also some others. The printer model support is based on OpenPrinting's [printer support database (Foomatic)](http://www.openprinting.org/printers/). Especially many standard laser (PCL 6/XL, PCL 5c/e, PCL4) and dot matrix (ESC/P, OKI, IBM, ...) but also many printers with proprietary print data formats are supported. There are not only model-specific entries to choose from, but also generic entries for the common formats for the case your printer is not explicitly listed.
 
-The Printer Application gives access to all the options of the former PPD files inside its web interface ("Device Settings", "Media", "Printing Defaults" but can be easily used from any IPP-compliant client application or device. The standard IPP attributes are automatically converted to the best-fitting PPD option settings, espoecially for color, quality, and content optimization.
+The Printer Application gives access to all the options of the former PPD files inside its web interface ("Device Settings", "Media", "Printing Defaults") but can be easily used from any IPP-compliant client application or device. The standard IPP attributes are automatically converted to the best-fitting PPD option settings, especially for color, quality, and content optimization.
 
 These drivers already ship for many years with most common Linux distributions (Ubuntu, Debian, Fedora, SUSE, ...) and have made many user's printers work and these printers will continue to work in environments where only Printer Applications (and no classic printer driver packages) are supported.
 
