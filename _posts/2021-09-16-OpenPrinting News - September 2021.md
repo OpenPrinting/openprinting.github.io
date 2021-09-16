@@ -106,7 +106,7 @@ PASSED
 
 
 ## pappl-retrofit - The CUPS Driver Retro-Fit Library
-Printer Applications retro-fitting classic CUPS printer drivers consisting of PPD files, CUPS filters, and CUPS backends, like currently the [PostScript](https://github.com/OpenPrinting/ps-printer-app/), [Ghostscript](https://github.com/OpenPrinting/ghostscript-printer-app/), and [HPLIP](https://github.com/OpenPrinting/hplip-printer-app/) Printer Applications, have a lot in common and share most of their code. Therefore I have continued the development of the code of the PostScript Printer Application by generalizing it for any type of classic CUPS printer driver (see previous {news posts](https://openprinting.github.io/news/) and the [sneak previews](https://github.com/OpenPrinting/ps-printer-app/discussions/8) of my work during the last months) and put it up on the OpenPrinting GitHub as the [PAPPL Retro-Fit Library](https://github.com/OpenPrinting/pappl-retrofit).
+Printer Applications retro-fitting classic CUPS printer drivers consisting of PPD files, CUPS filters, and CUPS backends, like currently the [PostScript](https://github.com/OpenPrinting/ps-printer-app/), [Ghostscript](https://github.com/OpenPrinting/ghostscript-printer-app/), and [HPLIP](https://github.com/OpenPrinting/hplip-printer-app/) Printer Applications, have a lot in common and share most of their code. Therefore I have continued the development of the code of the PostScript Printer Application by generalizing it for any type of classic CUPS printer driver (see previous [News posts](https://openprinting.github.io/news/) and the [sneak previews](https://github.com/OpenPrinting/ps-printer-app/discussions/8) of my work during the last months) and put it up on the OpenPrinting GitHub as the [PAPPL Retro-Fit Library](https://github.com/OpenPrinting/pappl-retrofit).
 
 This library will also be the start of several other CUPS driver retro-fits making all the drivers from the last (even more than) 21 years available for the new all-IPP, PPD-less printing architecture. 21 years ago I migrated all printer drivers into CUPS, now I am migrating them into the next architecture.
 
@@ -192,7 +192,7 @@ Currently released is [2.3.3op2](https://github.com/OpenPrinting/cups/releases/t
 
 Development of CUPS 2.4 is in progress, currently mainly fixing of bugs which were reported to Apple's CUPS GitHub in the last 19 months.
 
-Ubuntu Impish Indri (21.10, [Feature Freeze next week](https://discourse.ubuntu.com/t/impish-indri-release-schedule/)) will also come with CUPS 2.3.3op2, the CUPS Snap and our CUPS-driver-retro-fitting Printer Application Snaps use the current GIT master.
+Ubuntu Impish Indri (21.10) will also come with CUPS 2.3.3op2, the CUPS Snap and our CUPS-driver-retro-fitting Printer Application Snaps use the current GIT master.
 
 The CUPS in Impish Indri has a distribution patch porting the fully automatic job-IPP-attribute-to-PPD-option-settings mapping from cups-filters, which we use in all retro-fitting Printer Applications to CUPS, so that when sharing a print queue under the new Ubuntu one has the same ease of printing to it from any device, especially phones. A [Pull Request](https://github.com/OpenPrinting/cups/pull/236/) for upstream inclusion of this feature is posted and under discussion.
 
