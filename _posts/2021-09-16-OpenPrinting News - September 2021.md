@@ -17,7 +17,7 @@ Yes, our micro-conference will take place on
 
 The conference is all-online again, as 2020, due to the travel restrictions caused by COVID-19.
 
-**Update: Links to watch live for free on YouTube will get posted [here](https://linuxplumbersconf.org/event/11/page/107-watch-live-free).**
+**Update: Links to watch live for free on YouTube will get posted [here](https://linuxplumbersconf.org/event/11/page/107-watch-live-free) and instructions to participate in the discussion/chat for free are [here](https://www.linuxplumbersconf.org/event/11/page/168-join-the-chat).**
 
 We will have the following sessions:
 
