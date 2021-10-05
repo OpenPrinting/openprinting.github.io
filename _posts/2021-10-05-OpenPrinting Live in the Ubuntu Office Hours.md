@@ -15,7 +15,7 @@ We will also call for volunteers to join OpenPrinting and to contribute, and als
 
 Please mark in your calendars:
 
-- **Thursday, October 7, 2021, 17:00 - 18:00 UTC**
+- **(CORRECTION) Thursday, October 7, 2021, 15:00 - 16:00 UTC**
 
 It will take place on [YouTube](https://www.youtube.com/watch?v=diB3wm4HB1Y) and everyone can participate, without registration and free of charge. Everyone can post questions on the YouTube Live Chat.
 
