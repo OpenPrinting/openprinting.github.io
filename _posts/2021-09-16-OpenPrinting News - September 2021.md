@@ -45,7 +45,7 @@ The exact schedule is [posted on the Linux Plumbers web site](https://linuxplumb
 
 
 ## The Summer of Printers in the Ubuntu Office Hours
-Once a week, every Thursday in the US morning and the European afternoon on the "[Ubuntu OnAir](https://ubuntu.com/blog/ubuntuonair)" YouTube channel of the Ubuntu community, the live event "Ubuntu Office Hours" is taking place. In each episode a free software community memeber is invited to tell about his project and what is happening in its community.
+Once a week, every Thursday in the US morning and the European afternoon on the "[Ubuntu OnAir](https://ubuntu.com/blog/ubuntuonair)" YouTube channel of the Ubuntu community, the live event "Ubuntu Office Hours" is taking place. In each episode a free software community member is invited to tell about his project and what is happening in its community.
 
 In the [October 7 episode](https://www.youtube.com/watch?v=diB3wm4HB1Y) (3 weeks from today) it is all about OpenPrinting. Organizer and host Monica Ayhens-Madon has invited me to talk about GSoC and the students I have mentored. There will not only Monica and me be on the (virtual) stage but also OpenPrinting program manager Aveek Basu and some of this year's (and perhaps also former year's) GSoC students.
 
