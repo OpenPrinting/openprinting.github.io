@@ -192,7 +192,7 @@ Main TODOs are:
 - Add a migration script so that OS distributions can easily switch over from classic packages to the CUPS Snap
 
 
-##Snap Store Overview##
+## Snap Store Overview
 From OpenPrinting we have already [6 Snaps in the Snap Store](https://snapcraft.io/search?q=OpenPrinting):
 
 |Name|Description|Downloads|
