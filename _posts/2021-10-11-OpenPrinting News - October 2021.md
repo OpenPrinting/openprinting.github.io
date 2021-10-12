@@ -74,11 +74,8 @@ His tool is a good candidate to soon get a printer management tool of the new ge
 Thanks a lot to Heather Ellsworth for this contact!
 
 
-## pappl-retrofit - The CUPS Driver Retro-Fit Library The
-retro-fitting library is practically complete and is used by 4 Printer
-Applications now: PostScript, Ghostscript, HPLIP, and Gutenprint. In
-the last month it only received some minor improvements, mainly to fit
-the needs of our 4 Printer Applications:
+## pappl-retrofit - The CUPS Driver Retro-Fit Library
+The retro-fitting library is practically complete and is used by 4 Printer Applications now: PostScript, Ghostscript, HPLIP, and Gutenprint. In the last month it only received some minor improvements, mainly to fit the needs of our 4 Printer Applications:
 
 - If all page sizes of the PPD file have zero margins (especially no variants of the same size with and without margins) we do not show "Borderless" check boxes on the "Media" web interface any more, as there is nothing to switch ([commit](https://github.com/OpenPrinting/pappl-retrofit/commit/59864c05168)).
 - Raster input resolutions are limited now, to avoid overloading clients by requesting extremely high PPD resolutions from them (Gutenprint PPDs have up to 5760x2880dpi). High quality is limitted to 1440dpi, normal to 720dpi, and draft to 360dpi. 1440dpi is good enough for drawings and 720dpi good enough for photos ([commit](https://github.com/OpenPrinting/pappl-retrofit/commit/59864c05168), [discussion](https://sourceforge.net/p/gimp-print/mailman/gimp-print-devel/thread/e24b2385-6576-a949-a40d-3786c8067520%40gmail.com/#msg37353830) on the [Gutenprint mailing list](https://lists.sourceforge.net/lists/listinfo/gimp-print-devel)).
@@ -147,7 +144,7 @@ The challenge when encapsulating this driver in a PAPPL-based Printer Applicatio
 
 Another point which could cause problems are the high resolutions (uo to 5760x2880 dpi) which the driver uses. If we let the Printer Application simply use these, this can make clients (those which send jobs in Apple Raster or PWG Raster) render their jobs in such extreme resolutions and slow down the devices, slow down the printing and the data transfer, or even crash the client device. Therefore we limit now all retro-fitting Printer Applications to 1440 dpi for high, 720 dpi for normal, and 360 dpi for draft quality. 1440 dpi is good enough for fine drawings and 720 dpi good enough for photos. The higher resolutions are used only internally now, for the driver to use a sophisticated, fine-grained dithering.
 
-Both this issues got [discussed](https://sourceforge.net/p/gimp-print/mailman/gimp-print-devel/thread/e24b2385-6576-a949-a40d-3786c8067520%40gmail.com/#msg37353830) on the [Gutenprint mailing list](https://lists.sourceforge.net/lists/listinfo/gimp-print-devel) (free-of-charge subscription required to discuss on the list).
+Both these issues got [discussed](https://sourceforge.net/p/gimp-print/mailman/gimp-print-devel/thread/e24b2385-6576-a949-a40d-3786c8067520%40gmail.com/#msg37353830) on the [Gutenprint mailing list](https://lists.sourceforge.net/lists/listinfo/gimp-print-devel) (free-of-charge subscription required to discuss on the list).
 
 
 ## HPLIP Printer Application
