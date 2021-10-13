@@ -8,7 +8,7 @@ excerpt: OpenPrinting/GSoC in Ubuntu Office Hours, Gutenprint Printer Appl., HPL
 This Thursday, October 14, 2021, is Ubuntu release day again! Ubuntu 21.10!
 
 Not a lot of new stuff in terms of printing (in addition to all printing- and scanning-related packages being up-to-date) but at least some nice things:
-- The GTK print dialog finally lists virtual/temporary queues which CUPS generates for driverless IPP printers and Printer Applications. So if one uses only GTK=based applications, one does not need cups-browsed any more. But for now I continue providing cups-browsed, as Qt's print dialog is not cute.
+- The GTK print dialog finally lists virtual/temporary queues which CUPS generates for driverless IPP printers and Printer Applications. So if one uses only GTK-based applications, one does not need cups-browsed any more. But for now I continue providing cups-browsed, as Qt's print dialog is not cute.
 - libcups is patched with the same algorithm for mapping standard IPP attributes to PPD option settings as I have created in libppd in cups-filters for the Printer Applications. So you can print to shared CUPS queues from your phone or IoT device and easily get the printout as you like it.
 
 And there will be a virtual release party on [YouTube](https://www.youtube.com/watch?v=8ZTI7kdPFLc)!
