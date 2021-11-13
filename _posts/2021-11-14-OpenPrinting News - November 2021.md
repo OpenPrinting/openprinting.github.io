@@ -46,7 +46,7 @@ If your printer still needs a driver which does not exist in any of the above-me
 
 It is a part of the [pappl-retrofit](https://github.com/OpenPrinting/pappl-retrofit) package and it makes drivers classically installed for the system's classically installed CUPS available in a Printer Application and this way for the CUPS Snap and any non-driver-supporting CUPS in the future.
 
-Note that this Printer Application cannot be put into a Snap and has to be classically installed instead, as otrherwise it would not have access to your classically installed driver.
+Note that this Printer Application cannot be put into a Snap and has to be classically installed instead, as otherwise it would not have access to your classically installed driver.
 
 This is especially of help for proprietary drivers for legacy printers, which are not updated any more by the manufacturers and so will not get converted to Printer Applications.
 
@@ -134,10 +134,11 @@ When running in debug logging mode we now **save a copy of the job data which go
 
 The retro-fitting library has also received many fixes and improvements during the work on the 4 Printer Applications, especially for correctly listing the supported printer models in a user-friendly way, reliably auto-assigning the correct driver/model to a discovered printer, and also to prevent crashes:
 
-- When setting up the driver verify and correct default resolution, especially the default resolution saved in the state file can get invalid if the driver is removed from the Printer Application and anotherone auto-selected. This causes crashes on shutdown ([commit](https://github.com/OpenPrinting/pappl-retrofit/commit/f6908518ec3ce04).
-- Use device ID as display string (for "Add Printer") only if manufacturer matches ([commit](https://github.com/OpenPrinting/pappl-retrofit/commit/e08172bdb2f))- On driver setup skip media sources/types/sizes without PWG name to avoid crashes, preventing crashes ([commit](https://github.com/OpenPrinting/pappl-retrofit/commit/48c9618e252b)).
-- When generating the driver list, never use a single "*Product" entry in the PPD file, as this entry is either the model name from the "*NickName" or something weird ([commit](https://github.com/OpenPrinting/pappl-retrofit/commit/138325e6b331b))
-- On driver setup corrected loop to go through the "*cupsFilter(2)" lines of the PPD, as only the first line got actually used ([commit](https://github.com/OpenPrinting/pappl-retrofit/commit/eea77fb19a9))
+- When setting up the driver verify and correct default resolution, especially the default resolution saved in the state file can get invalid if the driver is removed from the Printer Application and another one auto-selected. This causes crashes on shutdown ([commit](https://github.com/OpenPrinting/pappl-retrofit/commit/f6908518ec3ce04)).
+- Use device ID as display string (for "Add Printer") only if manufacturer matches ([commit](https://github.com/OpenPrinting/pappl-retrofit/commit/e08172bdb2f))
+- On driver setup skip media sources/types/sizes without PWG name to avoid crashes ([commit](https://github.com/OpenPrinting/pappl-retrofit/commit/48c9618e252b)).
+- When generating the driver list, never use a single "`*Product`" entry in the PPD file, as this entry is either the model name from the "`*NickName`" or something weird ([commit](https://github.com/OpenPrinting/pappl-retrofit/commit/138325e6b331b))
+- On driver setup corrected loop to go through the "`*cupsFilter(2)`" lines of the PPD, as only the first line got actually used ([commit](https://github.com/OpenPrinting/pappl-retrofit/commit/eea77fb19a9))
 - Let system setup set the `CUPS_SERVERBIN` environment variable, as some CUPS filters rely on it ([commit](https://github.com/OpenPrinting/pappl-retrofit/commit/1f498627b5ed))
 
 Further development of the library will go with the development of PAPPL and the needs of the Printer Applications. Especially the following features will get implemented/supported as soon as they are implemented/fixed in PAPPL:
@@ -161,7 +162,7 @@ With this and the 3 other driver-retro-fitting Printer Applications **all printe
 
 I also make use of libppd’s `*.drv` file support in the Snap ([commit](https://github.com/OpenPrinting/ghostscript-printer-app/commit/5a0514ec00a70)) as several drivers use this format instead of actual PPD files or a PPD-file-generating executable and so we do not need to pre-build the PPD files.
 
-Also I discovered that the `pdftops` CUPS filter (needed by `foomatic-rip` for drivers which accept only PostScript) wa smissing and added it (it is actually only a little stub to call the `pdftops()` filter function in libcupsfilters).
+Also I discovered that the `pdftops` CUPS filter (needed by `foomatic-rip` for drivers which accept only PostScript) was missing and added it (it is actually only a little stub to call the `pdftops()` filter function in libcupsfilters).
 
 
 ## CUPS-driver-retro-fitting Printer Applications
