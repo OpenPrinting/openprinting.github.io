@@ -35,3 +35,10 @@ Dheeraj:
   location  : "Mandi, 175001, India"
 #   stackoverflow: ""
 #
+Zdenek:
+  name    : "Zdenek Dohnal"
+  bio     : "Member of CUPS Release Managers group, RHEL/CentOS Stream/Fedora CUPS maintainer"
+#  avatar  : "https://openprinting.github.io/assets/images/zdenek-dohnal.jpg"
+#  email   : "zdohnal@redhat.com"
+  github : "zdohnal"
+  location: "Brno, Czech Republic"
