@@ -4,26 +4,26 @@ layout: single
 author: Till
 excerpt: Testing and bug fixing to approach cups-filters 2.x, CUPS 2.4.0, PAPPL 1.1rc1
 ---
-This month's the news post is somewhat shorter, as not many important features, milestones, or great new ideas we have to talk about. I mainly tested cups-filters and fixed bugs to approach its 2.0.0 release.
+This month's news post is somewhat shorter, as not many important features, milestones, or great new ideas we have to talk about. I mainly tested cups-filters and fixed bugs to approach its 2.0.0 release.
 
-But we are not completely without milestones, as **CUPS 2.4.0** ot released as the **first stable feature release of CUPS on OpenPrinting**. We are back with a new stable release series of CUPS and Ubuntu 22.04 LTS and probably many other distributions will come with a 2.4.x version of CUPS.
+But we are not completely without milestones, as **CUPS 2.4.0** got released as the **first stable feature release of CUPS on OpenPrinting**. We are back with a new stable release series of CUPS and Ubuntu 22.04 LTS and probably many other distributions will come with a 2.4.x version of CUPS.
 
 And also keep in mind that for 2022 **everyone** can participate as code contributor in the Google Summer of Code, not only students. See [last month's edition](https://openprinting.github.io/OpenPrinting-News-November-2021/#google-summer-of-code-2022). So if you like to participate, or at least be part of the OpenPrinting developer community, please speak up (`till at linux dot com`).
 
-We need also project ideas for the GSoC 2022. Note that there are 2 sizes now, 3months like on GSoC 2019 and before and 6 weeks like on GSoC 2020.
+We need also project ideas for the GSoC 2022. Note that there are 2 sizes now, 3 months like on GSoC 2020 and before and 6 weeks like on GSoC 2021.
 
 
 ## CUPS-driver-retro-fitting Printer Applications
-On further testing I have fond the following issues and corrected them:
+On further testing I have found the following issues and corrected them:
 
-- Removed now unneeded workaround for missing `mdns4_minimal` in core20, as this is fixed in released core 20 now ([commit](https://github.com/OpenPrinting/ghostscript-printer-app/commit/67a1962cad2b))
+- Removed now unneeded workaround for missing `mdns4_minimal` in core20, as this is fixed in released core20 now ([commit](https://github.com/OpenPrinting/ghostscript-printer-app/commit/67a1962cad2b))
 - Adjusted the systemd timeout for shutdown (`TimeoutStopSec`) in the Printer Application Snaps, to be longer than PAPPL's internal timeout on shutdown, to assure regular shutdowns instead of killing (`kill -9 ...`) the Printer Application ([GitHub Issue](https://github.com/OpenPrinting/ghostscript-printer-app/issues/4)).
 
 
 ## CUPS Snap
 **[CUPS Snap](https://github.com/OpenPrinting/cups-snap) in the [Snap Store](https://snapcraft.io/cups)**
 
-I am still waiting for the snapd team to implement the [security concept](https://forum.snapcraft.io/t/handling-of-the-cups-plug-by-snapd-especially-auto-connection/23419/43?u=till.kamppeter) on the snapd side, but we have agai progress here.
+I am still waiting for the snapd team to implement the [security concept](https://forum.snapcraft.io/t/handling-of-the-cups-plug-by-snapd-especially-auto-connection/23419/43?u=till.kamppeter) on the snapd side, but we have again progress here.
 
 Only few things still need to get adjusted, once to prevent breaking the AppArmor profile by the CUPS socket path specified in the client Snaps ([discussion](https://github.com/snapcore/snapd/pull/10427#discussion_r740962760)) and second, the best location for the CUPS socket to do not interfere with other files ([discussion](https://github.com/snapcore/snapd/pull/10427#discussion_r757582011)).
 
@@ -54,9 +54,9 @@ From OpenPrinting we have already [6 Snaps in the Snap Store](https://snapcraft.
 ## CUPS
 Currently released is [**2.4.0**](https://github.com/OpenPrinting/cups/releases/tag/v2.4.0).
 
-This the **first feature release of CUPS on OpenPrinting**. Thanks to Zdenek Dohnal (RedHat) for having taken the role of the release manager for the CUPS 2.4.x series. See our [development roadmap](https://openprinting.github.io/OpenPrinting-News-October-2021/#cups) posted earlier here for details.
+This is the **first feature release of CUPS on OpenPrinting**. Thanks to Zdenek Dohnal (RedHat) for having taken the role of the release manager for the CUPS 2.4.x series. See our [development roadmap](https://openprinting.github.io/OpenPrinting-News-October-2021/#cups) posted earlier here for details.
 
-Ubuntu Jammy Jellyfish ([22.04 LTS](https://discourse.ubuntu.com/t/jammy-jellyfish-release-schedule/)) will come with CUPS 2.4.x, if all works well as Snap. The CUPS Snap and our CUPS-driver-retro-fitting Printer Application Snaps use the current GIT master of CUPS.
+Ubuntu Jammy Jellyfish ([22.04 LTS](https://discourse.ubuntu.com/t/jammy-jellyfish-release-schedule/)) will come with CUPS 2.4.x, if all works well, as Snap. The CUPS Snap and our CUPS-driver-retro-fitting Printer Application Snaps use the current GIT master of CUPS.
 
 [2.4.0](https://github.com/OpenPrinting/cups/releases/tag/v2.4.0)
 
@@ -77,7 +77,7 @@ Changes in CUPS v2.4.0 (29th November 2021)
 ## cups-filters
 Currently released is [1.28.10](https://github.com/OpenPrinting/cups-filters/releases/tag/1.28.10).
 
-We are continuing to polish and to fix bugs for the 2.0.0 release. I have especially tested then new [`universal`](https://gist.github.com/pranshukharkwal/9413499a6744049ef549159948392023) filter function and by that found some bugs in the filter function itself and in cups-filters in general. Also switching the `implicitclass` CUPS backend of cups-browsed revealed some bugs.
+We are continuing to polish and to fix bugs for the 2.0.0 release. I have especially tested the new [`universal`](https://gist.github.com/pranshukharkwal/9413499a6744049ef549159948392023) filter function and by that found some bugs in the filter function itself and in cups-filters in general. Also switching the `implicitclass` CUPS backend of cups-browsed over to use filter functions instead of external filter executables revealed some bugs.
 
 - Forgotten to include `bannertopdf()`([commit](https://github.com/OpenPrinting/cups-filters/commit/9f7488239ed8e4b)) and its MIME rule ([commit](https://github.com/OpenPrinting/cups-filters/commit/f6fd85071de)) in the 'universal()` filter function.
 - Added CUPS conversion rule files ([commit](https://github.com/OpenPrinting/cups-filters/commit/2db75852fe3)) separately for individual CUPS filters and `universal()`
