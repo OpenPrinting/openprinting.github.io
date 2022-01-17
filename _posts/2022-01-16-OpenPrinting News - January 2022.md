@@ -75,7 +75,7 @@ I am inviting everyone to discuss on the [OpenPrintingmailing list](https://list
 ## CUPS-driver-retro-fitting Printer Applications
 When getting some [UTAX PostScript PPD files](https://github.com/OpenPrinting/foomatic-db/pull/24) I found a bug with the PPD file handling in the retro-fitting Printer Applications.
 
-PPD files contain a metadata field named NickName (like ``UTAX 350ci (KPDL)`). It contains make and model name of the printer followed by information about the PostScript interpreter or printer driver. This field, plus the two-character code for the PPD's user interface language in parentheses (like `(en)`) are put together (`UTAX 350ci (KPDL) (en)`) in a string and then normalized (all-lowercase, no non-alpha-numeric characters, word separation with `-`) to get a unique driver name (`utax--350-ci--kpdl-en`) for each PPD and no loss of PPD list entries caused by duplicate names. Unfortuately, the normalization code had a bug, throwing away all characters after the first closing paranthesis. This way the language code got lost and as UMAX PPDs come in 6 languages, only the versions with the language coming first in the alphabet (`(de)`) remained.
+PPD files contain a metadata field named NickName (like `UTAX 350ci (KPDL)`). It contains make and model name of the printer followed by information about the PostScript interpreter or printer driver. This field, plus the two-character code for the PPD's user interface language in parentheses (like `(en)`) are put together (`UTAX 350ci (KPDL) (en)`) in a string and then normalized (all-lowercase, no non-alpha-numeric characters, word separation with `-`) to get a unique driver name (`utax--350-ci--kpdl-en`) for each PPD and no loss of PPD list entries caused by duplicate names. Unfortuately, the normalization code had a bug, throwing away all characters after the first closing paranthesis. This way the language code got lost and as UMAX PPDs come in 6 languages, only the versions with the language coming first in the alphabet (`(de)`) remained.
 
 In the PostScript Printer Application not only the PPD files for the 3 UTAX printers were affected but also PPDs for all Kyocera PostScript printers (they also have `(KPDL)` in their NickName), so users of these printers had a working printer but with printer-specific options on the Printer Defaults web interface page  in German or another language.
 
@@ -113,7 +113,7 @@ Announcement of the [**1.1.0 release**](https://openprinting.github.io/lprint-1.
 
 
 ## PDFio
-**[PDFio](https://www.msweet.org/pdfio/)**
+**[Project page](https://www.msweet.org/pdfio/)**
 
 PDFio is a simple library for reading and writing PDF files, but it is not a PDF renderer/rasterizer. So it does similar things as the [QPDF](https://github.com/qpdf/qpdf/) library, but using only simple C, not C++. It does not replace renderers like Ghostscript or Poppler.
 
