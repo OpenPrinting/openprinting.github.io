@@ -141,7 +141,8 @@
     color: #ccc;
   }
   ::selection {
-    color: #ccc;
+    background: #ccc;
+    color: black;
   }
   .page__footer {
     color: #ccc !important;
