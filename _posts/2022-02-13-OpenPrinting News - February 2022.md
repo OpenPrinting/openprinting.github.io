@@ -200,7 +200,7 @@ CUPS 2.4.1 got released, adding several bug fixes, especially that the ColorMode
 
 Michael Sweet is also [**already working on the libcups of CUPS 3.x**](https://openprinting.github.io/OpenPrinting-News-October-2021/#cups) ([Mike's personal libcups repo](https://github.com/michaelrsweet/libcups)). 
 
-Ubuntu Jammy Jellyfish ([22.04 LTS](https://discourse.ubuntu.com/t/jammy-jellyfish-release-schedule/)) will come with CUPS 2.4.x, most probably 2.4.1. It will still come as classic Debian package and all the drivers, too. The full snapd integration of the CUPS Snap is only happening right now ([see above](#cups-snap-and-snapd-printing-interface)) and we also did not succeed to release cups-filters 2.x and pappl-retrofit 1.x (for the Legacy Printer Application). More important even, we need the changes in the GUI tools ([see above](#approaching-cups-filters-2-0)).
+Ubuntu Jammy Jellyfish ([22.04 LTS](https://discourse.ubuntu.com/t/jammy-jellyfish-release-schedule/)) will come with CUPS 2.4.x, most probably 2.4.1. It will still come as classic Debian package and all the drivers, too. The full snapd integration of the CUPS Snap is only happening right now ([see above](#cups-snap-and-snapd-printing-interface)) and we also did not succeed to release cups-filters 2.x and pappl-retrofit 1.x (for the Legacy Printer Application). More important even, we need the changes in the GUI tools ([see above](#approaching-cups-filters-20)).
 
 The CUPS Snap and our CUPS-driver-retro-fitting Printer Application Snaps use the current GIT master of CUPS.
 
@@ -230,7 +230,7 @@ Changes in CUPS v2.4.1 (27th January 2020)
 ## cups-filters
 Currently released is [1.28.11](https://github.com/OpenPrinting/cups-filters/releases/tag/1.28.11).
 
-We are continuing to polish and to fix bugs for the 2.0.0 release. I have especially tested all the filter functions with the new generated PPD files for driverless IPP printing and for cups-browsed-based printer clusters, fixed 16-bit-per-color output, fixed the `imageto..()` filter functions, and also removed a lot of "log message leaking" to `stderr` ([see above](#approaching-cups-filters-2-0)).
+We are continuing to polish and to fix bugs for the 2.0.0 release. I have especially tested all the filter functions with the new generated PPD files for driverless IPP printing and for cups-browsed-based printer clusters, fixed 16-bit-per-color output, fixed the `imageto..()` filter functions, and also removed a lot of "log message leaking" to `stderr` ([see above](#approaching-cups-filters-20)).
 
 I have also backported many of the fixes already to cups-filters 1.x, as 2.x will still take some time to get released.
 
