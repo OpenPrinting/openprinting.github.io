@@ -173,7 +173,7 @@ As I do not have such a printer I had to do some [tricky workaround](https://git
 
 Fortunately, the reporter of the problem, M. Parker, was very enthusiastic and cooperative, investigating the problem with the help of my mentorship. I [told him](https://github.com/OpenPrinting/hplip-printer-app/issues/2#issuecomment-1020755974) how to debug a Snap, as rebuilding it with some debug `echo` commands added to the script which controls the firmware upload, and putting the script into debug mode. Before this, he also did some [Snap debugging](https://github.com/OpenPrinting/hplip-printer-app/issues/2#issue-1113335132) already, and finally [solved the problem](https://github.com/OpenPrinting/hplip-printer-app/issues/2#issuecomment-1030934431)!
 
-Thanks a lot for your great cooperation, M. Parker!
+Thanks a lot for your great cooperation, M. Parker! You have made the automatic firmware upload working!
 
 After that, I have updated also the HPLIP used in the [PostScript Printer Application](https://github.com/OpenPrinting/ps-printer-app) (PostScript PPD files for HP printers, [Snap Store](https://snapcraft.io/ps-printer-app)) and in the [Ghostscript Printer Application](https://github.com/OpenPrinting/ghostscript-printer-app) (HPIJS for non-HP PCL-5c/e lasers, [Snap Store](https://snapcraft.io/ghostscript-printer-app)) to the Debian package source of HPLIP 3.21.12.
 
@@ -198,7 +198,7 @@ Currently released is [**2.4.1**](https://github.com/OpenPrinting/cups/releases/
 
 CUPS 2.4.1 got released, adding several bug fixes, especially that the ColorModel default in generated PPD files for driverless printers is taken from the printer and also configurable which I told about [last month](https://openprinting.github.io/OpenPrinting-News-January-2022/#cups).
 
-Michael Sweet is also [**already working on the libcups of CUPS 3.x**](https://openprinting.github.io/OpenPrinting-News-October-2021/#cups) ([Mike's personal libcups repo](https://github.com/michaelrsweet/libcups)). 
+Michael Sweet is also **already working on the libcups of [CUPS 3.x](https://openprinting.github.io/OpenPrinting-News-October-2021/#cups)** ([Michael's personal libcups repo](https://github.com/michaelrsweet/libcups)). 
 
 Ubuntu Jammy Jellyfish ([22.04 LTS](https://discourse.ubuntu.com/t/jammy-jellyfish-release-schedule/)) will come with CUPS 2.4.x, most probably 2.4.1. It will still come as classic Debian package and all the drivers, too. The full snapd integration of the CUPS Snap is only happening right now ([see above](#cups-snap-and-snapd-printing-interface)) and we also did not succeed to release cups-filters 2.x and pappl-retrofit 1.x (for the Legacy Printer Application). More important even, we need the changes in the GUI tools ([see above](#approaching-cups-filters-20)).
 
@@ -234,13 +234,13 @@ We are continuing to polish and to fix bugs for the 2.0.0 release. I have especi
 
 I have also backported many of the fixes already to cups-filters 1.x, as 2.x will still take some time to get released.
 
-- Do not use highcolor depth (16 bits per color) with all filter functions ([commit](https://github.com/OpenPrinting/cups-filters/commit/402472c94).
+- Do not use high color depth (16 bits per color) with all filter functions ([commit](https://github.com/OpenPrinting/cups-filters/commit/402472c94)).
 - Many fixes on the filter functions: Select correct color space/depth for Raster output with cups-filters-generated PPDs, 16-bit-per-color output of `pdftoraster()` and `pwgtoraster()`, `print-scaling=mone` with `imageto...()` filter functions ([commit](https://github.com/OpenPrinting/cups-filters/commit/cb2737b56)).
 - Support all color spaces supported by PWG Raster and Apple Raster for auto-selection by the cups-filters-generated PPD files or printer IPP attributes ([commit](https://github.com/OpenPrinting/cups-filters/commit/109abfee6f)).
 - Do not call `cupsRasterParseIPPOptions()` if we have a PPD file, as it guesses the meaning of option/attribute names and this can lead to settings not supported by the PPD/the printer ([commit](https://github.com/OpenPrinting/cups-filters/commit/f472e2984f)).
-- Added new `input-page-ranges` option to the `pdftopdf()` and `pstops()` filter functions. Ittakes the same syntax as `page-ranges` but selection of pages is done on the input document before applying N-up, booklet, ... So it allows selecting pages from the input document, whereas `page-ranges` selects from the print job ([`pdftopdf()`](https://github.com/OpenPrinting/cups-filters/commit/ca8cebd807), [`pstops()`](https://github.com/OpenPrinting/cups-filters/commit/70e4478a0)).
+- Added new `input-page-ranges` option to the `pdftopdf()` and `pstops()` filter functions. It takes the same syntax as `page-ranges` but selection of pages is done on the input document before applying N-up, booklet, ... So it allows selecting pages from the input document, whereas `page-ranges` selects from the print job (commits: [`pdftopdf()`](https://github.com/OpenPrinting/cups-filters/commit/ca8cebd807), [`pstops()`](https://github.com/OpenPrinting/cups-filters/commit/70e4478a0)).
 - If for a printer in a `cups-browsed` cluster a `get-printer-attributes` IPP request by the `implicitclass` backend fails, for example because the printer is a legacy IPP (1.x) printer, fall back to using the queue's/cluster's PPD file, to not drop `cups-browsed`'s support for legacy IPP printers ([commit](https://github.com/OpenPrinting/cups-filters/commit/a919bd4fcb)).
-- In `mupdftoraster()` direct output to `outputfd` instead of directky to stdout and logging to the log function instead of `stderr` ([commit](https://github.com/OpenPrinting/cups-filters/commit/272a037d2)).
+- In `mupdftoraster()` direct output to `outputfd` instead of directly to stdout and logging to the log function instead of `stderr` ([commit](https://github.com/OpenPrinting/cups-filters/commit/272a037d2)).
 - In `pdftopdf()` add 2% tolerance for input sizes larger output page when doing fit-to-page, as otherwise sometimes pages get fit into the sheet and sometimes into the printable area due to small rounding errors ([commit](https://github.com/OpenPrinting/cups-filters/commit/e541dc698)).
 - For images without resolution in metadata changed the default ppi from 128 to 200 for printing in "original size" with `imageto...()` filter functions, as this is the standard resolution of shipping labels, and other images you usually print scaled to the page ([commit](https://github.com/OpenPrinting/cups-filters/commit/70970df3c7)).
 - In the `serial` CUPS backend add a 10-msec sleep and at the end add a `tcdrain()` call to make serial printers more reliably working ([commit](https://github.com/OpenPrinting/cups-filters/commit/cda85239d)).
