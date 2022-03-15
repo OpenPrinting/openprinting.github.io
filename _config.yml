@@ -145,6 +145,8 @@ include:
   - .htaccess
   - _pages
   - _docpages
+  - printers.html
+  - airprint.json
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
@@ -287,7 +289,7 @@ defaults:
       layout: single
       author_profile: true
       # comments: true
-  
+
   # _gsoc2021
   - scope:
       path: ""

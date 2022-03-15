@@ -1,0 +1,129 @@
+---
+title: Supported Printers
+layout: default
+---
+
+<div class="container-fluid row">
+  <div class="col-md-12 col-sm-12" style="margin: 1em 2em;">
+    <h1>Supported Printers</h1>
+    <form id="search" onSubmit="event.preventDefault(); update();" style="text-align: center;">
+    <select name="media" onChange="update();">
+      <option value="">All Makes</option>
+      <option>Astro-Med</option>
+      <option>Aurora</option>
+      <option>Brother</option>
+      <option>Canon</option>
+      <option>Conexant</option>
+      <option>CSR</option>
+      <option>Deli</option>
+      <option>Dell</option>
+      <option>Develop</option>
+      <option>Epson</option>
+      <option>f+ imaging</option>
+      <option>FUJIFILM</option>
+      <option>Fuji Xerox</option>
+      <option>G&amp;G</option>
+      <option>Gestetner</option>
+      <option>HP</option>
+      <option>Infotec</option>
+      <option>iPrint</option>
+      <option>Jiyin</option>
+      <option>KODAK</option>
+      <option>Konica Minolta</option>
+      <option>Kyocera</option>
+      <option>Lanier</option>
+      <option>Lantronix</option>
+      <option>Lenovo</option>
+      <option>Lexmark</option>
+      <option>LG</option>
+      <option>LRS</option>
+      <option>Mi</option>
+      <option>Micro Focus</option>
+      <option>Muratec</option>
+      <option>NEC</option>
+      <option>NRG</option>
+      <option>NT-ware</option>
+      <option>NTT</option>
+      <option>OKI</option>
+      <option>Olivetti</option>
+      <option>Panasonic</option>
+      <option>Pantum</option>
+      <option>Princiao</option>
+      <option>Prink</option>
+      <option>Ricoh</option>
+      <option>Riso</option>
+      <option>Rollo</option>
+      <option>Samsung</option>
+      <option>Savin</option>
+      <option>SEH</option>
+      <option>Sharp</option>
+      <option>Sindoh</option>
+      <option>Star Micronics</option>
+      <option>TA</option>
+      <option>Toshiba</option>
+      <option>Xerox</option>
+      <option>ZINK</option>
+    </select>
+    <input type="search" style="width: 50%;" name="q" placeholder="Model, etc." autocomplete="org.openprinting.printers" onInput="update();">
+    </form>
+
+    <table id="printerTable" summary="Printers">
+    <caption id="printerCount">??? printers.</caption>
+      <thead>
+	<tr>
+	  <th style="width: 80%;">Model</th>
+	  <th style="width: 20%;">Driver</th>
+	</tr>
+      </thead>
+      <tbody id="printers">
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script type="text/javascript">
+function update()
+{
+  var printers = null;
+
+  console.log("update()");
+
+  fetch('/assets/json/airprint.json')
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(json) {
+    console.log("Got airprint.json.");
+    printers = json.sort();
+
+    var form = document.getElementById("search");
+    var make = form.elements[0].options[form.elements[0].selectedIndex].value;
+    var q = form.elements[1].value.toLowerCase();
+
+    var r = new Array(), j = 0, count = 0;
+    for (var i = 0; i < printers.length; i ++)
+    {
+      var printer = printers[i];
+
+      if (make != "" && !printer.startsWith(make))
+        continue;
+      if (q != "" && printer.toLowerCase().indexOf(q) < 0)
+        continue;
+
+      r[j++] = '<tr><td>' + printer + '</td><td>IPP Everywhere™</td></tr>';
+      count ++;
+    }
+
+    if (count == 0)
+      document.getElementById("printerCount").innerHTML = 'No printers.';
+    else if (count == 1)
+      document.getElementById("printerCount").innerHTML = '1 printer.';
+    else
+      document.getElementById("printerCount").innerHTML = count + ' printers.';
+
+    document.getElementById("printers").innerHTML = r.join('');
+  });
+}
+
+update();
+</script>
