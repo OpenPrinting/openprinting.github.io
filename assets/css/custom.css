@@ -101,6 +101,17 @@
     background: black;
     color: #ccc;
   }
+  form {
+    background: #111;
+    color: #ccc;
+  }
+  select, input, textarea, thead {
+    background: #333;
+    color: #ccc;
+  }
+  input, textarea {
+    border: solid thin #ccc;
+  }
   .masthead {
     background: #333;
     border: solid thin #ccc;
@@ -156,10 +167,10 @@
   .archive__item-teaser img {
     opacity: 66%;
   }
-  ::selection {
+/*  ::selection {
     background: #ccc;
     color: black;
-  }
+  }*/
   .page__footer {
     color: #ccc !important;
   }
