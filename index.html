@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-title: "Open Printing"
+title: "OpenPrinting"
 layout: splash
 date: 2016-03-23T11:48:41-04:00
 header:
@@ -23,14 +23,14 @@ header:
   actions:
     - label: "Learn More"
       url: "/about-us/"
-excerpt: "Making printing just work!"
+excerpt: "We make printing just work!"
 intro:
-  - excerpt: 'OpenPrinting works on the development of printing technology for Linux® and Unix®-style operating systems. We collaborate with IEEE-ISTO Printer Working Group (PWG) on Internet Printing Protocol (IPP) projects.'
+  - excerpt: 'OpenPrinting works on the development of printing technology for Linux® and Unix®-style operating systems. We collaborate with the IEEE-ISTO Printer Working Group (PWG) Internet Printing Protocol (IPP) workgroup.'
 feature_row:
   - image_path: /assets/images/OpenPrintingBox.png
     alt: "About Us"
     title: "About Us"
-    excerpt: "Learn more about OpenPrinting, how it works, the people involved and the projects maintained by it"
+    excerpt: "Learn more about OpenPrinting, how it works, the people involved, and the projects maintained by it"
     url: "/about-us"
     btn_label: "Read More"
     btn_class: "btn--primary"
@@ -47,6 +47,32 @@ feature_row:
     btn_label: "Read More"
     btn_class: "btn--primary"
 
+database_intro:
+  - excerpt: "<strong>Most modern printers work using OpenPrinting software without additional drivers or software.</strong> OpenPrinting also hosts a printer compatibility database with entries from both the Foomatic package and the community."
+
+database_row:
+  - image_path: /assets/images/ipp-everywhere.png
+    alt: "Driverless Printers"
+    title: "Driverless Printers"
+    excerpt: "Most modern printers work 'out of the box' with OpenPrinting software. Browse the thousands of driverless printers."
+    url: "/printers"
+    btn_label: "Browse"
+    btn_class: "btn--primary"
+  - image_path: /assets/images/printer.png
+    alt: "Foomatic Printer Database"
+    title: "Legacy Printers"
+    excerpt: "The Foomatic printer database lists all of the printers that are supported by the Foomatic printer driver package."
+    url: "https://openprinting.org/printers"
+    btn_label: "Browse"
+    btn_class: "btn--primary"
+  - image_path: /assets/images/files.png
+    alt: "Foomatic Driver Database"
+    title: "Printer Drivers"
+    excerpt: "The printer driver database lists all of the printer drivers that are used by the Foomatic printer driver package."
+    url: "https://openprinting.org/drivers"
+    btn_label: "Browse"
+    btn_class: "btn--primary"
+
 collaboration_intro:
   - excerpt: "OpenPrinting collaborates with the community to advance printing and scanning on Linux® and Unix®-style operating systems."
 
@@ -54,49 +80,23 @@ collaboration_row:
   - image_path: assets/images/gsod.jpg
     alt: "GSoD - OpenPrinting"
     title: "GSoD - OpenPrinting"
-    excerpt: "OpenPrinting has been participating in the GSoD programme under its umbrella organization The Linux Foundation."
+    excerpt: "OpenPrinting participates in the GSoD programme under its umbrella organization The Linux Foundation."
     url: "/gsod/"
     btn_label: "Read More"
     btn_class: "btn--primary"
   - image_path: assets/images/lfmp.png
     alt: "LFMP - OpenPrinting"
     title: "LFMP - OpenPrinting"
-    excerpt: "OpenPrinting has been participating in the Linux Foundation Mentorship Programme."
+    excerpt: "OpenPrinting has been participating in the Linux Foundation Mentorship Programme (similar to GSoC)."
     url: "/lfmp/"
     btn_label: "Read More"
     btn_class: "btn--primary"
   - image_path: assets/images/gsoc.jpeg
     alt: "GSoC - OpenPrinting"
     title: "GSoC - OpenPrinting"
-    excerpt: "OpenPrinting has been participating in the GSoC programme under its umbrella organization The Linux Foundation."
+    excerpt: "OpenPrinting participates in the GSoC programme under its umbrella organization The Linux Foundation."
     url: "/gsoc/"
     btn_label: "Read More"
-    btn_class: "btn--primary"
-
-database_intro:
-  - excerpt: "OpenPrinting hosts a printer compatibility database with entries from both the Foomatic package and the community."
-
-database_row:
-  - image_path: /assets/images/Configuration.png
-    alt: "Printer Compatibility Database"
-    title: "Compatibility Database"
-    excerpt: "A wealth of information about specific printers, drivers, specifications, and configuration tools."
-    url: "http://openprinting.org/database"
-    btn_label: "Read More"
-    btn_class: "btn--primary"
-  - image_path: /assets/images/printer.png
-    alt: "Foomatic Printer Database"
-    title: "Printer Database"
-    excerpt: "The Foomatic printer database lists all of the printers that are supported by the Foomatic printer driver package."
-    url: "https://openprinting.org/printers"
-    btn_label: "Browse"
-    btn_class: "btn--primary"
-  - image_path: /assets/images/files.png
-    alt: "Foomatic Driver Database"
-    title: "Printer Driver Database"
-    excerpt: "The printer driver database lists all of the printer drivers that are used by the Foomatic printer driver package."
-    url: "https://openprinting.org/drivers"
-    btn_label: "Browse"
     btn_class: "btn--primary"
 
 ---
@@ -135,10 +135,10 @@ database_row:
 
 {% include feature_row %}
 
-{% include feature_row id="collaboration_intro" type="center" %}
-
-{% include feature_row id="collaboration_row" %}
-
 {% include feature_row id="database_intro" type="center" %}
 
 {% include feature_row id="database_row" %}
+
+{% include feature_row id="collaboration_intro" type="center" %}
+
+{% include feature_row id="collaboration_row" %}
