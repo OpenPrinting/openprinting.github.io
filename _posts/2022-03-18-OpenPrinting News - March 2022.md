@@ -187,7 +187,7 @@ The fixes on the `imageto...` filters are already backported to cups-filters 1.2
 Mainly missing now is a bunch of log leaks to stderr in image processing functions, some little known bugs, general code clean-up, license info in the source files, and then we are ready for a Release Candidate.
 
 
-##Ghostscript supports driverless IPP data formats
+## Ghostscript supports driverless IPP data formats
 I have also contributed to Ghostscript towards driverless printing this month. The changes will be available from Ghostscript 9.56.0 on, which will get released in a few days.
 
 First I have added new `appleraster` and `urf` output devices to let Ghostscript generate the Apple Raster (URF) format for driverless IPP printing ([commit](https://git.ghostscript.com/?p=ghostpdl.git;a=commitdiff;h=d56ebbd30ded)). The chabge was trivial, as Ghostscript already uses libcups to generate PWG Raster (with the `cups` or `pwgraster` output devices) and one can switch these libcups functions to output Apple Raster instead by changing a simple flag.
