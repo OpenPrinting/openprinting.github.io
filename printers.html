@@ -111,9 +111,11 @@ function update()
     {
       var printer = printers[i];
 
-      if (make != "" && !printer.model.startsWith(make))
+      if (printer.model == "_dummy_")
         continue;
-      if (q != "" && printer.model.toLowerCase().indexOf(q) < 0)
+      else if (make != "" && !printer.model.startsWith(make))
+        continue;
+      else if (q != "" && printer.model.toLowerCase().indexOf(q) < 0)
         continue;
 
       r[j++] = '<tr><td>' + printer.model + '</td><td>';
