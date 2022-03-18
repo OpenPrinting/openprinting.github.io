@@ -24,6 +24,8 @@ And we already have one extra project idea since last month:
 ## OpenPrinting web site
 First, we are working on a prominent note that most modern printers are driverless on our front page and an (automated?) list of available driverless IPP printers. See the discussion in [this issue report](https://github.com/OpenPrinting/openprinting.github.io/issues/138).
 
+**Update: Michael Sweet has updated the [front page](https://openprinting.github.io/) now, adding a prominent hint that most modern printers are driverless and also linked a [list of driverless printers](https://openprinting.github.io/printers/) right from the front page. Thanks a lot, Michael.**
+
 The part of the web site for looking up (legacy, non-driverless) printers and drivers (the [OpenPrinting database web app](https://github.com/OpenPrinting/foomatic-db-webapp/) has moved to a new server at Oregon State University Open Source Lab ([OSUOSL](https://osuosl.org)). As the old server did not receive a system upgrade for many years there were a lot of problems with the compatibility of the code (SQL and PHP) with the new, modern server.
 
 Fortunately, the people there, especially Violet Kurtz and Lance Albertson, both from the OSUOSL, helped a lot on doing this migration by doing the needed code changes. Thanks a lot to them.
