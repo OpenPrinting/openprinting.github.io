@@ -149,6 +149,10 @@
     border: solid thin #0075a2;
     color: #ccc;
   }
+  .archive__item-teaser img {
+    background: #fff;
+    opacity: 66%;
+  }
   ::selection {
     background: #ccc;
     color: black;
