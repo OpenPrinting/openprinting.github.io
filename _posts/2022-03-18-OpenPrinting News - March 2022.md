@@ -127,7 +127,7 @@ Note: Having to add these lines is only a temporary workaround. The `default-pro
 
 Forth, build your Snap as you are used to, test it, and upload it into the Snap Store using your habitual method. If a user installs it, the CUPS Snap gets auto-installed and the `cups` interface auto-connected and printing out of the Snap "just works".
 
-DO NOT plug both `cups` and `cups-control` in the same Snap. This can mess up things, especially as CUPS' Snap mediation works "per-Snap" not "per-application-in-the-Snap", meaning that if one ioff the apps in the Snap plugs `cups-control` CUPS assumes the whole Snap plugging `cups-control` and allows all apps in the Snap to do administrative operations.
+DO NOT plug both `cups` and `cups-control` in the same Snap. This can mess up things, especially as CUPS' Snap mediation works "per-Snap" not "per-application-in-the-Snap", meaning that if one of the apps in the Snap plugs `cups-control` CUPS assumes the whole Snap plugging `cups-control` and allows all apps in the Snap to do administrative operations.
 
 See a [complete example here](https://github.com/snapcore/test-snapd-cups-consumer).
 
