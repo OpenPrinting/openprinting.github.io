@@ -9,7 +9,7 @@ On Thursday next week, April 21, 2021, is Ubuntu release day again! Ubuntu 22.04
 
 Not a lot of new stuff in terms of printing (in addition to all printing- and scanning-related packages being up-to-date) but at least many bug fixes, especially with the page geometry, `number-up`, `orientation-requested`, all settings for `print-scaling` (`auto`, `auto-fit`, `fit`, `fill`, `none`) are now working correctly, in arbitrary combinations.
 
-Otherwise we have GNOME 42 now with [a lot of nice newfeatures](https://www.omgubuntu.co.uk/2022/04/ubuntu-22-04-lts-20-key-changes)!
+Otherwise we have GNOME 42 now with [a lot of nice new features](https://www.omgubuntu.co.uk/2022/04/ubuntu-22-04-lts-20-key-changes)!
 
 
 ## Linux Application Summit 2022
@@ -17,7 +17,7 @@ I will be on this year's [Linux Application Summit](https://conf.linuxappsummit.
 
 There I will give a [talk](https://conf.linuxappsummit.org/event/4/contributions/106/) about the New Architecture of printing and scanning and what is important for developers of desktop applications.
 
-I will give a summary of the changes and tell what needs to be changed in the desktop world, the [new printer setup tool](https://openprinting.github.io/OpenPrinting-News-February-2022/#gui-printer-setup-tool-and-print-dialog---essential-for-user-experience), [print dialog requirements](https://openprinting.github.io/OpenPrinting-News-February-2022/#the-print-dialogs) and [CPDB}(https://nilanjanalodh.github.io/common-print-dialog-gsoc17/), snaboxed/distribution-independent packaging, like [Snap](https://openprinting.github.io/OpenPrinting-News-March-2022/#how-to-snap-an-application), [Flatpak](https://openprinting.github.io/OpenPrinting-News-March-2022/#flatpak-and-printing), ...
+I will give a summary of the changes and tell what needs to be changed in the desktop world, the [new printer setup tool](https://openprinting.github.io/OpenPrinting-News-February-2022/#gui-printer-setup-tool-and-print-dialog---essential-for-user-experience), [print dialog requirements](https://openprinting.github.io/OpenPrinting-News-February-2022/#the-print-dialogs) and [CPDB](https://nilanjanalodh.github.io/common-print-dialog-gsoc17/), snaboxed/distribution-independent packaging, like [Snap](https://openprinting.github.io/OpenPrinting-News-March-2022/#how-to-snap-an-application), [Flatpak](https://openprinting.github.io/OpenPrinting-News-March-2022/#flatpak-and-printing), ...
 
 This should help application and GUI/desktop developers to get print and scan functionality of their software just work.
 
@@ -27,7 +27,7 @@ There will also be a Canonical booth with a Canonical gang of 5 people (includin
 
 And on Fri, April 29, at the end of the lightning talk session an old, gray-bearded, long-time Canonical employee (nearly from the beginning on) will do an important announcement!
 
-Thanks, Heather Ellsworth, for participating in the organization of the event and making me aware of the even!
+Thanks, Heather Ellsworth, for participating in the organization of the event and making me aware of it!
 
 
 ## Google Summer of Code 2022
@@ -104,7 +104,7 @@ This is a substantial change on the API, but fortunately, there are only very fe
 
 Even without the renaming the API of the libcupsfilters in cups-filters 2.x is not compatible with the libcupsfilters of the 1.x series. Therefore I have [**bumped the library's soname to 2**](https://github.com/OpenPrinting/cups-filters/commit/ef2d2b13b3b2). I have also set the version number to the one of the [**first planned release: 2.0b1**](https://github.com/OpenPrinting/cups-filters/commit/8691d15327). 
 
-The new cups-filters will also drop support for old software. At least CUPS 2.2.2, Ghostscript 9.56.0 (if GHostscript is used), and QPDF 10.3.2 are required. Note that no yet all of the conditionals are removed.
+The new cups-filters will also drop support for old software. At least CUPS 2.2.2, Ghostscript 9.56.0 (if Ghostscript is used), and QPDF 10.3.2 are required. Note that no yet all of the conditionals are removed.
 
 When compiling on Ubuntu 22.04 (gcc 11.2.0) there are **no compiler warnings**.
 
