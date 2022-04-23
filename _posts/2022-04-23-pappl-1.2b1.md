@@ -1,0 +1,25 @@
+---
+title: PAPPL 1.2b1
+layout: single
+author: Mike
+excerpt: PAPPL v1.b1 adds full localization, support for additional IPP features, and some other improvements.
+---
+
+PAPPL v1.2b1 is now available for download.  PAPPL v1.2 adds full localization, support for additional IPP features, and some other improvements.  Changes include:
+
+- Added macOS menubar icon/menu (Issue #27)
+- Added support for localization, with base localizations for English, French, German, Italian, Japanese, and Spanish (Issue #58)
+- Added interpolation when printing JPEG images or when using the `papplJobFilterImage` function with smoothing enabled (Issue #64)
+- Added `papplDeviceGetSupplies` API to query supply levels via SNMP (Issue #83)
+- Added support for custom media sizes in millimeters (Issue #118)
+- Added `papplPrinterGet/SetMaxPreservedJobs` API and reprint web interface (Issue #189)
+- Added IPP notifications support with `papplSystemAddEvent` and `papplSubscriptionXxx` functions (Issue #191)
+- Added `papplPrinterDisable` and `papplPrinterEnable` functions and proper support for the IPP "printer-is-accepting-jobs" attribute.
+- Added OpenSSL/LibreSSL support (Issue #195)
+- Added `papplSystemGet/SetMaxClients` API (Issue #198)
+- Updated `papplPrinterSetReadyMedia` to support up to `PAPPL_MAX_SOURCE` media entries, regardless of the number of sources.
+
+Enjoy!
+
+* <a href="https://github.com/michaelrsweet/pappl/releases/tag/v1.2b1" itemprop="sameAs" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-download" aria-hidden="true"></i>Download v1.2b1</a>
+
