@@ -16,7 +16,7 @@ There will be a **[virtual release party](https://youtu.be/9fMpAm5ReOA)** for ev
 
 The session will also most probably be recorded. In this case I will post the link here, and also in the May news post.
 
-And for everyone who will actually be in Rovereto this weekend we will have a **release party in-person**, with the 5 of us from Canonical and everyone who is on the LAS 2022! It will take place on Sat, April 30 at 19:00 - 21:30 CEST at the venue of the conference, right before the final party with the DJ.
+And for everyone who will actually be in Rovereto this weekend we will have a **release party in-person**, with the 5 of us from Canonical and everyone who is on the LAS 2022! It will take place on Sat, April 30 at 19:00 - 21:30 CEST at the venue of the conference, right before the final party with the DJ. 
 
 **OpenPrinting Talk about the New Architecture**
 
