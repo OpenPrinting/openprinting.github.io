@@ -10,7 +10,7 @@ I will be on this year's [Linux Application Summit](https://conf.linuxappsummit.
 
 Last week, Ubuntu 22.04 LTS was released, and therefore we have organized release parties on the LAS 2022.
 
-There will be a **[virtual release party](https://conf.linuxappsummit.org/event/4/contributions/87/)** for everyone who is not able to come to this great event in person. It will be a special edition of the Ubuntu Office Hours produced live in the Auditorium on Fri, April 29 at 14:05 - 14:50 CEST.
+There will be a **[virtual release party](https://youtu.be/9fMpAm5ReOA)** for everyone who is not able to come to this great event in person. It will be a special edition of the Ubuntu Office Hours produced live in the Auditorium on Fri, April 29 at 14:05 - 14:50 CEST.
 
 **Update:** To participate in the virtual release party, please go to [YouTube](https://www.linuxfoundation.org/board-of-directors-2/), or if you want to participate in the whole LAS, [register as a remote attendee, free-of-charge](https://conf.linuxappsummit.org/event/4/registrations/).
 
