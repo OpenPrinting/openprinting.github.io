@@ -6,15 +6,15 @@ excerpt: LAS 2022 in Rovereto, Italy - OpenPrinting talk and Ubuntu 22.04 LTS Re
 ---
 I will be on this year's [Linux Application Summit](https://conf.linuxappsummit.org/event/4/overview) on April 29 and 30 in Rovereto, Italy, near the Lake Garda!
 
+**Update: YouTube links for all the announced presentations!**
+
+Recordings of the full event on YouTube (only Auditorium, not BoFs): [Friday](https://www.youtube.com/watch?v=CBPefa0Ckq8), [Saturday](https://www.youtube.com/watch?v=HxM15UOVmyA)
+
 **Ubuntu 22.04 LTS (Jammy Jellyfish) Release Parties**
 
 Last week, Ubuntu 22.04 LTS was released, and therefore we have organized release parties on the LAS 2022.
 
-There will be a **[virtual release party](https://youtu.be/9fMpAm5ReOA)** for everyone who is not able to come to this great event in person. It will be a special edition of the Ubuntu Office Hours produced live in the Auditorium on Fri, April 29 at 14:05 - 14:50 CEST.
-
-**Update:** To participate in the virtual release party, please go to [YouTube](https://youtu.be/9fMpAm5ReOA), or if you want to participate in the whole LAS, [register as a remote attendee, free-of-charge](https://conf.linuxappsummit.org/event/4/registrations/).
-
-The session will also most probably be recorded. In this case I will post the link here, and also in the May news post.
+There will be a **[virtual release party](https://www.youtube.com/watch?v=CBPefa0Ckq8&t=15480s)** for everyone who is not able to come to this great event in person. It will be a special edition of the Ubuntu Office Hours produced live in the Auditorium on Fri, April 29 at 14:05 - 14:50 CEST. **Recording on [YouTube](https://www.youtube.com/watch?v=CBPefa0Ckq8&t=15480s)**
 
 And for everyone who will actually be in Rovereto this weekend we will have a **release party in-person**, with the 5 of us from Canonical and everyone who is on the LAS 2022! It will take place on Sat, April 30 at 19:00 - 21:30 CEST at the venue of the conference, right before the final party with the DJ. 
 
@@ -26,7 +26,7 @@ I will give a summary of the changes and tell what needs to be changed in the de
 
 This should help application and GUI/desktop developers to get print and scan functionality of their software just work.
 
-The talk will take place on Sat, April 30 at 15:35 - 16:15 CEST in the Auditorium. It will be also possible to participate remotely (you need to [register to the LAS 2022 as remote attendee, free-of-charge](https://conf.linuxappsummit.org/event/4/registrations/)). If the talk will get recorded, I will post a link here and also in the May news post.
+The talk will take place on Sat, April 30 at 15:35 - 16:15 CEST in the Auditorium. **Recording on [YouTube](https://www.youtube.com/watch?v=HxM15UOVmyA&t=23814s)**
 
 **Getting Good: Gaming on Linux**
 
@@ -38,7 +38,7 @@ And for the gamers under you, Heather Ellsworth of the Ubuntu Desktop Team will 
 
 Heather loves tinkering with hardware, software, and games. On a recent Canonical meeting she brought along an nice Raspberry Pi emulating several of the good old gaming consoles and we in the Desktop Team loved playing these old games.
 
-The talk will take place on Fri, April 29 at 16:25 - 17:05 CEST in the Auditorium. It will be also possible to participate remotely (you need to [register to the LAS 2022 as remote attendee, free-of-charge](https://conf.linuxappsummit.org/event/4/registrations/)). If the talk will get recorded, I will post a link here and also in the May news post.
+The talk will take place on Fri, April 29 at 16:25 - 17:05 CEST in the Auditorium. **Recording on [YouTube](https://www.youtube.com/watch?v=CBPefa0Ckq8&t=23480s)**
 
 **Snapcraft Secrets: The hidden power of desktop extensions**
 
@@ -48,7 +48,7 @@ If you are a Snapper or if you want to provide resources to make the Snapper's l
 > 
 > Well, there is! Snapcraft Extensions are a powerful, flexible set of tweaks and options designed specifically to make life easier for snap developers. In this session, we will talk about what the extensions can do, how they work behind the scenes, and the different ways they can contribute to faster, more streamlined, and more consistent snaps.
 
-The talk will take place on Fri, April 29 at 15:30 - 16:10 CEST in the Auditorium. It will be also possible to participate remotely (you need to [register to the LAS 2022 as remote attendee, free-of-charge](https://conf.linuxappsummit.org/event/4/registrations/)). If the talk will get recorded, I will post a link here and also in the May news post.
+The talk will take place on Fri, April 29 at 15:30 - 16:10 CEST in the Auditorium. **Recording on [YouTube](https://www.youtube.com/watch?v=CBPefa0Ckq8&t=20210s)**
 
 **Canonical Booth**
 
@@ -56,7 +56,7 @@ There will also be a Canonical booth with a Canonical gang of 5 people (includin
 
 **Canonical Announcement**
 
-And on Fri, April 29, at the end of the lightning talk session an old, gray-bearded, long-time Canonical employee (nearly from the beginning on) will do an important announcement!
+And on Fri, April 29, at the end of the lightning talk session an old, gray-bearded, long-time Canonical employee (nearly from the beginning on) will do an important announcement! **Recording on [YouTube](https://www.youtube.com/watch?v=CBPefa0Ckq8&t=31880s)**
 
 **Thanks**
 
