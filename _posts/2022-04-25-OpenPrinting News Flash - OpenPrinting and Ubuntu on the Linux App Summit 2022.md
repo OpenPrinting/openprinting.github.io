@@ -63,3 +63,5 @@ And on Fri, April 29, at the end of the lightning talk session an old, gray-bear
 Thanks, Heather Ellsworth, for participating in the organization of the event and making me aware of it!
 
 Thanks, Heather Ellsworth, Monica Ayhens-Madon, Britt Yazel, Aniss, Kristi Progri, Dani, Caroline Henriksen for the great collaboration on the organization of the Ubuntu release parties.
+
+Thanks, Igor Ljubuncic for providing to me with the YouTube links, and especially with the time marks for each of our presentations!
