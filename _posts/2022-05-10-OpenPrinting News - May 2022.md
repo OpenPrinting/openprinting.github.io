@@ -2,7 +2,7 @@
 title: OpenPrinting News - May 2022
 layout: single
 author: Till
-excerpt: OP Summit/PWG Meeting, GUADEC, Linux Plumbers, GSoC 2022, ¨cups" snapd interface, CUPS in Docker, PPD-independent libcupsfilters 2.x, IPP-over-USB, HPLIP 3.22.4
+excerpt: OP Summit/PWG Meeting, GUADEC, Linux Plumbers, GSoC 2022, "cups" snapd interface, CUPS in Docker, PPD-independent libcupsfilters 2.x, IPP-over-USB, HPLIP 3.22.4
 ---
 ## OpenPrinting Summit/PWG Meeting
 On May 17-19 we will have our annual meeting together with the [PWG](https://www.pwg.org/) (Printer Working Group) again, the [OpenPrinting Summit/PWG Meeting](https://www.pwg.org/chair/meeting-info/may-2022-virtual.html).
@@ -147,14 +147,17 @@ Here questions came up like migrating a working print queue with the risk that i
 ## Contributions to Common Print Dialog Backends
 Wor on the Common Print Dialog Backends (CPDB) is continuing! I had posted a [project idea for GSoC](https://wiki.linuxfoundation.org/gsoc/google-summer-code-2022-openprinting-projects#print_dialogsmake_them_use_the_common_print_dialog_backends_cpdb) about adding this functionality to the print dialogs which are currently typically used: GTK, Qt, Chrome, ... and a contributor candidate, Gaurav Guleria (aka TinyTrebuchet) has already contributed to the [cpdb-libs](https://github.com/OpenPrinting/cpdb-libs/) and [CUPS CPDB backend](https://github.com/OpenPrinting/cpdb-backend-cups/) projects:
 
-
 **Add human-readable option/choice name support**
 
 The original CPDB had only machine-readable option and choice names, making print dialogs only able to display standard options, like media size, media source, resolution, ... nicely. Now the human-readable names used by the print service (CUPS, ...) are made use of ([Pull request #2](https://github.com/OpenPrinting/cpdb-libs/pull/2), [commit](https://github.com/OpenPrinting/cpdb-libs/commit/46f8870c779)).
 
-**Fixed options and supported values displayed for printers**
+**Support for human-readable-choice-name and bug fixes**
 
-In the CUPS CPDB backend added support for the options provided by CUPS/cups-filters (`number-up`, `page-set`, `output-order`, ...) which are available for any CUPS queue. Also provide human-readable names for these options and their choices ([Pull request #7](https://github.com/OpenPrinting/cpdb-backend-cups/pull/7/)).
+In the CUPS CPDB backend added support for the options provided by CUPS/cups-filters (`number-up`, `page-set`, `output-order`, ...) which are available for any CUPS queue. Also provide human-readable names for these options and their choices and fixed some bugs ([Pull request #8](https://github.com/OpenPrinting/cpdb-backend-cups/pull/8/), replaces [PR #7](https://github.com/OpenPrinting/cpdb-backend-cups/pull/7/)).
+
+**Removed CUPS specific functions from frontend**
+
+Removed some CUPS-specific functions from the frontend library, everything CUPS-specific should go into the CUPDS CPDB backend, the frontend part has to stay neutral ([Pull request #3](https://github.com/OpenPrinting/cpdb-libs/pull/3/)).
 
 Thanks, Gaurav Guleria, for your contributions.
 
