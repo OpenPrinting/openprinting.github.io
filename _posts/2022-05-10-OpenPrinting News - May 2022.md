@@ -34,6 +34,8 @@ Please see also our [News Flash](/OpenPrinting-News-Flash-OpenPrinting-and-Ubunt
 
 Thanks, Heather Ellsworth, for participating in the organization of the event and making me aware of it!
 
+Thanks, Ken VanDine for the original idea of the Ubuntu Summit announcement lightning talk.
+
 Thanks, Britt Yazel for MC-ing (Master of the Ceremony) the sessions in the Auditorium!
 
 Thanks, Heather Ellsworth, Monica Ayhens-Madon, Britt Yazel, Aniss, Kristi Progri, Dani, Caroline Henriksen for the great collaboration on the organization of the Ubuntu release parties.
@@ -62,6 +64,14 @@ Currently, we have to select the best contributor proposals of the many we recei
 As in the other years we have loked for possible contributors already several months ago. We have let them done some exercises to learn about OpenPrinting, CUPS, cups-filters, driverless printing, ... let them also work on issue reports, mainly for cups-filters. Finally, they all have submitted proposals for GSoC projects.
 
 
+## OpenPrinting Snaps and the Ubuntu Indaba with Mark Shuttleworth
+About the [Ubuntu Desktop Team Indaba with Mark Shuttleworth](https://www.youtube.com/watch?v=Owwtcx6QJVo) I commented on the [OMGUbuntu article about the Indaba](http://disq.us/p/2oj9twd) that Mark did not mention that with Snap you can also package **system-daemons** and I made [heavily use of it](https://snapcraft.io/search?q=OpenPrinting) and with the Printer Applications one can distribute distro-independent hardware driver packages. On that I got an **up-vote from Alan Pope**, former Canonical employee who wants to move us to all-Flatpak!!
+
+On a Canonical-internal platform I commented the same and got a thumbs-up from Mark.
+
+And thanks, Heather Ellsworth and Monica Ayhens-Madon for this great Indaba!
+
+
 ## CUPS Snap and snapd printing interface
 **[CUPS Snap](https://github.com/OpenPrinting/cups-snap) in the [Snap Store](https://snapcraft.io/cups)**
 
@@ -70,6 +80,8 @@ Finally! Everything for the new `cups` snapd interface is in place now. snapd 2.
 For the launch of the interface I have posted a [thread on snapcraft.io](https://forum.snapcraft.io/t/new-interface-cups-for-all-snaps-which-print/), describing how one uses the interface when making Snaps from user applications with print functionality and also how the interface actually works. Please see any updated details on how to use it there.
 
 Applications with print functionality can now be packaged in Snaps easily, by simply using the `cups` interface to allow the application to print. When such an application is downloaded from the Snap Store, the `cups` interface connects automatically.
+
+I have also posted a proposal for addition of how to use the `cups` interface to the snapcraft documentation on the ["doc" forum](https://forum.snapcraft.io/t/the-cups-interface/) on snapcraft.io. Graham Morrison is already on it.
 
 
 ## Official Docker image of CUPS and Printer Applications
@@ -83,7 +95,7 @@ Now let us go to Snap deniers, systems unsuitable for Snap (e. g. not systemd-ba
 
 Robert McQueen suggested to publish an OCI-compatible container image of CUPS (and also images of the Printer Applications) on DockerHub, but official ones by OpenPrinting (there are many [third-party ones](https://hub.docker.com/search?q=cups). These could be run in said systems (including minimal/immutable/atomic OS) using a runtime like docker or podman.
 
-After the conference he sent me a longer e-mail about this idea and [CCed it to the Flatpak mailing list](https://lists.freedesktop.org/archives/flatpak/2022-May/002244.html). This started a [small discussion](https://lists.freedesktop.org/archives/flatpak/2022-May/thread.html) with further suggestions.
+After the conference he sent me a longer e-mail about this idea and [CCed it to the Flatpak mailing list](https://lists.freedesktop.org/archives/flatpak/2022-May/002244.html). He suggested to use podman together with the [systemd generator Quadlet](https://blogs.gnome.org/alexl/2021/10/12/quadlet-an-easier-way-to-run-system-containers/) for the CUPS daemon to start automatically on boot. This started a [small discussion](https://lists.freedesktop.org/archives/flatpak/2022-May/thread.html) with further suggestions.
 
 Unfortunately, I did not find time to follow up on this yet, but will come back to this later.
 
