@@ -46,7 +46,7 @@ Thanks, Igor Ljubuncic for providing to me with the YouTube links, and especiall
 ## OpenPrinting Micro-Conference on the Linux Plumbers 2022
 We got accepted for our [forth Openprinting Micro-Conference](https://lpc.events/event/16/contributions/1154/) on the [Linux Plumbers Conference 2022](https://lpc.events/event/16/) taking place from Monday September 12 to Wednesday September 14, 2022.
 
-It is not yet clear whether the conference will be virtual or taking place in-person again. For the latter it will most probably take place in Dublin (see the "Europe/Dublin Timezone" mear the upper left corner of the front page. Most conferences are in-person again, so I hope this one will be so, too. If it is virtual or hybrid (in-person with possibility to attend remotely, also as speaker, like LAS 2022, see above), we could freely choose our speakers without having to worry about travel expenses.
+**Update: Linux Plumbers will be in-person again! Live on stage in Dublin!! It will be hybrid, so that speakers and attendees do not necessarily need to travel, but for micro-conference runners (Aveek Basu and me) they highly recommend to be there. And to everyone who wants to speak on or attend the OpenPrinting Micro-Conference, please consider to travel to Dublin. It is much easier to communicate, and much more fun!!**
 
 The date of OpenPrinting’s turn is not yet determined, please keep an eye on the web site of Linux Plumbers.
 
