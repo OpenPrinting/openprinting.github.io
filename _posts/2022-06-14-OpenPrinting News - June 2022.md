@@ -117,7 +117,7 @@ In a recent chat I worked out with him how to handle if the PPD of the CUPS queu
 
 The `cups` snapd interface now having been [officially launched](https://forum.snapcraft.io/t/new-interface-cups-for-all-snaps-which-print/) and [documented](https://forum.snapcraft.io/t/the-cups-interface/) gets started to be actually used.
 
-The first application using this interface got uploaded to the Snap Store on May 16, [FreeCAD](https://snapcraft.io/freecad) (Installed base today, June 14: 36905) and after that, on May 18 [onlyoffice-desktopeditors](https://snapcraft.io/onlyoffice-desktopeditors) (37033). Congratulations to the developers of these applications and thanks to Daniel Manrique from the Snap Store Team at Canonical for this valuable information.
+The first application using this interface got uploaded to the Snap Store on May 16, [FreeCAD](https://snapcraft.io/freecad) and after that, on May 18 [onlyoffice-desktopeditors](https://snapcraft.io/onlyoffice-desktopeditors). Congratulations to the developers of these applications and thanks to Daniel Manrique from the Snap Store Team at Canonical for this valuable information.
 
 But the code now getting actually exercised, we also found first bugs:
 
