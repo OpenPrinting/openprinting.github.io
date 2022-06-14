@@ -19,7 +19,7 @@ As already mentioned here [last month](https://openprinting.github.io/OpenPrinti
 
 I will not only give my [talk](https://events.gnome.org/event/77/contributions/285/) about the New Architecture of printing and scanning for GNOME developers (July 21, 14:20 - 15:00 local time, Bosch Auditorium), but also come with my colleagues from Canonical, similar as on the [LAS 2022](https://openprinting.github.io/OpenPrinting-News-Flash-OpenPrinting-and-Ubuntu-on-the-Linux-App-Summit-2022/) ([video](https://www.youtube.com/watch?v=CBPefa0Ckq8&t=15480s)).
 
-As of now the Canonical Gang will be me, Heather Ellsworth, Britt Yazel, Marco Trevisan, and Nathan Pratta Teodosio (subject to change).
+As of now the Canonical Gang will be me, Heather Ellsworth, Britt Yazel, Marco Trevisan, and Nathan Pratta Teodosio.
 
 Heather will give a lightning talk about the Linux Application Summit 2023 showing how to submit a proposal if one wants to host the event. I hope this will help to have another great LAS as we had [this year](https://openprinting.github.io/OpenPrinting-News-Flash-OpenPrinting-and-Ubuntu-on-the-Linux-App-Summit-2022/). It will take place most probably on July 22, somewhere between 14:25 and 15:05 local time in the Bosch Auditorium.
 
