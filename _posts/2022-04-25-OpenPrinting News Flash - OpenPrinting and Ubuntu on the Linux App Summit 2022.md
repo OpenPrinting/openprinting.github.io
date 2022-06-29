@@ -10,6 +10,12 @@ I will be on this year's [Linux Application Summit](https://conf.linuxappsummit.
 
 Recordings of the full event on YouTube (only Auditorium, not BoFs): [Friday](https://www.youtube.com/watch?v=CBPefa0Ckq8), [Saturday](https://www.youtube.com/watch?v=HxM15UOVmyA)
 
+**Update: Survey results available!**
+
+After the event a survey was taken and a [summary of the results](https://gitlab.com/linuxappsummit/las-2022/-/issues/45#note_999894547) is posted now.
+
+Thanks, Heather Ellsworth, for this nice summary!
+
 **Ubuntu 22.04 LTS (Jammy Jellyfish) Release Parties**
 
 Last week, Ubuntu 22.04 LTS was released, and therefore we have organized release parties on the LAS 2022.
