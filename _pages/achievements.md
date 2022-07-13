@@ -238,7 +238,7 @@ Here are some threads on the [snapcraft.io forum](https://forum.snapcraft.io/) a
 - [The "cups" interface, by Graham Morrison](https://forum.snapcraft.io/t/the-cups-interface/)
 - [My original documentation request for the "cups" interface](https://forum.snapcraft.io/t/the-cups-interface/)
 - [Handling of the “cups” plug by snapd, especially auto-connection (How we came to the proxy mode of the CUPS Snap)](https://forum.snapcraft.io/t/handling-of-the-cups-plug-by-snapd-especially-auto-connection/)
-- [“cups” interface merged into snapd - Additional steps to complete (solved)](https://forum.snapcraft.io/t/cups-interface-merged-into-snapd-additional-steps-to-complete/)
+- [“cups” interface merged into snapd - Additional steps to complete](https://forum.snapcraft.io/t/cups-interface-merged-into-snapd-additional-steps-to-complete/)
 
 And by the time of writing this, two applications in the Snap Store are actually using the "cups" interface: [onlyoffice-desktopeditors](https://snapcraft.io/onlyoffice-desktopeditors) and [FreeCAD](https://snapcraft.io/freecad). Due to their dependency on the CUPS Snap they made the installation count of the CUPS Snap sky-rocket from 4200 to 75000. And we can expect much more as soon as the Firefox, Chromium, and LibreOffice Snaps switch over ...
 
