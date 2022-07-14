@@ -9,7 +9,7 @@ author: Till
 excerpt: A brief history of OpenPrinting
 ---
 
-This is a short write-up about how I got into printing with free software, right from the top of my head. probably I will improve this later, with links, pictures, more info, and also on a more adequate location on this site.
+This is about how I got into printing with free software, and how I made it to what I am now.
 
 If you want to know what we all achieved at OpenPrinting up to now, see [what we have done so far](/achievements/).
 
