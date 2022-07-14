@@ -7,6 +7,8 @@ header:
  overlay_filter: "1"
 excerpt: "Learn more about OpenPrinting"
 ---
+## OpenPrinting
+
 - [How did this all begin?](/history/)
 - [Our principal achievements](/achievements/)
 - [What we are currently doing (coming soon!)]()
