@@ -17,7 +17,7 @@ Therefore I have decided to add three articles to our static web site (not the [
 
 The first is derived from my [blog article about how I got started with OpenPrinting](/How-did-this-all-begin/), the second one is about what we have achieved in all the time, and the third will be about what we are currently doing. The first two are already available (simply follow the links) and the third I will write soon after I an back from [GUADEC](#guadec-2022).
 
-The new pages are all linked from our "[About Us](/about-us/) page.
+The new pages are all linked from our "[About Us](/about-us/)" page.
 
 
 ## GUADEC 2022
@@ -110,14 +110,14 @@ Note that there is still no further application using the `cups` interface excep
 ## Approaching cups-filters 2.0
 Continuing the restructuring to have **libppd depend on libcupsfilters** instead of **libcupsfilters depend on libppd**, as [introduced in May](/OpenPrinting-News-May-2022/#approaching-cups-filters-20). Continuing to restructure the code to separate the siamesian twins of the filter functions and PPD file support:
 
-- Made the `cfFilterRasterToPWG()`, `cfFilterPWGToRaster()`, `cfFilterGhostscript()`, `cfFilterImageToRaster()` and `cfFilterImageToPDF()` filter functions **free of PPD file support** and created appropriate `ppFilter...()` wrapper filter functions in libppd for them.
+- Made the `cfFilterRasterToPWG()`, `cfFilterPWGToRaster()`, `cfFilterGhostscript()`, `cfFilterImageToRaster()` and `cfFilterImageToPDF()` filter functions **free of PPD file support** and created appropriate `ppdFilter...()` wrapper filter functions in libppd for them.
 - Also had a look into the `cfFilter...ToPS()` filter functions but they will not get converted but completely moved over to libppd, **considering not only PPD files obsolete but also the PostScript format** (at least when not used in a PostScript printer driver with PPD).
 - Tested handling of media size, margins, and page geometry and found some issues. Did several improvements on the `cfGetPageDimensions()` and `cfGenerateSizes()` functions to solve the problems.
 - Added support for **page size variants** in PPD files (`A4`, `A4.Borderless`, `A4.Duplex`, ... differences in margins, sometimes even a bit in the size dimensions)
 - Now we are also matching of **custom page sizes** and **pages rotated by 90 degrees**.
 - Support for the **Duplex** (`sides`) option.
 - Support for **using the sizes of the input file's pages** when not explicitly requesting a page size, no page scaling (`page-scaling=none`), and no special layout features like N-up or booklet printing. This allows documents with differently sized pages to be printed.
-- When working on the `cfFilterGhostscript()` filter function bumped into **problems with Ghostscript's `cups` output device**. It allows supplying the backside orientation for duplex, the need of software copies, and the CUPS Raster version only via PPD files, so added appropriate functionality for setting these parameters without PPF file to the Ghostscript device in the Ghostscript upstream repository.
+- When working on the `cfFilterGhostscript()` filter function bumped into **problems with Ghostscript's `cups` output device**. It allows supplying the backside orientation for duplex, the need of software copies, and the CUPS Raster version only via PPD files, so added appropriate functionality for setting these parameters without PPD file to the Ghostscript device in the [Ghostscript upstream repository](http://git.ghostscript.com/?p=ghostpdl.git;a=commit;h=1f876cfb63c0b0a1bd488ea21155368dc500dddd).
 - Have the `cfFilterPDFToPDF()` and `cfFilterImageToPDF()` **sharing the JCL/PJL support code** for classic native PDF printers.
 
 Remaining filter functions to be converted: `cfFilterBannerToPDF()`, `cfFilterTestToPDF()`, and `cfFilterUniversal()`. I still need to check whether to convert also `cfFilterTextToText()`. So we come close to cups-filters 2.x.
