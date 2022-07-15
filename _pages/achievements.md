@@ -171,15 +171,15 @@ Once this done I had to keep cups-browsed in the standard desktop installation o
 
 
 ## Common Print Dialog Backends
-Some years after having failed with the [Common Print Dialog](#common-print-dialog) we started another approach to improve the print dialogs.
+Some years after having failed with the [Common Print Dialog](#common-print-dialog) Aveek Basu suggested to revive the project, but I was unsure about that. And when I was fixing a CUPS-related bug in the GTK print dialog I discovered that it uses backends for different print technologies. This brought up a new idea in me to improve the print dialogs.
 
 It was back in 2017, CUPS already having the concept of the temporary queues, auto-created by CUPS when a client prints on a DNS-SD-discovered IPP printer through the local CUPS and the local CUPS does not need to have a queue set up for this printer.
 
-For a client to know for which printers it can simply send jobs to the local CUPS it needed a special, newly introduced API of libcups, but in print dialogs the switchover to the new API was missed out for many years, making the dialogs only displaying the permanent, usually manually set up, print queues
+For a client to know for which printers it can simply send jobs to the local CUPS, it needed a special, newly introduced API of libcups, but in print dialogs the switchover to the new API was missed out for many years, making the dialogs only displaying the permanent, usually manually set up, print queues
 
 Also, now with the introduction of the new Architecture of printing, going all-IPP and not using PPD files any more, print dialogs would need another update to not try to load the PPD file from CUPS (or even directly from the file system) to obtain the printer capabilities and options, but instead, use CUPS APIs of libcups, which internally use CUPS's current methods to get the needed information about the printer.
 
-The delays in GUI toolkit (GTK, Qt) and desktop application projects to update their print dialogs to new technologies, caused by missing volunteers for maintaining te print dialogs and also long release cycles, led us to the idea to move the responsibility on the communication with the print technology away from GUIs and applications and towards the maintainers of the print technology itself (OPenPrinting in case of CUPS).
+The delays in GUI toolkit (GTK, Qt) and desktop application projects to update their print dialogs to new technologies, caused by missing volunteers for maintaining the print dialogs and also long release cycles, led us to the idea to move the responsibility on the communication with the print technology away from GUIs and applications and towards the maintainers of the print technology itself (OPenPrinting in case of CUPS).
 
 For this we separated the communication with the actual print technology (CUPS, print-to-file, cloud printing services, ...) out of the print dialog GUIs and applications by using a D-Bus interface. So the communication with the print technology happens in a backend module which provides a standardized D-Bus service, providing methods for listing available printers, listing options an choices for a given printer, printing a job on a given printer, ... The print dialogs get frontends which call these D-Bus methods. There is one backend per print technology (CUPS, print-to-file, cloud printing services, ...) and a print dialog is supposed to shout into the D-Bus and get a list of available printers for each of 
 
