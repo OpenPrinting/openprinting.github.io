@@ -25,7 +25,7 @@ The new pages are all linked from our "[About Us](/about-us/)" page.
 
 It is the first time for me to attend a GUADEC and also the first time for me to visit Mexico.
 
-In my [talk](https://events.gnome.org/event/77/contributions/285/) (July 21, 14:20 - 15:00 local time, Bosch Auditorium) I will spread the news about our [GSoC](#google-summer-of-code-2022) work on the "Printers" module of the GNOME Control Center and on the GTK print dialog and also introduce the GNOME Community into the New Architecture of printing and scanning.
+In my [talk](https://events.gnome.org/event/77/contributions/285/) (July 21, 14:20 - 15:00 local time, Bosch Auditorium) I will spread the news about our [GSoC](#google-summer-of-code-2022) work on the "Printers" module of the GNOME Control Center and on the GTK print dialog and also introduce the GNOME Community into the New Architecture of printing and scanning (**Update:** [slides](https://events.gnome.org/event/77/contributions/285/attachments/88/187/guadec-2022-new-architecture.pdf)).
 
 You will probably often enough find me at the Canonical booth (or better gathering table, see [last month's news](/OpenPrinting-News-June-2022/#guadec-2022)).
 
