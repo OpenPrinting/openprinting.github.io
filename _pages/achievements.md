@@ -97,7 +97,7 @@ This Ghostscript got the Ghostscript of the Linux distributions when they adopte
 
 ESP Ghostscript also got an improved, easier to control build system based on autoconf and I added a patch from Mandrake which made the X11 output device dynamically loadable, so that the same binary executable of Ghostscript can be used in both desktop and headless server systems.
 
-In May 2006, the Ghostscript developers announced that from version 8.54 on they will merge the former commercial, leading-edge (AFPL) and the free GPL development branch, which was only based on the previous major rlease, and so doing the leading-edge developemnt as free software, usable by the Linux distributions.
+In May 2006, the Ghostscript developers announced that from version 8.54 on they will merge the former commercial, leading-edge (AFPL) and the free GPL development branch, which was only based on the previous major release, and so doing the leading-edge developemnt as free software, usable by the Linux distributions.
 
 > [**Ghostscript leading edge is now GPL!**](https://web.archive.org/web/20161003082642/http://ghostscript.com/News.html)
 > Posted 7 Jun 2006 by raph
@@ -106,7 +106,7 @@ In May 2006, the Ghostscript developers announced that from version 8.54 on they
 >
 > By switching to the GPL, we're reaffirming our commitment to the free software world. One big reason for this decision was to reduce the lead time between bugs being fixed in the development tree and users seeing the fixes, especially those users dependent on Linux distributions.
 >
-> Moving forward, we'd also like to resolve the effective fork with "ESP Ghostscript," so that our development tree is suitable directly for use in Linux distributions without a lot of extra patches. It would be very nice if all the GPL patches could be incorporated into the main tree without any license restrictions (which means that we need copyright assignment), but realistically, we'll still have to implement an apartheid system of some kind, so that a GPL-only subdirectory exists that gets deleted out of our commercial releases.
+> Moving forward, we'd also like to resolve the effective fork with "ESP Ghostscript", so that our development tree is suitable directly for use in Linux distributions without a lot of extra patches. It would be very nice if all the GPL patches could be incorporated into the main tree without any license restrictions (which means that we need copyright assignment), but realistically, we'll still have to implement an apartheid system of some kind, so that a GPL-only subdirectory exists that gets deleted out of our commercial releases.
 
 Linux distributions continued using ESP Ghostscript though, due to the CUPS Raster output device and the complete set of built-in printer drivers.
 
@@ -132,13 +132,13 @@ As Apple uses their own, proprietary filter suite (note that one can easily repl
 
 As the actual pass-over happened somewhat earlier, I created the cups-filters project starting from the filters and backends which Apple had abandoned end of 2011.
 
-Right away, even before I did the very first release of cups-filters, I pulled the plunge for the [PDF-based printing workflow](#pdf-instead-of-postscript-as-standard-print-job-format) everywhere, adding the PDF-related filters which we developed already since 2006 and tested already for several years in Ubuntu. This way, right away when distributions had to include cups-filters when they updated CUPS to a version 1.6.x, they automatically got switched to the PDF-based print workflow. This did not cause any complaints and most applications probably had already switched over that time.
+Right away, even before I did the very first release of cups-filters, I pulled the plunge for the [PDF-based printing workflow](#pdf-instead-of-postscript-as-standard-print-job-format) everywhere, adding the PDF-related filters which we developed already since 2006 and tested already for several years in Ubuntu. This way, right away when distributions had to include cups-filters when they updated CUPS to version 1.6.x, they automatically got switched to the PDF-based print workflow. This did not cause any complaints and most applications probably had already switched over that time.
 
 During the following 11 years up to now the filters were continuously maintained and developed.
 
 Especially we are preparing cups-filters for the New Architecture of printing, meaning that we do not have PPD files any more and classic printer drivers are replaced by Printer Applications (emulators of IPP printers):
 - **Driverless printing support:** Output formats for driverless printing got included:PDF, PWG Raster, Apple Raster, PCLm)
-- **Filter functions:** Filter executables turned into filter functions, library functions with standardized call theme, also for easy chaining. This rerduces external function calls and also makes it easier to use the filters from Printer Applications (Software-emulated IPP printers to replace printer drivers). They also do not use environment variables and log into a log function, to make them also easy to use in non-CUPS environments.
+- **Filter functions:** Filter executables turned into filter functions, library functions with standardized call scheme, also for easy chaining. This rerduces external function calls and also makes it easier to use the filters from Printer Applications (Software-emulated IPP printers to replace printer drivers). They also do not use environment variables and log into a log function, to make them also easy to use in non-CUPS environments.
 - **Use without PPD files:** As use of PPD files will end with CUPS 3.x and already the CUPS Snap does not support adding PPD files for new printer drivers any more, the filter functions can now also be used with IPP attributes instead of with PPD files.
 
 These changes will soon appear in the second generation of cups-filters, version 2.x.
@@ -157,7 +157,7 @@ And I found the "something better". In the end of 2012 I created an auxiliary da
 
 I named this daemon "cups-browsed" and added it to the cups-filters project. And with this the user experience in the distributions did not change with the transition from CUPS 1.5.x and 1.6.x
 
-With the time, cups-browsed got a lot of new features, advancing to be a universal auxliary daemon for CUPS, especially former Red Hat printing maintainer added functionality that cups-browsed does (when activated by configuration file) the classic CUPS broadcasting/browsing as there are still many long-term-supported enterprise distributions, both servers and desktops around and they often still have CUPS 1.5.x or older.
+With the time, cups-browsed got a lot of new features, advancing to be a universal auxliary daemon for CUPS, especially the former Red Hat printing maintainer Tim Waugh added functionality that cups-browsed does (when activated by configuration file) the classic CUPS broadcasting/browsing as there are still many long-term-supported enterprise distributions, both servers and desktops around and they often still have CUPS 1.5.x or older.
 
 Also a clustering facility, much more sophisticated than CUPS' implicit classes (which also disappeared with 1.6.x) got added, highly configurable for manual and automatic clustering, different fail-over and load-balancing schemes, and even clusters of completely different printers (laser, photo inkjet) and by the job and its option settings cups-browsed determines which is the most suitable printer.
 
@@ -199,7 +199,7 @@ CUPS has a [new home page](https://openprinting.github.io/cups/) now and what wa
 
 So today Apple CUPS is the version of CUPS that is provided with macOS® and iOS® while OpenPrinting CUPS is the version of CUPS being further developed by OpenPrinting for all operating systems.
 
-This way we could extablish a [roadmap](https://openprinting.github.io/OpenPrinting-News-October-2021/#cups) for upcoming CUPS releases, especially in the end of 2023 releasing CUPS 3.x with the NEW Architecture of handling printers IPP-only without PPDs and classic drivers. Michael has presented development plans on [Linux Plumbers 2021](https://openprinting.github.io/OpenPrinting-News-October-2021/#openprinting-micro-conference-on-the-linux-plumbers-2021) and the [OpenPrinting Summt/PWG Meeting 2022](https://openprinting.github.io/OpenPrinting-News-June-2022/).
+This way we could establish a [roadmap](https://openprinting.github.io/OpenPrinting-News-October-2021/#cups) for upcoming CUPS releases, especially in the end of 2023 releasing CUPS 3.x with the NEW Architecture of handling printers IPP-only without PPDs and classic drivers. Michael has presented development plans on [Linux Plumbers 2021](https://openprinting.github.io/OpenPrinting-News-October-2021/#openprinting-micro-conference-on-the-linux-plumbers-2021) and the [OpenPrinting Summt/PWG Meeting 2022](https://openprinting.github.io/OpenPrinting-News-June-2022/).
 
 
 ## The CUPS Snap
@@ -272,7 +272,7 @@ But do not think I have all these drivers rewritten into filter functions and tu
 
 I started writing a [PostScript Printer Application](https://github.com/OpenPrinting/ps-printer-app) for printing on PostScript printers with their manufacturer's PPD files (~4000 PPDs included in the [Snap](https://snapcraft.io/ps-printer-app), all free ones which come with distributions, user can add own ones) and once having this completely working (with support for installable accessories, polling settings from the printer, ...) I decided to [generalize this for CUPS drivers and turn this into a library](https://github.com/OpenPrinting/ps-printer-app/discussions/8)), ending up with the [pappl-retrofit](https://github.com/OpenPrinting/pappl-retrofit) project based on Michael Sweet's [PAPPL}(https://github.com/michaelrsweet/pappl).
 
-Using this library the effort for retro-fitting CUPS drivers is low, and needs only very small changes in C code for configuring the Printer Application and for a method to find out which printers are supported. More substantial C programming is only needed if one wants to add some special functionality (like downloading HP's proprietary plugin in the HPLIP Printer Application). The original PPD files (or PPD generators) and filters are then package together with the Printer Application and that's it.
+Using this library the effort for retro-fitting CUPS drivers is low, and needs only very small changes in C code for configuring the Printer Application and for a method to find out which printers are supported. More substantial C programming is only needed if one wants to add some special functionality (like downloading HP's proprietary plugin in the HPLIP Printer Application). The original PPD files (or PPD generators) and filters are then packaged together with the Printer Application and that's it.
 
 pappl-retrofit has all functionalities to list the PPD files, to generate `get-printer-attributes` IPP responses from the PPD files, find the best PPD option settings for given job IPP attributes, create `media-ready` lists of loaded media, run CUPS filters to execute the print jobs, stream jobs whenever possible, ...
 
