@@ -252,7 +252,7 @@ After having transferred all free software drivers [from the dark age of LPD to 
 
 Many, many years ago, in the good old times of CUPS 1.4 (August 2009) PPD files got deprecated, but continued to be used up to today, due to lack of a new concept for printer drivers.
 
-This concept came up only on the [OpenPrinting Summit/PWG Meeting 2018](https://pwg.org/chair/meeting-info/may-2018-sunnyvale.html)) in Sunnyvale, CA, when Michael Sweet introduced the concept of Printer Applications in his [CUPS Plenary](https://ftp.pwg.org/pub/pwg/liaison/openprinting/presentations/cups-plenary-may-18.pdf).
+This concept came up only on the [OpenPrinting Summit/PWG Meeting 2018](https://pwg.org/chair/meeting-info/may-2018-sunnyvale.html) in Sunnyvale, CA, when Michael Sweet introduced the concept of Printer Applications in his [CUPS Plenary](https://ftp.pwg.org/pub/pwg/liaison/openprinting/presentations/cups-plenary-may-18.pdf).
 
 Printer Applications are emulations of driverless IPP printers (IPP Everywhere, AirPrint), so behave exactly like a modern network printer. Internally, they connect to non-driverless printers and convert incoming jobs from at least one of the driverless standard data formats (PDF, PWG Raster, Apple Raster, PCLm) into the printer's native language. They also know about the supported printer's capabilities and supply this information on a client's `get-printer-attributes` IPP request. They also advertise there presence by DNS-SD as network printers do.
 
