@@ -1,7 +1,7 @@
 ---
 title: OpenPrinting - How did this all begin?
 permalink: /history/
-layout: splash
+layout: single
 header:
  overlay_color: "#616161"
  overlay_filter: "1"
@@ -45,7 +45,7 @@ To get PPD files for all, especially non-Postscript, printers I used linuxprinti
 
 In 2001 I got invited to the HP- and IBM-hosted OSDN Printing Summit in San Jose ([Report from Grant Taylor](https://wiki.linuxfoundation.org/openprinting/database/printingsummit2001)), where I met several people of the printer manufacturers and of the PWG ([Printer Working Group](http://www.pwg.org/)) and with them (Tom Hastings, Michael Sweet, Ira McDonald, Claudia Alimpich, Glen Petrie and, Norm Jacobs) I founded OpenPrinting as part of the Free Standards Group (FSG).
 
-In the following years I did not only do coding and packaging to improve printing, but also a lot of community work, CUPS evangelism, especially I organized a community booth about printing on the LinuxTag every year from 2001 to 2006, gave talks on several conferences, mainly in Germany and Brazil, ran developer meetings on conferences in France, and participated in the work of creating printing APIs via phone meetings of the OpenPrinting people.
+In the following years I did not only do coding and packaging to improve printing, but also a lot of community work, CUPS evangelism, especially I organized a community booth about printing on the LinuxTag every year from 2001 to 2006, gave talks and tutorials on several conferences, mainly in Germany and Brazil, ran developer meetings on conferences in France, and participated in the work of creating printing APIs via phone meetings of the OpenPrinting people.
 
 Also all distributions switched to CUPS (with Foomatic) as their standard printing environment. The other printing systems disappeared and did not get maintained any more, probably due to lack of user interest.
 
