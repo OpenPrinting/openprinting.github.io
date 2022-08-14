@@ -63,7 +63,7 @@ Only when I introduced [cups-filters](#cups-filters) in the end of 2011 I was ab
 
 
 ## Common Print Dialog
-This is the only project on which we failed (but others succeeded, see below). On the first OpenPrinting Summit in 2006, at Lanier (now Ricoh) in Atlanta, Georgia we had a group of GUI/Usability experts to brain-storm about a better print dialog design and we had them even meeting again on (further Summits](https://wiki.linuxfoundation.org/openprinting/summitlexington) continuing in breakout sessions.
+This is the only project on which we failed (but others succeeded, see below). On the first OpenPrinting Summit in 2006, at Lanier (now Ricoh) in Atlanta, Georgia we had a group of GUI/Usability experts to brain-storm about a better print dialog design and we had them even meeting again on [further Summits](https://wiki.linuxfoundation.org/openprinting/summitlexington) continuing in breakout sessions.
 
 The result was not only new approaches in the GUI design of the print dialog, but also the idea of having one and the same print dialog for all applications, independent which toolkit they use, which we called the [Common Print Dialog](https://wiki.ubuntu.com/CommonPrintingDialog).
 
