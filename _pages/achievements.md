@@ -65,7 +65,7 @@ Only when I introduced [cups-filters](#cups-filters) in the end of 2011 I was ab
 ## Common Print Dialog
 This is the only project on which we failed (but others succeeded, see below). On the first OpenPrinting Summit in 2006, at Lanier (now Ricoh) in Atlanta, Georgia we had a group of GUI/Usability experts to brain-storm about a better print dialog design and we had them even meeting again on (further Summits](https://wiki.linuxfoundation.org/openprinting/summitlexington) continuing in breakout sessions.
 
-The result was not only new approaches in the GUI design of the print dialog, but also the idea of having one and the same print dialog for all applications, independent which toolkit they use.
+The result was not only new approaches in the GUI design of the print dialog, but also the idea of having one and the same print dialog for all applications, independent which toolkit they use, which we called the [Common Print Dialog](https://wiki.ubuntu.com/CommonPrintingDialog).
 
 For this the print dialog should be a part of the desktop environment (GNOME, KDE, ...) and available for the applications as a D-Bus service. The applications will then shout into the D-Bus instead of opening their own print dialog, ending up with always having the GTK dialog when using GNOME and always having the Qt dialog when using KDE. So the user will see only one type of print dialog in their desktop environment, independent which applications they are using.
 
