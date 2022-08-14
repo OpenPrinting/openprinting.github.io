@@ -287,7 +287,7 @@ So we currently have:
 
 And Michael Sweet has also made a Printer Application for label printers, based on the label printer drivers which come with CUPS:
 
-- [**LPrint**](https://github.com/michaelrsweet/lprint) ([Snap Store](https://snapcraft.io/lprint)): Supports Dymo LabelWriter and Zebra ZPL label printers, with all label-printer-typical options: Label modes, tear-off offsets, media tracking, media top offset, print darkness, resolution, roll selection, speed, ... Note that this is a native Printer Application. It does not simply encapsulate the CUPS filters and PPF files which come with CUPS.
+- [**LPrint**](https://github.com/michaelrsweet/lprint) ([Snap Store](https://snapcraft.io/lprint)): Supports Dymo LabelWriter and Zebra ZPL label printers, with all label-printer-typical options: Label modes, tear-off offsets, media tracking, media top offset, print darkness, resolution, roll selection, speed, ... Note that this is a native Printer Application. It does not simply encapsulate the CUPS filters and PPD files which come with CUPS.
 
 And there is also a [Legacy Printer Application](https://openprinting.github.io/OpenPrinting-News-November-2021/#your-driver-not-in-a-printer-application---the-legacy-printer-application) (included in the pappl-retrofit) project which, when classically installed (do not try to snap it) sees all classically installed CUPS drivers and makes them available in a Printer Application. This is especially useful for proprietary drivers.
 
