@@ -1,7 +1,7 @@
 ---
 title: OpenPrinting - Our principal achievements
 permalink: /achievements/
-layout: splash
+layout: single
 header:
  overlay_color: "#616161"
  overlay_filter: "1"
