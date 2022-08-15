@@ -111,7 +111,7 @@ CUPS Filters
 ```
 cd ~/PrintApp/cups-filters
 ./autogen.sh
-./configure --prefix=/usr --disable-ldap --disable-foomatic --disable-braile --disable-mutool
+./configure --prefix=/usr --disable-ldap --disable-foomatic --disable-braille --disable-mutool
 make
 sudo make install
 
