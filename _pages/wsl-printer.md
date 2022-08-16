@@ -83,7 +83,9 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 8. Install some dependencies in Ubuntu WSL
 
 ```
-sudo apt install autotools-dev autoconf automake autopoint libavahi-client-dev libavahi-glib-dev libcurl4-gnutls-dev libglib2.0-dev libgnutls28-dev libjpeg-dev libpam0g-dev libpng-dev libusb-1.0-0-dev zlib1g-dev libcups2-dev libcupsimage2-dev libssl-dev libtool libqpdf-dev poppler-utils libfontconfig1-dev libpoppler-cpp-dev libtiff5-dev libdbus-1-dev libexif-dev librsvg2-bin sharutils liblcms2-dev ghostscript
+sudo apt install autotools-dev autoconf automake autopoint libavahi-client-dev libavahi-glib-dev libcurl4-gnutls-dev libglib2.0-dev libgnutls28-dev libjpeg-dev
+libpam0g-dev libpng-dev libusb-1.0-0-dev zlib1g-dev libcups2-dev libcupsimage2-dev libssl-dev libtool libqpdf-dev poppler-utils libfontconfig1-dev
+libpoppler-cpp-dev libtiff5-dev libdbus-1-dev libexif-dev librsvg2-bin sharutils liblcms2-dev ghostscript pkg-config g++ --no-install-recommends
 ```
 
 9. Clone the required repositories. We need to build them from source.
@@ -106,16 +108,11 @@ git clone https://github.com/OpenPrinting/hplip-printer-app
 
 CUPS Filters
 
-> Make sure the libcupsfilters1 package is not present in the system in the end, since we’ll need to link against the ones built from source.
-
 ```
 cd ~/PrintApp/cups-filters
 ./autogen.sh
 ./configure --prefix=/usr --disable-ldap --disable-foomatic --disable-braille --disable-mutool
 make
-sudo make install
-
-sudo apt remove libcupsfilters-dev
 
 sudo make install
 ```
@@ -162,7 +159,7 @@ sudo ps2pdf ./testpage.ps /usr/share/hplip-printer-app/testpage.pdf
 14. Make sure the printer driver is installed. For our case that’s HPLIP. When prompted to whether existing files should be overwritten, answer ‘N’ (the default, just hit enter).
 
 ```
-sudo apt install hplip printer-driver-hpcups
+sudo apt install hplip printer-driver-hpcups --no-install-recommends
 ```
 
 ![Preserve existing files](../assets/images/wsl-printer/05-preserve-files.png)
