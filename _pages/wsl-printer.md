@@ -1,5 +1,6 @@
 ---
 title: Reviving an older printer with Ubuntu WSL and Printer Applications
+permalink: /wsl-printer-app/
 layout: single
 header:
  overlay_color: "#616161"
