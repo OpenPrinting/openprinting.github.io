@@ -83,9 +83,7 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 8. Install some dependencies in Ubuntu WSL
 
 ```
-sudo apt install autotools-dev autoconf automake autopoint libavahi-client-dev libavahi-glib-dev libcurl4-gnutls-dev libglib2.0-dev libgnutls28-dev libjpeg-dev
-libpam0g-dev libpng-dev libusb-1.0-0-dev zlib1g-dev libcups2-dev libcupsimage2-dev libssl-dev libtool libqpdf-dev poppler-utils libfontconfig1-dev
-libpoppler-cpp-dev libtiff5-dev libdbus-1-dev libexif-dev librsvg2-bin sharutils liblcms2-dev ghostscript pkg-config g++ --no-install-recommends
+sudo apt install autotools-dev autoconf automake autopoint libavahi-client-dev libavahi-glib-dev libcurl4-gnutls-dev libglib2.0-dev libgnutls28-dev libjpeg-dev libpam0g-dev libpng-dev libusb-1.0-0-dev zlib1g-dev libcups2-dev libcupsimage2-dev libssl-dev libtool libqpdf-dev poppler-utils libfontconfig1-dev libpoppler-cpp-dev libtiff5-dev libdbus-1-dev libexif-dev librsvg2-bin sharutils liblcms2-dev ghostscript pkg-config g++ --no-install-recommends
 ```
 
 9. Clone the required repositories. We need to build them from source.
