@@ -199,7 +199,7 @@ CUPS has a [new home page](https://openprinting.github.io/cups/) now and what wa
 
 So today Apple CUPS is the version of CUPS that is provided with macOS® and iOS® while OpenPrinting CUPS is the version of CUPS being further developed by OpenPrinting for all operating systems.
 
-This way we could establish a [roadmap](https://openprinting.github.io/OpenPrinting-News-October-2021/#cups) for upcoming CUPS releases, especially in the end of 2023 releasing CUPS 3.x with the NEW Architecture of handling printers IPP-only without PPDs and classic drivers. Michael has presented development plans on [Linux Plumbers 2021](https://openprinting.github.io/OpenPrinting-News-October-2021/#openprinting-micro-conference-on-the-linux-plumbers-2021) and the [OpenPrinting Summt/PWG Meeting 2022](https://openprinting.github.io/OpenPrinting-News-June-2022/).
+This way we could establish a [roadmap](https://openprinting.github.io/OpenPrinting-News-October-2021/#cups) for upcoming CUPS releases, especially in the end of 2023 releasing CUPS 3.x with the NEW Architecture of handling printers IPP-only without PPDs and classic drivers. Michael has presented development plans on [Linux Plumbers 2021](https://openprinting.github.io/OpenPrinting-News-October-2021/#openprinting-micro-conference-on-the-linux-plumbers-2021) and the [OpenPrinting Summt/PWG Meeting 2022](https://openprinting.github.io/OpenPrinting-News-June-2022/#openprinting-summitpwg-meeting).
 
 
 ## The CUPS Snap
