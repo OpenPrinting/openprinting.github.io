@@ -87,7 +87,7 @@ Flatpaked desktop applications communicate with the host system/the outside worl
 
 In contrary to Snap's interfaces the Portal is not an AppArmor permission to access a certain part of the host system (or another Snap) or a mount of certain parts of the host's (or another Snap's) file system, but instead, it is a D-Bus API which provides **common GUI dialogs** for common tasks (choose file, save file, **print**, ...), where the dialog comes from the desktop environment (GNOME or KDE) and so is the one of the desktop environment, a *common* dialog and is de-coupled from the user application via the D-Bus interface. So when using the GNOME desktop and printing from a flatpaked KDE app we should see GNOME's print dialog.
 
-See more details in my "[Flatpak and Printing](https://openprinting.github.io/OpenPrinting-News-March-2022/#flatpak-and-printing)" article.
+See more details in my "[Flatpak and Printing](/OpenPrinting-News-March-2022/#flatpak-and-printing)" article.
 
 
 ## Grand Unified Ghostscript: CUPS support, third-party built-in drivers ...
@@ -199,7 +199,7 @@ CUPS has a [new home page](https://openprinting.github.io/cups/) now and what wa
 
 So today Apple CUPS is the version of CUPS that is provided with macOS® and iOS® while OpenPrinting CUPS is the version of CUPS being further developed by OpenPrinting for all operating systems.
 
-This way we could establish a [roadmap](https://openprinting.github.io/OpenPrinting-News-October-2021/#cups) for upcoming CUPS releases, especially in the end of 2023 releasing CUPS 3.x with the NEW Architecture of handling printers IPP-only without PPDs and classic drivers. Michael has presented development plans on [Linux Plumbers 2021](https://openprinting.github.io/OpenPrinting-News-October-2021/#openprinting-micro-conference-on-the-linux-plumbers-2021) and the [OpenPrinting Summt/PWG Meeting 2022](https://openprinting.github.io/OpenPrinting-News-June-2022/#openprinting-summitpwg-meeting).
+This way we could establish a [roadmap](/OpenPrinting-News-October-2021/#cups) for upcoming CUPS releases, especially in the end of 2023 releasing CUPS 3.x with the NEW Architecture of handling printers IPP-only without PPDs and classic drivers. Michael has presented development plans on [Linux Plumbers 2021](/OpenPrinting-News-October-2021/#openprinting-micro-conference-on-the-linux-plumbers-2021) and the [OpenPrinting Summt/PWG Meeting 2022](/OpenPrinting-News-June-2022/#openprinting-summitpwg-meeting).
 
 
 ## The CUPS Snap
@@ -211,7 +211,7 @@ Snap has also a rigorous security system, encapsulating the application's file s
 
 My work on the CUPS Snap got motivated by Canonical's plans of creating an all-Snap Linux distribution, not using Debian packages at all any more. So everything, including the printing system (and also the printer drivers) had to be in Snaps.
 
-Fortunately, Snap was so well-designed that it allows also packaging command line tools and even system daemons ([Flatpak](https://flatpak.org/) for example only packages GUI applications, see [my blog post](https://openprinting.github.io/OpenPrinting-News-March-2022/#flatpak-and-printing)) and so I could snap right away.
+Fortunately, Snap was so well-designed that it allows also packaging command line tools and even system daemons ([Flatpak](https://flatpak.org/) for example only packages GUI applications, see [my blog post](/OpenPrinting-News-March-2022/#flatpak-and-printing)) and so I could snap right away.
 
 But there were a lot of challenges in these 5 years until the CUPS Snap got into production use for the first time:
 - [How to add printer drivers](https://forum.snapcraft.io/t/snapping-cups-drivers-as-plugins) (note that Michael Sweet brought in the solution with the Printer Applications only on the [OpenPrinting Summit 2018](https://pwg.org/chair/meeting-info/may-2018-sunnyvale.html), [slides](https://ftp.pwg.org/pub/pwg/liaison/openprinting/presentations/cups-plenary-may-18.pdf))
@@ -266,7 +266,7 @@ But now one can think why did we rush the classic printer drivers into Printer A
 
 And all the talk about an all-Snap Ubuntu distribution ...
 
-Yes, I have transferred [all free software printer drivers](https://openprinting.github.io/OpenPrinting-News-November-2021/#practically-all-free-printer-drivers-in-printer-applications) which come with Debian (and so also with Ubuntu) into [4 driver-retro-fitting Printer Applications](https://snapcraft.io/search?q=OpenPrinting). Only driver not transferred (yet) is the Braille printer driver included in cups-filters (but this is in the works now).
+Yes, I have transferred [all free software printer drivers](/OpenPrinting-News-November-2021/#practically-all-free-printer-drivers-in-printer-applications) which come with Debian (and so also with Ubuntu) into [4 driver-retro-fitting Printer Applications](https://snapcraft.io/search?q=OpenPrinting). Only driver not transferred (yet) is the Braille printer driver included in cups-filters (but this is in the works now).
 
 But do not think I have all these drivers rewritten into filter functions and turned their PPD file generators into `get-printer-attributes` IPP responders. No, I would never do it, as such code changes one has to test, and how should I test the drivers for ~10000 printer models without having the actual printers, but having a hall with 10000 printers inside one would also need a lot of people to do the testing. So the way to go is "do not touch the running code" and encapsulate it in Printer Applications.
 
@@ -289,7 +289,65 @@ And Michael Sweet has also made a Printer Application for label printers, based 
 
 - [**LPrint**](https://github.com/michaelrsweet/lprint) ([Snap Store](https://snapcraft.io/lprint)): Supports Dymo LabelWriter and Zebra ZPL label printers, with all label-printer-typical options: Label modes, tear-off offsets, media tracking, media top offset, print darkness, resolution, roll selection, speed, ... Note that this is a native Printer Application. It does not simply encapsulate the CUPS filters and PPD files which come with CUPS.
 
-And there is also a [Legacy Printer Application](https://openprinting.github.io/OpenPrinting-News-November-2021/#your-driver-not-in-a-printer-application---the-legacy-printer-application) (included in the pappl-retrofit) project which, when classically installed (do not try to snap it) sees all classically installed CUPS drivers and makes them available in a Printer Application. This is especially useful for proprietary drivers.
+And there is also a [Legacy Printer Application](/OpenPrinting-News-November-2021/#your-driver-not-in-a-printer-application---the-legacy-printer-application) (included in the pappl-retrofit) project which, when classically installed (do not try to snap it) sees all classically installed CUPS drivers and makes them available in a Printer Application. This is especially useful for proprietary drivers.
 
-So we will not loose the support for any of the currently supported printers when switching over into the PPD-less, all-IPP New Architecture ... Now the third generation of printing with free software can start ...
+So we will not lose the support for any of the currently supported printers when switching over into the PPD-less, all-IPP New Architecture ... Now the third generation of printing with free software can start ...
 
+
+## Driverless printers on USB - IPP-over-USB
+IPP, the Internet Printing Protocol, was originally designed as a network protocol, based on HTTP. So one could think that modern, driverless printers are only driverless if connected via the network, and not when connecte dvia USB.
+
+This is not the case, as fortunately, the situation was taken care of and driverless IPP printers do also IPP-over-USB, a standard to carry over the driverless nature of such a printer to USB.
+
+To get this also working under Linux a daemon is needed which connects to rhe USB device and on the other end listens on a port on localhost and advertises the printer via DNS-SD, so that it appears like a network printer for clients.
+
+The first approach was [ippusbxd](https://github.com/OpenPrinting/ippusbxd), a GSoC project by Daniel Dressler back in 2014. It is written in C and its architecture is simple: ippusbxd simply relays a TCP connection to USB. This does not
+work very well.
+
+I found Alexander Pevzner presenting his ["airscan" SANE backend](https://github.com/alexpevzner/sane-airscan) on the SANE mailing list and I told him that this is exactly what I need for driverless scanning support. So hea sked me to test his backend on my printer and we could weed out some bugs. Then I also wanted to know whether my printer which prints via IPP-over-USB would also scan via IPP-over-USB, even with scanning being eSCL and not IPP. So I tried his backend also via ippusbxd and it kind of worked but not really reliably.
+
+I told this to Alexander and he created the alternative approach [**ipp-usb**](https://github.com/OpenPrinting/ipp-usb) with a first working version within a few hours, and solved my problem this way. I could print, scan, and use the web admin interface of the printer perfectly.
+
+About ippusbxd he writes:
+
+> Unfortunately, the naive implementation, which simply relays a TCP connection to USB, does not work. It happens because closing the TCP connection on the client side has a useful side effect of discarding all data sent to this connection from the server side, but it does not happen with USB connections. In the case of USB, all data not received by the client will remain in the USB buffers, and the next time the client connects to the device, it will receive unexpected data, left from the previous abnormally completed request.
+>
+> Actually, it is an obvious flaw in the IPP-over-USB standard, but we have to live with it.
+>
+>So the implementation, once the HTTP request is sent, must read the entire HTTP response, which means that the implementation must understand the HTTP protocol, and effectively implement a HTTP reverse proxy, backed by the IPP-over-USB connection to the device.
+>
+>And this is what the ipp-usb program actually does.
+
+ipp-usb is written in Go, as Go provides an HTTP library with the needed functionality, which is missing in C. But as Go links executables statically, they have a large memory footprint. Therefore the ChromeOS developers do not accept Go programs and continued with ippusbxd for some time and later they came with another from-scratch approach, [ippusb_bridge](https://github.com/dgreid/platform2/tree/master/ippusb_bridge), written in Rust.
+
+Due to this there is no known operating system using ippusbxd any more. Therefore **development of this project is currently suspended**.
+
+Linux distributions use ipp-usb and with this driverless printing and scanning on USB-connected devices generally works.
+
+Only problem is that this connection type has many device-specific quirks and Alexander is following the reports and trying to fix as many as possible, producing an everytime longer list of quirk workarounds in ipp-usb's code. Especially there are also devices which [support the IPP-over-USB USB protocol but not driverless printing and scanning](/OpenPrinting-News-May-2022/#ipp-usb-printer-does-ipp-over-usb-but-not-driverless-ipp-and-driver-vs-driverless).
+
+
+## "localhost" support in Avahi
+To support a local non-driverless printer with a Printer Application or a USB-connected driverless printer via IPP-over-USB, one has a daemon running on the local machine and wants to access the emulated IPP network printer from the same machine. In addition, for improved security and privacy one perhaps does not want to share the device in the local network, or one does not even have a network. Then only listening on "localhost" (the "lo", loopback interface) is the intuitive way to go. Problem with this was that the DNS-SD implementation on Linux, Avahi, did not support the loopback interface, so the device did not get advertised for auto-discovery and one had to manually set up a CUPS queue in order to print.
+
+To fix this I have looked into the source code of Avahi and found out that a {tiny patch](https://github.com/lathiat/avahi/pull/161) solves the problem and gives Avahi full support for the loopback device.
+
+As Trent Lloyd, upstream maintainer of Avahi, was very busy all the time, it took near 3 years until the patch got [finally accepted](https://github.com/lathiat/avahi/commit/2fd76baeb829), 10 days before Feature Freeze for Ubuntu 20.04 LTS.
+
+This got triggered by Alexander Pevzner, author of the Go-based ippusbxd alternative [ipp-usb](https://github.com/OpenPrinting/ipp-usb) and the ["airscan" eSCL SANE backend](https://github.com/alexpevzner/sane-airscan/), when he reached out to Trent Lloyd in an e-mail thread about Debian packaging of his work and Trent answered that he will sort it and do a new release of Avahi before Feature Freeze of Ubuntu 20.04.
+
+He released [version 0.8.0](https://github.com/lathiat/avahi/releases) with the localhost support included and my name is listed in the "Thank you" section of the release notes.
+
+
+## SANE backends for driverless scanning - eSCL and WSD (AirScan)
+Most modern printers do driverless IPP and many of them are multi-function devices with built-in scanner, and these ones do not only driverless printing but also driverless scanning!
+
+Driverless scanning means, as also for driverless printing, not needing a driver, where a driver is any type of device-model-specific software or data. And this means that the device has to use standard protocols, for which client software can easily be made part of the operating system. The standard here is AirScan, Apple's extension of AirPrint so that the complete multi-function device can be used with an iPhone or iPad. The underlying communication protocols are eSCL (an HTTP-based protocol, the more common one) and [WSD](https://en.wikipedia.org/wiki/Web_Services_for_Devices) (Web Services for Devices, from Microsoft), one of the two the device has to support in order to fulfill the standard.
+
+Back in 2019 the situation was really inSANE, there was no SANE backend supporting eSCL or WSD, but "between the years" 2019 and 2020, between Christmas and New Year I was reading great news on the SANE mailing list: [Two independently developed backends for eSCL support](/OpenPrinting-News-January-2020/#driverless-scanning) got announced!
+
+These are “[escl](https://gitlab.com/sane-project/backends/merge_requests/242)” (small, light, basic, already included in SANE 1.0.29) and “[airscan](https://github.com/alexpevzner/sane-airscan)” (complete functionality). And there is also an AirScan server, [AirSane](https://github.com/SimulPiscator/AirSane), which is a SANE frontend which emulates an AirScan (eSCL) scanner scanning on any physical scanner supported by SANE, so it is nothing more than an early Scanner Application.
+
+After that I worked a lot together with the authors to make it all working on my HP multi-function device and all this even made Alexander Pevzner, author of the “airscan” backend, replace the "ippusbxd" IPP-over-USB daemon with the completely new "ipp-usb" and made IPP-over-USB finally working reliably (see above).
+
+Both "escl" (as part of sane-backends) and "airsane" (separate package) made it into all major Linux distributions and so the scanners in thousands of multi-function printers are working under Linux now.
