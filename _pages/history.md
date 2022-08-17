@@ -5,6 +5,8 @@ layout: single
 header:
  overlay_color: "#616161"
  overlay_filter: "1"
+toc: true
+toc_sticky: true
 author: Till
 excerpt: A brief history of OpenPrinting
 ---
