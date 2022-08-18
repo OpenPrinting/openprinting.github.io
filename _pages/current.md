@@ -225,7 +225,7 @@ The first working implementation of this idea is available now, the first [HOWTO
 
 It works, but it is still somewhat awkward, as it requires to compile the Printer Application and its dependencies (pappl-retrofit and PAPPL) from source.
 
-We will update the HOWTO whenever the developement of WSL progresses. With WSL tio use systemd, to support DNS-SD via Avahi, to use AppArmor, and finally to have snapd working in it things will get easier, finally hopefully just in a Snap! Each step of developemnt will remove steps from the HOWTO.
+We will update the HOWTO whenever the developement of WSL progresses. With WSL to use systemd, to support DNS-SD via Avahi, to use AppArmor, and finally to have snapd working in it things will get easier, finally hopefully just in a Snap! Each step of developemnt will remove steps from the HOWTO.
 
 My intention is to present the idea on the [Ubuntu Summit](https://summit.ubuntu.com/) in November, and I hope in a much easier implementation as currently.
 
