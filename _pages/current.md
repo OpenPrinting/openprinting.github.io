@@ -21,7 +21,9 @@ We also need to improve on things like CI and automatic testing of our code and 
 
 For all this we are always in search for contributors of the community. Therefore we are once reaching out by presenting on several conferences, like the OpenPrinting micro-conferences on the Linux Plumbers Conference ([2019](/OpenPrinting-Microconference-on-Linux-Plumbers-Conference-2019/), [2020](/OpenPrinting-News-September-2020/#openprinting-microconference-on-linux-plumbers-conference-2020), [2021](/OpenPrinting-News-October-2021/#openprinting-micro-conference-on-the-linux-plumbers-2021), [2022](https://lpc.events/event/16/sessions/142/#20220914)), [Linux App Summit](/OpenPrinting-News-Flash-OpenPrinting-and-Ubuntu-on-the-Linux-App-Summit-2022/), [GUADEC](/OpenPrinting-News-July-2022/#guadec-2022), ..., and also internet platforms, like [Ubuntu on Air](https://ubuntu.com/blog/ubuntuonair) ([YouTube channel](https://www.youtube.com/UbuntuOnAir)). And second, we are participating in the [Google Summer of Code](http://g.co/gsoc) every year, having 5-8 3-month projects each year and some of the contributors continue to work with us voluntarily.
 
-[![Ubuntu Office Hours with Till Kamppeter, Aveek Basu, Divyasheel Kumar, and Pranshu Kharkwal](https://img.youtube.com/vi/diB3wm4HB1Y/0.jpg)](https://www.youtube.com/watch?v=diB3wm4HB1Y "Ubuntu Office Hours with Till Kamppeter, Aveek Basu, Divyasheel Kumar, and Pranshu Kharkwal")
+[![Ubuntu Office Hours with Till Kamppeter, Aveek Basu, Divyasheel Kumar, and Pranshu Kharkwal, hosted by Monica Ayhens-Madon](https://img.youtube.com/vi/diB3wm4HB1Y/0.jpg)](https://www.youtube.com/watch?v=diB3wm4HB1Y "Ubuntu Office Hours with Till Kamppeter, Aveek Basu, Divyasheel Kumar, and Pranshu Kharkwal, hosted by Monica Ayhens-Madon")
+
+*YouTube Video of the Ubuntu Office Hours with Till Kamppeter, Aveek Basu, Divyasheel Kumar, and Pranshu Kharkwal, hosted by Monica Ayhens-Madon (Click to play on YouTube)*
 
 
 ## The New Architecture for printing and scanning
@@ -29,7 +31,9 @@ Emphasis of our work at OpenPrinting is the New Architecture. 6 of our 7 GSoC co
 
 Subject of the [New Architecture](https://events.gnome.org/event/77/contributions/285/attachments/88/187/guadec-2022-new-architecture.pdf) is getting a streamlined, standards-conforming printing and scanning workflow without obsolete methods and technologies and integrating well into modern operating system and network environments.
 
-[![Ubuntu Desktop Team Indaba with Till Kamppeter and Michael Sweet](https://img.youtube.com/vi/P22DOu_ahBo/0.jpg)](https://www.youtube.com/watch?v=P22DOu_ahBo "Ubuntu Desktop Team Indaba with Till Kamppeter and Michael Sweet")
+[![Ubuntu Desktop Team Indaba with Till Kamppeter and Michael Sweet, hosted by Heather Ellsworth and Monica Ayhens-Madon](https://img.youtube.com/vi/P22DOu_ahBo/0.jpg)](https://www.youtube.com/watch?v=P22DOu_ahBo "Ubuntu Desktop Team Indaba with Till Kamppeter and Michael Sweet, hosted by Heather Ellsworth and Monica Ayhens-Madon")
+
+*YouTube Video of the Ubuntu Desktop Team Indaba with Till Kamppeter and Michael Sweet, hosted by Heather Ellsworth and Monica Ayhens-Madon (Click to play on YouTube)*
 
 for 22 years now, since its 1.0 launch, [CUPS](#cups) uses principally the same architecture:
 
@@ -46,7 +50,7 @@ Why do we want to do away with PPD files?
 – In 2006 we [abolished PostScript as print job format](/achievements/#pdf-instead-of-postscript-as-standard-print-job-format) and replaced it by PDF.
 – PPD files can represent user-settable options only as enumerated choice or boolean. Ugly workarounds for things like passwords or color adjustment are needed, implemented in [CUPS](https://openprinting.github.io/cups/doc/spec-ppd.html) and [Foomatic](https://openprinting.org/printers).
 
-As CUPS was always following the standards of the Printer Working Group ([PWG}(http://www.pwg.org/)), a consortium of printer, OS, general IT, ... industry with which OpenPrinting works closely together and with Michael Sweet (author of CUPS) actively developing on the Internet Printing Protocol (IPP) for decades, we flllow them even more to create an all-IPP CUPS without the legacy of PPD files and driver filters.
+As CUPS was always following the standards of the Printer Working Group ([PWG](http://www.pwg.org/)), a consortium of printer, OS, general IT, ... industry with which OpenPrinting works closely together and with Michael Sweet (author of CUPS) actively developing on the Internet Printing Protocol (IPP) for decades, we flllow them even more to create an all-IPP CUPS without the legacy of PPD files and driver filters.
 
 These are exactly the established standards of driverless IPP (IPP Everywhere, AirPrint, Mopria) with print destinations advertising themselves via DNS-SD (also known as mDNS, ZeroConf, BonJour), communicating via pure IPP and using common data formats for print jobs (PDF, PWG Raster, Apple Raster, PCLm).
 
@@ -57,7 +61,12 @@ These are exactly the established standards of driverless IPP (IPP Everywhere, A
 – Filtering only for driverless standard formats: PDF, PWG Raster, Apple Raster, PCLm output, no need to add filters
 
 ![Current CUPS architecture](../assets/images/cups-old-architecture.png)
+
+*Current CUPS architecture*
+
 ![New CUPS architecture](../assets/images/cups-new-architecture.png)
+
+*New CUPS architecture*
 
 This will not only eliminate any obsolete technologies and methods, but also much better integrate in modern system environments,  operating systems with with immutable core file system or distribution-independent, sandboxed packaging, like [Snap](https://snapcraft.io/], [Flatpak](https://flathub.org/), or [Docker](https://hub.docker.com/).
 
@@ -187,12 +196,16 @@ Now we are looking for an alternative way to do this, but it is not urgent as fo
 
 ![Options for Epson inkjet printer in the Gutenprint Printer Application](../assets/images/gutenprint-printer-app-screenshot-stp-tx810fw-defaults-20210921-1.png)
 
+*Options for Epson inkjet printer in the Gutenprint Printer Application*
+
 ### Native HPLIP Printer Application
 Another printer driver which is under active developemtn and therefore should be available as native Printer Application, maintained by its developers, is [HPLIP](https://developers.hp.com/hp-linux-imaging-and-printing/) (HP Linux Imaging and Printing). Blocker on suggesting the HPLIP developers at HP to create a Printer Application from it is the missing [scanning support](#scanner-applications) in PAPPL, as many of HP's printers are multi-function devices and the classic HPLIP driver also includes a SANE driver for the scanners.
 
 For the printing part of HP's devices we have at least a [retro-fitting Printer Application](https://github.com/OpenPrinting/hplip-printer-app) for the time being, even with support for HP's proprietary plugin.
 
 ![Installing HPLIP's proprietary plugin in the HPLIP Printer Applications](../assets/images/hplip-printer-app-screenshot-plugin-install-20211011-1.png)
+
+*Installing HPLIP's proprietary plugin in the HPLIP Printer Applications*
 
 ### Braille Printer Application
 Accessibilty is an important part of an operating system for everyone's daily use. This does not only mean an accessible user interface but also support for devices which serve for accessibility, like Braille embossers for written communication with blind people. Therefore we need to support them like we support usual printers, which deposit visible markings on the media surface.
@@ -207,6 +220,8 @@ My first public mention of this idea was during the [virtual release party of Ub
 The first working implementation of this idea is available now, the first [HOWTO](/wsl-printer-app/) of WSL team member Carlos Nihelton, which he has worked out and written in cooperation with me. Thanks a lot to him!
 
 ![Creating Windows print queue to Printer Application running under WSL](../assets/images/wsl-printer/13-ipp.png)
+
+*Creating Windows print queue to Printer Application running under WSL*
 
 It works, but it is still somewhat awkward, as it requires to compile the Printer Application and its dependencies (pappl-retrofit and PAPPL) from source.
 
@@ -300,7 +315,7 @@ Having snapped CUPS I wondered why not packaging CUPS also in other formats, as 
 
 - **[Flatpak is not suitable](/OpenPrinting-News-March-2022/#flatpak-and-printing):** It is especially made for desktop/GUI applications. One cannot package daemons. The packaged app cannot be run as root. The channels to communicate with the outside world are not file system mounts ot AppArmor allowances as with Snap, but portals, D-Bus interfaces to common GUI dialogs as "Open", "Save as ...", and "[Print](/achievements/#common-print-dialog)".
 - **[AppImage is not suitable, too](/OpenPrinting-News-April-2022/#appimage-and-printing):** AppImage does nothing more that providing an immutable file system image with the packaged application and all its libraries and other dependencies. It is an executable which simply opens the file system and runs the included application. There is no security concept, the application has access to the whole system (or at least to what the invoking user has access to). There is also no support for daemons, like for example auto-starting it.
-- **[Docker is an alternative](/OpenPrinting-News-May-2022/#official-docker-image-of-cups-and-printer-applications):** Especially on systems based on a minimal/immutable/atomic/image-based OS designed for applications being installed as Flatpaks or systems not based on systemd, not using AppArmor, Snaps cannot get installed and an alternative method to install distribution-independent packages of CUPS and Printer Applications is needed. Here Docker images (OCI-compatible containers) as official versions from OpenPrinting on [DockerHub}(https://hub.docker.com/) got suggested. I had some discussion with Robert McQueen and he posted on [the Flatpak list](https://lists.freedesktop.org/archives/flatpak/2022-May/002244.html) and there came up [further suggestions](https://lists.freedesktop.org/archives/flatpak/2022-May/thread.html).
+- **[Docker is an alternative](/OpenPrinting-News-May-2022/#official-docker-image-of-cups-and-printer-applications):** Especially on systems based on a minimal/immutable/atomic/image-based OS designed for applications being installed as Flatpaks or systems not based on systemd, not using AppArmor, Snaps cannot get installed and an alternative method to install distribution-independent packages of CUPS and Printer Applications is needed. Here Docker images (OCI-compatible containers) as official versions from OpenPrinting on [DockerHub](https://hub.docker.com/) got suggested. I had some discussion with Robert McQueen and he posted on [the Flatpak list](https://lists.freedesktop.org/archives/flatpak/2022-May/002244.html) and there came up [further suggestions](https://lists.freedesktop.org/archives/flatpak/2022-May/thread.html).
 
 After releasing [cups-filters 2.0b1](#cups-filters-2-x) and [pappl-retrofit 1.0b1](#pappl-retrofit) I will look into creating the Docker images of CUPS and the Printer Applications.
 
