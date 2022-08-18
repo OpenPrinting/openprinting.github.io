@@ -354,4 +354,4 @@ After that I worked a lot together with the authors to make it all working on my
 
 Both "escl" (as part of sane-backends) and "airsane" (separate package) made it into all major Linux distributions and so the scanners in thousands of multi-function printers are working under Linux now.
 
-And the specs of eSCL got finally [published by Mopria](https://openprinting.github.io/OpenPrinting-News-May-2021/#driverless-scanning) in May 2021!
+And the specs of eSCL got finally [published by Mopria](/OpenPrinting-News-May-2021/#driverless-scanning) in May 2021!
