@@ -353,3 +353,5 @@ These are “[escl](https://gitlab.com/sane-project/backends/merge_requests/242)
 After that I worked a lot together with the authors to make it all working on my HP multi-function device and all this even made Alexander Pevzner, author of the “airscan” backend, replace the "ippusbxd" IPP-over-USB daemon with the completely new "ipp-usb" and made IPP-over-USB finally working reliably (see above).
 
 Both "escl" (as part of sane-backends) and "airsane" (separate package) made it into all major Linux distributions and so the scanners in thousands of multi-function printers are working under Linux now.
+
+And the specs of eSCL got finally [published by Mopria](https://openprinting.github.io/OpenPrinting-News-May-2021/#driverless-scanning) in May 2021!
