@@ -11,6 +11,8 @@ author: Till
 excerpt: What we have done so far
 ---
 
+**This page represents the state of August 2022**
+
 In the 21 years from the [beginning of OpenPrinting](/history/) up to now we have changed a lot of things to improve the user experience with printing on free software and Posix-style operating systems (like Linux).
 
 I have worked on this full-time since mid-2000, first at MandrakeSoft in Paris, from mid-2006 on I got paid by the Free Standards Group and from 2007 on by the Linux Foundation, for leading the OpenPrinting project, and in addition part-time by [Canonical](https://canonical.com/) for maintaining the printing part of Ubuntu. And from Feb 2012 on I got full-time employee of Canonical, to continue leading the OpenPrinting project.
