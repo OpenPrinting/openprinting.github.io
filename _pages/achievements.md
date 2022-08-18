@@ -357,3 +357,18 @@ After that I worked a lot together with the authors to make it all working on my
 Both "escl" (as part of sane-backends) and "airsane" (separate package) made it into all major Linux distributions and so the scanners in thousands of multi-function printers are working under Linux now.
 
 And the specs of eSCL got finally [published by Mopria](/OpenPrinting-News-May-2021/#driverless-scanning) in May 2021!
+
+
+## The OpenPrinting web site
+
+[From the March 2022 New](/OpenPrinting-News-March-2022/#openprinting-web-site)
+
+The part of the web site for looking up (legacy, non-driverless) printers and drivers (the [OpenPrinting database web app](https://github.com/OpenPrinting/foomatic-db-webapp/) has moved to a new server at Oregon State University Open Source Lab ([OSUOSL](https://osuosl.org)). As the old server did not receive a system upgrade for many years there were a lot of problems with the compatibility of the code (SQL and PHP) with the new, modern server.
+
+Fortunately, the people there, especially Violet Kurtz and Lance Albertson, both from the OSUOSL, helped a lot on doing this migration by doing the needed code changes. Thanks a lot to them.
+
+The UI of the web app did not change, but there are changes in the internal functionality. Instead of feeding the complete [Foomatic XML data](https://github.com/OpenPrinting/foomatic-db) into the MySQL database and from this generate the PPD files which are identical with the ones we find in Linux distributions (they usually create them with the `foomatic-compiledb` script which comes with the [foomatic-db-engine](https://github.com/OpenPrinting/foomatic-db-engine) package directly from the XML data) we do the same as the distributions do also on the server now. We pre-build the PPD files with `foomatic-compiledb` and serve only the content of the web pages from a (reduced) MySQL database. This saves us from too many SQL fixes to do and server responses, especially when downloading PPD files should be faster.
+
+Also the `query.php` script for machine queries got fixed and is fully working again.
+
+This is especially important as we want to add a [query service for printer setup tools](/OpenPrinting-News-November-2021/#printer-querying-on-the-openprinting-web-server) to find the correct Printer Application(s) for a printer based on its device ID. This is currently [in the works](/current/#printer-application-look-up-via-the-openprinting-web-site).
