@@ -11,7 +11,7 @@ excerpt: "Learn more about OpenPrinting"
 
 - [How did this all begin?](/history/)
 - [Our principal achievements](/achievements/)
-- [What we are currently doing (coming soon!)]()
+- [What we are currently doing](/current/)
 
 ## A Brief History
 
