@@ -32,6 +32,8 @@ main:
     url: "https://openprinting.org/printers"
   - title: "Printer Drivers"
     url: "https://openprinting.org/drivers"
+  - title: "Legacy Printers under Windows"
+    url: "/wsl-printer-app"
   - title: "Contact Us"
     url: /contact/
   - title: "Donations"
