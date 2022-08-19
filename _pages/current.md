@@ -37,30 +37,30 @@ Subject of the [New Architecture](https://events.gnome.org/event/77/contribution
 
 *YouTube Video of the Ubuntu Desktop Team Indaba with Till Kamppeter and Michael Sweet, hosted by Heather Ellsworth and Monica Ayhens-Madon (Click to play on YouTube)*
 
-for 22 years now, since its 1.0 launch, [CUPS](#cups) uses principally the same architecture:
+For 22 years now, since its 1.0 launch, [CUPS](#cups) uses principally the same architecture:
 
 - PostScript was the standard job format as printers usually used with UNIX were PostScript devices.
 - Capabilities of a printer are described by a PPD (PostScript Printer Description) file.
-– The PPD file describes all user-settable options, resources (trays, paper sizes, resolution, quality, color, ...) in a static text file.
-– To cover non-PostScript printers the PPD file format got extended (by Michael Sweet) to specify a filter to generate the printer’s native format.
-– Filters use Ghostscript (or Poppler) to convert PostScript input.
-– Print queues were manually created, with drivers (= PPDs + filters) assigned to them.
+- The PPD file describes all user-settable options, resources (trays, paper sizes, resolution, quality, color, ...) in a static text file.
+- To cover non-PostScript printers the PPD file format got extended (by Michael Sweet) to specify a filter to generate the printer’s native format.
+- Filters use Ghostscript (or Poppler) to convert PostScript input.
+- Print queues were manually created, with drivers (= PPDs + filters) assigned to them.
 
 Why do we want to do away with PPD files?
 
-– In 1984 Adobe stopped development on PPDs (and also PostScript), so we started with an obsolete (but useful) format right away.
-– In 2006 we [abolished PostScript as print job format](/achievements/#pdf-instead-of-postscript-as-standard-print-job-format) and replaced it by PDF.
-– PPD files can represent user-settable options only as enumerated choice or boolean. Ugly workarounds for things like passwords or color adjustment are needed, implemented in [CUPS](https://openprinting.github.io/cups/doc/spec-ppd.html) and [Foomatic](https://openprinting.org/printers).
+- In 1984 Adobe stopped development on PPDs (and also PostScript), so we started with an obsolete (but useful) format right away.
+- In 2006 we [abolished PostScript as print job format](/achievements/#pdf-instead-of-postscript-as-standard-print-job-format) and replaced it by PDF.
+- PPD files can represent user-settable options only as enumerated choice or boolean. Ugly workarounds for things like passwords or color adjustment are needed, implemented in [CUPS](https://openprinting.github.io/cups/doc/spec-ppd.html) and [Foomatic](https://openprinting.org/printers).
 
 As CUPS was always following the standards of the Printer Working Group ([PWG](http://www.pwg.org/)), a consortium of printer, OS, general IT, ... industry with which OpenPrinting works closely together and with Michael Sweet (author of CUPS) actively developing on the Internet Printing Protocol (IPP) for decades, we flllow them even more to create an all-IPP CUPS without the legacy of PPD files and driver filters.
 
 These are exactly the established standards of driverless IPP (IPP Everywhere, AirPrint, Mopria) with print destinations advertising themselves via DNS-SD (also known as mDNS, ZeroConf, BonJour), communicating via pure IPP and using common data formats for print jobs (PDF, PWG Raster, Apple Raster, PCLm).
 
-– [CUPS 3.x](#cups) will not support PPD files from the ground up.
-– The CUPS Snap does not allow adding PPDs and filters as it consists of an immutable file system image in a security sandbox. 
-– Now only driverless IPP printers are supported.
-– No manually created CUPS queues: IPP printer discovered, temporary queue automatically created (exception, CUPS sharing daemon).
-– Filtering only for driverless standard formats: PDF, PWG Raster, Apple Raster, PCLm output, no need to add filters
+- [CUPS 3.x](#cups) will not support PPD files from the ground up.
+- The CUPS Snap does not allow adding PPDs and filters as it consists of an immutable file system image in a security sandbox.
+- Now only driverless IPP printers are supported.
+- No manually created CUPS queues: IPP printer discovered, temporary queue automatically created (exception, CUPS sharing daemon).
+- Filtering only for driverless standard formats: PDF, PWG Raster, Apple Raster, PCLm output, no need to add filters
 
 ![Current CUPS architecture](../assets/images/cups-old-architecture.png)
 
