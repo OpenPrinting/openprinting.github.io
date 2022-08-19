@@ -22,12 +22,12 @@ In July 2006 linuxprinting.org merged with FSG's OP WorkGroup and Till Kamppeter
 ## Major Roles
 
 OpenPrinting
-* works on the development of new printing architectures, technologies, printing infrastructure, and interface standards for Linux and UNIX-style operating systems. 
-* collaborates with IEEE-ISTO [Printer Working Group](http://www.pwg.org/) (PWG) on IPP projects. 
-* is working with SANE to make driverless scanning a reality.
-* maintains cups-filters which allows CUPS to be used on any Unix-based (non-macOS) system.
-* is responsible for the Foomatic database.
-* is working on Common Print Dialog Backends project.
-* takes care of integrating the printing infrastructure with all types of operating systems (classic distro, immutable distro, ...) and software distribution technologies (Snap, Docker, ...)
+* Works on the development of new printing architectures, technologies, printing infrastructure, and interface standards for Linux and UNIX-style operating systems.
+* Collaborates with IEEE-ISTO [Printer Working Group](http://www.pwg.org/) (PWG) on IPP projects.
+* Is working with [SANE](http://www.sane-project.org/) to make driverless scanning a reality.
+* Maintains [cups-filters](/achievements/#cups-filters) which allows CUPS to be used on any Unix-based (non-macOS) system.
+* Is responsible for the [Foomatic database](https://openprinting.org/printers).
+* Is working on the [Common Print Dialog Backends](/achievements/#common-print-dialog-backends) project.
+* Takes care of integrating the printing infrastructure with all types of operating systems (classic distro, immutable distro, ...) and software distribution technologies ([Snap](https://snapcraft.io/), [Docker](https://hub.docker.com/), ...)
 
 ### Our Code of Conduct: [Code of Conduct](/codeofconduct/)
