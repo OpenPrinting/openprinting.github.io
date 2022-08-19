@@ -68,7 +68,7 @@ These are exactly the established standards of driverless IPP (IPP Everywhere, A
 
 *New CUPS architecture*
 
-This will not only eliminate any obsolete technologies and methods, but also much better integrate in modern system environments,  operating systems with with immutable core file system or distribution-independent, sandboxed packaging, like [Snap](https://snapcraft.io/], [Flatpak](https://flathub.org/), or [Docker](https://hub.docker.com/).
+This will not only eliminate any obsolete technologies and methods, but also much better integrate in modern system environments,  operating systems with with immutable core file system or distribution-independent, sandboxed packaging, like [Snap](https://snapcraft.io/), [Flatpak](https://flathub.org/), or [Docker](https://hub.docker.com/).
 
 This is due to the fact that components only interact via IP-based protocols like IPP and DNS-SD and no files o one component have to be installed in the file system of another, especially no binary executable files. So every component can be in its own sandbox and have its own immutable file system.
 
