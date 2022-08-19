@@ -221,7 +221,7 @@ The first working implementation of this idea is available now, the first [HOWTO
 
 ![Creating Windows print queue to Printer Application running under WSL](../assets/images/wsl-printer/13-ipp.png)
 
-*Creating Windows print queue to Printer Application running under WSL*
+*Creating Windows print queue pointing to Printer Application running under WSL*
 
 It works, but it is still somewhat awkward, as it requires to compile the Printer Application and its dependencies (pappl-retrofit and PAPPL) from source.
 
