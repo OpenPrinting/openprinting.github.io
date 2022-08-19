@@ -7,7 +7,13 @@ author: Till
 excerpt: Printer Applications under Windows, Pages about our work, Linux Plumbers, Ubuntu Summit, GUADEC, GSoC, CPDB 2.x, "cups" snapd interface, cups-filters 2.x
 ---
 ## Using Windows? We can help you, too.
-In March 2019, right before the pandemic broke out, on a Canonical-internal conference, I entered the team room of my team, the Desktop Team, and my colleague Heather Ellsworth introduced me to another person, saying "This is Till, he makes printing just work, on everything except Windows". Now, two and a half years later, we must correct: "This is Till, he makes printing just work, on everything except Mac".
+In March 2019, right before the pandemic broke out, on a Canonical-internal conference, I entered the team room of my team, the Desktop Team, and my colleague Heather Ellsworth introduced me to another person, saying:
+
+> This is Till, he makes printing just work, on everything except Windows.
+
+Now, two and a half years later, we must correct:
+
+> This is Till, he makes printing just work, on everything except Mac.
 
 Once, Michael Sweet has left Apple end of 2019, and second, one can [run Printer Applications under Windows](/current/#reviving-legacy-printers-under-windows)!
 
@@ -43,7 +49,7 @@ The pages will get updated from time to time in the future, when items get compl
 
 - **Wednesday, September 14, 2022, 3pm - 6:30pm Dublin time or 2pm - 5:30pm UTC**
 
-[Full schedules of LPC 2022](https://lpc.events/event/16/timetable/#all.detailed))
+[Full schedules of LPC 2022](https://lpc.events/event/16/timetable/#all.detailed)
 
 I will be live on stage in Dublin, also Piotr Pawliczek from Google, and Monica Ayhens-Madon will also be there and hel me with remote attendee's questions. All the other speakers will participate remotely. Also several of our GSoC contributors will participate remotely.
 
@@ -83,7 +89,7 @@ During this year, Canonical has formed a new Community Team and wants to interac
 
 Now they come with a new concept, covering the wider community, not only developers, but also designers, documentation writers, ... It is now an annual (not coupled any more with the Ubuntu releases) meeting between Canonical employees and the free software community.
 
-It is the named the [**Ubuntu Summit**](https://summit.ubuntu.com/) and the first edition takes place in Prague, Czech Republic, November 7-9. See the web site for subscribing to a newsletter, registration, call for proposals, ... Currently the site is preliminary, but in the next days more information and features will appear ...
+It is named [**Ubuntu Summit**](https://summit.ubuntu.com/) and the first edition takes place in Prague, Czech Republic, November 7-9. See the web site for subscribing to a newsletter, registration, call for proposals, ... Currently the site is preliminary, but in the next days more information and features will appear ...
 
 See also [a first public announcement](https://www.youtube.com/watch?v=CBPefa0Ckq8&t=31880s) on the LAS 2022 back in April this year.
 
@@ -143,7 +149,7 @@ Mentors: Till Kamppeter<BR>
 > I have completed the GTK printbackend and created a merge request upstream: https://gitlab.gnome.org/GNOME/gtk/-/merge_requests/4930
 > I also have improved the cpdb-libs and cpdb-backend-cups libraries and fixed some bugs. I also tried working on QT CPDB print backend implementation, and had a meet with Priyadarshi Singh (previous GSoC contributor who has worked upon CPDB backend for qt). Though due to the lack of proper communication/guidance for the development of Qt, I have dropped it and started working on firefox instead after talking with my mentor. I have installed it from source and have been going over it's CUPS print backend, and talking with people on the IRC regarding the development of a new Print Backend for firefox.
 
-**Update:** I have succeeded to get Qt print dialog upstream maintainer Albert Astals Cid working with us and so Gaurav is no working on the **Qt print dialog**!
+**Cute update:** I have succeeded to get Qt print dialog upstream maintainer Albert Astals Cid working with us and so Gaurav is no working on the **Qt print dialog**!
 
 [GTK Merge Request](https://gitlab.gnome.org/GNOME/gtk/-/merge_requests/4930): Draft: New CPDB print backend for GTK Print Dialog
 
