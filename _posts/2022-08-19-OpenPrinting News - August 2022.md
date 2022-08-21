@@ -162,11 +162,11 @@ Mentors: Till Kamppeter, Michael Sweet, Pranshu Kharkwal, Divyasheel, Deepak Pat
 
 Further discussion happened on Mohit´s issue report:
 
-[GNOME Issue report #1878](https://gitlab.gnome.org/GNOME/gnome-control-center/-/issues/1878) with discussion on Mohit's work.
+- [GNOME Issue report #1878](https://gitlab.gnome.org/GNOME/gnome-control-center/-/issues/1878) with discussion on Mohit's work.
 
 cups-pk-helper changes:
 
-[cups-pk-helper PR #7](https://gitlab.freedesktop.org/cups-pk-helper/cups-pk-helper/-/merge_requests/7): Added discovery of Printers via lpinfo, PAPPL and Printer Applications
+- [cups-pk-helper PR #7](https://gitlab.freedesktop.org/cups-pk-helper/cups-pk-helper/-/merge_requests/7): Added discovery of Printers via lpinfo, PAPPL and Printer Applications
 
 **Scanning Support in PAPPL with eSCL Support**<BR>
 Contributor: Rishabh Maheshwari<BR>
