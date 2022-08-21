@@ -287,7 +287,7 @@ Therefore we created the concept of the [Common Print Dialog Backends](/achievem
 
 This is done by the print technology support being in separate modules (backends) which are available to the print dialogs as D-Bus services. This way the backends can get updated separately and they can also be in separate sandboxed packages, allowing easy Linux support for any cloud/online printing service provider.
 
-Currently, GSoC contributor Gaurav Guleria (mentored by me and upstream manintainers Marek Kasik and Albert Astals Cid) is working on CPDB support for the print dialogs. He already completed the GTK dialog ([Merge Request](https://gitlab.gnome.org/GNOME/gtk/-/merge_requests/4930) with discussion) and also did a lot of fixes and improvements on [CPDB](https://github.com/OpenPrinting/cpdb-libs) itself. Now he is working on the Qt dialog to add CPDB support also there, to make it finally cute.
+Currently, GSoC contributor Gaurav Guleria (mentored by me and upstream manintainers Marek Kasik, Matthias Clasen, and Albert Astals Cid) is working on CPDB support for the print dialogs. He already completed the GTK dialog ([Merge Request](https://gitlab.gnome.org/GNOME/gtk/-/merge_requests/4930) with discussion) and also did a lot of fixes and improvements on [CPDB](https://github.com/OpenPrinting/cpdb-libs) itself. Now he is working on the Qt dialog to add CPDB support also there, to make it finally cute.
 
 
 ## Optimizing DNS-SD browsing
