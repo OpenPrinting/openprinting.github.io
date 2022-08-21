@@ -269,13 +269,13 @@ These changes are currently being worked on, in a way that the "Printers" module
 
 The coding is done in a nice sub-team of two GSoC contributors plus their mentors. In addition, code of the last two year's GSoCs get made use of, too. Shivam Mishra does the main panel with all ist functionality and Mohit Verma the add-printer panel. Mentoring is done by me, by Divyasheel Kumar (worked on listing IPP services last year), and upstream maintainer Marek Kasik.
 
-Several feature requests are posted on GNOME's GitLab and cups-pk-helper'a GitHub and there the coding work gets discussed:
+Several feature requests are posted on GNOME's and cups-pk-helper'a GitLab repositories and there the coding work gets discussed:
 
 - [GNOME #1877](https://gitlab.gnome.org/GNOME/gnome-control-center/-/issues/1877): Improve setting of IPP options
 - [GNOME #1878](https://gitlab.gnome.org/GNOME/gnome-control-center/-/issues/1878): Allow to add new printers via Printer Applications
 - [GNOME #1879](https://gitlab.gnome.org/GNOME/gnome-control-center/-/issues/1879): Do not show setting of drivers for IPP printers
 - [GNOME #1911](https://gitlab.gnome.org/GNOME/gnome-control-center/-/issues/1911): Printers: Make adminurl available for IPP printers
-- [cups-pk-helper #1](https://github.com/freedesktop/cups-pk-helper/pull/1): Added discovery of Printers via lpinfo, PAPPL and Printer Applications
+- [cups-pk-helper #7](https://gitlab.freedesktop.org/cups-pk-helper/cups-pk-helper/-/merge_requests/7): Added discovery of Printers via lpinfo, PAPPL and Printer Applications
 
 
 ## The print dialogs
