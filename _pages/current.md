@@ -217,7 +217,7 @@ Our support for Braille embossers is currently provided in the [cups-filters](ht
 ### Reviving legacy printers under Windows
 I am working at [Canonical in the Desktop Team](https://discourse.ubuntu.com/t/desktop-team-updates-monday-15th-august-2022/29954/8?u=till-kamppeter), my job being leading the OpenPrinting project, and in the Desktop Team we also have a sub-team working on WSL (Windows Subsystem for Linux), a facility to run Linux applications under Windows. This brought me to the idea of running Printer Applications under WSL, to revive legacy printers which got abandoned by Microsoft and also by their manufacturers.
 
-My first public mention of this idea was during the [virtual release party of Ubuntu 22.04](https://www.youtube.com/watch?v=CBPefa0Ckq8&t=15480s) on the [LAS 2022](/OpenPrinting-News-Flash-OpenPrinting-and-Ubuntu-on-the-Linux-App-Summit-2022/), in my second part praising the WSL team.
+My first public mention of this idea was during the [virtual release party of Ubuntu 22.04](https://www.youtube.com/watch?v=CBPefa0Ckq8&t=15480s) on the [LAS 2022](/OpenPrinting-News-Flash-OpenPrinting-and-Ubuntu-on-the-Linux-App-Summit-2022/), in [my second part](https://youtu.be/CBPefa0Ckq8?t=17455) praising the WSL team.
 
 The first working implementation of this idea is available now, the first [HOWTO](/wsl-printer-app/) of WSL team member Carlos Nihelton, which he has worked out and written in cooperation with me. Thanks a lot to him!
 
