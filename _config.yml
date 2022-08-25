@@ -129,7 +129,8 @@ footer:
   links:
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/intent/tweet?button_hashtag=OpenPrinting&ref_src=twsrc%5Etfw"
+      #url: "https://twitter.com/intent/tweet?button_hashtag=OpenPrinting&ref_src=twsrc%5Etfw"
+      url: "https://twitter.com/open_printing"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/openprinting"
