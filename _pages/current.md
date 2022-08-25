@@ -17,15 +17,17 @@ Even after having [achieved many nice things in the last 21 years](/achievements
 
 Also there has been a lot of development of the systems and environments for which we provide the print functionality. Our work will continue to improve software integration. For example, there will be continued work on the printer setup tools and print dialogs of different desktop environments and applications, packaging methods like Snap, Flatpak, Docker, ..., new forms of OS distributions (immutable core, all-Snap, ...), ...
 
-We also need to improve on things like CI and automated testing of our code. There will also be some work on documentation needed, especially for the APIs of our libraries.
+In addition we need to improve on things like CI and automated testing of our code. There will also be some work on documentation needed, especially for the APIs of our libraries.
 
 For all this we are always in search for contributors of the community. Therefore we are once reaching out by presenting on several conferences, like the OpenPrinting micro-conferences on the Linux Plumbers Conference ([2019](/OpenPrinting-Microconference-on-Linux-Plumbers-Conference-2019/), [2020](/OpenPrinting-News-September-2020/#openprinting-microconference-on-linux-plumbers-conference-2020), [2021](/OpenPrinting-News-October-2021/#openprinting-micro-conference-on-the-linux-plumbers-2021), [2022](https://lpc.events/event/16/sessions/142/#20220914)), [Linux App Summit](/OpenPrinting-News-Flash-OpenPrinting-and-Ubuntu-on-the-Linux-App-Summit-2022/), [GUADEC](/OpenPrinting-News-July-2022/#guadec-2022), ..., and also internet platforms, like [Ubuntu on Air](https://ubuntu.com/blog/ubuntuonair) ([YouTube channel](https://www.youtube.com/UbuntuOnAir)). And second, we are participating in the [Google Summer of Code](http://g.co/gsoc) (GSoC) every year, having 5-8 3-month projects each year and some of the contributors continue to work with us voluntarily.
 
-Of great help for us is also funding, for conference travel, printers and supplies for our contributors, or even our own internships, at any time in the year. For this we accept donations/funding via the Linux Foundation's [LFX Croudfunding](https://crowdfunding.lfx.linuxfoundation.org/projects/open-printing).
+I am leading OpenPrinting as my day job, thanks to my full-time employment at Canonical, the company behind Ubuntu, right for doing that. Thanks a lot to Canonical for supporting printing on Linux and other POSIX-style operating systems this way.
+
+Of additional help for us is also general funding, for conference travel, printers and supplies for our contributors, or even our own internships, at any time in the year. For this we accept donations/funding via the Linux Foundation's [LFX Croudfunding](https://crowdfunding.lfx.linuxfoundation.org/projects/open-printing).
 
 [![Ubuntu Office Hours with Till Kamppeter, Aveek Basu, Divyasheel Kumar, and Pranshu Kharkwal, hosted by Monica Ayhens-Madon](https://img.youtube.com/vi/diB3wm4HB1Y/0.jpg)](https://www.youtube.com/watch?v=diB3wm4HB1Y "Ubuntu Office Hours with Till Kamppeter, Aveek Basu, Divyasheel Kumar, and Pranshu Kharkwal, hosted by Monica Ayhens-Madon")
 
-*YouTube Video of the Ubuntu Office Hours with Till Kamppeter, Aveek Basu, Divyasheel Kumar, and Pranshu Kharkwal, hosted by Monica Ayhens-Madon (Click to play on YouTube)*
+*[YouTube Video](https://www.youtube.com/watch?v=diB3wm4HB1Y) of the Ubuntu Office Hours with Till Kamppeter, Aveek Basu, Divyasheel Kumar, and Pranshu Kharkwal, hosted by Monica Ayhens-Madon*
 
 
 ## The New Architecture for printing and scanning
@@ -35,7 +37,7 @@ Subject of the [New Architecture](https://events.gnome.org/event/77/contribution
 
 [![Ubuntu Desktop Team Indaba with Till Kamppeter and Michael Sweet, hosted by Heather Ellsworth and Monica Ayhens-Madon](https://img.youtube.com/vi/P22DOu_ahBo/0.jpg)](https://www.youtube.com/watch?v=P22DOu_ahBo "Ubuntu Desktop Team Indaba with Till Kamppeter and Michael Sweet, hosted by Heather Ellsworth and Monica Ayhens-Madon")
 
-*YouTube Video of the Ubuntu Desktop Team Indaba with Till Kamppeter and Michael Sweet, hosted by Heather Ellsworth and Monica Ayhens-Madon (Click to play on YouTube)*
+*[YouTube Video](https://www.youtube.com/watch?v=P22DOu_ahBo) of the Ubuntu Desktop Team Indaba with Till Kamppeter and Michael Sweet, hosted by Heather Ellsworth and Monica Ayhens-Madon*
 
 For 22 years now, since its 1.0 launch, [CUPS](#cups) uses principally the same architecture:
 
@@ -46,7 +48,7 @@ For 22 years now, since its 1.0 launch, [CUPS](#cups) uses principally the same 
 - Filters use Ghostscript (or Poppler) to convert PostScript input.
 - Print queues were manually created, with drivers (= PPDs + filters) assigned to them.
 
-Why do we want to do away with PPD files?
+We especially want to get rid of the PPD files, because ...
 
 - In 1984 Adobe stopped development on PPDs (and also PostScript), so we started with an obsolete (but useful) format right away.
 - In 2006 we [abolished PostScript as print job format](/achievements/#pdf-instead-of-postscript-as-standard-print-job-format) and replaced it by PDF.
