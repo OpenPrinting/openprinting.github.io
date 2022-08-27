@@ -51,7 +51,7 @@ The pages will get updated from time to time in the future, when items get compl
 
 [Full schedules of LPC 2022](https://lpc.events/event/16/timetable/#all.detailed)
 
-I will be live on stage in Dublin, also Piotr Pawliczek from Google, and Monica Ayhens-Madon will also be there and hel me with remote attendee's questions. All the other speakers will participate remotely. Also several of our GSoC contributors will participate remotely.
+I will be live on stage in Dublin, also Piotr Pawliczek from Google, and Monica Ayhens-Madon will also be there and help me with remote attendee's questions. All the other speakers will participate remotely. Also several of our GSoC contributors will participate remotely.
 
 We will have the following sessions:
 
