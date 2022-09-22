@@ -94,7 +94,7 @@ With this the Windows print environment will auto-discover the Printer Applicati
 
 If your printer is connected via USB, install USB IPD as described in [Carlos' current version of the HOWTO](/wsl-printer-app/#how-to).
 
-Now find the suitable Printer Application in the Snap Store ([OpenPrinting](https://snapcraft.io/search?q=OpenPrinting), [LPrint](https://snapcraft.io/lprint)) or if you are in doubt, use our [look-up service](#openorinting-web-server--printer-application-look-up-service-is-now-live). Install it with just a simple:
+Now find the suitable Printer Application in the Snap Store ([OpenPrinting](https://snapcraft.io/search?q=OpenPrinting), [LPrint](https://snapcraft.io/lprint)) or if you are in doubt, use our [look-up service](#openprinting-web-server-printer-application-look-up-service-is-now-live). Install it with just a simple:
 ```
 sudo snap install <NAME>
 ```
@@ -225,7 +225,7 @@ Discussion with the Qt upstream developers on their mailing list: [Initial post]
 **GNOME Control Center GUI for discovering non-driverless printers and finding suitable Printer Applications for them**<BR>
 Contributor: Mohit Verma<BR>
 Mentors: Till Kamppeter, Michael Sweet, Pranshu Kharkwal, Divyasheel, Deepak Patankar<BR>
-> I have completed the work of discovery of Printer Applications along with their binary paths. I have also weeded out the duplicate entries listed by Avahi. With the Printer Application look-up service in place, I have started the work on a temporary GUI for the Printer Application which can be adjusted to the final design once it is finalized by Marek Kasik. This GUI will be completed by the end of this week. So, by the end of this month we will have a makeshift GUI which can search for the most appropriate Printer Application [on the Open Printing](#openorinting-web-server--printer-application-look-up-service-is-now-live) and install it as well along with other desired functionalities.
+> I have completed the work of discovery of Printer Applications along with their binary paths. I have also weeded out the duplicate entries listed by Avahi. With the Printer Application look-up service in place, I have started the work on a temporary GUI for the Printer Application which can be adjusted to the final design once it is finalized by Marek Kasik. This GUI will be completed by the end of this week. So, by the end of this month we will have a makeshift GUI which can search for the most appropriate Printer Application [on the Open Printing](#openprinting-web-server-printer-application-look-up-service-is-now-live) and install it as well along with other desired functionalities.
 
 Further discussion happened on Mohit´s issue report:
 
