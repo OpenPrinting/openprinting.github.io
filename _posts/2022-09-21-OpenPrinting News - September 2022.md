@@ -25,37 +25,37 @@ Yes, you are reading right, you can have pictures on the foam of your beer, even
 First they (or you) draw the beer, and then, they put it into their malt jet printer:
 
 <p>
-<div class="container-fluid" width="100%">
+<div class="container-fluid">
 
-  <div class="col-lg-3 centered">
+  <div class="col-lg-4 centered">
     <a href="../assets/images/malt-jet-printer/printer.jpg">
       <img width="300" src="../assets/images/malt-jet-printer/printer.jpg" alt="Malt jet printer">
     </a>
     <p><i>The malt jet printer, with touch screen operation!</i></p>
   </div>
 
-  <div class="col-lg-3 centered">
+  <div class="col-lg-4 centered">
     <a href="../assets/images/malt-jet-printer/printing-2.jpg">
       <img width="300" src="../assets/images/malt-jet-printer/printing-2.jpg" alt="Printing ...">
     </a>
     <p><i>Printing has started ...</i></p>
   </div>
 
-  <div class="col-lg-3 centered">
+  <div class="col-lg-4 centered">
     <a href="../assets/images/malt-jet-printer/print-head.jpg">
       <img width="300" src="../assets/images/malt-jet-printer/print-head.jpg" alt="Print head">
     </a>
     <p><i>... Print head moving ...</i></p>
   </div>
 
-  <div class="col-lg-4 centered">
+  <div class="col-lg-6 centered">
     <a href="../assets/images/malt-jet-printer/printing-3.jpg">
       <img width="300" src="../assets/images/malt-jet-printer/printing-3.jpg" alt="... Printing ...">
     </a>
     <p><i>... Printing continues ...</i></p>
   </div>
 
-  <div class="col-lg-4 centered">
+  <div class="col-lg-6 centered">
     <a href="../assets/images/malt-jet-printer/printout.jpg">
       <img width="300" src="../assets/images/malt-jet-printer/printout.jpg" alt="... Printing done!">
     </a>
