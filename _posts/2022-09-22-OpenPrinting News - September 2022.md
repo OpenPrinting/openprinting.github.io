@@ -82,15 +82,15 @@ If your printer does not appear automagically under Windows now (as it would do 
 
 Now you can print as described in the end of [Carlos' HOWTO](/wsl-printer-app/).
 
-Thanks to Serhat Toktamisoglu and his WSL team at Canonical, Didier Roche, Jean-Baptiste Lallement, Carlos Nihelton, and Eduard Gómez Escandell and especially Dani Llewellyn as community contributor for getting the systemd support into WSL in such a short time.
+Thanks a lot to Serhat Toktamisoglu and his WSL team at Canonical, Didier Roche, Jean-Baptiste Lallement, Carlos Nihelton, and Eduard Gómez Escandell and especially Dani Llewellyn as community contributor for getting the systemd support into WSL in such a short time.
 
-Also thanks to the people at Microsoft cooperating with our team at Canonical on WSL.
+Thanks to the people at Microsoft cooperating with our team at Canonical on WSL.
 
-Also thanks to Carlos Nihelton for working out the steps to run Printer Applications under WSL, even already before the addition of systemd support.
+Thanks to Carlos Nihelton for working out the steps to run Printer Applications under WSL, even already before the addition of systemd support.
 
-Also thanks to Serhat Toktamisoglu for supporting me on this project.
+Thanks to Serhat Toktamisoglu for supporting me on this project.
 
-Thanks to Oliver Smith for his great blog entry, being a HOWTO for getting started with systemd-enabled WSL, and also spreading the news.
+And thanks to Oliver Smith for his great blog entry, being a HOWTO for getting started with systemd-enabled WSL, and also spreading the news.
 
 
 ## OpenPrinting Micro-Conference on the Linux Plumbers 2022
