@@ -24,6 +24,7 @@ Yes, you are reading right, you can have pictures on the foam of your beer, even
 
 First they (or you) draw the beer, and then, they put it into their malt jet printer:
 
+<p>
 <div class="container-fluid">
 
   <div class="col-lg-3 centered">
@@ -62,6 +63,7 @@ First they (or you) draw the beer, and then, they put it into their malt jet pri
   </div>
 
 </div><!-- container -->
+</p>
 
 I do not know whether you can print with a Linux machine to this device, so probably it would be a "Paperweight" in [our database](https://openprinting.org/printers) ...
 
