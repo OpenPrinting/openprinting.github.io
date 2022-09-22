@@ -25,7 +25,7 @@ Yes, you are reading right, you can have pictures on the foam of your beer, even
 First they (or you) draw the beer, and then, they put it into their malt jet printer:
 
 <p>
-<div class="container-fluid">
+<div class="container-fluid" width="100%">
 
   <div class="col-lg-3 centered">
     <a href="../assets/images/malt-jet-printer/printer.jpg">
@@ -84,7 +84,7 @@ And for everyone who wants to start tinkering (no compiling required!), here a q
 
 First, follow Oliver's instructions on enabling systemd in your WSL. It is the section "How to enable systemd in Ubuntu WSL" near the beginning of the [blog](https://ubuntu.com/blog/ubuntu-wsl-enable-systemd).
 
-Now make sure you have Avahi installed (packages `avahi-daemon`):
+Now make sure you have Avahi installed (package `avahi-daemon`):
 ```
 dpkg -l | grep avahi-daemon
 ```
