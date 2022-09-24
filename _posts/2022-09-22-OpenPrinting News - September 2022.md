@@ -135,7 +135,7 @@ Only containerization alternative to Snap are OCI-compliant containers: Docker, 
 
 We have cancelled the 3D-printing session as we did not have enough to discuss about this subject.
 
-Phoronix has written about Mike's part on our micro-conference: [CUPS 3.0 Continues Being Crafted To Overhaul Linux Printing](Phoronix has written about Mike's part on our micro-conference)
+Phoronix has written about Mike's part on our micro-conference: [CUPS 3.0 Continues Being Crafted To Overhaul Linux Printing](https://www.phoronix.com/news/CUPS-3.0-Architecture-Overhaul)
 
 Thanks a lot to Monica Ayhens-Madon for taking care of the remote attendees while I was concentrating on the people in the room, to Steven Rostedt and James Bottomley to organize the Linux Plumbers and to help me with everything micro-conference-related, especially also having given last-minute in-person admission to Valentin, and also thanks to Zdenek Dohnal for taking notes of the discussions.
 
