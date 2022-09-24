@@ -1,5 +1,5 @@
 ---
-title: Reviving an older printer with Ubuntu WSL and Printer Applications Snaps
+title: Reviving an older printer with Ubuntu WSL and Printer Application Snaps
 permalink: /wsl-printer-app-snap/
 layout: single
 header:
@@ -15,9 +15,9 @@ Although effective, it's quite complicated to build the necessary components fro
 
 That complexity is really not necessary anymore.
 
-If you've seen the latest news, [Microsoft recently announced support for systemd inside WSL 2](https://devblogs.microsoft.com/commandline/systemd-support-is-now-available-in-wsl/), which, among other features, allows us running snaps.
+If you've seen the latest news, [Microsoft recently announced support for systemd inside WSL 2](https://devblogs.microsoft.com/commandline/systemd-support-is-now-available-in-wsl/), which, among other features, allows us running Snaps.
 To know more of what can be done with systemd in Ubuntu WSL and how to enable it, check out [the post in Ubuntu's blog](https://ubuntu.com/blog/ubuntu-wsl-enable-systemd).
-The following steps will leverage that power to install a printer application as a snap, which encapsulates all dependencies and small details required to run
+The following steps will leverage that power to install a Printer Application as a Snap, which encapsulates all dependencies and small details required to run
 it, and make the printer discoverable for Windows by using Avahi.
 
 > Since both Avahi and the Printer Application will run as daemons, and since systemd is a new feature for WSL, I recommend following this guide on a dedicated Ubuntu WSL instance instead of doing it on the main instance you use for other purposes.
@@ -97,7 +97,7 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 ```
 
-9. Install the printer application snap.
+9. Install the Printer Application Snap.
 
 ```
 sudo snap install --edge hplip-printer-app
@@ -120,7 +120,7 @@ failure. A successful run looks like the image below.
 
 ![TLS Certificate issue](../assets/images/wsl-printer/04-invalid-certificate.png)
 
-![Printer application web interface](../assets/images/wsl-printer/06-web-interface.png)
+![Printer Application web interface](../assets/images/wsl-printer/06-web-interface.png)
 
 12. Add a printer through the web interface by clicking on the “Add Printer” button (the device must be powered up, connected to your computer through USB and
     attached to Ubuntu WSL. Refer to step 6). Take note of the “Name” you assign to the printer. That will be later used to refer to that printer on Windows.
@@ -138,7 +138,7 @@ failure. A successful run looks like the image below.
 ![Printer added](../assets/images/wsl-printer/09-printer-added.png)
 
 15. Add the printer to Windows. Go to Settings > Bluetooth & devices > Printers & scanners and hit the “Add device” button. Thanks to Avahi the auto discover
-    will just work and Windows will show the printer we just added through the web interface. The name listed here is the same we used in the step 11.
+    will just work and Windows will show the printer we just added through the web interface. The name listed here is the same we used in the step 12.
 
 ![Add printer to Windows](../assets/images/wsl-printer/22-printer-autodiscover.png)
 
