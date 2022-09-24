@@ -1,6 +1,6 @@
 ---
 title: Reviving an older printer with Ubuntu WSL and Printer Application Snaps
-permalink: /wsl-printer-app-snap/
+permalink: /wsl-printer-app/
 layout: single
 header:
  overlay_color: "#616161"
@@ -10,7 +10,7 @@ author: CNihelton
 
 ## Introduction
 
-In the [previous HOWTO](/wsl-printer-app/) we've seen how WSL 2 and Printer Applications can revive older printers which Windows doesn't offer drivers for.
+In the [previous HOWTO](/wsl-printer-app-compile/) we've seen how WSL 2 and Printer Applications can revive older printers which Windows doesn't offer drivers for.
 Although effective, it's quite complicated to build the necessary components from source. 
 
 That complexity is really not necessary anymore.

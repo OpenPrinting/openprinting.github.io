@@ -52,11 +52,13 @@ You were perhaps thinking about the poor Windows users whose printers stopped wo
 
 Here is the [first announcement from Microsoft](https://devblogs.microsoft.com/commandline/systemd-support-is-now-available-in-wsl/) and the first [Ubuntu blog](https://ubuntu.com/blog/ubuntu-wsl-enable-systemd) from Oliver Smith, Product Manager Enterprise Desktop at Canonical.
 
-So update your WSL as soon as it gets released and watch out for the update of our [HOWTO](/wsl-printer-app/).
+**Update: Our [HOWTO](/wsl-printer-app/) is now updated.**
 
-And for everyone who wants to start tinkering (no compiling required!), here a quick mini-HOWTO, based on Oliver's blog and private chat with Carlos:
+So follow our new version of the [HOWTO](/wsl-printer-app/).
 
-First, follow Oliver's instructions on enabling systemd in your WSL. It is the section "How to enable systemd in Ubuntu WSL" near the beginning of the [blog](https://ubuntu.com/blog/ubuntu-wsl-enable-systemd).
+And here is quick overview of the changed steps (details in the HOWTO):
+
+First, use either the preview version of Ubuntu WSL or follow Oliver's instructions on enabling systemd in your WSL. It is the section "How to enable systemd in Ubuntu WSL" near the beginning of the [blog](https://ubuntu.com/blog/ubuntu-wsl-enable-systemd).
 
 Now make sure you have Avahi installed (package `avahi-daemon`):
 ```
@@ -68,19 +70,19 @@ sudo apt install avahi-daemon
 ```
 With this the Windows print environment will auto-discover the Printer Application running under WSL.
 
-If your printer is connected via USB, install USB IPD as described in [Carlos' current version of the HOWTO](/wsl-printer-app/#how-to).
+If your printer is connected via USB, install USB IPD.
 
 Now find the suitable Printer Application in the Snap Store ([OpenPrinting](https://snapcraft.io/search?q=OpenPrinting), [LPrint](https://snapcraft.io/lprint)) or if you are in doubt, use our [look-up service](#openprinting-web-server-printer-application-look-up-service-is-now-live). Install it with just a simple:
 ```
 sudo snap install <NAME>
 ```
-Replace <NAME> by the name of the Printer Application which you need for your printer.
+Replace `<NAME>` by the name of the Printer Application which you need for your printer.
 
-Now set up your printer inside the Printer Application using a web browser, as described in [Carlos' HOWTO](/wsl-printer-app/) further down.
+Now set up your printer inside the Printer Application using a web browser.
 
-If your printer does not appear automagically under Windows now (as it would do under Linux) add the printer to Windows. Go to "Settings" > "Bluetooth & devices" > "Printers & scanners" and hit the “Add device” button. You should find an entry for your printer provided by the Printer Application in the list, with the name you have given to it when setting it up in the Printer Application.
+Add the printer to Windows. Go to "Settings" > "Bluetooth & devices" > "Printers & scanners" and hit the “Add device” button. You should find an entry for your printer provided by the Printer Application in the list, with the name you have given to it when setting it up in the Printer Application.
 
-Now you can print as described in the end of [Carlos' HOWTO](/wsl-printer-app/).
+Now you can print as you are used to under Windows.
 
 Thanks a lot to Serhat Toktamisoglu and his WSL team at Canonical, Didier Roche, Jean-Baptiste Lallement, Carlos Nihelton, and Eduard Gómez Escandell and especially Dani Llewellyn as community contributor for getting the systemd support into WSL in such a short time.
 
