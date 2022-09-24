@@ -47,7 +47,7 @@ As before, it’s necessary to point out that the following steps would simply b
 4. Make sure you have the Ubuntu-Preview application. It can be installed from [Microsoft Store](https://apps.microsoft.com/store/detail/ubuntu-preview/9P7BDVKVNXZ6). It contains the latest (usually unstable) development snapshot
    of Ubuntu WSL. It enables systemd by default.
 
-   > If you want to use an existing instance of Ubuntu WSL, refer to the [Ubuntu blog post]() on how to enable systemd.
+   > If you want to use an existing instance of Ubuntu WSL, refer to the [Ubuntu blog post](https://ubuntu.com/blog/ubuntu-wsl-enable-systemd) on how to enable systemd.
    > If you're not using Ubuntu-Preview make sure to adjust the distro name in the relevant commands listed throughout the guide.
 
 
