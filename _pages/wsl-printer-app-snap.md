@@ -27,6 +27,8 @@ As before, it’s necessary to point out that the following steps would simply b
 
 ## How to
 
+**Editor's Note:** USB IPD only needs to get installed if the printer gets actually connected by USB. For network-connected (Ethernet/Wi-Fi) printers it is not needed. Depending on your printer model you will perhaps need a different Printer Application ([OpenPrinting](https://snapcraft.io/search?q=OpenPrinting), [LPrint](https://snapcraft.io/lprint), or if you are in doubt, use our [look-up service](/OpenPrinting-News-September-2022/#openprinting-web-server-printer-application-look-up-service-is-now-live)).
+
 1. Connect the printer to the USB port. Make sure it’s not supported on Windows by checking Settings > Bluetooth & devices > Printers & scanners.
 
 ![Printers & Scanners](../assets/images/wsl-printer/01-driver-unavailable.png)
