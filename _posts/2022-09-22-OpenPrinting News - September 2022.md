@@ -157,7 +157,7 @@ A lot of organization and preparation work is going on! I am also one of the mem
 
 The [site](https://summit.ubuntu.com/) has completely changed now. The preliminary announcement page has been replaced by an Indico-based interactive site where you can [register for attending](https://events.canonical.com/event/2/abstracts/) and [submit your proposal](https://events.canonical.com/event/2/registrations/) for a talk or a workshop.
 
-Please be quick with your ideas for contributions. The call for proposals ends on September 30. And note that Canonical will pay all your costs (travel, accommodation, meals) if your in-person proposal gets accepted. Formats available are interactive workshops, regular talks in two sizes and lightning talks in two sizes.
+Please be quick with your ideas for contributions. The call for proposals ends on **UPDATE!!! October 7** (we got amazing submissions, and we want more!). And note that Canonical will pay all your costs (travel, accommodation, meals) if your in-person proposal gets accepted. Formats available are interactive workshops, regular talks in two sizes and lightning talks in two sizes.
 
 I have already seen first proposals coming in and there are already many interesting talks which would make the Summit be a great conference. But we need many, many more. Especially success stories with Ubuntu, techniques of getting your work done with Ubuntu, and of application development and distribution are highly welcome. Also hands-on workshops, especially about robotics, IoT, Raspberry Pi, embedded, ... are sought-after.
 
