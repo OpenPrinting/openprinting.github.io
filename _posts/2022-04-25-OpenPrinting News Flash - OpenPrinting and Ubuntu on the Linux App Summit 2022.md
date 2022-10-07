@@ -20,7 +20,7 @@ Thanks, Heather Ellsworth, for this nice summary!
 
 Last week, Ubuntu 22.04 LTS was released, and therefore we have organized release parties on the LAS 2022.
 
-There will be a **[virtual release party](https://www.youtube.com/watch?v=CBPefa0Ckq8&t=15480s)** for everyone who is not able to come to this great event in person. It will be a special edition of the Ubuntu Office Hours produced live in the Auditorium on Fri, April 29 at 14:05 - 14:50 CEST. **Recording on [YouTube](https://www.youtube.com/watch?v=CBPefa0Ckq8&t=15480s)**
+There will be a **[virtual release party](https://www.youtube.com/watch?v=r5trlMeCQR0)** for everyone who is not able to come to this great event in person. It will be a special edition of the Ubuntu Office Hours produced live in the Auditorium on Fri, April 29 at 14:05 - 14:50 CEST. **Recording on [YouTube](https://www.youtube.com/watch?v=r5trlMeCQR0)**
 
 And for everyone who will actually be in Rovereto this weekend we will have a **release party in-person**, with the 5 of us from Canonical and everyone who is on the LAS 2022! It will take place on Sat, April 30 at 19:00 - 21:30 CEST at the venue of the conference, right before the final party with the DJ. 
 
@@ -32,7 +32,7 @@ I will give a summary of the changes and tell what needs to be changed in the de
 
 This should help application and GUI/desktop developers to get print and scan functionality of their software just work.
 
-The talk will take place on Sat, April 30 at 15:35 - 16:15 CEST in the Auditorium. **Recording on [YouTube](https://www.youtube.com/watch?v=HxM15UOVmyA&t=23814s)**
+The talk will take place on Sat, April 30 at 15:35 - 16:15 CEST in the Auditorium. **Recording on [YouTube](https://www.youtube.com/watch?v=z_RutDp3ehU)**
 
 **Getting Good: Gaming on Linux**
 
@@ -44,7 +44,7 @@ And for the gamers under you, Heather Ellsworth of the Ubuntu Desktop Team will 
 
 Heather loves tinkering with hardware, software, and games. On a recent Canonical meeting she brought along an nice Raspberry Pi emulating several of the good old gaming consoles and we in the Desktop Team loved playing these old games.
 
-The talk will take place on Fri, April 29 at 16:25 - 17:05 CEST in the Auditorium. **Recording on [YouTube](https://www.youtube.com/watch?v=CBPefa0Ckq8&t=23480s)**
+The talk will take place on Fri, April 29 at 16:25 - 17:05 CEST in the Auditorium. **Recording on [YouTube](https://www.youtube.com/watch?v=oa_vfBv0L7Y)**
 
 **Snapcraft Secrets: The hidden power of desktop extensions**
 
@@ -54,7 +54,7 @@ If you are a Snapper or if you want to provide resources to make the Snapper's l
 > 
 > Well, there is! Snapcraft Extensions are a powerful, flexible set of tweaks and options designed specifically to make life easier for snap developers. In this session, we will talk about what the extensions can do, how they work behind the scenes, and the different ways they can contribute to faster, more streamlined, and more consistent snaps.
 
-The talk will take place on Fri, April 29 at 15:30 - 16:10 CEST in the Auditorium. **Recording on [YouTube](https://www.youtube.com/watch?v=CBPefa0Ckq8&t=20210s)**
+The talk will take place on Fri, April 29 at 15:30 - 16:10 CEST in the Auditorium. **Recording on [YouTube](https://www.youtube.com/watch?v=WII9VDd1xVw)**
 
 **Canonical Booth**
 
@@ -62,7 +62,7 @@ There will also be a Canonical booth with a Canonical gang of 5 people (includin
 
 **Canonical Announcement**
 
-And on Fri, April 29, at the end of the lightning talk session an old, gray-bearded, long-time Canonical employee (nearly from the beginning on) will do an important announcement! **Recording on [YouTube](https://www.youtube.com/watch?v=CBPefa0Ckq8&t=31880s)**
+And on Fri, April 29, at the end of the lightning talk session an old, gray-bearded, long-time Canonical employee (nearly from the beginning on) will do an important announcement! **Recording on [YouTube](https://www.youtube.com/watch?v=Qip0PIcYZjk)**
 
 **Thanks**
 
