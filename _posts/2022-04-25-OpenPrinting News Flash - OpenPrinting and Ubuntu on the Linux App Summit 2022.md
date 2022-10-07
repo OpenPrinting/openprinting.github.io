@@ -8,7 +8,7 @@ I will be on this year's [Linux Application Summit](https://conf.linuxappsummit.
 
 **Update: YouTube links for all the announced presentations!**
 
-Recordings of the full event on YouTube (only Auditorium, not BoFs): [Friday](https://www.youtube.com/watch?v=CBPefa0Ckq8), [Saturday](https://www.youtube.com/watch?v=HxM15UOVmyA, [Channel](https://www.youtube.com/channel/UCjSsbz2TDxIxBEarbDzNQ4w/videos))
+Recordings of the full event on YouTube (only Auditorium, not BoFs): [Friday](https://www.youtube.com/watch?v=CBPefa0Ckq8), [Saturday](https://www.youtube.com/watch?v=HxM15UOVmyA), [Channel](https://www.youtube.com/channel/UCjSsbz2TDxIxBEarbDzNQ4w/videos)
 
 **Update: Survey results available!**
 
