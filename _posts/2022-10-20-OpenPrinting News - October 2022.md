@@ -9,7 +9,7 @@ excerpt: Ubuntu 22.10 Kinetic Kudu, Ubuntu Summit, GSoC 2022, CPDB 2.x, "cups" s
 ## Today is Release Day, of Ubuntu 22.10 (Kinetic Kudu)!
 It is not yet switching to the New Architecture for printing and scanning, but has a lot of nice new features, mainly GNOME 43 with a new quick settings panel, Ubuntu Desktop section in System Settings, Nautilus and System Settings with window layout adapting to the window size, improved dock, ... Also the audio stack is based on the new PipeWire which has less bugs than the old PUlseAudio and makes especially Bluetooth audio devices work more reliably.
 
-To learn more about the new Ubuntu release, watch tomorrow's [Desktop Team Indabal](https://discourse.ubuntu.com/t/ubuntu-desktop-team-indaba-ama-october-21-2022-3pm-utc/) about the Kinetic Kudo release. Heather Ellsworth will receive Philipp Kewisch, Adam Szopa, Oliver Smith, and Ken VanDine from Canonical to tell about the new features of Ubuntu itself and Rudra Saraswat from Ubuntu Unity, which got official flovor with 22.10.
+To learn more about the new Ubuntu release, watch tomorrow's [Desktop Team Indaba](https://discourse.ubuntu.com/t/ubuntu-desktop-team-indaba-ama-october-21-2022-3pm-utc/) about the Kinetic Kudo release. Heather Ellsworth will receive Philipp Kewisch, Adam Szopa, Oliver Smith, and Ken VanDine from Canonical to tell about the new features of Ubuntu itself and Rudra Saraswat from Ubuntu Unity, which got official flovor with 22.10.
 
 And as always you if you are watching live via YouTube or Twitch, you can use the chat facility to ask questions.
 
@@ -84,13 +84,13 @@ And to get some deeper knowledge, there are also many talks about Snap available
 
 And there is no conference without social events/evening events. On the Ubuntu Summit we will have:
 
-- Sun, Nov 6, 6:30pm: **Sunday evening reception** - Many of us arrive already on Sunday, so meet and greet, get your badge, and avoid the lines on Monday moring.
+- Sun, Nov 6: **Sunday evening reception** - Many of us arrive already on Sunday, so meet and greet, get your badge, and avoid the lines on Monday moring.
 
-- Mon, Nov 7, 8:00pm: Kinetic Knitter's Session - Knitting together, bring your project (Knitting needles are allowed in your carry-on)
+- Mon, Nov 7: **Kinetic Knitter's Session** - Knitting together, bring your project (Knitting needles are allowed in your carry-on)
 
-- Tue, Nov 8, 8:00pm: Gaming night - Games, games, games, both analog and digital! Bring your board/tabletop/card games but also your gaming-related tinkering projects, (like Raspberry Pi for retro-gaming). We have many tables for playing and also monitors, keyboards, mice, and a projector for bringing your digital gaming contributions onto the large screen.
+- Tue, Nov 8: **Gaming night** - Games, games, games, both analog and digital! Bring your board/tabletop/card games but also your gaming-related tinkering projects, (like Raspberry Pi for retro-gaming). We have many tables for playing and also monitors, keyboards, mice, and a projector for bringing your digital gaming contributions onto the large screen.
 
-- Wed, Nov 9, 8:00pm: Closing party on a boat - To celebrate the (hopefully successful) completion of the first Ubuntu Summit. And we are not docked, we are actually cruising.
+- Wed, Nov 9: **Closing party on a boat** - To celebrate the (hopefully successful) completion of the first Ubuntu Summit. And we are not docked, we are actually cruising.
 
 I hope to see you all in Prague and not that you will read here next month what you have missed ...
 
