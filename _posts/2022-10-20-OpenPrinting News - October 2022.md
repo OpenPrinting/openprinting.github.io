@@ -11,7 +11,7 @@ It is not yet switching to the New Architecture for printing and scanning, but h
 
 To learn more about the new Ubuntu release, watch tomorrow's [Desktop Team Indaba](https://discourse.ubuntu.com/t/ubuntu-desktop-team-indaba-ama-october-21-2022-3pm-utc/) about the Kinetic Kudo release. Heather Ellsworth will receive Philipp Kewisch, Adam Szopa, Oliver Smith, and Ken VanDine from Canonical to tell about the new features of Ubuntu itself and Rudra Saraswat from Ubuntu Unity, which got official flovor with 22.10.
 
-And as always you if you are watching live via YouTube or Twitch, you can use the chat facility to ask questions.
+And as always, if you are watching live via YouTube or Twitch, you can use the chat facility to ask questions.
 
 
 ## Ubuntu Summit 2022
