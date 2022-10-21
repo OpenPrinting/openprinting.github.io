@@ -9,7 +9,7 @@ excerpt: Ubuntu 22.10 Kinetic Kudu, Ubuntu Summit, GSoC 2022, CPDB 2.x, "cups" s
 ## Today is Release Day, of Ubuntu 22.10 (Kinetic Kudu)!
 It is not yet switching to the New Architecture for printing and scanning, but has a lot of nice new features, mainly GNOME 43 with a new quick settings panel, Ubuntu Desktop section in System Settings, Nautilus and System Settings with window layout adapting to the window size, improved dock, ... Also the audio stack is based on the new PipeWire which has less bugs than the old PulseAudio and makes especially Bluetooth audio devices work more reliably.
 
-To learn more about the new Ubuntu release, watch tomorrow's [Desktop Team Indaba](https://discourse.ubuntu.com/t/ubuntu-desktop-team-indaba-ama-october-21-2022-3pm-utc/) about the Kinetic Kudo release. Heather Ellsworth will receive Philipp Kewisch, Adam Szopa, Oliver Smith, and Ken VanDine from Canonical to tell about the new features of Ubuntu itself and Rudra Saraswat from Ubuntu Unity, which got official flovor with 22.10.
+To learn more about the new Ubuntu release, watch tomorrow's [Desktop Team Indaba](https://discourse.ubuntu.com/t/ubuntu-desktop-team-indaba-ama-october-21-2022-3pm-utc/) about the Kinetic Kudo release. Heather Ellsworth will receive Philipp Kewisch, Adam Szopa, Oliver Smith, and Ken VanDine from Canonical to tell about the new features of Ubuntu itself and Rudra Saraswat from Ubuntu Unity, which got official flavor with 22.10.
 
 And as always, if you are watching live via YouTube or Twitch, you can use the chat facility to ask questions.
 
