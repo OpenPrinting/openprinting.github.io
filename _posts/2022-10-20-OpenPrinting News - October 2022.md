@@ -13,6 +13,8 @@ To learn more about the new Ubuntu release, watch tomorrow's [Desktop Team Indab
 
 And as always, if you are watching live via YouTube or Twitch, you can use the chat facility to ask questions.
 
+**Update:** [Ubuntu blog about 22.10](https://ubuntu.com/blog/canonical-releases-ubuntu-22-10-kinetic-kudu)
+
 
 ## Ubuntu Summit 2022
 There are less than 3 weeks now until the first Ubuntu Summit! And you really should come to Prague and attend it. There are a lot of [good reasons](https://ubuntu.com/blog/why-you-should-attend-ubuntu-summit-in-person).
