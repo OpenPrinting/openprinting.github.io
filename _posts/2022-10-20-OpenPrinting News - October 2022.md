@@ -19,6 +19,10 @@ And as always, if you are watching live via YouTube or Twitch, you can use the c
 ## Ubuntu Summit 2022
 There are less than 3 weeks now until the first Ubuntu Summit! And you really should come to Prague and attend it. There are a lot of [good reasons](https://ubuntu.com/blog/why-you-should-attend-ubuntu-summit-in-person).
 
+**Update: [The exact schedules are available now!!](https://events.canonical.com/event/2/timetable/?layout=room#20221107.detailed)**
+
+All sessions in the Ballroom (plenary room) will get broadcasted/streamed live and recorded, all sessions in the breakout rooms (Karlin 1-4 will get recorded, workshops (Palmkova 1, 2) are interactive, hands-on sessions and so remote participation does not make much sense. Therefore they will not get recorded. But if you come to Prague, have your laptop (with EU plug adapter) handy if you want to attend one or another workshop.
+
 **Call for Proposals has ended**
 
 Two weeks ago, the call for proposals has ended and we got a lot of exciting submissions! Nearly all the submitters got already informed whether their proposal got accepted or not, and now a part of the organization team is solving the difficult puzzle of scheduling all the workshops (90 min, interactive), talks (50 or 25 min), and lightning talks (10 or 5 min) into 7 rooms and 3 days. Especially important is to fulfill the many dependencies between the sessions, not only that 1 speaker cannot present in 2 rooms at the same time, but also that a talk about a given subject has to be deleivered before the workshop of the same subject or the workshop for the basic knowledge of a subject has to come before all advanced-topics workshops ...
@@ -30,21 +34,27 @@ Yes, we are always in need to extend our developer, designer, document writer, .
 
 > OpenPrinting - Join the team to make printing just work!
 
-There I will be accompanied by Zdenek Dohnal from Red Hat, and Johannes Meixner from SUSE presenting about their contributions and their integration in OpenPrinting. And after our presentations, we have an extended questions and discussion part. Depending on the room where this session will take place, we can also connect Aveek Basu from OpenPrinting and one or another (former) GSoC contributor. And if there is more discussion time needed, we can create spontaneous BoFs to continue the discussion. Unfortunately, I was not able to get BoFs pre-scheduled.
+Tuesday, Nov 8, 14:00 - 14:50 CET, Karlin 3
+
+There I will be accompanied by Zdenek Dohnal from Red Hat, Johannes Meixner from SUSE, and Deepak Patankar, former GSoC contributor and now mentor, presenting about their contributions and their integration in OpenPrinting. And after our presentations, we have an extended questions and discussion part. Depending on the room where this session will take place, we can also connect Aveek Basu from OpenPrinting and one or another (former) GSoC contributor. And if there is more discussion time needed, we can create spontaneous BoFs to continue the discussion. Unfortunately, I was not able to get BoFs pre-scheduled.
 
 We also will help all these attendees who have relatives or friends who are still stuck in Windows (and also WSL developers who need to test), to make their old printers working again. I will show in a 10-min lightning talk that one can easily run our Printer Application Snaps in WSL under Windows, as described in our [HOWTO](/wsl-printer-app/). So do not miss
 
 > Save Legacy Printers under Windows with WSL and Printer Applications
 
+Monday, Nov 7, 17:40 - 17:50 CET, Ballroom
+
 Carlos Nihelton, author of the HOWTO, will also be present.
 
 **Let's build a plotter!**
 
-Tired of listening to three people talking about paper I/O? Do you prefer to do it with your own hands? No problem, Daniele Procida, director of documentation at Canonical, has created a DIY plotter made out of parts for ~12.50 EUR, the [Brachiograph](https://www.brachiograph.art/), and in the workshop
+Tired of listening to four people talking about paper I/O? Do you prefer to do it with your own hands? No problem, Daniele Procida, director of documentation at Canonical, has created a DIY plotter made out of parts for ~12.50 EUR, the [Brachiograph](https://www.brachiograph.art/), and in the workshop
 
 > Let's build a pen-plotter
 
-he will teach the attendees to build such a plotter by themselves. Control unit for the device is a Raspberry Pi, and the device itself consists of cheap servos, clothes pegs, paper clips, wood sticks, and a pen. And did you remeber that refills for commercially available printers are usually expensive? For this device the refill is free, you find it all over the conference hotel ...
+Tuesday, Nov 8, 16:00 - 17:30 CET, Palmkova 1
+
+he will teach the attendees to build such a plotter by themselves. Control unit for the device is a Raspberry Pi, and the device itself consists of cheap servos, clothes pegs, paper clips, wood sticks, and a pen. And did you remember that refills for commercially available printers are usually expensive? For this device the refill is free, you find it all over the conference hotel ...
 
 I will attend the workshop and report about it next month ...
 
@@ -56,43 +66,59 @@ The solution is to package your application as a Snap (we also say "snapping it"
 
 Do you want to learn how? Then do not miss our series of Snap tutorial workshops. In each workshop one topic of snapping applications is treated and they qre not simply talks, but hands-on workshops. You bring your laptop and do the exercises and examples by yourself! And we will answer your questions ...
 
+Intro panel session:
+
+> Your application everywhere, just in a Snap!
+
+Monday, Nov 7, 14:30 - 15:20 CET, Karlin 3
+
 Following workshops are available:
 
 > Snapping like Hell(sworth)
+
+Monday, Nov 7, 16:00 - 17:30 CET, Palmkova 2
 
 The basics of snapping, for everyone who is new to Snap
 
 > ROS Deployment Workshop
 
+Tuesday, Nov 8, 14:00 -15:30 CET, Palmkova 2
+
 Also for those who are new to Snap, but here Snap is used for IoT/Robotics
-
-> Snapping Desktop Applications
-
-Make Snap packages of GUI applications, based on either GNOME?GTK or KDE/Qt
 
 > Daemon Snapper's Workshop
 
+Wednesday, Nov 9, 11:30 -13:00 CET, Palmkova 1
+
 Snapping of system services and utilities
+
+> Snapping Desktop Applications
+
+Wednesday, Nov 9, 14:00 -15:30 CET, Palmkova 2
+
+Make Snap packages of GUI applications, based on either GNOME?GTK or KDE/Qt
 
 > Deploying Flutter apps on Linux Desktop
 
+Wednesday, Nov 9, 14:00 -15:30 CET, Palmkova 1
+
 Snapping Flutter-based applications
 
-Note that if you have no knowledge about Snap, you should first attend one of the first two woekshops before you you dive into the advanced topics of the other three.
+Note that if you have no knowledge about Snap, you should first attend one of the first two workshops before you you dive into the advanced topics of the other three.
 
 And to get some deeper knowledge, there are also many talks about Snap available.
 
-**And do not forget to bring your board games, gaming-related tinkering, and your knitting projects (life jackets are supplied)!**
+**And do not forget to bring your board games, gaming-related tinkering, and your knitting projects (life jackets are supplied, though)!**
 
 And there is no conference without social events/evening events. On the Ubuntu Summit we will have:
 
-- Sun, Nov 6: **Sunday evening reception** - Many of us arrive already on Sunday, so meet and greet, get your badge, and avoid the lines on Monday moring.
+- Sunday, Nov 6, 18:30 CET: **Sunday evening reception** - Many of us arrive already on Sunday, so meet and greet, get your badge, and avoid the lines on Monday moring.
 
-- Mon, Nov 7: **Kinetic Knitter's Session** - Knitting together, bring your project (Knitting needles are allowed in your carry-on)
+- Monday, Nov 7, 20:00 CET: **Kinetic Knitter's Session** - Knitting together, bring your project (Knitting needles are allowed in your carry-on)
 
-- Tue, Nov 8: **Gaming night** - Games, games, games, both analog and digital! Bring your board/tabletop/card games but also your gaming-related tinkering projects, (like Raspberry Pi for retro-gaming). We have many tables for playing and also monitors, keyboards, mice, and a projector for bringing your digital gaming contributions onto the large screen.
+- Tuesday, Nov 8, 19:00 CET: **Gaming night** - Games, games, games, both analog and digital! Bring your board/tabletop/card games but also your gaming-related tinkering projects, (like Raspberry Pi for retro-gaming). We have many tables for playing and also monitors, keyboards, mice, and a projector for bringing your digital gaming contributions onto the large screen.
 
-- Wed, Nov 9: **Closing party on a boat** - To celebrate the (hopefully successful) completion of the first Ubuntu Summit. And we are not docked, we are actually cruising.
+- Wednesday, Nov 9, 20:00 CET: **Closing party on a boat** - To celebrate the (hopefully successful) completion of the first Ubuntu Summit. And we are not docked, we are actually cruising.
 
 I hope to see you all in Prague and not that you will read here next month what you have missed ...
 
