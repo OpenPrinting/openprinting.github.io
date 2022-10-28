@@ -21,15 +21,16 @@ There are less than 3 weeks now until the first Ubuntu Summit! And you really sh
 
 **Update: [The exact schedules are available now!!](https://events.canonical.com/event/2/timetable/?layout=room#20221107.detailed)**
 
-All sessions in the Ballroom (plenary room) will get broadcasted/streamed live and recorded, all sessions in the breakout rooms (Karlin 1-4 will get recorded, workshops (Palmkova 1, 2) are interactive, hands-on sessions and so remote participation does not make much sense. Therefore they will not get recorded. But if you come to Prague, have your laptop (with EU plug adapter) handy if you want to attend one or another workshop.
+All sessions in the Ballroom (plenary room) will get broadcasted/streamed live and recorded, all sessions in the breakout rooms (Karlin 1-4) will get recorded, workshops (Palmkova 1, 2) are interactive, hands-on sessions and so remote participation does not make much sense. Therefore they will not get recorded. But if you come to Prague, have your laptop (with EU plug adapter) handy if you want to attend one or another workshop.
 
 **Call for Proposals has ended**
 
-Two weeks ago, the call for proposals has ended and we got a lot of exciting submissions! Nearly all the submitters got already informed whether their proposal got accepted or not, and now a part of the organization team is solving the difficult puzzle of scheduling all the workshops (90 min, interactive), talks (50 or 25 min), and lightning talks (10 or 5 min) into 7 rooms and 3 days. Especially important is to fulfill the many dependencies between the sessions, not only that 1 speaker cannot present in 2 rooms at the same time, but also that a talk about a given subject has to be deleivered before the workshop of the same subject or the workshop for the basic knowledge of a subject has to come before all advanced-topics workshops ...
+Two weeks ago, the call for proposals has ended and we got a lot of exciting submissions! Nearly all the submitters got already informed whether their proposal got accepted or not, and now a part of the organization team is solving the difficult puzzle of scheduling all the workshops (90 min, interactive), talks (50 or 25 min), and lightning talks (10 or 5 min) into 7 rooms and 3 days. Especially important is to fulfill the many dependencies between the sessions, not only that 1 speaker cannot present in 2 rooms at the same time, but also that a talk about a given subject has to be delivered before the workshop of the same subject or the workshop for the basic knowledge of a subject has to come before all the advanced-topics workshops ...
 
 And if you really cannot make it to this exciting event, there is some limited remote access to it, too. All the sessions happening in the plenary room (the largest of all the rooms) are broadcasted and one can ask questions via chat (like on the [Ubuntu Indabas](https://discourse.ubuntu.com/t/ubuntu-desktop-team-indaba-ama-october-21-2022-3pm-utc/)). Unfortunately, we cannot have remote live speakers and we cannot broadcast the sessions in the breakout/workshop rooms (and for the workshops it does not make much sense to attend remotely anyway).
 
 **OpenPrinting is in Prague, too**
+
 Yes, we are always in need to extend our developer, designer, document writer, ... community and the Ubuntu Summit is all about that kind of community. Therefore we will present our [activity](/current/), our [plans](/OpenPrinting-News-September-2022/#openprinting-micro-conference-on-the-linux-plumbers-2022), and our needs in the session
 
 > OpenPrinting - Join the team to make printing just work!
@@ -38,7 +39,7 @@ Tuesday, Nov 8, 14:00 - 14:50 CET, Karlin 3
 
 There I will be accompanied by Zdenek Dohnal from Red Hat, Johannes Meixner from SUSE, and Deepak Patankar, former GSoC contributor and now mentor, presenting about their contributions and their integration in OpenPrinting. And after our presentations, we have an extended questions and discussion part. Depending on the room where this session will take place, we can also connect Aveek Basu from OpenPrinting and one or another (former) GSoC contributor. And if there is more discussion time needed, we can create spontaneous BoFs to continue the discussion. Unfortunately, I was not able to get BoFs pre-scheduled.
 
-We also will help all these attendees who have relatives or friends who are still stuck in Windows (and also WSL developers who need to test), to make their old printers working again. I will show in a 10-min lightning talk that one can easily run our Printer Application Snaps in WSL under Windows, as described in our [HOWTO](/wsl-printer-app/). So do not miss
+We also will help all these attendees who have relatives or friends who are still stuck in Windows (and also WSL developers who need to boot into Windows for testing), to make their old printers working again. I will show in a 10-min lightning talk that one can easily run our Printer Application Snaps in WSL under Windows, as described in our [HOWTO](/wsl-printer-app/). So do not miss
 
 > Save Legacy Printers under Windows with WSL and Printer Applications
 
@@ -60,11 +61,11 @@ I will attend the workshop and report about it next month ...
 
 **Your application everywhere, just in a Snap!**
 
-Or are you developer of a free software application and need a way to easily distribute it to as many users as possible? Without need of the goodwill of distribution package maintainers, without the requirement of your users to install the newest version of their distro to get the newest version of your application? Without you needing to test your application on 10 or more different distros and platforms? And as a little extra, your application can also be used easily under Windows, via WSL, without you needing to ever touch Windows for testing it.
+Or are you developer of a free software application and need a way to easily distribute it to as many users as possible? Without need of the goodwill of distribution package maintainers, without the requirement of your users to install the newest version of their distro in order to get the newest version of your application? Without you needing to test your application on 10 or more different distros and platforms? And as a little extra, your application can also be used easily under Windows, via WSL, without you needing to ever touch Windows for testing it.
 
 The solution is to package your application as a Snap (we also say "snapping it") and put it up in the Snap Store. The basic idea is similar to smartphone applications in the App Store or Google Play Store, its origin is even in the good old times when Canonical was developing a smartphone running Ubuntu Touch. The Snap is an encapsulated, distribution-independent package containing everything what it needs and which can be easily installed in many OS distributions, like a smartphone app. And even system services can be distributed as Snap, like [CUPS and our Printer Applications](https://snapcraft.io/search?q=OpenPrinting).
 
-Do you want to learn how? Then do not miss our series of Snap tutorial workshops. In each workshop one topic of snapping applications is treated and they qre not simply talks, but hands-on workshops. You bring your laptop and do the exercises and examples by yourself! And we will answer your questions ...
+Do you want to learn how? Then do not miss our series of Snap tutorial workshops. In each workshop one topic of snapping applications is treated and they are not simply talks, but hands-on workshops. You bring your laptop and do the exercises and examples by yourself! And we will answer your questions ...
 
 Intro panel session:
 
@@ -96,7 +97,7 @@ Snapping of system services and utilities
 
 Wednesday, Nov 9, 14:00 -15:30 CET, Palmkova 2
 
-Make Snap packages of GUI applications, based on either GNOME?GTK or KDE/Qt
+Make Snap packages of GUI applications, based on either GNOME/GTK or KDE/Qt
 
 > Deploying Flutter apps on Linux Desktop
 
@@ -104,7 +105,7 @@ Wednesday, Nov 9, 14:00 -15:30 CET, Palmkova 1
 
 Snapping Flutter-based applications
 
-Note that if you have no knowledge about Snap, you should first attend one of the first two workshops before you you dive into the advanced topics of the other three.
+Note that if you have no knowledge about Snap, you should first attend one of the first two workshops before you dive into the advanced topics of the other three.
 
 And to get some deeper knowledge, there are also many talks about Snap available.
 
