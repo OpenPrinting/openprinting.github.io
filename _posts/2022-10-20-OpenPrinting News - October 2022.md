@@ -35,7 +35,7 @@ Yes, we are always in need to extend our developer, designer, document writer, .
 
 > OpenPrinting - Join the team to make printing just work!
 
-Tuesday, Nov 8, 14:00 - 14:50 CET, Karlin 3
+**Update:** Wednesday, Nov 9, 14:00 - 14:50 CET, Karlin 2
 
 There I will be accompanied by Zdenek Dohnal from Red Hat, Johannes Meixner from SUSE, and Deepak Patankar, former GSoC contributor and now mentor, presenting about their contributions and their integration in OpenPrinting. And after our presentations, we have an extended questions and discussion part. Depending on the room where this session will take place, we can also connect Aveek Basu from OpenPrinting and one or another (former) GSoC contributor. And if there is more discussion time needed, we can create spontaneous BoFs to continue the discussion. Unfortunately, I was not able to get BoFs pre-scheduled.
 
