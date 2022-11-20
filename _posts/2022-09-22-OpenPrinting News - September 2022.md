@@ -100,8 +100,6 @@ We have another great [Linux Plumbers Conference](https://lpc.events/event/16/) 
 
 Our micro-conference on was a success again! We discussed a lot on OpenPrinting's plans for the next 12 months.
 
-Unfortunately there are some technical problems with the recording, so that it is not ready right now. We will add the link as soon as we get it. Please stay tuned.
-
 Me, Piotr Pawliczek, Valentin Viennot, and Monica Ayhens-Madon were live on stage, while Michael Sweet, Zdenek Dohnal, and Aveek Basu have participated remotely.
 
 **Update:** YouTube links to the recordings of the sessions added.
