@@ -104,6 +104,8 @@ Unfortunately there are some technical problems with the recording, so that it i
 
 Me, Piotr Pawliczek, Valentin Viennot, and Monica Ayhens-Madon were live on stage, while Michael Sweet, Zdenek Dohnal, and Aveek Basu have participated remotely.
 
+**Update:** YouTube links to the recordings of the sessions added.
+
 We had the following [sessions](https://lpc.events/event/16/sessions/142/#20220914):
 
 **Introduction**<br>
@@ -112,27 +114,27 @@ Presenter: Till Kamppeter<br>
 
 **CUPS 2.5 and 3.0 Development**<br>
 Presenter: Michael Sweet<br>
-[Slides](https://lpc.events/event/16/contributions/1163/attachments/941/1849/lpc-cups-2022.pdf)<br>
-Mostly as reported here from earlier conferences. CUPS 2.5.x delayed to release in May 2023, 3.x stays in time for release end of 2023. There was no coding yet for 2.5.x and 2.5.x also needs OAUth integration with the desktop. Does not make sense when one cannot use OAuth. No worries for switchover into New Architecture by CUPS 3.x or the CUPS Snap: All free drivers are available in Printer Applications, GNOME Control Center and print dialogd support available by then, rehearsal by Ubuntu with CUPS Snap.
+[Slides](https://lpc.events/event/16/contributions/1163/attachments/941/1849/lpc-cups-2022.pdf) [Recording](https://www.youtube.com/watch?v=KtJy72nPss4)<br>
+Mostly as reported here from earlier conferences. CUPS 2.5.x delayed to release in May 2023, 3.x stays in time for release end of 2023. There was no coding yet for 2.5.x and 2.5.x also needs OAUth integration with the desktop. Does not make much sense when one cannot use OAuth, only translations/Weblate interesting then. No worries for switchover into New Architecture by CUPS 3.x or the CUPS Snap: All free drivers are available in Printer Applications, GNOME Control Center and print dialog support available by then, rehearsal by Ubuntu with CUPS Snap.
 
 **Testing and CI for OpenPrinting projects**<br>
-Presenters: Michael Sweet, Till Kamppeter<br>
-[Slides](https://lpc.events/event/16/contributions/1161/attachments/942/1851/lpc-printing-ci-2022.pdf)<br>
+Presenters: Till Kamppeter, Michael Sweet<br>
+[Slides](https://lpc.events/event/16/contributions/1161/attachments/942/1851/lpc-printing-ci-2022.pdf) [Recording](https://www.youtube.com/watch?v=c--Uki7cvGE)<br>
 CUPS and some other projects do CI via Github Actions triggered on each GIT commit: `make test`, static analysers, try to build Docker image, ... We want to expand this to all important OpenPrinting projects, in addition regression tests (from Red Hat), filter regression tests on huge amount of print data files from bug report (like Ghostscript), perhaps also private tests for CVEs.
 
 **Restricting access to IPP printers with OAuth2 framework**<br>
 Presenter: Piotr Pawliczek<br>
-[Slides](https://lpc.events/event/16/contributions/1165/attachments/1093/2097/LPC2022_OAuth2_for_IPP.pdf)<br>
+[Slides](https://lpc.events/event/16/contributions/1165/attachments/1093/2097/LPC2022_OAuth2_for_IPP.pdf) [Recording](https://www.youtube.com/watch?v=8UjrKos6LuY)<br>
 Desktop/GUI integration is required, best with OAuth2 support already existing in the desktop toolkits and Linux distributions. Zdenek Dohnal has reached out to the upstream developers of GTK/GNOME about the OAuth2 integration and already available components, especially GNOME Online Accounts (GOA), evolution-data-server (eds), opening browser, user/password input pop-ups, RestOAuth2Proxy from librest 1.0, liboauth, ... We will post here when we findour way through this.
 
 **Documentation for OpenPrinting projects**<br>
-Presenter: Till Kamppeter<br>
-Slides: [CUPS](https://lpc.events/event/16/contributions/1160/attachments/943/1853/lpc-printing-docs-2022.pdf), [Site](https://lpc.events/event/16/contributions/1160/attachments/943/1860/documentation-openprinting-extra.pdf)<br>
+Presenter: Michael Sweet, Till Kamppeter<br>
+Slides: [CUPS](https://lpc.events/event/16/contributions/1160/attachments/943/1853/lpc-printing-docs-2022.pdf), [Site](https://lpc.events/event/16/contributions/1160/attachments/943/1860/documentation-openprinting-extra.pdf) [Recording](https://www.youtube.com/watch?v=XoNydHus4VU)<br>
 Documentation for programmers, administrators, and users needed, in CUPS the former is mainly automated by especially formatted comments in the source code and extracting these with an appropriate tool and the rest is written manually. We want to extend this to all important OpenPrinting projects. In addition, we should also consolidate all printing debugging documentation created by the distributions: Debian, Ubuntu, Fedora, SUSE, ...
 
 **Sandboxing/Containerizing alternatives to Snap for Printer Applications**<br>
 Presenters: Till Kamppeter, Valentin Viennot<br>
-Slides: [General](https://lpc.events/event/16/contributions/1164/attachments/944/2160/containerization-cups-printer-applications-intro.pdf), [Chiselled containers](https://lpc.events/event/16/contributions/1164/attachments/944/1881/linux-plumbers-valentin-viennot.pdf)<br>
+Slides: [General](https://lpc.events/event/16/contributions/1164/attachments/944/2160/containerization-cups-printer-applications-intro.pdf), [Chiselled containers](https://lpc.events/event/16/contributions/1164/attachments/944/1881/linux-plumbers-valentin-viennot.pdf) [Recording](https://youtu.be/XoNydHus4VU?t=1519) [Recording](https://www.youtube.com/watch?v=9_mpCqnMzHA)<br>
 Only containerization alternative to Snap are OCI-compliant containers: Docker, ROCKs, ... For this session I have invited Valentin Viennot, Product Manager ROCKs & container images at Canonical, as last-minute guest to talk about optimizing containers for security and size by removing (chiselling) unnecessary OS components. Valentin would help us on this for containers of CUPS and of Printer Applications, both in OCI-compliant and Snap format and to distribute via the ROCKs store.
 
 We have cancelled the 3D-printing session as we did not have enough to discuss about this subject.
