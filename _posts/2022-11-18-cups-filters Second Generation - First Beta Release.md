@@ -16,7 +16,7 @@ The cups-filters project is now split into several parts, similar to CUPS on its
 
 libcupsfilters is completely free of PPD file support, same for braille-printer-app. libcupsfilters can be used for all kinds of Printer Applications and wherever print data or scanned data has to get converted. The Braille Printer Application is a native Printer Application, it does not use PPD files internally.
 
-libppd contains the complete PPD file support for Printer Applications which retro-fit PostSctipt PPD files or classic CUPS drivers. These Printer Applications are usually created based on [pappl-retrofit](https://github.com/OpenPrinting/pappl-retrofit). Distributions using the New Architecture for printing and scanning will not install libppd by default, as it is not needed any more.
+libppd contains the complete PPD file support for Printer Applications which retro-fit PostScript PPD files or classic CUPS drivers. These Printer Applications are usually created based on [pappl-retrofit](https://github.com/OpenPrinting/pappl-retrofit). Distributions using the New Architecture for printing and scanning will not install libppd by default, as it is not needed any more.
 
 cups-filters provides the filter executables needed by CUPS 2.x or earlier. Most executables are just simple wrappers and all the internal workings have moved into the filter functions in libcupsfilters, and the PPD file support into libppd. This package requires libppd, but it is for PPD-based classic CUPS versions only anyway.
 
