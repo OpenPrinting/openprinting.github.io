@@ -290,7 +290,7 @@ The CUPS Snap in the stable channel is version 2.4.2.
 
 
 ## cups-filters
-Currently released is [2.0b1](https://openprinting.github.io/cups-filters-Second-Generation-First-Beta-Release/).
+Currently released is [2.0b1](/cups-filters-Second-Generation-First-Beta-Release/).
 
 The first beta (2.0b1) of the second generation of cups-filters is now released. cups-filters is now split into 5 separate packages. See above for more details.
 
