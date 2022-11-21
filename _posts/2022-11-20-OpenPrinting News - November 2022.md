@@ -118,7 +118,7 @@ Thanks a lot to Zdenek Dohnal, Johannes Meixner, Deepak Patankar, and Aveek Basu
 
 And thanks to Heather Ellsworth, Mauro Gaspari, and Philipp Kewisch for their work lunch with me to learn about how to run an Indaba-like panel session. It helped me a lot for hosting my first two panel sessions.
 
-And thanks to everyone participating in any form on the Summit and making it an exceptional event!!
+Also thanks to everyone participating in any form on the Summit and making it an exceptional event!!
 
 
 ## OpenPrinting Micro-Conference on Linux Plumbers 2022 - The recordings
