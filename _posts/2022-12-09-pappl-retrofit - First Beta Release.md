@@ -21,3 +21,5 @@ So we are not releasing now because we completed a pre-planned feature list but 
 Feature-wise we are even not 100% complete. We will still add ink level read-out from the printer (SNMP-based network printers, same as supported by CUPS) and internationalization, but this will not cause any compatibility-breaking API changes.
 
 [**More Details and Download**](https://github.com/OpenPrinting/pappl-retrofit/releases/tag/1.0b1)
+
+[**GitHub Discussion**](https://github.com/OpenPrinting/pappl-retrofit/discussions/4)
