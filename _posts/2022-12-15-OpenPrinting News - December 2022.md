@@ -45,6 +45,8 @@ Also we had technical problems in the breakout rooms on the first day, and there
 
 By the time of writing this News Post the uploading process of the videos to YouTube was not yet completed. The third day is still missing. It will be added to the playlist in the next days. Note that editing and uploading the videos is really a lot of hard work. Thanks a lot to Mauro Gaspari and Aaron Prisk of Canonical's Community Team for doing this.
 
+**Update: All the recordings of all the 3 days are available now!!**
+
 I have also updated my [report in last month's news](https://openprinting.github.io/OpenPrinting-News-November-2022/#and-the-conference-finally-started-) adding links to the recordings of every session I mentioned there.
 
 And I have to give a special thank you to Mauro and Aaron as the recordings of all the (non-workshop) sessions where I was the speaker or host of worked out great:
