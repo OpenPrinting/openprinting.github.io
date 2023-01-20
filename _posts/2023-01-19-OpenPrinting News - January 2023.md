@@ -150,7 +150,7 @@ I need to later on add the separate polling of `all` and `media-col-database` al
 
 During packaging of the components in Debian packages I have found and fixed some build system and documentation bugs and also an [API bug](https://github.com/OpenPrinting/libcupsfilters/commit/389d233a) discovered during the CPDB work.
 
-After that I have [released the second beta](https://openprinting.github.io/cups-filters-Second-Generation-Second-Beta-Release/).
+**After that I have [released the second beta](https://openprinting.github.io/cups-filters-Second-Generation-Second-Beta-Release/):**
 
 In addition to documentation and build system fixes discovered during the Debian packaging, the following changes have been done:
 
