@@ -165,7 +165,7 @@ The Printer Application for label printers, [LPrint](https://www.msweet.org/lpri
 - Fixed configure script not using warning/preprocessor options in build ([Issue #60](https://github.com/michaelrsweet/lprint/issues/60))
 - Fixed printer renaming algorithm to not truncate the name ([Issue #60](https://github.com/michaelrsweet/lprint/issues/60))
 - Fixed missing `print-color-mode=bi-level` for bar code printing ([Issue #76](https://github.com/michaelrsweet/lprint/issues/76))
-- Fixed label mode support in EPL and ZPL drivers ([Issue #79]([https://github.com/michaelrsweet/lprint/issues/79))
+- Fixed label mode support in EPL and ZPL drivers ([Issue #79](https://github.com/michaelrsweet/lprint/issues/79))
 - Fixed driver names for EPL printers ([Issue #52](https://github.com/michaelrsweet/lprint/issues/52))
 
 [**More Details and Download**](https://github.com/michaelrsweet/lprint/releases/tag/v1.2.0)
