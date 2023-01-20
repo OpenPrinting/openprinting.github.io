@@ -152,6 +152,18 @@ During packaging of the components in Debian packages I have found and fixed som
 
 After that I have [released the second beta](https://openprinting.github.io/cups-filters-Second-Generation-Second-Beta-Release/).
 
+In addition to documentation and build system fixes discovered during the Debian packaging, the following changes have been done:
+
+**libcupsfilters**
+
+- Filter functions did not handle the page size correctly when no printer IPP attributes are supplied (in case of classic CUPS filter no PPD file). Now if a page size is supplied with the job, this one is simply used, otherwise the sizes of the input pages and as a last mean US Letter.
+- In the `cfCatalog...()` API for obtaining human-readable strings and translations of attribute/option and choice names, we added suport for specifying the user's UI language now, to receive the requested strings in the correct language, and not only human-readable strings in English.
+
+**libppd**
+
+- In the PPD file generator for driverless printing with CUPS we now support more than 2 resolutions in Apple Raster/AirPrint. The `urf-supported` IPP attribute was only parsed correctly when its `RS` part had only 1 or 2 and not more resolutions specified. We have corrected now for an arbitrary amount of resolutions, taking the lowest for "draft", the highest for "high" and one in the middle for "normal" print quality.
+- `ppdFilterEmitJCL()`: Added NULL check for PPD not being supplied. Classic CUPS filters created based on filter functions using `ppdFilterCUPSWrapper()` and also filter functions of libppd (`ppdFilter...()`) should also work without PPD file and not crash if no PPD file is supplied.
+
 
 ## LPrint 1.2.0 release
 The Printer Application for label printers, [LPrint](https://www.msweet.org/lprint) v1.2.0 ([Snap Store](https://snapcraft.io/lprint)) adds support for snap configuration and EPL/ZPL auto-typing support, and fixes a number of bugs. Changes include:
