@@ -102,6 +102,8 @@ Probably you remember the great [Linux App Summit 2022 in Rovereto, Italy](/Open
 
 Brno is home of a Red Hat office and so many of our free software colleagues are located there, especially those on GNOME. And they will be for sure on the LAS, making this year's edition an awesome conference.
 
+**Update: [Call for proposals](https://linuxappsummit.org/cfp/) is oen right now!! Until Feb 18, 2023! Submit your great, awesome, and interesting talks, lightning talks, BoFs, workshops ... (No boring talks, please, or while you are on stage you will miss the best hallway sessions of the conference ...).**
+
 I will also be there ...
 
 ## New Architecture makes it into Ubuntu (and Debian)
