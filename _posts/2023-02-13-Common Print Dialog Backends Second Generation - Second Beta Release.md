@@ -7,7 +7,7 @@ excerpt: With the CPDB support accepted upstream into GTK we release the second 
 We are now releasing the second beta of the second generation of the Common Print Dialog Backends (CPDB).
 
 In the 4.9.4 version of GTK the [Merge Request](https://gitlab.gnome.org/GNOME/gtk/-/merge_requests/4930) for Gaurav Gulerias [GSoC work](https://github.com/TinyTrebuchet/gsoc22/) on
-adding CPDB support to GTK's print dialog got finally accepted. To reach this goal, Gaurav also needed to do a lot of enhancements on CPDB itself, and when his merge request got accepted into GTK, CPDB 2.0b1 was already 2 months old and after that a lot of changes have been done, ending up with GTK's CPDB support [not building with any released version of CPDB}(https://gitlab.gnome.org/GNOME/gtk/-/issues/5589). Therefore we have now released version 2.0b2 of all the three components of the CPDB to allow easy building of the first CPDB-supporting GTK.
+adding CPDB support to GTK's print dialog got finally accepted. To reach this goal, Gaurav also needed to do a lot of enhancements on CPDB itself, and when his merge request got accepted into GTK, CPDB 2.0b1 was already 2 months old and after that a lot of changes have been done, ending up with GTK's CPDB support [not building with any released version of CPDB](https://gitlab.gnome.org/GNOME/gtk/-/issues/5589). Therefore we have now released version 2.0b2 of all the three components of the CPDB to allow easy building of the first CPDB-supporting GTK.
 
 The components we are currently maintaining got all updated and released as version 2.0b2. The following changes have been done:
 
