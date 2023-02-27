@@ -8,7 +8,7 @@ excerpt: Linux Foundation accepted as GSoC 2023 org, LAS 2023 in Brno, CPDB acce
 ---
 Sorry, we are late this month, there was a lot of work getting the new generations of cups-filters and CPDB [into Ubuntu](#the-new-architecture-is-going-into-ubuntu-and-red-hat).
 
-But we have a lot of **good and exciting news**! Not only that we got [accepted as mentoring organization in the Google Summer of Code 2023](#google-summer-of-code-2023---we-are-in--) but also Common Print Dialog Backends support got [merged into GTK}(#common-print-dialog-backends-support-accepted-into-gtk), and we have the first beta release on the way to CUPS 3.x, [libcups 3.0b1](#libcups-3-0b1---the-first-piece-of-cups-3-x-)!
+But we have a lot of **good and exciting news**! Not only that we got [accepted as mentoring organization in the Google Summer of Code 2023](#google-summer-of-code-2023---we-are-in) but also Common Print Dialog Backends support got [merged into GTK](#common-print-dialog-backends-support-accepted-into-gtk), and we have the first beta release on the way to CUPS 3.x, [libcups 3.0b1](#libcups-30b1---the-first-piece-of-cups-3x)!
 
 Some of you were perhaps wondering how to **report security issues** and therefore hesitated to do so, now I succeeded in [getting an intuitive way](#private-bug-reports-for-security-issues).
 
@@ -71,7 +71,7 @@ Michael Sweet has **released the [first beta of libcups 3.0](https://openprintin
 This is the first of the new split components of CUPS 3.x. It will not only have deprecated features removed, like PPD file and classic driver support, but also a lot of new functionality, like for example:
 
 - [DNS-SD API](https://github.com/OpenPrinting/libcups/issues/19)
-- [JSON API](https://github.com/OpenPrinting/libcups/issues/31),
+- [JSON API](https://github.com/OpenPrinting/libcups/issues/31)
 - [Localization API](https://github.com/OpenPrinting/libcups/issues/24)
 - Vast improvements on ipptool
 - More consistent APIs
@@ -135,7 +135,7 @@ So to start somewhere I have added templates for issue submissions to the [CUPS]
 
 
 ## CUPS
-In addition to the [release of libcups 3.0b1](#libcups-3-0b1---the-first-piece-of-cups-3-x-) maintenance work on CUPS 2.x continued, as this version will be with us still for some time.
+In addition to the [release of libcups 3.0b1](#libcups-30b1---the-first-piece-of-cups-3x) maintenance work on CUPS 2.x continued, as this version will be with us still for some time.
 
 While assigning issue reports to GSoC contributor candidates and them investigating the reports and working on the bugs we get several fixes done. On CUPS the following problems got solved:
 
@@ -149,13 +149,13 @@ Ubuntu 23.04 (Lunar Lobster) will most probably come with CUPS 2.4.2, perhaps wi
 
 
 ## cups-filters
-In the course of the [integration of the new generation of cups-filters in Ubuntu](#the-new-architecture-is-going-into-ubuntu-and-red-hat) I have done two more beta releases to include general bug fixes and also fulfill requirements for Ubuntu. Also several of the bug fixes were done in cooperation with [GSoC contributor candidates](#google-summer-of-code-2023---we-are-in--) to whom we have given issue reports as assignments.
+In the course of the [integration of the new generation of cups-filters in Ubuntu](#the-new-architecture-is-going-into-ubuntu-and-red-hat) I have done two more beta releases to include general bug fixes and also fulfill requirements for Ubuntu. Also several of the bug fixes were done in cooperation with [GSoC contributor candidates](#google-summer-of-code-2023---we-are-in) to whom we have given issue reports as assignments.
 
 **[Third beta](https://openprinting.github.io/cups-filters-Second-Generation-Third-Beta-Release/)**
 
 - Monochrome PXL-XL printing (Ghostscript, output device `pxlmono`) did not work due to the `cfFilterGhostscript()` filter function using the sRGB instead of the sGray color profile, which makes Ghostscript erroring out ([commit](https://github.com/OpenPrinting/libcupsfilters/commit/81f0e79)).
 - As in CUPS we have also added the separated polling of the `all` and `media-col-database` attributes from driverless printers to cups-filters ([commit](https://github.com/OpenPrinting/libcupsfilters/commit/789cca62d), [issue](https://github.com/OpenPrinting/cups-filters/issues/492))
-- We parse also `media-col-ready` in the `get-printer-attributes` IPP responses now, to more reliablly find all media properties ([commit](https://github.com/OpenPrinting/libcupsfilters/commit/3b9ec4aa5), [issue](https://github.com/OpenPrinting/cups-filters/issues/492)).
+- We parse also `media-col-ready` in the `get-printer-attributes` IPP responses now, to more reliably find all media properties ([commit](https://github.com/OpenPrinting/libcupsfilters/commit/3b9ec4aa5), [issue](https://github.com/OpenPrinting/cups-filters/issues/492)).
 - Removed the public `cfPDFOut...()` API (`cupsfilters/pdfutils.h`). This API only makes sense if the API of fontembed is also public, but this we made private earlier ([commit](https://github.com/OpenPrinting/libcupsfilters/commit/389d233a)).
 - Removed unnecessary dependencies, especially on C++ in cups-filters and cups-browsed. Thanks, Zdenek Dohnal.
 - Many fixes in the build system and the source code documentation.
