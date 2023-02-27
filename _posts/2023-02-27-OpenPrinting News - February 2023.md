@@ -12,7 +12,7 @@ But we have a lot of **good and exciting news**! Not only that we got [accepted 
 
 Some of you were perhaps wondering how to **report security issues** and therefore hesitated to do so, now I succeeded in [getting an intuitive way](#private-bug-reports-for-security-issues).
 
-And **Kurt Pfeifle**, who made me know about CUPS back in mid-2000 by a magazine article and [so made me what I am now](https://openprinting.github.io/history/) has retired and now wants to **contribute to the documentation** on OpenPrinting! Welcome back in the team!!
+And **Kurt Pfeifle**, who made me know about CUPS back in mid-2000 by a magazine article and [so made out of me what I am now](https://openprinting.github.io/history/) has retired and now wants to **contribute to the documentation** on OpenPrinting! Welcome back in the team!!
 
 
 ## Google Summer of Code 2023 - We are in!!
