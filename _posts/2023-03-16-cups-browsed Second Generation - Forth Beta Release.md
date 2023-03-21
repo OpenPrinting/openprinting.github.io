@@ -34,8 +34,8 @@ And to complete this release, it also contains the fixes of bugs found by a Cove
 - `resolve_callback()`/`resolver_wrapper()`: New thread only when printer found
   We move the check which resolver event we have (found/failure) already in the main thread (`resolver_wrapper()`) and launch a new thread only if we have found a new printer and have to investigate whether to add a queue for it or not. `resolve_callback()` only initiates this investigation now.  This way we do not need to pass the resolver data structure (of type `AvahiServiceResolver*`) into the new thread, which caused segfaults.
 - `create_remote_printer_entry()`: Corrected some memory freeing when a printer data structure is deleted, but this has not caused a segfault in the recent tests.
-- Fixed issues reported by Red Hat Coverity tool (Pull request #6)
-- `configure.ac`: Change deprecated `AC_PROG_LIBTOOL` for `LT_INIT` (Pull request #5)
+- Fixed issues reported by Red Hat Coverity tool ([Pull request #6](https://github.com/OpenPrinting/cups-browsed/pull/6))
+- `configure.ac`: Change deprecated `AC_PROG_LIBTOOL` for `LT_INIT` ([Pull request #5](https://github.com/OpenPrinting/cups-browsed/pull/5))
 - `configure.ac`: cups-browsed doesn't need C++
 
 ### Packages
