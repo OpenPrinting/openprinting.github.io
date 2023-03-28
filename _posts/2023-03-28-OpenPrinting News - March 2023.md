@@ -28,9 +28,9 @@ But it is not such a big problem of the BoF not being accepted, we will have our
 ## GUADEC 2023
 After a great [first GUADEC for me in Mexico last year](/OpenPrinting-News-August-2022/#guadec-2022) I will continue attending GUADECs. This year I do not need to cross the ocean, [GUADEC](https://events.gnome.org/event/101/overview) takes place in [Riga, in Latvia](https://events.gnome.org/event/101/page/168-the-city) on July 26-31, as last year 3 days of talks, 2 days of BoFs and workshops, and 1 day of touristing.
 
-Yesterday the Call for Proposals had its original deadline, but as there were not enough proposals to comfortably fill all the time slots the [**submissions got re-opened**](https://events.gnome.org/event/101/abstracts/), this time **without any deadline**. Probably they stay open until there is a sufficient amount of submissions.
+Yesterday the Call for Proposals had its original deadline, but as there were not enough proposals to comfortably fill all the time slots the [**submissions got re-opened**](https://events.gnome.org/event/101/abstracts/), this time without showing any deadline, but [their Tweet](https://twitter.com/guadec/status/1640654976086323200) reveals that the extension is for a week, meaning that the deadline is April 4 now.
 
-So think in the next days about what you like to tell to the GNOME folks in Riga, what you want to teach in a workshop, what you want to discuss in a BoF, ... It is your chance now ... But do not wait too long, can be that the organizers will suddenly close (or at least set a deadline) if submission numbers reach a more healthy amount.
+So think in the next days about what you like to tell to the GNOME folks in Riga, what you want to teach in a workshop, what you want to discuss in a BoF, ... It is your chance now ...
 
 Also here I have submitted a talk to demo the printing-related GUI changes in GNOME/GTK and to discuss them with the audience.
 
