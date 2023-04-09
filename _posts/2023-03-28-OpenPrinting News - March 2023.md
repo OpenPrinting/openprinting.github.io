@@ -22,7 +22,7 @@ My [talk](https://conf.linuxappsummit.org/event/5/contributions/158/) with demos
 
 Unfortunately, due to the huge amount of great submissions and the limited time slots in only 2 rooms on 2 days, my Snap workshop and my OpenPrinting BoF did not get accepted.
 
-But it is not such a big problem of the BoF not being accepted, we will have our own one. To have more time to discuss with my colleagues and contributors on the printing area, Zdenek Dohnal (Red Hat), Marek Kasik (GNOME/GTK), Albert Astals Sid (KDE/Qt), Harald Sitter (KDE/Qt), I will have a meeting with them on Saturday, April 22, at some hour (TBD) during the day. I will announce the exact time next month here, so everyone who likes can join.
+But it is not such a big problem of the BoF not being accepted, we will have our own one. To have more time to discuss with my colleagues and contributors on the printing area, Zdenek Dohnal (Red Hat), Marek Kasik (GNOME/GTK), Albert Astals Sid (KDE/Qt), Harald Sitter (KDE/Qt), I will have a meeting with them on (**Update**) Saturday, April 22, at 15:00 CEST (room/place TBD). I will announce the exact time next month here, so everyone who likes can join.
 
 
 ## GUADEC 2023
