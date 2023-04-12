@@ -2,7 +2,7 @@
 title: cups-filters Second Generation - Release Candidate!
 layout: single
 author: Till
-excerpt: Release approaching: Page orientation, image scaling, text in landscape, 16-bit color and 1-bit mono, API adjustment for libcups3, color on color printers fast ...
+excerpt: Release approaching - Page orientation, image scaling, text in landscape, 16-bit color and 1-bit mono, API adjustment for libcups3, color on color printers fast ...
 ---
 Now we are finally coming to the final release of the components of the second generation of cups-filters, version 2.0.0.
 
