@@ -6,7 +6,7 @@ toc_sticky: true
 author: Till
 excerpt: Ubuntu 23.04 release, LAS 2023 in Brno, GSoC 2023, Release Candidate for cups-filters 2.0.0, CPDB support in print dialogs
 ---
-Not long ago that there were the [March News](/OpenPrinting-News-March-2023/), and now we already have the April ones! April News contain important announcements and therefore they cannot be late, usually the new [Ubuntu release](#ubuntu-2304--lunar-lobster--is-coming-), and the latest and greatest about the upcoming [Linux App Summit](#linux-app-summit-2023). But no April fool's pranks, like [this one](https://news.itsfoss.com/ubuntu-ditch-snap/), for that we are too late. But don't worry, we will go on [snappy](https://snapcraft.io/search?q=OpenPrinting) ...
+Not long ago that there were the [March News](/OpenPrinting-News-March-2023/), and now we already have the April ones! April News contain important announcements and therefore they cannot be late, usually the new [Ubuntu release](#ubuntu-2304-lunar-lobster-is-coming), and the latest and greatest about the upcoming [Linux App Summit](#linux-app-summit-2023). But no April fool's pranks, like [this one](https://news.itsfoss.com/ubuntu-ditch-snap/), for that we are too late. But don't worry, we will go on [snappy](https://snapcraft.io/search?q=OpenPrinting) ...
 
 
 ## Ubuntu 23.04 (Lunar Lobster) is coming!
@@ -134,7 +134,7 @@ The other sub-organizations of the Linux Foundation will do the same thing and p
 
 
 ## Release Candidate for cups-filters 2.0.0
-I have [released](https://openprinting.github.io/cups-filters-Second-Generation-Release-Candidate/) the release candidates (2.0rc1) of the 4 components [libcupsfilters](https://github.com/OpenPrinting/libcupsfilters/releases/tag/2.0rc1), [libppd](https://github.com/OpenPrinting/libppd/releases/tag/2.0rc1), [cups-filters](https://github.com/OpenPrinting/cups-filters/releases/tag/2.0rc1), and [cups-browsed](https://github.com/OpenPrinting/cups-browsed/releases/tag/2.0rc1) and updated the [Ubuntu 23.04 (Lunar Lobster)](#ubuntu-2304--lunar-lobster--is-coming-) packages in time for the Final Freeze last Thursday.
+I have [released](https://openprinting.github.io/cups-filters-Second-Generation-Release-Candidate/) the release candidates (2.0rc1) of the 4 components [libcupsfilters](https://github.com/OpenPrinting/libcupsfilters/releases/tag/2.0rc1), [libppd](https://github.com/OpenPrinting/libppd/releases/tag/2.0rc1), [cups-filters](https://github.com/OpenPrinting/cups-filters/releases/tag/2.0rc1), and [cups-browsed](https://github.com/OpenPrinting/cups-browsed/releases/tag/2.0rc1) and updated the [Ubuntu 23.04 (Lunar Lobster)](#ubuntu-2304-lunar-lobster-is-coming) packages in time for the Final Freeze last Thursday.
 
 **Filter functions**
 
@@ -142,7 +142,7 @@ To prepare for this I checked through all the repositories for not yet merged pu
 
 GSoC candidate Sourabh Sav reported that he was not able to suppress the auto-rotation of images when printiing JPG or PNG image files. So I investigated the case and ended up correcting the attributes `orientation-requested` (page layout orientation, landscape, upside-down, ...) and `landcape` in the `cfFilterImageToRaster()`, `cfFilterImageToPDF()`. `cfFilterTextToPDF()`. and `cfFilterPDFToPDF()` filter functions. I also discovered that `cfFilterTextToPDF()` was not able to layout text in landscape orientation at all, which I have also fixed. And I also fixed the `ppi` attribute in the image filters, which means printing with givem pixels per inch and not crop, but let the image span over more than one sheet instead. Also on auto-rotation (or with the "landscape" attribute), the printer's preferred rotation direction (counter-clockwise or clockwise) is used, according to the printer's `landscape-orientation-requested-preferred` IPP attribute (or “`*LandscapeOrientation: ...`” PPD keyword).
 
-In [Issue #465](https://github.com/OpenPrinting/cups-filters/issues/465) of cups-filters problems with 16-bit-per-color output were reported, one being the image filters producing a blank page, with correct page size, resolution, and color mode, but just white. This problem I gave to GSoC candidate Harshit Krishna as assignment and we got it solved by him adding the missing code to convert the input to 16 bits per color.
+In [Issue #25](https://github.com/OpenPrinting/libcupsfilters/issues/25) of libcupsfilters problems with 16-bit-per-color output were reported, one being the image filters producing a blank page, with correct page size, resolution, and color mode, but just white. This problem I gave to GSoC candidate Harshit Krishna as assignment and we got it solved by him adding the missing code to convert the input to 16 bits per color.
 
 I also assigned [Issue #20](https://github.com/OpenPrinting/libcupsfilters/issues/20) of libcupsfilters, a grid of black dots appearing on white backgrounds when printing in dithered 1-bit monochrome, and [Issue #26](https://github.com/OpenPrinting/libcupsfilters/issues/26) of libcupsfilters, empty page output when not supplying the page size for the job, and ended up fixing them by myself as the GSoC candidates disappeared.
 
@@ -156,7 +156,7 @@ The [implementation of the libcups3 support](https://github.com/OpenPrinting/lib
 
 **Bug report from Ubuntu 23.04 user**
 
-After having taken care in libcupsfilters and libppd that if the destination printer supports both Apple Raster and PDF to send the jobs in Apple Raster, due to the fact that PDF interpreters in printers are often slow and/or buggy, I have discovered now that cups-browsed still selects PDF in such a case and fixed this now. This follows a [bug report](https://bugs.launchpad.net/bugs/2014976) by a user testing Ubuntu 23.04 with the fresh update to cups-browsed 2.0b4.
+After having taken care in libcupsfilters and libppd that if the destination printer supports both Apple Raster and PDF to send the jobs in Apple Raster, due to the fact that PDF interpreters in printers are often slow and/or buggy, I have discovered now that cups-browsed still selects PDF in such a case and [fixed this now](https://github.com/OpenPrinting/cups-browsed/commit/3eb66da94d7). This follows a [bug report](https://bugs.launchpad.net/bugs/2014976) by a user testing Ubuntu 23.04 with the fresh update to cups-browsed 2.0b4.
 
 In the same report he also complained that the auto-generated print queue for his color printer defaulted to grayscale printing. This was due to the printer reporting "auto" as color mode default and the PPD generator not setting the default color mode then. This is [now fixed in libppd](https://github.com/OpenPrinting/libppd/commit/1934a6c341c).
 
@@ -170,7 +170,7 @@ Another failure caused by the new generation of cups-filters was the failure of 
 
 
 ## Common Print Dialog Backends getting into the dialogs
-Gaurav Guleria is currently working on getting the [merge request for CPDB support in the Qt print dialog](https://codereview.qt-project.org/c/qt/qtbase/+/437301) merged. With that and the [GTK dialog](https://openprinting.github.io/OpenPrinting-News-February-2023/#common-print-dialog-backends-support-accepted-into-gtk) we are not yet ready, as [several applications have their own dialogs which also need CPDB support](https://wiki.linuxfoundation.org/gsoc/google-summer-code-2023-openprinting-projects#ci_testing_programs_for_libcupsfilters_libpappl-retrofit_libppd_cpdb).
+Gaurav Guleria is currently working on getting the [merge request for CPDB support in the Qt print dialog](https://codereview.qt-project.org/c/qt/qtbase/+/437301) merged. With that and the [GTK dialog](https://openprinting.github.io/OpenPrinting-News-February-2023/#common-print-dialog-backends-support-accepted-into-gtk) we are not yet ready, as [several applications have their own dialogs which also need CPDB support](https://wiki.linuxfoundation.org/gsoc/google-summer-code-2023-openprinting-projects#cpdb_support_for_application_s_print_dialogsfirefox_chromium_libreoffice).
 
 GSoC candidate Kushagra Sharma, mentored by Gaurav, is already working on this.
 
