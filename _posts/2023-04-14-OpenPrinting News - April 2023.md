@@ -139,7 +139,7 @@ The other sub-organizations of the Linux Foundation will do the same thing and p
 
 
 ## Release Candidate for cups-filters 2.0.0
-I have [released](https://openprinting.github.io/cups-filters-Second-Generation-Release-Candidate/) the release candidates (2.0rc1) of the 4 components [libcupsfilters](https://github.com/OpenPrinting/libcupsfilters/releases/tag/2.0rc1), [libppd](https://github.com/OpenPrinting/libppd/releases/tag/2.0rc1), [cups-filters](https://github.com/OpenPrinting/cups-filters/releases/tag/2.0rc1), and [cups-browsed](https://github.com/OpenPrinting/cups-browsed/releases/tag/2.0rc1) and updated the [Ubuntu 23.04 (Lunar Lobster)](#ubuntu-2304-lunar-lobster-is-coming) packages in time for the Final Freeze last Thursday.
+I have [released](/cups-filters-Second-Generation-Release-Candidate/) the release candidates (2.0rc1) of the 4 components [libcupsfilters](https://github.com/OpenPrinting/libcupsfilters/releases/tag/2.0rc1), [libppd](https://github.com/OpenPrinting/libppd/releases/tag/2.0rc1), [cups-filters](https://github.com/OpenPrinting/cups-filters/releases/tag/2.0rc1), and [cups-browsed](https://github.com/OpenPrinting/cups-browsed/releases/tag/2.0rc1) and updated the [Ubuntu 23.04 (Lunar Lobster)](#ubuntu-2304-lunar-lobster-is-coming) packages in time for the Final Freeze last Thursday.
 
 **Filter functions**
 
@@ -175,7 +175,7 @@ Another failure caused by the new generation of cups-filters was the failure of 
 
 
 ## Common Print Dialog Backends getting into the dialogs
-Gaurav Guleria is currently working on getting the [merge request for CPDB support in the Qt print dialog](https://codereview.qt-project.org/c/qt/qtbase/+/437301) merged. With that and the [GTK dialog](https://openprinting.github.io/OpenPrinting-News-February-2023/#common-print-dialog-backends-support-accepted-into-gtk) we are not yet ready, as [several applications have their own dialogs which also need CPDB support](https://wiki.linuxfoundation.org/gsoc/google-summer-code-2023-openprinting-projects#cpdb_support_for_application_s_print_dialogsfirefox_chromium_libreoffice).
+Gaurav Guleria is currently working on getting the [merge request for CPDB support in the Qt print dialog](https://codereview.qt-project.org/c/qt/qtbase/+/437301) merged. With that and the [GTK dialog](/OpenPrinting-News-February-2023/#common-print-dialog-backends-support-accepted-into-gtk) we are not yet ready, as [several applications have their own dialogs which also need CPDB support](https://wiki.linuxfoundation.org/gsoc/google-summer-code-2023-openprinting-projects#cpdb_support_for_application_s_print_dialogsfirefox_chromium_libreoffice).
 
 GSoC candidate Kushagra Sharma, mentored by Gaurav, is already working on this.
 
