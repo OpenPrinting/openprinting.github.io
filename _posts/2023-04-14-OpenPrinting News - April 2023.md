@@ -30,6 +30,11 @@ The user-facing printing-related changes are lots of bug fixes:
 - cups-browsed is more stable and reliable now
 - Universal CUPS filter for less external filter executable calls by CUPS
 
+In addition, there are included:
+- **CUPS 2.4.2** (with [auto-setting PPD options by print-quality, print-color-mode, and print-content-optiomize job IPP attributes](/OpenPrinting-News-August-2021/#retro-fitting-of-cups-printer-drivers-into-printer-applications))
+- **Ghostscript 10.0.0** (with fix for [not matching custom page size against PPD](https://github.com/OpenPrinting/cups-filters/issues/484))
+- **HPLIP 3.22.10**
+
 Otherwise we have GNOME 44 now with [a lot of nice new features](https://www.omgubuntu.co.uk/2023/03/ubuntu-23-04-features)!
 
 And there will be a [**release party**](#release-party-)!! In-person on the [Linux App Summit in Brno](#linux-app-summit-2023)! On Saturday evening, right after the talks. A joint party together with the release of Fedora 38!
