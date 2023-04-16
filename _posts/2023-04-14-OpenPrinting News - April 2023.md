@@ -37,7 +37,7 @@ In addition, there are included:
 
 Otherwise we have GNOME 44 now with [a lot of nice new features](https://www.omgubuntu.co.uk/2023/03/ubuntu-23-04-features)!
 
-And there will be a [**release party**](#release-party-)!! In-person on the [Linux App Summit in Brno](#linux-app-summit-2023)! On Saturday evening, right after the talks. A joint party together with the release of Fedora 38!
+And there will be a [**release party**](#release-party)!! In-person on the [Linux App Summit in Brno](#linux-app-summit-2023)! On Saturday evening, right after the talks. A joint party together with the release of Fedora 38!
 
 
 ## Linux App Summit 2023
