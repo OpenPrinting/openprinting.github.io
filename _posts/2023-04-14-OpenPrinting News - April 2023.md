@@ -45,6 +45,10 @@ The [Linux App Summit 2023](https://linuxappsummit.org/) in Brno in the Czech Re
 
 Brno is an office location of Red Hat, so we will have many people from Red Hat on the Summit, but for Ubuntu not getting overrolled by them there will be a Canonical Gang of 7 (!): Dennis Loose, Heather Ellsworth, Igor Ljubuncic, Jeremy Bicha, Jesús Soto, Marco Trevisan, and me.
 
+**Update: Links to the recordings**
+
+**Recordings: [Day 1, room 1](https://www.youtube.com/watch?v=3-_aUNZMvko), [Day 2, room 1](https://www.youtube.com/watch?v=J7-3Qj_oVMM), [Day 2, room 2](https://www.youtube.com/watch?v=jwMEDI4WsAE). Direct links to all sessions are in the comments of the videos (thanks, Ban Jo @Enry211). Unfortunately, there are no recordings of room 2 on day 1.**
+
 ### OpenPrinting
 
 As printing and scanning are not unimportant for the free software application ecosystem, OpenPrinting will be present again, this year with two sessions, both on Saturday, April 22 (all times CEST):
@@ -62,6 +66,8 @@ The duration of the meeting is not pre-determined, if we have more to discuss, i
 **16:35: [The New Printing GUIs: GNOME Control Center and Common Print Dialog Backends](https://conf.linuxappsummit.org/event/5/contributions/158/)**
 
 Room 1/Plenary Room
+
+([Video](https://www.youtube.com/watch?v=3-_aUNZMvko&t=23760s))
 
 Here I will give an update about our printing-related GUI work for the New Architecture. I will show off the state of the art of the "Printers" module in the GNOME Control Center, done by GSoC contributor Mohit Verma, and the Common Print Dialog Backends (CPDB), done by GSoC contributor Gaurav Guleria.
 
@@ -87,21 +93,23 @@ There will be a Ubuntu/Canonical booth, no marketing people, but a gathering poi
 
 Meet the whole gang at the booth, Saturday in the lunch break, 12:45-13:45. Ask your questions, discuss with us the future development of Ubuntu, get help for your application projects by the desktop developers and snappers, ...
 
+**Update: We did a panel instead ([video](https://www.youtube.com/watch?v=3-_aUNZMvko&t=10810s)).**
+
 **Talks, panels, workshops, ...**
 
 *Saturday, April 22*
 
 [14:15: Snap performance optimization - The Firefox case study](https://conf.linuxappsummit.org/event/5/contributions/152/)<BR>
-Igor Ljubuncic, Room 1
+Igor Ljubuncic, Room 1 ([video](https://www.youtube.com/watch?v=3-_aUNZMvko&t=15730s))
 
 [14:15: What's next for the Linux App Ecosystem? Panel Discussion](https://conf.linuxappsummit.org/event/5/contributions/151/)<BR>
-Host: Sriram Ramkrishna; Heather Ellsworth is one of the guests, Room 2
+Host: Sriram Ramkrishna; Heather Ellsworth is one of the guests, Room 2 ([video](https://www.youtube.com/watch?v=3-_aUNZMvko&t=18735s))
 
 [15:50: Bringing Windows applications to Linux app stores with Wine snaps](https://conf.linuxappsummit.org/event/5/contributions/156/)<BR>
 Mr Merlijn Sebrechts (Ubuntu - Ghent University - imec) and Ms Lucy Llewellyn (Snapcrafters & Ubuntu), Room 2
 
 [16:35: The New Printing GUIs: GNOME Control Center and Common Print Dialog Backends](https://conf.linuxappsummit.org/event/5/contributions/158/)<BR>
-Till Kamppeter, Room 1 (see [above](#openprinting))
+Till Kamppeter, Room 1 (see [above](#openprinting), [video](https://www.youtube.com/watch?v=3-_aUNZMvko&t=23760s))
 
 [16:35: Accessibility Testing Workshop](https://conf.linuxappsummit.org/event/5/contributions/157/)<BR>
 Heather Ellsworth and Jeremy Bicha, Room 2
@@ -109,13 +117,13 @@ Heather Ellsworth and Jeremy Bicha, Room 2
 *Sunday, April 23*
 
 [14:40: Testing Flutter Desktop Applications Workshop](https://conf.linuxappsummit.org/event/5/contributions/162/)<BR>
-Dennis Loose, Room 2
+Dennis Loose, Room 2 ([video](https://www.youtube.com/watch?v=jwMEDI4WsAE&t=17530s))
 
 [16:20: Game development on Linux (Lightning Talk)](https://conf.linuxappsummit.org/event/5/contributions/169/)<BR>
-Jesús Soto, Room 1
+Jesús Soto, Room 1 ([video](https://www.youtube.com/watch?v=J7-3Qj_oVMM&t=22555s))
 
 [16:30: We can’t spell BUGs without U](https://conf.linuxappsummit.org/event/5/contributions/168/)<BR>
-Heather Ellsworth, Room 1
+Heather Ellsworth, Room 1 ([video](https://www.youtube.com/watch?v=J7-3Qj_oVMM&t=23109s))
 
 [Complete schedules](https://conf.linuxappsummit.org/event/5/timetable/#all)
 
