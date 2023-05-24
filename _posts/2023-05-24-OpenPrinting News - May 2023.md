@@ -26,7 +26,7 @@ Main news item of the meeting was the [postponing of CUPS 3.x by a year](#cups-3
 
 In contrary to the previous years we had no presentation from Artifex about Ghostscript and MuPDF. This is due to changes in the staff at Artifex after they got [acquired by ePapyrus](https://artifex.com/news/artifex-announces-acquisition). I will try to obtain news about the future of Ghostscript from the new/remaining team and post here later.
 
-The time slot which got free by that I have made use of to report about cups-filters 2.x, filter functions, separating PPD file support into libppd, clean-up, rlease, ... in much more detail.
+The time slot which got free by that I have made use of to report about cups-filters 2.x, filter functions, separating PPD file support into libppd, clean-up, release, ... in much more detail.
 
 A highlight was also the session about the Goggle Summer of Code with our contributors from 2022 presenting and demoing their work and praising me as their mentor.
 
@@ -205,7 +205,7 @@ Now having the new cups-filters in the first 2 distros, Ubuntu 23.04 and Fedora 
 
 I asked for the queue's PPD file from the people who observed the bug but did not yet get an answer.
 
-**cups-browsed is using an excessive amount of CPU ([Ubuntu bug #2018504]((https://bugs.launchpad.net/bugs/2018504))**
+**cups-browsed is using an excessive amount of CPU ([Ubuntu bug #2018504](https://bugs.launchpad.net/bugs/2018504))**
 
 I am not able to reproduce it by myself, but I got debug logs from one of the people suffering this bug. Need to investigate.
 
@@ -317,7 +317,7 @@ sudo snap install ghostscript-printer-app
 sudo snap install hplip-printer-app
 sudo snap install gutenprint-printer-app
 ```
-Open the web interface of the Printer Application (`[http://localhost:8000/](http://localhost:8000/)`) either using a web browser directly or finding the Printer Application in the destination list of the "Printers" module of GNOME Control Center, clicking its configure button (with a gear icon), and choosing "Web Interface" (see also below).
+Open the web interface of the Printer Application ([`http://localhost:8000/`](http://localhost:8000/)) either using a web browser directly or finding the Printer Application in the destination list of the "Printers" module of GNOME Control Center, clicking its configure button (with a gear icon), and choosing "Web Interface" (see also below).
 
 Create a print queue using the "Add Printer" button in the web interface (under "Printers", top-right.
 
@@ -363,7 +363,7 @@ and you will see entries for each backend in the `/usr/lib/*/print-backends/` di
 ## Common Print Dialog Backends getting into the dialogs
 Kushagra Sharma got now [accepted as GSoC contributor](#google-summer-of-code-2023) with his [project](https://wiki.linuxfoundation.org/gsoc/google-summer-code-2023-openprinting-projects#cpdb_support_for_application_s_print_dialogsfirefox_chromium_libreoffice) of adding CPDB support to several application's print dialogs. He gets mentored by Gaurav Guleria and me and he has already started working on his project.
 
-I have found for him the places and people in the upstream organizations of Mozilla (Firefox/Thunderbird0, Chromium, and LibreOffice, to propose the switch of the print dialog from direct CUPS support to CPDB. Currently, we have reached out with the following activities:
+I have found for him the places and people in the upstream organizations of Mozilla (Firefox/Thunderbird), Chromium, and LibreOffice, to propose the switch of the print dialog from direct CUPS support to CPDB. Currently, we have reached out with the following activities:
 - I posted a [Feature request for Mozilla](https://bugzilla.mozilla.org/show_bug.cgi?id=1826311) already some weeks ago. First discussion has started.
 - I posted on the [mailing list for LibreOffice](https://lists.freedesktop.org/archives/libreoffice/2023-April/090210.html), after some IRC chat on #libreoffice-dev on Libera.Chat.
 - I am in contact with Piotr Pawliczek and Benjamin Gordon from the Chromium Paper I/O team and, after getting an appropriate hint via the developer [Google group](https://groups.google.com/a/chromium.org/g/chromium-dev), Kushagra has created a [design document](https://docs.google.com/document/d/1xJ6XP3myP45CeJjO3lVYqpCBUblXp6J259qMhN0wxi0/edit?usp=sharing) and posted a [feature request](https://bugs.chromium.org/p/chromium/issues/detail?id=1445999) for the CPDB support on Chromium's print dialog. Benjamin is aware of the feature request.
