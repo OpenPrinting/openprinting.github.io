@@ -67,7 +67,7 @@ The duration of the meeting is not pre-determined, if we have more to discuss, i
 
 Room 1/Plenary Room
 
-([Video](https://www.youtube.com/watch?v=3-_aUNZMvko&t=23760s))
+([Video](https://www.youtube.com/watch?v=3-_aUNZMvko&t=23760s), [Slides](https://conf.linuxappsummit.org/event/5/contributions/158/attachments/35/60/las-2023-new-architecture-demo.pdf))
 
 Here I will give an update about our printing-related GUI work for the New Architecture. I will show off the state of the art of the "Printers" module in the GNOME Control Center, done by GSoC contributor Mohit Verma, and the Common Print Dialog Backends (CPDB), done by GSoC contributor Gaurav Guleria.
 
@@ -109,7 +109,7 @@ Host: Sriram Ramkrishna; Heather Ellsworth is one of the guests, Room 2 ([video]
 Mr Merlijn Sebrechts (Ubuntu - Ghent University - imec) and Ms Lucy Llewellyn (Snapcrafters & Ubuntu), Room 2
 
 [16:35: The New Printing GUIs: GNOME Control Center and Common Print Dialog Backends](https://conf.linuxappsummit.org/event/5/contributions/158/)<BR>
-Till Kamppeter, Room 1 (see [above](#openprinting), [video](https://www.youtube.com/watch?v=3-_aUNZMvko&t=23760s))
+Till Kamppeter, Room 1 (see [above](#openprinting), [video](https://www.youtube.com/watch?v=3-_aUNZMvko&t=23760s), [slides](https://conf.linuxappsummit.org/event/5/contributions/158/attachments/35/60/las-2023-new-architecture-demo.pdf))
 
 [16:35: Accessibility Testing Workshop](https://conf.linuxappsummit.org/event/5/contributions/157/)<BR>
 Heather Ellsworth and Jeremy Bicha, Room 2
