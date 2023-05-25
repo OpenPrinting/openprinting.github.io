@@ -507,11 +507,15 @@ https://github.com/XXX/YYY/advisories
 
 It is expected that you do the whole procedure within three months after the original report.
 
-First, fix the bug, but do not commit the fix to the regular, public repository. If you need more info from the reporter, especially if they have not supplied steps to reproduce the bug, ask via comments on the report. Do not discuss the bug on public mailing lists or forums. You can also discuss the bug with your security team colleagues by means of comments in the private bug report.
+First, check if your organization's security team is under the "Collaborators". If not, add it. Enter its name into the search line and confirm its addition.
 
-If you have fixed it, use the appropriate button in the security bug report to let GitHub request a CVE ([Common Vulnerabilities and Exposures](https://en.wikipedia.org/wiki/Common_Vulnerabilities_and_Exposures)) number for you. With this the bug gets registered in the central [CVE database](https://cve.mitre.org/index.html).
+Fix the bug, but do not commit the fix to the regular, public repository. If you need more info from the reporter, especially if they have not supplied steps to reproduce the bug, ask via comments on the report. Do not discuss the bug on public mailing lists or forums. You can also discuss the bug with your security team colleagues by means of comments in the private bug report.
 
-Once having gotten the CVE number follow the instructions under "Collaborate on a patch" near the bottom of the bug report to clone the private fork of your repository. Apply your fix to your local copy of the fork, then commit and push it. Make sure to include the CVE number in the first line of the commit message, for example
+If the report is done by someone external to your organization, there will appear a section "Accept vulnerability report" near the bottom of the report. If you, perhaps after some first investigations and discussion in your team, believe that it is actually a security problem, click "Accept and open as draft" to accept the report.
+
+If you have accepted and fixed it, use the appropriate button in the security bug report to let GitHub request a CVE ([Common Vulnerabilities and Exposures](https://en.wikipedia.org/wiki/Common_Vulnerabilities_and_Exposures)) number for you. With this the bug gets registered in the central [CVE database](https://cve.mitre.org/index.html).
+
+Once having gotten the CVE number go to "Collaborate on a patch in private" near the bottom of the bug report and click "Start a temporary private fork" to get a private fork of your repository. Follow the instructions under the then appearing "Collaborate on a patch" to clone the private fork of your repository. Apply your fix to your local copy of the fork, then commit and push it. Make sure to include the CVE number in the first line of the commit message, for example
 ```
 CVE-yyyy-xxxxx: Heap buffer overflow in my-special-daemon
 ```
