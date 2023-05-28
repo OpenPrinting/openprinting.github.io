@@ -126,7 +126,7 @@ So it takes place on
 
 **Fri, Nov 3, 2PM EET to Sun, Nov 5, 6PM EET**
 
-If you have something awesome to present on the Ubuntu Summit, please submit your abstract. The [Call for Proposals](https://events.canonical.com/event/31/abstracts/) opens on June 1 and ends on July 2.
+If you have something awesome to present on the Ubuntu Summit, please submit your abstract. The [Call for Proposals](https://events.canonical.com/event/31/abstracts/) **(Update) opens on June 5 and ends on July 2**.
 
 I will be in the organization team again and I am eager to see your submissions.
 
