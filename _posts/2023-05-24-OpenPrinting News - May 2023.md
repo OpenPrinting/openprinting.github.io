@@ -73,6 +73,8 @@ See also Mastodon, hash tags [#LAS2023](https://ubuntu.social/tags/LAS2023), [#L
 
 
 ## GUADEC 2023 in Riga
+**Update: [Extra call for proposals](https://foundation.gnome.org/2023/05/25/guadec-2023-call-for-bofs/) (ends June 12) for BoFs and Workshops! Seems that they got an extra room for the weekend.**
+
 [GUADEC](https://events.gnome.org/event/101/overview) in Riga, Latvia, is approaching! Now the talks, workshops, and BoFs are selected and the [schedules](https://events.gnome.org/event/101/timetable/#all) are available and my 2 proposals got accepted!
 
 **[The New Printing GUIs: GNOME Control Center and Common Print Dialog Backends](https://events.gnome.org/event/101/contributions/461/)**
