@@ -521,9 +521,11 @@ Once having gotten the CVE number go to "Collaborate on a patch in private" near
 ```
 CVE-yyyy-xxxxx: Heap buffer overflow in my-special-daemon
 ```
-The title after the CVE number could be the title of the bug report, or a one-line description of the fix. Add more lines to explain your fix. With this you get a private pull request attached to the bug report.
+The title after the CVE number could be the title of the bug report, or a one-line description of the fix. Add more lines to explain your fix. "`git push`" your commit.
 
 Now you can discuss the fix with your team colleagues and with the original reporter, and they all can also clone the private fork to test the fix and/or apply additional changes.
+
+Once done the first push into the private fork, in the bug report there appears a button "Compare & Pull Request". Click this button to get a private pull request attached to the bug report.
 
 Next step is to inform the responsible people of the major OS distributions, usually package maintainers and security teams, about the bug and the fix and give them a time period of around 1 to 2 weeks to provide updates with the fix for their distributions. Only after this time period (the embargo) expires, you publish the bug report and the fix.
 
