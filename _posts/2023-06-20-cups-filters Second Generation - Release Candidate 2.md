@@ -42,11 +42,11 @@ And here are the lists of all the changes in detail:
 
 ### libcupsfilters
 
-- Ignore unsupported resolution values when preparing a Raster header via `cfRasterPrepareHeader()` function, to avoid rasterization with wrong resolution (Issue [#29](https://github.com/OpenPrinting/libppd/issues/29), Ubuntu bug: [#2022929](https://bugs.launchpad.net/bugs/2022929), Chromium issue [#1448735](https://bugs.chromium.org/p/chromium/issues/detail?id=1448735)).
+- Ignore unsupported resolution values when preparing a Raster header via `cfRasterPrepareHeader()` function, to avoid rasterization with wrong resolution (Issue [#29](https://github.com/OpenPrinting/libcupsfilters/issues/29), Ubuntu bug: [#2022929](https://bugs.launchpad.net/bugs/2022929), Chromium issue [#1448735](https://bugs.chromium.org/p/chromium/issues/detail?id=1448735)).
 - `cfRasterPrepareHeader()`: When taking default resolution from `urf-supported` printer IPP attribute, use first value (lowest) of the list, to match the `ppdLoadAttributes()` function of libppd.
 - `cfIPPAttrResolutionForPrinter()`: List of resolutions is not `IPP_TAG_RANGE`, corrected the search to use `IPP_TAG_ZERO`.
 - `cfIEEE1284NormalizeMakeModel()`: Do not consider "XPrinter" as made by Xerox, only "XPrint" is (OpenPrinting CUPS pull request [#506](https://github.com/OpenPrinting/cups/pull/506)).
-- `INSTALL`: Recommend QPDF 11.4.0 as it fixes loss of content filled into interactive forms as (Issue [#28](https://github.com/OpenPrinting/libppd/issues/28)).
+- `INSTALL`: Recommend QPDF 11.4.0 as it fixes loss of content filled into interactive forms as (Issue [#28](https://github.com/OpenPrinting/libcupsfilters/issues/28)).
 - `INSTALL`: Fixed some typos.
 
 ### libppd
@@ -91,9 +91,9 @@ And here are the lists of all the changes in detail:
 - Fixed cups-browsed getting stuck in busy loop
   When the function `create_queue()` fails to create a local print queue and the failure is not intermittent, it sets a global variable to stop the main thread's loop for updating local queues. With the variable not reset no queue updates happened ever again and cups-browsed fell into a busy loop taking up to 100% CPU. We have solved this by doing away with the variable and simply mark these printers as disappeared (Ubuntu bug [#2018504](https://bugs.launchpad.net/bugs/2018504)).
 - Do not record `*-default` IPP attributes of local CUPS queues
-  Many of the `*-default` IPP attributes represent properties already covered by the PPD option defaults which we also record. In addition, there is also `print-quality-default` where IPP reports `draft`, `normal`, and `high` settings while CUPS only accepts `3`, `4`, and `5`, and on everything else it sets `print-quality-default=0` which is invalid and jobs do not get printed. So we stop saving and loading these attributes.
-- Build system: Removed unnecessary lines in Makefile.am
-  Removed the `TESTdir` and `TEST_SCRIPTS` entries in Makefile.am. They are not needed and let `make install` try to install `run-tests.sh` in the source directory, where it already is, causing an error.
+  Many of the `*-default` IPP attributes represent properties already covered by the PPD option defaults which we also record. In addition, there is also `print-quality-default` where IPP reports `draft`, `normal`, and `high` settings while CUPS only accepts `3`, `4`, and `5`, and [on everything else it sets `print-quality-default=0`](https://github.com/OpenPrinting/cups/issues/734) which is invalid and jobs do not get printed. So we stop saving and loading these attributes.
+- Build system: Removed unnecessary lines in `Makefile.am`
+  Removed the `TESTdir` and `TEST_SCRIPTS` entries in `Makefile.am`. They are not needed and let `make install` try to install `run-tests.sh` in the source directory, where it already is, causing an error.
 - `run-tests.sh`: Use pkgconfig instead of deprecated cups-config (Pull request [#9](https://github.com/OpenPrinting/cups-browsed/pull/9)).
 
 ### Packages
