@@ -133,7 +133,7 @@ Volunteer contributor: Ankit Pal Singh
 ## CUPS 2.4.6
 Looong, looong ago ... we had the [release of CUPS 2.4.2](https://github.com/OpenPrinting/cups/releases/tag/v2.4.2), around one year ago now!
 
-But finally, we have a new release. One? No, even 4 in quick sequence, as probably during the enthusiasm of releasing again, some gliches got overlooked and in addition, another security bug got reported.
+But finally, we have a new release. One? No, even 4 in quick sequence, as probably during the enthusiasm of releasing again, some glitches got overlooked and in addition, another security bug got reported.
 
 So we are at [CUPS 2.4.6](https://github.com/OpenPrinting/cups/releases/tag/v2.4.6) now, providing us with tons of bug fixes and among them also two security fixes, and both handled with [GitHubs security vulnerability report functionality](/OpenPrinting-News-May-2023/#handling-reported-security-bugs-with-github).
 
@@ -165,7 +165,7 @@ Here are some highlights of the work on our [second release candidate](/cups-fil
 - [libppd sync-up with CUPS](/cups-filters-Second-Generation-Release-Candidate-2/#libppd-sync-up-with-cups)
 - [First Vulnerability Report](/cups-filters-Second-Generation-Release-Candidate-2/#first-vulnerability-report)
 
-If nothing severe happens, I will release cups-filters 2.0.0 final in a few weeks, so that perhaps we can celebrate it on the [GUADEC](/OpenPrinting-News-May-2023/#guadec-2023-in-riga) ...
+If nothing severe happens, I will release cups-filters 2.0.0 final in a few weeks, so that perhaps we can celebrate it on the [GUADEC](#guadec-2023-in-riga) ...
 
 
 ## Snap updates
@@ -277,7 +277,7 @@ sudo snap install ghostscript-printer-app
 ```
 
 **Activating classically installed drivers**
-Only **if none of the above-mentioned Printer Applications makes your printer working**, especially if you have a **proprietary** printer driver installed, install the Legacy Printer Application which makes the classic CUPS drivers available to the CUPs Snap:
+Only **if none of the above-mentioned Printer Applications makes your printer working**, especially if you have a **proprietary** printer driver installed, install the Legacy Printer Application which makes the classic CUPS drivers available to the CUPS Snap:
 ```
 sudo apt install legacy-printer-app
 ```
