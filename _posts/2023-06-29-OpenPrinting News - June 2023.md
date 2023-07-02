@@ -122,7 +122,7 @@ Mentors: Till Kamppeter, Solomon Peachy, Rishabh Maheshwari, Chandresh Soni, Ira
 
 > After completing the printer application's basic structure and looking at the codebase of pappl-retrofit, I developed a plan for integrating libgutenprint into the application. I am composing some wrapper functions that will call and list all printers supported by gutenprint. I will test and compile the code as soon as this function is complete. If everything goes according to plan, I will add all other functionalities in a similar fashion. I will periodically compile and debug the code to avoid encountering problems in the future.
 
-**Preset management web interface for PAPPL-based Printer Applications**
+**Preset management web interface for PAPPL-based Printer Applications**<BR>
 Volunteer contributor: Ankit Pal Singh
 
 > I have successfully developed APIs that allow for the addition and updating of presets in the state file. Additionally, I have created a web interface that enables the creation, editing, and modification of presets.
@@ -276,7 +276,7 @@ sudo snap install lprint
 sudo snap install ghostscript-printer-app
 ```
 
-**Activating classically installed drivers**
+**Activating classically installed drivers**<BR>
 Only **if none of the above-mentioned Printer Applications makes your printer working**, especially if you have a **proprietary** printer driver installed, install the Legacy Printer Application which makes the classic CUPS drivers available to the CUPS Snap:
 ```
 sudo apt install legacy-printer-app
