@@ -323,13 +323,17 @@ to see which jobs are currently in the queue.
 
 Now you have done basic tests of the CUPS Snap, you can try all of CUPS' command line utilities. If you want to try the utilities which are provided by the Snap, call them via `cups.` followed by the command name, like `cups.lpstat -v`. Use these command line utilities also if the "normal" ones fail in some way.
 
-Next step is the desktop. Follow my first call for testing, for the desktop libraries and applications which are already updated for the New Architecture, from my PPA. Simply go to [my call for testing for the GUI changes in the May News](/OpenPrinting-News-May-2023/#test-the-gui-changes-for-the-new-architecture) and follow the instructions there, but do it on your system where you are using the CUPS Snap instead of the standard Debian/Ubuntu packages.
+Next step is the desktop. Follow my first call for testing, for the desktop libraries and applications which are already updated for the New Architecture, from my PPA. Simply go to [my call for testing for the GUI changes in the May News](/OpenPrinting-News-May-2023/#test-the-gui-changes-for-the-new-architecture) and follow the instructions there, but do it on your system where you are using the CUPS Snap instead of the standard Debian/Ubuntu CUPS packages.
 
 ### Ubuntu Core (immutable)
-Another test case is Ubuntu Core, an immutable distribution for IoT and servers. This one is Snap-only. Any change or application installation can only be done by means of Snaps.
+Another test case is [Ubuntu Core](https://ubuntu.com/core), an immutable distribution for IoT and servers. This one is Snap-only. Any change or application installation can only be done by means of Snaps.
 
 As the immutable core does not contain CUPS or any other parts of the printing stack, you have to install the CUPS Snap, and the Snaps of ipp-usb and also of any needed Printer Application, as shown above for classic Ubuntu, but you do not need to stop or disable any already existing daemons for it. You also do not need to create a `no-proxy` file to stop the CUPS Snap from going into "proxy" mode.
 
 But what you also have to do is to **install the "avahi" Snap in addition**. The CUPS Snap needs the Avahi daemon to be able to discover IPP printers.
 
-With that done you can test the command line tools as shown above for classic Ubuntu (call them with `cups.`, like `cups.lpstat -v`), but **not** any desktop experience, mainly due to not having a desktop, but also you cannot install the Debian packages from my PPA into the immutable, Snap-only distro.
+With that done you can test the command line tools as shown above for classic Ubuntu (call them with `cups.`, like `cups.lpstat -v`), but **not** any desktop experience, mainly due to not having a desktop, but also you cannot install the Debian packages from my New Architecture PPA into the immutable, Snap-only distro.
+
+Also due to the fact that Core is Snap-only you will not be able to install classic CUPS drivers and import them with the Legacy Printer Application.
+
+By the way, Ubuntu Core, with only the "avahi" Snap and one or more Printer Application Snaps installed (no CUPS) could also be used as a print server/adapter to turn old printers (everything which works under Linux) into a modern IPP printer which can be used from any operating system, especially also smartphones and Windows and Mac systems for which appropriate printer drivers are not available any more. On some hardware (Raspberry Pi?) the adapter can even be connected to a computer via its USB power port (Micro-USB or USB-C) and the computer sees an IPP-over-USB printer (PAPPL's gadget mode). Also tests of such setups are highly appreciated.
