@@ -189,6 +189,8 @@ Now you should read on in the next section to try it all out!
 
 
 ## Test the CUPS Snap!
+**Update:** I have investigated the behavior of the `cups-control` interface in different situations. Needs fixing in snapd for auto-connection if the CUPS Snap is used. See [this thread on snapcraft.io](https://forum.snapcraft.io/t/cups-control-interface-needs-to-work-with-cups-debs-cups-snap-and-on-ubuntu-core/).
+
 Nice shiny, newly updated Snaps! To get also nice, shiny, both classic and immutable distros with them, they need to get tested, so that in the end everything just works ...
 
 Please follow the instructions below and if something goes wrong, please tell us. Best is to report an [issue for the CUPS Snap](https://github.com/OpenPrinting/cups-snap/issues). You can also use the [discussion facility](https://github.com/OpenPrinting/cups-snap/discussions) or alternatively discuss in the [snapcraft.io forums](https://forum.snapcraft.io/).
