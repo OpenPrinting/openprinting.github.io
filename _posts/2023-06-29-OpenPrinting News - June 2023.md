@@ -48,13 +48,13 @@ Right on the first day I will talk about the state of the art of the printing GU
 
 **[Your app everywhere, just in a Snap! (Workshop)](https://events.gnome.org/event/101/contributions/460/)**
 
-Sat, July 29, 14:15 EEST, room 1 (**Update**)
+**Update: Sat, July 29, 14:15 EEST, room 1**
 
 This GUADEC will get snappy! In this 2-hour interactive workshop you will learn how to snap (= package as a Snap) your favourite applications! You will snap a simple GNOME application on your own laptop and after that we (me and Jesús Soto) will also help you to snap your applications.
 
-**Update: The workshop got moved to two hours later to not run in parallel with the only other workshop on the GUADEC, "[Discover GNOME development with Workbench](https://events.gnome.org/event/101/contributions/538/)" at 12:00 in room 2.
+**Update: The workshop got moved to two hours later to not run in parallel with the only other workshop on the GUADEC, "[Discover GNOME development with Workbench](https://events.gnome.org/event/101/contributions/538/)" at 12:00 in room 2.**
 
-And if you want to attend, please prepare your laptop for the hands-on exercises, by installing the needed software or downloading our virtual machine image. Instructions are in the "Setup" section of the [slides](https://events.gnome.org/event/101/contributions/460/attachments/194/380/Workshop%20Your%20app%20everywhere,%20just%20in%20a%20Snap!.pdf) and here is the [Ubuntu 23.04 virtual machine image](https://drive.google.com/file/d/1kkxZ8GE3_UtG7orl5v2d4x_T4FhMUcbb/view?usp=sharing) with everything needed alrady installed. Note that the `*.qcow2` image is 5.7GB large, so please download it as soon as possible and especially not during the workshop.**
+**And if you want to attend, please prepare your laptop for the hands-on exercises, by installing the needed software or downloading our virtual machine image. Instructions are in the "Setup" section of the [slides](https://events.gnome.org/event/101/contributions/460/attachments/194/380/Workshop%20Your%20app%20everywhere,%20just%20in%20a%20Snap!.pdf) and here is the [Ubuntu 23.04 virtual machine image](https://drive.google.com/file/d/1kkxZ8GE3_UtG7orl5v2d4x_T4FhMUcbb/view?usp=sharing) with everything needed alrady installed. Note that the `*.qcow2` image is 5.7GB large, so please download it as soon as possible and especially not during the workshop.**
 
 **[GNOME/GTK Printing BoF](https://events.gnome.org/event/101/contributions/535/)**
 
