@@ -226,7 +226,7 @@ All print dialogs will be migrated from direct CUPS use to using the Common Prin
 *Install the Legacy Printer Application (legacy-printer-app) by default:*<BR>
 With it installed, a classic CUPS driver, like a proprietary driver from a printer manufacturer, will get visible in this Printer Application and so printers can get set up with this driver. For actual seeding I will need to post a Main Inclusion Request (MIR), to get it into the Canonical-supported Main part of the Ubuntu distro.
 
-**Rehearsal for the all-Snap desktop distro**
+## Rehearsal for the all-Snap desktop distro
 
 The switchover from classic Debian packages to Snaps for printing in Ubuntu 23.10 serves not only to prepare for Ubuntu 24.04 LTS and even more future Ubuntu versions which will use CUPS 3.x, but it is also a rehearsal for the all-Snap desktop.
 
