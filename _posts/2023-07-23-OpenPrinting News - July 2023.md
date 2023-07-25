@@ -236,7 +236,7 @@ So here we have, as usual, an immutable core (based on the current Ubuntu LTS, c
 
 Note that printing in Ubuntu Core Desktop is only superficially tested, so do not bet on it already working currently ...
 
-##Snappy scanning: simple-scan Snap is working now!
+## Snappy scanning: simple-scan Snap is working now!
 
 And as users of also want to be able to scan from snapped applications, especially also if we have an all-Snap distribution, we need to test this, too.
 
