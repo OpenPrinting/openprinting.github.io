@@ -20,6 +20,8 @@ But next up is GUADEC. On the GNOME developer conference I will tell about the s
 ## GUADEC 2023 in Riga
 Tomorrow the [GUADEC](https://events.gnome.org/event/101/overview) in Riga, Latvia, will start! I am already on the way to there.
 
+**Update: All session times corrected**
+
 I have now prepared everything for my 3 sessions, especially the slides (linked below) but also the exercises and examples and a virtual machine image for the Snap workshop.
 
 See the [schedules](https://events.gnome.org/event/101/timetable/#all).
@@ -32,7 +34,7 @@ On Tuesday I will get to Riga, meet my colleagues and friends, attend some excit
 
 **[The New Printing GUIs: GNOME Control Center and Common Print Dialog Backends](https://events.gnome.org/event/101/contributions/461/)**
 
-Wed, July 26, 10:00 EEST, room 2
+Wed, July 26, **11:00 EEST**, room 2
 
 [Slides](https://events.gnome.org/event/101/contributions/461/attachments/195/385/guadec-2023-new-architecture-demo.pdf)
 
@@ -40,7 +42,7 @@ Right on the first day I will talk about the state of the art of the printing GU
 
 **[Your app everywhere, just in a Snap! (Workshop)](https://events.gnome.org/event/101/contributions/460/)**
 
-Sat, July 29, 14:15 EEST, room 1 (**Update**)
+Sat, July 29, **15:15 EEST**, room 1 (**Update**)
 
 [Slides](https://events.gnome.org/event/101/contributions/460/attachments/194/380/Workshop%20Your%20app%20everywhere,%20just%20in%20a%20Snap!.pdf)
 
@@ -52,7 +54,7 @@ This GUADEC will get snappy! In this 2-hour interactive workshop you will learn 
 
 **[GNOME/GTK Printing BoF](https://events.gnome.org/event/101/contributions/535/)**
 
-Sun, July 30, 12:30 EEST, room 3
+Sun, July 30, **13:30 EEST**, room 3
 
 [Slides](https://events.gnome.org/event/101/contributions/535/attachments/244/387/guadec-2023-gnome-gtk-printing-bof.pdf)
 
