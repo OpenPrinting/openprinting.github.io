@@ -5,29 +5,32 @@ toc_sticky: true
 h_range: [1,3]
 ---
 
-**This document will be a user manual, containing information about installing drivers provided as Printer/Scanner Applications, installing the CUPS Snap, configuring and using Web Interface options, and finally use the printer or scanner to print and scan respectively. In case your device has a driverless functionality and you choose to use it, you don't need a Printer/Scanner Application.**
+**This document is a user manual, containing information about installing drivers provided as Printer/Scanner Applications, installing the CUPS Snap, configuring and using web interface options, and finally use the printer or scanner to print and scan respectively.**
 
 ## Introduction
 
-The user is relieved from most of the complexities as compared to the manufacturer and OpenPrinting in this switch to new technology. They are just required to install the driver provided as a Printer/Scanner Application and use the same to get their devices working.
+The user is relieved from most of the complexities arising from classic CUPS printer drivers, like needing packages for their particular distro (or at least compatible with it). With new format for printer drivers they just need to install the driver provided as a Printer/Scanner Application (based on the manufacturer and model) and use the same to get their devices working.
 
 Further, many manufacturer's devices have options that cannot be translated into IPP attributes. So the users can change their printer/scanner properties through the Web GUI provided with the Printer/Scanner Application.
 
 
 ## Before we start
 
-The Printer/Scanner Application which you are required to use depends on your printer's manufacturer, model and classic driver's availability in your distribution. We in OpenPrinting implement printer applications covering printer drivers which are available in Ubuntu to provide retrofitting (to keep the old devices working, but without adding new features) support for older devices currently supported in distributions, and we implement the Legacy Printer Application for devices, which drivers are no longer supported by the manufacturer, they aren't in distributions for various reasons (no open source license, no public source code, nobody packaged it...). The Legacy Printer Application is able to find the driver by lookup once the classic driver is installed via package manager or driver's PPD can be uploaded into printer application via its web interface.
+**If you have a modern, driverless IPP printer or scanner (AirPrint, Mopria, IPP Everywhere, Wi-Fi Direct Print), you do not need any Printer/Scanner Application.**
 
-We in OpenPrinting provide Printer Applications as Snaps, so all manuals contain Snap related information. However distributions might provide Printer Applications packaged under classic distribution systems like DEB or RPM, or by another container solutions, f.e. Podman or OCI containers. The exception is the Legacy Printer Application, which cannot be containerized due its nature, so it is part of [pappl-retrofit](https://github.com/OpenPrinting/pappl-retrofit/) and can be shipped only by classic distribution systems.
+The Printer/Scanner Application you need to use depends on your printer's manufacturer, model and which classic driver supports it. We at OpenPrinting have developed Printer Applications covering printer drivers which are available in Debian/Ubuntu to provide retro-fitting (to keep the old devices working, but without adding new features) support for older devices which are currently supported in the distributions, and we provide the Legacy Printer Application for devices, which drivers are no longer supported by the manufacturer or they aren't in distributions for various reasons (no open-source license, no public source code, nobody packaged it...). The Legacy Printer Application is able to find classic drivers installed on the system and print on the supported printers. The PostScript Printer Application also allows uploading PPD files for printers via its web administration interface.
 
-All printer applications in OpenPrinting are only for retrofitting purposes and all new drivers have to be written as Native Printer/Scanner Applications, which can be shipped as a container (Snap, Podman, OCI containers) or under classic distribution systems. The Native Printer Applications can be provided by the printer's manufacturer or by community which have access to the printer.
+We at OpenPrinting provide Printer Applications as Snaps, so these manuals contain Snap-related information. However distributions might provide Printer Applications packaged under classic packaging systems like DEB or RPM, or by another container solution, f.e. Podman or OCI containers. The exception is the Legacy Printer Application, which cannot be containerized due to its nature, so it is part of [pappl-retrofit](https://github.com/OpenPrinting/pappl-retrofit/) and can be shipped only by classic packaging systems.
 
-### User stories
+All the four Printer Applications currently available at OpenPrinting are only for retrofitting purposes and any new drivers should be written as native Printer/Scanner Applications, which can be shipped as a container (Snap, Podman, OCI containers) or via classic packaging systems. The Native Printer Applications can be provided by the printer's manufacturer or by community developers who have access to the printer.
 
-As a user, you can be in the situations below, so we provide best practices how to solve your situation (we don't include choosing driverless standards, because it is expected you want to use a printer application at this point):
+### What printer application do you need?
 
-* I need a printer application and I didn't install any driver from the internet for the printer in the past - your classic driver was provided in your distribtution, so OpenPrinting Printer Applications covers your device - check your container (SnapCraft/Podman registry) or classic repositories for them,
-* I need a printer application and I downloaded precompiled drivers from printer's manufacturer or from somewhere else in the past - check your driver's source whether it provides a Native Printer Application for the printer and if it doesn't, use the Legacy Printer Application.
+In case you require a classic driver, there are two ways depending on the source of your driver:
+
+1. For your printer you have used a driver which came with your distribution. Thn one of the Printer Applications at OpenPrinting contains it.
+
+2. For your printer you used a driver which is not in any package in your distribution, a proprietary driver from the printer's manufacturer for example. Install the Legacy Printer Application and it will see your classically installed driver and will use it.
 
 ## Installation
 
