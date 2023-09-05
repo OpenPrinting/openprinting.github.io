@@ -26,7 +26,7 @@ Meet us in Mandi ...
 ## Opportunitiy Open Source in the IIT Mandi, India
 Now there are only 2 days missing before we all meet on the [Opportunity Open Source](https://events.canonical.com/e/mandi2023) in the Indian Institute of Technology Mandi in Northern India.
 
-The [final schedules](https://events.canonical.com/e/mandi2023/timetable) are published now and we got exceptional sessions together to introduce the students to the amazing world of Open Source.
+The [final schedules](https://events.canonical.com/event/35/timetable/?layout=room#20230908.detailed) are published now and we got exceptional sessions together to introduce the students to the amazing world of Open Source.
 
 We start Friday afternoon, at 3pm IST (Indian Standard Time, UTC+5:30) or 9:30am UTC. After a short introduction by Aveek and me Aveek will explain what Open Source and free software exactly means, for those who are new to the scene. Then we will hear some introducing words from Kate Stewart from the Linux Foundation and the Zephyr project, before I tell what OpenPrinting is, how it started, and what we are currently doing.
 
@@ -52,7 +52,7 @@ After Mandi in the north of India I will directly go to Kochi in the south, to t
 
 My two proposals got both accepted, and the event's [schedules](https://debconf23.debconf.org/schedule/) are published.
 
-**Opportunity Open Source conference in the IIT Mandi, India: Motivating people to be a part of us!**
+**[Opportunity Open Source conference in the IIT Mandi, India: Motivating people to be a part of us!](https://debconf23.debconf.org/talks/38-opportunity-open-source-conference-in-the-iit-mandi-india-motivating-people-to-be-a-part-of-us/)**
 
 **Tuesday, Sep 12, 10:30 - 11:15 IST, Anamudi Room**
 
@@ -60,7 +60,7 @@ This talk is about how we have organized the conference, the challenges, and nat
 
 So everyone interested in running a free software conference and/or participating in the Google Summer of Code is welcome to participate in this session.
 
-**The New Architecture for Printing and Scanning on Debian**
+**[The New Architecture for Printing and Scanning on Debian](https://debconf23.debconf.org/talks/42-the-new-architecture-for-printing-and-scanning-on-debian/)**
 
 **Saturday, Sep 16, 12:00 - 12:45 IST, Anamudi Room**
 
