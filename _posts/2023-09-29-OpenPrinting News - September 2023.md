@@ -46,7 +46,7 @@ But no worries, [she is at **Thunderbird** now](https://ubuntu.social/@killyourf
 
 Also Monica Ayhens-Madon, especially known as host of the [Ubuntu Community Office Hours](https://www.youtube.com/watch?v=diB3wm4HB1Y) back in 2021, who left Canonical already last year, [is now at Thunderbird](https://ubuntu.social/@communiteatime@fosstodon.org/111144927870000249), at least part-time.
 
-And by the way, I have shown here last year a printer which prints on beer foam, in the Guinness Storehouse in Dublin, Ireland, and I have [seen it again in Vienna](https://ubuntu.social/@till/111137094247325237), where I live. It's a [Ripple Maker](https://www.drinkripples.com/), controlled by its touch screen and a web app, most probably not a driverless IPP printer.
+And by the way, I have shown here already, [exactly a year ago](/OpenPrinting-News-September-2022/), a printer which prints on beer foam, in the Guinness Storehouse in Dublin, Ireland, and I have [seen it again in Vienna](https://ubuntu.social/@till/111137094247325237), where I live. It's a [Ripple Maker](https://www.drinkripples.com/), controlled by its touch screen and a web app, most probably not a driverless IPP printer.
 
 **Special tip:** You are on **NixOS**? Printing is not enabled by default there. Please follow [these instructions](https://nixos.wiki/wiki/Printing) (Thanks, [Linux Matters](https://linuxmatters.sh/) team for the hint in [episode #13](https://linuxmatters.sh/13/)).
 
