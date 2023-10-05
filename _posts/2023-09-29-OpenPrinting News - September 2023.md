@@ -78,7 +78,9 @@ But the attendees had no problem with all that and were patient with us. They li
 
 **Special thanks to Canonical's Community Team, Philipp Kewisch, Mauro Gaspari, and Aaron Prisk**, for all the support, the swag, and especially for hosting my event site on Canonical's Indico and for letting me accept remote speakers, live-stream, and record using Canonical's StreamYard and Ubuntu OnAir.
 
-And we have asked for those who want to participate in an Indian Ubuntu Local Community (LoCo) to sign up via a QR code and ~30 actually signed up! In total, including DebConf we got even 47 sign-ups. Thanks a lot already now to everyone having signed up.
+**And thanks a lot to all the speakers, volunteers in the rooms, and the exceptional audience!**
+
+And we have asked for those who want to participate in an Indian Ubuntu Local Community (LoCo) to sign up via a QR code and ~30 actually signed up! In total, including DebConf we got even 47 sign-ups. **Thanks a lot already now to everyone having signed up.**
 
 **Here are all the sessions with links to slides and recordings:**
 
