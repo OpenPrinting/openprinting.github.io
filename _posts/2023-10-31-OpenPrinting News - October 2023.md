@@ -4,7 +4,7 @@ layout: single
 toc: true
 toc_sticky: true
 author: Till
-excerpt: Ubuntu Summit 2023 in Riga, GSoC 2023, CPDB CUPS backend Snap, libcups3 support, PAPPL 1.4.2, CUPS 2.4.7
+excerpt: Ubuntu Summit 2023 in Riga, GSoC 2023, CPDB CUPS backend Snap, libcups3 support, PAPPL 1.4.2, CUPS 2.4.7, libcups 3.0b2
 ---
 Probably many of you are using a modern driverless multi-function printer and scanner device, and it does not only print but also scan perfectly on your Linux system, or you have your driverless printer connected via USB and it also just works without any device-model-specific driver.
 
@@ -197,3 +197,26 @@ Also PAPPL received a bug fix release, 1.4.2.
 - Fixed loading of previous state ([Issue #298](https://github.com/michaelrsweet/pappl/issues/298))
 
 By the way, the 1.4.x series of PAPPL can be built with either libcups2 or libcups3, while the master branch (2.x) is libcups3-only.
+
+
+## libcups 3.0b2
+And last but not least, Michael also released the second beta of libcups3, for more API modernization, improvement, and clean-up.
+
+- Added the `ipptransform` command to replace/upgrade the `ippevepcl` and
+  `ippeveps` commands ([Issue #65](https://github.com/OpenPrinting/libcups/issues/65))
+- Added `cupsFormDecode` and `cupsFormEncode` APIs ([Issue #49](https://github.com/OpenPrinting/libcups/issues/49))
+- Added `cupsJWT` APIs to support JSON Web Tokens ([Issue #50](https://github.com/OpenPrinting/libcups/issues/50), [Issue #52](https://github.com/OpenPrinting/libcups/issues/52))
+- Added `ippAddCredentialsString` and `ippCopyCredentialsString` APIs
+  ([Issue #58](https://github.com/OpenPrinting/libcups/issues/58))
+- Added `cupsCreateCredentialsRequest` and `cupsSignCredentialsRequest` APIs and
+  updated `cupsCreateCredentials` API to better support X.509 certificates
+  ([Issue #59](https://github.com/OpenPrinting/libcups/issues/59))
+- Updated the configure script to add `_FORTIFY_SOURCE=3` (previous level was 2)
+  when not using address sanitizer and when it hasn't already been added
+  ([Issue #51](https://github.com/OpenPrinting/libcups/issues/51))
+- Updated the `httpAddrListen` function to use the maximum backlog value.
+- Fixed ipptool limit on the size of an attribute value that would be printed
+  ([Issue #5](https://github.com/OpenPrinting/libcups/issues/5))
+- Fixed some configure script issues ([Issue #48](https://github.com/OpenPrinting/libcups/issues/48))
+- Fixed JSON output bug in ipptool.
+- Fixed `CUPS_DNSSD_IF_INDEX_LOCAL` when using Avahi.
