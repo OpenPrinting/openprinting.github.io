@@ -168,7 +168,7 @@ All the libcups3-support-related changes are done now and available in the maste
 
 Scanner Applications being forced to use libcups3 instead of libcups2 are no problem at all if they are provided as Snaps or otherwise packaged in some sandboxed format (like Docker/OCI containers). In all these formats each application brings its own dependencies (needed libraries, ...), so the system can use libcups2 while the encapsulated Scanner Application uses libcups3. Even classically installed the Scanner Applications can use libcups3, as libcups2 and libcups3 can co-exist on classically installed distributions, at least if they use DEB or RPM. Even more this works as current libcups3 uses the `3` actually in its name, having the library file `libcups3.so.3` and the compiler argument `-lcups3`.
 
-Only disadvantage against using libcups2 is that libcups3 is still in its beta phase, but Michael Sweet's code quality is very high, so it is not such a problem.
+Only disadvantage against using libcups3 is that libcups3 is still in its beta phase, but Michael Sweet's code quality is very high, so it is not such a problem.
 
 
 ## CUPS 2.4.7
