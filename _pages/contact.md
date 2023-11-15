@@ -23,7 +23,7 @@ author_profile: false
     <p>
         <h1><abbr title="Internet Relay Chat">IRC:</abbr></h1>
         <ul>
-            <li>#openprinting on Freenode</li>
+            <li>#openprinting on libera.chat</li>
         </ul> 
     </p> 
     <h1>GitHub</h1>
