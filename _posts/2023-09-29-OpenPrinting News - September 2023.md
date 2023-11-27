@@ -58,6 +58,8 @@ So let us now start with what we did at OpenPrinting in September ...
 ## Opportunitiy Open Source in the IIT Mandi, India
 **My talk about the conference on the DebConf 2023: "[Opportunity Open Source conference in the IIT Mandi, India: Motivating people to be a part of us!](https://debconf23.debconf.org/talks/38-opportunity-open-source-conference-in-the-iit-mandi-india-motivating-people-to-be-a-part-of-us/)" ([video](https://meetings-archive.debian.net/pub/debian-meetings/2023/DebConf23/debconf23-216-opportunity-open-source-conference-in-the-iit-mandi-india-motivating-people-to-be-a-part-of-us.av1.webm), [slides](https://salsa.debian.org/debconf-team/public/share/debconf23/-/blob/main/slides/38-opportunity-open-source-conference-in-the-iit-mandi-india-motivating-people-to-be-a-part-of-us/talk-opportunity-open-source.pdf), [all files/photos](https://salsa.debian.org/debconf-team/public/share/debconf23/-/tree/main/slides/38-opportunity-open-source-conference-in-the-iit-mandi-india-motivating-people-to-be-a-part-of-us))**
 
+**My lightning talk about the conference on the Canonical Engineering Sprint: [Opportunity Open Source conference in the IIT Mandi, India: Motivating people to be a part of us!](https://www.youtube.com/watch?v=Kf2V9xpLXHo)**
+
 **Report by Dimple Kariakose on [Ubuntu Discourse](https://discourse.ubuntu.com/t/opportunity-open-source-conference-report/)**
 
 **Mastodon: [#OpportunityOpenSource](https://ubuntu.social/tags/OpportunityOpenSource)**
