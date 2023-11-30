@@ -32,6 +32,8 @@ By the way, I had already visited the museum many years ago. The [Babbage Differ
 
 
 ## Ubuntu Summit - Videos, pictures, blogs, podcasts ...
+**Update: Impressions of the event: [The Aftermovie!](https://www.youtube.com/watch?v=8XF6jR7XzXM)**
+
 The first [Ubuntu Summit](https://events.canonical.com/event/2/overview) was really one of the greatest and most awesome conferences I have experienced. As reported here already in the [last month](https://openprinting.github.io/OpenPrinting-News-November-2022/#the-first-ubuntu-summit-was-a-success) I and many others have put a lot of work into it and the result was overwhelming ...
 
 ### Recordings

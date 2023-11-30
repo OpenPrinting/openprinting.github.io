@@ -81,6 +81,8 @@ And having brought along my tripod and my external webcam for these pre-meetings
 ### And the conference finally started ...
 **Playlist of all recordings on [YouTube](https://www.youtube.com/playlist?list=PL-qBHd6_LXWYutOfi0r_jzyqHGmq1vIhf).**
 
+**Update: Impressions of the event: [The Aftermovie!](https://www.youtube.com/watch?v=8XF6jR7XzXM)**
+
 On the Sunday before the conference, in the morning, Deepak arrived and I had a walk through Prague with him and in the evening then we all met on the pre-conference reception in the rooftop bar of the hotel, finally getting together with all the friends and (former) colleagues from the Linux community, including those I have given a nice review for their submission and those I have lined up for the Snap series. And you remember me writing here [three months ago](/OpenPrinting-News-August-2022/#using-windows-we-can-help-you-too) about Heather Ellsworth introducing me to others back in 2019 ("This is Till, making printing just work, on ...")? Now she introduced me to [Cassidy Blaede](https://events.canonical.com/event/2/contributions/4/):
 
 > This is Till, he makes printing just work, on any platform.
