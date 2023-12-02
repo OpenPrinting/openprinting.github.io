@@ -111,7 +111,7 @@ Naturally there are many content creators, bloggers, podcasters, YouTubers, ... 
 Probably this list will get longer next month.
 
 
-## FOSDEM 2023
+## FOSDEM 2024
 After many, many years I will attend [FOSDEM](https://fosdem.org/2024/) again! The last time I attended it was in the early 2000s [when I worked at MandrakeSoft in Paris](/history/), having only 90 min by train to get there. From Vienna I will have to take a 2-hour flight.
 
 FOSDEM (Free and Open Source DEveloper's Meeting) is a large conference. It is registration-free, anyone can just walk in and attend all the talks. There are more than 8000 visitors to enjoy more than 600 sessions in [36 rooms](https://fosdem.org/2024/schedule/rooms/) in parallel and [~60 non-commercial exhibition booths](https://fosdem.org/2024/news/2023-11-20-accepted-stands-fosdem-2024/).
