@@ -67,7 +67,11 @@ Still making well use of the hallway track I succeeded to attend many sessions, 
 
 But most important of all is the hallway track (including any evening outings, meals, bar hangouts, ...).
 
-For me it started already one day before the official opening of the Summit, as I arrived already on Thursday, at lunch time, and so I already attended the hallway track of the last days of Canonical's internal Product/Roadmap Sprint, where Canonical's managers meet twice a year for one week each time. So several colleagues from Canonical I have met already there and so got more time to meet old and new friends from the community on the actual Summit days.
+For me it started already one day before the official opening of the Summit, as I traveled already on Thursday, the day before the event started, to make sure to be there in time, even if the airline messes up my flight.
+
+I had an early morning flight, directly from Vienna to Riga, and there I met already **Andrei Iosif** of Canonical's Security Team. So this was not actually a hallway session but more an inflight session. We happened to have seats close to each other and swapping with one other passenger we were sitting together. He told me about [Fuzz testing](https://en.wikipedia.org/wiki/Fuzzing), a special method to test software with random input to find crasher bugs, buffer overflows and similar which can cause severe security risks. He introduced me to [Google OSS-Fuzz](https://google.github.io/oss-fuzz/) a free-of-charge service for free software projects and the possibility to fuzz-test OpenPrinting projects.
+
+I arrived in the hotel at lunch time, and so I already attended the hallway track of the last days of Canonical's internal Product/Roadmap Sprint, where Canonical's managers meet twice a year for one week each time. So several colleagues from Canonical I have met already there and this way got more time to meet old and new friends from the community on the actual Summit days.
 
 Thursday evening I finally met with non-Canonical people for the first time on this trip. We had dinner in the old town of Riga, mainly colleagues of Canonical's Desktop Team, like Ken VanDine, Sebastien Bacher, Jesús Soto, Jean-Baptiste Lallement, ... also Jürgen Gmach of the Launchpad Team, but also several non-Canonical people, as for example Alan Pope ("Popey") or Martin Wimpress ("Wimpy").
 
