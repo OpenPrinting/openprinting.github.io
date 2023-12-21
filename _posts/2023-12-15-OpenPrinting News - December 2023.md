@@ -93,13 +93,15 @@ I have also updated my Ubuntu Summit report from [last month](/OpenPrinting-News
 
 
 ## FOSDEM 2024
-FOSDEM is coming closer, my flights to Brussels are booked, on Telegram we are already talking a lot about who attends and that we will all meet there, several of the DevRoom organizers have already selected the talks.
+[FOSDEM](https://fosdem.org/2024/) is coming closer, my flights to Brussels are booked, on Telegram we are already talking a lot about who attends and that we will all meet there, several of the DevRoom organizers have already selected the talks.
+
+**On the [Schedules page](https://fosdem.org/2024/schedule/) follow the links to the schedules of each room, full schedules for each day, in which room is which track, ...**
 
 Of [my 6 proposals](/OpenPrinting-News-November-2023/#fosdem-2024) which I have submitted one is accepted now, 2 are rejected and 3 still pending.
 
 The 2 rejected ones are the report about the [Opportunity Open Source conference](/OpenPrinting-News-September-2023/#opportunitiy-open-source-in-the-iit-mandi-india) which I have organized in India, as full-size talk for the Community DevRoom and my [workshop about packaging applications as Snaps (snapping)](/OpenPrinting-News-November-2023/#snap-workshops) in the Distributions DevRoom. There was a really high amount of propoals submitted for these rooms, 89 for Community! And each DevRoom takes place on only one single day.
 
-My proposal "Desktop Linux, as easy as a smartphone! Just in a Snap!", about Snap, Ubuntu Core, and Ubuntu Core Desktop, in the Distributions DevRoom got accepted, but only as a short 25-min talk, instead of the originally proposed 55 min. It got scheduled for Sunday, Feb 4, 13:30 - 13:55. Not having gotten the Ubuntu/Canonical booth accepted we have this way at least one representation of Snap and Ubuntu Core Desktop on the conference. I and some colleagues will also demo Ubuntu Core Desktop in the DevRoom and in the hallways.
+My proposal "Desktop Linux, as easy as a smartphone! Just in a Snap!", about Snap, Ubuntu Core, and Ubuntu Core Desktop, in the [Distributions DevRoom](https://fosdem.org/2024/schedule/track/distributions/) got accepted, but only as a short 25-min talk, instead of the originally proposed 55 min. It got scheduled for [Sunday, Feb 4, 13:30 - 13:55](https://fosdem.org/2024/schedule/track/distributions/). Not having gotten the Ubuntu/Canonical booth accepted we have this way at least one representation of Snap and Ubuntu Core Desktop on the conference. I and some colleagues will also demo Ubuntu Core Desktop in the DevRoom and in the hallways.
 
 The other 3 proposals, 2 lightning talks, about the Opportunity Open Source and about saving legacy printers under Windows with WSL and Printer Applications, and the full-size talk about OpenPrinting (in the main track) are still pending.
 
