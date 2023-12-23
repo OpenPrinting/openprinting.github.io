@@ -35,6 +35,8 @@ So let us dive into what happened at OpenPrinting in November ...
 
 
 ## Ubuntu Summit 2023 in Riga
+**Update: [Complete playlist of all 88 sessions](https://www.youtube.com/playlist?list=PL-qBHd6_LXWZqbxr3542fZs_IMn0gAb2B)!**
+
 **Recordings from the plenary room: [Day 1, part 1](https://www.youtube.com/watch?v=mem7_kIG8NM), [Day 1, part 2](https://www.youtube.com/watch?v=YH5Sub7bgIc), [Day 2](https://www.youtube.com/watch?v=cXxlFWGAelc), [Day 3](https://www.youtube.com/watch?v=XIGxKyekvBQ)**
 
 **And here is the Ubuntu Summit Advent Calendar: Recordings of the individual sessions in all rooms will be posted from today on until the end of this year on the [Ubuntu Summit 2023 playlist](https://www.youtube.com/playlist?list=PL-qBHd6_LXWZqbxr3542fZs_IMn0gAb2B) on Ubuntu OnAir. Open 3 new videos every day (workshops on Wednesdays) for the coming 30 days. They are all edited by a professional editing team.**
