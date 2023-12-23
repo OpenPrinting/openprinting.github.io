@@ -142,17 +142,17 @@ And if you like to be a GSoC contributor next year, please contact me (till AT l
 We had some interesting discussions in the last weeks. See the [mailing list archives](https://lore.kernel.org/printing-architecture/). The following links are to the initial posting of each thread:
 
 - [PDFio: Replace QPDF by PDFio in libcupsfilters as GSoC project?](https://lore.kernel.org/printing-architecture/F8540CAC-A93F-42DD-9E1A-D46746C92283@msweet.org/T/#m7d696e04ffe21f01388318451f76ca9238c0fb41): Should we replace the C++ PDF manipulation library QPDF by the standard-C PDFio written by Mike Sweet?
-- [RFC: Pantum M7300FDW and similar](https://lore.kernel.org/printing-architecture/4b008b1a-8f68-4e5e-9a4a-e3e6d7473323@alteholz.de/T/#t): Alexander Pevzner has discovered a firmware bug in Pantum printers which breaks their driverless IPP printing support. Should one implement a workaround here?
+- [RFC: Pantum M7300FDW and similar](https://lore.kernel.org/printing-architecture/SYBP282MB26176D7E8D1C09528DDBCFF7878CA@SYBP282MB2617.AUSP282.PROD.OUTLOOK.COM/T/#mc612d645ab72016a8e9a4f4e9778a0c7bade3c33): Alexander Pevzner has discovered a firmware bug in Pantum printers which breaks their driverless IPP printing support. Should one implement a workaround here?
 - [github.com/OpenPrinting/goipp 1.1.0 and ipp-usb 0.9.24 announce](https://lore.kernel.org/printing-architecture/3BC27CB9-23C9-4D9B-8862-693F255177B6@msweet.org/T/#m6d8ab65c40702e2dedf2672456a7a8bc5c997e56): Alexander Pevzner resumes development of our IPP-over-USB implementation ipp-usb and goipp
 
 If you want to participate and you are not subscribed, please subscribe after the migration.
 
 **Mailing list moving**
 
-**Update: The move has been completed:
-- e-mail: printing-architecture AT lists DOT linux DOT dev
-- Archive: [https://lore.kernel.org/printing-architecture/](https://lore.kernel.org/printing-architecture/)
-- Subscribing/Unsubscribing [instructions](https://subspace.kernel.org/subscribing.html)**
+**Update: The move has been completed:**
+- **e-mail: printing-architecture AT lists DOT linux DOT dev**
+- **Archive: [https://lore.kernel.org/printing-architecture/](https://lore.kernel.org/printing-architecture/)**
+- **Subscribing/Unsubscribing [instructions](https://subspace.kernel.org/subscribing.html)**
 
 The OpenPrinting mailing list, printing-architecture AT lists.linuxfoundation DOT org, is getting moved to a new system. The old e-mail address stays working and all subscribers and also the list archives are automatically migrated to the new list.
 
