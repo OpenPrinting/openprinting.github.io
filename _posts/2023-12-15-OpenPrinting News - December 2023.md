@@ -87,7 +87,9 @@ The production of the Destination Linux episode got scheduled on Sunday, Dec 10,
 
 And if also want to see many more people doing great things with free software, on the Ubuntu Summit Advent Calendar nearly all the doors are open now, only a few sessions are still missing. Find the recordings of the individual sessions in all rooms on the [Ubuntu Summit 2023 playlist](https://www.youtube.com/playlist?list=PL-qBHd6_LXWZqbxr3542fZs_IMn0gAb2B) on [Ubuntu OnAir](https://www.youtube.com/@UbuntuOnAir/videos).
 
-I have also updated my Ubuntu Summit report from [last month](/OpenPrinting-News-November-2023/#ubuntu-summit-2023-in-riga) with links to all videos and shows which got released and continue to do so.
+I have also updated my Ubuntu Summit report from [last month](/OpenPrinting-News-November-2023/#ubuntu-summit-2023-in-riga) with links to all videos and shows which got released.
+
+**Complete [playlist of all sesions](https://www.youtube.com/playlist?list=PL-qBHd6_LXWZqbxr3542fZs_IMn0gAb2B)**
 
 **Mastodon: [#UbuntuSummit](https://ubuntu.social/tags/UbuntuSummit), [#UbuntuSummit2023](https://ubuntu.social/tags/UbuntuSummit2023)**
 
