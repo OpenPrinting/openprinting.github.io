@@ -262,7 +262,7 @@ Anybody reading here, you do not need to wait for the materials landing on snapc
 2. [**Daemon Snapper's Workshop**](https://events.canonical.com/event/2/contributions/42/): Snapping daemons and system applications ([slides](https://events.canonical.com/event/2/contributions/42/attachments/15/23/Daemon%20Snapper's%20Workshop.pdf))
 3. [**Improving Snap maintenance: Automating tag updates on new upstream releases of the app**](https://events.canonical.com/event/31/contributions/217/): GitHub workflow to automatically update your Snap when an upstream source has a new release ([video](https://www.youtube.com/watch?v=tL4DBSSdBHU), [slides](https://events.canonical.com/event/31/contributions/217/attachments/126/198/Workshop%20Automating%20Snap%20updates%20on%20new%20upstream%20releases.pdf))
 
-Links to the exercises and examples are on the slides. You need to have `snapcraft` installed and working on your machine, follow the instructions in the "Setup" section of the first workshop and use the [virtual machine (~6 GB)](https://drive.google.com/file/d/1kkxZ8GE3_UtG7orl5v2d4x_T4FhMUcbb/view?usp=sharing) if needed.
+Links to the exercises and examples are on the slides. You need to have `snapcraft` installed and working on your machine, follow the instructions in the "Setup" section of the first workshop or use the [virtual machine (~6 GB)](https://drive.google.com/file/d/1kkxZ8GE3_UtG7orl5v2d4x_T4FhMUcbb/view?usp=sharing) if needed.
 
 
 ## CPDB CUPS backend Snap
