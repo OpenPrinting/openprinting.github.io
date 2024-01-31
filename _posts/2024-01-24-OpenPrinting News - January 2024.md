@@ -62,7 +62,7 @@ But in recent years, HP tried to enforce more and more their [razor-and-blades](
 
 They not only sell ink subscriptions where the printer "calls home" through the internet so that the user gets automatically sent new cartridges when the current ones are nearly used up but also started to add more measures against using third-party supplies. 
 
-Especially they [automatically install firmware updates via the internet adding these new measures to printers which are already around](https://ubuntu.social/@netspooky@haunted.computer/110832978619992298), without any warning to the user, making the printer suddenly stop working due to the third-party cartridges in use. This practise even led to a lawsuit against HP, and HP responds telling that it is for security reasons, as [third-party cartridges could contain viruses which infect the printer and compromise the user's network](https://arstechnica.com/gadgets/2024/01/hp-ceo-blocking-third-party-ink-from-printers-fights-viruses/). They call these updates "Dynamic Security".
+Especially they [automatically install firmware updates via the internet adding these new measures to printers which are already around](https://arstechnica.com/gadgets/2023/03/customers-fume-as-hp-blocks-third-party-ink-from-more-of-its-printers/), without any warning to the user, making the printer suddenly stop working due to the third-party cartridges in use. This practise even led to a lawsuit against HP, and HP responds telling that it is for security reasons, as [third-party cartridges could contain viruses which infect the printer and compromise the user's network](https://arstechnica.com/gadgets/2024/01/hp-ceo-blocking-third-party-ink-from-printers-fights-viruses/). They call these updates "Dynamic Security".
 
 But if such a thing would be possible, it is a clear sign of bad design, as it would mean that cartridges contain executable code which the printer executes, or at least a way to inject code into the printer via forged data on the cartridge, but this requires a vulnerability in the printer's firmware plus a rather high amount of storage on the cartridge. A cartridge's chip is expected to contain some cryptographic signature and/or copyrighted data from HP to identify itself as original, plus info about the cartridges capabilities, perhaps also color calibration tables. All this should not require such a lot of storage, and well-engineered software can reliably read the data and reject it if not in the correct format. In addition, it is also not proven that such an attack ever happened.
 
@@ -103,7 +103,7 @@ On Sunday, February 4, 11:00 – 11:50 CET, in K.1.105 (La Fontaine)
 
 Main Track
 
-OpenPrinting: What it is, [how it emerged](/history/), [what we are doing](https://wiki.linuxfoundation.org/gsoc/google-summer-code-2024-openprinting-projects), what are our challenges, what are we in need of ...
+OpenPrinting: What it is, [how it emerged](/history/), [what we are doing](https://wiki.linuxfoundation.org/gsoc/google-summer-code-2024-openprinting-projects#introduction), what are our challenges, what are we in need of ...
 
 Zdenek Dohnal, printing maintainer at RedHat, and I will give an overview of our organization and how we make printing just work.
 
@@ -170,7 +170,8 @@ He started modifying the 4 Snaps of the retro-fitting Printer Applications accor
 And here is the point where he really showed his engagement, as he solved all these problems.
 
 **foomatic-db**
-foomatic-db, the printer/driver database, is used by 2 of the 4 Printer Application Snaps, the PostScript Printer Application and the Ghostscript Printer Application, for the former providing manufacturer PPD files for PostScript printers and for the latter providing the data for building PPD files for all the built-in printer drivers of Ghostscript ad even some more drivers.
+
+[foomatic-db](https://github.com/OpenPrinting/foomatic-db/), the printer/driver database, is used by 2 of the 4 Printer Application Snaps, the PostScript Printer Application and the Ghostscript Printer Application, for the former providing manufacturer PPD files for PostScript printers and for the latter providing the data for building PPD files for all the built-in printer drivers of Ghostscript ad even some more drivers.
 
 As foomatic-db is pure data, not containing any code, we have never issued official releases of it. For easier handling by OS distributions we have a cron job which creates a tarball of it, once a day, versioned by the date of the day. There are no release tags in the repo.
 
