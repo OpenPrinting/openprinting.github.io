@@ -105,7 +105,9 @@ Main Track
 
 OpenPrinting: What it is, [how it emerged](/history/), [what we are doing](https://wiki.linuxfoundation.org/gsoc/google-summer-code-2024-openprinting-projects#introduction), what are our challenges, what are we in need of ...
 
-Zdenek Dohnal, printing maintainer at RedHat, and I will give an overview of our organization and how we make printing just work.
+**(Update)** I will give an overview of our organization and how we make printing just work. I will also give a short overview on the planned development on CUPS and tell about [Windows Protected Print](/OpenPrinting-News-December-2023/#new-architecture-under-windows), the way Microsoft will switch to all-IPP printing in Windows.
+
+Zdenek Dohnal, printing maintainer at RedHat, originally wanted to participate, but unfortunately, he got sick and is not able to attend FOSDEM. We all wish him that he will get better soon.
 
 **[Desktop Linux, as easy as a smartphone! Just in a Snap!](https://fosdem.org/2024/schedule/event/fosdem-2024-1860-desktop-linux-as-easy-as-a-smartphone-just-in-a-snap-/)**
 
