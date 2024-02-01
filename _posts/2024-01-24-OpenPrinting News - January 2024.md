@@ -117,7 +117,9 @@ There are many [immutable distributions](https://ubuntu.com/blog/ubuntu-core-an-
 
 In this 25-min talk I will give a quick overview about how Snap, Ubuntu Core, and Ubuntu Core Desktop work, showing the advantages of a sandboxed packaging system which allows packaging everything, not only desktop apps, but also CLI apps, system and user daemons, desktop environemnts and even kernels, boot systems, and the immutable system core.
 
-During all the event there will also be several demos of Ubuntu Core Desktop, especially by Alan Pope ("Popey") on a [Steam Deck](https://popey.com/blog/2023/11/ubuntu-core-snapdeck/) and if all works well also by Philipp Kewisch, Community Team manager at Canonical, on an Intel NUC. I hope I will also find the time to set up/update an Ubuntu Core Desktop VM on my laptop.
+**(Update)** During all the event there will also be several demos of Ubuntu Core Desktop, I will have a virtual machine of it on my laptop, Philipp Kewisch (Community Team manager at Canonical) plans to bring an Intel NUC with it, and Alan Pope ("Popey") will perhaps bring also a demo. He has succeeded to install and run it on his [Steam Deck](https://popey.com/blog/2023/11/ubuntu-core-snapdeck/), but he is not sure whether he will bring this one.
+
+Note that we do not have an Ubuntu/Canonical booth. We will demo at the standing tables in the hallways, on Sunday most probably in front of the Distributions devroom (UA2.118, Henriot) where I will give my talk.
 
 So that's it from my presentations for now, but up to 2 lightning talks can still get added here ...
 
