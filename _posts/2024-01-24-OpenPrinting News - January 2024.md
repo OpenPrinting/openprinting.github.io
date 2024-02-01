@@ -103,6 +103,8 @@ On Sunday, February 4, 11:00 – 11:50 CET, in K.1.105 (La Fontaine)
 
 Main Track
 
+[Slides](https://fosdem.org/2024/events/attachments/fosdem-2024-1930-openprinting-we-make-printing-just-work-/slides/20807/talk-openprinting-2024_1f9Sa4r.pdf)
+
 OpenPrinting: What it is, [how it emerged](/history/), [what we are doing](https://wiki.linuxfoundation.org/gsoc/google-summer-code-2024-openprinting-projects#introduction), what are our challenges, what are we in need of ...
 
 **(Update)** I will give an overview of our organization and how we make printing just work. I will also give a short overview on the planned development on CUPS and tell about [Windows Protected Print](/OpenPrinting-News-December-2023/#new-architecture-under-windows), the way Microsoft will switch to all-IPP printing in Windows.
@@ -114,6 +116,8 @@ Zdenek Dohnal, printing maintainer at RedHat, originally wanted to participate, 
 On Sunday, February 4, 13:30 – 13:55 CET, in UA2.118 (Henriot)	
 
 Distributions Track
+
+[Slides](https://fosdem.org/2024/events/attachments/fosdem-2024-1860-desktop-linux-as-easy-as-a-smartphone-just-in-a-snap-/slides/20944/talk-snap-2024_XNtSTSC.pdf)
 
 There are many [immutable distributions](https://ubuntu.com/blog/ubuntu-core-an-immutable-linux-desktop) around, and several talks in the Distributions track are naturally about them, there will also be demos of several of them on the booths. But one immutable distribution is special as it is based on [Snap](https://snapcraft.io/about), actually an all-Snap distribution, [Ubuntu Core Desktop](https://discourse.ubuntu.com/t/ubuntu-core-desktop-deep-dive/), and a Distributions Track, and especially one on a conference with many Canonical and Ubuntu folks, should not omit this distribution. **And also [Snap got 10 years old](https://git.launchpad.net/snappy/commit/?id=48e0c2599f7580d107d478d1de49ed05487da840)!** (Thanks for the hint, Oliver Grawert)
 
