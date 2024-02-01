@@ -233,6 +233,18 @@ Pratyush Ranjan:
 
 
 ## Snap workshops
+**Workshop overview**
+
+No need to meet me giving a workshop on a conference, you can do them all at any time. Click the links in this section and get a great snapper ... [Snapcrafters](https://github.com/snapcrafters) and many upstream application projects need you ...
+
+1. [**Your app everywhere, just in a Snap!**](https://events.canonical.com/event/35/contributions/291/): Introduction into Snap packaging (snapping) with simple GNOME/GTK applications as example ([video](https://www.youtube.com/watch?v=jNG8m9hesEU), [slides](https://events.canonical.com/event/35/contributions/291/attachments/60/101/Workshop%20Your%20app%20everywhere,%20just%20in%20a%20Snap!.pdf))
+2. [**Daemon Snapper's Workshop**](https://events.canonical.com/event/2/contributions/42/): Snapping daemons and system applications ([slides](https://events.canonical.com/event/2/contributions/42/attachments/15/23/Daemon%20Snapper's%20Workshop.pdf))
+3. [**Improving Snap maintenance: Automating tag updates on new upstream releases of the app**](https://events.canonical.com/event/31/contributions/217/): GitHub workflow to automatically update your Snap when an upstream source has a new release ([video](https://www.youtube.com/watch?v=tL4DBSSdBHU), [slides](https://events.canonical.com/event/31/contributions/217/attachments/126/198/Workshop%20Automating%20Snap%20updates%20on%20new%20upstream%20releases.pdf))
+
+Links to the exercises and examples are on the slides. You need to have `snapcraft` installed and working on your machine, follow the instructions in the "Setup" section of the first workshop or use the [virtual machine (~6 GB, `*.qcow2`)](https://drive.google.com/file/d/1kkxZ8GE3_UtG7orl5v2d4x_T4FhMUcbb/view?usp=sharing) if needed.
+
+**How I got into giving Snap workshops**
+
 Back in mid-2022 when I joined the organization team of the Ubuntu Summit 2022 in Prague, I had a 3.5-hour 1:1 video call with the leader of the organization team, [Mauro Gaspari](https://discourse.ubuntu.com/t/mauro-gaspari-membership-application/), exchanging ideas of what we can do in this first Ubuntu Summit. And as he brought in that we could do 2-hour interactive workshops where attendees can try out the subject matter on their own laptops, I was immediately sold on that and formed the idea to do a **workshop series on how to package applications as Snaps**. Mauro liked this idea and [I started to work on making it reality](/OpenPrinting-News-November-2022/#the-making-of).
 
 And on the Ubuntu Summit 2022 in Prague, one year ago, [it actually has taken place](/OpenPrinting-News-November-2022/#and-the-conference-finally-started-): One [introduction panel](https://www.youtube.com/watch?v=ido6kGmSHWI) and 5 workshops. All the speakers, including me, have put a lot of effort in designing the workshops and especially also the accompanying examples/exercises. Too much for presenting this only one single time ...
@@ -251,18 +263,11 @@ Some people were complaining that we had no beginner's workshop for Snap on this
 
 So together with the "[Daemon Snapper's Workshop](https://events.canonical.com/event/2/contributions/42/)" ([slides](https://events.canonical.com/event/2/contributions/42/attachments/15/23/Daemon%20Snapper's%20Workshop.pdf)) I have now a repertoire of 3 (see below) and I will continue to give them on conferences and Engineering Sprints.
 
+**Soon on snapcraft.io**
+
 As one can easily also do these workshops by oneself at home, studying the slide decks and trying out the linked examples, I thought that the slides and examples should be made available on a place in the internet where interested people can easily find them. This should be ideally [snapcraft.io](https://snapcraft.io/) as the central place of the official Snap documentation. So I asked Graham Morrison, responsible for the documentation of Snap, whether we could integrate them there, and he agreed. We also plan to put everything onto a GitHub repo of Snap. And, as we started recording workshops on this year's Ubuntu Summit, we will link videos, for now at least of the initial workshop and the workshop about Snap update automation.
 
 And this will not only help to learn snapping, also everyone who likes to give a Snap workshop on a conference by himself could make use of these materials.
-
-Anybody reading here, you do not need to wait for the materials landing on snapcraft.io. Click the links in this section and get a great snapper ... [Snapcrafters](https://github.com/snapcrafters) and many upstream application projects need you ...
-
-**Workshop overview**
-1. [**Your app everywhere, just in a Snap!**](https://events.canonical.com/event/35/contributions/291/): Introduction into Snap packaging (snapping) with simple GNOME/GTK applications as example ([video](https://www.youtube.com/watch?v=jNG8m9hesEU), [slides](https://events.canonical.com/event/35/contributions/291/attachments/60/101/Workshop%20Your%20app%20everywhere,%20just%20in%20a%20Snap!.pdf))
-2. [**Daemon Snapper's Workshop**](https://events.canonical.com/event/2/contributions/42/): Snapping daemons and system applications ([slides](https://events.canonical.com/event/2/contributions/42/attachments/15/23/Daemon%20Snapper's%20Workshop.pdf))
-3. [**Improving Snap maintenance: Automating tag updates on new upstream releases of the app**](https://events.canonical.com/event/31/contributions/217/): GitHub workflow to automatically update your Snap when an upstream source has a new release ([video](https://www.youtube.com/watch?v=tL4DBSSdBHU), [slides](https://events.canonical.com/event/31/contributions/217/attachments/126/198/Workshop%20Automating%20Snap%20updates%20on%20new%20upstream%20releases.pdf))
-
-Links to the exercises and examples are on the slides. You need to have `snapcraft` installed and working on your machine, follow the instructions in the "Setup" section of the first workshop or use the [virtual machine (~6 GB, `*.qcow2`)](https://drive.google.com/file/d/1kkxZ8GE3_UtG7orl5v2d4x_T4FhMUcbb/view?usp=sharing) if needed.
 
 
 ## CPDB CUPS backend Snap
