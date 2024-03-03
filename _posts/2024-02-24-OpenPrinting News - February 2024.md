@@ -57,7 +57,7 @@ And sorry, I have told something wrong in my previous news posts here, I have ac
 ![FOSDEM-2002](../assets/images/news-202402/fosdem-2002-till-printing-talk.jpg)<br>
 *My talk on my first FOSDEM, back in 2002. The slide shows a summary about my first 1.5 years of printing work.*
 
-And now, 22 more years have passed and a lot has changed, which I have reflected in my second FOSDEM talk about printing: **[OpenPrinting - We make printing just work!](https://fosdem.org/2024/schedule/event/fosdem-2024-1930-openprinting-we-make-printing-just-work-/)** ([Video](https://video.fosdem.org/2024/k1105/fosdem-2024-1930-openprinting-we-make-printing-just-work-.av1.webm), [Slides](https://fosdem.org/2024/events/attachments/fosdem-2024-1930-openprinting-we-make-printing-just-work-/slides/20807/talk-openprinting-2024_1f9Sa4r.pdf))
+And now, 22 more years have passed and a lot has changed, which I have reflected in my second FOSDEM talk about printing: **[OpenPrinting - We make printing just work!](https://fosdem.org/2024/schedule/event/fosdem-2024-1930-openprinting-we-make-printing-just-work-/)** ([Video](https://video.fosdem.org/2024/k1105/fosdem-2024-1930-openprinting-we-make-printing-just-work-.av1.webm), [Slides](https://fosdem.org/2024/events/attachments/fosdem-2024-1930-openprinting-we-make-printing-just-work-/slides/22631/talk-openprinting-2024_1f9Sa4r.pdf))
 
 The talk has taken place in the second room of the Main Track, in the ~800-seat "La Fontaine" lecture hall in the K building, the building where also most of the booths were located. The room was perhaps filled to 1/3.
 
@@ -65,7 +65,7 @@ And people were interested. I had the last 8 minutes for Q&A (starting at 40:50 
 
 Harald König, an old friend from the LinuxTag times in the early 2000s, attended my talk and came up to me afterwards.
 
-Also my second talk, **[Desktop Linux, as easy as a smartphone! Just in a Snap!](https://fosdem.org/2024/schedule/event/fosdem-2024-1860-desktop-linux-as-easy-as-a-smartphone-just-in-a-snap-/)** ([Video](https://video.fosdem.org/2024/ua2118/fosdem-2024-1860-desktop-linux-as-easy-as-a-smartphone-just-in-a-snap-.av1.webm), [Slides](https://fosdem.org/2024/events/attachments/fosdem-2024-1860-desktop-linux-as-easy-as-a-smartphone-just-in-a-snap-/slides/20944/talk-snap-2024_XNtSTSC.pdf)), in the Distributions Track, was successful.
+Also my second talk, **[Desktop Linux, as easy as a smartphone! Just in a Snap!](https://fosdem.org/2024/schedule/event/fosdem-2024-1860-desktop-linux-as-easy-as-a-smartphone-just-in-a-snap-/)** ([Video](https://video.fosdem.org/2024/ua2118/fosdem-2024-1860-desktop-linux-as-easy-as-a-smartphone-just-in-a-snap-.av1.webm), [Slides](https://fosdem.org/2024/events/attachments/fosdem-2024-1860-desktop-linux-as-easy-as-a-smartphone-just-in-a-snap-/slides/22758/talk-snap-2024_XNtSTSC.pdf)), in the Distributions Track, was successful.
 
 I did not have time left for Q&A right after the talk in the room, as the person showing me these "XX minutes left" cards was aiming for the end of the full 25-min slot, not for some minutes earlier for the questions. But afterwards some of the attendees went with me and Philipp Kewisch to ask some questions on the hallway and I showed to them Ubuntu Core Desktop running in a virtual machine on my laptop. I also told a person about how is it to work at Canonical.
 
@@ -111,9 +111,9 @@ It will take place on [May 6-8](https://www.pwg.org/chair/meeting-info/meetings.
 
 
 ## GUADEC 2024
-In July we have a GUADEC again! And so it is at the time to mention it here in the News. This time the GNOMies and friends will meet in Denver, Colorado, in the US (1 hour drive from Heather Ellsworth's home)!
+In July we have a [GUADEC](https://events.gnome.org/event/209/overview) again! And so it is at the time to mention it here in the News. This time the GNOMies and friends will meet in Denver, Colorado, in the US (1 hour drive from Heather Ellsworth's home)!
 
-I will also be there (I will soon book my flights) and I have rushed in a talk submission before the (very early) deadline of February 18 which they announced first. They have extended the deadline to March 24 afterwards, so I will perhaps submit another talk.
+I will also be there (I will soon book my flights) and I have rushed in a talk submission before the (very early) deadline of February 18 which they announced first. They have [extended](https://discourse.gnome.org/t/guadec-2024-call-for-participation-extension/) the deadline to March 24 afterwards, so I will perhaps submit another talk.
 
 The talk already submitted is a talk about Snap and Ubuntu Core Desktop, similar to the one I have given on the FOSDEM. But now there will be a 40-min slot, and I am aiming for leaving 10 minutes for Q&A.
 
@@ -121,11 +121,11 @@ I will perhaps submit another one with an OpenPrinting subject.
 
 
 ## Open Source Summit and Plumbers in Vienna
-If you have a look into my news posts of the 2 post-pandemic years 2022 and 2023 you see that I have been on many conferences, so I had a lot of trips, sometimes also long ones, to another continent, as for GUADEC 2022, Opportunity Open Source/DebConf 2023 and the GSoC Mentor Summit 2023, but I also had a short 2-hour train trip to Brno for the Linux App Summit 2023.
+If you have a look into my news posts of the 2 post-pandemic years 2022 and 2023 you see that I have been on many conferences, so I had a lot of trips, sometimes also long ones, to another continent, as for [GUADEC 2022](/OpenPrinting-News-August-2022/#guadec-2022), [Opportunity Open Source](/OpenPrinting-News-September-2023/#opportunitiy-open-source-in-the-iit-mandi-india)/[DebConf 2023](/OpenPrinting-News-September-2023/#debconf-2023-in-kochi-india) and the [GSoC Mentor Summit 2023](/OpenPrinting-News-October-2023/#google-summer-of-code-2023), but I also had a short 2-hour train trip to Brno for the [Linux App Summit 2023](/OpenPrinting-News-May-2023/#linux-app-summit-2023).
 
 Yes, that conference was really close by, compared to all the others, but it was not really that close, as for this year's Open Source Summit Europe and Linux Plumbers it gets even closer.
 
-They both take place in Vienna in Austria! This is the city where I live, and so for me it is the loooong trip from my home to the Austria Center by Vianna's subway.
+They both take place in Vienna in Austria! This is the city where I live, and so for me it is the loooong trip from my home to the Austria Center by Vienna's subway.
 
 So you have the chance to visit this nice city, and you wiil meet me there, as I will attend the conferences, too. To make it even easer for you and to give you the chance to enjoy Vienna for a longer time, the 2 conferences are in the same week and at the same venue:
 
@@ -146,7 +146,7 @@ A nice side effect of having the contributors working on assignments we give the
 
 This year, the candidate **Rudra Pratap Singh** even landed an **improvement on an external project**. As I told [already last month here](/OpenPrinting-News-January-2024/#snap-automation) I gave him the assignment of applying [Snap update automation](https://ubuntu.com/blog/improving-snap-maintenance-with-automation) on the CUPS Snap and on the Printer Application Snaps. He ran into some problems with the [GitHub action provided for that by Ubuntu](https://github.com/ubuntu/desktop-snaps/) and did some improvements on it. He also made the Snap versioniung automation which I had implemented in a scriptlet in the CUPS Snap available for everyone by adding it to Ubuntu's GitHub action. **All his pull requests got accepted now!**
 
-**Biswadeep Purkayastha** applied as contributor already last year on CI testing for OpenPrinting but we did not get enough slots from Google to accommodate his project. So he picked up some tasks at OpenPrinting voluntarily. He attended my [Snap workshop](/OpenPrinting-News-November-2023/#snap-workshops) on the [Opportunity Open Source](/OpenPrinting-News-September-2023/#opportunitiy-open-source-in-the-iit-mandi-india) in Mandi, India, and I asked him, already back in October, to **snap the [CPDB backend for CUPS](https://github.com/OpenPrinting/cpdb-backend-cups/)** (see [October 2023](/OpenPrinting-News-October-2023/#libcups3-support)), and he worked on that. We ran into some problems, have discussed them on [snapcraft.io](https://forum.snapcraft.io/t/snapping-cpdb-cups-backend-a-user-daemon-using-d-bus/), and he is currently working on the snappability of the code of the CPDB backend.
+**Biswadeep Purkayastha** applied as contributor already last year on CI testing for OpenPrinting but we did not get enough slots from Google to accommodate his project. So he picked up some tasks at OpenPrinting voluntarily. He attended my [Snap workshop](/OpenPrinting-News-November-2023/#snap-workshops) on the [Opportunity Open Source](/OpenPrinting-News-September-2023/#opportunitiy-open-source-in-the-iit-mandi-india) in Mandi, India, and I asked him, already back in October, to **snap the [CPDB backend for CUPS](https://github.com/OpenPrinting/cpdb-backend-cups/)** (see [October 2023](/OpenPrinting-News-October-2023/#cpdb-cups-backend-snap)), and he worked on that. We ran into some problems, have discussed them on [snapcraft.io](https://forum.snapcraft.io/t/snapping-cpdb-cups-backend-a-user-daemon-using-d-bus/), and he is currently working on the snappability of the code of the CPDB backend.
 
 When he got stuck inbetween, he also **added support for CUPS 3.x's libcups3 to libcupsfilters, libppd, and pappl-retrofit** (see also [October 2023](/OpenPrinting-News-October-2023/#libcups3-support)).
 
