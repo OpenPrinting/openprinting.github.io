@@ -38,6 +38,8 @@ Wed, July 26, **11:00 EEST**, room 2
 
 [Slides](https://events.gnome.org/event/101/contributions/461/attachments/195/385/guadec-2023-new-architecture-demo.pdf)
 
+**Update: [Video](https://www.youtube.com/watch?v=dVVyokoQl2k&t=6172s)**
+
 Right on the first day I will talk about the state of the art of the printing GUIs for the New Architecture, the "Printers" part of the GNOME Control Center and the Common Print Dialog Backends (CPDB) support in the print dialogs and will also demo the GUIs. I will also announce my BoF then.
 
 **[Your app everywhere, just in a Snap! (Workshop)](https://events.gnome.org/event/101/contributions/460/)**
