@@ -26,7 +26,7 @@ So now send your Christmas faxes to your loved ones and happy holidays!
 
 **And as usual: Stay updated on Mastodon: [#OpenPrinting](https://ubuntu.social/tags/OpenPrinting) and [@till@ubuntu.social](https://ubuntu.social/@till).**
 
-**Please also note that our [mailing list](#what-is-hot-on-the-openprinting-maiing-list) is moving.**
+**Please also note that our [mailing list](#what-is-hot-on-the-openprinting-mailing-list) is moving.**
 
 
 ## New Architecture under Windows
@@ -135,7 +135,7 @@ Suggestions for any further project ideas are more than welcome.
 And if you like to be a GSoC contributor next year, please contact me (till AT linux DOT com).
 
 
-## What is hot on the OpenPrinting maiing list
+## What is hot on the OpenPrinting mailing list
 
 **Current interesting discussions**
 
