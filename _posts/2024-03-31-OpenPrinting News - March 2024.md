@@ -115,7 +115,7 @@ Not yet started, will be Biswadeeps next point.
 
 Biswadeep's work is progressing well and available in pull requests. The pull requests for (1) and (2) are already merged.
 
-- cpdb-libs: [Pull Request for (1) and (2)](https://github.com/OpenPrinting/cpdb-libs/pull/30) ([merged](https://github.com/OpenPrinting/cpdb-libs/pull/30)), [Pull Request for (4)](https://github.com/OpenPrinting/cpdb-libs/pull/30)
+- cpdb-libs: [Pull Request for (1) and (2)](https://github.com/OpenPrinting/cpdb-libs/pull/30) ([merged](https://github.com/OpenPrinting/cpdb-libs/commit/85447e86686)), [Pull Request for (4)](https://github.com/OpenPrinting/cpdb-libs/pull/31)
 - cpdb-backend-cups: [Pull Request for (1) and (2)](https://github.com/OpenPrinting/cpdb-backend-cups/pull/28) ([merged](https://github.com/OpenPrinting/cpdb-backend-cups/commit/4a1c45315da9)), [Pull Request for (4)](https://github.com/OpenPrinting/cpdb-backend-cups/pull/29)
 
 
