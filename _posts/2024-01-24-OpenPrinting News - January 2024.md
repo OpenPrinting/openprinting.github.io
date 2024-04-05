@@ -206,7 +206,7 @@ The posting of the Pull Requests and the work with Sergio to get the Pull Reques
 
 **Thanks a lot to Rudra and Sergio for that great work!**
 
-## What is hot on the OpenPrinting maiing list
+## What is hot on the OpenPrinting mailing list
 
 **Current interesting discussions**
 
