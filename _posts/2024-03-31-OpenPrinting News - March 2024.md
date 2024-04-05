@@ -110,7 +110,7 @@ Biswadeep is currently working on this one.
 
 **5. Add newly appearing backends while the dialog is open.**
 
-Not yet started, will be Biswadeeps next point.
+Not yet started, will be Biswadeep's next point.
 
 
 Biswadeep's work is progressing well and available in pull requests. The pull requests for (1) and (2) are already merged.
