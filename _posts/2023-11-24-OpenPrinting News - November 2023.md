@@ -263,9 +263,15 @@ Some people were complaining that we had no beginner's workshop for Snap on this
 
 So together with the "[Daemon Snapper's Workshop](https://events.canonical.com/event/2/contributions/42/)" ([slides](https://events.canonical.com/event/2/contributions/42/attachments/15/23/Daemon%20Snapper's%20Workshop.pdf)) I have now a repertoire of 3 (see below) and I will continue to give them on conferences and Engineering Sprints.
 
-**Soon on snapcraft.io**
+**Update: Now on snapcraft.io**
 
-As one can easily also do these workshops by oneself at home, studying the slide decks and trying out the linked examples, I thought that the slides and examples should be made available on a place in the internet where interested people can easily find them. This should be ideally [snapcraft.io](https://snapcraft.io/) as the central place of the official Snap documentation. So I asked Graham Morrison, responsible for the documentation of Snap, whether we could integrate them there, and he agreed. We also plan to put everything onto a GitHub repo of Snap. And, as we started recording workshops on this year's Ubuntu Summit, we will link videos, for now at least of the initial workshop and the workshop about Snap update automation.
+As one can easily also do these workshops by oneself at home, studying the slide decks and trying out the linked examples, the slides and examples should be made available on a place in the internet where interested people can easily find them.
+
+Therefore I have posted this section with all the links to slides, examples, and videos on the [snapcraft.io Forum](https://forum.snapcraft.io/t/snap-workshops/) in the "doc" category. In addition I have pinned the post to keep it prominently visible.
+
+Thanks to Graham Morrison, responsible for Snap documentation at Canonical, for his support.
+
+We also plan to put everything onto a GitHub repo.
 
 And this will not only help to learn snapping, also everyone who likes to give a Snap workshop on a conference by himself could make use of these materials.
 
