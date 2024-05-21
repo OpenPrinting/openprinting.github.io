@@ -243,6 +243,8 @@ No need to meet me giving a workshop on a conference, you can do them all at any
 
 Links to the exercises and examples are on the slides. You need to have `snapcraft` installed and working on your machine, follow the instructions in the "Setup" section of the first workshop or use the [virtual machine (~6 GB, `*.qcow2`)](https://drive.google.com/file/d/1kkxZ8GE3_UtG7orl5v2d4x_T4FhMUcbb/view?usp=sharing) if needed.
 
+**Stay updated on the [official Snap workshop page](https://forum.snapcraft.io/t/learn-snapping-interactive-snap-workshops/) on snapcraft.io!**
+
 **How I got into giving Snap workshops**
 
 Back in mid-2022 when I joined the organization team of the Ubuntu Summit 2022 in Prague, I had a 3.5-hour 1:1 video call with the leader of the organization team, [Mauro Gaspari](https://discourse.ubuntu.com/t/mauro-gaspari-membership-application/), exchanging ideas of what we can do in this first Ubuntu Summit. And as he brought in that we could do 2-hour interactive workshops where attendees can try out the subject matter on their own laptops, I was immediately sold on that and formed the idea to do a **workshop series on how to package applications as Snaps**. Mauro liked this idea and [I started to work on making it reality](/OpenPrinting-News-November-2022/#the-making-of).
@@ -267,7 +269,7 @@ So together with the "[Daemon Snapper's Workshop](https://events.canonical.com/e
 
 As one can easily also do these workshops by oneself at home, studying the slide decks and trying out the linked examples, the slides and examples should be made available on a place in the internet where interested people can easily find them.
 
-Therefore I have posted this section with all the links to slides, examples, and videos on the [snapcraft.io Forum](https://forum.snapcraft.io/t/snap-workshops/) in the "doc" category. In addition I have pinned the post to keep it prominently visible.
+Therefore I have posted this section with all the links to slides, examples, and videos on the [snapcraft.io Forum](https://forum.snapcraft.io/t/learn-snapping-interactive-snap-workshops/) in the "doc" category. In addition I have pinned the post to keep it prominently visible.
 
 Thanks to Graham Morrison, responsible for Snap documentation at Canonical, for his support.
 
