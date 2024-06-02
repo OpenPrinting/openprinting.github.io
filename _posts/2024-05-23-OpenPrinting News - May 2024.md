@@ -167,7 +167,7 @@ Contributor: Shivam Jaiswal
 > Here's the latest on my project:
 > - Understanding System Config Printer:
 >   - I've been studying the current code and functions of system-config-printer to understand how it works.
->   - This helps me see what needs to be changed for the new architecture.</LI>
+>   - This helps me see what needs to be changed for the new architecture.
 > - Switching to the New Architecture:
 >   - To update CUPS for the new architecture, we will need to change some existing functions in system-config-printer.
 >   - This will make sure everything works well together.
