@@ -164,7 +164,22 @@ Contributor: Akarshan Kapoor
 **Desktop Integration: Update system-config-printer for the New Architecture of printing**<BR>
 Contributor: Shivam Jaiswal
 
-> Here's the latest on my project:<OL><LI>Understanding System Config Printer:<UL><LI>I've been studying the current code and functions of system-config-printer to understand how it works.</LI><LI>This helps me see what needs to be changed for the new architecture.</LI></UL></LI><LI>Switching to the New Architecture:<UL><LI>To update CUPS for the new architecture, we will need to change some existing functions in system-config-printer.</LI><LI>This will make sure everything works well together.</LI></UL></LI><LI>Understanding IPP Services:<UL><LI>I've been reading about the IPP (Internet Printing Protocol) services that system-config-printer needs to use.</LI><LI>This is important for making the necessary updates.</LI></UL></LI><LI>Talking with My Mentor:<UL><LI>I had a discussion with my mentor, Mohit Verma, who gave me an overview of how to start the project and suggested some functions I might need to write.</LI><LI>His advice is helping me plan the updates.</LI></UL></LI><LI>Next Steps:<UL><LI>Right now, I'm focused on understanding the existing functions in system-config-printer.</LI><LI>Next, I'll figure out and add the new functions needed for the new architecture.</LI></UL></LI></OL>
+> Here's the latest on my project:
+> - Understanding System Config Printer:
+>   - I've been studying the current code and functions of system-config-printer to understand how it works.
+>   - This helps me see what needs to be changed for the new architecture.</LI>
+> - Switching to the New Architecture:
+>   - To update CUPS for the new architecture, we will need to change some existing functions in system-config-printer.
+>   - This will make sure everything works well together.
+> - Understanding IPP Services:
+>   - I've been reading about the IPP (Internet Printing Protocol) services that system-config-printer needs to use.
+>   - This is important for making the necessary updates.
+> - Talking with My Mentor:
+>   - I had a discussion with my mentor, Mohit Verma, who gave me an overview of how to start the project and suggested some functions I might need to write.
+>   - His advice is helping me plan the updates.
+> - Next Steps:
+>   - Right now, I'm focused on understanding the existing functions in system-config-printer.
+>   - Next, I'll figure out and add the new functions needed for the new architecture.
 
 **User interfaces for using OAuth2 with printers and scanners**<BR>
 Contributor: Shivam Sharma
