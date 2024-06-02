@@ -40,6 +40,9 @@ So let us see what happened at OpenPrinting in May ...
 Subscribing/Unsubscribing [instructions](https://subspace.kernel.org/subscribing.html)
 
 
+**Or on the Telegram [OpenPrinting chat](https://t.me/+RizBbjXz4uU2ZWM1)**
+
+
 ## OpenPrinting Summit/PWG Meeting
 On May 6-8 we had our annual meeting together with the [PWG](https://www.pwg.org/) (Printer Working Group) again, the [OpenPrinting Summit/PWG Meeting](https://www.pwg.org/chair/meeting-info/may-2024-virtual.html). The meeting was online again, as most of the participants were not able/willing to travel. All slides are available via links in the [schedules](https://www.pwg.org/chair/meeting-info/may-2024-virtual.html).
 
@@ -64,7 +67,7 @@ There will be written up summaries of the event in the coming weeks. I will post
 
 
 ## GUADEC 2024 in Denver
-The next GUADEC is approaching! This year it will take place in Denver, Colorado, USA, on July 19-24!
+The next [GUADEC](https://events.gnome.org/event/209/) is approaching! This year it will take place in Denver, Colorado, USA, on July 19-24!
 
 As usual it will consist of talks on the first 3 days, then workshops and BoFs for 2 days and to complete it, 1 day-trip day. The Call for Proposals has closed some weeks ago and the talks are already [selected](https://events.gnome.org/event/209/contributions/) and [scheduled](https://events.gnome.org/event/209/timetable/#all.detailed), but not yet the workshops and BoFs.
 
@@ -114,6 +117,8 @@ Sun, September 1, 1:55 PM IST, Room 2
 
 Interactive workshop to learn how to package applications in the sandboxed, immutable package format Snap to publish them in the Snap Store. Attendees will create simple Snaps in several hands-on exercises.
 
+[Full schedules](https://events.canonical.com/event/47/timetable/#all)
+
 Special thanks to Youngbin Han from the Ubuntu Korea community and Ubuntu LoCo Council, who is leading the organization of the conference, for his great support.
 
 
@@ -159,32 +164,7 @@ Contributor: Akarshan Kapoor
 **Desktop Integration: Update system-config-printer for the New Architecture of printing**<BR>
 Contributor: Shivam Jaiswal
 
-> Here's the latest on my project:
->
-> 1. Understanding System Config Printer:
->
-> -> I've been studying the current code and functions of system-config-printer to understand how it works.
-> -> This helps me see what needs to be changed for the new architecture.
->
-> 2. Switching to the New Architecture:
->
-> -> To update CUPS for the new architecture, we will need to change some existing functions in system-config-printer.
-> -> This will make sure everything works well together.
->
-> 3. Understanding IPP Services:
->
-> -> I've been reading about the IPP (Internet Printing Protocol) services that system-config-printer needs to use.
-> -> This is important for making the necessary updates.
->
-> 4. Talking with My Mentor:
->
-> -> I had a discussion with my mentor, Mohit Verma, who gave me an overview of how to start the project and suggested some functions I might need to write.
-> -> His advice is helping me plan the updates.
->
-> 5. Next Steps:
->
-> -> Right now, I'm focused on understanding the existing functions in system-config-printer.
-> -> Next, I'll figure out and add the new functions needed for the new architecture.
+> Here's the latest on my project:<ol><li>Understanding System Config Printer:<ul><li>I've been studying the current code and functions of system-config-printer to understand how it works.</li><li>This helps me see what needs to be changed for the new architecture.</li></ul></li><li>Switching to the New Architecture:<ul><li>To update CUPS for the new architecture, we will need to change some existing functions in system-config-printer.</li><li>This will make sure everything works well together.</li></ul></li><li>Understanding IPP Services:<ul><li>I've been reading about the IPP (Internet Printing Protocol) services that system-config-printer needs to use.</li><li>This is important for making the necessary updates.</li></ul></li><li>Talking with My Mentor:<ul><li>I had a discussion with my mentor, Mohit Verma, who gave me an overview of how to start the project and suggested some functions I might need to write.</li><li>His advice is helping me plan the updates.</li></ul></li><li>Next Steps:<ul><li>Right now, I'm focused on understanding the existing functions in system-config-printer.</li><li>Next, I'll figure out and add the new functions needed for the new architecture.</li></ul></li></ol>
 
 **User interfaces for using OAuth2 with printers and scanners**<BR>
 Contributor: Shivam Sharma
