@@ -66,7 +66,7 @@ Mentors: Cristovão Cordeiro, Ira McDonald, Mohit Verma, Pratyush Ranjan, Saurav
 
 **CPDB support for the LibreOffice print dialog**<BR>
 Contributor: Biswadeep Purkayastha<BR>
-Mentors: Michael Weghorn, Gaurav Guleria, Akshit Chauhan, Ira McDonald, Shivam Mishra, Till Kamppeter
+Mentors: Michael Weghorn, Gaurav Guleria, Akshit Chauhan, Ira McDonald, Sahil Arora, Till Kamppeter
 
 **Integrating C-based OpenPrinting Projects in OSS-Fuzz Testing**<BR>
 Contributor: Jiongchi Yu<BR>
