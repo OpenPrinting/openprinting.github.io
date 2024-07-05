@@ -222,6 +222,8 @@ Contributor: Uddhav Phatak
 >
 > Currently, I am validating the changed qpdf-pdftopdf-processor.cxx functions.
 
+Here is [Uddhav's work on GitHub](https://github.com/uddhavphatak/libcupsfilters/tree/pdfio-implement).
+
 **Gaurav Guleria** is now finishing the merge requests for **CPDB support in the Qt print dialog**, actively working out the remaining rough edges with the Qt developers ([#556476](https://codereview.qt-project.org/c/qt/qtbase/+/556476), [#437301](https://codereview.qt-project.org/c/qt/qtbase/+/437301), [#471258](https://codereview.qt-project.org/c/qt/qt5/+/471258), [#116726](https://bugreports.qt.io/browse/QTBUG-116726)).
 
 
