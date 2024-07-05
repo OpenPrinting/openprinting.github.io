@@ -348,7 +348,7 @@ Solomon:
 
 Till:
 
-And probably requires from you to have the actual printer (which you would have to buy if you do not get some form of external support for this work)?
+> And probably requires from you to have the actual printer (which you would have to buy if you do not get some form of external support for this work)?
 
 Solomon:
 
