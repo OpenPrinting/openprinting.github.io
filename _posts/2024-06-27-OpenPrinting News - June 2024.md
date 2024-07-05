@@ -8,13 +8,13 @@ excerpt: Opportunity Open Source in IIT Kanpur, UbuCon Asia 2024, Open Source Su
 ---
 This month we have again a lot of great News!
 
-First, as usual, we have a lot of conference news. We now know the location and date for the third [Ubuntu Summit](#ubuntu-summit-2024-in-the-hague) and the second [Opportunity Open Source](#opportunity-open-source-in-iit-kanpur). And I am featured speaker on the [UbuCon Asia](#ubucon-asia-2024-in-india) and will also give a talk on the [Opportunity Open Source Europe](#open-source-summit-in-vienna).
+First, as usual, we have a lot of conference news. We now know the location and date for the third [Ubuntu Summit](#ubuntu-summit-2024-in-the-hague) and the second [Opportunity Open Source](#opportunity-open-source-in-iit-kanpur). And I am featured speaker on the [UbuCon Asia](#ubucon-asia-2024-in-india) and will also give a talk on the [Open Source Summit Europe](#open-source-summit-in-vienna).
 
 Also we got [8 reports](#google-summer-of-code-2024) from our 11 GSoC contributors. They are all doing great work!
 
 But 11 contributors? There is more work, and so we have also a volunteer now, working on CUPS 3.x support in the [KDE Print Manager](#kde-print-manager).
 
-The most sophisticated non-manufacturer free software printer driver project is Gutenprint. But what is on with this project now? Have a look into my [interview with Solomon Peachy](#quo-vadis-gutenprint-), current maintainer of it and contributor of the dye-sublimation printer support.
+The most sophisticated non-manufacturer free software printer driver project is Gutenprint. But what is on with this project now? Have a look into my [interview with Solomon Peachy](#quo-vadis-gutenprint), current maintainer of it and contributor of the dye-sublimation printer support.
 
 I have [tested one of the most hated cheapo HP printers](#most-hated-gets-loved-under-linux) and it is working perfectly under Linux, when one sets it up correctly.
 
@@ -24,7 +24,7 @@ And it is always nice to get praised by users for the OpenPrinting work, this ti
 
 > I love that I can just plug in my printer and scanner and they just work. No extra bloatware, no funky drivers, they just pick up and go. We're super lucky to have wizards like @till in the open source world.
 
-and also got a [nice thread of answers](https://fosstodon.org/@AKernelPanic/112707405234525979].
+and also got a [nice thread of answers](https://fosstodon.org/@AKernelPanic/112707405234525979).
 
 To complete our intro, on Matrix I told to a person that I am leading OpenPrinting, and they told something about their skills and in the end:
 
@@ -90,7 +90,7 @@ I plan to give talks about OpenPrinting, Snap/Ubuntu Core Desktop and workshops 
 
 We also invited Michael Sweet who will give a talk (online) about the state of the art of CUPS and PAPPL and we will run a Q&A session afterwards.
 
-Jiongchi Yu, GSoC contributor for USS Fuzz testing of OpenPrinting components, also wants to give a talk. He also will give it online as he lives in Singapore. I will also try to get further GSoC contributors giving a talk.
+Jiongchi Yu, GSoC contributor for OSS Fuzz testing of OpenPrinting components, also wants to give a talk. He also will give it online as he lives in Singapore. I will also try to get further GSoC contributors giving a talk.
 
 
 ## UbuCon Asia 2024 in India
@@ -222,7 +222,7 @@ Contributor: Uddhav Phatak
 >
 > Currently, I am validating the changed qpdf-pdftopdf-processor.cxx functions.
 
-**Gaurav Guleria** is now finishing the merge requests for **CPDB support in the Qt print dialog**, actively working out the remaining rough edges with the Qt developers ([#556476](https://codereview.qt-project.org/c/qt/qtbase/+/556476, [#437301](https://codereview.qt-project.org/c/qt/qtbase/+/437301), [#471258](https://codereview.qt-project.org/c/qt/qt5/+/471258), [#116726](https://bugreports.qt.io/browse/QTBUG-116726)).
+**Gaurav Guleria** is now finishing the merge requests for **CPDB support in the Qt print dialog**, actively working out the remaining rough edges with the Qt developers ([#556476](https://codereview.qt-project.org/c/qt/qtbase/+/556476), [#437301](https://codereview.qt-project.org/c/qt/qtbase/+/437301), [#471258](https://codereview.qt-project.org/c/qt/qt5/+/471258), [#116726](https://bugreports.qt.io/browse/QTBUG-116726)).
 
 
 ## KDE Print Manager
