@@ -362,7 +362,7 @@ Solomon:
 
 Till:
 
-> So Epson's proprietary driver with its new proprietary language is more for the "consumer" users who want everything read-made, like what is IPP supposed to be good for, and there is ESC/P2 for the "power users" to have access to everything?
+> So Epson's proprietary driver with its new proprietary language is more for the "consumer" users who want everything ready-made, like what is IPP supposed to be good for, and there is ESC/P2 for the "power users" to have access to everything?
 
 Solomon:
 
@@ -378,7 +378,7 @@ Solomon:
 >
 > I don't have any contacts with them.
 
-> When I added the [Epson] surecolor D700 to gutenprint I produced over 100 printed before the quality was acceptable in my eyes. If that hasn't been paid work I would have never have done it.
+> When I added the surecolor D700 [Epson SureLab D700, see below] to gutenprint I produced over 100 printed before the quality was acceptable in my eyes. If that hasn't been paid work I would have never have done it.
 
 Till:
 
@@ -581,6 +581,28 @@ Solomon:
 Till:
 
 > And thanks for the patience with me, have a nice dinner!
+
+After proofreading this interview in the form how I have posted it here, Solomon has provided me with some corrections and additional information:
+
+Solomon:
+
+> Corrections:  The Epson printer I mentioned is the SureLab, not SureColor.  And Epson is actively maintaining two esc/p-r drivers, one fully open source but the other partially proprietary.
+>
+> But they support different sets of printers. I *think* the standard office types are handled by the open one but high end+prosumer stuff is by the proprietary one.
+>
+> The latter being Gutenprint's general niche these days.
+
+Till:
+
+> So the "newer communication language" you meant originally, which uses a proprietary library, is actually also ESC/P-R?
+
+Solomon:
+
+> Yes.
+>
+> The proprietary library is most likely dealing with the fancy multicolor ink sets.
+>
+> But it's not something I've looked into.  Or wanted to look into.  :)
 
 
 ## CPDB 2.0b6
