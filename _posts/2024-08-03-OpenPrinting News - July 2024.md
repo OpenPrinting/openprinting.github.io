@@ -46,6 +46,9 @@ Subscribing/Unsubscribing [instructions](https://subspace.kernel.org/subscribing
 
 
 ## GUADEC 2024 in Denver
+
+**[Photos](https://flic.kr/s/aHBqjBC58f) and [Videos](https://www.youtube.com/playlist?list=PLcb5uDX8FIoAzmw9QWEJMY51Yoy3_CXPs)**
+
 I am back from a great [GUADEC](https://events.gnome.org/event/209/) in Denver, Colorado, in the US!
 
 It was a great event. First I met some good friends, especially Heather Ellsworth from Thunderbird and Ken VanDine, Marco Trevisan, Aaron Prisk, and Jeremy Bicha from Canonical, but also many others on the event.
@@ -54,7 +57,7 @@ I already arrived on Wednesday afternoon to attend a GSoC Meet-up which GSoC lea
 
 The next day I finally met the GNOMies and who else attended GUADEC on the pre-registration meeting.
 
-Friday to Sunday were the 3 days for the talks. I have given a talk, too:
+Friday to Sunday were the 3 days for the talks ([All videos](https://www.youtube.com/playlist?list=PLcb5uDX8FIoAzmw9QWEJMY51Yoy3_CXPs)). I have given a talk, too:
 
 **[Snap and Ubuntu Core Desktop - Desktop Linux, as easy as a smartphone!](https://events.gnome.org/event/209/contributions/761/)**
 
