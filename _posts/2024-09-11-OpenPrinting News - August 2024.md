@@ -111,7 +111,7 @@ There are several blogs, reports, and announcements about this event, mostly on 
 - [Report by Abhipsa Nayak on LinkedIn](https://www.linkedin.com/posts/abhipsa-nayak-03213928b_oosc-iitkanpur-opensource-ugcPost-7234275375889989632-Vjak?utm_source=share&utm_medium=member_desktop)
 - [Report by Mayank Porwal on LinkedIn](https://www.linkedin.com/posts/mayank-porwal-4854b12a7_oosc2024-opensource-innovation-ugcPost-7234625515448377344-lUL_?utm_source=share&utm_medium=member_desktop)
 - [Report by Apurv Gupta on LinkedIn](https://www.linkedin.com/posts/apurv-gupta-1a9938240_oosc2024-iitkanpur-hackathon-ugcPost-7236085451722211328-YuRk?utm_source=share&utm_medium=member_desktop)
-- [Report by Kaushal Sharma on LinkedIn](​https://www.linkedin.com/posts/kaushal-sharma-26aa0128a_opensource-gsoc-iitkanpur-ugcPost-7234671355890126848-Ve0f?utm_source=share&utm_medium=member_desktop)
+- [Report by Kaushal Sharma on LinkedIn](https://www.linkedin.com/posts/kaushal-sharma-26aa0128a_opensource-gsoc-iitkanpur-ugcPost-7234671355890126848-Ve0f?utm_source=share&utm_medium=member_desktop)
 - [Report by Garvit Bhardwaj on LinkedIn](https://www.linkedin.com/posts/garvitofficial_looking-back-at-an-inspiring-experience-activity-7240406126016536576-sQ88/)
 
 - [Report by Garvit Bhardwaj about the Hackathon on LinkedIn](https://www.linkedin.com/posts/garvitofficial_hackathon-blockchain-dapp-activity-7234563980747231232-H-od/)
