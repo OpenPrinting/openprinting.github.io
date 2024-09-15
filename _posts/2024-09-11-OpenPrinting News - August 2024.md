@@ -160,13 +160,13 @@ But independent of this I had submitted a talk and it got accepted, so mark your
 
 **[OpenPrinting - We Make Printing Just Work!](https://sched.co/1ej79)**
 
-Wed, September 18, 15:10 - 15:50 CEST, Room 1.61 & 1.62 (Level 1)
+Wed, September 18, 15:10 - 15:50 CEST, Hall B (Level 2)
 
 Track: [LinuxCon](https://osseu2024.sched.com/type/LinuxCon)
 
 I will give an overview of our work. Going through OpenPrinting's history the components of the printing infrastructure of modern Linux (and other Posix-style) operating systems will get shown. - How did the Internet Printing Protocol (IPP) with the printing system CUPS being an implementation of it simplify printing a lot? - The printer driver challenge, good and bad cooperation with manufacturers, packaging and distributing ... - Desktop integration, GUI toolkits, print dialogs, setup tools, portals, ... Especially also the New Architecture of all-IPP printing and scanning and also the integration in immutable OS distributions will be treated ... 
 
-There will also be a Canonical/Ubuntu booth with several people from Canonical, especially I will meet there Cristovão Cordeiro, Rockcraft expert and mentor of our GSoC contributor Rudra Pratap Singh, and Mauro Gaspari, organization lead of the Ubuntu Summit.
+There will also be a Canonical/Ubuntu booth (Hall E, Level 0, Booth G/S13) with several people from Canonical, especially I will meet there Cristovão Cordeiro, Rockcraft expert and mentor of our GSoC contributor Rudra Pratap Singh, and Mauro Gaspari, organization lead of the Ubuntu Summit.
 
 **See all Canonical/Ubuntu activity in [this Ubuntu blog](https://ubuntu.com/blog/meet-canonical-at-open-source-summit-europe-2024).**
 
