@@ -152,6 +152,11 @@ But the most important of this conference for me was to meet Soumyadeep Ghosh ([
 - [Report by Vaibhav Chouhan on LinkedIn](https://www.linkedin.com/posts/vaibhav270_opensource-ubuntu-kubernetes-activity-7236786669566214144-SLVa?utm_source=share&utm_medium=member_desktop)
 - [Report by Uddaraju Praneeth Kumar on LinkedIn](https://www.linkedin.com/posts/uddaraju-praneeth-kumar-376a2a259_ubuconasia2024-ubuntu-opensource-ugcPost-7236081062852845568-1Lm1?utm_source=share&utm_medium=member_desktop)
 
+**Pictures**
+
+- [Official photographs](https://photos.app.goo.gl/vFeFiPakaFdwjQJN6)
+- [Community-submitted photos and videos](https://photos.app.goo.gl/EMVw8zJQqgRvDqzaA)
+
 
 ## Open Source Summit Europe in Vienna
 This year's [Open Source Summit Europe](https://events.linuxfoundation.org/open-source-summit-europe/) in Vienna is approaching, next week! On September 16-18. It is a home game for me and so I had attended it independent whether I had given a talk or not. Especially also as I am one of the 8 fellows of the Linux Foundation, the conference fee is waived for me.
