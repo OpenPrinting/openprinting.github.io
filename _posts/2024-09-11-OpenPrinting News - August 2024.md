@@ -165,6 +165,8 @@ I will give an overview of our work. Going through OpenPrinting's history the co
 
 There will also be a Canonical/Ubuntu booth with several people from Canonical, especially also Mauro Gaspari, organization lead of the Ubuntu Summits, from Canonical's Community Team.
 
+**See all Canonical/Ubuntu activity in [this Ubuntu blog](https://ubuntu.com/blog/meet-canonical-at-open-source-summit-europe-2024).**
+
 
 ## Ubuntu Summit 2024 in The Hague
 Also the [Ubuntu Summit](https://ubuntu.com/blog/ubuntu-summit-2024) is coming closer, only 6 weeks left (on October 25-27).
