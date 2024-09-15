@@ -44,6 +44,8 @@ Soumyadeep and me have given the workshop together then and he was a surprise gu
 
 And now he got really enthusiastic. He does not only want to speak on the Ubuntu Summit this year, but also be GSoC contributor for OpenPrinting next year, create a monthly Ubuntu podcast interviewing people (comeback of the Indabas?), and create a programming club in his college ... Seems that I have really inspired him ...
 
+**Update: [LinkedIn report by Soumyadeep about this section](https://www.linkedin.com/feed/update/urn%3Ali%3Aactivity%3A7240953725081583616/?midToken=AQGZKDiU1P2dsg&midSig=0EvrmszONQ2Hs1&trk=eml-email_notification_single_mentioned_you_in_this_01-hero_notification_cta-0-1ep~cta&trkEmail=eml-email_notification_single_mentioned_you_in_this_01-hero_notification_cta-0-1ep~cta-null-h90q4~m135draj~bz-null-null&eid=h90q4-m135draj-bz)**
+
 
 ## Opportunity Open Source in IIT Kanpur
 I have done my second trip to India, mainly for the **[Opportunity Open Source 2.0](https://oosc-next.vercel.app/)** in the Indian Institute of Technology (IIT) Kanpur, on August 24-26.
@@ -112,6 +114,7 @@ There are several blogs, reports, and announcements about this event, mostly on 
 - [Report by Mayank Porwal on LinkedIn](https://www.linkedin.com/posts/mayank-porwal-4854b12a7_oosc2024-opensource-innovation-ugcPost-7234625515448377344-lUL_?utm_source=share&utm_medium=member_desktop)
 - [Report by Apurv Gupta on LinkedIn](https://www.linkedin.com/posts/apurv-gupta-1a9938240_oosc2024-iitkanpur-hackathon-ugcPost-7236085451722211328-YuRk?utm_source=share&utm_medium=member_desktop)
 - [Report by Kaushal Sharma on LinkedIn](https://www.linkedin.com/posts/kaushal-sharma-26aa0128a_opensource-gsoc-iitkanpur-ugcPost-7234671355890126848-Ve0f?utm_source=share&utm_medium=member_desktop)
+- [Report by Rishu Singh on LinkedIn](https://www.linkedin.com/posts/rishu-singh-118642225_iitkanpur-opensource-coding-activity-7233726228275281920-cs7Y/?utm_source=share&utm_medium=member_android)
 - [Report by Garvit Bhardwaj on LinkedIn](https://www.linkedin.com/posts/garvitofficial_looking-back-at-an-inspiring-experience-activity-7240406126016536576-sQ88/)
 
 - [Report by Garvit Bhardwaj about the Hackathon on LinkedIn](https://www.linkedin.com/posts/garvitofficial_hackathon-blockchain-dapp-activity-7234563980747231232-H-od/)
