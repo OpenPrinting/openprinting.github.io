@@ -10,7 +10,7 @@ Most impactful in September were the [security advisories reported for cups-brow
 
 I have been on the Open Source Summit Europe this year (see [last month's news](/OpenPrinting-News-August-2024/#open-source-summit-europe-in-vienna)), as it was taking place in my city, in Vienna. I also have given a [talk about OpenPrinting](https://sched.co/1ej79) there, but recordings are not yet released.
 
-And now I am also approaching the next events. At first I am following an invitation from Diogo Constantino from the Portuguese Ubuntu Local Community, giving talks on the [Festa do Software Livre in Aveiro, Portugal](#festa-do-software-livre-ubucon-portugal-2024) which hosts the UbuCon Portugal 2024 as one of its tracks, a conference held primarily in Portuguese language.
+And now I am also approaching the next events. At first I am following an invitation from Diogo Constantino from the Portuguese Ubuntu Local Community, giving talks on the [Festa do Software Livre in Aveiro, Portugal](#festa-do-software-livreubucon-portugal-2024) which hosts the UbuCon Portugal 2024 as one of its tracks, a conference held primarily in Portuguese language.
 
 Shortly after, I will be in the Hague in the Netherlands for the third [Ubuntu Summit](#ubuntu-summit-2024-in-the-hague), where I am again member of the organization team, but I will also present, together with the Snapcrafters, on a booth and in two workshops.
 
@@ -73,17 +73,17 @@ I will give 3 sessions during the event, all in Portuguese:
 
 Fri, October 11, 14:00 - 15:00 WEST, Anfiteatro IV (Main Track)
 
-I will give an overview of our work. Going through [OpenPrinting’s history](https://openprinting.github.io/history/) the components of the printing infrastructure of modern Linux (and other Posix-style) operating systems will get shown.
+I will give an overview of our work. Going through [OpenPrinting’s history](/history/) the components of the printing infrastructure of modern Linux (and other Posix-style) operating systems will get shown.
 
-- How did the Internet Printing Protocol (IPP) with the printing system [CUPS](https://openprinting.github.io/cups/) being an implementation of it simplify printing a lot?
+- How did the Internet Printing Protocol (IPP) with the printing system [CUPS](/cups/) being an implementation of it simplify printing a lot?
 - The printer driver challenge, good and bad cooperation with manufacturers, packaging and distributing ...
 - Desktop integration, GUI toolkits, print dialogs, setup tools, portals, ...
 
-Especially also the [New Architecture](https://openprinting.github.io/current/#the-new-architecture-for-printing-and-scanning) of all-IPP printing and scanning and also the integration in [immutable OS distributions](https://ubuntu.com/blog/ubuntu-core-an-immutable-linux-desktop) will be treated ...
+Especially also the [New Architecture](/current/#the-new-architecture-for-printing-and-scanning) of all-IPP printing and scanning and also the integration in [immutable OS distributions](https://ubuntu.com/blog/ubuntu-core-an-immutable-linux-desktop) will be treated ...
 
 And in the end I will also quickly tell about [Microsoft going all-IPP in Windows](/OpenPrinting-News-December-2023/#new-architecture-under-windows) ...
 
-This is the same talk as I had given on the [FOSDEM](https://openprinting.github.io/OpenPrinting-News-February-2024/#fosdem-2024), on the [Opportunity Open Source](https://openprinting.github.io/OpenPrinting-News-August-2024/#opportunity-open-source-in-iit-kanpur), and on the [Open Source Summit Europe](https://openprinting.github.io/OpenPrinting-News-June-2024/#open-source-summit-in-vienna), but in Portuguese language. And I got a generous time slot of 60 min, meaning that we have a lot of time for questions, answers, and discussion.
+This is the same talk as I had given on the [FOSDEM](/OpenPrinting-News-February-2024/#fosdem-2024), on the [Opportunity Open Source](/OpenPrinting-News-August-2024/#opportunity-open-source-in-iit-kanpur), and on the [Open Source Summit Europe](/OpenPrinting-News-June-2024/#open-source-summit-in-vienna), but in Portuguese language. And I got a generous time slot of 60 min, meaning that we have a lot of time for questions, answers, and discussion.
 
 **[Linux para desktop, fácil como um smartphone! Graças ao Snap!](https://ubuconpt2024.ubuntu-pt.org/sessions/sessao1/)**
 
@@ -91,7 +91,7 @@ Sat, October 12, 09:30 - 10:30 WEST, room 4.1.02 (UbuCon PT)
 
 The motivation, advantages, and concept of the sandboxed, immutable Snap packaging format is shown and how it is used to make up immutable all-Snap OS distros, the IoT distro Snap was originally designed for, Ubuntu Core, and the easily usable and maintainable Ubuntu Core Desktop.
 
-This is the same talk as I had given on the [FOSDEM](https://openprinting.github.io/OpenPrinting-News-February-2024/#fosdem-2024), on the [GUADEC](https://openprinting.github.io/OpenPrinting-News-July-2024/#guadec-2024-in-denver), and on the [Opportunity Open Source](https://openprinting.github.io/OpenPrinting-News-August-2024/#opportunity-open-source-in-iit-kanpur), but in Portuguese language. And here I also got a generous time slot of 60 min, meaning that we have again a lot of time for questions, answers, and discussion.
+This is the same talk as I had given on the [FOSDEM](/OpenPrinting-News-February-2024/#fosdem-2024), on the [GUADEC](/OpenPrinting-News-July-2024/#guadec-2024-in-denver), and on the [Opportunity Open Source](/OpenPrinting-News-August-2024/#opportunity-open-source-in-iit-kanpur), but in Portuguese language. And here I also got a generous time slot of 60 min, meaning that we have again a lot of time for questions, answers, and discussion.
 
 **[O seu aplicativo para todo mundo! Graças ao Snap! - Oficina interativa](https://ubuconpt2024.ubuntu-pt.org/sessions/sessao2/)**
 
