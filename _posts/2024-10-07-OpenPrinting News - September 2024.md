@@ -65,7 +65,7 @@ In a few days I will depart to Portugal, exactly to the city of Aveiro, close to
 
 It is the [Festa do Software Livre](https://festa2024.softwarelivre.eu/), a 2-day conference with a main track and several sub-conferences co-located by different open-source organizations: Drupal, Flutter, WikiMedia Portugal, Inêrcia, and the [UbuCon Portugal](https://ubuconpt2024.ubuntu-pt.org).
 
-Here are the schedules: [Festa do Software Livre](https://festa2024.softwarelivre.eu/agenda), [UbuCon Portugal](https://ubuconpt2024.ubuntu-pt.org/sessions/)
+Here are the schedules: [Festa do Software Livre](https://festa2024.softwarelivre.eu/pt-pt/agenda/), [UbuCon Portugal](https://ubuconpt2024.ubuntu-pt.org/sessions/)
 
 I will give 3 sessions during the event, all in Portuguese:
 
