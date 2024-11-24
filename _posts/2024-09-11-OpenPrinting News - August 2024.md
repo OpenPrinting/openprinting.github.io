@@ -136,8 +136,10 @@ After leaving Kanpur my trip went on in the direction of Jaipur with a stop-over
 
 There I have given a talk and a workshop about Snap, and, only one week before the event, when I was already in Kanpur, I got the invitation to also give my submitted lightning talk about conserving old printers under Windows using WSL.
 
-- **[Desktop Linux, as easy as a smartphone! Just in a Snap!](https://events.canonical.com/event/47/contributions/372/)** ([Slides](https://events.canonical.com/event/47/contributions/372/attachments/275/404/Desktop%20Linux%20as%20easy%20as%20a%20smartphone%20-%20Just%20in%20a%20Snap!%20-%20UbuCon%20Asia%202024.pdf))
-- **[Your app everywhere - Just in a Snap! - Interactive Workshop](https://events.canonical.com/event/47/contributions/397/)** ([Slides](https://events.canonical.com/event/47/contributions/397/attachments/274/412/Workshop%20Your%20app%20everywhere,%20just%20in%20a%20Snap!-with-KDE.odp-2.pdf))
+**Update: Links to the recordings**
+
+- **[Desktop Linux, as easy as a smartphone! Just in a Snap!](https://events.canonical.com/event/47/contributions/372/)** ([Slides](https://events.canonical.com/event/47/contributions/372/attachments/275/404/Desktop%20Linux%20as%20easy%20as%20a%20smartphone%20-%20Just%20in%20a%20Snap!%20-%20UbuCon%20Asia%202024.pdf), [Video](https://www.youtube.com/watch?v=DmdfCV3HQg8))
+- **[Your app everywhere - Just in a Snap! - Interactive Workshop](https://events.canonical.com/event/47/contributions/397/)** ([Slides](https://events.canonical.com/event/47/contributions/397/attachments/274/412/Workshop%20Your%20app%20everywhere,%20just%20in%20a%20Snap!-with-KDE.odp-2.pdf), [Video](https://www.youtube.com/watch?v=05rfWcLi4U4))
 - **[Save Legacy Printers under Windows with WSL and Printer Applications](https://events.canonical.com/event/47/contributions/571/)** ([Slides](https://events.canonical.com/event/47/contributions/571/attachments/276/406/Save%20Legacy%20Printers%20under%20Windows%20with%20WSL%20and%20Printer%20Applications%20-%20UbuCon%20Asia%202024.pdf))
 
 But the most important of this conference for me was to meet Soumyadeep Ghosh ([see above](#soumyadeep-ghosh)).
@@ -168,6 +170,8 @@ But independent of this I had submitted a talk and it got accepted, so mark your
 Wed, September 18, 15:10 - 15:50 CEST, Hall B (Level 2)
 
 Track: [LinuxCon](https://osseu2024.sched.com/type/LinuxCon)
+
+**Update: [Slides](https://static.sched.com/hosted_files/osseu2024/0e/talk-openprinting-2024.pdf), [Video](https://www.youtube.com/watch?v=mNtVaHI1OU8)**
 
 I will give an overview of our work. Going through OpenPrinting's history the components of the printing infrastructure of modern Linux (and other Posix-style) operating systems will get shown. - How did the Internet Printing Protocol (IPP) with the printing system CUPS being an implementation of it simplify printing a lot? - The printer driver challenge, good and bad cooperation with manufacturers, packaging and distributing ... - Desktop integration, GUI toolkits, print dialogs, setup tools, portals, ... Especially also the New Architecture of all-IPP printing and scanning and also the integration in immutable OS distributions will be treated ... 
 
