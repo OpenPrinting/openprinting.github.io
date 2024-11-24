@@ -136,7 +136,7 @@ After leaving Kanpur my trip went on in the direction of Jaipur with a stop-over
 
 There I have given a talk and a workshop about Snap, and, only one week before the event, when I was already in Kanpur, I got the invitation to also give my submitted lightning talk about conserving old printers under Windows using WSL.
 
-**Update: Links to the recordings**
+**Update: Recordings of [all talks](https://www.youtube.com/@UbuConAsia/videos), links to my talks below**
 
 - **[Desktop Linux, as easy as a smartphone! Just in a Snap!](https://events.canonical.com/event/47/contributions/372/)** ([Slides](https://events.canonical.com/event/47/contributions/372/attachments/275/404/Desktop%20Linux%20as%20easy%20as%20a%20smartphone%20-%20Just%20in%20a%20Snap!%20-%20UbuCon%20Asia%202024.pdf), [Video](https://www.youtube.com/watch?v=DmdfCV3HQg8))
 - **[Your app everywhere - Just in a Snap! - Interactive Workshop](https://events.canonical.com/event/47/contributions/397/)** ([Slides](https://events.canonical.com/event/47/contributions/397/attachments/274/412/Workshop%20Your%20app%20everywhere,%20just%20in%20a%20Snap!-with-KDE.odp-2.pdf), [Video](https://www.youtube.com/watch?v=05rfWcLi4U4))
@@ -161,6 +161,8 @@ But the most important of this conference for me was to meet Soumyadeep Ghosh ([
 
 
 ## Open Source Summit Europe in Vienna
+**[Playlist of all recorded sessions](https://www.youtube.com/playlist?list=PLbzoR-pLrL6rC7SpO7MJCZm22Qp5ns3p-)**
+
 This year's [Open Source Summit Europe](https://events.linuxfoundation.org/open-source-summit-europe/) in Vienna is approaching, next week! On September 16-18. It is a home game for me and so I had attended it independent whether I had given a talk or not. Especially also as I am one of the 8 fellows of the Linux Foundation, the conference fee is waived for me.
 
 But independent of this I had submitted a talk and it got accepted, so mark your calendars:
