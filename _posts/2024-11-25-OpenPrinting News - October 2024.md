@@ -22,7 +22,7 @@ The [GSoC](#google-summer-of-code-2024) has ended and our 11 contributors have a
 
 And there were also several [new releases](#new-releases) at OpenPrinting, starting with the 2.1.0 releases of libcupsfilters, libppd, and cups-browsed to include the fixes for the [recent vulnerabilities](/OpenPrinting-News-Flash-cups-browsed-Remote-Code-Execution-vulnerability/) and updates of libcups3 and PAPPL.
 
-Videos of the talks on the [UbuCon Asia 2024](https://www.youtube.com/@UbuConAsia/videos) and on the [Open Source Summit Europe 2024](https://www.youtube.com/playlist?list=PLbzoR-pLrL6rC7SpO7MJCZm22Qp5ns3p-) are available now. See links to the recordings of my talks in the appropriate sections in the [August News](/OpenPrinting-News-August-2024/).
+Videos of the talks on the [UbuCon Asia 2024](https://www.youtube.com/playlist?list=PLr8g8zdbZAgH7pLbMXfwdEI-c9Ck-gcHI) and on the [Open Source Summit Europe 2024](https://www.youtube.com/playlist?list=PLbzoR-pLrL6rC7SpO7MJCZm22Qp5ns3p-) are available now. See links to the recordings of my talks in the appropriate sections in the [August News](/OpenPrinting-News-August-2024/).
 
 So let us see what happened at OpenPrinting in October ...
 
