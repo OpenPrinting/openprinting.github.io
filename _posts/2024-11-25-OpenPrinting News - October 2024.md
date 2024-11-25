@@ -142,7 +142,7 @@ I attended following sessions, including all those sessions where our [GSoC](#go
 
 The session was announced as a workshop and had taken place in the workshop room. In the beginning I installed Inkscape expecting that there are exercises, but actually it was only a demo of most of the functionality of Inkscape, which is a lot, allowing for really professional artwork, doing nearly everything which has to do with graphics: Non-destructive photo editing, slides for presentations, ... Christopher tells that if he had given exercises he could only treat a very small part of the whole session's content.
 
-"**[Live build your submarine step-by-step](Live build your submarine step-by-step)**" by Juanmi Taboada
+"**[Live build your submarine step-by-step](https://events.canonical.com/event/51/contributions/541/)**" by Juanmi Taboada
 
 Here I was in the good hope to put my hands on some hardware, but, as the Inkscape "workshop" this was also only a demo. Juanmi, who brought his remote-operated and free-software-controlled submersible already to [last year's Summit](/OpenPrinting-News-November-2023/#ubuntu-summit-2023-in-riga) explained the free-software-driven hardware-components, showed them and put them together, but there were no extra copies for the audience to try it by themselves.
 
@@ -179,9 +179,9 @@ And Akarshan, when he introduced himself in the beginning, he told that he was a
 **Lightning Talks**
 
 I have also attended the lightning talks, especially
-- "**[Making the Thunderbird snap a first class citizen](https://events.canonical.com/event/51/contributions/574/)**" by Heather Ellsworth ([Slides](https://docs.google.com/presentation/d/1rLv_Yh8fTMmvThm9UFr5QmzghI5KAplTQoSo-XCoc1k/edit?usp=sharing), [Video](https://www.youtube.com/watch?v=G6OBiIKn1J4)): Heather, who formerly worked in Canonical's Desktop Team and had moved on to Thunderbird, is snapping Thunderbird in close collaboration with her former colleagues from Canonical.
+- "**[Making the Thunderbird snap a first class citizen](https://events.canonical.com/event/51/contributions/574/)**" by Heather Ellsworth ([Slides](https://docs.google.com/presentation/d/1rLv_Yh8fTMmvThm9UFr5QmzghI5KAplTQoSo-XCoc1k/edit?usp=sharing), [Video](https://www.youtube.com/watch?v=G6OBiIKn1J4&t=1s)): Heather, who formerly worked in Canonical's Desktop Team and had moved on to Thunderbird, is snapping Thunderbird in close collaboration with her former colleagues from Canonical.
 - "**[How I built Check-in Kiosk for UbuCon Korea](https://events.canonical.com/event/51/contributions/582/)**" by Youngbin Han ([Slides](https://docs.google.com/presentation/d/1YZ7mb07jB-HP26xy0gejg_27JLZ0t9-yEQbTmUe6rFg/edit#slide=id.p), [Video](https://www.youtube.com/live/byPpJW5l6pg?si=l7yjyX3XbRUs0X5F&t=33917)): On-the-spot printing of conference badges with a self-service kiosk setup with a label printer, created by Youngbin.
-- "**[Back to the Future of Open Source 3D Printing Hardware](https://events.canonical.com/event/51/contributions/605/)**" by Yatin Khurana ([Slides](https://docs.google.com/presentation/d/1KObA88U0JqXXO-tzpcvtQ0N2Ap-xbTfGynjRq-peWq0/edit#slide=id.p), [Video](https://www.youtube.com/live/byPpJW5l6pg?t=35550s): Indian manufacturer makes true open-source hardware components for 3D printers.
+- "**[Back to the Future of Open Source 3D Printing Hardware](https://events.canonical.com/event/51/contributions/605/)**" by Yatin Khurana ([Slides](https://docs.google.com/presentation/d/1KObA88U0JqXXO-tzpcvtQ0N2Ap-xbTfGynjRq-peWq0/edit#slide=id.p), [Video](https://www.youtube.com/live/byPpJW5l6pg?t=35550s)): Indian manufacturer makes true open-source hardware components for 3D printers.
 - "**[Open Source DJing: bringing hardware compatibility to the Linux platform](https://events.canonical.com/event/51/contributions/638/)**" by Jesús Soto ([Slides](https://docs.google.com/presentation/d/11-yxkPiCB0RxG2quLGtrBv7P1Q0dYUvr4f0_ZIqvQnc/edit#slide=id.g29228888b6b_0_0), [Video](https://www.youtube.com/live/byPpJW5l6pg?si=MgWlscbsXLq-8ieI&t=35857)): Before Jesús performs it live on the closing party he tells in the last lightning talk of the conference, right before the party, how DJing with free software is done.
 
 and the lightning demo:
@@ -241,15 +241,15 @@ Here are some blogs, articles, videos, and podcasts about the event (taken from 
   - [Framework laptops get modular makeover with RISC-V main board](https://www.theregister.com/2024/11/18/riscv_framework_main_board/): About the lightning demo of getting Deep Computingś RISC-V board into a Framework laptop (see above) and about the RISC-V board itself.
 - **[Gaming on Linux](https://www.gamingonlinux.com/)**
   - [Ubuntu Summit 2024 highlights - Linux gaming talks on UMU and Heroic Launcher](https://www.gamingonlinux.com/2024/10/ubuntu-summit-2024-highlights-linux-gaming-talks-on-umu-and-heroic-launcher/): Short article about the 2 gaming-related talks, [Paweł Lidwin about Heroic](https://events.canonical.com/event/51/contributions/580/) and [Thomas Crider ("GloriousEggroll", "Eggy") about UMU](https://events.canonical.com/event/51/contributions/510/), with links to the talks in the recording videos. The gaming booth and hacker room got not mentioned though.
-- **[Late Night Linux Podcast](https://latenightlinux.com/)
+- **[Late Night Linux Podcast](https://latenightlinux.com/)**
   - [Episode 307](https://latenightlinux.com/late-night-linux-episode-307/): Report from the summit at 18:50 min to 22:00 min.
 - **[Fedora Podcast](https://www.youtube.com/@fedora)**
   - [Gaming with ProtonGE](https://www.youtube.com/watch?v=pB7h8T1rBNM&t=2449s): Eggy gets interviewed about his work on Linux gaming and he tells about the Summit in the "Future of Gaming" section near the end.
 - **[Canonical Open Documentation Academy](https://discourse.ubuntu.com/t/39615)**]
-  - [Open Documentation Hours episode 35](https://www.youtube.com/watch?v=J5GEAzAZOS0)**: The episode which we have produced in the Open Documentation Academy hacker room, see above.
+  - [Open Documentation Hours episode 35](https://www.youtube.com/watch?v=J5GEAzAZOS0): The episode which we have produced in the Open Documentation Academy hacker room, see above.
 - **[Podcast Ubuntu Portugal](https://podcastubuntuportugal.org/)** (in Portuguese)
   - [E322: Na Ubuntu Summit 2024 (Haia)](https://podcastubuntuportugal.org/e322/): The episode we have produced live on the Summit, by Diogo Constantino, me and 3 other Portuguese-speaking guests.
-  - [E323: ](https://podcastubuntuportugal.org/e323/): About both the Festa do Software Livre and the Ubuntu Summit. At 8:30 min - 13:20 min Diogo Constantino tells about the wireless clip-on mics which I brought and which we used for my Snap workshop and some other sessions.
+  - [E323: Balanço de Cimeiras](https://podcastubuntuportugal.org/e323/): About both the Festa do Software Livre and the Ubuntu Summit. At 8:30 min - 13:20 min Diogo Constantino tells about the wireless clip-on mics which I brought and which we used for my Snap workshop and some other sessions.
 
 
 ## 4 times in Podcast Ubuntu Portugal
@@ -509,11 +509,11 @@ Since the last OpenPrinting News we had again several releases:
 
 First of all, we have done upstream releases of the packages which got fixed because of the [recently reported remote code execution and DDoS vulnerabilities](/OpenPrinting-News-Flash-cups-browsed-Remote-Code-Execution-vulnerability/).
 
-We have especially removed support for legacy CUPS browsing and for LDAP from **cups-browsed** to eliminate the entrance point for the attacks, the acceptance of UDP packages from arbitrary sources on port 631. In addition we validate and sanitize incoming IPP responses and PPD file entries in both **libcupsfilters** and *libppd**.
+We have especially removed support for legacy CUPS browsing and for LDAP from **cups-browsed** to eliminate the entrance point for the attacks, the acceptance of UDP packages from arbitrary sources on port 631. In addition we validate and sanitize incoming IPP responses and PPD file entries in both **libcupsfilters** and **libppd**.
 
 After the 2.0.0 release we had also added some new features during all the months up to now. In **libcupsfilters** and **libppd** we have added **support for building with libcups3**, and `INSTALL.md` files instead of `INSTALL`.
 
-**libcupsfilters** received the code of **CI/build/unit testing of filter functions** using an easily-editable table describing the test cases. This was Pratyush Ranjan's [GSoC 2023 project](https://github.com/pranjanpr/GSoC-23) at OpenPrinting.
+**libcupsfilters** received a facility for **CI/build/unit testing of filter functions** using an easily-editable table describing the test cases. This was Pratyush Ranjan's [GSoC 2023 project](https://github.com/pranjanpr/GSoC-23) at OpenPrinting.
 
 **libcups [3.0rc1](/libcups-3.0rc1/), [3.0rc2](/libcups-3.0rc2/), and [3.0rc3](/libcups-3.0rc3/)**
 
