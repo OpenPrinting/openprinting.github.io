@@ -245,7 +245,7 @@ Here are some blogs, articles, videos, and podcasts about the event (taken from 
   - [Episode 307](https://latenightlinux.com/late-night-linux-episode-307/): Report from the summit at 18:50 min to 22:00 min.
 - **[Fedora Podcast](https://www.youtube.com/@fedora)**
   - [Gaming with ProtonGE](https://www.youtube.com/watch?v=pB7h8T1rBNM&t=2449s): Eggy gets interviewed about his work on Linux gaming and he tells about the Summit in the "Future of Gaming" section near the end.
-- **[Canonical Open Documentation Academy](https://discourse.ubuntu.com/t/39615)**]
+- **[Canonical Open Documentation Academy](https://discourse.ubuntu.com/t/39615)**
   - [Open Documentation Hours episode 35](https://www.youtube.com/watch?v=J5GEAzAZOS0): The episode which we have produced in the Open Documentation Academy hacker room, see above.
 - **[Podcast Ubuntu Portugal](https://podcastubuntuportugal.org/)** (in Portuguese)
   - [E322: Na Ubuntu Summit 2024 (Haia)](https://podcastubuntuportugal.org/e322/): The episode we have produced live on the Summit, by Diogo Constantino, me and 3 other Portuguese-speaking guests.
