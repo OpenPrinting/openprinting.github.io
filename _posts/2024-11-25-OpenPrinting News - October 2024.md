@@ -88,11 +88,15 @@ And before the dinner Diogo and me exchanged our experience in recording and liv
 
 
 ## Ubuntu Summit 2024 in the Hague
-**Recordings of the talks: [25th](https://www.youtube.com/watch?v=LPCg0NcQICQ), [26th](https://www.youtube.com/watch?v=ZNK4aSv-krI), [27th](https://www.youtube.com/watch?v=byPpJW5l6pg) (Separated videos and workshop room recordings will come later)**
+**Update: Session video playlist started and all links to session recordings point to the individual videos now.**
+
+**Recordings of the conference days in the plenary room: [25th](https://www.youtube.com/watch?v=LPCg0NcQICQ), [26th](https://www.youtube.com/watch?v=ZNK4aSv-krI), [27th](https://www.youtube.com/watch?v=byPpJW5l6pg)**
+
+**[Playlist](https://www.youtube.com/playlist?list=PLwFSk464RMxmaZj6wi3e-NLOGtRr4iFF6) of all the sessions, sessions will get added daily, like an advent calendar, currently we have all lightning talks and 27 regular talks**
 
 **Pictures: [Photographers](https://photos.app.goo.gl/7RxFVjLPqvuq3y51A), [Attendees](https://photos.app.goo.gl/g7CrHwxCmtzTsMzBA)**
 
-**[Aftermovie](https://www.youtube.com/live/byPpJW5l6pg?t=36210s)**
+**[Aftermovie](https://www.youtube.com/watch?v=aR-yTFtjGtw)**
 
 **When I refer to talks or workshops in this section, I always link to the slides, exercises, and recordings, if possible, so if you have missed a session, you can watch it, read the slides, and also do the workshop's exercises, whenever you like.**
 
@@ -150,17 +154,17 @@ Here I was in the good hope to put my hands on some hardware, but, as the Inksca
 
 Finally, an actually interactive workshop, but this one was also with my mentoring, as the speakers are no less than our [GSoC](#google-summer-of-code-2024) team for [deploying OSS Fuzz on the OpenPrinting repositories](https://github.com/OpenPrinting/fuzzing/wiki/Integrating-C%E2%80%90based-OpenPrinting-Projects-in-OSS%E2%80%90Fuzz-Testing-(GSoC-2024)), contributor Jiongchi Yu and mentors George-Andrei Iosif and Dongge Liu. Unfortunately Jiongchi could not come to the Summit in-person as he was on another conference in the US. So after a short introduction by me, George Andrei and Donggi were explaining the steps for the attendees to do on their laptops, with the Heartbleed on OpenSSL being the example. Jiongchi was connected via video meeting and in the end he told about the OSS Fuzz deployment on OpenPrinting.
 
-"**[The Journey of KDE Plasma on Ubuntu Core](https://events.canonical.com/event/51/contributions/549/)**" by Kevin Ottens ([Slides](https://docs.google.com/presentation/d/1iYKSYeRfsUc6JvUl8j_PNpZC2tOfNxAVgedKRLiO0Us/edit?usp=sharing), [Video](https://www.youtube.com/live/ZNK4aSv-krI?t=18402s))
+"**[The Journey of KDE Plasma on Ubuntu Core](https://events.canonical.com/event/51/contributions/549/)**" by Kevin Ottens ([Slides](https://docs.google.com/presentation/d/1iYKSYeRfsUc6JvUl8j_PNpZC2tOfNxAVgedKRLiO0Us/edit?usp=sharing), [Video](https://www.youtube.com/watch?v=62_H4jzoefM))
 
 This is all about the development of an Ubuntu Core Desktop distro with KDE instead of GNOME as desktop session. The architecture is shown and the challenges encountered and how they got solved.
 
-Soumyadeep Ghosh, GSoC-2024 contributor of the Snap backend for KDEs software manager Discover, mentored by Scarlett Moore, asked several [interesting questions](https://www.youtube.com/live/ZNK4aSv-krI?si=hLuml5lPvpAo0vvS&t=21037).
+Soumyadeep Ghosh, GSoC-2024 contributor of the Snap backend for KDEs software manager Discover, mentored by Scarlett Moore, asked several [interesting questions](https://www.youtube.com/watch?v=62_H4jzoefM&t=2580).
 
 "**[Unstoppable Force Behind Linux on RISC-V](https://events.canonical.com/event/51/contributions/518/)**" by Gordan Markus and Yuning Liang ([Slides](https://docs.google.com/presentation/d/1Z3_dOIojdL3FHTfyEGkcFXrI0KNTyWMC/edit), [Video](https://www.youtube.com/watch?v=RFQ_TvCYBYM))
 
 Gordan Markus, Director Silicon Alliances at Canonical, and Yuning Liang, founder of Deep Computing, tell about Deep Computing's efforts to create consumer-ready laptops with RISC-V architecture and Ubuntu as operating system.
 
-"**[Re-inventing distroless with Chiselled Ubuntu containers](https://events.canonical.com/event/51/contributions/520/)**" by Cristovão Cordeiro ([Slides](https://docs.google.com/presentation/d/1viW8ZGtPgxS39NXjLKZ77K1zFf4sK-Xip77tTu0XklU/edit?usp=sharing), [Video](https://www.youtube.com/live/byPpJW5l6pg?t=7133s))
+"**[Re-inventing distroless with Chiselled Ubuntu containers](https://events.canonical.com/event/51/contributions/520/)**" by Cristovão Cordeiro ([Slides](https://docs.google.com/presentation/d/1viW8ZGtPgxS39NXjLKZ77K1zFf4sK-Xip77tTu0XklU/edit?usp=sharing), [Video](https://www.youtube.com/watch?v=yQukQb-n99E))
 
 In this talk Cristovão Cordeiro, manager of a containerization team at Canonical, tells about freeing containers from unnecessary files, not only to save storage space but also to reduce the attack surface of the containerized applications. He uses the `chisel` tool which allows the installation of parts of Debian packages (so-called "slices"). Cristovão was also [GSoC](#google-summer-of-code-2024) mentor at OpenPrinting this year for the [project of Rudra Pratap Singh, to create OCI container images of CUPS and Printer Applications](https://medium.com/@rudransh.iitm/gsoc-2024-final-report-container-chronicles-759fe7f23ac6).
 
@@ -168,21 +172,21 @@ In this talk Cristovão Cordeiro, manager of a containerization team at Canonica
 
 Right after Cristovão's talk one could get hands-on with his subject matter in this workshop. And it was really interactive. On one of the first slides there are instructions on which packages to install and a link to a GitHub repo with all the example files for the exercises in a subdirectory for each task. I have actually done the exercises during the workshop and they all worked as designed.
 
-"**[Flush with Innovation: Revolutionising Train System Toilets with Embedded Technologies](https://events.canonical.com/event/51/contributions/551/)**" by Akarshan Kapoor ([Slides](https://gamma.app/docs/Revolutionizing-Train-System-Toilets-fke0yjvj9xyas1y), [Video](https://www.youtube.com/live/byPpJW5l6pg?t=21576s))
+"**[Flush with Innovation: Revolutionising Train System Toilets with Embedded Technologies](https://events.canonical.com/event/51/contributions/551/)**" by Akarshan Kapoor ([Slides](https://gamma.app/docs/Revolutionizing-Train-System-Toilets-fke0yjvj9xyas1y), [Video](https://www.youtube.com/watch?v=kWMt8PLVEE0))
 
-Our [GSoC](#google-summer-of-code-2024) contributor Akarshan Kapoor was on the Ubuntu Summit again, but not with a talk about Scanner Applications. Doing his second exchange semester in Germany, he also did an internship where he worked on the free software stack used in the monitoring system of the toilets in the trains of the German railway. Christian Ehrhardt, MC of the day, announces this talk so nicely:
+Our [GSoC](#google-summer-of-code-2024) contributor Akarshan Kapoor was on the Ubuntu Summit again, but not with a talk about Scanner Applications. Doing his second exchange semester in Germany, he also did an internship where he worked on the free software stack used in the monitoring system of the toilets in the trains of the German railway. Christian Ehrhardt, MC of the day, [announces this talk so nicely](https://www.youtube.com/live/byPpJW5l6pg?t=21576s):
 
 > This is AK, who will revolutionize my personal live. Because train travel in Germany really is not, what you want it to be, and if it is really not what you want it to be, you at least want to have the toilets working ...
 
-And Akarshan, when he introduced himself in the beginning, he told that he was already speaking on the [Summit last year](/OpenPrinting-News-November-2023/#ubuntu-summit-2023-in-riga), about his [Scanner Application work for OpenPrinting](https://dev.to/kappuccino111/pappl-scan-api-bridging-gsoc-2024-project-report-2hoc), and [he shouted me out](https://www.youtube.com/live/byPpJW5l6pg?t=21690s)!
+And Akarshan, when he introduced himself in the beginning, he told that he was already speaking on the [Summit last year](/OpenPrinting-News-November-2023/#ubuntu-summit-2023-in-riga), about his [Scanner Application work for OpenPrinting](https://dev.to/kappuccino111/pappl-scan-api-bridging-gsoc-2024-project-report-2hoc), and [he shouted me out](https://www.youtube.com/watch?v=kWMt8PLVEE0&t=82s)!
 
 **Lightning Talks**
 
 I have also attended the lightning talks, especially
 - "**[Making the Thunderbird snap a first class citizen](https://events.canonical.com/event/51/contributions/574/)**" by Heather Ellsworth ([Slides](https://docs.google.com/presentation/d/1rLv_Yh8fTMmvThm9UFr5QmzghI5KAplTQoSo-XCoc1k/edit?usp=sharing), [Video](https://www.youtube.com/watch?v=G6OBiIKn1J4&t=1s)): Heather, who formerly worked in Canonical's Desktop Team and had moved on to Thunderbird, is snapping Thunderbird in close collaboration with her former colleagues from Canonical.
-- "**[How I built Check-in Kiosk for UbuCon Korea](https://events.canonical.com/event/51/contributions/582/)**" by Youngbin Han ([Slides](https://docs.google.com/presentation/d/1YZ7mb07jB-HP26xy0gejg_27JLZ0t9-yEQbTmUe6rFg/edit#slide=id.p), [Video](https://www.youtube.com/live/byPpJW5l6pg?si=l7yjyX3XbRUs0X5F&t=33917)): On-the-spot printing of conference badges with a self-service kiosk setup with a label printer, created by Youngbin.
-- "**[Back to the Future of Open Source 3D Printing Hardware](https://events.canonical.com/event/51/contributions/605/)**" by Yatin Khurana ([Slides](https://docs.google.com/presentation/d/1KObA88U0JqXXO-tzpcvtQ0N2Ap-xbTfGynjRq-peWq0/edit#slide=id.p), [Video](https://www.youtube.com/live/byPpJW5l6pg?t=35550s)): Indian manufacturer makes true open-source hardware components for 3D printers.
-- "**[Open Source DJing: bringing hardware compatibility to the Linux platform](https://events.canonical.com/event/51/contributions/638/)**" by Jesús Soto ([Slides](https://docs.google.com/presentation/d/11-yxkPiCB0RxG2quLGtrBv7P1Q0dYUvr4f0_ZIqvQnc/edit#slide=id.g29228888b6b_0_0), [Video](https://www.youtube.com/live/byPpJW5l6pg?si=MgWlscbsXLq-8ieI&t=35857)): Before Jesús performs it live on the closing party he tells in the last lightning talk of the conference, right before the party, how DJing with free software is done.
+- "**[How I built Check-in Kiosk for UbuCon Korea](https://events.canonical.com/event/51/contributions/582/)**" by Youngbin Han ([Slides](https://docs.google.com/presentation/d/1YZ7mb07jB-HP26xy0gejg_27JLZ0t9-yEQbTmUe6rFg/edit#slide=id.p), [Video](https://www.youtube.com/watch?v=2cQ7IUFmHUg&t=1s)): On-the-spot printing of conference badges with a self-service kiosk setup with a label printer, created by Youngbin.
+- "**[Back to the Future of Open Source 3D Printing Hardware](https://events.canonical.com/event/51/contributions/605/)**" by Yatin Khurana ([Slides](https://docs.google.com/presentation/d/1KObA88U0JqXXO-tzpcvtQ0N2Ap-xbTfGynjRq-peWq0/edit#slide=id.p), [Video](https://www.youtube.com/watch?v=2cQ7IUFmHUg&t=1551s)): Indian manufacturer makes true open-source hardware components for 3D printers.
+- "**[Open Source DJing: bringing hardware compatibility to the Linux platform](https://events.canonical.com/event/51/contributions/638/)**" by Jesús Soto ([Slides](https://docs.google.com/presentation/d/11-yxkPiCB0RxG2quLGtrBv7P1Q0dYUvr4f0_ZIqvQnc/edit#slide=id.g29228888b6b_0_0), [Video](https://www.youtube.com/watch?v=2cQ7IUFmHUg&t=1860s)): Before Jesús performs it live on the closing party he tells in the last lightning talk of the conference, right before the party, how DJing with free software is done.
 
 and the lightning demo:
 - "**[Modifying a Framework Laptop from x86 to RISC-V live on stage](https://events.canonical.com/event/51/contributions/557/)**" by Nirav Patel ([Video](https://www.youtube.com/watch?v=l6khGznGeyY)): Framework's CEO is showing how easy it is to make changes on the hardware of a Framework laptop, thanks to their modularity. And with Deep Computing having presented their RISC V mainboard for Framework, it is exactly this which makes it into the sample laptop within the 5 minutes of a lightning talk slot. Unfortunately no boot test is demonstrated ... But the demo was already impressive this way.
