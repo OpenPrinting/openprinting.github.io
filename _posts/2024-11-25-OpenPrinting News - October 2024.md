@@ -235,6 +235,9 @@ At [2:00 min](https://www.youtube.com/watch?v=J5GEAzAZOS0&t=120s) we discussed t
 
 Here are some blogs, articles, videos, and podcasts about the event (taken from the internal list of the organization team):
 
+- **[The Source - Canonical on LinkedIn](https://www.linkedin.com/newsletters/the-source-7108409718422839296/)**
+  - [Thank YOU for open source](https://www.linkedin.com/pulse/thank-you-open-source-canonical-eyroe/): Canonical's official report of the Summit on LinkedIn, featuring [Ngazetungue Muheue’s talk on open source in Africa](https://youtu.be/mPP7amqTGFA), the work of the Hack Club, creating free software with high school teenagers, including the [talk about the Boreal Express](https://youtu.be/AdgU-_1vDco), by Zach Latta, founder of the organization, [Akarshan's talk about the free software use in train toilet monitoring](https://www.youtube.com/watch?v=kWMt8PLVEE0) (see above), Juanmi Taboada's submersible workshop (see above), and as the higlight at the end, the [Framework lightning demo](https://www.youtube.com/watch?v=l6khGznGeyY) (see above).
+
 - **[Soumyadeep Ghosh on GitHub](https://soumyadghosh.github.io/website/)**
   - [Ubuntu Summit 2024: A joyful experience filled with sorrow](https://soumyadghosh.github.io/website/blog/ubuntu-summit-2024/): Soumyadeep's second conference in his life (The first was the [UbuCon Asia 2024](/OpenPrinting-News-August-2024/#soumyadeep-ghosh) and his first international trip, was the Ubuntu Summit. He tells about his arrival, the people he met, the Snapcrafters booth, the Snap workshops, the sessions he attended, with many photos of the people ... But he also tells that his grandpa passed away while he was on the Summit. R. I. P.
 
