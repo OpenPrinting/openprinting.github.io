@@ -88,11 +88,11 @@ And before the dinner Diogo and me exchanged our experience in recording and liv
 
 
 ## Ubuntu Summit 2024 in the Hague
-**Update: Session video playlist started and all links to session recordings point to the individual videos now.**
+**Update: Session video playlist started and all links to session recordings here point to the individual videos now.**
 
 **Recordings of the conference days in the plenary room: [25th](https://www.youtube.com/watch?v=LPCg0NcQICQ), [26th](https://www.youtube.com/watch?v=ZNK4aSv-krI), [27th](https://www.youtube.com/watch?v=byPpJW5l6pg)**
 
-**[Playlist](https://www.youtube.com/playlist?list=PLwFSk464RMxmaZj6wi3e-NLOGtRr4iFF6) of all the sessions, sessions will get added daily, like an advent calendar, currently we have all lightning talks and 27 regular talks**
+**[Playlist](https://www.youtube.com/playlist?list=PLwFSk464RMxmaZj6wi3e-NLOGtRr4iFF6) of all the sessions in the plenary room (talks and lightning talks), sessions in the workshop room will get added later.**
 
 **Pictures: [Photographers](https://photos.app.goo.gl/7RxFVjLPqvuq3y51A), [Attendees](https://photos.app.goo.gl/g7CrHwxCmtzTsMzBA)**
 
