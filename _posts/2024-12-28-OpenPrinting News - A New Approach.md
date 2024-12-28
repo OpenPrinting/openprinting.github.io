@@ -1,7 +1,7 @@
 ---
 title: OpenPrinting News - A New Approach
 layout: single
-toc: true
+toc: false
 toc_sticky: true
 author: Till
 excerpt: Moving on from time-based monthly posts to one post per subject matter
