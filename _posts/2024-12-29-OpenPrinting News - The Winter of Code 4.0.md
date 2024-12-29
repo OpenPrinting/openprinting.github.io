@@ -10,7 +10,7 @@ Some weeks ago I got e-mail from the Google Developer Groups (GDG) on Campus III
 
 The Winter of Code is an Open Source contributor program inspired by the Google Summer of Code, but with only a 1-month coding period and no stipends for contributors and mentors. It is organized by folks at the Indian Institute of Information Technology Kalyani, but as they have approached other GSoC organizations, too, it is not based on my relationships with India that they invited me.
 
-The program is performed for the 4th time this year but I only got note this year, by the e-mail I got this year.
+The program is performed for the 4th time this year but I only got note this year, by the mentioned e-mail.
 
 I decided to [participate](https://winterofcode.tech/#orgs) with [3 small projects](https://winterofcode.tech/#projects) to try out the program and see whether it attracts people to join our developer community and also for potential GSoC contributors, by giving us nice code samples by their work on our WoC projects.
 
@@ -39,7 +39,7 @@ Mentor: [Jiongchi Yu](https://github.com/OpenPrinting/fuzzing/wiki/Integrating-C
 
 **We will also accept your own project ideas.**
 
-If you are interested, please [register as a contributor](https://winterofcode.devfolio.co/) on the WoC web site. Last day for registering is December 31. Until January 12, you will need to submit your proposal then and coding period is January 20 - February 20 (see [complete schedules](https://winterofcode.tech/#timeline). It is not required to be a student or an open-source beginner, everybody can participate. Please also check out the [FAQs](https://winterofcode.tech/faqs).
+If you are interested, please [register as a contributor](https://winterofcode.devfolio.co/) on the WoC web site. Last day for registering is December 31. Until January 12, you will need to submit your proposal then and coding period is January 20 - February 20 (see [complete schedules](https://winterofcode.tech/#timeline)). It is not required to be a student or an open-source beginner, everybody can participate. Please also check out the [FAQs](https://winterofcode.tech/faqs).
 
 A well-done WoC project can also be your launchpad to the GSoC as we will for sure give you higher priority in the GSoC contributor selection process then.
 
