@@ -23,4 +23,4 @@ We also fixed an uninitialized string buffer and a wrong use of a pointer.
 
 ### Package
 
-- **cups-browsed: [More Details and Download](https://github.com/OpenPrinting/cups-browsed/releases/tag/2.0b4), [Discussion](https://github.com/OpenPrinting/cups-browsed/discussions/8)**
+- **cups-browsed: [More Details and Download](https://github.com/OpenPrinting/cups-browsed/releases/tag/2.1.1), [Discussion](https://github.com/OpenPrinting/cups-browsed/discussions/49)**
