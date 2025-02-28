@@ -4,7 +4,7 @@ layout: single
 author: Till
 excerpt: Seventh beta with many fixes for bugs found during GSoC 2024, API improvements, support for CUPS instances, and explanation how CPDB works.
 ---
-During the Google Summer of Code 2024 Biswadeep Purkayastha has added CPDB support to the print dialog of LibreOffice, mentored by Michael Weghorn, one of the LibreOffice developers. In addition to working on the print dialog of LibreOffice, they both have made a lot of contributions, mainly bug fixes, but also some improvements.
+During the Google Summer of Code 2024 Biswadeep Purkayastha has added CPDB support to the print dialog of LibreOffice, mentored by Michael Weghorn, one of the LibreOffice developers. In addition to working on the print dialog of LibreOffice, they both have made a lot of contributions, mainly bug fixes, but also some improvements. **Thanks, Biswadeep and Michael, for all these valuable contributions.**
 
 **Lots of API improvements**
 
@@ -37,7 +37,7 @@ The more "visible" bugs are here:
 
 **Documentation**
 
-- `README.md`: Explained inner workings of CPDB and gave containerization hints. Especially done because snapd developers asked for it for [making snapping CPDB work](https://forum.snapcraft.io/t/37397/).
+- `README.md`: Explained inner workings of CPDB and gave containerization hints in a new section "[How does it all work internally?](https://github.com/OpenPrinting/cpdb-libs#how-does-it-all-work-internally)". Especially done because snapd developers asked for it for [making snapping CPDB work](https://forum.snapcraft.io/t/37397/).
 - *Documentation for newly added API functions*: Added header comments for auto-generating developer documentation (Pull request [#43](https://github.com/OpenPrinting/cpdb-libs/pull/43)).
 
 **CUPS Backend changes**
