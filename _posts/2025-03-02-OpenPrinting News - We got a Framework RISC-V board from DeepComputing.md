@@ -17,7 +17,7 @@ But Yuning did even something better, he has replaced the SBC by a shiny new RIS
 
 **Now I have a working RISC-V sample for OpenPrinting!**
 
-I directly went back to the Ubuntu booth and set it up there for a first test. Fortunately, I had brought a wired keyboard and mouse and some old USB-C power supplies. Colleagues asked for bringing such stuff for demoing Raspberry Pis but nobody actually set them up, so we had an even nicer demo of the Framwaork/DeepComputing RISC-V board on the Sunday afternoon. There was not much to demo though as there wer still some issues, and so we quickly messed it up ...
+I directly went back to the Ubuntu booth and set it up there for a first test. Fortunately, I had brought a wired keyboard and mouse and some old USB-C power supplies. Colleagues asked for bringing such stuff for demoing Raspberry Pis but nobody actually set them up, so we had an even nicer demo of the Framework/DeepComputing RISC-V board on the Sunday afternoon. There was not much to demo though as there were still some issues, and so we quickly messed it up ...
 
 ## Setting it up - The quirks of a pre-production unit
 
