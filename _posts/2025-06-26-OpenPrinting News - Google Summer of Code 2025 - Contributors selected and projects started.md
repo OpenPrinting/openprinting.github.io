@@ -67,7 +67,7 @@ Mentors: **Bhavanishankar Ravindra**, **Callahan Kovacs**, Till Kamppeter, Zdene
 Description from proposal:
 > Currently, PyCups supports up to libcups 2.4.x. PyCups being written using the C extensions for Python, is very tough to maintain, and to implement new features in. Also, there is a very small scope of implementing automation for creating the python bindings of libcups. After PyCups is ported to libcups 3.x, I'll implement the same API for system-config-printer. So, that distros still shipping old libcups 2.4.x can slowly stop shipping the library. And libcups 2.4.x can be deprecated. Immensely helping the printing APIs and libraries.
 
-[Soumyadeep](/OpenPrinting-News-August-2024/#soumyadeep-ghosh) has started his work ~2 weeks ago. He did first bindings for [libcups3](), mentored by Bhavanishankar Ravindra (Bhavi) and Callahan Kovacs. His work you find in the "libcups3" branch of [his copy of the pycups repository](https://github.com/soumyaDghosh/pycups).
+[Soumyadeep](/OpenPrinting-News-August-2024/#soumyadeep-ghosh) has started his work ~2 weeks ago. He did first bindings for [libcups3](https://github.com/OpenPrinting/libcups), mentored by Bhavanishankar Ravindra (Bhavi) and Callahan Kovacs. His work you find in the "libcups3" branch of [his copy of the pycups repository](https://github.com/soumyaDghosh/pycups).
 
 
 ### GNOME Control Center: Finalizing the New Printing Architecture for GNOME, by Kaushik Vishwakarma
