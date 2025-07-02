@@ -197,6 +197,34 @@ Mentors: **Michael Weghorn**, **KushagraSharma**, Till Kamppeter, Zdenek Dohnal,
 Description from proposal:
 > We are trying to solve the problem of print dialogs in the gtk. The actual gtk contains a very simplistic approach regarding the print dialogs which need to be improved. As gtk is a parent library for most of the softwares. So its print dialogs need to be updated, as its affecting the most of the softwares relying on them. So, I am determined to solve the process of print dialog and provide it a modern look of print dialog which contains the print preview and print dialog in same pane. The steps i choose to work on came from the great research i did on the software that have this modern dialog. Especially i got attracted with the approach of the libreoffice. below are the steps : 1. Add the return button to the print preview pane in gtk. 2. Sync the print dialog setting with the print preview pane in gtk. 3. Extend the class of print preview so that other softwares could write there own algorithm for it. 4. Combine the print preview pane and print dialog into one.
 
+Here is Yash's write-up about his work so far:
+> As for my progress, I’ve completed the second part of the timeline as outlined in the proposal.
+>
+> From June 1 to June 15, I focused on research and studying GTK. During this time, I discovered the dynamic nature of the print preview, confirmed by this post from the GTK community:
+> 🔗 https://discourse.gnome.org/t/print-preview-missing-in-gtk-print-dialog-on-fresh-kali-linux-appears-after-installing-evince/29520
+>
+> This helped me a lot — I found out that GTK doesn’t include a built-in PDF viewer, and instead relies on the system’s default PDF viewer. So if there’s no viewer installed, the print dialog won’t show the preview button. But once a viewer (like Evince) is installed, the preview button appears.
+>
+> From June 16 to 29 (second phase), I had three possible approaches:
+>
+> Follow the proposal and add a Return button.
+>
+> But the issue (🔗 https://gitlab.gnome.org/GNOME/xdg-desktop-portal-gnome/-/issues/161) shows that users don’t want extra steps. They expect the dialog and preview behavior to match other software — one dialog, one preview, no return button.
+>
+> Implement what the issue suggests — one preview per print dialog.
+>
+> Build a new UI and try integrating the logic there.
+>
+> I went with option 2 and successfully implemented it (video shared). Now print dialog don't get close when print preview is opened. And only one Print preview dialog can be created for that dialog. But there are still a few issues:
+>
+> 1. After closing the preview pane, the preview button sometimes works and sometimes doesn’t.
+> 2. On Windows, the GTK dialogs are handled differently (separate files from UNIX), so I need a separate setup for that platform.
+>
+> From June 30 to July 14 (third phase), my focus is on synchronization.
+To begin, I started working on the new UI, as it might help in visualizing and debugging things side-by-side. If it doesn’t work out initially, I’ll leave the UI aside and shift my focus to fixing the core logic first.
+>
+> By the time the mid-evaluation starts (from July 14), I’m confident I’ll be able to fix the remaining issues and present the new UI as planned.
+
 
 ### Integrating OSS-Fuzz for Go-Based and Python-Based OpenPrinting Projects, by Mohammed Imaduddin
 Mentors:  **Jiongchi Yu**, **George-Andrei Iosif**, Dongge Liu, Till Kamppeter, Ira McDonald, Shivam Mishra
