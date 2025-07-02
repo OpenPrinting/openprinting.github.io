@@ -89,6 +89,8 @@ This project is a collaboration between the OpenPrinting and Zephyr sub-groups o
 
 Hubert is progressing well with his work an he documents it in [blog posts](https://hubertyguan.github.io/GSoC-2025/posts/).
 
+He has also a [GitHub repository](https://github.com/HubertYGuan/zephyr) with his work.
+
 
 ### OpenPrinting Image Output Verification Framework, by Sanskar Yaduka
 Mentors: **Till Kamppeter**, Zdenek Dohnal, Pratyush Ranjan, Mohit Verma, Bhavanishankar Ravindra
