@@ -163,7 +163,7 @@ Zixuan has posted the following summaries of his work in the OSS-Fuzz team's Tel
 May 26, 2025:
 > Hi. This is a quick update on my GSoC progress this week.
 >
-> I’ve submitted a PR to the OpenPrinting/fuzzing repository to support oss-fuzz-gen although it is a simple modification: https://github.com/OpenPrinting/fuzzing/pull/9
+> I’ve submitted a PR to the OpenPrinting/fuzzing repository to support oss-fuzz-gen although it is a simple modification: [https://github.com/OpenPrinting/fuzzing/pull/9](https://github.com/OpenPrinting/fuzzing/pull/9)
 >
 > If you have any suggestions or feedback, please leave a comment in the doc or in this group. Thank you!
 
@@ -201,7 +201,7 @@ Here is Yash's write-up about his work so far:
 > As for my progress, I’ve completed the second part of the timeline as outlined in the proposal.
 >
 > From June 1 to June 15, I focused on research and studying GTK. During this time, I discovered the dynamic nature of the print preview, confirmed by this post from the GTK community:
-> 🔗 https://discourse.gnome.org/t/print-preview-missing-in-gtk-print-dialog-on-fresh-kali-linux-appears-after-installing-evince/29520
+> 🔗 [https://discourse.gnome.org/t/print-preview-missing-in-gtk-print-dialog-on-fresh-kali-linux-appears-after-installing-evince/29520](https://discourse.gnome.org/t/print-preview-missing-in-gtk-print-dialog-on-fresh-kali-linux-appears-after-installing-evince/29520)
 >
 > This helped me a lot — I found out that GTK doesn’t include a built-in PDF viewer, and instead relies on the system’s default PDF viewer. So if there’s no viewer installed, the print dialog won’t show the preview button. But once a viewer (like Evince) is installed, the preview button appears.
 >
@@ -209,7 +209,7 @@ Here is Yash's write-up about his work so far:
 >
 > Follow the proposal and add a Return button.
 >
-> But the issue (🔗 https://gitlab.gnome.org/GNOME/xdg-desktop-portal-gnome/-/issues/161) shows that users don’t want extra steps. They expect the dialog and preview behavior to match other software — one dialog, one preview, no return button.
+> But the issue (🔗 [https://gitlab.gnome.org/GNOME/xdg-desktop-portal-gnome/-/issues/161](https://gitlab.gnome.org/GNOME/xdg-desktop-portal-gnome/-/issues/161)) shows that users don’t want extra steps. They expect the dialog and preview behavior to match other software — one dialog, one preview, no return button.
 >
 > Implement what the issue suggests — one preview per print dialog.
 >
