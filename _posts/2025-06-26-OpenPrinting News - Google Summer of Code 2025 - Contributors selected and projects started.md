@@ -118,6 +118,33 @@ Mentors: **Jynn Nelson**, **Michael Murphy**, Till Kamppeter, Chandresh Soni, Pr
 Description from proposal:
 > The Common Print Dialog Backends (cpdb-libs) library from OpenPrinting serves as a bridge between application print dialogs (like GTK, Qt, LibreOffice, Firefox, Chromium, etc.) and diverse print technologies (such as CUPS/IPP and cloud printing services). It decouples application UIs from backend print systems, enabling more flexible and rapid integration of new print technologies across all platforms. While it's natively written in C, bindings are required for other languages. Rust, known for its safety and concurrency advantages, currently lacks such bindings. This project aims to develop safe and idiomatic Rust bindings for cpdb-libs, enabling seamless integration of modern print backend capabilities in Rust-based applications.
 
+Titiksha's report for the first month:
+> Project Progress
+> 1. Project Setup
+>    - Created Rust project structure with bindgen integration
+>    - Successfully generated FFI bindings for cpdb-libs (v2.3)
+>    - Implemented safe Rust wrappers for core printer management functions
+> 2. Key Implementations
+>    - Printer discovery and job submission workflows
+>    - Memory-safe resource handling with proper RAII patterns
+>    - Async callback translation (C → Rust) for printer updates
+>
+> Challenges Faced
+> 1. FFI Compatibility<BR>
+>    Issue: Rust 2024's stricter unsafe extern requirements<BR>
+>    Solution: Added build.rs post-processing to modify generated bindings
+> 2. Function Naming<BR>
+>    Issue: Mismatch between C (camelCase) and Rust (snake_case) conventions<BR>
+>    Solution: Standardized on exact C function names in FFI calls
+> 3. Memory Safety<BR>
+>    Issue: Proper cleanup of C-allocated resources<BR>
+>    Solution: Implemented Drop traits with null checks for all wrapper types
+>
+> Areas Needing Guidance
+> 1. Advanced Features
+>    - Help needed with media/margin handling implementations
+>    - Clarification on translation table management
+
 Here is Titiksha's work in her [GitHub repository](https://github.com/TitikshaBansal/cpdb-rs).
 
 
