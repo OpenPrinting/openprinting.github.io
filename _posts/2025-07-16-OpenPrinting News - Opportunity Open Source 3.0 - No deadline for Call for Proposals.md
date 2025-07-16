@@ -1,7 +1,7 @@
 ---
 title: OpenPrinting News - Opportunity Open Source 3.0 - No deadline any more for Call for Proposals
 layout: single
-toc: true
+toc: false
 toc_sticky: true
 author: Till
 excerpt: We accept proposals up to the conference dates, but we already start accepting and scheduling
