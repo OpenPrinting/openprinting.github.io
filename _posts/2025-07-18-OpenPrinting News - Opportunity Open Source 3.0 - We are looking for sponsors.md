@@ -74,7 +74,6 @@ For details about the packages and more information about our events and sponsor
 See you all in Kanpur ...
 
 - [Event web site](https://oosc3ubucon.netlify.app/)
-- [UbuCon India](https://oosc3ubucon.netlify.app/ubucon)
 - [Practical info: Location, remote attending/speaking, ...](https://events.canonical.com/event/134/)
 - [Call for proposals](https://events.canonical.com/event/134/abstracts/)
 - [Call for sponsors](https://oosc3ubucon.netlify.app/sponsors)

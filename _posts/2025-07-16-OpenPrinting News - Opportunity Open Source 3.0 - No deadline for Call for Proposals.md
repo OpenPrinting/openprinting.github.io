@@ -19,10 +19,9 @@ So we are eager to see your amazing content: Talks, workshops, panel sessions, d
 see you all in Kanpur ...
 
 - [Event web site](https://oosc3ubucon.netlify.app/)
-- [UbuCon India](https://oosc3ubucon.netlify.app/ubucon)
 - [Practical info: Location, remote attending/speaking, ...](https://events.canonical.com/event/134/)
 - [Call for proposals](https://events.canonical.com/event/134/abstracts/)
-- Mastodon: [#OpportunityOpenSource](https://ubuntu.social/tags/OpportunityOpenSource) and [#UbuCon](https://ubuntu.social/tags/UbuCon)
+- Mastodon: [#OpportunityOpenSource](https://ubuntu.social/tags/OpportunityOpenSource)
 - LinkedIn: [@opportunity-open-source](https://www.linkedin.com/company/opportunity-open-source/)
 
 
