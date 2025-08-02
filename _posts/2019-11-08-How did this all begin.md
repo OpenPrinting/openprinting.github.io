@@ -23,7 +23,7 @@ In spring 2000 I read an article about CUPS in the German "[Linux Magazin](https
 
 So I adopted it in the department's network. Only disadvantage was that one could control everything only via the command line. GUI print dialogs were available from Michael Sweet, the author of CUPS, but only as proprietary, paid software.
 
-So I wrote a print dialog by myself, called it the "[X Printing Panel](http://cups.sourceforge.net/xpp/)", XPP (so I got the father of Linux print dialogs). This way everyone could easily fully control the printers, also the not so IT-savvy people in the department.
+So I wrote a print dialog by myself, called it the "[X Printing Panel](http://cups.sourceforge.net/xpp.html)", XPP (so I got the father of Linux print dialogs). This way everyone could easily fully control the printers, also the not so IT-savvy people in the department.
 
 It took me only around 10 days to get this together, but in the end I wanted to make it available for everyone. So I announced it on Freshmeat, and shortly after I got feedback, an invitation from Kurt Pfeifle, the author of the CUPS article in the "Linux Magazin", to the LinuxTag, the biggest Linux show in Europe that time, to present my little project on the booth of his employer, the printer service company Danka (later on overtaken by Ricoh).
 

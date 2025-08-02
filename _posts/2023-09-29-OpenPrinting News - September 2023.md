@@ -24,7 +24,7 @@ In the keynote RMS revealed that he has cancer, and one sees also in the video t
 
 **We all wish RMS all the best to recover soon and continue his great initiative for many more years.**
 
-And, talking about history of free software, on the DebConf in Kochi, India, I met Raghavendra Bhat, who told me his **experience with [XPP](http://cups.sourceforge.net/xpp/) (X Printing Panel)**, the little print dialog I wrote back in 2000, which initiated my printing career.
+And, talking about history of free software, on the DebConf in Kochi, India, I met Raghavendra Bhat, who told me his **experience with [XPP](http://cups.sourceforge.net/xpp.html) (X Printing Panel)**, the little print dialog I wrote back in 2000, which initiated my printing career.
 
 He did a lttle write-up for me to post here:
 
