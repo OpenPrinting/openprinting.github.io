@@ -165,8 +165,15 @@ Then I answered:
 
 The show must go on ...
 
+## Videos/Podcasts
 
-
+- [Destination Linux: Till Kamppeter and Michael Sweet about the history of OpenPrinting](https://youtu.be/CLEMiM0L2Jk)
+- [Ubuntu Indaba: Till Kamppeter and Michael Sweet about the New Architecture](https://www.youtube.com/watch?v=P22DOu_ahBo)
+- [Ubuntu Office Hours: Till Kamppeter and Aveek Basu about the Google Summer of Code](https://www.youtube.com/watch?v=diB3wm4HB1Y)
+- [Ubuntu Summit 2022: Till Kamppeter hosting an OpenPrinting panel with Zdenek Dohnal, Johannes Meixner, Aveek Basu, and Deepak Patankar](https://www.youtube.com/watch?v=RbgXmDjxYa4)
+- [Ask Noah: Till Kamppeter on how OpenPrinting improved printing with Linux/Unix](https://podcast.asknoahshow.com/368?t=2837)
+- [Linux Saloon: Till Kamppeter about how he got Snap enthusiast](https://www.youtube.com/watch?v=m5QKJH9tDjQ)
+- [OpenPrinting - We make printing just work! Till Kamppeter, FOSDEM 2024, Brussels, Belgium](https://fosdem.org/2024/schedule/event/fosdem-2024-1930-openprinting-we-make-printing-just-work-/)
 
 **And as usual: Stay updated on Mastodon: [#OpenPrinting](https://ubuntu.social/tags/OpenPrinting) and [@till@ubuntu.social](https://ubuntu.social/@till) and (new) on LinkedIn: [@OpenPrinting](https://www.linkedin.com/company/openprinting/posts/).**
 
