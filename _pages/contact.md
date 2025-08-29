@@ -13,19 +13,10 @@ author_profile: false
 <strong>Important:</strong> We protect the e-mail addresses of our mentors and mailing lists against spam bots. Please replace all occurrences of “ at ” and “ dot ” by “@” and “.” resp.
 </p>
 <div>
-    <h1>Mailing List:</h1>
+    <h1><a href="https://t.me/+RizBbjXz4uU2ZWM1" title="Join our Telegram chat.">Openprinting Chat on Telegram</a></h1>
     <p>
-        <ul>
-            <li><a href="https://lists.linux-foundation.org/mailman/listinfo/printing-architecture" title="http://lists.linux-foundation.org/mailman/listinfo/printing-architecture"  rel="nofollow">Architecture</a></li>
-            <hr>
-        </ul>
+      <ul></ul>
     </p>
-    <p>
-        <h1><abbr title="Internet Relay Chat">IRC:</abbr></h1>
-        <ul>
-            <li>#openprinting on libera.chat</li>
-        </ul> 
-    </p> 
     <h1>GitHub</h1>
     <p>
         <ul>
