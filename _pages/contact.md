@@ -18,9 +18,7 @@ author_profile: false
         The lists were moved to the mail server <a href="https://subspace.kernel.org/lists.linux.dev.html">list.linux.dev</a>.
         <ul>
             <li><a href="https://lore.kernel.org/printing-architecture/" title="https://lore.kernel.org/printing-architecture/"  rel="nofollow">Architecture</a></li>
-            <hr>
             <li><a href="https://lore.kernel.org/printing-users/" title="https://lore.kernel.org/printing-users/"  rel="nofollow">Users</a></li>
-            <hr>
         </ul>
     </p>
     <p>
