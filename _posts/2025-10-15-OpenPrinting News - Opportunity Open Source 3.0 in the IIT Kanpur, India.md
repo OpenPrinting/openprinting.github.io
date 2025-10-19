@@ -33,7 +33,7 @@ As this conference is primarily to introduce students into FOSS and how to contr
 
 - **Aveek Basu** has given an overview in how to do so right after the opening of the event, with "[Starting the Open Source Journey](https://events.canonical.com/event/134/contributions/778/)".
 
-- "[My LFX Mentorship Journey: From Application to KubeEdge Contributor](https://events.canonical.com/event/134/contributions/802/)" and "[From Zero to LFX: How Three Friends Cracked Open Source and Landed KubeEdge Mentorships](https://events.canonical.com/event/134/contributions/801/)" by **Abhishek Kumar** are both about his experience with the Linux Foundation's mentoring program LFX and KubeEdge as mentoring organization.
+- "[My LFX Mentorship Journey: From Application to KubeEdge Contributor](https://events.canonical.com/event/134/contributions/802/)" ([Slides](https://events.canonical.com/event/134/contributions/802/attachments/437/704/abhishek-kumar-lfx-mentorship-journey.pdf)) and "[From Zero to LFX: How Three Friends Cracked Open Source and Landed KubeEdge Mentorships](https://events.canonical.com/event/134/contributions/801/)" ([Slides](https://events.canonical.com/event/134/contributions/801/attachments/436/703/abhishek-kumar-three-friends-one-dream.pdf)) by **Abhishek Kumar** are both about his experience with the Linux Foundation's mentoring program LFX and KubeEdge as mentoring organization.
 
 - Kernel developer and Linux Foundation fellow **Shuah Khan** showed in her talk "[Six years of empowering open source communities](https://events.canonical.com/event/134/contributions/734/)" which learning opportunities the Linux Foundation provides to open source newcomers.
 
