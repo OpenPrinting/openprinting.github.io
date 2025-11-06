@@ -6,6 +6,9 @@ toc_sticky: true
 author: Till
 excerpt: I am covered to work on OpenPrinting full-time until end-2026
 ---
+
+**Also announced on [Mastodon](https://ubuntu.social/@till/115498465133408746) and on [LinkedIn](https://www.linkedin.com/posts/openprinting_openprinting-news-sovereign-tech-agency-activity-7391969736374427648-oaaV?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAG6HOwBS_L6DNMmPd_4_fH9GMpDr0nDNsQ)** 
+
 ## I was working at Canonical for a long time ...
 
 Mid-May, on the last Engineering Sprint of Canonical I got the notice that I got laid off by Canonical, after having been with them for near 20 years. The contract ended 4 weeks after that, mid-June and I got 3 months of my monthly payment as indemnity. See also [my earlier post](https://openprinting.github.io/OpenPrinting-News-25-years-of-working-full-time-for-printing-with-free-open-source-software/).
