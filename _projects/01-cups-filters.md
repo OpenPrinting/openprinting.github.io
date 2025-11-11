@@ -18,6 +18,6 @@ From CUPS 1.6.0 on, this package is required for using printer drivers with CUPS
    	<i class="fab fa-fw fa-github" aria-hidden="true"></i>GitHub
   	</a>
 
-* <a href="http://openprinting.org/download/cups-filters/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+* <a href="https://github.com/OpenPrinting/cups-filters/releases" itemprop="sameAs" rel="nofollow noopener noreferrer">
 	<i class="fas fa-fw fa-link" aria-hidden="true"></i>Downloads
 	</a>
