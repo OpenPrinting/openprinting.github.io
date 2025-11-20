@@ -6,11 +6,11 @@ toc_sticky: true
 author: Till
 excerpt: That's a wrap! All the 11 contributors have made it!
 ---
-The Google Summer of Code 2025 has come to its end! And since we started participating back in 2008 this edition was the best one for us, with 11 contributors having delivered amazing work, nobody has failed this time.
+The [Google Summer of Code 2025](https://summerofcode.withgoogle.com/programs/2025/organizations/the-linux-foundation) has come to its end! And since we started participating back in 2008 this edition was the best one for us, with 11 contributors having delivered amazing work, nobody has failed this time.
 
 What especially helped us were the Opportunity Open Source conferences (OOSC) which we are organizing in India since 2023 ([IIT Mandi](/OpenPrinting-News-September-2023/#opportunitiy-open-source-in-the-iit-mandi-india)) and especially [last year's one in the IIT Kanpur](/OpenPrinting-News-August-2024/#opportunity-open-source-in-iit-kanpur). Mandi helped us already to get 11 contributors for OpenPrinting last year, but last year's OOSC caused even more momentum. We got ~60 inquiries of interested candidates, let 40 write a proposal after passing our selection and onboarding process, and we finally selected 19 proposals to rank and ask slots for from the GSoC organizers.
 
-Unfortunately, we got only 11 contributor slots, so the 11 highest ranked got our GSoC contributors. This means that after all this effort we did not get more contributors than last year, but we could for the first time select from several candidates for many of our [posted project ideas](https://wiki.linuxfoundation.org/gsoc/google-summer-code-2025-openprinting-projects#gtk_print_dialogmodern_dialog_with_built-in_preview_in_main_view). And with this we ended up with even more excellent contributors than last year, especially nobody failed in midterm or final evaluations.
+Unfortunately, we got only 11 contributor slots, so the 11 highest ranked got our GSoC contributors. This means that after all this effort we did not get more contributors than last year, but we could for the first time select from several candidates for many of our [posted project ideas](https://wiki.linuxfoundation.org/gsoc/google-summer-code-2025-openprinting-projects). And with this we ended up with even more excellent contributors than last year, especially nobody failed in midterm or final evaluations.
 
 They all have done all or at least most of their project work and now they are finishing off some parts or working on their code getting merged upstream.
 
@@ -80,7 +80,7 @@ Soumyadeep's feedback of his final evaluation:
 
 <BR>
 
-Soumyadeep has continued presenting his GSoC work in his blog:
+[Soumyadeep](/OpenPrinting-News-August-2024/#soumyadeep-ghosh) has continued presenting his GSoC work in his blog:
 - [GSOC: PyCups3 is intelligent?](https://soumyadghosh.github.io/website/interns/gsoc-2025/gsoc-pycups-is-intelligent/)
 - [GSOC: PyCups3 is Abstracting!](https://soumyadghosh.github.io/website/interns/gsoc-2025/gsoc-pycups-is-abstracting/)
 
@@ -91,6 +91,10 @@ Soumyadeep has continued presenting his GSoC work in his blog:
 > and at the end getting a very simple implementation with the singledispatch apis from the functools standard library. I'll soon write a blog post elaborating this, as this goes into the fundamental concepts of object oriented programming
 
 His work you find in the "libcups3" branch of [his copy of the pycups repository](https://github.com/soumyaDghosh/pycups).
+
+And his [final report](https://soumyadghosh.github.io/website/interns/gsoc-2025/gsoc-final-submission) ends with the words:
+
+> So, take up cups and Stay caffeinated! ☕ Cheers Till!
 
 
 <BR>
