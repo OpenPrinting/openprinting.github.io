@@ -1,5 +1,5 @@
 ---
-title: OpenPrinting News - Tech over Tea #300 - Brodie interviews Till Kamppeter
+title: OpenPrinting News - Tech over Tea \#300 - Brodie interviews Till Kamppeter
 layout: single
 toc: true
 toc_sticky: true
