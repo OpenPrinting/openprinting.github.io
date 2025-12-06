@@ -100,7 +100,7 @@ And his [final report](https://soumyadghosh.github.io/website/interns/gsoc-2025/
 <BR>
 
 ### GNOME Control Center: Finalizing the New Printing Architecture for GNOME, by Kaushik Vishwakarma
-Mentors: **Mohit Verma**, Till Kamppeter, Zdenek Dohnal, KushagraSharma, Bhavanishankar Ravindra<BR>
+Mentors: **Mohit Verma**, **Till Kamppeter**, Zdenek Dohnal, KushagraSharma, Bhavanishankar Ravindra<BR>
 [Work product](https://medium.com/@kaushik.vishwakarma2003/gsoc-2025-thelinuxfoundation-advancing-printer-management-in-gnome-control-center-c36a1ce8ae07)
 
 PASSED
@@ -329,7 +329,7 @@ Yash is motivated and wants to finish the project post-GSoC:
 <BR>
 
 ### Integrating OSS-Fuzz for Go-Based and Python-Based OpenPrinting Projects, by Mohammed Imaduddin
-Mentors:  **Jiongchi Yu**, **George-Andrei Iosif**, Dongge Liu, Till Kamppeter, Ira McDonald, Shivam Mishra<BR>
+Mentors:  **Jiongchi Yu**, **George-Andrei Iosif**, **Till Kamppeter**, Dongge Liu, Ira McDonald, Shivam Mishra<BR>
 [Work product](https://github.com/OpenPrinting/fuzzing/blob/main/contributions/GSoC%202025%20-%20Integrating%20OSS-Fuzz%20for%20Go-Based%20and%20Python-Based%20OpenPrinting%20Projects/Final%20report.md)
 
 PASSED
