@@ -1,57 +1,68 @@
-# How to contribute
+# How to Contribute
 
-Community support is essential to making any open-source project successful.
-We aim to keep contributing as simple as possible.
-However, following a few guidelines shown before helps
-others understand and maintain the codebase.
+Thank you for your interest in contributing to OpenPrinting! Community support is essential to the success of any open-source project. We've designed our contribution process to be as straightforward as possible, and following these guidelines will help keep our codebase maintainable for everyone.
 
-## General process
+## Where Our Documentation Lives
 
-Our documentation is published at https://openprinting.github.io/ and stored
-in the [openprinting.github.io repository](https://github.com/OpenPrinting/openprinting.github.io).
-All the common documentation pages are published in the
-[Documentation section](https://openprinting.github.io/documentation/) and stored
-in the `_documentation` directory.
+Our documentation is published at https://openprinting.github.io/ and maintained in the [openprinting.github.io repository](https://github.com/OpenPrinting/openprinting.github.io).
 
-Documentation for individual components is kept in each component’s repository,
-usually in a doc directory.
+**Main documentation:**
 
-To contribute, fork the relevant repository and open a pull request with your proposed changes.
-The pull request will be automatically assigned to reviewers.
-Include a clear, meaningful description of what you changed and why.
+- Published in the [Documentation section](https://openprinting.github.io/documentation/)
+- Stored in the `_documentation` directory
 
-If your pull request hasn’t received any review activity after a week, feel free to contact us.
+**Component-specific documentation:**
 
-## Issues workflow
+- Kept in each component's own repository
+- Usually located in a `doc` directory
 
-If you spot a problem or bug, please open an issue.
-Reporting and documenting issues is a valuable contribution,
-even if you’re not able to fix them yourself.
+## Making Changes
 
-Use these guidelines when working with issues:
+1. **Fork** the relevant repository
+2. **Create a branch** from the latest version of the main branch
+3. **Make your changes** with clear, focused commits
+4. **Open a pull request** with a meaningful description explaining what you changed and why
+5. Your PR will be automatically assigned to reviewers
 
-* If you want to work on an issue, comment on it first to let others know you’re taking it.
-* Before opening a new issue, check whether a similar issue already exists.
-* For bug reports, include the browser (and version) you’re using, since behavior may differ across browsers.
-* For ideas or feature requests, explain how the change will affect the user experience and/or improve the website’s functionality.
+**Need help?** If your pull request hasn't received any review activity after a week, feel free to contact us.
 
-## Pull requests
+## Working with Issues
 
-Documentation updates and fixes should be done via pull requests:
+Found a bug or have an idea? Opening an issue is a valuable contribution, even if you can't fix it yourself.
 
-* Make sure you pull the latest version of our repository before creating a branch. Update (rebase or merge into) your PR branch to the latest before submitting a PR. Resolve all merge conflicts if any.
-* In the PR, try to add a working link to your work or add screenshots if necessary.
-* Build your branch locally and check every affected behavior.
+**Before opening an issue:**
 
-## Style guide
+- Check if a similar issue already exists
 
-We use US spelling for all our documentation and website content. Please use your IDE's spellchecker before submitting a PR.
+**When opening an issue:**
 
-## Build docs
+- For **bug reports**: Include your browser name and version, as behavior may vary across browsers
+- For **feature requests**: Explain how the change will improve the user experience or website functionality
 
-To build our documentation locally:
+**Want to work on an issue?**
 
-* Set up the Jekyll environment. See the [official documentation](https://jekyllrb.com/docs/) for guidance.
-* Clone the source code from [GitHub](https://github.com/OpenPrinting/openprinting.github.io).
-* Navigate to the local repository and run: `bundle exec jekyll serve`
-* Open the localhost address in your web browser: `localhost:4000`
+- Comment on the issue first to let others know you're working on it
+
+## Pull Request Guidelines
+
+When submitting a pull request:
+
+- **Stay up to date**: Pull the latest changes before creating your branch and update your PR branch before submitting
+- **Resolve conflicts**: Fix any merge conflicts that arise
+- **Test locally**: Build your branch and verify all affected functionality works correctly
+- **Provide context**: Include a working link to your changes or add screenshots when helpful
+
+## Style Guide
+
+- Use **US spelling** for all documentation and website content
+- Run your IDE's spellchecker before submitting a PR
+
+## Building Documentation Locally
+
+To preview documentation changes on your machine:
+
+1. **Set up Jekyll**: Follow the [official Jekyll documentation](https://jekyllrb.com/docs/) to install Jekyll
+2. **Clone the repository**: `git clone https://github.com/OpenPrinting/openprinting.github.io`
+3. **Navigate to the directory**: `cd openprinting.github.io`
+4. **Start the server**: `bundle exec jekyll serve`
+5. **View in your browser**: Open `http://localhost:4000`
