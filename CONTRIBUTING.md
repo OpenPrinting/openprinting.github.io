@@ -1,10 +1,13 @@
 # How to contribute
 
-Community support is essential to making any open-source project successful. We aim to keep contributing as simple as possible, while following a few guidelines so others can easily understand and maintain the codebase.
+Community support is essential to making any open-source project successful.
+We aim to keep contributing as simple as possible.
+However, following a few guidelines shown before helps
+others understand and maintain the codebase.
 
 ## General process
 
-Our documentation is published on the https://openprinting.github.io/ address and stored
+Our documentation is published at https://openprinting.github.io/ and stored
 in the [openprinting.github.io repository](https://github.com/OpenPrinting/openprinting.github.io).
 All the common documentation pages are published in the
 [Documentation section](https://openprinting.github.io/documentation/) and stored
@@ -19,7 +22,11 @@ Include a clear, meaningful description of what you changed and why.
 
 If your pull request hasn’t received any review activity after a week, feel free to contact us.
 
-### Issues workflow
+## Issues workflow
+
+If you spot a problem or bug, please open an issue.
+Reporting and documenting issues is a valuable contribution,
+even if you’re not able to fix them yourself.
 
 Use these guidelines when working with issues:
 
@@ -28,21 +35,23 @@ Use these guidelines when working with issues:
 * For bug reports, include the browser (and version) you’re using, since behavior may differ across browsers.
 * For ideas or feature requests, explain how the change will affect the user experience and/or improve the website’s functionality.
 
-### Pull Requests
+## Pull requests
 
-* If you have made some changes in the codebase and want to generate a PR. First, pull latest version of code from [upstream](https://github.com/Esri/developer-support/wiki/Setting-the-upstream-for-a-fork). Remove all merge conflicts before generating PR.
-* In the PR, try to add working link of your work and if that is not possible, add screenshots.
+Documentation updates and fixes should be done via pull requests:
 
-### Making changes
+* Make sure you pull the latest version of our repository before creating a branch. Update (rebase or merge into) your PR branch to the latest before submitting a PR. Resolve all merge conflicts if any.
+* In the PR, try to add a working link to your work or add screenshots if necessary.
+* Build your branch locally and check every affected behavior.
 
+## Style guide
 
-* Whenever you are working on some major feature, always create a [new branch](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging).
+We use US spelling for all our documentation and website content. Please use your IDE's spellchecker before submitting a PR.
 
 ## Build docs
 
 To build our documentation locally:
 
-* Setup jekyll environment. See the [official documentation](https://jekyllrb.com/docs/) for guidance.
-* Clone the source code from [Github](https://github.com/OpenPrinting/openprinting.github.io).
+* Set up the Jekyll environment. See the [official documentation](https://jekyllrb.com/docs/) for guidance.
+* Clone the source code from [GitHub](https://github.com/OpenPrinting/openprinting.github.io).
 * Navigate to the local repository and run: `bundle exec jekyll serve`
 * Open the localhost address in your web browser: `localhost:4000`
