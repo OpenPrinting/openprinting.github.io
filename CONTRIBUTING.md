@@ -55,6 +55,7 @@ When submitting a pull request:
 ## Style Guide
 
 - Use **US spelling** for all documentation and website content
+- Write documentation using **Markdown syntax**
 - Run your IDE's spellchecker before submitting a PR
 
 ## Building Documentation Locally
