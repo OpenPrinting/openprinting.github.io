@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ .Title }} - {{ .Site.Title }}</title>
+    <meta name="description" content="{{ .Site.Params.description }}">
+    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{{ "/" | relURL }}">{{ .Site.Title }}</a>
+            {{ range .Site.Menus.main }}
+                <a href="{{ .URL | relURL }}">{{ .Name }}</a>
+            {{ end }}
+        </nav>
+    </header>
+    <main>
+        {{ block "main" . }}{{ end }}
+    </main>
+    <footer>
+        <p>&copy; {{ now.Year }} {{ .Site.Title }}. {{ .Site.Params.description }}</p>
+    </footer>
+</body>
+</html>

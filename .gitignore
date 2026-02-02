@@ -30,3 +30,12 @@ _site/
 .jekyll-cache/
 .jekyll-metadata
 Gemfile.lock
+
+# Hugo build artifacts
+/public/
+/resources/_gen/
+/assets/jsconfig.json
+hugo_stats.json
+
+# Hugo module dependencies
+.hugo_build.lock
