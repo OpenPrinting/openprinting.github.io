@@ -1,0 +1,188 @@
+---
+title: "OpenPrinting"
+date: 2016-03-23T11:48:41-04:00
+---
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>OpenPrinting - Making Printing Just Work!</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(/assets/images/rotation_pantone.jpg);
+            background-size: cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+        .hero h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+        .hero p {
+            font-size: 1.5em;
+            margin: 20px 0;
+        }
+        .hero .buttons {
+            margin-top: 30px;
+        }
+        .hero .btn {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 15px 30px;
+            margin: 0 10px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .hero .btn:hover {
+            background: #2980b9;
+        }
+        .intro {
+            text-align: center;
+            padding: 60px 20px;
+            background: #f4f4f4;
+        }
+        .intro p {
+            font-size: 1.3em;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .feature {
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .feature img {
+            max-width: 150px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .feature h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        .feature .btn {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+        .section-title {
+            text-align: center;
+            padding: 40px 20px 20px;
+            font-size: 1.2em;
+            color: #555;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>OpenPrinting</h1>
+        <p>We make printing just work!</p>
+        <div class="buttons">
+            <a href="/about-us/" class="btn">Learn More</a>
+            <a href="/printers/" class="btn">Find a Printer</a>
+        </div>
+    </div>
+
+    <div class="intro">
+        <p>OpenPrinting develops IPP-based printing technology for Linux®/Unix® operating systems.</p>
+    </div>
+
+    <div class="features">
+        <div class="feature">
+            <img src="/assets/images/OpenPrintingBox.png" alt="About Us">
+            <h3>About Us</h3>
+            <p>Learn more about OpenPrinting, how it works, the people involved, and the projects maintained by it</p>
+            <a href="/about-us" class="btn">Read More</a>
+        </div>
+        <div class="feature">
+            <img src="/assets/images/contribute.png" alt="Contribute">
+            <h3>Contribute</h3>
+            <p>Know how you can be part of an excellent community and help improve printing experience for millions of users</p>
+            <a href="/contribute" class="btn">Read More</a>
+        </div>
+        <div class="feature">
+            <img src="/assets/images/cups.png" alt="CUPS">
+            <h3>CUPS</h3>
+            <p>CUPS is the standards-based, open source printing system that is used on Linux® and other operating systems.</p>
+            <a href="https://openprinting.github.io/cups/" class="btn">Read More</a>
+        </div>
+    </div>
+
+    <div class="section-title">
+        <p><strong>Most modern printers work using OpenPrinting software without additional drivers or software.</strong><br>
+        <small>OpenPrinting also hosts a printer compatibility database of legacy printers supported by free software drivers.</small></p>
+    </div>
+
+    <div class="features">
+        <div class="feature">
+            <img src="/assets/images/ipp-everywhere.png" alt="Driverless Printers">
+            <h3>Driverless Printers</h3>
+            <p>Most modern printers work 'out of the box' with OpenPrinting software. Browse the thousands of driverless printers.</p>
+            <a href="/printers" class="btn">Browse</a>
+        </div>
+        <div class="feature">
+            <img src="/assets/images/printer.png" alt="Legacy Printers">
+            <h3>Legacy Printers</h3>
+            <p>The Foomatic printer database lists all of the printers that are supported by free software printer drivers.</p>
+            <a href="https://openprinting.org/printers" class="btn">Browse</a>
+        </div>
+        <div class="feature">
+            <img src="/assets/images/wsl-printing-icon.png" alt="Windows Support">
+            <h3>Windows?!</h3>
+            <p>Our Printer Applications revive old printers under current Windows, any model which works under Linux.</p>
+            <a href="/wsl-printer-app/" class="btn">Read More</a>
+        </div>
+    </div>
+
+    <div class="section-title">
+        <p>OpenPrinting collaborates with standards groups and participates in coding/documentation programs.</p>
+    </div>
+
+    <div class="features">
+        <div class="feature">
+            <img src="/assets/images/pwg.png" alt="PWG">
+            <h3>Printer Working Group</h3>
+            <p>OpenPrinting collaborates with the PWG's Internet Printing Protocol workgroup to support this ubiquitous printing standard.</p>
+            <a href="https://www.pwg.org/ipp/" class="btn">Read More</a>
+        </div>
+        <div class="feature">
+            <img src="/assets/images/gsoc.jpeg" alt="GSoC">
+            <h3>GSoC - OpenPrinting</h3>
+            <p>OpenPrinting participates in the GSoC program under its umbrella organization The Linux Foundation.</p>
+            <a href="/gsoc/" class="btn">Read More</a>
+        </div>
+        <div class="feature">
+            <img src="/assets/images/gsod.jpg" alt="GSoD">
+            <h3>GSoD - OpenPrinting</h3>
+            <p>OpenPrinting participates in the GSoD program under its umbrella organization The Linux Foundation.</p>
+            <a href="/gsod/" class="btn">Read More</a>
+        </div>
+    </div>
+</body>
+</html>

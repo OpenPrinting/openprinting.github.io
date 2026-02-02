@@ -1,0 +1,35 @@
+baseURL = 'https://openprinting.github.io/'
+languageCode = 'en-us'
+title = 'OpenPrinting'
+
+[params]
+  description = "Making Printing Just Work."
+  author = "OpenPrinting"
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Documentation"
+    url = "/documentation/"
+    weight = 2
+  [[menu.main]]
+    name = "About Us"
+    url = "/about-us/"
+    weight = 3
+  [[menu.main]]
+    name = "Printers"
+    url = "/printers/"
+    weight = 4
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML"]
+
