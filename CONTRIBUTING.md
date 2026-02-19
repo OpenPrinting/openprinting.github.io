@@ -1,30 +1,69 @@
-## How to contribute
+# How to Contribute
 
-Help from community is necessary to make any opensource project great. We want to keep it as easy as possible for community to contribute changes. There are a few guidlines that we need to follow so that it is easy for others to understand and change the codebase.
+Thank you for your interest in contributing to OpenPrinting! Community support is essential to the success of any open-source project. We've designed our contribution process to be as straightforward as possible, and following these guidelines will help keep our codebase maintainable for everyone.
 
-### Getting Started
-* Setup jekyll environment. You can follow [this link](https://jekyllrb.com/docs/). 
-* Now, you have a working jekyll environment. Clone the source code from [github](https://github.com/OpenPrinting/openprinting.github.io).
-* Go to the directory and run:
-```
-bundle exec jekyll serve
-```
-* If you want to access website from some other device on local network, use:
-```
-bundle exec jekyll serve --host=0.0.0.0
-```
-* Open ``` localhost:4000 ```
+## Where Our Documentation Lives
 
-### Issues
-* If you want to work on some issue, first comment on that issue that you want to work.
-* If you want to open a new Issue. First make sure similiar issue is not present.
-* In case of a bug, always mention browser you are using because different browsers may behave differently.
-* In case of an Idea, please mention how it will change user experience and/or how it will enhance functionality of the website.
+Our documentation is published at https://openprinting.github.io/ and maintained in the [openprinting.github.io repository](https://github.com/OpenPrinting/openprinting.github.io).
 
-### Pull Requests
-* If you have made some changes in the codebase and want to generate a PR. First, pull latest version of code from [upstream](https://github.com/Esri/developer-support/wiki/Setting-the-upstream-for-a-fork). Remove all merge conflicts before generating PR.
-* In the PR, try to add working link of your work and if that is not possible, add screenshots.
+**Main documentation:**
 
-### Making changes
-* Whenever you are working on some major feature, always create a [new branch](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging). 
-* Whenever you add something above trivial, please add comments.
+- Published in the [Documentation section](https://openprinting.github.io/documentation/)
+- Stored in the `_documentation` directory
+
+**Component-specific documentation:**
+
+- Kept in each component's own repository
+- Usually located in a `doc` directory
+
+## Making Changes
+
+1. **Fork** the relevant repository
+2. **Create a branch** from the latest version of the main branch
+3. **Make your changes** with clear, focused commits
+4. **Open a pull request** with a meaningful description explaining what you changed and why
+5. Your PR will be automatically assigned to reviewers
+
+**Need help?** If your pull request hasn't received any review activity after a week, feel free to contact us.
+
+## Working with Issues
+
+Found a bug or have an idea? Opening an issue is a valuable contribution, even if you can't fix it yourself.
+
+**Before opening an issue:**
+
+- Check if a similar issue already exists
+
+**When opening an issue:**
+
+- For **bug reports**: Include your browser name and version, as behavior may vary across browsers
+- For **feature requests**: Explain how the change will improve the user experience or website functionality
+
+**Want to work on an issue?**
+
+- Comment on the issue first to let others know you're working on it
+
+## Pull Request Guidelines
+
+When submitting a pull request:
+
+- **Stay up to date**: Pull the latest changes before creating your branch and update your PR branch before submitting
+- **Resolve conflicts**: Fix any merge conflicts that arise
+- **Test locally**: Build your branch and verify all affected functionality works correctly
+- **Provide context**: Include a working link to your changes or add screenshots when helpful
+
+## Style Guide
+
+- Use **US spelling** for all documentation and website content
+- Write documentation using **Markdown syntax**
+- Run your IDE's spellchecker before submitting a PR
+
+## Building Documentation Locally
+
+To preview documentation changes on your machine:
+
+1. **Set up Jekyll**: Follow the [official Jekyll documentation](https://jekyllrb.com/docs/) to install Jekyll
+2. **Clone the repository**: `git clone https://github.com/OpenPrinting/openprinting.github.io`
+3. **Navigate to the directory**: `cd openprinting.github.io`
+4. **Start the server**: `bundle exec jekyll serve`
+5. **View in your browser**: Open `http://localhost:4000`
