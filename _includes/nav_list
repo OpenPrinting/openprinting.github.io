@@ -38,7 +38,7 @@
             {% endif %}
             <li>
             <p class="side-nav-li">
-            <a href="{{ child_url }}" class="{{ active }} side-nav-a">{{ child.title }}</a>
+            <a href="{{ child_url }}" class="{{ active }} side-nav-a" title="{{ child.title }}">{{ child.title }}</a>
             </p>
             </li>
           {% endfor %}
