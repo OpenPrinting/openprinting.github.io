@@ -1,6 +1,6 @@
 ## How to contribute
 
-Help from community is necessary to make any opensource project great. We want to keep it as easy as possible for community to contribute changes. There are a few guidlines that we need to follow so that it is easy for others to understand and change the codebase.
+Help from community is necessary to make any opensource project great. We want to keep it as easy as possible for community to contribute changes. There are a few guidelines that we need to follow so that it is easy for others to understand and change the codebase.
 
 ### Getting Started
 * Setup jekyll environment. You can follow [this link](https://jekyllrb.com/docs/). 
