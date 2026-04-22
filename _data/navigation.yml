@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# main links links
+# main links
 main:
   - title: "About Us"
     url: /about-us/
@@ -33,39 +33,191 @@ main:
   - title: "Printer Drivers"
     url: "https://openprinting.org/drivers"
   - title: "Legacy Printers under Windows"
-    url: "/wsl-printer-app"
+    url: /wsl-printer-app/
   - title: "Contact Us"
     url: /contact/
   - title: "Donations"
     url: /donations/
 
-gsoc21:
-  - title: "GSOC 2021"
+# =====================
+# GSoC Sidebar Navs
+# =====================
+
+gsoc26:
+  - title: "GSoC 2026"
     children:
-      - title: "GSOC 2021 Homepage"
+      - title: "GSoC 2026 Homepage"
+        url: /gsoc2026/
+      - title: "system-config-printer vs. CUPS 3.x"
+        url: /gsoc2026/01-system-config-printer-vs-CUPS-3-x/
+      - title: "COSMIC Desktop: Printer setup tool and print dialog"
+        url: /gsoc2026/02-COSMIC-Desktop/
+      - title: "KDE Print Manager: Completing CUPS 3.x support and Printer Application integration"
+        url: /gsoc2026/03-KDE-Print-Manager/
+      - title: "AI-Driven Printer Compatibility and Recommendation Portal: Printer Data Intelligence & ML Pipeline"
+        url: /gsoc2026/04-AI-Driven-Printer-Compatibility-and-Recommendation-Portal/
+      - title: "AI-Driven Printer Compatibility and Recommendation Portal: Intelligent Printer Discovery & Recommendation Web Interface"
+        url: /gsoc2026/05-AI-Driven-Printer-Compatibility-and-Recommendation-Portal/
+      - title: "Automated and LLM-Assisted Fuzz Harness Generation for OpenPrinting Projects"
+        url: /gsoc2026/06-Automated-and-LLM-Assisted-Fuzz-Harness-Generation-for-OpenPrinting-Projects/
+      - title: "System-Level Fuzzing for Parsing Features in OpenPrinting Projects"
+        url: /gsoc2026/07-System-Level-Fuzzing-for-Parsing-Features-in-OpenPrinting-Projects/
+      - title: "Fuzz/Test go-cpython"
+        url: /gsoc2026/08-Fuzz-Test-go-cpython/
+      - title: "Extend PDFio to be a PDF renderer/displayer"
+        url: /gsoc2026/09-Extend-PDFio-to-be-a-PDF-renderer-displayer/
+      - title: "Porting OpenPrinting Software to Zephyr"
+        url: /gsoc2026/10-Porting-OpenPrinting-Software-to-Zephyr/
+      - title: "Build a Full Print System Testing Pipeline"
+        url: /gsoc2026/11-Build-a-Full-Print-System-Testing-Pipeline/
+      - title: "Validation of the IANA IPP Registrations Database"
+        url: /gsoc2026/12-Validation-of-the-IANA-IPP-Registrations-Database/
+      - title: "Cloud-Native Packaging for CUPS and Printer Applications"
+        url: /gsoc2026/13-Cloud-Native-Packaging-for-CUPS-and-Printer-Applications/
+      - title: "CI Testing programs for libpappl-retrofit and libppd"
+        url: /gsoc2026/14-CI-Testing-programs-for-libpappl-retrofit-and-libppd/
+      - title: "cups-filters: Create OCR filter to deliver scans as searchable PDFs"
+        url: /gsoc2026/15-cups-filters/
+
+gsoc25:
+  - title: "GSoC 2025"
+    children:
+      - title: "GSoC 2025 Homepage"
+        url: /gsoc2025/
+      - title: "Qt Print Dialog: Modernize the user interface"
+        url: /gsoc2025/01-Qt-Print-Dialog/
+      - title: "GTK Print Dialog: Modern dialog with built-in preview in main view"
+        url: /gsoc2025/02-GTK-Print-Dialog/
+      - title: "KDE Print Manager vs. CUPS 3.x"
+        url: /gsoc2025/03-KDE-Print-Manager-vs-CUPS-3-x/
+      - title: "Port pyCUPS to CUPS 3.x API + apply the new pyCUPS to system-config-printer"
+        url: /gsoc2025/04-Port-pyCUPS-to-CUPS-3-x-API-apply-the-new-pyCUPS-to-system-config-printer/
+      - title: "Extend PDFio to be a PDF renderer/displayer"
+        url: /gsoc2025/05-Extend-PDFio-to-be-a-PDF-renderer-displayer/
+      - title: "Utilizing OSS-Fuzz-Gen to improve fuzz testing for OpenPrinting projects"
+        url: /gsoc2025/06-Utilizing-OSS-Fuzz-Gen-to-improve-fuzz-testing-for-OpenPrinting-projects/
+      - title: "Integrating OSS-Fuzz for Go-based and Python-based OpenPrinting projects"
+        url: /gsoc2025/07-Integrating-OSS-Fuzz-for-Go-based-and-Python-based-OpenPrinting-projects/
+      - title: "System/Fuzz Testing of Printing Protocols"
+        url: /gsoc2025/08-System-Fuzz-Testing-of-Printing-Protocols/
+      - title: "Security Auditing for OpenPrinting Projects"
+        url: /gsoc2025/09-Security-Auditing-for-OpenPrinting-Projects/
+      - title: "Behavior-accurate simulation of multi-function printers (printer + scanner)"
+        url: /gsoc2025/10-Behavior-accurate-simulation-of-multi-function-printers-printer-scanner-/
+      - title: "Image output evaluation for testing of print/scan job processing"
+        url: /gsoc2025/11-Image-output-evaluation-for-testing-of-print-scan-job-processing/
+      - title: "Port CUPS and Printer Applications to Zephyr"
+        url: /gsoc2025/12-Port-CUPS-and-Printer-Applications-to-Zephyr/
+      - title: "Rust bindings for libcups2/3"
+        url: /gsoc2025/13-Rust-bindings-for-libcups2-3/
+      - title: "Error response pop-up support for CPDB"
+        url: /gsoc2025/14-Error-response-pop-up-support-for-CPDB/
+      - title: "CI Testing programs for libpappl-retrofit and libppd"
+        url: /gsoc2025/15-CI-Testing-programs-for-libpappl-retrofit-and-libppd/
+      - title: "cups-filters: Create OCR filter to deliver scans as searchable PDFs"
+        url: /gsoc2025/16-cups-filters/
+
+gsoc24:
+  - title: "GSoC 2024"
+    children:
+      - title: "GSoC 2024 Homepage"
+        url: /gsoc2024/
+      - title: "Desktop integration: CPDB support for print dialogs of Mozilla (Thunderbird/Firefox) and LibreOffice"
+        url: /gsoc2024/01-Desktop-integration/
+      - title: "Desktop Integration: Update system-config-printer for the New Architecture of printing"
+        url: /gsoc2024/02-Desktop-Integration/
+      - title: "Desktop Integration: User interfaces for using OAuth2 with printers and scanners"
+        url: /gsoc2024/03-Desktop-Integration/
+      - title: "Integrating C-based OpenPrinting projects in OSS-Fuzz testing"
+        url: /gsoc2024/04-Integrating-C-based-OpenPrinting-projects-in-OSS-Fuzz-testing/
+      - title: "Official OCI containers of CUPS and Printer Applications"
+        url: /gsoc2024/05-Official-OCI-containers-Docker-ROCKs-podman-of-CUPS-and-Printer-Applications/
+      - title: "Replace QPDF by PDFio as PDF manipulation library in libcupsfilters"
+        url: /gsoc2024/06-Replace-QPDF-by-PDFio-as-PDF-manipulation-library-in-libcupsfilters/
+      - title: "Turn cups-browsed into a Printer Application"
+        url: /gsoc2024/07-Turn-cups-browsed-into-a-Printer-Application/
+      - title: "Converting Braille embosser support into a Printer Application"
+        url: /gsoc2024/08-Converting-Braille-embosser-support-into-a-Printer-Application/
+      - title: "CI Testing programs for libpappl-retrofit and libppd"
+        url: /gsoc2024/09-CI-Testing-programs-for-libpappl-retrofit-and-libppd/
+      - title: "cups-filters: Create OCR filter to deliver scans as searchable PDFs"
+        url: /gsoc2024/10-cups-filters/
+
+gsoc23:
+  - title: "GSoC 2023"
+    children:
+      - title: "GSoC 2023 Homepage"
+        url: /gsoc2023/
+      - title: "Adding support for new IPP Everywhere 2.x functionality/attributes to libcupsfilters and CPDB"
+        url: /gsoc2023/01-Adding-support-for-new-IPP-Everywhere-2-x-functionality-attributes-to-libcupsfilters-and-CPDB/
+      - title: "CPDB support for application print dialogs: Firefox, Chromium, LibreOffice, etc."
+        url: /gsoc2023/02-CPDB-support-for-application-print-dialogs/
+      - title: "Scanning support in PAPPL"
+        url: /gsoc2023/03-Scanning-support-in-PAPPL/
+      - title: "Turn cups-browsed into a Printer Application"
+        url: /gsoc2023/04-Turn-cups-browsed-into-a-Printer-Application/
+      - title: "PAPPL-based Printer Applications: Option setting presets via web interface"
+        url: /gsoc2023/05-PAPPL-based-Printer-Applications/
+      - title: "Make a native Printer Application from Gutenprint"
+        url: /gsoc2023/06-Make-a-native-Printer-Application-from-Gutenprint/
+      - title: "CI Testing programs for libcupsfilters, libpappl-retrofit, libppd, CPDB, etc."
+        url: /gsoc2023/07-CI-Testing-programs-for-libcupsfilters-libpappl-retrofit-libppd-CPDB-etc-/
+      - title: "GNOME Control Center: List and handle IPP print services for the New Architecture"
+        url: /gsoc2023/08-GNOME-Control-Center/
+      - title: "cups-filters: Create OCR filter to deliver scans as searchable PDFs"
+        url: /gsoc2023/09-cups-filters/
+
+gsoc22:
+  - title: "GSoC 2022"
+    children:
+      - title: "GSoC 2022 Homepage"
+        url: /gsoc2022/
+      - title: "GUI for discovering non-driverless printers and finding suitable Printer Applications for them"
+        url: /gsoc2022/01-GUI-for-discovering-non-driverless-printers-and-finding-suitable-Printer-Applications-for-them/
+      - title: "Scanning support in PAPPL"
+        url: /gsoc2022/02-Scanning-support-in-PAPPL/
+      - title: "Print Dialogs: Make them use the Common Print Dialog Backends (CPDB)"
+        url: /gsoc2022/03-Print-Dialogs/
+      - title: "Make a native Printer Application from Gutenprint"
+        url: /gsoc2022/04-Make-a-native-Printer-Application-from-Gutenprint/
+      - title: "Converting Braille embosser support into a Printer Application"
+        url: /gsoc2022/05-Converting-Braille-embosser-support-into-a-Printer-Application/
+      - title: "cups-filters: In filter functions call Ghostscript via libgs and not as external executable"
+        url: /gsoc2022/06-cups-filters/
+      - title: "cups-filters: Add Avahi calls for discovering and resolving driverless IPP printers to API"
+        url: /gsoc2022/07-cups-filters/
+      - title: "cups-filters: Create OCR filter to deliver scans as searchable PDFs"
+        url: /gsoc2022/08-cups-filters/
+      - title: "Turn the scp-dbus-service methods GetBestDrivers and MissingExecutables of system-config-printer into C"
+        url: /gsoc2022/09-Turn-the-scp-dbus-service-methods-GetBestDrivers-and-MissingExecutables-of-system-config-printer-into-C/
+
+gsoc21:
+  - title: "GSoC 2021"
+    children:
+      - title: "GSoC 2021 Homepage"
         url: /gsoc2021/
-      - title: "Make All Filter Functions Work Well Even Without PPD Files."
+      - title: "Make All Filter Functions Work Well Even Without PPD Files"
         url: /gsoc2021/01-Filter_withour-PPD/
       - title: "GUI for listing and managing available IPP services"
-        url: gsoc2021/02-GUI-for-IPP/
+        url: /gsoc2021/02-GUI-for-IPP/
       - title: "Firmware and other file handling in PAPPL"
-        url: gsoc2021/03-File-Handling-in-PAPPL/
+        url: /gsoc2021/03-File-Handling-in-PAPPL/
       - title: "Create a single universal CUPS filter to replace the chain of individual filters"
         url: /gsoc2021/04-Single-universal-filter/
       - title: "CUPS Filters: Converting Filters to Filter Functions"
-        url: /gsoc2021/05-Filters-to-Filter//
+        url: /gsoc2021/05-Filters-to-Filter/
 
 gsoc20:
-  - title: "GSOC 2020"
+  - title: "GSoC 2020"
     children:
-      - title: "GSOC 2020 Homepage"
+      - title: "GSoC 2020 Homepage"
         url: /gsoc2020/
-      - title: "Linux GUI application (can be part of GNOME printer tool) to admin MF devices using IPP System Service."
+      - title: "Linux GUI application to admin MF devices using IPP System Service"
         url: /gsoc2020/01-Linux-GUI-Application/
       - title: "Common Print Dialog Qt implementation"
-        url: gsoc2020/02-common-print-dialog/
+        url: /gsoc2020/02-common-print-dialog/
       - title: "IPP scan (or virtual MF device) server (Scanner Application)"
-        url: gsoc2020/03-ipp-scan-application/
+        url: /gsoc2020/03-ipp-scan-application/
       - title: "SANE module for IPP driverless scanning"
         url: /gsoc2020/04-sane-module/
       - title: "General Printer SDK"
@@ -82,7 +234,7 @@ gsoc20:
         url: /gsoc2020/10-gutenprint-printer-application/
       - title: "Support for IPP Fax Out"
         url: /gsoc2020/11-ipp-fax-out/
-      - title: "Turn the scp-dbus-service methods - GetBestDrivers and MissingExecutables - of system-config-printer into C"
+      - title: "Turn the scp-dbus-service methods of system-config-printer into C"
         url: /gsoc2020/12-scp-dbus-service-into-c/
       - title: "Extract Raster data from PDFs for direct printing"
         url: /gsoc2020/13-extract-raster-from-pdf/
@@ -96,11 +248,11 @@ gsoc20:
         url: /gsoc2020/17-get-cairo-code-upstream/
 
 gsoc19:
-  - title: "GSOC 2019"
+  - title: "GSoC 2019"
     children:
-      - title: "GSOC 2019 HomePage"
+      - title: "GSoC 2019 Homepage"
         url: /gsoc2019/
-      - title: "Generic Framework to turn legacy drivers consisting of CUPS filters and PPDs into Printer Applications"
+      - title: "Generic Framework to turn legacy drivers into Printer Applications"
         url: /gsoc2019/01-legacy-drivers-to-printer-applications/
       - title: "IPP scan (or virtual MF device) server (Scanner Application)"
         url: /gsoc2019/02-ipp-scan-server/
@@ -110,11 +262,11 @@ gsoc19:
         url: /gsoc2019/04-ipp-test-tool-for-ipp-system-service/
       - title: "IPP - ipptool test suite for IPP Errata Updates"
         url: /gsoc2019/05-ipp-test-tool-for-ipp-errata-updates/
-      - title: "Linux GUI application (can be part of GNOME printer tool) to admin MF devices using IPP System Service."
+      - title: "Linux GUI application to admin MF devices using IPP System Service"
         url: /gsoc2019/06-linux-gui-application/
-      - title: "Improve the pdftoraster filter to not need copying Poppler source code or using unstable APIs"
+      - title: "Improve the pdftoraster filter"
         url: /gsoc2019/07-pdftoraster-filter/
-      - title: "Foomatic Generating CUPS PPD generator (/usr/share/cups/drv/*.drv files) from Foomatic data"
+      - title: "Foomatic Generating CUPS PPD generator from Foomatic data"
         url: /gsoc2019/08-foomatic-generating-cups-ppd-generator/
       - title: "Add printer output backends to MuPDF"
         url: /gsoc2019/09-add-printer-output-backends-to-mupdf/
@@ -129,6 +281,34 @@ gsoc19:
       - title: "Get the cairo color management code upstream"
         url: /gsoc2019/14-cairo-color-management-code/
 
+# =====================
+# Other Program Sidebar Navs
+# =====================
+
+lfmp20:
+  - title: "LFMP 2020"
+    children:
+      - title: "LFMP 2020 Homepage"
+        url: /lfmp2020/
+      - title: "Wrapping proprietary printer drivers into a Printer Application"
+        url: /lfmp2020/01-Wrapping-proprietary-printer-drivers-into-a-Printer-Application/
+      - title: "Support for IPP Fax Out"
+        url: /lfmp2020/02-Support-IPP-Fax-Out/
+      - title: "IPP scan (or virtual MF device) server (Scanner Application)"
+        url: /lfmp2020/03-ipp-scan-application/
+
+gsod20:
+  - title: "GSoD 2020"
+    children:
+      - title: "GSoD 2020 Homepage"
+        url: /gsod2020/
+      - title: "Tutorial and Design Guidelines for Printer/Scanner drivers in Printer Applications"
+        url: /gsod2020/01-Tutorial-Printer-Applications/
+
+# =====================
+# Driverless Sidebar Nav
+# =====================
+
 driverless:
   - title: "Driverless Printing"
     children:
@@ -138,47 +318,3 @@ driverless:
         url: /driverless/01-standards-and-their-pdls/
       - title: "Workflow of Driverless Printing"
         url: /driverless/02-workflow/
-# sidebar navigation list sample
-# sidebar-sample:
-#   - title: "Parent Page A"
-#     children:
-#       - title: "Child Page A1"
-#         url: /child-page-a1/
-#       - title: "Child Page A2"
-#         url: /child-page-a2/
-#       - title: "Child Page A3"
-#         url: /child-page-a3/
-#       - title: "Child Page A4"
-#         url: /child-page-a4/
-#   - title: "Parent Page B"
-#     children:
-#       - title: "Child Page B1"
-#         url: /child-page-b1/
-#       - title: "Child Page B2"
-#         url: /child-page-b2/
-#       - title: "Child Page B3"
-#         url: /child-page-b3/
-#       - title: "Child Page B4"
-#         url: /child-page-b4/
-#       - title: "Child Page B5"
-#         url: /child-page-b5/
-#   - title: "Parent Page C"
-#     children:
-#       - title: "Child Page C1"
-#         url: /child-page-c1/
-#       - title: "Child Page C2"
-#         url: /child-page-c2/
-#       - title: "Child Page C3"
-#         url: /child-page-c3/
-#       - title: "Child Page C4"
-#         url: /child-page-c4/
-#       - title: "Child Page C5"
-#         url: /child-page-c5/
-#   - title: "Parent Page D"
-#     children:
-#       - title: "Child Page D1"
-#         url: /child-page-d1/
-#       - title: "Child Page D2"
-#         url: /child-page-d2/
-#       - title: "Child Page D3 (External)"
-#         url: https://your-domain.com
