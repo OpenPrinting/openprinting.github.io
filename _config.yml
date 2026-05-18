@@ -113,9 +113,9 @@ author:
     - label: "Mastodon"
       icon: "fab fa-fw fa-mastodon"
       url: "https://ubuntu.social/tags/OpenPrinting"
-    - label: "LinkedIn"
-      icon: "fab fa-fw fa-linkedin"
-      url: "https://www.linkedin.com/company/openprinting/posts/"
+    - label: "Telegram"
+      icon: "fab fa-fw fa-telegram"
+      url: "https://t.me/+RizBbjXz4uU2ZWM1"
 
 # Site Footer
 footer:
@@ -129,9 +129,9 @@ footer:
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/company/openprinting/posts/"
-    - label: "Code of Conduct"
-      icon: "fas fa-file-contract"
-      url: "/codeofconduct/"
+    - label: "Telegram"
+      icon: "fab fa-fw fa-telegram"
+      url: "https://t.me/+RizBbjXz4uU2ZWM1"
 
 # Reading Files
 include:
@@ -251,6 +251,21 @@ collections:
   documentation:
     output: true
     permalink: /:collection/:path/
+  gsoc2022:
+    output: true
+    permalink: /:collection/:path/
+  gsoc2023:
+    output: true
+    permalink: /:collection/:path/
+  gsoc2024:
+    output: true
+    permalink: /:collection/:path/
+  gsoc2025:
+    output: true
+    permalink: /:collection/:path/
+  gsoc2026:
+    output: true
+    permalink: /:collection/:path/
 
 
 # Defaults
@@ -357,6 +372,81 @@ defaults:
         nav: "gsod20"
       # comments: true
 
+
+  # _gsoc2022
+  - scope:
+      path: ""
+      type: gsoc2022
+    values:
+      layout: single
+      author_profile: false
+      share: false
+      excerpt: ""
+      toc: true
+      toc_label: "On This Page"
+      sidebar:
+        nav: "gsoc22"
+      # comments: true
+
+  # _gsoc2023
+  - scope:
+      path: ""
+      type: gsoc2023
+    values:
+      layout: single
+      author_profile: false
+      share: false
+      excerpt: ""
+      toc: true
+      toc_label: "On This Page"
+      sidebar:
+        nav: "gsoc23"
+      # comments: true
+
+  # _gsoc2024
+  - scope:
+      path: ""
+      type: gsoc2024
+    values:
+      layout: single
+      author_profile: false
+      share: false
+      excerpt: ""
+      toc: true
+      toc_label: "On This Page"
+      sidebar:
+        nav: "gsoc24"
+      # comments: true
+
+  # _gsoc2025
+  - scope:
+      path: ""
+      type: gsoc2025
+    values:
+      layout: single
+      author_profile: false
+      share: false
+      excerpt: ""
+      toc: true
+      toc_label: "On This Page"
+      sidebar:
+        nav: "gsoc25"
+      # comments: true
+
+  # _gsoc2026
+  - scope:
+      path: ""
+      type: gsoc2026
+    values:
+      layout: single
+      author_profile: false
+      share: false
+      excerpt: ""
+      toc: true
+      toc_label: "On This Page"
+      sidebar:
+        nav: "gsoc26"
+      # comments: true
   #_driverless
   - scope:
       path: ""

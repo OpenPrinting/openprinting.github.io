@@ -3,17 +3,15 @@
   width: 90%;
 }
 
+html {
+	overflow-y: scroll;
+}
+
 .side-nav-li{
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	word-break: break-all;
-}
-.side-nav-li:hover{
-	overflow:visible;
-	white-space: normal;
-	height: auto;
-	font-weight: bold;
 }
 .nav__list{
 
@@ -95,6 +93,10 @@
 	vertical-align: middle;
 }
 
+.fa-fw {
+  color: #000 !important;
+}
+
 /* Dark mode overrides */
 @media (prefers-color-scheme: dark) {
   body {
@@ -174,4 +176,13 @@
   .page__footer {
     color: #ccc !important;
   }
+  
+  .fa-fw {
+  color: #b0b0b0 !important;
 }
+  .highlighter-rouge {
+    background-color: #fff4 !important;
+    color:#0ff !important;
+  }
+}
+
