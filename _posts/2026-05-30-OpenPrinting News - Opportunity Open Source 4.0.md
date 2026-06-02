@@ -59,7 +59,7 @@ We will again have many sessions about OpenPrinting, Zephyr, Google Summer of Co
 
 And especially we will again have many interactive workshops where you can learn new skills hands-on. So bring your laptop and experience it by yourself.
 
-aWe also want to have some demo tables, where things can be tried out and conversations will fuel an exciting hallway track. And if it works out, we will also offer a Hackathon again.
+We also want to have some demo tables, where things can be tried out and conversations will fuel an exciting hallway track. And if it works out, we will also offer a Hackathon again.
 
 **We hope to see you all in India ...**
 
