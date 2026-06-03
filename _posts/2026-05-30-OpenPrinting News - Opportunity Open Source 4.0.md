@@ -15,7 +15,7 @@ After three great Opportunity Open Source conferences we will celebrate the fort
 
 *Photos and description of the location contributed by Sudhanshu*
 
-Our [Call for Locations](/OpenPrinting-News-Opportunity-Open-Source-4.0-Call-for-Locations/) showed a lot of interest. Several groups from different places in India have answered. Some only told in a short answer that they are interested but did not follow up, and 4 groups gave more detailed information and had a video meeting with us. In the end, the most convincing bid came from the Google Developer Group (GDG) IIIT Allahabad and we settled with them.
+Our [Call for Locations](/OpenPrinting-News-Opportunity-Open-Source-4.0-Call-for-Locations/) showed a lot of interest. Several groups from different places in India have answered (mainly on [LinkedIn](https://www.linkedin.com/pulse/opportunity-open-source-40-call-locations-till-kamppeter-ktr2f/)). Some only told in a short answer that they are interested but did not follow up, and 4 groups gave more detailed information and had a video meeting with us. In the end, the most convincing bid came from the Google Developer Group (GDG) IIIT Allahabad and we settled with them.
 
 **IIIT Allahabad** stands among **India’s premier technology institutes**, located in the historic and intellectually vibrant city of **Prayagraj**, in the state **Uttar Pradesh** in India. Renowned for its rich cultural legacy, academic excellence, and deep-rooted scholarly atmosphere, Prayagraj has long been a meeting point of ideas, innovation, and learning.
 
@@ -29,7 +29,7 @@ The conference will be held across selected campus venues at IIIT Allahabad, inc
 ![Main Auditorium](../assets/images/oosc-4.0/Main_Auditorium_IIITA.jpg)![Admin Auditorium](../assets/images/oosc-4.0/Admin_Auditorium_IIITA.jpeg)<BR>
 *IIT Allahabad: Main Auditorium and Admin Auditorium*
 
-Details regarding sponsors are currently being finalised and will be shared in due course.
+Details regarding sponsors are currently being finalized and will be shared in due course.
 
 **Rishu Kumar**, **Sudhanshu**, and **Aditya Ajay** will be the overall coordinators, and together with faculty coordinator **Prof. Bibhas Ghoshal** they will create a team of volunteers, mostly students who will do the **on-location organization**. They will look for local sponsors, reserve conference rooms and spaces for hallway track and exhibition, accommodation for speakers and non-local attendees, organize meals, prepare and test audio/video setup in the rooms, ...
 
@@ -37,7 +37,7 @@ Details regarding sponsors are currently being finalised and will be shared in d
 
 The date we have set to be **some weeks after the summer break at the IIIT**, so that the **students volunteering in the organization team** are back for some weeks already to have time to **prepare the event**. On the other side we also had to care **not to fall into an exam week**, so that students have time to attend.
 
-Another criteria for the selection of the event date are **other national and internationsl conferences** happening at this time, especially the **aKademy** 2026 in Graz, Austria, on September 19-24, and the **IndiaFOSS** in Bengaluru, on September 26-27.
+Another criteria for the selection of the event date are **other national and international conferences** happening at this time, especially the **aKademy** 2026 in Graz, Austria, on September 19-24, and the **IndiaFOSS** in Bengaluru, on September 26-27.
 
 And in **October** we have the **festive season** in India.
 
@@ -47,7 +47,7 @@ So we ended up choosing **August 28-30 (Fri-Sun), the last weekend of August**.
 
 As in the other years we want to motivate students (and also professors and researchers) to learn about free and open-source software and to join the community of developers and contributors. Not only coding and debugging can be contributed, but also designers, technical authors, evangelists, … are highly welcome.
 
-And to make this event really great, we need your contributions: Talks, panels, workshops, demo tables, lightning talks ... Show us how you are contributing to free and open-source software, how you make our lifes better with it, You do not need to be a coder. also sessions about documentation, design, community, success stories, ... are highly welcome.
+And to make this event really great, we need your contributions: Talks, panels, workshops, demo tables, lightning talks ... Show us how you are contributing to free and open-source software, how you make our lives better with it, You do not need to be a coder. also sessions about documentation, design, community, success stories, ... are highly welcome.
 
 **Our [Call for Proposals](https://events.canonical.com/event/154/abstracts/) is open! Until July 3, 2026!**
 
