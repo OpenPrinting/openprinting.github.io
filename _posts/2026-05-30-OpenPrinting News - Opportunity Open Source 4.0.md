@@ -13,7 +13,7 @@ After three great Opportunity Open Source conferences we will celebrate the fort
 
 ## IIIT Allahabad
 
-*Photos and description of the location contributed by Sudhanshu*
+*Photos and description of the location contributed by Sudhanshu Sah*
 
 Our [Call for Locations](/OpenPrinting-News-Opportunity-Open-Source-4.0-Call-for-Locations/) showed a lot of interest. Several groups from different places in India have answered (mainly on [LinkedIn](https://www.linkedin.com/pulse/opportunity-open-source-40-call-locations-till-kamppeter-ktr2f/)). Some only told in a short answer that they are interested but did not follow up, and 4 groups gave more detailed information and had a video meeting with us. In the end, the most convincing bid came from the Google Developer Group (GDG) IIIT Allahabad and we settled with them.
 
@@ -31,7 +31,7 @@ The conference will be held across selected campus venues at IIIT Allahabad, inc
 
 Details regarding sponsors are currently being finalized and will be shared in due course.
 
-**Rishu Kumar**, **Sudhanshu**, and **Aditya Ajay** will be the overall coordinators, and together with faculty coordinator **Prof. Bibhas Ghoshal** they will create a team of volunteers, mostly students who will do the **on-location organization**. They will look for local sponsors, reserve conference rooms and spaces for hallway track and exhibition, accommodation for speakers and non-local attendees, organize meals, prepare and test audio/video setup in the rooms, ...
+**Rishu Kumar**, **Sudhanshu Sah**, and **Aditya Ajay** will be the overall coordinators, and together with faculty coordinator **Prof. Bibhas Ghoshal** they will create a team of volunteers, mostly students who will do the **on-location organization**. They will look for local sponsors, reserve conference rooms and spaces for hallway track and exhibition, accommodation for speakers and non-local attendees, organize meals, prepare and test audio/video setup in the rooms, ...
 
 ## Selecting the date
 
