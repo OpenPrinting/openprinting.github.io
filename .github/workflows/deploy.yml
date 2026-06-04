@@ -42,7 +42,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: ${{ steps.detect-package-manager.outputs.manager }}
+      # Enable Corepack after setup-node so the Yarn 4 shim attaches to the
+      # active Node. setup-node's `cache: yarn` is omitted because its
+      # `yarn cache dir` probe runs Yarn 1 and aborts on the packageManager pin.
       - name: Enable Corepack
         run: corepack enable
       - name: Install Foomatic system packages

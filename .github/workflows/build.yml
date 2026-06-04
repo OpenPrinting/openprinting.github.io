@@ -48,8 +48,11 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: ${{ steps.pm.outputs.manager }}
 
+      # Corepack must be enabled *after* setup-node so the Yarn 4 shim attaches
+      # to the Node that runs the build. (setup-node's built-in `cache: yarn`
+      # is intentionally omitted: its `yarn cache dir` probe runs the runner's
+      # Yarn 1, which aborts on the `packageManager: yarn@4` pin.)
       - name: Enable Corepack
         run: corepack enable
 
