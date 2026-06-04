@@ -5,8 +5,8 @@
   "packageManager": "yarn@4.12.0",
   "scripts": {
     "dev": "next dev --turbopack",
-    "prebuild": "tsx scripts/foomatic/data-generate.ts && tsx scripts/search/build-index.ts && tsx scripts/search/build-foomatic-index.ts && tsx scripts/generate-rss.ts",
-    "build": "next build",
+    "generate": "tsx scripts/foomatic/data-generate.ts && tsx scripts/search/build-index.ts && tsx scripts/search/build-foomatic-index.ts && tsx scripts/generate-rss.ts",
+    "build": "yarn generate && next build",
     "start": "next start",
     "lint": "next lint",
     "foomatic:generate:ppds": "./scripts/foomatic/generate-ppds.sh",
