@@ -36,7 +36,7 @@ jobs:
             echo "runner=pnpm run" >> $GITHUB_OUTPUT
           elif [ -f yarn.lock ]; then
             echo "manager=yarn" >> $GITHUB_OUTPUT
-            echo "install=install --frozen-lockfile" >> $GITHUB_OUTPUT
+            echo "install=install --immutable" >> $GITHUB_OUTPUT
             echo "runner=yarn" >> $GITHUB_OUTPUT
           else
             echo "manager=npm" >> $GITHUB_OUTPUT
@@ -49,6 +49,9 @@ jobs:
         with:
           node-version: 20
           cache: ${{ steps.pm.outputs.manager }}
+
+      - name: Enable Corepack
+        run: corepack enable
 
       - name: Install Foomatic system packages
         run: |
