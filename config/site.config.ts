@@ -58,14 +58,16 @@ export interface SiteConfig {
   };
 }
 
-const repoOwner = "rudra-iitm";
+const repoOwner = "OpenPrinting";
 const repoName = "openprinting.github.io";
 const repoSlug = `${repoOwner}/${repoName}` as const;
-const isProduction = process.env.NODE_ENV === "production";
 const canonicalOrigin =
   process.env.NEXT_PUBLIC_BASE_URL || "https://openprinting.github.io";
-const basePath =
-  process.env.NEXT_PUBLIC_BASE_PATH || (isProduction ? `/${repoName}` : "");
+// This deploys to the OpenPrinting organization *root* Pages site
+// (https://openprinting.github.io/), so the site is served from the domain
+// root and basePath must be empty. `??` (not `||`) so an explicit empty
+// override is honored; set NEXT_PUBLIC_BASE_PATH only for project-subpath previews.
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const assetPrefix = basePath ? `${basePath}/` : "";
 
 export const siteConfig: SiteConfig = {
@@ -154,9 +156,13 @@ export const siteConfig: SiteConfig = {
   },
   discussion: {
     repo: repoSlug,
-    repoId: "R_kgDOOJ9tYQ",
-    category: "Blog Comments",
-    categoryId: "DIC_kwDOOJ9tYc4C4B5V",
+    // Node IDs for OpenPrinting/openprinting.github.io. The repo currently has
+    // no dedicated "Blog Comments" discussion category, so comments map to
+    // "General". A maintainer may create an Announcements-type "Blog Comments"
+    // category and update categoryId here (see migration report).
+    repoId: "MDEwOlJlcG9zaXRvcnk2MzgyODkxMA==",
+    category: "General",
+    categoryId: "MDE4OkRpc2N1c3Npb25DYXRlZ29yeTMyMDg1ODU5",
     term: "Welcome to OpenPrinting Blog",
   },
 };
