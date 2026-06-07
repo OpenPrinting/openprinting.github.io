@@ -91,6 +91,18 @@ const authors: Author[] = [
     ],
     image: "/authors/cnihelton.jpg",
   },
+  {
+    key: "Rudra",
+    name: "Rudra Pratap Singh",
+    role: "OpenPrinting Contributor",
+    github: "https://github.com/rudra-iitm",
+    image: "/authors/rudra-singh.jpg",
+    email: "mailto:rudransh.iitm@gmail.com",
+    location: "Varanasi, India",
+    links: [
+      { label: "LinkedIn", href: "https://www.linkedin.com/in/rudra-iitm/", kind: "linkedin" },
+    ],
+  },
 ];
 
 export default authors;
