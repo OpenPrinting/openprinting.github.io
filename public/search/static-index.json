@@ -1827,11 +1827,11 @@
       "content": "Also announced on Mastodon and on LinkedIn Mid-May, on the last Engineering Sprint of Canonical I got the notice that I got laid off by Canonical, after having been with them for near 20 years. The contract ended 4 weeks after that, mid-June and I got 3 months of my monthly payment as indemnity. See also my earlier post. I naturally wanted to continue OpenPrinting as my living and not have to take an arbitrary job and continue OpenPrinting as a hobby. So my first efforts were to make OpenPrinting a full sub-organization of the Linux Foundation so that it can handle money, to be able to get sponsorships, especially also via membership tiers. Our idea here is to get sponsored by the companies who most benefit from OpenPrinting, like major OS distributions, computer manufacturers who make laptops and desktops with Linux, printer manufacturers, cloud groupware/office developers, ... But getting this up and running takes time. We already tried to get a full sub-organization before my lay-off, but the process always got stuck. Now I see the chance that we will complete it due to its urgency. We are working on creating the Technical Charter which is required, and I have also already lined up the needed Technical Steering Committee. The people from the Linux Foundation also want to help me to find the sponsors. Many of the candidates are already Linux Foundation members and they could take up an OpenPrinting membership in addition. In parallel I tried to make people know about my situation. I posted a thread on Mastodon/the Fediverse and asked for boosting, and the thread (at least its initial post) got boosted 1187 times (Thanks to you all! I have never seen any other post in the Fediverse which got boosted that much)! I also (finally) filled in my LinkedIn profile and also created a profile for OpenPrinting. I interacted with a lot of people via LinkedIn, invited people who could help to connect with me on LinkedIn and then I asked them for help. One was Tara Tarakiyee from the Sovereign Tech Agency (STA), an organization of the German government which supports open source developers and organizations whose work goes into development an maintenance of software which is essential for IT and internet infrastructure and therefore of public interest. I told him about OpenPrinting and my situation and whether the STA would support me. Then he asked me for details of my work and offered me support from the STA. I had to express my (or OpenPrinting's) needs in work hours and money (the first time I had to do such a thing in my life) and within a few weeks my proposal got accepted and now the Sovereign Tech Fund invests in OpenPrinting to sustain me at the same monthly compensation as I got from Canonical (by average) until end of 2026. Here is the page about their investment in OpenPrinting and it got also mentioned in their October Newsletter. Yes, when somebody asks my where I am working, I will say its OpenPrinting, I am now self-employed as its lead. Note that the STA did not hire me as an employee, but they hired me as a freelancing engineer, paying my work hours which I am billing to them. I am also continuing to pursue establishing OpenPrinting as a full sub-organization of the Linux Foundation, to be open for further funding of the organization and this way to assure its continuation and so printing to just work also in the future. I want to express my thanks for all the help and support I have gotten in this situation, first of all Tara Tarakiyee, Hanno Zulla, Paloma Oliviera, and probably also others from the Sovereign Tech Agency for the quick arrangement of the investment. I also want to thank Kate Stewart, Todd Benzies, Michael Dolan, Scott Nicholas, and Daniel Scales from the Linux Foundation for the great support to make OpenPrinting a full sub-organization of the Linux Foundation and to help us to get funding. And big thanks to those who have joined the Technical Steering Committee of OpenPrinting with me: Michael Sweet, Aveek Basu, Zdenek Dohnal, and Thorsten Alteholz. Special thanks to all the people who have worked and are working with me at OpenPrinting to make OpenPrinting the strong organization which it is now and so make printing just work (I give some names, there are many more): Michael Sweet, Kurt Pfeifle, Grant Taylor, Ira McDonald, Ulrich Wehner, Ian Murdock, Mark Shuttleworth, Aveek Basu, Zdenek Dohnal, Alexander Pevzner, Johannes Meixner, Didier Raboud, Thorsten Alteholz, Deepak Patankar, Sahil Arora, Akarshan Kapoor, Soumyadeep Ghosh, Sanskar Yaduka, ... Thanks a lot to the organizers of the Google Summer of Code, especially Stephanie Taylor, Carol Smith, and Leslie Hawthorn to make this great program running which helped us to get a lot of awesome developers for our community. Also thanks for all the coverage on the Internet, especially to Heather Ellsworth (Ubuntu Indaba), Monica Ayhens-Madon (Ubuntu Office Hours), Michael Tunnell, Jill Bryant, and Ryan (Destination Linux), Joe Ressington and Graham Morrison (Late Night Linux), Noah Chelliah (Ask Noah), Diogo Constantino (Podcast Ubuntu Portugal), Liam Proven (The Register), ... <br><br><br> And as usual: Stay updated on Mastodon: #OpenPrinting and @till@ubuntu.social and on LinkedIn: @OpenPrinting. Or discuss on our mailing lists: Development: printing-architecture AT lists DOT linux DOT dev (Archive) Users: printing-users AT lists DOT linux DOT dev (Archive) Subscribing/Unsubscribing instructions"
     },
     {
-      "id": "post:OpenPrinting-News-Tech-over-Tea-300-Brodie-interviews-Till-Kamppeter",
+      "id": "post:OpenPrinting-News-Tech-over-Tea-299-Brodie-interviews-Till-Kamppeter",
       "source": "static",
       "type": "post",
-      "title": "OpenPrinting News - Tech over Tea #300 - Brodie interviews Till Kamppeter",
-      "url": "/OpenPrinting-News-Tech-over-Tea-300-Brodie-interviews-Till-Kamppeter",
+      "title": "OpenPrinting News - Tech over Tea #299 - Brodie interviews Till Kamppeter",
+      "url": "/OpenPrinting-News-Tech-over-Tea-299-Brodie-interviews-Till-Kamppeter",
       "headings": [
         "The full episode",
         "Highlight clips",
@@ -1843,7 +1843,7 @@
         "The Long History Behind OpenPrinting On Linux"
       ],
       "tags": [],
-      "teaserImage": "https://img.youtube.com/vi/-6fPfwixNLk/hqdefault.jpg",
+      "teaserImage": "https://img.youtube.com/vi/X8NoAXgGIP8/hqdefault.jpg",
       "snippet": "Everything about OpenPrinting, history, what we are doing, funding and the future, ...",
       "content": "Many of you know the YouTuber Brodie Robertson, mostly by his main channel, just named Brodie Robertson where he is talking about and discussing the latest news and incidents in the FOSS world (ex.: \"Can't print on Tuesdays\") and often causing controversial discussions in the comment sections. But he has also a second channel, Tech over Tea, where he does, once a week, an interview with a person who is doing important things for free and open source software. Back in April this year, Brodie had posted on Mastodon asking for nominating potential guests for future episodes of Tech over Tea. I had taken that opportunity then and sent an e-mail to Brodie: I have seen now that you are asking for nominations for guests in \"Tech over Tea\" on Mastodon. And I know that the person who is leading OpenPrinting is one of these project developers interested to be guest in your show. So I am nominating him with this e-mail, yes myself. ... He liked the idea and accepted my offer and we aimed for producing and publishing the show before the northern-hemisphere summer holidays. Unfortunately, in May, the incident with Canonical happened and I did not know how things with me and with OpenPrinting will go on in the future, and in this situation I did not want to give the interview, so I asked for postponing the production until the issue gets sorted out ... ... when I got the investment of the Sovereign Tech Agency and so being mostly recovered, I mailed to Brodie again and told him that I am now ready for producing the video, aiming for publication well before the end-of-year holidays. So we did it and it came out great! I got many likes and some questions on the social media where I linked the videos and on the videos themselves on YouTube. I answered all the questions, liked many a and disliked a few comments, and I also got a lot of likes for that, also from Brodie. Have fun watching the interview (below) and feel free to comment and ask your questions in the YouTube comments ... <BR><BR> And as usual: Stay updated on Mastodon: #OpenPrinting and @till@ubuntu.social and (new) on LinkedIn: @OpenPrinting. Or discuss on our mailing lists: Development: printing-architecture AT lists DOT linux DOT dev (Archive) Users: printing-users AT lists DOT linux DOT dev (Archive) Subscribing/Unsubscribing instructions Brodie's announcement on Mastodon: Today we have the legendary @till (Till Kamppeter) on the show, the man keeping printers working on Linux to talk about his decades of experience in this space This is the full interview, in 2 hours I am telling what we are doing at OpenPrinting, how it all began 25 years ago, and also about my layoff from Canonical and how I am recovering (a big thanks again to the Sovereign Tech Agency!) Currently 29 comments on YouTube, including all answers I have also posted on LinkedIn about it, and got 30 reactions and 1 repost! Is watching/listening to a full 2-hour Tech over Tea episode not your cup of tea? Do not run for a coffee now to keep yourself awake for the 2 hours, but just watch the most breaking news in it which Brodie has separated for you, as usual one on each of the 6 days after the release of the full episode. The first of them is about the incident with Canonical and how I am recovering, and fairly well (thanks again, Sovereign Tech Agency) as I am covered until end-2026 now! 1 comment on YouTube The second one is about the future of OpenPrinting and how it will get continued on the long run. This one is not only about what happened to CUPS after Michael Sweet had left Apple, but I also tell about CUPS 3.x, the New Architecture, classic drivers and PPDs getting dropped, driverless printing, how it began and how it works, and that driverless printing even can save your legacy printers under Windows ... 9 comments on YouTube, including all answers This clip is about what OpenPrinting is, how we make use of the Google Summer of Code, how classic printer drivers were developed by reverse-engineering, how I made them easily available for everyone and about IPP ... 28 comments on YouTube, including all answers Now it is about my time as system administrator in the Theoretical Physics department of the University of Bayreuth in Germany, from 1997-2000, in the pre-CUPS era, the dark years of LPD ... 1 comment on YouTube The last one is about how I discovered CUPS and how after that I got discovered for making CUPS what it is today."
     },
@@ -2060,14 +2060,45 @@
       "id": "post:cups-2.4.16",
       "source": "static",
       "type": "post",
-      "title": "Untitled Article",
+      "title": "CUPS 2.4.16",
       "url": "/cups-2.4.16",
-      "headings": [
-        "title: CUPS 2.4.16\nlayout: single\nauthor: Zdenek\nexcerpt: CUPS 2.4.16 hot fix release is available\ndate: '2025-12-04'"
-      ],
+      "headings": [],
       "tags": [],
-      "snippet": "The hotfix release 2.4.16 includes fix for infinite loop in GTK, which was caused by change of internal behavior in libcups on which GTK depended on, and workaround for stopping...",
+      "snippet": "CUPS 2.4.16 hot fix release is available",
       "content": "The hotfix release 2.4.16 includes fix for infinite loop in GTK, which was caused by change of internal behavior in libcups on which GTK depended on, and workaround for stopping the scheduler if configuration includes unknown directives. The full list of changes is shown in CHANGES.md. Enjoy! <a href=\"https://github.com/OpenPrinting/cups/releases/tag/v2.4.16\" itemprop=\"sameAs\" rel=\"nofollow noopener noreferrer\"><i class=\"fas fa-fw fa-download\" aria-hidden=\"true\"></i>Download v2.4.16</a>"
+    },
+    {
+      "id": "post:cups-2.4.17",
+      "source": "static",
+      "type": "post",
+      "title": "CUPS 2.4.17",
+      "url": "/cups-2.4.17",
+      "headings": [],
+      "tags": [],
+      "snippet": "CUPS 2.4.17 release includes fixes for 8 vulnerabilities",
+      "content": "The new release 2.4.17 contains the following security fixes: CVE-2026-27447: The scheduler treated local user and group names as case- insensitive. CVE-2026-34978: The RSS notifier could write outside the scheduler's RSS directory. CVE-2026-34980: The scheduler did not filter control characters from option values. CVE-2026-34979: The scheduler did not always allocate enough memory for a job's options string. CVE-2026-34990: The scheduler incorrectly allowed local certificates over the loopback interface. CVE-2026-39314: Fixed the range check for job password strings. CVE-2026-39316: Fixed a printer subscription bug in the scheduler. CVE-2026-NNNNN: Fixed a SNMP string conversion bug in the backends. where the last CVE number is requested from Github for several days now, the number will be corrected once we have one, but we decided to make a release to share the other fixes. The release includes other fixes as well, listed in CHANGES.md. Enjoy! <a href=\"https://github.com/OpenPrinting/cups/releases/tag/v2.4.17\" itemprop=\"sameAs\" rel=\"nofollow noopener noreferrer\"><i class=\"fas fa-fw fa-download\" aria-hidden=\"true\"></i>Download v2.4.17</a>"
+    },
+    {
+      "id": "post:cups-2.4.18",
+      "source": "static",
+      "type": "post",
+      "title": "CUPS 2.4.18",
+      "url": "/cups-2.4.18",
+      "headings": [],
+      "tags": [],
+      "snippet": "CUPS 2.4.18 brings hotfix after CVE-2026-27447",
+      "content": "The new release 2.4.17 contains hotfix after CVE-2026-27447 fix: Fixed cupsd crash if user does not exist (Issue #1555) I'm sorry for inconvenience and enjoy! <a href=\"https://github.com/OpenPrinting/cups/releases/tag/v2.4.18\" itemprop=\"sameAs\" rel=\"nofollow noopener noreferrer\"><i class=\"fas fa-fw fa-download\" aria-hidden=\"true\"></i>Download v2.4.18</a>"
+    },
+    {
+      "id": "post:cups-2.4.19",
+      "source": "static",
+      "type": "post",
+      "title": "CUPS 2.4.19",
+      "url": "/cups-2.4.19",
+      "headings": [],
+      "tags": [],
+      "snippet": "CUPS 2.4.19 fixes a regression in shared printing from non-local accounts.",
+      "content": "CUPS 2.4.19 fixes a regression in shared printing from non-local accounts (Issue #1557). Enjoy! <a href=\"https://github.com/OpenPrinting/cups/releases/tag/v2.4.19\" itemprop=\"sameAs\" rel=\"nofollow noopener noreferrer\"><i class=\"fas fa-fw fa-download\" aria-hidden=\"true\"></i>Download v2.4.19</a>"
     },
     {
       "id": "post:cups-2.4.2",
@@ -2662,6 +2693,28 @@
       "content": "libcups v3.0.0 is the first stable release of the CUPS v3 library and tools which remove deprecated APIs, add new APIs, and normalize existing APIs. Changes include: Added cupsLangIsRTL API. Added cupsOAuthGetDeviceGrant, cupsOAuthGetJWKS, and cupsOAuthGetUserId APIs. Added httpGetCookieValue and httpGetSecurity APIs. Added an \"install\" sub-command to the cups-x509 command. Added a \"--user-agent\" option to the ipptool command. Updated documentation (Issue #113) Updated the cupsOAuth APIs to support sharing of some OAuth values between the system (root) and per-user cache values. Updated the cupsJWTNew API to accept an optional JSON claims object. Updated the httpSetCookie API to support multiple \"Set-Cookie:\" header values. Updated ippfind to use the cupsGetClock API. Updated ippeveprinter to include all ready and supported attributes and values in the environment when processing a job. Fixed ipptransform media handling to preserve input document dimensions when \"media\" or \"media-col\" are not specified (Issue #102) Fixed cupsJSONExport functions with empty arrays or objects. Fixed httpGetDateTime for dates in the far future (Issue #124) Fixed input checks for cupsCreateCredentials and cupsCreateCredentialsRequest APIs (Issue #125) Fixed return values of ippDateToTime when the timezone isn't GMT. Fixed a potential timing issue with cupsEnumDests. Fixed a bug in the Avahi implementation of cupsDNSSDBrowseNew. Fixed a memory leak in httpClose. Fixed some Coverity-detected issues. Fixed support for device authorization grants. Enjoy! <a href=\"https://github.com/OpenPrinting/libcups/releases/tag/v3.0.0\" itemprop=\"sameAs\" rel=\"nofollow noopener noreferrer\"><i class=\"fas fa-fw fa-download\" aria-hidden=\"true\"></i>Download v3.0.0</a>"
     },
     {
+      "id": "post:libcups-3.0.1",
+      "source": "static",
+      "type": "post",
+      "title": "libcups v3.0.1",
+      "url": "/libcups-3.0.1",
+      "headings": [],
+      "tags": [],
+      "snippet": "libcups v3.0.1 is a bug fix release.",
+      "content": "libcups v3.0.1 is bug fix release. Changes include: Updated the internal implementation of ipp_t to avoid issues on some embedded platforms (Issue #141) Updated httpAddrLookup to return a numeric address when the resolver returns \"localhost\" for a non-loopback address. Updated cupsFileGetConf and cupsFilePutConf to escape more characters. Updated cupsRasterReadHeader to validate more of the page header values. Updated ippeveprinter to support custom \"printer-state-reasons\" keyword values (Issue #142) Fixed a bug when the ippFindXxx and ippSetXxx functions were mixed (Issue #138) Fixed error handling in the low-level TLS read/write functions. Enjoy! <a href=\"https://github.com/OpenPrinting/libcups/releases/tag/v3.0.1\" itemprop=\"sameAs\" rel=\"nofollow noopener noreferrer\"><i class=\"fas fa-fw fa-download\" aria-hidden=\"true\"></i>Download v3.0.1</a>"
+    },
+    {
+      "id": "post:libcups-3.0.2",
+      "source": "static",
+      "type": "post",
+      "title": "libcups v3.0.2",
+      "url": "/libcups-3.0.2",
+      "headings": [],
+      "tags": [],
+      "snippet": "libcups v3.0.2 is a bug fix release.",
+      "content": "libcups v3.0.2 is bug fix release. Changes include: Updated ipptool to limit the range of supported raster resolutions for the generated test page content from 1 to 9600dpi. Fixed a recursion issue with encoding of nested collections. Fixed a potential margin issue when generating A4 PCL from ipptransform. Fixed exporting of JSON with very large numbers. Fixed page header validation in cupsRasterReadHeader and cupsRasterWriteHeader for banded raster data. Fixed potential crash bug in cupsCheckDestSupported function. Fixed a duplicate printer bug in cupsEnumDests and cupsGetDests. Enjoy! <a href=\"https://github.com/OpenPrinting/libcups/releases/tag/v3.0.2\" itemprop=\"sameAs\" rel=\"nofollow noopener noreferrer\"><i class=\"fas fa-fw fa-download\" aria-hidden=\"true\"></i>Download v3.0.2</a>"
+    },
+    {
       "id": "post:libcups-3.0b1",
       "source": "static",
       "type": "post",
@@ -2979,6 +3032,28 @@
       "content": "PAPPL v1.4.0 is now available for download and is a feature release. Changes in 1.4.0 include: Added support for \"job-retain-until\" (Issue #14) Added new PAPPL-Create-Printers operation, and the PAPPL mainloop API now auto-adds local printers the first time a server is run (Issue #245) Added new papplDeviceRemoveScheme and papplDeviceRemoveTypes APIs to disable unwanted device types (Issue #259) Added support for suspending and resuming jobs at copy boundaries (Issue #266) Added support for server configuration files (Issue #279) Now preserve the paused state of printers (Issue #286) Fixed reporting of \"xxx-k-octet-supported\" attributes. Fixed printing of 1/2/4-bit grayscale PNG images (Issue #267) Fixed USB serial number for DYMO printers (Issue #271) Fixed a potential buffer overflow in the logging code (Issue #272) Fixed DNS-SD advertisements when the server name is set to \"localhost\" (Issue #274) Fixed hostname change detection when using mDNSResponder (Issue #282) Fixed authentication cookie comparisons for simple password mode. Fixed a potential time-of-use issue with PAPPL-created directories. Fixed handling of trailing '%' in log format strings. Updated the options sub-command to list vendor options and values (Issue #255) Updated web interface to show the age of jobs (Issue #256) Updated \"devices\" sub-command to have the PAPPL server find the devices instead of doing it directly (Issue #262) Updated default logging to be less chatty (Issue #270) Updated the Wi-Fi configuration page to support hidden networks. Updated the Wi-Fi configuration page reload time to 30 seconds. Updated TLS certificate generation to support more types of certificates and to use modern OpenSSL/GNU TLS APIs. Enjoy! <a href=\"https://github.com/michaelrsweet/pappl/releases/tag/v1.4.0\" itemprop=\"sameAs\" rel=\"nofollow noopener noreferrer\"><i class=\"fas fa-fw fa-download\" aria-hidden=\"true\"></i>Download v1.4.0</a>"
     },
     {
+      "id": "post:pappl-1.4.10",
+      "source": "static",
+      "type": "post",
+      "title": "PAPPL 1.4.10",
+      "url": "/pappl-1.4.10",
+      "headings": [],
+      "tags": [],
+      "snippet": "PAPPL v1.4.10 is a bug fix release.",
+      "content": "PAPPL v1.4.10 is now available for download and is a bug fix release. Changes include: Changed the preferred/first printer URI to use the \"ipps\" scheme. Updated the USB serial number code to better support non-compliant printers such as those from DYMO (Issue #396) Now show the default and supported \"output-bin\" options (Issue #393) Now suppress a duplicate 'auto' value for \"media-source-supported\" to work around a bug in the legacy-printer-app (Issue #394) Now log the TLS version and cipher suite, when available. Now create spool files with read-only permissions. Now support setting \"media-ready\" with the modify sub-command (Issue #395) Fixed attribute copying issue from multiple client threads (Issue #390) Fixed driver validation for raw printing (Issue #391) Fixed PNG looping issue (Issue #398) Fixed default IPv6 listener (Issue #401) Fixed builds against the latest libcups (Issue #403) Fixed a deadlock issue in the web interface (Issue #406) Enjoy! <a href=\"https://github.com/michaelrsweet/pappl/releases/tag/v1.4.10\" itemprop=\"sameAs\" rel=\"nofollow noopener noreferrer\"><i class=\"fas fa-fw fa-download\" aria-hidden=\"true\"></i>Download v1.4.10</a>"
+    },
+    {
+      "id": "post:pappl-1.4.11",
+      "source": "static",
+      "type": "post",
+      "title": "PAPPL 1.4.11",
+      "url": "/pappl-1.4.11",
+      "headings": [],
+      "tags": [],
+      "snippet": "PAPPL v1.4.11 is a bug fix release.",
+      "content": "PAPPL v1.4.11 is now available for download and is a bug fix release. Changes include: Updated the programmer's manual (Issue #418, Issue #419) Updated Set-Printer-Attributes validations checks. Fixed builds on FreeBSD and other systems without a sys/statfs.h header (Issue #411) Fixed a deadlock issue in the USB gadget shutdown code (Issue #417) Fixed a truncation bug when decoding SNMP string values. Fixed the handling of the finishings option. Enjoy! <a href=\"https://github.com/michaelrsweet/pappl/releases/tag/v1.4.11\" itemprop=\"sameAs\" rel=\"nofollow noopener noreferrer\"><i class=\"fas fa-fw fa-download\" aria-hidden=\"true\"></i>Download v1.4.11</a>"
+    },
+    {
       "id": "post:pappl-1.4.2",
       "source": "static",
       "type": "post",
@@ -3054,6 +3129,17 @@
       "tags": [],
       "snippet": "PAPPL v1.4.8 is a bug fix release.",
       "content": "PAPPL v1.4.8 is now available for download and is a bug fix release. Changes include: SECURITY: The web interface password didn't work properly (Issue #373) Now use the \"listen-hostname\" hostname as system hostname if a name is specified (Issue #369) Enjoy! <a href=\"https://github.com/michaelrsweet/pappl/releases/tag/v1.4.8\" itemprop=\"sameAs\" rel=\"nofollow noopener noreferrer\"><i class=\"fas fa-fw fa-download\" aria-hidden=\"true\"></i>Download v1.4.8</a>"
+    },
+    {
+      "id": "post:pappl-1.4.9",
+      "source": "static",
+      "type": "post",
+      "title": "PAPPL 1.4.9",
+      "url": "/pappl-1.4.9",
+      "headings": [],
+      "tags": [],
+      "snippet": "PAPPL v1.4.9 is a bug fix release.",
+      "content": "PAPPL v1.4.9 is now available for download and is a bug fix release. Changes include: Fixed a bug in job event notifications. Fixed a bug that would delay shutdown by 60 seconds. Fixed some notification bugs. Fixed validation error checking bug in papplPrinterCreate (Issue #385) Fixed page number that is passed to the raster endpage function. Enjoy! <a href=\"https://github.com/michaelrsweet/pappl/releases/tag/v1.4.9\" itemprop=\"sameAs\" rel=\"nofollow noopener noreferrer\"><i class=\"fas fa-fw fa-download\" aria-hidden=\"true\"></i>Download v1.4.9</a>"
     },
     {
       "id": "post:pappl-retrofit-First-Beta-Release",
@@ -3263,7 +3349,7 @@
       "source": "static",
       "type": "project",
       "title": "CUPS",
-      "url": "/project/00-cups",
+      "url": "/projects/00-cups",
       "headings": [
         "Project Links"
       ],
@@ -3276,7 +3362,7 @@
       "source": "static",
       "type": "project",
       "title": "Cups-Filters",
-      "url": "/project/01-cups-filters",
+      "url": "/projects/01-cups-filters",
       "headings": [
         "Project Links"
       ],
@@ -3289,7 +3375,7 @@
       "source": "static",
       "type": "project",
       "title": "Foomatic",
-      "url": "/project/02-foomatic",
+      "url": "/projects/02-foomatic",
       "headings": [
         "Project Links"
       ],
@@ -3298,35 +3384,24 @@
       "content": "Foomatic is a database-driven system for integrating free software printer drivers with the CUPS printing system and also with an easy-to-use command-line interface for direct, spooler-less printing. Foomatic consists of three packages: foomatic-db-engine Foomatic's database engine generates PPD files from the data in Foomatic's XML database. It also contains scripts to directly configure print queues and handle jobs. foomatic-db The collected knowledge about printers, drivers, and driver options in XML files, used by foomatic-db-engine to generate PPD files. It also contains manufacturer-supplied PPD files which got released under free software licenses. foomatic-db-nonfree Foomatic database extension consisting of manufacturer-supplied PPD files released under non-free licenses which restricts them in how they can get redistributed."
     },
     {
-      "id": "project:03-ippusbxd",
+      "id": "project:03-ipp-usb",
       "source": "static",
       "type": "project",
-      "title": "IPPUSBXD",
-      "url": "/project/03-ippusbxd",
+      "title": "ipp-usb",
+      "url": "/projects/03-ipp-usb",
       "headings": [
         "Project Links"
       ],
       "tags": [],
-      "snippet": "IPPUSBXD is a userland driver for IPP-over-USB class USB devices. It has been designed for Linux but uses a cross platform usb library allowing eventual porting to Windows and...",
-      "content": "IPPUSBXD is a userland driver for IPP-over-USB class USB devices. It has been designed for Linux but uses a cross platform usb library allowing eventual porting to Windows and other non-POSIX platforms. The IPP-over-USB standard was ratified by the USB forum in 2012. As of 2014 Mac OS X implemented this standard and with the addition of ippusbxd Linux shall as well. IPPUSBXD depends on POSIX threads, POSIX networking, and libusb as developed by the community at libusb.info IPPUSBXD has the following advantages: At runtime links only with libc, pthreads, libusb, and libavahi*. On a typical system these libraries will already be in RAM. This gives ippusbxd a minimal ram footprint. Requires no read access to any files. Ships with a strict AppArmor profile. Runs warning & leak free in valgrind Compiles warning free in clang Analyzed warning free in Coverity Can be installed anywhere Near zero CPU usage while idle Low CPU usage while working"
-    },
-    {
-      "id": "project:031-driverless-printing",
-      "source": "static",
-      "type": "project",
-      "title": "Driverless Printing",
-      "url": "/project/031-driverless-printing",
-      "headings": [],
-      "tags": [],
-      "snippet": "",
-      "content": ""
+      "snippet": "ipp-usb is a daemon that enables the use of IPP-over-USB class USB devices, so that USB-connected printers and multi-function devices can be used with the same driverless (\"IPP...",
+      "content": "ipp-usb is a daemon that enables the use of IPP-over-USB class USB devices, so that USB-connected printers and multi-function devices can be used with the same driverless (\"IPP Everywhere\") protocols as network IPP devices. The IPP-over-USB standard was ratified by the USB forum in 2012. ipp-usb makes the device's IPP service available over a local network socket on localhost, which lets CUPS, applications, and scanning software talk to a USB device exactly as if it were a driverless network printer or scanner. ipp-usb is the actively maintained successor to the now-discontinued ippusbxd. It is written in Go and has become the standard component for IPP-over-USB support on modern Linux distributions. ipp-usb has the following advantages: Exposes the full driverless capabilities of the device, including IPP Everywhere printing and eSCL (\"AirScan\") scanning, over USB. Advertises the device on localhost via DNS-SD so it is discovered automatically by CUPS and scanning frontends. Handles the multiple simultaneous HTTP connections that IPP-over-USB requires. Integrates cleanly with systemd and udev for automatic, on-demand startup. Ships with sane defaults and a simple configuration file."
     },
     {
       "id": "project:04-print-dialog",
       "source": "static",
       "type": "project",
       "title": "Common Print Dialog Backends",
-      "url": "/project/04-print-dialog",
+      "url": "/projects/04-print-dialog",
       "headings": [
         "Project Links"
       ],
@@ -3339,7 +3414,7 @@
       "source": "static",
       "type": "project",
       "title": "Miscellaneous",
-      "url": "/project/05-miscellaneous",
+      "url": "/projects/05-miscellaneous",
       "headings": [
         "Implementing PWG standards for Linux and other Posix-style operating systems",
         "Work with printer manufacturers on making printer drivers"
@@ -3519,17 +3594,6 @@
       "source": "static",
       "type": "page",
       "title": "Downloads",
-      "url": "/download",
-      "headings": [],
-      "tags": [],
-      "snippet": "{% include feature_row id=\"intro\" type=\"center\" %} {% include feature_row %}",
-      "content": "{% include feature_row id=\"intro\" type=\"center\" %} {% include feature_row %}"
-    },
-    {
-      "id": "page:downloads",
-      "source": "static",
-      "type": "page",
-      "title": "Downloads",
       "url": "/downloads",
       "headings": [],
       "tags": [],
@@ -3542,10 +3606,14 @@
       "type": "page",
       "title": "Driverless Printing",
       "url": "/driverless",
-      "headings": [],
+      "headings": [
+        "Apple Raster",
+        "PCLm",
+        "PWG Raster Format"
+      ],
       "tags": [],
-      "snippet": "",
-      "content": ""
+      "snippet": "There are four driverless printing standards established, but they all are based on the printer advertising itself via DNS-SD in the network, communicating with clients via IPP,...",
+      "content": "There are four driverless printing standards established, but they all are based on the printer advertising itself via DNS-SD in the network, communicating with clients via IPP, and supporting a selection out of four known Page Description Languages (PDLs). The difference is merely only which selection of PDLs is supported. Due to this we actually do not distinguish between the standards any more and simply call it \"driverless IPP printing\" or simply \"driverless printing\". Here are the four standards and their PDLs: AirPrint™: Apple Raster/URF, JPEG, and PDF. AirPrint is Apple's \"standard\" to print from iOS, iPadOS, and macOS, and is the most common and oldest driverless printing standard. IPP Everywhere™: PWG Raster, JPEG, and PDF. IPP Everywhere is developed by the Printer Working Group (PWG) and is a completely open standard. Mopria®: PCLm, PWG Raster, and PDF. Mopria is a proprietary profile of IPP used for printing from Android and Microsoft Windows®. Wi-Fi Direct Print Services: PCLm, PWG Raster, and PDF. Wi-Fi Direct printers work as a Wi-Fi access point so that mobile devices can print without an existing Wi-Fi network. Apple Raster (aka URF) is Apple's own raster format for printing with AirPrint. It is similar to CUPS and PWG Raster but with much simpler page headers. Apple Raster uses a modified PackBits compression algorithm that works on whole pixels for non-bitmap graphics that is typically paired with GZIP compression during transmission to the printer. PCLm is a raster-only subset of PDF that has nothing to do with the original HP PCL. Since PCLm files are valid PDF files, you can view them using a standard PDF file viewer or print them on a PDF printer. However, printers that support PCLm can only accept PCLm files produced for a particular combination of band height, color space, and resolution that is supported by the printer. The PWG Raster Format is a subset of CUPS raster that is documented in PWG Candidate Standard 5102.4-2012. Like Apple Raster, it uses a modified PackBits compression algorithm that works on whole pixels for non-bitmap graphics that is typically paired with GZIP compression during transmission to the printer."
     },
     {
       "id": "page:gsod",
@@ -3617,6 +3685,72 @@
       "content": ""
     },
     {
+      "id": "page:pappl-system-utilities",
+      "source": "static",
+      "type": "page",
+      "title": "PAPPL System Utilities",
+      "url": "/pappl-system-utilities",
+      "headings": [
+        "papplSystemAddListeners",
+        "papplSystemAddMIMEFilter",
+        "papplSystemCreate",
+        "papplSystemDelete",
+        "papplSystemGetAdminGroup",
+        "papplSystemGetAuthService",
+        "papplSystemGetContact",
+        "papplSystemGetDNSSDName",
+        "papplSystemGetDefaultPrintGroup",
+        "papplSystemGetDefaultPrinterID",
+        "papplSystemGetFirmware",
+        "papplSystemGetFooterHTML",
+        "papplSystemGetGeoLocation",
+        "papplSystemGetHostname",
+        "papplSystemGetLocation",
+        "papplSystemGetLogLevel",
+        "papplSystemGetMaxLogSize",
+        "papplSystemGetName",
+        "papplSystemGetNextPrinterID",
+        "papplSystemGetOptions",
+        "papplSystemGetOrganization",
+        "papplSystemGetOrganizationalUnit",
+        "papplSystemGetPassword",
+        "papplSystemGetServerHeader",
+        "papplSystemGetSessionKey",
+        "papplSystemGetTLSOnly",
+        "papplSystemGetUUID",
+        "papplSystemHashPassword",
+        "papplSystemIsRunning",
+        "papplSystemIteratePrinters",
+        "papplSystemLoadState",
+        "papplSystemRun",
+        "papplSystemSaveState",
+        "papplSystemSetAdminGroup",
+        "papplSystemSetContact",
+        "papplSystemSetDNSSDName",
+        "papplSystemSetDefaultPrintGroup",
+        "papplSystemSetDefaultPrinterID",
+        "papplSystemSetFooterHTML",
+        "papplSystemSetGeoLocation",
+        "papplSystemSetHostname",
+        "papplSystemSetLocation",
+        "papplSystemSetLogLevel",
+        "papplSystemSetMIMECallback",
+        "papplSystemSetMaxLogSize",
+        "papplSystemSetNextPrinterID",
+        "papplSystemSetOperationCallback",
+        "papplSystemSetOrganization",
+        "papplSystemSetOrganizationalUnit",
+        "papplSystemSetPassword",
+        "papplSystemSetPrintDrivers",
+        "papplSystemSetSaveCallback",
+        "papplSystemSetUUID",
+        "papplSystemSetVersions"
+      ],
+      "tags": [],
+      "snippet": "Add network or domain socket listeners. The \"name\" parameter specifies a listener address. Names starting with a slash (/) specify a UNIX domain socket path, otherwise the name is...",
+      "content": "Add network or domain socket listeners. The \"name\" parameter specifies a listener address. Names starting with a slash (/) specify a UNIX domain socket path, otherwise the name is treated as a fully-qualified domain name or numeric IPv4 or IPv6 address. If name is NULL, the \"any\" addresses are used. Listeners cannot be added after papplSystemRun is called. Add a file filter to the system. The \"srctype\" and \"dsttype\" arguments specify the source and destination MIME media types as constant strings. A destination MIME media type of \"image/pwg-raster\" specifies a filter that uses the driver's raster interface. Other destination types imply direct submission to the output device. Note: This function may not be called while the system is running. Create a system object. Delete a system object. Note: A system object cannot be deleted while the system is running. Get the current admin group, if any. Get the PAM authorization service, if any. Get the \"system-contact\" value. Get the current DNS-SD service name. Get the default print group, if any. Get the current \"default-printer-id\" value. Get the firmware names and versions. Get the footer HTML for the web interface, if any. Get the system geo-location string, if any. Get the system hostname. Get the system location string, if any. Get the maximum log file size. The maximum log size is only used when logging directly to a file. When the limit is reached, the current log file is renamed to \"filename.O\" and a new log file is created. Set the maximum size to 0 to disable log file rotation. The default maximum log file size is 1MiB or 1048576 bytes. Get the system name string, if any. Get the next \"printer-id\" value. Get the system options. Get the system organization string, if any. Get the system organizational unit string, if any. Get the current password hash. Note: The access password is only used when the PAM authentication service is not set. Get the Server: header for HTTP responses. Get the current session key. The session key is used for web interface forms to provide CSRF protection and is refreshed periodically. Get the TLS-only state of the system. Get the \"system-uuid\" value. Generate a password hash using salt and password strings. The salt string should be NULL to generate a new password hash or the value of an existing password hash to verify that a given plaintext password string matches the password hash. Note: Hashes access passwords are only used when the PAM authentication service is not set. Return whether the system is running. Iterate all of the printers. Load the previous system state. Run the printer service. Save the current system state. Set the administrative group. Set the \"system-contact\" value. Set the DNS-SD service name. Set the default print group. Set the \"default-printer-id\" value. Set the footer HTML for the web interface. Set the geographic location string. Set the system hostname. Set the system location string, if any. Set the system log level Set the MIME typing callback for the system. The MIME typing callback extends the built-in MIME typing support for other media types that are supported by the application, typically vendor print formats. The callback function receives a buffer containing the initial bytes of the document data, the length of the buffer, and the callback data. It can then return NULL if the content is not recognized or a constant string containing the MIME media type, for example \"application/vnd.hppcl\" for PCL print data. Set the maximum log file size in bytes. The maximum log size is only used when logging directly to a file. When the limit is reached, the current log file is renamed to \"filename.O\" and a new log file is created. Set the maximum size to 0 to disable log file rotation. The default maximum log file size is 1MiB or 1048576 bytes. Set the next \"printer-id\" value. The next printer ID can only be set prior to calling papplSystemRun. Set the IPP operation callback. The operation callback can only be set prior to calling papplSystemRun. Set the system organization string, if any. Set the system organizational unit string, if any. Set the access password hash string. The access password hash string is generated using the papplSystemHashPassword function. Note: The access password is only used when the PAM authentication service is not set. Set the save callback. The save callback can only be set prior to calling papplSystemRun. Set the system UUID. The UUID can only be set prior to calling papplSystemRun. Set the firmware names and versions. The firmware information can only be set prior to calling papplSystemRun."
+    },
+    {
       "id": "page:projects",
       "source": "static",
       "type": "page",
@@ -3657,7 +3791,7 @@
       "source": "static",
       "type": "page",
       "title": "Reviving an older printer with Ubuntu WSL and Printer Application Snaps",
-      "url": "/wsl-printer-app-snap",
+      "url": "/wsl-printer-app",
       "headings": [
         "Introduction",
         "How to"
@@ -3671,7 +3805,7 @@
       "source": "static",
       "type": "page",
       "title": "Printer Applications - A new way to print in Linux",
-      "url": "/01-printer-application",
+      "url": "/upcoming-technologies/01-printer-application",
       "headings": [],
       "tags": [],
       "snippet": "Most modern general-purpose printers are IPP printers that allow driverless printing. They advertise themselves via DNS-SD, clients can poll the capability information of them via...",
@@ -3682,7 +3816,7 @@
       "source": "static",
       "type": "page",
       "title": "IPP scan (or virtual MF device) server (Scanner Application)",
-      "url": "/02-ipp-scan",
+      "url": "/upcoming-technologies/02-ipp-scan",
       "headings": [],
       "tags": [],
       "snippet": "The Printer Working Group (PWG) has also taken multi-function devices into account, devices which offer printer and scanner in one unit. For that they have added IPP Scan, an...",
@@ -3693,7 +3827,7 @@
       "source": "static",
       "type": "page",
       "title": "3D Printing",
-      "url": "/03-3d-printing",
+      "url": "/upcoming-technologies/03-3d-printing",
       "headings": [],
       "tags": [],
       "snippet": "3D Printing is also supposed to benefit from the new printing architecture, as Michael Sweet is also planning to support it in the PAPPL Printer Application library. Here we will...",
@@ -3704,7 +3838,7 @@
       "source": "static",
       "type": "page",
       "title": "IPP Fax Out - A new reality",
-      "url": "/04-ipp-fax",
+      "url": "/upcoming-technologies/04-ipp-fax",
       "headings": [],
       "tags": [],
       "snippet": "To complete the driverless support for IPP network multi-function devices there is also IPP Fax Out, the standard for sending faxes, as print jobs, through the fax functionality...",
@@ -3715,7 +3849,7 @@
       "source": "static",
       "type": "page",
       "title": "Designing and Packaging Printer and Scanner Drivers",
-      "url": "/05-designing-packaging-drivers",
+      "url": "/upcoming-technologies/05-designing-packaging-drivers",
       "headings": [],
       "tags": [],
       "snippet": "At the time of the Linux Plumbers 2020 taking place we have all the tools to create printer and scanner drivers in the new architecture: PAPPL, the Printer Application library...",
@@ -3723,7 +3857,7 @@
     }
   ],
   "metadata": {
-    "documentCount": 247,
+    "documentCount": 254,
     "contentTypes": [
       "post",
       "documentation",

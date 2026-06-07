@@ -64,6 +64,12 @@ export function TableOfContents({ content, isSticky = false }: TableOfContentsPr
       top: scrollTop,
       behavior: "smooth",
     });
+
+    if (typeof window.history?.pushState === "function") {
+      window.history.pushState(null, "", `#${url}`);
+    } else {
+      window.location.hash = url;
+    }
   };
 
   const containerClasses = `w-full rounded-xl border border-border bg-card p-5 max-h-[calc(100vh-8rem)] overflow-y-auto ${isSticky ? "sticky top-4 self-start" : ""}`;

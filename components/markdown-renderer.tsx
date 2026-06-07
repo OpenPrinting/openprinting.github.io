@@ -1,7 +1,6 @@
 import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
 import rehypeHighlight from "rehype-highlight"
-import rehypeAutolinkHeadings from "rehype-autolink-headings"
 import rehypeSlug from "rehype-slug"
 import rehypeRaw from 'rehype-raw'
 import readingTime from "reading-time"
@@ -13,7 +12,6 @@ import { Clock } from 'lucide-react';
 interface MarkdownRendererProps {
   content: string,
   showMeta?: boolean
-  /** When true, no card wrapper (flat on page background, e.g. About Us) */
   noCard?: boolean
 }
 
@@ -55,7 +53,6 @@ export function MarkdownRenderer({ content, showMeta = true, noCard = false }: M
               rehypeRaw,
               [rehypeHighlight, { languages: { bash }, detect: true, ignoreMissing: true }],
               rehypeSlug,
-              [rehypeAutolinkHeadings, { behavior: "wrap" }],
             ]}
             components={{
               // @ts-expect-error: TypeScript does not recognize the code component props

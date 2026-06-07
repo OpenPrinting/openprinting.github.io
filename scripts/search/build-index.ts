@@ -65,14 +65,7 @@ async function buildIndex() {
 
     const { headings, text, snippet } = normalizeMarkdown(post.content);
 
-    let url: string;
-    if (post.type === "documentation" || post.type === "project") {
-      url = `/${post.type}/${post.slug}`;
-    } else if (post.type === "page") {
-      url = `/${post.slug}`;
-    } else {
-      url = `/${post.slug}`;
-    }
+    const url = post.url;
 
     return {
       id: `${post.type}:${post.slug}`,

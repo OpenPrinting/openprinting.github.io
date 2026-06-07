@@ -1,11 +1,15 @@
 ---
-title: OpenPrinting News - Tech over Tea \#300 - Brodie interviews Till Kamppeter
+title: OpenPrinting News - Tech over Tea \#299 - Brodie interviews Till Kamppeter
 layout: single
 toc: true
 toc_sticky: true
 author: Till
 excerpt: Everything about OpenPrinting, history, what we are doing, funding and the future, ...
 date: '2025-12-03'
+teaser_image: https://img.youtube.com/vi/X8NoAXgGIP8/hqdefault.jpg
+previousSlugs:
+  - OpenPrinting-News-Tech-over-Tea-300-Brodie-interviews-Till-Kamppeter
+  - openprinting-news-tech-over-tea-300-brodie-interviews-till-kamppeter
 ---
 Many of you know the YouTuber **Brodie Robertson**, mostly by his main channel, just named [Brodie Robertson](https://www.youtube.com/@BrodieRobertson) where he is talking about and discussing the latest news and incidents in the FOSS world (ex.: "[Can't print on Tuesdays](https://www.youtube.com/watch?v=-6fPfwixNLk)") and often causing controversial discussions in the comment sections.
 

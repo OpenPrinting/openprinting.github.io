@@ -13,6 +13,8 @@ import AuthorCard from "@/components/AuthorCard";
 import authors from "@/data/authors";
 import { getAuthorImageSrc, getImageSrc } from "@/lib/utils";
 import { getTeaserImage } from "@/lib/get-latest-posts";
+import { getAllPostRecords } from "@/lib/posts";
+import { getLegacyRedirect, legacyRedirectParams } from "@/lib/legacy-redirects";
 import { siteConfig } from "@/config/site.config";
 import { getSiteUrl } from "@/lib/site";
 
@@ -32,28 +34,14 @@ async function getPost(slug: string) {
 }
 
 async function getAllPostsMetadata() {
-    const entries = await fs.readdir(POSTS_DIR);
-
-    const posts = await Promise.all(
-        entries
-            .filter((name) => name.endsWith(".md"))
-            .map(async (name) => {
-                const filePath = path.join(POSTS_DIR, name);
-                const raw = await fs.readFile(filePath, "utf8");
-                const { data } = matter(raw);
-
-                return {
-                    slug: name.replace(/\.md$/, ""),
-                    title: typeof data.title === "string" ? data.title.trim().replace(/\\/g,"") : name.replace(/\.md$/, ""),
-                    date: typeof data.date === "string" ? data.date : "",
-                    author: typeof data.author === "string" ? data.author.trim() : "",
-                    excerpt: typeof data.excerpt === "string" ? data.excerpt.trim() : "",
-                    previousSlugs: Array.isArray(data.previousSlugs)
-                        ? data.previousSlugs
-                        : [],
-                };
-            })
-    );
+    const posts = getAllPostRecords().map((record) => ({
+        slug: record.slug,
+        title: record.title,
+        date: record.date,
+        author: record.author,
+        excerpt: record.excerpt,
+        previousSlugs: record.aliases,
+    }));
 
     posts.sort((a, b) => {
         const da = a.date ? new Date(a.date).getTime() : 0;
@@ -136,28 +124,20 @@ export async function generateMetadata({
 }
 
 export async function generateStaticParams() {
-    const entries = await fs.readdir(POSTS_DIR);
-
     const params: { slug: string[] }[] = [];
 
-    for (const name of entries) {
-        if (!name.endsWith(".md")) continue;
-
-        const slug = name.replace(/\.md$/, "");
-        params.push({ slug: [slug] });
-
-        const filePath = path.join(POSTS_DIR, name);
-        const raw = await fs.readFile(filePath, "utf8");
-        const { data } = matter(raw);
-
-        if (Array.isArray(data.previousSlugs)) {
-            for (const prevSlug of data.previousSlugs) {
-                params.push({ slug: [prevSlug] });
-            }
+    for (const record of getAllPostRecords()) {
+        params.push({ slug: [record.slug] });
+        for (const alias of record.aliases) {
+            params.push({ slug: [alias] });
         }
     }
 
     params.push({ slug: ["cups"] });
+
+    for (const legacy of legacyRedirectParams()) {
+        params.push(legacy);
+    }
 
     return params;
 }
@@ -174,6 +154,11 @@ export default async function PostPage({
 
     if (decodedSlug === "cups") {
         redirect(siteConfig.destinations.cups);
+    }
+
+    const legacyTarget = getLegacyRedirect(decodedSlug);
+    if (legacyTarget) {
+        redirect(legacyTarget);
     }
 
     const allPosts = await getAllPostsMetadata();

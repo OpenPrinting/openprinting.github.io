@@ -5,6 +5,7 @@ toc: true
 toc_sticky: true
 author: Till
 excerpt: Opportunity Open Source 4.0, in the IIIT Allahabad in Prayagraj, Uttar Pradesh, India, on Aug 28-30
+date: '2026-05-30'
 ---
 
 ![Some pictures of the OOSC 2.0](../assets/images/oosc-2.0-2024-1.png)![More pictures of the OOSC 2.0](../assets/images/oosc-2.0-2024-2.png)

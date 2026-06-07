@@ -1,4 +1,3 @@
-
 ---
 title: CUPS 2.4.16
 layout: single

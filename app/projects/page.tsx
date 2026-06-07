@@ -15,20 +15,24 @@ export default async function ProjectsPage() {
     .filter((f) => f.endsWith(".md"))
     .sort()
 
-  const projects = await Promise.all(
-    files.map(async (file) => {
-      const raw = await fs.readFile(path.join(PROJECTS_DIR, file), "utf8")
-      const { data } = matter(raw)
+  const projects = (
+    await Promise.all(
+      files.map(async (file) => {
+        const raw = await fs.readFile(path.join(PROJECTS_DIR, file), "utf8")
+        const { data } = matter(raw)
 
-      return {
-        slug: file.replace(/\.md$/, ""),
-        title:
-          typeof data.title === "string"
-            ? data.title
-            : file.replace(/\.md$/, ""),
-      }
-    })
-  )
+        if (typeof data.redirect === "string") return null
+
+        return {
+          slug: file.replace(/\.md$/, ""),
+          title:
+            typeof data.title === "string"
+              ? data.title
+              : file.replace(/\.md$/, ""),
+        }
+      })
+    )
+  ).filter((p): p is { slug: string; title: string } => p !== null)
 
   return (
     <main className="min-h-screen bg-background text-foreground pt-24 pb-10">

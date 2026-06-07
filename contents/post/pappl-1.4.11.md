@@ -1,0 +1,22 @@
+---
+title: PAPPL 1.4.11
+layout: single
+author: Mike
+excerpt: PAPPL v1.4.11 is a bug fix release.
+date: '2026-06-05'
+---
+
+PAPPL v1.4.11 is now available for download and is a bug fix release.  Changes include:
+
+- Updated the programmer's manual (Issue #418, Issue #419)
+- Updated Set-Printer-Attributes validations checks.
+- Fixed builds on FreeBSD and other systems without a sys/statfs.h header
+  (Issue #411)
+- Fixed a deadlock issue in the USB gadget shutdown code (Issue #417)
+- Fixed a truncation bug when decoding SNMP string values.
+- Fixed the handling of the finishings option.
+
+Enjoy!
+
+* <a href="https://github.com/michaelrsweet/pappl/releases/tag/v1.4.11" itemprop="sameAs" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-download" aria-hidden="true"></i>Download v1.4.11</a>
+

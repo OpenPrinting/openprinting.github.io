@@ -5,8 +5,64 @@
     <link>https://openprinting.github.io/</link>
     <description>Latest news and updates from the OpenPrinting project</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 04 Jun 2026 14:00:08 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 07 Jun 2026 07:34:43 GMT</lastBuildDate>
     <atom:link href="https://openprinting.github.io/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>libcups v3.0.2</title>
+      <link>https://openprinting.github.io/libcups-3.0.2/</link>
+      <guid isPermaLink="true">https://openprinting.github.io/libcups-3.0.2/</guid>
+      <pubDate>Fri, 05 Jun 2026 00:00:00 GMT</pubDate>
+      <author>Mike</author>
+      <description>libcups v3.0.2 is a bug fix release.</description>
+    </item>
+    <item>
+      <title>PAPPL 1.4.11</title>
+      <link>https://openprinting.github.io/pappl-1.4.11/</link>
+      <guid isPermaLink="true">https://openprinting.github.io/pappl-1.4.11/</guid>
+      <pubDate>Fri, 05 Jun 2026 00:00:00 GMT</pubDate>
+      <author>Mike</author>
+      <description>PAPPL v1.4.11 is a bug fix release.</description>
+    </item>
+    <item>
+      <title>OpenPrinting News - Opportunity Open Source 4.0 in the IIIT Allahabad</title>
+      <link>https://openprinting.github.io/OpenPrinting-News-Opportunity-Open-Source-4.0/</link>
+      <guid isPermaLink="true">https://openprinting.github.io/OpenPrinting-News-Opportunity-Open-Source-4.0/</guid>
+      <pubDate>Sat, 30 May 2026 00:00:00 GMT</pubDate>
+      <author>Till</author>
+      <description>Opportunity Open Source 4.0, in the IIIT Allahabad in Prayagraj, Uttar Pradesh, India, on Aug 28-30</description>
+    </item>
+    <item>
+      <title>CUPS 2.4.19</title>
+      <link>https://openprinting.github.io/cups-2.4.19/</link>
+      <guid isPermaLink="true">https://openprinting.github.io/cups-2.4.19/</guid>
+      <pubDate>Mon, 27 Apr 2026 00:00:00 GMT</pubDate>
+      <author>Zdenek</author>
+      <description>CUPS 2.4.19 fixes a regression in shared printing from non-local accounts.</description>
+    </item>
+    <item>
+      <title>CUPS 2.4.18</title>
+      <link>https://openprinting.github.io/cups-2.4.18/</link>
+      <guid isPermaLink="true">https://openprinting.github.io/cups-2.4.18/</guid>
+      <pubDate>Wed, 22 Apr 2026 00:00:00 GMT</pubDate>
+      <author>Zdenek</author>
+      <description>CUPS 2.4.18 brings hotfix after CVE-2026-27447</description>
+    </item>
+    <item>
+      <title>CUPS 2.4.17</title>
+      <link>https://openprinting.github.io/cups-2.4.17/</link>
+      <guid isPermaLink="true">https://openprinting.github.io/cups-2.4.17/</guid>
+      <pubDate>Fri, 17 Apr 2026 00:00:00 GMT</pubDate>
+      <author>Zdenek</author>
+      <description>CUPS 2.4.17 release includes fixes for 8 vulnerabilities</description>
+    </item>
+    <item>
+      <title>libcups v3.0.1</title>
+      <link>https://openprinting.github.io/libcups-3.0.1/</link>
+      <guid isPermaLink="true">https://openprinting.github.io/libcups-3.0.1/</guid>
+      <pubDate>Thu, 09 Apr 2026 00:00:00 GMT</pubDate>
+      <author>Mike</author>
+      <description>libcups v3.0.1 is a bug fix release.</description>
+    </item>
     <item>
       <title>OpenPrinting News - Opportunity Open Source 4.0 - Call for Locations</title>
       <link>https://openprinting.github.io/OpenPrinting-News-Opportunity-Open-Source-4.0-Call-for-Locations/</link>
@@ -16,9 +72,33 @@
       <description>Where will the 4th edition take place? Please send us your proposal!</description>
     </item>
     <item>
-      <title>OpenPrinting News - Tech over Tea #300 - Brodie interviews Till Kamppeter</title>
-      <link>https://openprinting.github.io/OpenPrinting-News-Tech-over-Tea-300-Brodie-interviews-Till-Kamppeter/</link>
-      <guid isPermaLink="true">https://openprinting.github.io/OpenPrinting-News-Tech-over-Tea-300-Brodie-interviews-Till-Kamppeter/</guid>
+      <title>libcups v3.0.0</title>
+      <link>https://openprinting.github.io/libcups-3.0.0/</link>
+      <guid isPermaLink="true">https://openprinting.github.io/libcups-3.0.0/</guid>
+      <pubDate>Thu, 08 Jan 2026 00:00:00 GMT</pubDate>
+      <author>Mike</author>
+      <description>libcups v3.0.0 is the first stable release of the CUPS v3 library and tools which remove deprecated APIs, add new APIs, and normalize existing APIs.</description>
+    </item>
+    <item>
+      <title>PAPPL 1.4.10</title>
+      <link>https://openprinting.github.io/pappl-1.4.10/</link>
+      <guid isPermaLink="true">https://openprinting.github.io/pappl-1.4.10/</guid>
+      <pubDate>Fri, 26 Dec 2025 00:00:00 GMT</pubDate>
+      <author>Mike</author>
+      <description>PAPPL v1.4.10 is a bug fix release.</description>
+    </item>
+    <item>
+      <title>CUPS 2.4.16</title>
+      <link>https://openprinting.github.io/cups-2.4.16/</link>
+      <guid isPermaLink="true">https://openprinting.github.io/cups-2.4.16/</guid>
+      <pubDate>Thu, 04 Dec 2025 00:00:00 GMT</pubDate>
+      <author>Zdenek</author>
+      <description>CUPS 2.4.16 hot fix release is available</description>
+    </item>
+    <item>
+      <title>OpenPrinting News - Tech over Tea #299 - Brodie interviews Till Kamppeter</title>
+      <link>https://openprinting.github.io/OpenPrinting-News-Tech-over-Tea-299-Brodie-interviews-Till-Kamppeter/</link>
+      <guid isPermaLink="true">https://openprinting.github.io/OpenPrinting-News-Tech-over-Tea-299-Brodie-interviews-Till-Kamppeter/</guid>
       <pubDate>Wed, 03 Dec 2025 00:00:00 GMT</pubDate>
       <author>Till</author>
       <description>Everything about OpenPrinting, history, what we are doing, funding and the future, ...</description>
@@ -86,86 +166,6 @@
       <pubDate>Tue, 26 Aug 2025 00:00:00 GMT</pubDate>
       <author>Till</author>
       <description>Have a look into the amazing presentations and workshops, plan your participation!</description>
-    </item>
-    <item>
-      <title>OpenPrinting News - Google Summer of Code 2025 - The amazing work is going on!</title>
-      <link>https://openprinting.github.io/OpenPrinting-News-Google-Summer-of-Code-2025-The-amazing-work-is-going-on/</link>
-      <guid isPermaLink="true">https://openprinting.github.io/OpenPrinting-News-Google-Summer-of-Code-2025-The-amazing-work-is-going-on/</guid>
-      <pubDate>Thu, 21 Aug 2025 00:00:00 GMT</pubDate>
-      <author>Till</author>
-      <description>The contributors have passed the midterm evaluations and their projects are taking shape ... And we also have some volunteers!</description>
-    </item>
-    <item>
-      <title>OpenPrinting News - 25 years of working full-time for printing with free/open-source-software</title>
-      <link>https://openprinting.github.io/OpenPrinting-News-25-years-of-working-full-time-for-printing-with-free-open-source-software/</link>
-      <guid isPermaLink="true">https://openprinting.github.io/OpenPrinting-News-25-years-of-working-full-time-for-printing-with-free-open-source-software/</guid>
-      <pubDate>Fri, 01 Aug 2025 00:00:00 GMT</pubDate>
-      <author>Till</author>
-      <description>Dedicated to make printing just work ... And the show must go on!</description>
-    </item>
-    <item>
-      <title>OpenPrinting News - Opportunity Open Source 3.0 - We are looking for sponsors</title>
-      <link>https://openprinting.github.io/OpenPrinting-News-Opportunity-Open-Source-3.0-We-are-looking-for-sponsors/</link>
-      <guid isPermaLink="true">https://openprinting.github.io/OpenPrinting-News-Opportunity-Open-Source-3.0-We-are-looking-for-sponsors/</guid>
-      <pubDate>Fri, 18 Jul 2025 00:00:00 GMT</pubDate>
-      <author>Till</author>
-      <description>No conference without solid support - Wide range of sponsorship packages available</description>
-    </item>
-    <item>
-      <title>OpenPrinting News - Opportunity Open Source 3.0 - No deadline any more for Call for Proposals</title>
-      <link>https://openprinting.github.io/OpenPrinting-News-Opportunity-Open-Source-3.0-No-deadline-for-Call-for-Proposals/</link>
-      <guid isPermaLink="true">https://openprinting.github.io/OpenPrinting-News-Opportunity-Open-Source-3.0-No-deadline-for-Call-for-Proposals/</guid>
-      <pubDate>Wed, 16 Jul 2025 00:00:00 GMT</pubDate>
-      <author>Till</author>
-      <description>We accept proposals up to the conference dates, but we already start accepting and scheduling</description>
-    </item>
-    <item>
-      <title>OpenPrinting News - Opportunity Open Source 3.0 - No UbuCon India co-hosted with us</title>
-      <link>https://openprinting.github.io/OpenPrinting-News-Opportunity-Open-Source-3.0-No-UbuCon-India-co-hosted-with-us/</link>
-      <guid isPermaLink="true">https://openprinting.github.io/OpenPrinting-News-Opportunity-Open-Source-3.0-No-UbuCon-India-co-hosted-with-us/</guid>
-      <pubDate>Mon, 07 Jul 2025 00:00:00 GMT</pubDate>
-      <author>Till</author>
-      <description>We will just run the OOSC, as last year, without UbuCon ... And we need more session proposals ...</description>
-    </item>
-    <item>
-      <title>OpenPrinting News - Google Summer of Code 2025 - Contributors selected and projects started</title>
-      <link>https://openprinting.github.io/OpenPrinting-News-Google-Summer-of-Code-2025-Contributors-selected-and-projects-started/</link>
-      <guid isPermaLink="true">https://openprinting.github.io/OpenPrinting-News-Google-Summer-of-Code-2025-Contributors-selected-and-projects-started/</guid>
-      <pubDate>Thu, 26 Jun 2025 00:00:00 GMT</pubDate>
-      <author>Till</author>
-      <description>11 Contributors on CUPS 3.x desktop integration, fuzz testing, visual analysis of print filter output, Rust support, and more ...</description>
-    </item>
-    <item>
-      <title>OpenPrinting News - Opportunity Open Source 3.0 - Call for Proposals extended to July 16</title>
-      <link>https://openprinting.github.io/OpenPrinting-News-Opportunity-Open-Source-3.0-Call-for-Proposals-extended-to-July-16/</link>
-      <guid isPermaLink="true">https://openprinting.github.io/OpenPrinting-News-Opportunity-Open-Source-3.0-Call-for-Proposals-extended-to-July-16/</guid>
-      <pubDate>Mon, 16 Jun 2025 00:00:00 GMT</pubDate>
-      <author>Till</author>
-      <description>A conference is great because its content is amazing, therefore we need more ...</description>
-    </item>
-    <item>
-      <title>OpenPrinting News - Opportunity Open Source 3.0</title>
-      <link>https://openprinting.github.io/OpenPrinting-News-Opportunity-Open-Source-3.0/</link>
-      <guid isPermaLink="true">https://openprinting.github.io/OpenPrinting-News-Opportunity-Open-Source-3.0/</guid>
-      <pubDate>Fri, 09 May 2025 00:00:00 GMT</pubDate>
-      <author>Till</author>
-      <description>Opportunity Open Source 3.0, again in IIT Kanpur in India, on Sep 5-7, co-located with the first UbuCon India</description>
-    </item>
-    <item>
-      <title>CUPS 2.4.12</title>
-      <link>https://openprinting.github.io/cups-2.4.12/</link>
-      <guid isPermaLink="true">https://openprinting.github.io/cups-2.4.12/</guid>
-      <pubDate>Tue, 08 Apr 2025 00:00:00 GMT</pubDate>
-      <author>Zdenek</author>
-      <description>CUPS 2.4.12 brings enhancements in IPP encryption and debugging</description>
-    </item>
-    <item>
-      <title>OpenPrinting News - We got a Framework RISC-V board from DeepComputing</title>
-      <link>https://openprinting.github.io/OpenPrinting-News-We-got-a-Framework-RISC-V-board-from-DeepComputing/</link>
-      <guid isPermaLink="true">https://openprinting.github.io/OpenPrinting-News-We-got-a-Framework-RISC-V-board-from-DeepComputing/</guid>
-      <pubDate>Sun, 02 Mar 2025 00:00:00 GMT</pubDate>
-      <author>Till</author>
-      <description>RISC-V board for OpenPrinting for development and testing, getting it all to work, Ubuntu Desktop, Snap on RISC-V</description>
     </item>
   </channel>
 </rss>
