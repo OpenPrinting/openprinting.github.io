@@ -10,7 +10,7 @@ export default function NewsSection({ posts }: { posts: NewsCardPost[] }) {
   const isInView = useInView(ref, { once: true, amount: 0.2 })
 
   return (
-    <section ref={ref} className="relative pt-10 pb-24 bg-background" id="news">
+    <section ref={ref} className="relative pt-10 pb-12 bg-background" id="news">
       <div className="hero-glow-blue opacity-30" />
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         <motion.div
@@ -39,7 +39,7 @@ export default function NewsSection({ posts }: { posts: NewsCardPost[] }) {
         </div>
       </div>
 
-      <div className="section-divider mt-24 mx-auto max-w-6xl" />
+      <div className="section-divider mt-12 mx-auto max-w-6xl" />
     </section>
   )
 }

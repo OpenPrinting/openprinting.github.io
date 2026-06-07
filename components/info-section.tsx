@@ -103,7 +103,7 @@ export default function InfoSection() {
         </div>
       </div>
 
-      <div className="section-divider mt-24 mx-auto max-w-6xl" />
+      <div className="section-divider mt-12 mx-auto max-w-6xl" />
     </section>
   )
 }

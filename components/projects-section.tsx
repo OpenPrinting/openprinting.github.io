@@ -88,7 +88,7 @@ export default function ProjectsSection() {
   ]
 
   return (
-    <section ref={ref} className="relative py-24 bg-background" id="projects">
+    <section ref={ref} className="relative pt-12 pb-24 bg-background" id="projects">
       <div className="max-w-6xl mx-auto px-6">
         {/* Find Your Printer */}
         <motion.div
