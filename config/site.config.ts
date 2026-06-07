@@ -142,6 +142,7 @@ export const siteConfig: SiteConfig = {
           { name: "Google Summer of Code", href: "/gsoc" },
           { name: "Google Season of Docs", href: "/gsod" },
           { name: "Contribute", href: "/contribute" },
+          { name: "Sponsors", href: "/sponsors" },
         ],
       },
       {

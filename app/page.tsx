@@ -1,4 +1,5 @@
 import HeroSection from "@/components/hero-section"
+import SponsorsStrip from "@/components/sponsors-strip"
 import InfoSection from "@/components/info-section"
 import ProjectsSection from "@/components/projects-section"
 import NewsSection from "@/components/news-section"
@@ -9,6 +10,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-background text-foreground">
       <HeroSection />
+      <SponsorsStrip />
       <NewsSection posts={latestPosts} />
       <InfoSection />
       <ProjectsSection />

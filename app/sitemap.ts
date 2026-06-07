@@ -36,6 +36,7 @@ const STATIC_ROUTES = [
   "/foomatic/",
   "/contact/",
   "/donations/",
+  "/sponsors/",
   "/contribute/",
   "/contribute-website/",
   "/codeofconduct/",
