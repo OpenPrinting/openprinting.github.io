@@ -119,7 +119,7 @@ export const siteConfig: SiteConfig = {
       { name: "Upcoming Technologies", href: "/upcoming-technologies" },
       { name: "Driverless Printing", href: "/driverless" },
       { name: "Printers", href: "/foomatic" },
-      { name: "Printer Drivers", href: "/drivers" },
+      { name: "Printer Drivers", href: "/foomatic/driver/" },
       { name: "Legacy Printers under Windows", href: "/wsl-printer-app" },
       { name: "Contact Us", href: "/contact" },
       { name: "Donations", href: "/donations" },
