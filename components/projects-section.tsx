@@ -88,9 +88,8 @@ export default function ProjectsSection() {
   ]
 
   return (
-    <section ref={ref} className="relative pt-12 pb-24 bg-background" id="projects">
+    <section ref={ref} className="relative pt-12 pb-12 bg-background" id="projects">
       <div className="max-w-6xl mx-auto px-6">
-        {/* Find Your Printer */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -112,7 +111,7 @@ export default function ProjectsSection() {
           Most modern printers work using OpenPrinting software without additional drivers. We also host a compatibility database for legacy printers supported by free software drivers.
         </motion.p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           {softwares.map((software, index) => (
             <motion.div
               key={index}
@@ -152,9 +151,8 @@ export default function ProjectsSection() {
           ))}
         </div>
 
-        <div className="section-divider mb-24" />
+        <div className="section-divider mb-12" />
 
-        {/* Collaborations */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -242,7 +240,7 @@ export default function ProjectsSection() {
         </div>
       </div>
 
-      <div className="section-divider mt-24 mx-auto max-w-6xl" />
+      <div className="section-divider mt-12 mx-auto max-w-6xl" />
     </section>
   )
 }
