@@ -1,11 +1,32 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import type { ReactNode } from "react";
 import Image from "next/image";
-import { MapPin, Mail, Github } from "lucide-react";
+import { MapPin, Mail, Github, Linkedin, Globe, Link2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import authors from "@/data/authors";
+import type { AuthorLink } from "@/data/authors";
 import { getAuthorImageSrc } from "@/lib/utils";
+import { MastodonIcon } from "@/components/icons";
+
+function linkIcon(kind: AuthorLink["kind"], size: number): ReactNode {
+  switch (kind) {
+    case "linkedin":
+      return <Linkedin size={size} className="text-muted-foreground" />;
+    case "website":
+      return <Globe size={size} className="text-muted-foreground" />;
+    case "mastodon":
+      return (
+        <MastodonIcon
+          className="text-muted-foreground"
+          style={{ width: size, height: size }}
+        />
+      );
+    default:
+      return <Link2 size={size} className="text-muted-foreground" />;
+  }
+}
 
 interface Props {
   authorKey: string;
@@ -42,6 +63,48 @@ export default function AuthorCard({ authorKey, className }: Props) {
   if (!author) return null;
 
   const imgSrc = getAuthorImageSrc(author.image);
+
+  const extraLinks = (author.links ?? []).filter(
+    (l) => typeof l?.href === "string" && l.href.trim() !== ""
+  );
+
+  const linkItems: {
+    label: string;
+    href: string;
+    iconSm: ReactNode;
+    iconMd: ReactNode;
+    external: boolean;
+  }[] = [
+    ...(author.email
+      ? [
+          {
+            label: "Email",
+            href: author.email,
+            iconSm: <Mail size={14} className="text-muted-foreground" />,
+            iconMd: <Mail size={16} />,
+            external: false,
+          },
+        ]
+      : []),
+    ...(author.github
+      ? [
+          {
+            label: "GitHub",
+            href: author.github,
+            iconSm: <Github size={14} className="text-muted-foreground" />,
+            iconMd: <Github size={16} />,
+            external: true,
+          },
+        ]
+      : []),
+    ...extraLinks.map((l) => ({
+      label: l.label,
+      href: l.href,
+      iconSm: linkIcon(l.kind, 14),
+      iconMd: linkIcon(l.kind, 16),
+      external: true,
+    })),
+  ];
 
   return (
     <>
@@ -83,27 +146,18 @@ export default function AuthorCard({ authorKey, className }: Props) {
                 </div>
               )}
 
-              {author.email && (
+              {linkItems.map((item) => (
                 <a
-                  href={author.email}
+                  key={`${item.label}-${item.href}`}
+                  href={item.href}
+                  target={item.external ? "_blank" : undefined}
+                  rel={item.external ? "noopener noreferrer" : undefined}
                   className="flex items-center gap-2 px-3 py-2 text-muted-foreground hover:text-foreground hover:bg-accent"
                 >
-                  <Mail size={14} className="text-muted-foreground" />
-                  <span className="text-sm">Email</span>
+                  {item.iconSm}
+                  <span className="text-sm">{item.label}</span>
                 </a>
-              )}
-
-              {author.github && (
-                <a
-                  href={author.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-3 py-2 text-muted-foreground hover:text-foreground hover:bg-accent"
-                >
-                  <Github size={14} className="text-muted-foreground" />
-                  <span className="text-sm">GitHub</span>
-                </a>
-              )}
+              ))}
             </div>
           )}
         </div>
@@ -151,27 +205,18 @@ export default function AuthorCard({ authorKey, className }: Props) {
           )}
 
           <div className="flex flex-col items-start pl-2 gap-3">
-            {author.email && (
+            {linkItems.map((item) => (
               <a
-                href={author.email}
+                key={`${item.label}-${item.href}-desktop`}
+                href={item.href}
+                target={item.external ? "_blank" : undefined}
+                rel={item.external ? "noopener noreferrer" : undefined}
                 className="inline-flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors duration-200"
               >
-                <Mail size={16} />
-                <span className="text-sm">Email</span>
+                {item.iconMd}
+                <span className="text-sm">{item.label}</span>
               </a>
-            )}
-
-            {author.github && (
-              <a
-                href={author.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors duration-200"
-              >
-                <Github size={16} />
-                <span className="text-sm">GitHub</span>
-              </a>
-            )}
+            ))}
           </div>
         </div>
       </div>

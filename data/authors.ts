@@ -1,3 +1,16 @@
+export type AuthorLinkKind =
+  | "website"
+  | "linkedin"
+  | "mastodon"
+  | "launchpad"
+  | "other";
+
+export interface AuthorLink {
+  label: string;
+  href: string;
+  kind?: AuthorLinkKind;
+}
+
 export interface Author {
   key: string;
   name: string;
@@ -5,6 +18,7 @@ export interface Author {
   location?: string;
   email?: string;
   github?: string;
+  links?: AuthorLink[];
   image?: string;
 }
 
@@ -17,6 +31,11 @@ const authors: Author[] = [
     location: "Vienna, Austria",
     email: "mailto:till.kamppeter@gmail.com",
     github: "https://github.com/tillkamppeter",
+    links: [
+      { label: "LinkedIn", href: "https://linkedin.com/in/kamppetertill", kind: "linkedin" },
+      { label: "Mastodon", href: "https://ubuntu.social/@till", kind: "mastodon" },
+      { label: "Launchpad", href: "https://launchpad.net/~till-kamppeter", kind: "launchpad" },
+    ],
     image: "/authors/till-kamppeter.jpg",
   },
   {
@@ -25,6 +44,9 @@ const authors: Author[] = [
     role: "Author of CUPS and PAPPL",
     location: "Canada",
     github: "https://github.com/michaelrsweet",
+    links: [
+      { label: "Website", href: "https://www.msweet.org/", kind: "website" },
+    ],
     image: "/authors/michael-sweet.jpg",
   },
   {
@@ -43,6 +65,9 @@ const authors: Author[] = [
     location: "Mandi, 175001, India",
     email: "mailto:dhirajyadav135@gmail.com",
     github: "https://github.com/dheeraj135",
+    links: [
+      { label: "LinkedIn", href: "https://www.linkedin.com/in/dheeraj135/", kind: "linkedin" },
+    ],
     image: "/authors/dheeraj135.jpg",
   },
   {
@@ -60,6 +85,10 @@ const authors: Author[] = [
     location: "Campinas, Brazil",
     email: "mailto:carlosnsoliveira@gmail.com",
     github: "https://github.com/CarlosNihelton",
+    links: [
+      { label: "LinkedIn", href: "https://linkedin.com/in/carlos-nihelton", kind: "linkedin" },
+      { label: "Launchpad", href: "https://launchpad.net/~cnihelton", kind: "launchpad" },
+    ],
     image: "/authors/cnihelton.jpg",
   },
 ];

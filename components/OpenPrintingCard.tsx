@@ -1,10 +1,11 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { MapPin, Github, Globe } from "lucide-react";
+import { MapPin, Github, Globe, Linkedin } from "lucide-react";
 import Image from "next/image";
 import { cn, getAssetPath } from "@/lib/utils";
 import { siteConfig } from "@/config/site.config";
+import { MastodonIcon } from "@/components/icons";
 
 interface Props {
   className?: string;
@@ -69,7 +70,7 @@ export default function OpenPrintingCard({ className }: Props) {
             <div className="absolute right-0 top-full mt-2 w-48 bg-card rounded shadow-xl border border-border py-1 z-50">
               <div className="flex items-center gap-2 px-3 py-2 text-foreground">
                 <MapPin size={16} className="text-muted-foreground" />
-                <span className="text-sm">{siteConfig.brand.organization}</span>
+                <span className="text-sm">The {siteConfig.brand.organization}</span>
               </div>
 
               <a
@@ -88,6 +89,26 @@ export default function OpenPrintingCard({ className }: Props) {
               >
                 <Github size={16} className="text-muted-foreground" />
                 <span className="text-sm">GitHub</span>
+              </a>
+
+              <a
+                href={siteConfig.destinations.mastodon}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-3 py-2 text-foreground hover:bg-muted"
+              >
+                <MastodonIcon className="w-4 h-4 text-muted-foreground" />
+                <span className="text-sm">Mastodon</span>
+              </a>
+
+              <a
+                href={siteConfig.destinations.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-3 py-2 text-foreground hover:bg-muted"
+              >
+                <Linkedin size={16} className="text-muted-foreground" />
+                <span className="text-sm">LinkedIn</span>
               </a>
             </div>
           )}
@@ -121,7 +142,7 @@ export default function OpenPrintingCard({ className }: Props) {
 
           <div className="flex items-center gap-3 text-muted-foreground mb-4 pl-2 self-start">
             <MapPin size={16} />
-            <span className="text-sm">{siteConfig.brand.organization}</span>
+            <span className="text-sm">The {siteConfig.brand.organization}</span>
           </div>
 
           <div className="flex flex-col items-start pl-2 gap-3 self-start">
@@ -141,6 +162,26 @@ export default function OpenPrintingCard({ className }: Props) {
             >
               <Github size={18} />
               <span className="text-sm">GitHub</span>
+            </a>
+
+            <a
+              href={siteConfig.destinations.mastodon}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 text-muted-foreground hover:text-primary"
+            >
+              <MastodonIcon className="w-[18px] h-[18px]" />
+              <span className="text-sm">Mastodon</span>
+            </a>
+
+            <a
+              href={siteConfig.destinations.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 text-muted-foreground hover:text-primary"
+            >
+              <Linkedin size={18} />
+              <span className="text-sm">LinkedIn</span>
             </a>
           </div>
         </div>
