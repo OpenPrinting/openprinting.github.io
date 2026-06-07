@@ -37,6 +37,7 @@ const STATIC_ROUTES = [
   "/contact/",
   "/donations/",
   "/sponsors/",
+  "/opportunity-open-source/",
   "/contribute/",
   "/contribute-website/",
   "/codeofconduct/",

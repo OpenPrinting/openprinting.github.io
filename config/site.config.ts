@@ -143,6 +143,7 @@ export const siteConfig: SiteConfig = {
           { name: "Google Season of Docs", href: "/gsod" },
           { name: "Contribute", href: "/contribute" },
           { name: "Sponsors", href: "/sponsors" },
+          { name: "Opportunity Open Source", href: "/opportunity-open-source" },
         ],
       },
       {
