@@ -76,5 +76,36 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entries.push({ url: getSiteUrl(`/upcoming-technologies/${slug}/`) });
   }
 
+  for (const route of foomaticRoutes()) {
+    entries.push({ url: getSiteUrl(route) });
+  }
+
   return entries;
+}
+
+function foomaticRoutes(): string[] {
+  const routes: string[] = ["/foomatic/driver/"];
+  const fdb = path.join(process.cwd(), "public", "foomatic-db");
+
+  const printersMap = path.join(fdb, "printersMap.json");
+  if (fs.existsSync(printersMap)) {
+    const data = JSON.parse(fs.readFileSync(printersMap, "utf8")) as {
+      printers: { id: string }[];
+    };
+    for (const printer of data.printers) {
+      routes.push(`/foomatic/printer/${printer.id.replace(/^printer\//, "")}/`);
+    }
+  }
+
+  const driversMap = path.join(fdb, "driversMap.json");
+  if (fs.existsSync(driversMap)) {
+    const data = JSON.parse(fs.readFileSync(driversMap, "utf8")) as {
+      drivers: { id: string }[];
+    };
+    for (const driver of data.drivers) {
+      routes.push(`/foomatic/driver/${driver.id}/`);
+    }
+  }
+
+  return routes;
 }

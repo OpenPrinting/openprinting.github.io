@@ -1,0 +1,76 @@
+// @ts-nocheck
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const ROOT_DIR = path.join(__dirname, "..", "..");
+
+const OUT_DIR = path.join(ROOT_DIR, "out");
+const FDB_DIR = path.join(ROOT_DIR, "public", "foomatic-db");
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
+function redirectHtml(target: string): string {
+  const escaped = target.replace(/"/g, "&quot;");
+  return `<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="refresh" content="0; url=${escaped}" />
+    <link rel="canonical" href="${escaped}" />
+    <meta name="robots" content="noindex, follow" />
+    <title>Redirecting…</title>
+    <script>window.location.replace("${escaped}");</script>
+  </head>
+  <body>
+    <p>This page has moved. If you are not redirected automatically, follow
+      <a href="${escaped}">this link</a>.</p>
+  </body>
+</html>
+`;
+}
+
+function writeStub(relativePath: string, target: string) {
+  const dir = path.join(OUT_DIR, relativePath);
+  fs.mkdirSync(dir, { recursive: true });
+  fs.writeFileSync(path.join(dir, "index.html"), redirectHtml(target));
+}
+
+function readMap(file: string, key: string): { id: string }[] {
+  const full = path.join(FDB_DIR, file);
+  if (!fs.existsSync(full)) return [];
+  const data = JSON.parse(fs.readFileSync(full, "utf8"));
+  return data[key] ?? [];
+}
+
+function main() {
+  if (!fs.existsSync(OUT_DIR)) {
+    console.warn(`Export directory ${OUT_DIR} not found; skipping legacy redirects.`);
+    return;
+  }
+
+  let printerCount = 0;
+  for (const printer of readMap("printersMap.json", "printers")) {
+    const id = printer.id.replace(/^printer\//, "");
+    const target = `${BASE_PATH}/foomatic/printer/${id}/`;
+    writeStub(path.join("printer", "show", id), target);
+    printerCount += 1;
+  }
+
+  let driverCount = 0;
+  for (const driver of readMap("driversMap.json", "drivers")) {
+    const id = driver.id.replace(/^driver\//, "");
+    const target = `${BASE_PATH}/foomatic/driver/${id}/`;
+    writeStub(path.join("driver", id), target);
+    driverCount += 1;
+  }
+
+  console.log(
+    `Wrote legacy redirect stubs: ${printerCount} printers (/printer/show/<id>), ` +
+      `${driverCount} drivers (/driver/<name>)`,
+  );
+}
+
+main();

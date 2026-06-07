@@ -7,6 +7,7 @@ const steps: Array<[string, string[]]> = [
   ["scripts/foomatic/generate-ppds.sh", skipPpd ? ["--skip-ppd"] : []],
   ["scripts/foomatic/combine-data.ts", forwardedArgs],
   ["scripts/foomatic/split-printers.ts", []],
+  ["scripts/foomatic/split-drivers.ts", []],
 ];
 
 for (const [scriptPath, args] of steps) {

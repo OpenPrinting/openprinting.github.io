@@ -163,6 +163,20 @@ function getPrinterRefId(printerRef) {
   return null;
 }
 
+const LANG_LABELS = {
+  pcl: "PCL",
+  pjl: "PJL",
+  postscript: "PostScript",
+  ps: "PostScript",
+  escp: "ESC/P",
+  escp2: "ESC/P2",
+  escp2x: "ESC/P2",
+  hpgl: "HP-GL",
+  hpgl2: "HP-GL/2",
+  text: "Text",
+  proprietary: "Proprietary",
+};
+
 function getCommandsets(printer) {
   const commandsetNode = printer.commandsets || printer.commandset;
   const commandsetValues =
@@ -171,9 +185,18 @@ function getCommandsets(printer) {
     commandsetNode ??
     [];
 
-  return toArray(commandsetValues)
-    .map(getText)
-    .filter(Boolean);
+  const sets = toArray(commandsetValues).map(getText).filter(Boolean);
+
+  if (printer.lang && typeof printer.lang === "object") {
+    for (const [key, value] of Object.entries(printer.lang)) {
+      const label = LANG_LABELS[key.toLowerCase()] || key.toUpperCase();
+      const level =
+        value && typeof value === "object" ? getText(value["@level"]) : undefined;
+      sets.push(level ? `${label} ${level}` : label);
+    }
+  }
+
+  return Array.from(new Set(sets));
 }
 
 function getPpdOptions(printer) {
@@ -394,6 +417,19 @@ function loadDriverData(printers, printerToDrivers) {
   return drivers;
 }
 
+function getDriverExecutionType(execution) {
+  if (!execution || typeof execution !== "object") return null;
+  if ("cups" in execution) return "CUPS Raster";
+  if ("filter" in execution) return "Ghostscript with filter";
+  if ("uniprint" in execution) return "Ghostscript Uniprint";
+  if ("ijs" in execution) return "IJS";
+  if ("postscript" in execution) return "PostScript";
+  if ("pdf" in execution || "prototype_pdf" in execution) return "PDF";
+  if ("ghostscript" in execution || "driverPrototype" in execution)
+    return "Ghostscript built-in";
+  return null;
+}
+
 function buildDriverDetails(printerId, driverIds, drivers, generatedPpdPaths) {
   return driverIds
     .map((driverId) => drivers.get(driverId))
@@ -415,6 +451,11 @@ function buildDriverDetails(printerId, driverIds, drivers, generatedPpdPaths) {
         name: driver.name,
         url: driver.url || null,
         comments: driver.comments ? getText(driver.comments) || "" : "",
+        type: getDriverExecutionType(driver.execution),
+        obsolete: driver.obsolete !== undefined,
+        replacedBy: driver.obsolete?.["@replace"]
+          ? String(driver.obsolete["@replace"]).replace(/^driver\//, "")
+          : null,
         hasPpd: generatedPpdPaths.has(ppdPath),
         ...(generatedPpdPaths.has(ppdPath) ? { ppdPath } : {}),
         execution,
@@ -424,6 +465,7 @@ function buildDriverDetails(printerId, driverIds, drivers, generatedPpdPaths) {
 
 async function combineData() {
   const { printers, printerToDrivers } = loadPrinterData();
+  const printersWithOwnEntry = new Set(printers.keys());
   const drivers = loadDriverData(printers, printerToDrivers);
   const generatedPpdPaths = getGeneratedPpdPaths();
 
@@ -477,6 +519,7 @@ async function combineData() {
       color: getColorCapability(printer),
       duplex: getDuplexCapability(printer),
       recommended: Boolean(printer.driver || recommendedDriverId),
+      hasOwnEntry: printersWithOwnEntry.has(printerId),
     });
   }
 

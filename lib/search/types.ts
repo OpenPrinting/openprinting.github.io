@@ -6,7 +6,7 @@ export type StaticContentType =
   | "project"
   | "page";
 
-export type SearchContentType = StaticContentType | "printer";
+export type SearchContentType = StaticContentType | "printer" | "driver";
 
 export interface SearchDocument {
   id: string;
@@ -38,9 +38,11 @@ export type StaticSearchIndex = SearchIndex<SearchDocument>;
 
 export interface FoomaticSearchDocument extends SearchDocument {
   source: "foomatic";
-  type: "printer";
-  manufacturer: string;
-  model: string;
+  type: "printer" | "driver";
+  manufacturer?: string;
+  model?: string;
   status?: string;
-  driverCount: number;
+  driverCount?: number;
+  supplier?: string;
+  printerCount?: number;
 }

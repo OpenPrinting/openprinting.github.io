@@ -174,14 +174,26 @@ export default function PrinterPageClient({ printerId }: PrinterPageClientProps)
                   <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
                     Recommended driver
                   </p>
-                  <p className="mt-2 text-sm font-medium text-foreground">
+                  <Link
+                    href={`/foomatic/driver/${printer.recommended_driver.replace(/^driver\//, "")}`}
+                    className="mt-2 inline-block text-sm font-medium text-primary hover:underline"
+                  >
                     {printer.recommended_driver.replace(/^driver\//, "")}
-                  </p>
+                  </Link>
                 </FoomaticCard>
               ) : null}
             </div>
           </div>
         </section>
+
+        {printer.hasOwnEntry === false ? (
+          <FoomaticCard className="border-amber-500/30 bg-amber-500/5 p-5">
+            <p className="text-sm text-foreground">
+              The properties of this printer are not yet entered into the database. It is listed
+              here only because it appears in the supported-printer list of the driver(s) shown below.
+            </p>
+          </FoomaticCard>
+        ) : null}
 
         <div className="grid gap-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.5fr)]">
           <aside>
@@ -212,6 +224,54 @@ export default function PrinterPageClient({ printerId }: PrinterPageClientProps)
                     <FoomaticStatusBadge status={status} />
                   </dd>
                 </div>
+                {printer.color !== undefined && printer.color !== "unknown" ? (
+                  <div>
+                    <dt className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+                      Color
+                    </dt>
+                    <dd className="mt-2 text-sm text-foreground">
+                      {printer.color ? "Color output" : "Monochrome only"}
+                    </dd>
+                  </div>
+                ) : null}
+                {printer.duplex !== undefined && printer.duplex !== "unknown" ? (
+                  <div>
+                    <dt className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+                      Duplex
+                    </dt>
+                    <dd className="mt-2 text-sm text-foreground">
+                      {printer.duplex ? "Supported" : "Not supported"}
+                    </dd>
+                  </div>
+                ) : null}
+                {printer.connectivity && printer.connectivity.length > 0 ? (
+                  <div>
+                    <dt className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+                      Connectivity
+                    </dt>
+                    <dd className="mt-2 flex flex-wrap gap-2">
+                      {printer.connectivity.map((item) => (
+                        <FoomaticBadge key={item} className="border-border bg-accent/50 text-muted-foreground">
+                          {item}
+                        </FoomaticBadge>
+                      ))}
+                    </dd>
+                  </div>
+                ) : null}
+                {printer.commandsets && printer.commandsets.length > 0 ? (
+                  <div>
+                    <dt className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+                      Page description languages
+                    </dt>
+                    <dd className="mt-2 flex flex-wrap gap-2">
+                      {printer.commandsets.map((item) => (
+                        <FoomaticBadge key={item} className="border-border bg-accent/50 text-muted-foreground">
+                          {item}
+                        </FoomaticBadge>
+                      ))}
+                    </dd>
+                  </div>
+                ) : null}
               </dl>
 
               {printer.notes ? (
@@ -223,6 +283,27 @@ export default function PrinterPageClient({ printerId }: PrinterPageClientProps)
                     className="prose prose-sm mt-4 max-w-none text-foreground dark:prose-invert"
                     dangerouslySetInnerHTML={{ __html: printer.notes }}
                   />
+                </div>
+              ) : null}
+
+              {printer.supportContacts && printer.supportContacts.length > 0 ? (
+                <div className="mt-8 border-t border-border pt-6">
+                  <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+                    Support
+                  </h3>
+                  <ul className="mt-4 space-y-2 text-sm">
+                    {printer.supportContacts.map((contact, index) => (
+                      <li key={index}>
+                        {contact.url ? (
+                          <Link href={contact.url} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                            {contact.name || contact.text || contact.url}
+                          </Link>
+                        ) : (
+                          <span className="text-foreground">{contact.name || contact.text}</span>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               ) : null}
             </FoomaticCard>
@@ -248,13 +329,40 @@ export default function PrinterPageClient({ printerId }: PrinterPageClientProps)
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                   <div className="space-y-2">
                     <div className="flex flex-wrap items-center gap-2">
-                      <h3 className="text-xl font-semibold tracking-tight">{driver.name}</h3>
+                      <Link
+                        href={`/foomatic/driver/${driver.id.replace(/^driver\//, "")}`}
+                        className="text-xl font-semibold tracking-tight text-foreground transition-colors hover:text-primary hover:underline"
+                      >
+                        {driver.name}
+                      </Link>
                       {driver.id === printer.recommended_driver ? (
                         <FoomaticBadge className="border-emerald-500/30 bg-emerald-500/10 text-emerald-700 dark:text-emerald-300" aria-label="Recommended driver">
                           Recommended
                         </FoomaticBadge>
                       ) : null}
+                      {driver.type ? (
+                        <FoomaticBadge className="border-border bg-accent/50 text-muted-foreground">
+                          {driver.type}
+                        </FoomaticBadge>
+                      ) : null}
+                      {driver.obsolete ? (
+                        <FoomaticBadge className="border-rose-500/30 bg-rose-500/10 text-rose-700 dark:text-rose-300">
+                          Obsolete
+                        </FoomaticBadge>
+                      ) : null}
                     </div>
+
+                    {driver.obsolete && driver.replacedBy ? (
+                      <p className="text-sm text-muted-foreground">
+                        Recommended replacement:{" "}
+                        <Link
+                          href={`/foomatic/driver/${driver.replacedBy}`}
+                          className="font-medium text-primary hover:underline"
+                        >
+                          {driver.replacedBy}
+                        </Link>
+                      </p>
+                    ) : null}
 
                     {driver.url ? (
                       <Link
