@@ -5,7 +5,6 @@
     <link>https://openprinting.github.io/</link>
     <description>Latest news and updates from the OpenPrinting project</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 07 Jun 2026 07:34:43 GMT</lastBuildDate>
     <atom:link href="https://openprinting.github.io/feed.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>libcups v3.0.2</title>

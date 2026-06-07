@@ -87,7 +87,6 @@ async function generateRss() {
     <link>${SITE_URL}/</link>
     <description>${escapeXml(SITE_DESCRIPTION)}</description>
     <language>en-us</language>
-    <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
     <atom:link href="${SITE_URL}${siteConfig.urls.rssPath}" rel="self" type="application/rss+xml" />
 ${items}
   </channel>
