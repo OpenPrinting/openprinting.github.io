@@ -116,7 +116,7 @@ export default function DriverPageClient({ driverId }: DriverPageClientProps) {
       <main className="min-h-screen bg-background pt-6 text-foreground">
         <FoomaticPageSection className="space-y-8 py-10 sm:py-12">
           <Button asChild variant="outline" size="sm" className="gap-2" aria-label="Back to printer directory">
-            <Link href="/foomatic">
+            <Link href="/foomatic/drivers">
               <ArrowLeft className="h-4 w-4" />
               Back to directory
             </Link>
@@ -140,7 +140,7 @@ export default function DriverPageClient({ driverId }: DriverPageClientProps) {
               {error || "The requested driver entry could not be found in the OpenPrinting database."}
             </p>
             <Button asChild className="mt-8 gap-2">
-              <Link href="/foomatic">
+              <Link href="/foomatic/drivers">
                 <ArrowLeft className="h-4 w-4" />
                 Return to directory
               </Link>
@@ -158,7 +158,7 @@ export default function DriverPageClient({ driverId }: DriverPageClientProps) {
       <FoomaticPageSection className="space-y-8 py-10 sm:py-12">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <Button asChild variant="outline" size="sm" className="gap-2" aria-label="Back to printer directory">
-            <Link href="/foomatic">
+            <Link href="/foomatic/drivers">
               <ArrowLeft className="h-4 w-4" />
               Back to directory
             </Link>

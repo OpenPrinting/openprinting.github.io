@@ -74,7 +74,7 @@ export default function DriverListClient() {
           </p>
           <div className="mt-6">
             <Button asChild variant="outline" size="sm">
-              <Link href="/foomatic">Browse printers instead</Link>
+              <Link href="/foomatic/printers">Browse printers instead</Link>
             </Button>
           </div>
         </FoomaticPageSection>

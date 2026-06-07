@@ -33,7 +33,8 @@ const STATIC_ROUTES = [
   "/driverless/",
   "/drivers/",
   "/printers/",
-  "/foomatic/",
+  "/foomatic/printers/",
+  "/foomatic/drivers/",
   "/contact/",
   "/donations/",
   "/sponsors/",
@@ -86,7 +87,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 }
 
 function foomaticRoutes(): string[] {
-  const routes: string[] = ["/foomatic/driver/"];
+  const routes: string[] = [];
   const fdb = path.join(process.cwd(), "public", "foomatic-db");
 
   const printersMap = path.join(fdb, "printersMap.json");

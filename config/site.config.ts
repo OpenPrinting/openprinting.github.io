@@ -118,8 +118,8 @@ export const siteConfig: SiteConfig = {
     secondary: [
       { name: "Upcoming Technologies", href: "/upcoming-technologies" },
       { name: "Driverless Printing", href: "/driverless" },
-      { name: "Printers", href: "/foomatic" },
-      { name: "Printer Drivers", href: "/foomatic/driver/" },
+      { name: "Printers", href: "/foomatic/printers" },
+      { name: "Printer Drivers", href: "/foomatic/drivers" },
       { name: "Legacy Printers under Windows", href: "/wsl-printer-app" },
       { name: "Contact Us", href: "/contact" },
       { name: "Donations", href: "/donations" },
