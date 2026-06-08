@@ -3,7 +3,6 @@ import SponsorsStrip from "@/components/sponsors-strip"
 import InfoSection from "@/components/info-section"
 import ProjectsSection from "@/components/projects-section"
 import NewsSection from "@/components/news-section"
-import ContributorsSection from "@/components/contributors-section"
 import { getLatestPosts } from "@/lib/get-latest-posts"
 
 export default function Home() {
@@ -15,7 +14,6 @@ export default function Home() {
       <NewsSection posts={latestPosts} />
       <InfoSection />
       <ProjectsSection />
-      <ContributorsSection />
     </main>
   )
 }

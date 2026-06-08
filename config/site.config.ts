@@ -144,6 +144,7 @@ export const siteConfig: SiteConfig = {
           { name: "Contribute", href: "/contribute" },
           { name: "Sponsors", href: "/sponsors" },
           { name: "Opportunity Open Source", href: "/opportunity-open-source" },
+          { name: "Hall of Fame", href: "/hall-of-fame" },
         ],
       },
       {

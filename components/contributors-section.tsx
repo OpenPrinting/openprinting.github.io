@@ -7,34 +7,44 @@ import { motion, useInView } from "framer-motion"
 import { Github, Globe, Linkedin } from "lucide-react"
 
 import websiteContributors from "@/data/website-contributors"
+import { getAssetPath } from "@/lib/utils"
 
-export default function ContributorsSection() {
+export default function ContributorsSection({
+  showHeading = true,
+  revealImmediately = false,
+}: {
+  showHeading?: boolean
+  revealImmediately?: boolean
+}) {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.2 })
+  const inView = useInView(ref, { once: true, amount: 0.2 })
+  const isInView = revealImmediately || inView
 
   if (websiteContributors.length === 0) return null
 
   return (
     <section ref={ref} className="relative pb-12 bg-background" id="contributors">
       <div className="max-w-6xl mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.6 }}
-          className="mb-12"
-        >
-          <p className="text-sm font-medium text-blue-400 mb-3 tracking-wide uppercase">Hall of Fame</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground tracking-tight">
-            Contributors
-          </h2>
-          <p className="text-muted-foreground text-sm md:text-base max-w-2xl mt-4 leading-relaxed">
-            Meet the people who built the new OpenPrinting website.
-          </p>
-        </motion.div>
+        {showHeading ? (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.6 }}
+            className="mb-12"
+          >
+            <p className="text-sm font-medium text-blue-400 mb-3 tracking-wide uppercase">Hall of Fame</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground tracking-tight">
+              Contributors
+            </h2>
+            <p className="text-muted-foreground text-sm md:text-base max-w-2xl mt-4 leading-relaxed">
+              Meet the people who built the new OpenPrinting website.
+            </p>
+          </motion.div>
+        ) : null}
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
           {websiteContributors.map((contributor, index) => {
-            const displayName = contributor.name ?? `@${contributor.github}`
+            const displayName = contributor.name
             const featured = Boolean(contributor.featured)
             return (
               <motion.div
@@ -60,11 +70,10 @@ export default function ContributorsSection() {
                   aria-label={`${displayName} on GitHub`}
                 >
                   <Image
-                    src={`https://github.com/${contributor.github}.png?size=160`}
+                    src={getAssetPath(contributor.image)}
                     alt={displayName}
                     width={80}
                     height={80}
-                    unoptimized
                     className="h-20 w-20 rounded-full object-cover ring-1 ring-border transition-transform duration-300 group-hover:scale-105"
                   />
                 </Link>

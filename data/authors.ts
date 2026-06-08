@@ -103,6 +103,48 @@ const authors: Author[] = [
       { label: "LinkedIn", href: "https://www.linkedin.com/in/rudra-iitm/", kind: "linkedin" },
     ],
   },
+  {
+    key: "Gati",
+    name: "Gati Varshney",
+    role: "OpenPrinting Contributor",
+    github: "https://github.com/gativarshney",
+    image: "/authors/gati-varshney.jpg",
+    links: [
+      { label: "LinkedIn", href: "https://linkedin.com/in/gativarshney", kind: "linkedin" },
+    ],
+  },
+  {
+    key: "Sam",
+    name: "Sam Shubham",
+    role: "OpenPrinting Contributor",
+    github: "https://github.com/sam-shubham",
+    image: "/authors/sam-shubham.jpg",
+    links: [
+      { label: "LinkedIn", href: "https://in.linkedin.com/in/samshubham", kind: "linkedin" },
+      { label: "Website", href: "https://sam.appambient.com", kind: "website" },
+    ],
+  },
+  {
+    key: "Harsh",
+    name: "Harsh Upadhyay",
+    role: "OpenPrinting Contributor",
+    github: "https://github.com/harshvns",
+    image: "/authors/harsh-upadhyay.jpg",
+    links: [
+      { label: "LinkedIn", href: "https://www.linkedin.com/in/harsh-upadhyay-46b99a247/", kind: "linkedin" },
+    ],
+  },
+  {
+    key: "Ishpreet",
+    name: "Ishpreet Singh",
+    role: "OpenPrinting Contributor",
+    github: "https://github.com/ishpreet404",
+    image: "/authors/ishpreet-singh.jpg",
+    links: [
+      { label: "LinkedIn", href: "https://www.linkedin.com/in/ishpreet404/", kind: "linkedin" },
+      { label: "Website", href: "https://www.ishpreetsingh.in/", kind: "website" },
+    ],
+  },
 ];
 
 export default authors;
