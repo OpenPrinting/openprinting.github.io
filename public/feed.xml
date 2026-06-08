@@ -7,6 +7,14 @@
     <language>en-us</language>
     <atom:link href="https://openprinting.github.io/feed.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>OpenPrinting News - The New OpenPrinting Website</title>
+      <link>https://openprinting.github.io/OpenPrinting-News-The-New-OpenPrinting-Website/</link>
+      <guid isPermaLink="true">https://openprinting.github.io/OpenPrinting-News-The-New-OpenPrinting-Website/</guid>
+      <pubDate>Sun, 07 Jun 2026 00:00:00 GMT</pubDate>
+      <author>Rudra</author>
+      <description>We rebuilt the OpenPrinting website from the ground up — a fast, fully static Next.js site. Here is how it works, who built it, and how you can help by testing it.</description>
+    </item>
+    <item>
       <title>libcups v3.0.2</title>
       <link>https://openprinting.github.io/libcups-3.0.2/</link>
       <guid isPermaLink="true">https://openprinting.github.io/libcups-3.0.2/</guid>
@@ -157,14 +165,6 @@
       <pubDate>Thu, 11 Sep 2025 00:00:00 GMT</pubDate>
       <author>Zdenek</author>
       <description>CUPS 2.4.14 fixes installation of localized files</description>
-    </item>
-    <item>
-      <title>OpenPrinting News - Opportunity Open Source 3.0 - Schedules and contributions published</title>
-      <link>https://openprinting.github.io/OpenPrinting-News-Opportunity-Open-Source-3.0-Schedules-and-contributions-published/</link>
-      <guid isPermaLink="true">https://openprinting.github.io/OpenPrinting-News-Opportunity-Open-Source-3.0-Schedules-and-contributions-published/</guid>
-      <pubDate>Tue, 26 Aug 2025 00:00:00 GMT</pubDate>
-      <author>Till</author>
-      <description>Have a look into the amazing presentations and workshops, plan your participation!</description>
     </item>
   </channel>
 </rss>

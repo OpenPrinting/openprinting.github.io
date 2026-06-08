@@ -29,13 +29,11 @@ export default function HallOfFamePage() {
   return (
     <>
       <PageHero
-        gradient
         title="Hall of Fame"
         description="The people who rebuilt the OpenPrinting website."
       />
 
       <main className="min-h-screen bg-background text-foreground">
-        {/* Intro */}
         <section className="border-b border-border bg-muted/20">
           <div className="mx-auto max-w-3xl px-6 py-16 text-center">
             <p className="text-sm font-medium uppercase tracking-wide text-blue-400">
@@ -63,12 +61,10 @@ export default function HallOfFamePage() {
           </div>
         </section>
 
-        {/* Contributors grid */}
         <div className="pt-16 pb-4">
           <ContributorsSection showHeading={false} revealImmediately />
         </div>
 
-        {/* CTA */}
         <section className="border-t border-border">
           <div className="mx-auto max-w-3xl px-6 py-16 text-center">
             <h2 className="text-2xl font-bold tracking-tight text-foreground md:text-3xl">
