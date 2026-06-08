@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import TopLoader from "@/components/top-loader";
 import { ThemeProvider } from "@/components/theme-provider";
 import { siteConfig } from "@/config/site.config";
 import { getSiteUrl } from "@/lib/site";
@@ -40,6 +41,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased ${inter.className}`}
       >
         <ThemeProvider>
+          <TopLoader />
           <Navbar />
           {children}
           <Footer />
