@@ -10,7 +10,7 @@ excerpt: >-
 date: '2025-05-09'
 ---
 
-![Some pictures of the OOSC 2.0](../assets/images/oosc-2.0-2024-1.png)![More pictures of the OOSC 2.0](../assets/images/oosc-2.0-2024-2.png)
+![Some pictures of the OOSC 2.0](../assets/images/oosc/oosc2.0/highlights-1.png)![More pictures of the OOSC 2.0](../assets/images/oosc/oosc2.0/highlights-2.png)
 
 After two great Opportunity Open Source conferences we go into the third round!
 

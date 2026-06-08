@@ -39,7 +39,9 @@ export default async function OpportunityOpenSourcePage() {
       <PageHero
         title={title}
         description="OpenPrinting's annual free and open source software conference in India."
-        logo="/assets/images/oosc-4.0/brand-wordmark.png"
+        image="/assets/images/oosc/oosc1.0/group-photo.jpg"
+        imagePosition="center 30%"
+        logo="/assets/images/oosc/oosc-logo.png"
       />
 
       <main className="min-h-screen bg-background text-foreground pt-24 pb-16">

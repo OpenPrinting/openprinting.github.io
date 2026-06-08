@@ -8,7 +8,7 @@ excerpt: Opportunity Open Source 4.0, in the IIIT Allahabad in Prayagraj, Uttar 
 date: '2026-05-30'
 ---
 
-![Some pictures of the OOSC 2.0](../assets/images/oosc-2.0-2024-1.png)![More pictures of the OOSC 2.0](../assets/images/oosc-2.0-2024-2.png)
+![Some pictures of the OOSC 2.0](../assets/images/oosc/oosc2.0/highlights-1.png)![More pictures of the OOSC 2.0](../assets/images/oosc/oosc2.0/highlights-2.png)
 
 After three great Opportunity Open Source conferences we will celebrate the forth one!
 
@@ -20,14 +20,14 @@ Our [Call for Locations](/OpenPrinting-News-Opportunity-Open-Source-4.0-Call-for
 
 **IIIT Allahabad** stands among **India’s premier technology institutes**, located in the historic and intellectually vibrant city of **Prayagraj**, in the state **Uttar Pradesh** in India. Renowned for its rich cultural legacy, academic excellence, and deep-rooted scholarly atmosphere, Prayagraj has long been a meeting point of ideas, innovation, and learning.
 
-![IIIT Allahabad: Main Gate](../assets/images/oosc-4.0/Main_Gate_Gate2_IIITA.png)![IIIT Allahabad: Clock Tower](../assets/images/oosc-4.0/Clock_Tower_IIITA.png)<BR>
+![IIIT Allahabad: Main Gate](../assets/images/oosc/oosc4.0/Main_Gate_Gate2_IIITA.png)![IIIT Allahabad: Clock Tower](../assets/images/oosc/oosc4.0/Clock_Tower_IIITA.png)<BR>
 *IIT Allahabad: Main Gate and Clock Tower*
 
 The region hosts some of the country’s most respected educational institutions, including **MNNIT Allahabad**, the historic **University of Allahabad**, **SHUATS**, and several other prominent institutes and research centres. Together, they create a dynamic academic ecosystem that attracts students, researchers, developers, innovators, and technology enthusiasts from across India. With this we also count with many more attendees than just those from IIIT Allahabad.
 
 The conference will be held across selected campus venues at IIIT Allahabad, including **Computer Centre-3 (CC-3 / C. V. Raman Bhavan)**, the **Auditorium** (Plenary), and the **Admin Auditorium** (Breakout). These spaces will host talks, workshops, discussions, and other conference activities. The campus also provides suitable facilities for attendees, including dining options and other essential support for a smooth event experience.
 
-![Main Auditorium](../assets/images/oosc-4.0/Main_Auditorium_IIITA.jpg)![Admin Auditorium](../assets/images/oosc-4.0/Admin_Auditorium_IIITA.jpeg)<BR>
+![Main Auditorium](../assets/images/oosc/oosc4.0/Main_Auditorium_IIITA.jpg)![Admin Auditorium](../assets/images/oosc/oosc4.0/Admin_Auditorium_IIITA.jpeg)<BR>
 *IIT Allahabad: Main Auditorium and Admin Auditorium*
 
 Details regarding sponsors are currently being finalized and will be shared in due course.
