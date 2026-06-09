@@ -32,7 +32,7 @@ export default function ContributorsSection({
             transition={{ duration: 0.6 }}
             className="mb-12"
           >
-            <p className="text-sm font-medium text-blue-400 mb-3 tracking-wide uppercase">This Website's Hall of Fame</p>
+            <p className="text-sm font-medium text-blue-400 mb-3 tracking-wide uppercase">This Website&apos;s Hall of Fame</p>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground tracking-tight">
               Contributors
             </h2>
