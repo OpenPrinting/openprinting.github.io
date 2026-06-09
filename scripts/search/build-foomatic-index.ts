@@ -4,6 +4,7 @@ import {
   type FoomaticSearchDocument,
   type SearchIndex,
 } from "../../lib/search/types.ts";
+import { driverHref, printerHref } from "../../lib/foomatic/routes.ts";
 
 const INPUT_FILE = path.join(
   process.cwd(),
@@ -53,14 +54,12 @@ function safeString(value: unknown): string {
   return typeof value === "string" ? value.trim() : "";
 }
 
-function toPrinterUrl(id: string): string {
-  const normalizedId = id.replace(/^printer\//, "");
-  return `/foomatic/printer/${normalizedId}`;
+function toPrinterUrl(id: string, manufacturer: string): string {
+  return printerHref(id, manufacturer);
 }
 
 function toDriverUrl(id: string): string {
-  const normalizedId = id.replace(/^driver\//, "");
-  return `/foomatic/driver/${normalizedId}`;
+  return driverHref(id);
 }
 
 function createDriverSnippet(driver: DriverMapEntry): string {
@@ -113,7 +112,7 @@ async function buildFoomaticIndex() {
       source: "foomatic",
       type: "printer",
       title: `${safeString(printer.manufacturer)} ${safeString(printer.model)}`.trim(),
-      url: toPrinterUrl(printer.id),
+      url: toPrinterUrl(printer.id, printer.manufacturer),
       headings: [],
       tags: [],
       snippet: createSnippet(printer),

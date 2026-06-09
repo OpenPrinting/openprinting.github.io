@@ -13,6 +13,7 @@ import {
 } from "@/components/foomatic/shared"
 import { Button } from "@/components/ui/button"
 import { withBasePath } from "@/lib/foomatic/base-path"
+import { driverHref } from "@/lib/foomatic/routes"
 import type { DriverSummary } from "@/lib/foomatic/types"
 
 const ITEMS_PER_PAGE_OPTIONS = [20, 50, 100, 200, -1] as const
@@ -201,7 +202,7 @@ export default function DriverListClient() {
 
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
               {visible.map((driver) => (
-                <Link key={driver.id} href={`/foomatic/driver/${driver.id}`} className="group block h-full">
+                <Link key={driver.id} href={driverHref(driver.id)} className="group block h-full">
                   <FoomaticCard className="flex h-full flex-col p-5 transition-all duration-300 hover:border-border/80 hover:bg-accent/50 card-glow">
                     <div className="flex items-start gap-3">
                       <div className="rounded-lg border border-border bg-muted p-2.5 text-primary">

@@ -19,6 +19,7 @@ import {
 } from "@/components/foomatic/shared"
 import { Button } from "@/components/ui/button"
 import { withBasePath } from "@/lib/foomatic/base-path"
+import { driverHref, printerHref } from "@/lib/foomatic/routes"
 import type { DriverRecord } from "@/lib/foomatic/types"
 
 interface DriverPageClientProps {
@@ -227,7 +228,7 @@ export default function DriverPageClient({ driverId }: DriverPageClientProps) {
           <FoomaticCard className="border-amber-500/30 bg-amber-500/5 p-5">
             <p className="text-sm text-foreground">
               This driver is obsolete. Recommended replacement:{" "}
-              <Link href={`/foomatic/driver/${driver.replacedBy}`} className="font-medium text-primary hover:underline">
+              <Link href={driverHref(driver.replacedBy)} className="font-medium text-primary hover:underline">
                 {driver.replacedBy}
               </Link>
               .
@@ -377,7 +378,7 @@ export default function DriverPageClient({ driverId }: DriverPageClientProps) {
                   {visiblePrinters.map((printer) => (
                     <Link
                       key={printer.id}
-                      href={`/foomatic/printer/${printer.id}`}
+                      href={printerHref(printer.id, printer.manufacturer)}
                       className="flex items-center justify-between gap-3 px-4 py-3 transition-colors hover:bg-accent/50"
                     >
                       <span className="flex items-center gap-3 min-w-0">

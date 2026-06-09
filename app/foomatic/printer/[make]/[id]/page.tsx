@@ -3,6 +3,7 @@ import path from "path"
 import type { Metadata } from "next"
 import type { Printer, PrinterSummary } from "@/lib/foomatic/types"
 import PrinterPageClient from "@/components/foomatic/PrinterPageClient"
+import { printerMakeSegment } from "@/lib/foomatic/routes"
 import { getSiteUrl } from "@/lib/site"
 
 async function getPrinterSummaries(): Promise<PrinterSummary[]> {
@@ -23,12 +24,14 @@ async function getPrinterSummaries(): Promise<PrinterSummary[]> {
 export async function generateStaticParams() {
   const printers = await getPrinterSummaries()
   return printers.map((printer) => ({
-    id: printer.id,
+    make: printerMakeSegment(printer.id, printer.manufacturer),
+    id: printer.id.replace(/^printer\//, ""),
   }))
 }
 
 interface PrinterPageProps {
   params: Promise<{
+    make: string
     id: string
   }>
 }
@@ -43,7 +46,7 @@ async function getPrinter(id: string): Promise<Printer | null> {
 }
 
 export async function generateMetadata({ params }: PrinterPageProps): Promise<Metadata> {
-  const { id } = await params
+  const { make, id } = await params
   const printer = await getPrinter(id)
   const name = printer ? `${printer.manufacturer} ${printer.model}` : id
   const driverCount = printer?.drivers?.length ?? 0
@@ -51,7 +54,7 @@ export async function generateMetadata({ params }: PrinterPageProps): Promise<Me
   const description = printer
     ? `Support information, recommended driver, and ${driverCount} available driver${driverCount === 1 ? "" : "s"} for the ${name} on Linux and Unix via OpenPrinting.`
     : `Printer support information for ${id} from the OpenPrinting database.`
-  const canonical = getSiteUrl(`/foomatic/printer/${id}/`)
+  const canonical = getSiteUrl(`/foomatic/printer/${make}/${id}/`)
 
   return {
     title,

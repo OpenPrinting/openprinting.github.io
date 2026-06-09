@@ -12,9 +12,17 @@ import {
 } from "@/components/foomatic/shared"
 import { Button } from "@/components/ui/button"
 import { withBasePath } from "@/lib/foomatic/base-path"
+import { ppdFilePath } from "@/lib/foomatic/routes"
 
 function isValidPpdPath(path: string | null) {
   return Boolean(path && (path.startsWith("/ppd/") || path.startsWith("/ppds/")) && !path.includes(".."))
+}
+
+function resolvePpdPath(driver: string | null, printer: string | null, rawPath: string | null) {
+  if (driver && printer) {
+    return ppdFilePath(printer, driver)
+  }
+  return rawPath
 }
 
 function getDownloadName(path: string) {
@@ -24,7 +32,12 @@ function getDownloadName(path: string) {
 
 export default function PpdViewerClient() {
   const searchParams = useSearchParams()
-  const requestedPath = searchParams.get("path")
+  const driver = searchParams.get("driver")
+  const printer = searchParams.get("printer")
+  const requestedPath = useMemo(
+    () => resolvePpdPath(driver, printer, searchParams.get("path")),
+    [driver, printer, searchParams]
+  )
   const normalizedPath = useMemo(
     () => (isValidPpdPath(requestedPath) ? requestedPath : null),
     [requestedPath]

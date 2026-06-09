@@ -8,14 +8,7 @@
     "generate": "tsx scripts/foomatic/data-generate.ts && tsx scripts/search/build-index.ts && tsx scripts/search/build-foomatic-index.ts && tsx scripts/generate-rss.ts",
     "build": "yarn generate && next build && tsx scripts/foomatic/generate-legacy-redirects.ts",
     "start": "next start",
-    "lint": "next lint",
-    "foomatic:generate:ppds": "./scripts/foomatic/generate-ppds.sh",
-    "foomatic:data:generate": "tsx scripts/foomatic/data-generate.ts",
-    "foomatic:build:data": "tsx scripts/foomatic/data-generate.ts",
-    "foomatic:generate:xml": "tsx scripts/foomatic/generate-from-xml.ts",
-    "foomatic:data:combine": "tsx scripts/foomatic/combine-data.ts",
-    "foomatic:data:split": "tsx scripts/foomatic/split-printers.ts",
-    "foomatic:data:split-drivers": "tsx scripts/foomatic/split-drivers.ts"
+    "lint": "next lint"
   },
   "dependencies": {
     "@giscus/react": "^3.1.0",

@@ -2,6 +2,7 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import { printerMakeSegment } from "../../lib/foomatic/routes.ts";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -54,7 +55,9 @@ function main() {
   let printerCount = 0;
   for (const printer of readMap("printersMap.json", "printers")) {
     const id = printer.id.replace(/^printer\//, "");
-    const target = `${BASE_PATH}/foomatic/printer/${id}/`;
+    const make = printerMakeSegment(id, printer.manufacturer ?? "");
+    const target = `${BASE_PATH}/foomatic/printer/${make}/${id}/`;
+    writeStub(path.join("printer", make, id), target);
     writeStub(path.join("printer", "show", id), target);
     printerCount += 1;
   }
@@ -68,7 +71,8 @@ function main() {
   }
 
   console.log(
-    `Wrote legacy redirect stubs: ${printerCount} printers (/printer/show/<id>), ` +
+    `Wrote legacy redirect stubs: ${printerCount} printers ` +
+      `(/printer/<make>/<id> and /printer/show/<id>), ` +
       `${driverCount} drivers (/driver/<name>)`,
   );
 }

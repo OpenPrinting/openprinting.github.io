@@ -8,18 +8,18 @@ import {
 } from "@/components/foomatic/shared"
 import type { PrinterSummary } from "@/lib/foomatic/types"
 import { calculateAccurateStatus } from "@/lib/foomatic/utils"
+import { printerHref } from "@/lib/foomatic/routes"
 
 interface PrinterCardProps {
   printer: PrinterSummary
 }
 
 export default function PrinterCard({ printer }: PrinterCardProps) {
-  const printerId = printer.id.replace("printer/", "")
   const accurateStatus = calculateAccurateStatus(printer)
   const driverCount = printer.driverCount ?? 0
 
   return (
-    <Link href={`/foomatic/printer/${printerId}`} className="group block h-full" aria-label={`View ${printer.manufacturer} ${printer.model}`}>
+    <Link href={printerHref(printer.id, printer.manufacturer)} className="group block h-full" aria-label={`View ${printer.manufacturer} ${printer.model}`}>
       <FoomaticCard className="flex h-full flex-col overflow-hidden transition-all duration-300 hover:border-border/80 hover:bg-accent/50 card-glow">
         <div className="border-b border-border/60 bg-accent/30 p-5">
           <div className="flex items-start gap-4">

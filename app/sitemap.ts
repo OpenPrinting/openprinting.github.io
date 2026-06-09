@@ -4,6 +4,7 @@ import path from "path";
 import matter from "gray-matter";
 import { getAllPostRecords } from "@/lib/posts";
 import { getSiteUrl } from "@/lib/site";
+import { driverHref, printerHref } from "@/lib/foomatic/routes";
 
 export const dynamic = "force-static";
 
@@ -93,10 +94,10 @@ function foomaticRoutes(): string[] {
   const printersMap = path.join(fdb, "printersMap.json");
   if (fs.existsSync(printersMap)) {
     const data = JSON.parse(fs.readFileSync(printersMap, "utf8")) as {
-      printers: { id: string }[];
+      printers: { id: string; manufacturer: string }[];
     };
     for (const printer of data.printers) {
-      routes.push(`/foomatic/printer/${printer.id.replace(/^printer\//, "")}/`);
+      routes.push(`${printerHref(printer.id, printer.manufacturer)}/`);
     }
   }
 
@@ -106,7 +107,7 @@ function foomaticRoutes(): string[] {
       drivers: { id: string }[];
     };
     for (const driver of data.drivers) {
-      routes.push(`/foomatic/driver/${driver.id}/`);
+      routes.push(`${driverHref(driver.id)}/`);
     }
   }
 

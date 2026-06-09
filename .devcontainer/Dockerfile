@@ -14,3 +14,5 @@ RUN apt-get update && apt-get install -y \
     python3 \
     python3-pip \
     && rm -rf /var/lib/apt/lists/*
+
+RUN corepack enable && corepack prepare yarn@4.12.0 --activate

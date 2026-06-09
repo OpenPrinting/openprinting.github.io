@@ -20,6 +20,7 @@ import {
 } from "@/components/foomatic/shared"
 import { Button } from "@/components/ui/button"
 import { withBasePath } from "@/lib/foomatic/base-path"
+import { driverHref, ppdViewHref } from "@/lib/foomatic/routes"
 import type { Printer } from "@/lib/foomatic/types"
 import { calculateAccurateStatus } from "@/lib/foomatic/utils"
 
@@ -175,7 +176,7 @@ export default function PrinterPageClient({ printerId }: PrinterPageClientProps)
                     Recommended driver
                   </p>
                   <Link
-                    href={`/foomatic/driver/${printer.recommended_driver.replace(/^driver\//, "")}`}
+                    href={driverHref(printer.recommended_driver)}
                     className="mt-2 inline-block text-sm font-medium text-primary hover:underline"
                   >
                     {printer.recommended_driver.replace(/^driver\//, "")}
@@ -330,7 +331,7 @@ export default function PrinterPageClient({ printerId }: PrinterPageClientProps)
                   <div className="space-y-2">
                     <div className="flex flex-wrap items-center gap-2">
                       <Link
-                        href={`/foomatic/driver/${driver.id.replace(/^driver\//, "")}`}
+                        href={driverHref(driver.id)}
                         className="text-xl font-semibold tracking-tight text-foreground transition-colors hover:text-primary hover:underline"
                       >
                         {driver.name}
@@ -356,7 +357,7 @@ export default function PrinterPageClient({ printerId }: PrinterPageClientProps)
                       <p className="text-sm text-muted-foreground">
                         Recommended replacement:{" "}
                         <Link
-                          href={`/foomatic/driver/${driver.replacedBy}`}
+                          href={driverHref(driver.replacedBy)}
                           className="font-medium text-primary hover:underline"
                         >
                           {driver.replacedBy}
@@ -398,7 +399,7 @@ export default function PrinterPageClient({ printerId }: PrinterPageClientProps)
                     </Button>
 
                     <Button asChild variant="outline" className="gap-2">
-                      <Link href={`/foomatic/view-ppd?path=${encodeURIComponent(driver.ppdPath)}`}>
+                      <Link href={ppdViewHref(printer.id, driver.id)}>
                         <Eye className="h-4 w-4" />
                         Preview PPD
                       </Link>
