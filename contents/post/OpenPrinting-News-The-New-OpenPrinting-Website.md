@@ -5,7 +5,7 @@ toc: true
 toc_sticky: true
 author: Rudra
 excerpt: "We rebuilt the OpenPrinting website from the ground up — a fast, fully static Next.js site. Here is how it works, who built it, and how you can help by testing it."
-date: '2026-06-07'
+date: '2026-06-09'
 teaser_image: /rotation_pantone.jpg
 ---
 

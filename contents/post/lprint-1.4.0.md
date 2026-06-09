@@ -1,0 +1,32 @@
+---
+title: LPrint 1.4.0
+layout: single
+author: Mike
+excerpt: LPrint v1.4.0 is a feature release that adds support for ESC/POS printers.
+date: '2026-06-08'
+---
+
+LPrint v1.4.0 is a feature release that adds support for ESC/POS printers and
+several other printer models with existing drivers.  Changes include:
+
+- Added ESC/POS driver (Issue #123)
+- Added Vevor Y428BT driver (Issue #130)
+- Added 4 x 7.83 inch label size (Issue #144)
+- Added Arkscan 2054a and HP KE103 (Issue #165)
+- Added DYMO LabelWriter Twin Turbo driver (Issue #193)
+- Now enable the TLS web interface unless the "no-tls" option is specified
+  (Issue #161)
+- Updated the default state file to match current PAPPL defaults (Issue #129)
+- Updated the maximum label width of TSPL printers to 105mm (Issue #141)
+- Updated the ZPL driver to automatically disable status commands if the target
+  printer doesn't implement that part of ZPL (Issue #161)
+- Fixed the margins for DYMO printers (Issue #132)
+- Fixed some Brother driver problems (Issue #167)
+- Fixed a NumCopies issue in the TSPL driver (Issue #188)
+- Fixed list of label sizes for DYMO LabelWriter 4XL (Issue #198)
+
+Enjoy!
+
+* <a href="https://github.com/michaelrsweet/lprint/releases/tag/v1.4.0" itemprop="sameAs" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-download" aria-hidden="true"></i>Download LPrint 1.4.0</a>
+* <a href="https://snapcraft.io/lprint" itemprop="sameAs" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-download" aria-hidden="true"></i>Install lprint Snap</a>
+* <a href="https://www.msweet.org/lprint/" itemprop="sameAs" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-home" aria-hidden="true"></i>Home Page</a>
