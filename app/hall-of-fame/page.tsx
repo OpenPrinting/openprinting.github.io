@@ -7,7 +7,7 @@ import { PageHero } from "@/components/page-hero"
 import { siteConfig } from "@/config/site.config"
 import { getSiteUrl } from "@/lib/site"
 
-const title = "Hall of Fame | OpenPrinting"
+const title = "This Website's Hall of Fame | OpenPrinting"
 const description =
   "The people who rebuilt the OpenPrinting website — the contributors behind the new static Next.js site."
 
@@ -29,7 +29,7 @@ export default function HallOfFamePage() {
   return (
     <>
       <PageHero
-        title="Hall of Fame"
+        title="This Website's Hall of Fame"
         description="The people who rebuilt the OpenPrinting website."
       />
 

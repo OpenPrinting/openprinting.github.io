@@ -27,6 +27,7 @@
 /public/foomatic-db
 /public/ppds
 /public/feed.xml
+/public/search
 
 # debug
 npm-debug.log*

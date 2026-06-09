@@ -43,31 +43,31 @@ The result is a site that is reproducible (the same input always produces the sa
 
 ## Thanks to the contributors
 
-This rebuild was a team effort by the OpenPrinting contributor community. Huge thanks to everyone who made it happen — you can also find them on the [Hall of Fame](/hall-of-fame) page:
+This rebuild was a team effort by the OpenPrinting contributor community. Huge thanks to everyone who made it happen — you can also find them on the [This Website's Hall of Fame](/hall-of-fame) page:
 
 <p>
   <img src="/authors/rudra-singh.jpg" alt="Rudra Pratap Singh" width="56" height="56" style="border-radius:9999px;display:inline-block;vertical-align:middle;margin:0 0.6rem 0 0;object-fit:cover" />
-  <strong>Rudra Pratap Singh (<a href="https://github.com/rudra-iitm">@rudra-iitm</a>)</strong> — as the <strong>core mentor</strong> of this website rebuild, I guided and coordinated the contributors throughout the project. I also worked on the overall UI revamp, the light/dark/system theme toggle, replacing the old comment system with Giscus, the portable static-deployment configuration, hard-refresh internal navigation, the on-site Foomatic printer/driver lookup migration, the sponsors/supporters section, and the Opportunity Open Source page.
+  <strong>Rudra Pratap Singh (<a href="https://github.com/rudra-iitm">@rudra-iitm</a>)</strong><br />as the <strong>core mentor</strong> of this website rebuild, I guided and coordinated the contributors throughout the project. I also worked on the overall UI revamp, the light/dark/system theme toggle, replacing the old comment system with Giscus, the portable static-deployment configuration, hard-refresh internal navigation, the on-site Foomatic printer/driver lookup migration, the sponsors/supporters section, and the Opportunity Open Source page.
 </p>
 
 <p>
   <img src="/authors/gati-varshney.jpg" alt="Gati Varshney" width="56" height="56" style="border-radius:9999px;display:inline-block;vertical-align:middle;margin:0 0.6rem 0 0;object-fit:cover" />
-  <strong>Gati Varshney (<a href="https://github.com/gativarshney">@gativarshney</a>)</strong> — the reusable author component, migrating all of the existing posts from the old Jekyll site into the new setup, the homepage, the build-time client-side search system, automatic redirects for renamed posts, publication dates on articles, author avatars on the news boxes, the light-theme hero banner, and the Google Season of Docs page.
+  <strong>Gati Varshney (<a href="https://github.com/gativarshney">@gativarshney</a>)</strong><br />the reusable author component, migrating all of the existing posts from the old Jekyll site into the new setup, the homepage, the build-time client-side search system, automatic redirects for renamed posts, publication dates on articles, author avatars on the news boxes, the light-theme hero banner, and the Google Season of Docs page.
 </p>
 
 <p>
   <img src="/authors/sam-shubham.jpg" alt="Sam Shubham" width="56" height="56" style="border-radius:9999px;display:inline-block;vertical-align:middle;margin:0 0.6rem 0 0;object-fit:cover" />
-  <strong>Sam Shubham (<a href="https://github.com/sam-shubham">@sam-shubham</a>)</strong> — the Google Summer of Code experience (year and project pages), teaser-image support for posts and pages, the production base-path fix for images, and the title-escaping fix for post metadata and the search index.
+  <strong>Sam Shubham (<a href="https://github.com/sam-shubham">@sam-shubham</a>)</strong><br />the Google Summer of Code experience (year and project pages), teaser-image support for posts and pages, the production base-path fix for images, and the title-escaping fix for post metadata and the search index.
 </p>
 
 <p>
   <img src="/authors/harsh-upadhyay.jpg" alt="Harsh Upadhyay" width="56" height="56" style="border-radius:9999px;display:inline-block;vertical-align:middle;margin:0 0.6rem 0 0;object-fit:cover" />
-  <strong>Harsh Upadhyay (<a href="https://github.com/harshvns">@harshvns</a>)</strong> — extending the search index to cover documentation, projects and pages.
+  <strong>Harsh Upadhyay (<a href="https://github.com/harshvns">@harshvns</a>)</strong><br />extending the search index to cover documentation, projects and pages.
 </p>
 
 <p>
   <img src="/authors/ishpreet-singh.jpg" alt="Ishpreet Singh" width="56" height="56" style="border-radius:9999px;display:inline-block;vertical-align:middle;margin:0 0.6rem 0 0;object-fit:cover" />
-  <strong>Ishpreet Singh (<a href="https://github.com/ishpreet404">@ishpreet404</a>)</strong> — fixing missing routes, assets and data inconsistencies, and improving blog navigation.
+  <strong>Ishpreet Singh (<a href="https://github.com/ishpreet404">@ishpreet404</a>)</strong><br />fixing missing routes, assets and data inconsistencies, and improving blog navigation.
 </p>
 
 Additional improvements — including the smart 404 page with trailing-slash handling for GitHub Pages and the RSS 2.0 feed — were contributed along the way as well.

@@ -6,7 +6,33 @@ OpenPrinting is a Linux Foundation workgroup that manages the printing architect
 
 ## Getting Started
 
-First, make sure you have [Node.js](https://nodejs.org/) installed, and then install the dependencies using Yarn:
+You need [Node.js](https://nodejs.org/) and [Yarn](https://yarnpkg.com/). Note that the
+Yarn command-line tool is packaged under two different names depending on your
+distribution: it is sometimes called `yarn` and sometimes `yarnpkg` (for example on
+Debian/Ubuntu, where the `yarn` name historically belonged to an unrelated package). If
+`yarn` is not found, try `yarnpkg` instead — wherever this README uses `yarn`, substitute
+`yarnpkg` if that is how it is installed on your system.
+
+### Debian / Ubuntu
+
+Install Node.js and Yarn from the distribution repositories:
+
+```bash
+sudo apt update
+sudo apt install nodejs npm yarnpkg
+```
+
+On Debian/Ubuntu the Yarn binary is installed as `yarnpkg` (the `yarn` name is used by a
+different package), so use `yarnpkg` in place of `yarn` in the commands below.
+
+This project pins Yarn 4 via the `packageManager` field in `package.json`. The distribution
+package is the older Yarn 1, which is only used to bootstrap; the pinned version is fetched
+automatically on first use. If you prefer to enable the modern Yarn directly, run
+`corepack enable` (Corepack ships with Node.js).
+
+### Install and run
+
+Install the dependencies:
 
 ```bash
 yarn install
@@ -19,6 +45,16 @@ yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+> **Important:** `yarn dev` does **not** generate the build-time data. The Foomatic
+> printer/driver database (under `public/foomatic-db/`) and the search indexes are produced by
+> `yarn build` (which runs `yarn generate`). Run `yarn build` — or just `yarn generate` — at
+> least once so that the printer/driver lookup and site search work locally. See
+> [Generating build-time data](#generating-build-time-data) below.
+
+> **Note:** running `yarn install` (especially when bootstrapping with the system's Yarn 1)
+> may modify `yarn.lock`. See [A note on `yarn.lock`](#a-note-on-yarnlock) below before you
+> run further git commands.
 
 ## Project Structure
 
@@ -47,22 +83,46 @@ yarn build
 
 This will generate an `out/` directory containing the static HTML/CSS/JS files which are then hosted on GitHub Pages.
 
-## Migration Notes
+## Generating build-time data
 
-Deployment-owned values are centralized in [`config/site.config.ts`](./config/site.config.ts). When migrating this repository, update that file first for:
+Several parts of the site are **generated data, not source**, and `yarn build` is required to
+produce them. The build runs `yarn generate` first, which:
 
-- repository owner/name and base path behavior
-- canonical site origin and RSS path
-- GitHub, CUPS, drivers, and other deployment-owned external destinations
-- brand metadata used by layout, cards, and social links
-- Giscus discussion settings
+- converts the upstream `foomatic-db` data into JSON and statically generates a page for every
+  printer and driver (output under `public/foomatic-db/`),
+- builds the client-side search indexes (`public/search/static-index.json` and
+  `public/search/foomatic-index.json`), and
+- generates the RSS feed (`public/feed.xml`).
 
-Generated outputs should only be committed when source changes require regeneration:
+`yarn dev` / `next dev` alone does **not** produce any of this. So if you want the Foomatic
+printer/driver lookup and the site search to work locally, you must run `yarn build` — or just
+the data step on its own:
 
-- `public/feed.xml`
-- `public/search/static-index.json`
-- `public/search/foomatic-index.json`
-- generated Foomatic data under `public/foomatic-db/`
+```bash
+yarn generate
+```
+
+at least once. These outputs are git-ignored and regenerated on every build (see
+[Deployment](#deployment)), so you do not commit them.
+
+## A note on `yarn.lock`
+
+Installing dependencies or building can modify `yarn.lock` (for instance when the system's
+Yarn 1 is used to bootstrap the pinned Yarn 4). These local changes are not meant to be
+committed. Before running further git actions (`git pull`, `git commit`, `git checkout`, ...),
+discard them.
+
+To reset just this one file to the committed version:
+
+```bash
+git checkout -- yarn.lock
+```
+
+Or, if you have other local changes you want to keep temporarily, stash everything first:
+
+```bash
+git stash
+```
 
 ## Naming Conventions
 
