@@ -53,13 +53,22 @@ function main() {
   }
 
   let printerCount = 0;
+  const manufacturers = new Set<string>();
   for (const printer of readMap("printersMap.json", "printers")) {
     const id = printer.id.replace(/^printer\//, "");
     const make = printerMakeSegment(id, printer.manufacturer ?? "");
     const target = `${BASE_PATH}/foomatic/printer/${make}/${id}/`;
     writeStub(path.join("printer", make, id), target);
     writeStub(path.join("printer", "show", id), target);
+    if (printer.manufacturer) manufacturers.add(printer.manufacturer);
     printerCount += 1;
+  }
+
+  let manufacturerCount = 0;
+  for (const manufacturer of manufacturers) {
+    const target = `${BASE_PATH}/foomatic/printers/?manufacturer=${encodeURIComponent(manufacturer)}`;
+    writeStub(path.join("printers", "manufacturer", manufacturer), target);
+    manufacturerCount += 1;
   }
 
   let driverCount = 0;
@@ -67,13 +76,15 @@ function main() {
     const id = driver.id.replace(/^driver\//, "");
     const target = `${BASE_PATH}/foomatic/driver/${id}/`;
     writeStub(path.join("driver", id), target);
+    writeStub(path.join("driver", id, "license"), `${BASE_PATH}/foomatic/driver/${id}/#license`);
     driverCount += 1;
   }
 
   console.log(
     `Wrote legacy redirect stubs: ${printerCount} printers ` +
       `(/printer/<make>/<id> and /printer/show/<id>), ` +
-      `${driverCount} drivers (/driver/<name>)`,
+      `${manufacturerCount} manufacturers (/printers/manufacturer/<make>), ` +
+      `${driverCount} drivers (/driver/<name> and /driver/<name>/license)`,
   );
 }
 

@@ -252,7 +252,7 @@ export default function DriverPageClient({ driverId }: DriverPageClientProps) {
                   </div>
                 ) : null}
                 {driver.license || driver.freeSoftware !== undefined ? (
-                  <div>
+                  <div id="license" className="scroll-mt-24">
                     <dt className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">License</dt>
                     <dd className="mt-2 text-sm text-foreground">
                       {driver.license || (driver.freeSoftware ? "Free software" : "Not specified")}

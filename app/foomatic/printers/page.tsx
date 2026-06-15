@@ -141,6 +141,14 @@ export default function HomePage() {
       const savedValue = parseInt(savedItemsPerPage, 10)
       setItemsPerPage(Number.isFinite(savedValue) ? savedValue : 20)
     }
+
+    const urlManufacturer = new URLSearchParams(window.location.search).get(
+      "manufacturer"
+    )
+    if (urlManufacturer) {
+      setSelectedManufacturer(urlManufacturer)
+      setCurrentPage(1)
+    }
   }, [])
 
   useEffect(() => {

@@ -34,15 +34,28 @@ export default async function ProjectDetail({
         <head>
           <meta httpEquiv="refresh" content={`0; url=${data.redirect}`} />
           <link rel="canonical" href={data.redirect} />
+          <style>{`@keyframes op-spin{to{transform:rotate(360deg)}}`}</style>
         </head>
-        <body className="bg-background text-foreground flex items-center justify-center min-h-screen">
-          <p>
-            Redirecting to{" "}
-            <a href={data.redirect} className="text-primary underline">
-              {data.redirect}
-            </a>
-            …
-          </p>
+        <body
+          className="bg-background text-foreground flex items-center justify-center min-h-screen"
+          role="status"
+          aria-label="Loading"
+        >
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            style={{ animation: "op-spin 1s linear infinite", opacity: 0.7 }}
+          >
+            <path d="M21 12a9 9 0 1 1-6.219-8.56" />
+          </svg>
+          <a href={data.redirect} hidden>
+            {data.redirect}
+          </a>
         </body>
       </html>
     )

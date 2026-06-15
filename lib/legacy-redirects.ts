@@ -1,4 +1,6 @@
 export const LEGACY_REDIRECTS: Record<string, string> = {
+  "/home": "/",
+  "/database": "/databaseintro",
   "/gsoc2019/01-legacy-drivers-to-printer-applications": "/gsoc/2019",
   "/gsoc2019/02-ipp-scan-server": "/gsoc/2019",
   "/gsoc2019/03-sane-module": "/gsoc/2019",

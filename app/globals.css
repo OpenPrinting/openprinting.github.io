@@ -197,11 +197,20 @@
 
 .prose {
   overflow-wrap: break-word;
-  word-wrap: break-word;
+  hyphens: auto;
 }
 
 .prose a {
-  word-break: break-all;
+  word-break: normal;
+  overflow-wrap: anywhere;
+  hyphens: none;
+}
+
+.prose code,
+.prose pre,
+.prose kbd,
+.prose samp {
+  hyphens: none;
 }
 
 .prose iframe {

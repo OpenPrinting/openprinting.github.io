@@ -28,6 +28,7 @@
 /public/ppds
 /public/feed.xml
 /public/search
+/public/query
 
 # debug
 npm-debug.log*
