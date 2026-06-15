@@ -1,0 +1,80 @@
+name: Build & Test Next.js site
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+  push:
+    branches: [master]
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Detect package manager
+        id: pm
+        run: |
+          # Prefer pnpm, then yarn, otherwise npm
+          if [ -f pnpm-lock.yaml ]; then
+            echo "manager=pnpm" >> $GITHUB_OUTPUT
+            echo "install=install --frozen-lockfile" >> $GITHUB_OUTPUT
+            echo "runner=pnpm run" >> $GITHUB_OUTPUT
+          elif [ -f yarn.lock ]; then
+            echo "manager=yarn" >> $GITHUB_OUTPUT
+            echo "install=install --immutable" >> $GITHUB_OUTPUT
+            echo "runner=yarn" >> $GITHUB_OUTPUT
+          else
+            echo "manager=npm" >> $GITHUB_OUTPUT
+            echo "install=ci" >> $GITHUB_OUTPUT
+            echo "runner=npm run" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # Corepack must be enabled *after* setup-node so the Yarn 4 shim attaches
+      # to the Node that runs the build. (setup-node's built-in `cache: yarn`
+      # is intentionally omitted: its `yarn cache dir` probe runs the runner's
+      # Yarn 1, which aborts on the `packageManager: yarn@4` pin.)
+      - name: Enable Corepack
+        run: corepack enable
+
+      - name: Install Foomatic system packages
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            foomatic-db-engine \
+            foomatic-db-compressed-ppds \
+            cups-filters \
+            ghostscript \
+            bsdmainutils \
+            libxml2-utils \
+            xsltproc \
+            python3 \
+            python3-pip
+
+      - name: Install dependencies
+        run: ${{ steps.pm.outputs.manager }} ${{ steps.pm.outputs.install }}
+
+      - name: Run linter
+        run: ${{ steps.pm.outputs.runner }} lint
+
+      - name: Build Next.js
+        run: ${{ steps.pm.outputs.runner }} build
