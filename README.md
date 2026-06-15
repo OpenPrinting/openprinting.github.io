@@ -90,6 +90,8 @@ produce them. The build runs `yarn generate` first, which:
 
 - converts the upstream `foomatic-db` data into JSON and statically generates a page for every
   printer and driver (output under `public/foomatic-db/`),
+- generates the machine-readable query API and PPD files (output under `public/query/` and
+  `public/ppds/`; see [Machine-readable query API](#machine-readable-query-api-and-ppd-downloads)),
 - builds the client-side search indexes (`public/search/static-index.json` and
   `public/search/foomatic-index.json`), and
 - generates the RSS feed (`public/feed.xml`).
@@ -104,6 +106,53 @@ yarn generate
 
 at least once. These outputs are git-ignored and regenerated on every build (see
 [Deployment](#deployment)), so you do not commit them.
+
+## Machine-readable query API and PPD downloads
+
+The legacy OpenPrinting site exposed two machine interfaces: `query.php` (database lookups)
+and `ppd-o-matic.php` (PPD downloads). The site is now a **fully static export hosted on
+GitHub Pages** — there is no PHP/CGI or any other server-side code. This has one hard
+consequence worth understanding:
+
+> A static host serves the **same file for a URL regardless of its query string**. So
+> `query.php?type=printer&make=HP` and `query.php?type=printer&make=Canon` are the *same*
+> request as far as the host is concerned. The legacy `*.php?…` pages therefore resolve the
+> query **in the browser with JavaScript** and work when opened in a browser, but a client
+> that does not run JavaScript (`wget`, `curl`, and printer-setup tools such as CUPS or the
+> GNOME Control Center) cannot get query-dependent output from them.
+
+For all non-browser/automation use, fetch the **static endpoints** below directly. They are
+plain files, so they work with `wget`/`curl` and any HTTP client, and they carry the correct
+content type. Append `.xml` instead of `.txt` for XML; the PPD files are served as
+`application/vnd.cups-ppd`.
+
+| Legacy URL (browser only) | Static endpoint (works everywhere) |
+| --- | --- |
+| `query.php?type=makes` | `/query/makes.txt` |
+| `query.php?type=printer` | `/query/printers.txt` |
+| `query.php?type=printer&make=HP` | `/query/printers/HP.txt` |
+| `query.php?type=driver` | `/query/drivers.txt` |
+| `query.php?type=driver&printer=printer/HP-LaserJet_4050`<br>`query.php?type=driver&make=HP&model=HP-LaserJet_4050` | `/query/drivers/HP-LaserJet_4050.txt` |
+| `ppd-o-matic.php?printer=Alps-MD-2010&driver=ppmtomd` | `/ppds/Alps-MD-2010-ppmtomd.ppd` |
+
+The driver lists are keyed by **printer id** (`<make>-<model>` with spaces as underscores,
+e.g. `HP-LaserJet_4050`), and PPD files are named `<printer-id>-<driver>.ppd`. A machine-
+readable index of all printers (id, make, model, command sets) is at `/query/index.json`.
+
+Example:
+
+```bash
+wget -O HP.txt        'https://openprinting.github.io/query/printers/HP.txt'
+wget -O 4050.txt      'https://openprinting.github.io/query/drivers/HP-LaserJet_4050.txt'
+wget -O printer.ppd   'https://openprinting.github.io/ppds/Alps-MD-2010-ppmtomd.ppd'
+```
+
+Two original `query.php` features have **no static equivalent** because they require
+computation at request time and cannot be precomputed into files:
+
+- **Fuzzy device-ID matching** (`printer=MFG:…;MDL:…;`) — works in the browser only.
+- **`papps=true`** (the Printer-Application look-up) — depended on live Printer Application
+  Snaps running on the old server; it is not part of the static database export.
 
 ## A note on `yarn.lock`
 

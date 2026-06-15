@@ -2,7 +2,14 @@ export type QueryFormat = "text" | "xml"
 
 export type QueryPlan =
   | { kind: "file"; url: string; format: QueryFormat }
-  | { kind: "match"; target: "printers" | "drivers"; term: string; format: QueryFormat }
+  | {
+      kind: "match"
+      target: "printers" | "drivers"
+      make?: string
+      model?: string
+      printer?: string
+      format: QueryFormat
+    }
   | { kind: "papps" }
   | { kind: "unsupported"; message: string }
 
@@ -38,7 +45,7 @@ export function resolveQuery(params: URLSearchParams): QueryPlan {
 
   if (/^printers?$/.test(type)) {
     if (printer || model) {
-      return { kind: "match", target: "printers", term: printer || `${make} ${model}`.trim(), format }
+      return { kind: "match", target: "printers", make, model, printer, format }
     }
     if (make) {
       return { kind: "file", url: fileUrl(`printers/${encodeURIComponent(sanitizeSegment(make))}`, format), format }
@@ -52,7 +59,7 @@ export function resolveQuery(params: URLSearchParams): QueryPlan {
       return { kind: "file", url: fileUrl(`drivers/${encodeURIComponent(sanitizeSegment(id))}`, format), format }
     }
     if (printer || model) {
-      return { kind: "match", target: "drivers", term: printer || `${make} ${model}`.trim(), format }
+      return { kind: "match", target: "drivers", make, model, printer, format }
     }
     return { kind: "file", url: fileUrl("drivers", format), format }
   }
@@ -62,7 +69,7 @@ export function resolveQuery(params: URLSearchParams): QueryPlan {
       const id = printer.replace(/^printer\//, "")
       return { kind: "file", url: fileUrl(`drivers/${encodeURIComponent(sanitizeSegment(id))}`, format), format }
     }
-    return { kind: "match", target: "drivers", term: printer, format }
+    return { kind: "match", target: "drivers", printer, format }
   }
 
   return {

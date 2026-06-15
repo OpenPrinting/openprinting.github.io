@@ -22,20 +22,49 @@ function parseDeviceId(term: string): { mfg?: string; mdl?: string } {
   return { mfg, mdl }
 }
 
-function matchPrinters(index: IndexPrinter[], term: string): IndexPrinter[] {
-  const { mfg, mdl } = parseDeviceId(term)
-  if (mfg || mdl) {
-    const nMfg = mfg ? normalize(mfg) : ""
-    const nMdl = mdl ? normalize(mdl) : ""
-    return index.filter((p) => {
-      const okMake = !nMfg || normalize(p.make).includes(nMfg) || nMfg.includes(normalize(p.make))
-      const okModel = !nMdl || normalize(`${p.make} ${p.model}`).includes(nMdl) || normalize(p.model).includes(nMdl)
-      return okMake && okModel
-    })
+interface MatchQuery {
+  make?: string
+  model?: string
+  printer?: string
+}
+
+function haystack(p: IndexPrinter): string {
+  return normalize(`${p.make} ${p.model} ${p.id}`)
+}
+
+function matchPrinters(index: IndexPrinter[], query: MatchQuery): IndexPrinter[] {
+  if (query.printer) {
+    const { mfg, mdl } = parseDeviceId(query.printer)
+    if (mfg || mdl) {
+      const nMfg = mfg ? normalize(mfg) : ""
+      const nMdl = mdl ? normalize(mdl) : ""
+      return index.filter((p) => {
+        const okMake = !nMfg || normalize(p.make).includes(nMfg) || nMfg.includes(normalize(p.make))
+        const okModel = !nMdl || haystack(p).includes(nMdl)
+        return okMake && okModel
+      })
+    }
+    const nTerm = normalize(query.printer)
+    if (!nTerm) return []
+    return index.filter((p) => haystack(p).includes(nTerm))
   }
-  const nTerm = normalize(term)
-  if (!nTerm) return []
-  return index.filter((p) => normalize(`${p.make} ${p.model}`).includes(nTerm))
+
+  const nMake = query.make ? normalize(query.make) : ""
+  const nModel = query.model ? normalize(query.model) : ""
+  if (!nMake && !nModel) return []
+  return index.filter((p) => {
+    const okMake = !nMake || normalize(p.make).includes(nMake) || nMake.includes(normalize(p.make))
+    const okModel = !nModel || haystack(p).includes(nModel)
+    return okMake && okModel
+  })
+}
+
+function pickBest(matches: IndexPrinter[], query: MatchQuery): IndexPrinter {
+  const needle = normalize(query.model || query.printer || "")
+  const exact = needle
+    ? matches.find((p) => normalize(p.id) === needle || normalize(p.model) === needle)
+    : undefined
+  return exact ?? matches[0]
 }
 
 function printersToText(list: IndexPrinter[]): string {
@@ -100,7 +129,7 @@ export default function QueryApiClient() {
         const indexRes = await fetch(withBasePath("/query/index.json"))
         if (!indexRes.ok) throw new Error("Query index unavailable.")
         const index = (await indexRes.json()).printers as IndexPrinter[]
-        const matches = matchPrinters(index, plan.term)
+        const matches = matchPrinters(index, plan)
 
         if (plan.target === "printers") {
           if (!cancelled) {
@@ -118,7 +147,7 @@ export default function QueryApiClient() {
           return
         }
 
-        const best = matches[0]
+        const best = pickBest(matches, plan)
         const driversRes = await fetch(
           withBasePath(`/query/drivers/${encodeURIComponent(best.id)}.${plan.format === "xml" ? "xml" : "txt"}`)
         )
