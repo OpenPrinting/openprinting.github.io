@@ -1,6 +1,6 @@
 ---
 title: OpenPrinting - What are we doing currently?
-permalink: /current/
+permalink: /current
 layout: single
 header:
  overlay_color: "#616161"
@@ -13,7 +13,7 @@ excerpt: Our current activity
 
 **This page represents the state of August 2022**
 
-Even after having [achieved many nice things in the last 21 years](/achievements/) there is always a lot to do, especially currently, on the way to the New Architecture for printing and scanning, to make everything completely standards-conforming and get rid of obsolete methods and technologies.
+Even after having [achieved many nice things in the last 21 years](/achievements) there is always a lot to do, especially currently, on the way to the New Architecture for printing and scanning, to make everything completely standards-conforming and get rid of obsolete methods and technologies.
 
 Also there has been a lot of development of the systems and environments for which we provide the print functionality. Our work will continue to improve software integration. For example, there will be continued work on the printer setup tools and print dialogs of different desktop environments and applications, packaging methods like Snap, Flatpak, Docker, ..., new forms of OS distributions (immutable core, all-Snap, ...), ...
 

@@ -1,6 +1,6 @@
 ---
 title: OpenPrinting - How did this all begin?
-permalink: /history/
+permalink: /history
 layout: single
 header:
  overlay_color: "#616161"
@@ -13,7 +13,7 @@ excerpt: A brief history of OpenPrinting
 
 This is about how I got into printing with free software, and how I made it to what I am now.
 
-If you want to know what we all achieved at OpenPrinting up to now, see [what we have done so far](/achievements/).
+If you want to know what we all achieved at OpenPrinting up to now, see [what we have done so far](/achievements).
 
 ## System Administrator in the Physics Department
 
