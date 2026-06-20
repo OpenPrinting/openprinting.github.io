@@ -11,7 +11,7 @@ The following document contains information about the history of printing and it
 
 ## Brief History
 
-The first release of CUPS was back in 1997. <sup><a href="https://openprinting.github.io/How-did-this-all-begin/">[1]</a></sup> Since then, Printer Drivers consisted of **PPD files** and **CUPS filters**.
+The first release of CUPS was back in 1997. <sup><a href="https://openprinting.github.io/How-did-this-all-begin">[1]</a></sup> Since then, Printer Drivers consisted of **PPD files** and **CUPS filters**.
 
 **PPD (PostScript Printer Description)** is a decades-old data format created by Adobe, probably together with PostScript or shortly after, to describe capabilities and user-settable options of PostScript printers and which PostScript commands to embed in the print job to execute the option settings.
 
@@ -76,7 +76,7 @@ A **Printer Application's Web Interface** provides configurability and makes it 
 
     This is a complete printing stack in a Snap. It contains not only CUPS but also cups-filters, Ghostscript, and Poppler. It is everything which is required for printing, except Printer Drivers. Till Kamppeter has created this in order to provide a complete printing stack for a purely Snap-based Operating System.
 
-* <strong>PAPPL <sup><a href="https://github.com/michaelrsweet/pappl/">[3]</a></sup></strong> 
+* <strong>PAPPL <sup><a href="https://github.com/michaelrsweet/pappl">[3]</a></sup></strong> 
 
     Printer Applications have a lot in common. It would be a lot of re-inventing the wheel if everyone who wants to create a printer driver has to implement all this. Therefore Michael Sweet has created PAPPL, a library which provides all the common functionality which is needed in every Printer Application.
 
@@ -90,19 +90,19 @@ A **Printer Application's Web Interface** provides configurability and makes it 
 
     Currently, PAPPL supports only raster printers and that too for very few specific input formats like JPEG and PNG. For adding support for non-raster printers like PDF and PostScript printers, you need to supply an external utility that converts the whole job’s data into a data stream which the printer understands. Openprinting and CUPS Filters again come to the rescue here.
 
-    Manufacturers can use CUPS Filters to design these external utilities and decide which set of Filters to use and the order in which these should be invoked depending upon the efficiency and input-output formats. Kindly refer to guidelines for designing of printer applications<sup> <a href="../02-designing-printer-drivers/">[4]</a></sup> for more details.
+    Manufacturers can use CUPS Filters to design these external utilities and decide which set of Filters to use and the order in which these should be invoked depending upon the efficiency and input-output formats. Kindly refer to guidelines for designing of printer applications<sup> <a href="https://openprinting.github.io/documentation/02-designing-printer-drivers">[4]</a></sup> for more details.
 
 * <strong>Providing Sufficient Guidance</strong> 
     
-    OpenPrinting also helps the manufacturer about designing of printer <sup> <a href="../02-designing-printer-drivers/">[4]</a></sup> and scanner drivers.<sup><a href="../03-designing-scanner-drivers/">[5]</a></sup> It also guides them about packaging those drivers and uploading on Snap Store. <sup> <a href="../04-packaging-drivers/">[6]</a></sup>  It also educated users about using Printer Application Drivers. It provides neccessary documentation and tutorial for all the above mentioned things.<sup> <a href="../05-User-Manual/">[7]</a></sup>
+    OpenPrinting also helps the manufacturer about designing of printer <sup> <a href="https://openprinting.github.io/documentation/02-designing-printer-drivers">[4]</a></sup> and scanner drivers.<sup><a href="https://openprinting.github.io/documentation/03-designing-scanner-drivers">[5]</a></sup> It also guides them about packaging those drivers and uploading on Snap Store. <sup> <a href="https://openprinting.github.io/documentation/04-packaging-drivers">[6]</a></sup>  It also educated users about using Printer Application Drivers. It provides neccessary documentation and tutorial for all the above mentioned things.<sup> <a href="https://openprinting.github.io/documentation/05-User-Manual">[7]</a></sup>
 
  
 ### Manufacturer
 
-The Manufacturer besides manufacturing Printers and Scanners, is also expected to design drivers for the same. They can use PAPPL<sup><a href="https://github.com/michaelrsweet/pappl/">[3]</a></sup> library which certainly reduces their task to an great extent. Also they could take help from the documentation and tutorial developed by the OpenPrinting team. <sup> <a href="../02-designing-printer-drivers/">[4]</a></sup> 
-<sup> <a href="../03-designing-scanner-drivers/">[5]</a></sup>  
+The Manufacturer besides manufacturing Printers and Scanners, is also expected to design drivers for the same. They can use PAPPL<sup><a href="https://github.com/michaelrsweet/pappl">[3]</a></sup> library which certainly reduces their task to an great extent. Also they could take help from the documentation and tutorial developed by the OpenPrinting team. <sup> <a href="https://openprinting.github.io/documentation/02-designing-printer-drivers">[4]</a></sup> 
+<sup> <a href="https://openprinting.github.io/documentation/03-designing-scanner-drivers">[5]</a></sup>  
 
-After designing the drivers, they need to package them and Upload it to Snap Store. Again, documentation and tutorial for the same have developed by the OpenPrinting team which could be referred.<sup> <a href="../04-packaging-drivers/">[6]</a></sup> 
+After designing the drivers, they need to package them and Upload it to Snap Store. Again, documentation and tutorial for the same have developed by the OpenPrinting team which could be referred.<sup> <a href="https://openprinting.github.io/documentation/04-packaging-drivers">[6]</a></sup> 
 
 
 ### User
@@ -111,22 +111,22 @@ The user is relieved from most of the complexities and is just required to insta
 
 Further, he has the option to change his printer properties through the Web GUI provided with Printer Application.
 
-The OpenPrintring team has also worked out documentation and tutorials about installing CUPS and Drivers and using Web-based GUI, making the switch to this new technology easier for all.<sup> <a href="../05-User-Manual/">[7]</a></sup>
+The OpenPrintring team has also worked out documentation and tutorials about installing CUPS and Drivers and using Web-based GUI, making the switch to this new technology easier for all.<sup> <a href="https://openprinting.github.io/documentation/05-User-Manual">[7]</a></sup>
 
 ## Resources
 
-[1] <a href="https://openprinting.github.io/How-did-this-all-begin/">How all this began</a>
+[1] <a href="https://openprinting.github.io/How-did-this-all-begin">How all this began</a>
 <br>
 [2] <a href="https://github.com/OpenPrinting/cups-snap">CUPS Snap</a>
 <br>
-[3] <a href="https://github.com/michaelrsweet/pappl/">PAPPL</a>
+[3] <a href="https://github.com/michaelrsweet/pappl">PAPPL</a>
 <br>
-[4] <a href="../02-designing-printer-drivers/">Tutorial to Design Printer Drivers</a>
+[4] <a href="https://openprinting.github.io/documentation/02-designing-printer-drivers">Tutorial to Design Printer Drivers</a>
 <br>
-[5] <a href="../03-designing-scanner-drivers/">Tutorial to Design Scanner Drivers</a>
+[5] <a href="https://openprinting.github.io/documentation/03-designing-scanner-drivers">Tutorial to Design Scanner Drivers</a>
 <br>
-[6] <a href="../04-packaging-drivers/">Packaging Drivers and Uploading them to Snap Store</a>
+[6] <a href="https://openprinting.github.io/documentation/04-packaging-drivers">Packaging Drivers and Uploading them to Snap Store</a>
 <br>
-[7] <a href="../05-User-Manual/">User Manual</a>
+[7] <a href="https://openprinting.github.io/documentation/05-User-Manual">User Manual</a>
 <br>
 [8] <a href="https://github.com/OpenPrinting/cups-filters">CUPS Filters</a>

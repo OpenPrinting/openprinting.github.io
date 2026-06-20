@@ -20,7 +20,7 @@ Further, many manufacturer's devices have options that cannot be translated into
 
 The Printer/Scanner Application you need to use depends on your printer's manufacturer, model and which classic driver supports it. We at OpenPrinting have developed Printer Applications covering printer drivers which are available in Debian/Ubuntu to provide retro-fitting (to keep the old devices working, but without adding new features) support for older devices which are currently supported in the distributions, and we provide the Legacy Printer Application for devices, which drivers are no longer supported by the manufacturer or they aren't in distributions for various reasons (no open-source license, no public source code, nobody packaged it...). The Legacy Printer Application is able to find classic drivers installed on the system and print on the supported printers. The PostScript Printer Application also allows uploading PPD files for printers via its web administration interface.
 
-We at OpenPrinting provide Printer Applications as Snaps, so these manuals contain Snap-related information. However distributions might provide Printer Applications packaged under classic packaging systems like DEB or RPM, or by another container solution, f.e. Podman or OCI containers. The exception is the Legacy Printer Application, which cannot be containerized due to its nature, so it is part of [pappl-retrofit](https://github.com/OpenPrinting/pappl-retrofit/) and can be shipped only by classic packaging systems.
+We at OpenPrinting provide Printer Applications as Snaps, so these manuals contain Snap-related information. However distributions might provide Printer Applications packaged under classic packaging systems like DEB or RPM, or by another container solution, f.e. Podman or OCI containers. The exception is the Legacy Printer Application, which cannot be containerized due to its nature, so it is part of [pappl-retrofit](https://github.com/OpenPrinting/pappl-retrofit) and can be shipped only by classic packaging systems.
 
 All the four Printer Applications currently available at OpenPrinting are only for retrofitting purposes and any new drivers should be written as native Printer/Scanner Applications, which can be shipped as a container (Snap, Podman, OCI containers) or via classic packaging systems. The Native Printer Applications can be provided by the printer's manufacturer or by community developers who have access to the printer.
 
@@ -51,7 +51,7 @@ Once `snap` is installed, you can easily install any driver. Find the name of th
     snap install <application-name>
 
 <br>
-*Note: Driver auto-installation i.e. when a printer on the system is discovered, the driver can be found on the Snap Store and even can be automatically installed using the hardware signature, is [under development](https://forum.snapcraft.io/t/hardware-associated-snaps-snap-store-search-by-hardware-signature/). We will update this work on our website as soon as this is completed. Until then you have to install drivers manually.*
+*Note: Driver auto-installation i.e. when a printer on the system is discovered, the driver can be found on the Snap Store and even can be automatically installed using the hardware signature, is [under development](https://forum.snapcraft.io/t/hardware-associated-snaps-snap-store-search-by-hardware-signature). We will update this work on our website as soon as this is completed. Until then you have to install drivers manually.*
 
 Many interfaces are automatically connected when a snap is installed, and this ability is a property of either the interface itself or the snap. Interfaces not connected automatically require the user to make a manual connection using the `snap connect` command.
 
@@ -398,7 +398,7 @@ ___
 
 ## Resources
 
-[1] <a href="../01-printer-application/">Printer Application</a>
+[1] <a href="https://openprinting.github.io/documentation/01-printer-application">Printer Application</a>
 <br>
 [2] <a href="https://snapcraft.io/docs">Snap Documentation</a>
 <br>

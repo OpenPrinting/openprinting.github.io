@@ -4,7 +4,7 @@ toc: true
 toc_sticky: true
 h_range: [1,3]
 ---
-**This document contains a complete tutorial as well as information for manufacturers with examples for packaging printer/scanner drivers and releasing them to the Snap Store. If you are looking for information regarding the designing of printer/scanner drivers, kindly refer to <a href="../02-designing-printer-drivers/">Tutorial to Design Printer Drivers</a> and <a href="../03-designing-scanner-drivers/">Tutorial to Design Scanner Drivers</a> respectively.**  
+**This document contains a complete tutorial as well as information for manufacturers with examples for packaging printer/scanner drivers and releasing them to the Snap Store. If you are looking for information regarding the designing of printer/scanner drivers, kindly refer to <a href="https://openprinting.github.io/documentation/02-designing-printer-drivers">Tutorial to Design Printer Drivers</a> and <a href="https://openprinting.github.io/documentation/03-designing-scanner-drivers">Tutorial to Design Scanner Drivers</a> respectively.**  
 
 <h2 id="introduction"> Introduction </h2>
 
@@ -291,9 +291,9 @@ Once you have a snap that works under strict or classic confinement, you’re re
 The further steps are extensively covered in the official documentation of Snaps and can be located at <a href="https://snapcraft.io/docs/releasing-to-the-snap-store">Releasing to Snap Documentation</a>.
 
 <h2 id="resources"> Resources </h2>
-[1] <a href="../02-designing-printer-drivers/">Tutorial to Design Printer Drivers</a>
+[1] <a href="https://openprinting.github.io/documentation/02-designing-printer-drivers">Tutorial to Design Printer Drivers</a>
 <br>
-[2] <a href="../03-designing-scanner-drivers/">Tutorial to Design Scanner Drivers</a>
+[2] <a href="https://openprinting.github.io/documentation/03-designing-scanner-drivers">Tutorial to Design Scanner Drivers</a>
 <br>
 [3] <a href="https://snapcraft.io/docs">Snap Documentation</a>
 <br>

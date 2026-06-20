@@ -10,9 +10,9 @@ h_range: [1,3]
 
 ## Introduction
 
-A driver is code or data specific to a certain model or group of hardware devices, needed to make the hardware work with the hardware-model-independent code of the operating system. Printing in Linux has moved towards [Driverless Printing](https://openprinting.github.io/driverless/) and so does Scanning, which means there is no need for any hardware-model-specific code or data. 
+A driver is code or data specific to a certain model or group of hardware devices, needed to make the hardware work with the hardware-model-independent code of the operating system. Printing in Linux has moved towards [Driverless Printing](https://openprinting.github.io/driverless) and so does Scanning, which means there is no need for any hardware-model-specific code or data. 
 
-Kindly refer to <a href="../02-designing-printer-drivers/">Tutorial to Design Printer Drivers</a> to know more about Printer Applications and their designing. Designing Scanner Applications is very similar and expects the manufacturers to use the PAPPL framework to reduce their effort in implementing all things from scratch..
+Kindly refer to <a href="https://openprinting.github.io/documentation/02-designing-printer-drivers">Tutorial to Design Printer Drivers</a> to know more about Printer Applications and their designing. Designing Scanner Applications is very similar and expects the manufacturers to use the PAPPL framework to reduce their effort in implementing all things from scratch..
 
 ## How a PAPPL-based Scanner Driver should work
 
@@ -50,7 +50,7 @@ The scanner interface returns a single page at a time as uncompressed (or lossle
 
 PAPPL provides callbacks for most of the events including submitting print/scan jobs, querying printer/scanner status and capabilities, and so forth to reduce the manufacturer's workload and hence designing scanner applications is very much similar to designing printer applications. The only difference is the additional callback support provided for the scan command. Since this support is added in PAPPL, you as a manufacturer do not need to worry about this implementation as well.
 
-Hence refer to <a href="../02-designing-printer-drivers/">Tutorial to Design Printer Drivers</a> and follow the same for Designing Scanner Applications as well.
+Hence refer to <a href="https://openprinting.github.io/documentation/02-designing-printer-drivers">Tutorial to Design Printer Drivers</a> and follow the same for Designing Scanner Applications as well.
 
 ## Example for PAPPL-based Scanner Driver
 
@@ -97,10 +97,10 @@ They must be independent of order application start at boot or of device discove
 * **sane-airscan in SANE Scanner Application must be built without IPP Scan to avoid recursive discovery infinite loop (“Scanner bomb”)**
 
 ## Resources
-[1] <a href="../02-designing-printer-drivers/">Tutorial to Design Printer Drivers</a>
+[1] <a href="https://openprinting.github.io/documentation/02-designing-printer-drivers">Tutorial to Design Printer Drivers</a>
 <br>
-[2] <a href="https://github.com/michaelrsweet/pappl/">PAPPL</a>
+[2] <a href="https://github.com/michaelrsweet/pappl">PAPPL</a>
 <br>
-[3] <a href="../../pappl-system-utilities/">PAPPL System Utilities</a>
+[3] <a href="../../pappl-system-utilities">PAPPL System Utilities</a>
 <br>
-[4] <a href="../04-packaging-drivers/">Packaging Drivers and Uploading them to Snap Store</a>
+[4] <a href="https://openprinting.github.io/documentation/04-packaging-drivers">Packaging Drivers and Uploading them to Snap Store</a>
