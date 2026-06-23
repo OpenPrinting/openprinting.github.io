@@ -8,12 +8,14 @@ const ROOT_DIR = path.join(
   "..",
   "..",
 );
+
 const INPUT_FILE = path.join(
   ROOT_DIR,
   "public",
   "foomatic-db",
   "printers.json",
 );
+
 const OUTPUT_FILE = path.join(
   ROOT_DIR,
   "public",
@@ -22,9 +24,9 @@ const OUTPUT_FILE = path.join(
 );
 
 interface Vocabulary {
-  manufacturers: string[];
+  recommendedDrivers: string[];
+  supportedDrivers: string[];
   types: string[];
-  connectivity: string[];
 }
 
 interface FeatureMatrix {
@@ -36,12 +38,29 @@ interface FeatureMatrix {
   matrix: number[][];
 }
 
-function encodeBool(value: boolean | string | undefined): number {
-  if (value === true) return 1.0;
-  if (value === false) return 0.0;
+const DRIVER_PREFIX_NORMALIZERS: Array<[RegExp, string]> = [
+  [/^Postscript/i, "postscript"],
+  [/^PDF/i, "pdf"],
+  [/^pxlmono/i, "pxlmono"],
+  [/^pxlcolor/i, "pxlcolor"],
+  [/^foo2zjs/i, "foo2zjs"],
+  [/^foo2hp/i, "foo2hp"],
+  [/^foo2qpdl/i, "foo2qpdl"],
+  [/^hpijs/i, "hpijs"],
+  [/^gutenprint/i, "gutenprint"],
+  [/^gimp-print/i, "gutenprint"],
+  [/^hplip/i, "hplip"],
+  [/^ljet/i, "laserjet"],
+  [/^lj/i, "laserjet"],
+];
 
-  // Unknown values stay neutral instead of biasing similarity.
-  return 0.5;
+const RECOMMENDED_DRIVER_WEIGHT = 3.0;
+const SUPPORTED_DRIVER_WEIGHT = 1.0;
+const TYPE_WEIGHT = 0.5;
+const FUNCTIONALITY_WEIGHT = 0.25;
+
+function trim(value: string | undefined): string {
+  return (value ?? "").trim();
 }
 
 function encodeFunctionality(value: string | undefined): number {
@@ -57,62 +76,105 @@ function encodeFunctionality(value: string | undefined): number {
   }
 }
 
-function trim(value: string | undefined): string {
-  return (value ?? "").trim();
+function normalizeDriverFamily(driverName: string): string {
+  const normalized = trim(driverName).replace(/^driver\//i, "");
+
+  for (const [pattern, family] of DRIVER_PREFIX_NORMALIZERS) {
+    if (pattern.test(normalized)) {
+      return family;
+    }
+  }
+
+  return normalized.toLowerCase();
+}
+
+function getSupportedDriverFamilies(printer: Printer): string[] {
+  const families = new Set<string>();
+
+  for (const driver of printer.drivers ?? []) {
+    const family = normalizeDriverFamily(driver.name);
+
+    if (family) {
+      families.add(family);
+    }
+  }
+
+  return [...families];
+}
+
+function getRecommendedDriverFamily(printer: Printer): string | null {
+  const driver = trim(printer.recommended_driver);
+
+  if (!driver) {
+    return null;
+  }
+
+  return normalizeDriverFamily(driver);
 }
 
 function buildVocabularies(printers: Printer[]): Vocabulary {
-  const manufacturers = new Set<string>();
+  const recommendedDrivers = new Set<string>();
+
+  const supportedDrivers = new Set<string>();
+
   const types = new Set<string>();
-  const connectivityOpts = new Set<string>();
 
-  for (const p of printers) {
-    const make = trim(p.manufacturer);
-    if (make) manufacturers.add(make);
+  for (const printer of printers) {
+    const recommended = getRecommendedDriverFamily(printer);
 
-    const type = trim(p.type);
-    if (type && type !== "unknown") types.add(type);
+    if (recommended) {
+      recommendedDrivers.add(recommended);
+    }
 
-    for (const c of p.connectivity ?? []) {
-      const conn = trim(c);
-      if (conn) connectivityOpts.add(conn);
+    for (const family of getSupportedDriverFamilies(printer)) {
+      supportedDrivers.add(family);
+    }
+
+    const type = trim(printer.type);
+
+    if (type && type !== "unknown") {
+      types.add(type);
     }
   }
 
   return {
-    manufacturers: [...manufacturers].sort(),
+    recommendedDrivers: [...recommendedDrivers].sort(),
+    supportedDrivers: [...supportedDrivers].sort(),
     types: [...types].sort(),
-    connectivity: [...connectivityOpts].sort(),
   };
 }
 
 function buildFeatureNames(vocab: Vocabulary): string[] {
   return [
-    ...vocab.manufacturers.map((m) => `manufacturer:${m}`),
-    ...vocab.types.map((t) => `type:${t}`),
-    ...vocab.connectivity.map((c) => `connectivity:${c}`),
-    "color",
-    "duplex",
+    ...vocab.recommendedDrivers.map((driver) => `recommended_driver:${driver}`),
+
+    ...vocab.supportedDrivers.map((driver) => `supported_driver:${driver}`),
+
+    ...vocab.types.map((type) => `type:${type}`),
+
     "functionality",
   ];
 }
 
-/*
- * Feature extraction intentionally stays unweighted.
- * Similarity weighting belongs in compute-similarity.ts.
- */
 function encodePrinter(printer: Printer, vocab: Vocabulary): number[] {
-  const make = trim(printer.manufacturer);
+  const recommended = getRecommendedDriverFamily(printer);
+
+  const supported = new Set(getSupportedDriverFamilies(printer));
+
   const type = trim(printer.type);
-  const conns = new Set((printer.connectivity ?? []).map(trim));
 
   return [
-    ...vocab.manufacturers.map((m) => (m === make ? 1.0 : 0.0)),
-    ...vocab.types.map((t) => (t === type ? 1.0 : 0.0)),
-    ...vocab.connectivity.map((c) => (conns.has(c) ? 1.0 : 0.0)),
-    encodeBool(printer.color),
-    encodeBool(printer.duplex),
-    encodeFunctionality(printer.functionality),
+    ...vocab.recommendedDrivers.map((driver) =>
+      driver === recommended ? RECOMMENDED_DRIVER_WEIGHT : 0,
+    ),
+
+    ...vocab.supportedDrivers.map((driver) =>
+      supported.has(driver) ? SUPPORTED_DRIVER_WEIGHT : 0,
+    ),
+
+    ...vocab.types.map((t) => (t === type ? TYPE_WEIGHT : 0)),
+
+    encodeFunctionality(printer.functionality) * FUNCTIONALITY_WEIGHT,
   ];
 }
 
@@ -151,13 +213,16 @@ function main(): void {
   console.log(`Loaded ${printers.length} printers`);
 
   const vocab = buildVocabularies(printers);
+
   const featureNames = buildFeatureNames(vocab);
 
   const ids: string[] = [];
+
   const matrix: number[][] = [];
 
   for (const printer of printers) {
     ids.push(printer.id);
+
     matrix.push(encodePrinter(printer, vocab));
   }
 
@@ -170,10 +235,21 @@ function main(): void {
     matrix,
   };
 
-  fs.mkdirSync(path.dirname(OUTPUT_FILE), { recursive: true });
+  fs.mkdirSync(path.dirname(OUTPUT_FILE), {
+    recursive: true,
+  });
+
   fs.writeFileSync(OUTPUT_FILE, JSON.stringify(output, null, 2));
 
-  console.log(`✓ Feature matrix → ${OUTPUT_FILE}`);
+  console.log(`✓ Feature matrix generated: ${OUTPUT_FILE}`);
+
+  console.log(`Features: ${output.featureCount}`);
+
+  console.log(`Recommended drivers: ${vocab.recommendedDrivers.length}`);
+
+  console.log(`Supported drivers: ${vocab.supportedDrivers.length}`);
+
+  console.log(`Printer types: ${vocab.types.length}`);
 }
 
 main();
