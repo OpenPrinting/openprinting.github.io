@@ -195,6 +195,28 @@ function computeSharedFeatures(a: Printer, b: Printer): string[] {
     shared.push("Color printing");
   }
 
+  const aCommandsets = new Set(a.commandsetTokens ?? []);
+  const COMMANDSET_LABELS: Record<string, string> = {
+    POSTSCRIPT: "PostScript",
+    PCLXL: "PCL XL (PCL6)",
+    PCL5E: "PCL5e",
+    PCL: "PCL",
+    PDF: "PDF printing",
+    ESCPL2: "Epson ESC/P2",
+    ESCPR2: "Epson ESC/P-R",
+    BDC: "Epson BDC",
+    D4: "Epson D4",
+    D4PX: "Epson D4PX",
+    PJL: "PJL",
+    MLC: "MLC",
+  };
+  for (const cs of (b.commandsetTokens ?? [])) {
+    if (aCommandsets.has(cs)) {
+      const label = COMMANDSET_LABELS[cs] ?? cs;
+      shared.push(`Shared command set: ${label}`);
+    }
+  }
+
   if (
     a.functionality &&
     b.functionality &&

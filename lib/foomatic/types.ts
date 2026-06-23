@@ -45,6 +45,7 @@ export interface Printer {
   ppdPath?: string
   supportContacts?: SupportContact[]
   commandsets?: string[]
+  commandsetTokens?: string[]
   ppdOptions?: PpdOption[]
   color?: boolean | "unknown"
   duplex?: boolean | "unknown"

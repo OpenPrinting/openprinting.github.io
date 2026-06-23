@@ -27,6 +27,7 @@ interface Vocabulary {
   recommendedDrivers: string[];
   supportedDrivers: string[];
   types: string[];
+  commandsets: string[];
 }
 
 interface FeatureMatrix {
@@ -59,6 +60,8 @@ const SUPPORTED_DRIVER_WEIGHT = 1.0;
 const TYPE_WEIGHT = 0.5;
 const FUNCTIONALITY_WEIGHT = 0.25;
 const COLOR_WEIGHT = 1.0;
+const COMMANDSET_WEIGHT = 1.5;
+const MIN_COMMANDSET_FREQUENCY = 20;
 
 function trim(value: string | undefined): string {
   return (value ?? "").trim();
@@ -120,6 +123,8 @@ function buildVocabularies(printers: Printer[]): Vocabulary {
 
   const types = new Set<string>();
 
+  const commandsetFreq = new Map<string, number>();
+
   for (const printer of printers) {
     const recommended = getRecommendedDriverFamily(printer);
 
@@ -136,12 +141,22 @@ function buildVocabularies(printers: Printer[]): Vocabulary {
     if (type && type !== "unknown") {
       types.add(type);
     }
+
+    for (const cs of printer.commandsetTokens ?? []) {
+      commandsetFreq.set(cs, (commandsetFreq.get(cs) ?? 0) + 1);
+    }
   }
+
+  const commandsets = [...commandsetFreq.entries()]
+    .filter(([, count]) => count >= MIN_COMMANDSET_FREQUENCY)
+    .map(([cs]) => cs)
+    .sort();
 
   return {
     recommendedDrivers: [...recommendedDrivers].sort(),
     supportedDrivers: [...supportedDrivers].sort(),
     types: [...types].sort(),
+    commandsets,
   };
 }
 
@@ -156,6 +171,8 @@ function buildFeatureNames(vocab: Vocabulary): string[] {
     "functionality",
 
     "color",
+
+    ...vocab.commandsets.map((cs) => `commandset:${cs}`),
   ];
 }
 
@@ -180,6 +197,10 @@ function encodePrinter(printer: Printer, vocab: Vocabulary): number[] {
     encodeFunctionality(printer.functionality) * FUNCTIONALITY_WEIGHT,
 
     printer.color === true ? COLOR_WEIGHT : 0,
+
+    ...vocab.commandsets.map((cs) =>
+      (printer.commandsetTokens ?? []).includes(cs) ? COMMANDSET_WEIGHT : 0,
+    ),
   ];
 }
 
@@ -255,6 +276,8 @@ function main(): void {
   console.log(`Supported drivers: ${vocab.supportedDrivers.length}`);
 
   console.log(`Printer types: ${vocab.types.length}`);
+
+  console.log(`Commandset tokens: ${vocab.commandsets.length}`);
 }
 
 main();

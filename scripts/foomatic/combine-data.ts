@@ -199,6 +199,55 @@ function getCommandsets(printer) {
   return Array.from(new Set(sets));
 }
 
+function normalizeCommandsetToken(raw) {
+  const t = raw.trim();
+  if (!t) return null;
+  const u = t.toUpperCase();
+  if (/^(POSTSCRIPT\d*|ADOBE\s+POSTSCRIPT|ADOBE\s+LEVEL\s+\d+\s+POSTSCRIPT|PS\d?|POSTS$|POSTSCRIP$|POSTSCRI$|POSTSCRIPT\s+EMULATION|POSTSCRIPT\s+LEVEL|POSTSCRIPT\s+LE$|POSTSCRIPT\s+LEV$)/.test(u)) return "POSTSCRIPT";
+  if (/^(PCLXL|PCXL|PCL-XL|PCL6|PCL 6 EMULATION|HP ENHANCED PCL6)$/.test(u)) return "PCLXL";
+  if (/^(PCL5[CE]?\d*|HP ENHANCED PCL5[E]?|ENHANCED PCL5|PCL 5 EMULATION)$/.test(u)) return "PCL5E";
+  if (/^(DW-PCL)$/.test(u)) return "PCL";
+  if (/^(NONE|NA|P$|LPT1|1284\.4|DW-$|AUTOMATIC|DOWNLOAD|RASTER|GDI;MDL|PRINTGEAR;PCL;PLJ)$/.test(u)) return null;
+  return u;
+}
+
+/*
+ * Distinct from getCommandsets(), which produces human-readable labels for
+ * display (e.g. "PostScript 3"). This produces canonical short tokens
+ * (e.g. "POSTSCRIPT") from autodetect data, used as similarity features.
+ */
+function getCommandsetTokens(printer) {
+  const a = printer.autodetect;
+  if (!a) return [];
+
+  const rawTokens = [];
+
+  const pushCommaSplit = (val) => {
+    if (!val) return;
+    for (const t of String(val).split(",")) rawTokens.push(t.trim());
+  };
+
+  pushCommaSplit(a.general?.commandset);
+  pushCommaSplit(a.usb?.commandset);
+  pushCommaSplit(a.parallel?.commandset);
+
+  if (a.general?.ieee1284) {
+    const m = String(a.general.ieee1284).match(/CMD:([^;]+)/i);
+    if (m) pushCommaSplit(m[1]);
+  }
+
+  const seen = new Set();
+  const result = [];
+  for (const raw of rawTokens) {
+    const norm = normalizeCommandsetToken(raw);
+    if (norm && !seen.has(norm)) {
+      seen.add(norm);
+      result.push(norm);
+    }
+  }
+  return result.sort();
+}
+
 function getPpdOptions(printer) {
   const ppdNode =
     printer.ppdOptions ||
@@ -523,6 +572,7 @@ async function combineData() {
       ...(recommendedDriverWithPpd?.ppdPath ? { ppdPath: recommendedDriverWithPpd.ppdPath } : {}),
       supportContacts: getSupportContacts(printer),
       commandsets: getCommandsets(printer),
+      commandsetTokens: getCommandsetTokens(printer),
       ppdOptions: getPpdOptions(printer),
       color: getColorCapability(printer),
       duplex: getDuplexCapability(printer),
