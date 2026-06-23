@@ -62,6 +62,8 @@ const FUNCTIONALITY_WEIGHT = 0.25;
 const COLOR_WEIGHT = 1.0;
 const COMMANDSET_WEIGHT = 1.5;
 const MIN_COMMANDSET_FREQUENCY = 20;
+const LANG_WEIGHT = 1.0;
+const LANG_LEVEL_WEIGHT = 0.5;
 
 function trim(value: string | undefined): string {
   return (value ?? "").trim();
@@ -173,6 +175,11 @@ function buildFeatureNames(vocab: Vocabulary): string[] {
     "color",
 
     ...vocab.commandsets.map((cs) => `commandset:${cs}`),
+
+    "lang:postscript",
+    "lang:postscript_3",
+    "lang:pcl",
+    "lang:pcl_6",
   ];
 }
 
@@ -201,6 +208,11 @@ function encodePrinter(printer: Printer, vocab: Vocabulary): number[] {
     ...vocab.commandsets.map((cs) =>
       (printer.commandsetTokens ?? []).includes(cs) ? COMMANDSET_WEIGHT : 0,
     ),
+
+    printer.psLevel != null ? LANG_WEIGHT : 0,
+    printer.psLevel === 3 ? LANG_LEVEL_WEIGHT : 0,
+    printer.pclLevel != null ? LANG_WEIGHT : 0,
+    printer.pclLevel === 6 ? LANG_LEVEL_WEIGHT : 0,
   ];
 }
 

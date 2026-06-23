@@ -217,6 +217,16 @@ function computeSharedFeatures(a: Printer, b: Printer): string[] {
     }
   }
 
+  if (a.psLevel != null && b.psLevel != null && a.psLevel === b.psLevel) {
+    const psLabel: Record<number, string> = { 3: "PostScript 3", 2: "PostScript 2", 1: "PostScript 1" };
+    shared.push(psLabel[a.psLevel] ?? "PostScript");
+  }
+
+  if (a.pclLevel != null && b.pclLevel != null && a.pclLevel === b.pclLevel) {
+    const pclLabel: Record<number, string> = { 6: "PCL 6 / PCL XL", 5: "PCL 5e", 4: "PCL 4", 3: "PCL 3" };
+    shared.push(pclLabel[a.pclLevel] ?? "PCL");
+  }
+
   if (
     a.functionality &&
     b.functionality &&

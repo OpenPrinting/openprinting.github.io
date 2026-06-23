@@ -358,6 +358,31 @@ function getColorCapability(printer) {
   );
 }
 
+function getPSLevel(printer) {
+  const ps = printer.lang?.postscript;
+  if (ps === undefined) return null;
+  const raw = (typeof ps === "object" && ps !== null) ? (ps["@level"] ?? ps.level ?? "") : String(ps);
+  const s = String(raw).trim();
+  if (!s || s === "?") return null;
+  if (["3", "III", "3.0"].includes(s)) return 3;
+  if (["2", "II"].includes(s)) return 2;
+  if (["1", "I"].includes(s)) return 1;
+  return 0;
+}
+
+function getPCLLevel(printer) {
+  const pcl = printer.lang?.pcl;
+  if (pcl === undefined) return null;
+  const raw = (typeof pcl === "object" && pcl !== null) ? (pcl["@level"] ?? pcl.level ?? "") : String(pcl);
+  const s = String(raw).trim();
+  if (!s || s === "?") return null;
+  if (/^6|\/6$|,\s*6$|^6\//i.test(s)) return 6;
+  if (/5[eEcC]/.test(s) || /^5/.test(s)) return 5;
+  if (/^4/.test(s)) return 4;
+  if (/^3/.test(s)) return 3;
+  return 0;
+}
+
 function getDuplexCapability(printer) {
   return getBooleanCapability(
     printer.duplex ??
@@ -576,6 +601,8 @@ async function combineData() {
       ppdOptions: getPpdOptions(printer),
       color: getColorCapability(printer),
       duplex: getDuplexCapability(printer),
+      psLevel: getPSLevel(printer),
+      pclLevel: getPCLLevel(printer),
       recommended: Boolean(printer.driver || recommendedDriverId),
       hasOwnEntry: printersWithOwnEntry.has(printerId),
     });
