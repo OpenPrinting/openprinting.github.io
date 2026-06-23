@@ -293,6 +293,14 @@ function getBooleanCapability(value) {
 }
 
 function getColorCapability(printer) {
+  if (printer.mechanism && "color" in printer.mechanism) {
+    return true;
+  }
+
+  if (printer.mechanism && Object.keys(printer.mechanism).length > 0) {
+    return false;
+  }
+
   return getBooleanCapability(
     printer.color ??
       printer.colors ??

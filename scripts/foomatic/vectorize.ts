@@ -58,6 +58,7 @@ const RECOMMENDED_DRIVER_WEIGHT = 3.0;
 const SUPPORTED_DRIVER_WEIGHT = 1.0;
 const TYPE_WEIGHT = 0.5;
 const FUNCTIONALITY_WEIGHT = 0.25;
+const COLOR_WEIGHT = 1.0;
 
 function trim(value: string | undefined): string {
   return (value ?? "").trim();
@@ -153,6 +154,8 @@ function buildFeatureNames(vocab: Vocabulary): string[] {
     ...vocab.types.map((type) => `type:${type}`),
 
     "functionality",
+
+    "color",
   ];
 }
 
@@ -175,6 +178,8 @@ function encodePrinter(printer: Printer, vocab: Vocabulary): number[] {
     ...vocab.types.map((t) => (t === type ? TYPE_WEIGHT : 0)),
 
     encodeFunctionality(printer.functionality) * FUNCTIONALITY_WEIGHT,
+
+    printer.color === true ? COLOR_WEIGHT : 0,
   ];
 }
 

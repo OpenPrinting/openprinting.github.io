@@ -191,6 +191,10 @@ function computeSharedFeatures(a: Printer, b: Printer): string[] {
     shared.push(label[a.type] ?? a.type);
   }
 
+  if (a.color === true && b.color === true) {
+    shared.push("Color printing");
+  }
+
   if (
     a.functionality &&
     b.functionality &&
