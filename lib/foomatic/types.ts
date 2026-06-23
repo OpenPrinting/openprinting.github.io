@@ -53,6 +53,7 @@ export interface Printer {
   hasOwnEntry?: boolean
   psLevel?: number | null
   pclLevel?: number | null
+  maxDpi?: number | null
 }
 
 export type PrinterStatus = 'Perfect' | 'Mostly' | 'Unsupported' | 'Unknown'

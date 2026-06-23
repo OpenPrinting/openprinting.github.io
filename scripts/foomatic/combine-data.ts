@@ -341,6 +341,15 @@ function getBooleanCapability(value) {
   return "unknown";
 }
 
+function getMaxDpi(printer) {
+  const dpi = printer.mechanism?.resolution?.dpi;
+  if (!dpi) return null;
+  const x = Number(dpi.x ?? dpi["@x"] ?? 0);
+  const y = Number(dpi.y ?? dpi["@y"] ?? 0);
+  const max = Math.max(x, y);
+  return max > 0 ? max : null;
+}
+
 function getColorCapability(printer) {
   if (printer.mechanism && "color" in printer.mechanism) {
     return true;
@@ -603,6 +612,7 @@ async function combineData() {
       duplex: getDuplexCapability(printer),
       psLevel: getPSLevel(printer),
       pclLevel: getPCLLevel(printer),
+      maxDpi: getMaxDpi(printer),
       recommended: Boolean(printer.driver || recommendedDriverId),
       hasOwnEntry: printersWithOwnEntry.has(printerId),
     });

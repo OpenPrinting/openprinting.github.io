@@ -227,6 +227,19 @@ function computeSharedFeatures(a: Printer, b: Printer): string[] {
     shared.push(pclLabel[a.pclLevel] ?? "PCL");
   }
 
+  const resTier = (dpi: number | null | undefined): string | null => {
+    if (dpi == null) return null;
+    if (dpi <= 300) return "300 dpi";
+    if (dpi <= 600) return "600 dpi";
+    if (dpi <= 1200) return "1200 dpi";
+    return "2400+ dpi";
+  };
+  const aTier = resTier(a.maxDpi);
+  const bTier = resTier(b.maxDpi);
+  if (aTier != null && aTier === bTier) {
+    shared.push(`${aTier} resolution`);
+  }
+
   if (
     a.functionality &&
     b.functionality &&

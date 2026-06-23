@@ -64,6 +64,7 @@ const COMMANDSET_WEIGHT = 1.5;
 const MIN_COMMANDSET_FREQUENCY = 20;
 const LANG_WEIGHT = 1.0;
 const LANG_LEVEL_WEIGHT = 0.5;
+const RESOLUTION_WEIGHT = 0.75;
 
 function trim(value: string | undefined): string {
   return (value ?? "").trim();
@@ -180,6 +181,11 @@ function buildFeatureNames(vocab: Vocabulary): string[] {
     "lang:postscript_3",
     "lang:pcl",
     "lang:pcl_6",
+
+    "res:300",
+    "res:600",
+    "res:1200",
+    "res:2400plus",
   ];
 }
 
@@ -213,6 +219,11 @@ function encodePrinter(printer: Printer, vocab: Vocabulary): number[] {
     printer.psLevel === 3 ? LANG_LEVEL_WEIGHT : 0,
     printer.pclLevel != null ? LANG_WEIGHT : 0,
     printer.pclLevel === 6 ? LANG_LEVEL_WEIGHT : 0,
+
+    printer.maxDpi != null && printer.maxDpi <= 300 ? RESOLUTION_WEIGHT : 0,
+    printer.maxDpi != null && printer.maxDpi > 300 && printer.maxDpi <= 600 ? RESOLUTION_WEIGHT : 0,
+    printer.maxDpi != null && printer.maxDpi > 600 && printer.maxDpi <= 1200 ? RESOLUTION_WEIGHT : 0,
+    printer.maxDpi != null && printer.maxDpi > 1200 ? RESOLUTION_WEIGHT : 0,
   ];
 }
 
