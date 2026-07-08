@@ -31,14 +31,14 @@ We want to hear from you about
 
 We keep you always up-to-date here and on LinkedIn:
 
-**LinkedIn page of the Opportunity Open Source: [@opportunity-open-source](https://www.linkedin.com/company/opportunity-open-source/)**
+**LinkedIn page of the Opportunity Open Source: [@OpportunityOpenSource](https://www.linkedin.com/company/OpportunityOpenSource/)**
 
 - [This event's web site](https://oosc.iiita.ac.in/)
 - [Practical info: Location, remote attending/speaking, ...](https://events.canonical.com/event/154/)
 - [Call for proposals](https://events.canonical.com/event/154/abstracts/)
 - [Opportunity Open Source site](/opportunity-open-source)
-- Mastodon: [#OpportunityOpenSource](https://ubuntu.social/tags/OpportunityOpenSource) and [#UbuCon](https://ubuntu.social/tags/UbuCon)
-- LinkedIn: [@opportunity-open-source](https://www.linkedin.com/company/opportunity-open-source/)
+- Mastodon: [#OpportunityOpenSource](https://ubuntu.social/tags/OpportunityOpenSource)
+- LinkedIn: [@OpportunityOpenSource](https://www.linkedin.com/company/OpportunityOpenSource/)
 
 
 **And as usual: Stay updated on Mastodon: [#OpenPrinting](https://ubuntu.social/tags/OpenPrinting) and [@till@ubuntu.social](https://ubuntu.social/@till) and on LinkedIn: [@OpenPrinting](https://www.linkedin.com/company/openprinting/).**
