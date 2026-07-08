@@ -3,7 +3,7 @@ title: >-
   OpenPrinting News - Opportunity Open Source 4.0 - Call for Proposals extended
   to end of July
 layout: single
-toc: true
+toc: false
 toc_sticky: true
 author: Till
 excerpt: >-
