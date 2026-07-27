@@ -7,7 +7,7 @@ toc_sticky: true
 author: Till
 excerpt: >-
   11 Contributors on COSMIC printing support, KDE vs. CUPS 3.x, printing under Zephyr, PDFio-based PDF renderer, CI and fuzz testing, printer/scanner simulation, driver lookup with local ML ...
-date: '2026-07-20'
+date: '2026-07-26'
 ---
 As [last year](/OpenPrinting-News-Google-Summer-of-Code-2025-Our-most-successful-one) we have 11 contributors again for OpenPrinting!
 
