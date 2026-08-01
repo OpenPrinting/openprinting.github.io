@@ -30,6 +30,13 @@ const OUTPUT_FILE = path.join(
   "recommendations.json",
 );
 
+const RECOMMENDATIONS_DIR = path.join(
+  ROOT_DIR,
+  "public",
+  "foomatic-db",
+  "recommendations",
+);
+
 const TOP_K = 10;
 const MIN_SIMILARITY_SCORE = 0.25;
 
@@ -440,6 +447,15 @@ function main(): void {
   });
 
   fs.writeFileSync(OUTPUT_FILE, JSON.stringify(output, null, 2));
+
+  fs.mkdirSync(RECOMMENDATIONS_DIR, { recursive: true });
+
+  for (const [printerId, recs] of Object.entries(output.recommendations)) {
+    fs.writeFileSync(
+      path.join(RECOMMENDATIONS_DIR, `${printerId}.json`),
+      JSON.stringify(recs),
+    );
+  }
 
   logScoreDistribution(recommendations);
 
