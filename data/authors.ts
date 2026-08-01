@@ -27,7 +27,7 @@ const authors: Author[] = [
   {
     key: "Till",
     name: "Till Kamppeter",
-    role: "OpenPrinting Project Leader",
+    role: "OpenPrinting Organization Lead",
     location: "Vienna, Austria",
     email: "mailto:till.kamppeter@gmail.com",
     github: "https://github.com/tillkamppeter",

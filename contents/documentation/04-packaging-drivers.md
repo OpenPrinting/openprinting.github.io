@@ -4,7 +4,7 @@ toc: true
 toc_sticky: true
 h_range: [1,3]
 ---
-**This document contains a complete tutorial as well as information for manufacturers with examples for packaging printer/scanner drivers and releasing them to the Snap Store. If you are looking for information regarding the designing of printer/scanner drivers, kindly refer to <a href="../02-designing-printer-drivers/">Tutorial to Design Printer Drivers</a> and <a href="../03-designing-scanner-drivers/">Tutorial to Design Scanner Drivers</a> respectively.**  
+**This document contains a complete tutorial as well as information for manufacturers with examples for packaging printer/scanner drivers and releasing them to the Snap Store. If you are looking for information regarding the designing of printer/scanner drivers, kindly refer to <a href="/documentation/02-designing-printer-drivers">Tutorial to Design Printer Drivers</a> and <a href="/documentation/03-designing-scanner-drivers">Tutorial to Design Scanner Drivers</a> respectively.**  
 
 <h2 id="introduction"> Introduction </h2>
 
@@ -36,7 +36,7 @@ Most Snaps we create are driven using `snapcraft.yaml`. This file describes a sn
 
 As a distributor, you would create a `snapcraft.yaml` file. This will be used by the `snapcraft` command to build your snap. Next, you would upload this `.snap` file to the Snap Store and release it on the stable channel.
 
-To start building your snap, the initial step is to install snapcraft. Kindly refer the <a href="https://snapcraft.io/docs/installing-snapcraft">installation guidelines</a> to follow the same.
+To start building your snap, the initial step is to install snapcraft. Kindly refer the <a href="https://documentation.ubuntu.com/snapcraft/9.0/how-to/set-up-snapcraft">installation guidelines</a> to follow the same.
 
 After installation, navigate to the directory containing your application and use the following command.
 
@@ -291,9 +291,9 @@ Once you have a snap that works under strict or classic confinement, you’re re
 The further steps are extensively covered in the official documentation of Snaps and can be located at <a href="https://snapcraft.io/docs/releasing-to-the-snap-store">Releasing to Snap Documentation</a>.
 
 <h2 id="resources"> Resources </h2>
-[1] <a href="../02-designing-printer-drivers/">Tutorial to Design Printer Drivers</a>
+[1] <a href="/documentation/02-designing-printer-drivers">Tutorial to Design Printer Drivers</a>
 <br>
-[2] <a href="../03-designing-scanner-drivers/">Tutorial to Design Scanner Drivers</a>
+[2] <a href="/documentation/03-designing-scanner-drivers">Tutorial to Design Scanner Drivers</a>
 <br>
 [3] <a href="https://snapcraft.io/docs">Snap Documentation</a>
 <br>

@@ -4,14 +4,14 @@ toc: true
 toc_sticky: true
 h_range: [1,2]
 ---
-**This document contains a complete tutorial as well as information for manufacturers with examples for designing printer drivers. If you are looking for information regarding the use of printer drivers, kindly refer to <a href="../05-User-Manual/">User Manual</a>**  
+**This document contains a complete tutorial as well as information for manufacturers with examples for designing printer drivers. If you are looking for information regarding the use of printer drivers, kindly refer to <a href="/documentation/05-User-Manual">User Manual</a>**  
 
 
 <h2 id="introduction"> Introduction </h2>
 
-A driver is a code or data specific to a certain model or group of hardware devices, needed to make the hardware work with the hardware-model-independent code of the operating system. Printing in Linux has moved towards [Driverless Printing](https://openprinting.github.io/driverless/), which means there is no need for any hardware-model-specific code or data. However, there are some problems with the current framework. For example, some printers(especially the old ones) that cannot handle IPP requests are devoid of driverless printing capability. Printer Applications help to address these issues. Kindly refer <a href="../01-printer-application/">Printer Applications - A new way to print in Linux</a> to learn more about Printer Applications, its working and benefits.
+A driver is a code or data specific to a certain model or group of hardware devices, needed to make the hardware work with the hardware-model-independent code of the operating system. Printing in Linux has moved towards [Driverless Printing](https://openprinting.github.io/driverless), which means there is no need for any hardware-model-specific code or data. However, there are some problems with the current framework. For example, some printers(especially the old ones) that cannot handle IPP requests are devoid of driverless printing capability. Printer Applications help to address these issues. Kindly refer <a href="/documentation/01-printer-application">Printer Applications - A new way to print in Linux</a> to learn more about Printer Applications, its working and benefits.
 
-For Designing the Printer Application Driver, it would be a lot of re-inventing the wheel if everyone who wants to create a printer driver has to implement all things from scratch. Therefore Michael Sweet has developed <a href="https://github.com/michaelrsweet/pappl/">PAPPL</a>, a library that provides all the common functionality which is required in every Printer Application.
+For Designing the Printer Application Driver, it would be a lot of re-inventing the wheel if everyone who wants to create a printer driver has to implement all things from scratch. Therefore Michael Sweet has developed <a href="https://github.com/michaelrsweet/pappl">PAPPL</a>, a library that provides all the common functionality which is required in every Printer Application.
 
 The flowchart below mentions the components of the driver that needs to be designed by you (boxes in blue color), along with the PAPPL utilities (boxes in red color) that would be used by your designed components.
 
@@ -52,7 +52,7 @@ The following tutorial helps you to understand how to design each component and 
 
         The system is an object of type `pappl_system_t` that manages client and device connections, listeners, the log, printers, and resources. In addition, it provides an optional embedded web interface, raw socket printing, and USB printer gadget (Linux only).
 
-        The system callback argument specifies a function that will create a new system, i.e. a `pappl_system_t` object. You can use the callback function to customisably configure system properties using the <a href="../../pappl-system-utilities/">PAPPL System Utilities</a>. This includes configuring Footer HTML on your web interface and setting up drivers.
+        The system callback argument specifies a function that will create a new system, i.e. a `pappl_system_t` object. You can use the callback function to customisably configure system properties using the <a href="../../pappl-system-utilities">PAPPL System Utilities</a>. This includes configuring Footer HTML on your web interface and setting up drivers.
         
         You can refer [designing system callback](#systemcallback) guidelines for retrieving more information about the System Callback function.
 
@@ -348,7 +348,7 @@ ___
 
     4. **Add system configurations**
 
-        The system object has tons of configurable attributes and correspondingly a huge number of PAPPL utilities to configure them. These include utilities like Setting Hostname, Setting the footer HTML for the web interface, etc. A detailed list of these function can be found at <a href="../../pappl-system-utilities/">PAPPL System Utilities</a>. 
+        The system object has tons of configurable attributes and correspondingly a huge number of PAPPL utilities to configure them. These include utilities like Setting Hostname, Setting the footer HTML for the web interface, etc. A detailed list of these function can be found at <a href="../../pappl-system-utilities">PAPPL System Utilities</a>. 
 
 
     5. **Call the [Driver setup function](#setup)**
@@ -1035,16 +1035,16 @@ They must be independent of order application start at boot or of device discove
 
 <h2 id="resources"> Resources </h2>
 
-[1] <a href="../01-printer-application/">Printer Application</a>
+[1] <a href="/documentation/01-printer-application">Printer Application</a>
 <br>
 [2] <a href="https://github.com/michaelrsweet/hp-printer-app">HP Printer App Example</a>
 <br>
-[3] <a href="https://github.com/michaelrsweet/pappl/">PAPPL</a>
+[3] <a href="https://github.com/michaelrsweet/pappl">PAPPL</a>
 <br>
-[4] <a href="../../pappl-system-utilities/">PAPPL System Utilities</a>
+[4] <a href="../../pappl-system-utilities">PAPPL System Utilities</a>
 <br>
-[5] <a href="../04-packaging-drivers/">Packaging Drivers and Uploading them to Snap Store</a>
+[5] <a href="/documentation/04-packaging-drivers">Packaging Drivers and Uploading them to Snap Store</a>
 <br>
-[6] <a href="../05-User-Manual/">User Manual</a>
+[6] <a href="/documentation/05-User-Manual">User Manual</a>
 <br>
 [7] <a href="https://github.com/OpenPrinting/ps-printer-app">PS Printer App Example</a>
