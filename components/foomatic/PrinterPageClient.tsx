@@ -246,6 +246,14 @@ export default function PrinterPageClient({ printerId }: PrinterPageClientProps)
                     </dd>
                   </div>
                 ) : null}
+                {printer.maxDpi != null ? (
+                  <div>
+                    <dt className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+                      Max resolution
+                    </dt>
+                    <dd className="mt-2 text-sm text-foreground">{printer.maxDpi} dpi</dd>
+                  </div>
+                ) : null}
                 {printer.connectivity && printer.connectivity.length > 0 ? (
                   <div>
                     <dt className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">

@@ -144,12 +144,19 @@ export default function RecommendedPrintersSection({
                   </div>
                 </div>
 
-                <Link
-                  href={printerHref(printer.id, printer.manufacturer)}
-                  className="inline-flex items-center rounded-md border border-border px-4 py-2 text-sm font-medium hover:bg-accent"
-                >
-                  View printer
-                </Link>
+                <div className="flex shrink-0 flex-col items-end gap-3">
+                  {recommendation.score < 0.9995 ? (
+                    <span className="text-sm font-medium text-muted-foreground">
+                      {Math.round(recommendation.score * 100)}% match
+                    </span>
+                  ) : null}
+                  <Link
+                    href={printerHref(printer.id, printer.manufacturer)}
+                    className="inline-flex items-center rounded-md border border-border px-4 py-2 text-sm font-medium hover:bg-accent"
+                  >
+                    View printer
+                  </Link>
+                </div>
               </div>
             </FoomaticCard>
           )

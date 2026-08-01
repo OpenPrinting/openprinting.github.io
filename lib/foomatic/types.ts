@@ -70,6 +70,7 @@ export interface PrinterSummary {
   status?: string
   driverCount?: number
   functionality?: string
+  color?: boolean | "unknown"
 }
 
 export interface DriverPrinterRef {
