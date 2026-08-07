@@ -248,6 +248,49 @@ function logSpotCheck(
   }
 }
 
+// A handful of upstream printer ids differ only by letter case. On a
+// case-insensitive filesystem (Windows, and macOS by default) the later shard
+// overwrites the earlier one, so those printers would show the wrong
+// recommendations locally. CI builds on Linux, where every id gets its own
+// file, so this is a local-development caveat rather than a production bug.
+function warnOnCaseInsensitiveCollisions(printerIds: string[]): void {
+  const seen = new Map<string, string>();
+  const collisions: Array<[string, string]> = [];
+
+  for (const id of printerIds) {
+    const key = id.toLowerCase();
+    const previous = seen.get(key);
+
+    if (previous) {
+      collisions.push([previous, id]);
+    } else {
+      seen.set(key, id);
+    }
+  }
+
+  if (collisions.length === 0) {
+    return;
+  }
+
+  const written = fs.readdirSync(RECOMMENDATIONS_DIR).length;
+
+  if (written === printerIds.length) {
+    return;
+  }
+
+  console.warn(
+    `\n! ${collisions.length} printer id(s) differ only by case and collapsed on this filesystem:`,
+  );
+
+  for (const [a, b] of collisions) {
+    console.warn(`    ${a}  <->  ${b}`);
+  }
+
+  console.warn(
+    `  ${written}/${printerIds.length} shards written. Linux/CI builds are unaffected.`,
+  );
+}
+
 function loadFeatureMatrix(): FeatureMatrix {
   if (!fs.existsSync(MATRIX_FILE)) {
     throw new Error(
@@ -369,12 +412,32 @@ function main(): void {
 
   fs.mkdirSync(RECOMMENDATIONS_DIR, { recursive: true });
 
+  // Each per-printer shard embeds the handful of display fields the UI needs
+  // for its cards. Costs ~0.9 KB per shard, but lets the printer page render
+  // recommendations without also downloading the ~1.5 MB printersMap.json.
   for (const [printerId, recs] of Object.entries(output.recommendations)) {
+    const enriched = recs.map((rec) => {
+      const candidate = printerMap.get(rec.id);
+
+      // Defaults mirror split-printers.ts's printersMap projection exactly, so
+      // the rendered cards are identical to the previous map-based lookup.
+      return {
+        ...rec,
+        manufacturer: candidate?.manufacturer,
+        model: candidate?.model,
+        status: candidate?.status || "Unknown",
+        type: candidate?.type || "unknown",
+        driverCount: candidate?.drivers ? candidate.drivers.length : 0,
+      };
+    });
+
     fs.writeFileSync(
       path.join(RECOMMENDATIONS_DIR, `${printerId}.json`),
-      JSON.stringify(recs),
+      JSON.stringify(enriched),
     );
   }
+
+  warnOnCaseInsensitiveCollisions(Object.keys(output.recommendations));
 
   logScoreDistribution(recommendations);
 

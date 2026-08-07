@@ -66,8 +66,8 @@ Everything under `app/foomatic` and `components/foomatic` is a Next.js **client 
 
 `RecommendedPrintersSection.tsx`:
 
-1. Fetches `public/foomatic-db/recommendations/${printerId}.json` (this printer's top-10 list) and `public/foomatic-db/printersMap.json` (for rendering manufacturer/model/status of each recommended printer) in parallel.
-2. The `printersMap.json` fetch is cached at module scope (`printersMapCache`) so navigating between printer detail pages in the same session doesn't refetch it every time; a failed fetch resets the cache to `null` so the next mount retries instead of permanently caching a failure.
+1. Fetches exactly one file: `public/foomatic-db/recommendations/${printerId}.json`. Each entry already carries the `manufacturer`/`model`/`status`/`type`/`driverCount` fields the card renders, denormalized by `compute-similarity.ts`, so no second lookup against `printersMap.json` is needed.
+2. If you add a field to the card, add it to the denormalization block in `compute-similarity.ts` (and to the schema in [foomatic-data-formats.md](./foomatic-data-formats.md#publicfoomatic-dbrecommendationsidjson)) rather than reintroducing a `printersMap.json` fetch here — that file is ~1.5 MB and would dominate the page's transfer cost.
 3. Renders only the **top 3** recommendations (`recs.slice(0, 3)`) — the underlying data has up to 10, the UI deliberately shows fewer to keep the section compact.
 4. `ConfidenceBadge` maps a raw cosine score to a label: `score >= 0.9995` → "Exact match"; otherwise a `${percent}% match`, colored by threshold (≥85% emerald, ≥70% amber, below muted).
 5. `sharedFeatures` (the explanation strings produced by `computeSharedFeatures()` in the pipeline) are rendered as a labeled chip list under "Why this printer?".

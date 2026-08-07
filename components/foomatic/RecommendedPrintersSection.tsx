@@ -12,58 +12,27 @@ import {
 import { withBasePath } from "@/lib/foomatic/base-path"
 import { printerHref } from "@/lib/foomatic/routes"
 
+// Display fields are embedded in each per-printer recommendation shard by
+// compute-similarity.ts, so this section needs exactly one small fetch.
 interface Recommendation {
   id: string
   score: number
   sharedFeatures: string[]
-}
-
-interface PrinterSummary {
-  id: string
-  manufacturer: string
-  model: string
+  manufacturer?: string
+  model?: string
   status: string
   type: string
-  functionality: string
   driverCount: number
-}
-
-interface PrintersMapData {
-  printers: PrinterSummary[]
 }
 
 interface RecommendedPrintersSectionProps {
   printerId: string
 }
 
-// printersMap.json is ~1.5 MB and shared by every printer page, so the parsed
-// map is memoised for the lifetime of the tab. A failed fetch clears the cache
-// so the next mount retries instead of reusing a rejected promise.
-let printersMapCache: Promise<Map<string, PrinterSummary>> | null = null
-
-function getPrintersMap(): Promise<Map<string, PrinterSummary>> {
-  if (!printersMapCache) {
-    printersMapCache = fetch(withBasePath("/foomatic-db/printersMap.json"))
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("printersMap fetch failed")
-        }
-        return response.json() as Promise<PrintersMapData>
-      })
-      .then((data) => new Map(data.printers.map((printer) => [printer.id, printer])))
-      .catch((error) => {
-        printersMapCache = null
-        throw error
-      })
-  }
-
-  return printersMapCache
-}
-
 function ConfidenceBadge({ score }: { score: number }) {
   if (score >= 0.9995) {
     return (
-      <span className="inline-flex items-center gap-1 text-sm font-medium text-emerald-600 dark:text-emerald-400">
+      <span className="inline-flex items-center gap-1 text-sm font-medium text-emerald-700 dark:text-emerald-400">
         <CheckCircle2 className="h-3.5 w-3.5" aria-hidden="true" />
         Exact match
       </span>
@@ -73,9 +42,9 @@ function ConfidenceBadge({ score }: { score: number }) {
   const percentage = Math.round(score * 100)
   const toneClass =
     percentage >= 85
-      ? "text-emerald-600 dark:text-emerald-400"
+      ? "text-emerald-700 dark:text-emerald-400"
       : percentage >= 70
-        ? "text-amber-600 dark:text-amber-400"
+        ? "text-amber-700 dark:text-amber-400"
         : "text-muted-foreground"
 
   return <span className={`text-sm font-medium ${toneClass}`}>{percentage}% match</span>
@@ -113,7 +82,6 @@ export default function RecommendedPrintersSection({
   printerId,
 }: RecommendedPrintersSectionProps) {
   const [recommendations, setRecommendations] = useState<Recommendation[]>([])
-  const [printerMap, setPrinterMap] = useState<Map<string, PrinterSummary>>(new Map())
   const [loading, setLoading] = useState(true)
   const [hasRecommendations, setHasRecommendations] = useState(true)
 
@@ -124,16 +92,13 @@ export default function RecommendedPrintersSection({
       setLoading(true)
 
       try {
-        const [recommendationsResponse, map] = await Promise.all([
-          fetch(withBasePath(`/foomatic-db/recommendations/${printerId}.json`)),
-          getPrintersMap(),
-        ])
+        const recommendationsResponse = await fetch(
+          withBasePath(`/foomatic-db/recommendations/${printerId}.json`)
+        )
 
         if (cancelled) {
           return
         }
-
-        setPrinterMap(map)
 
         if (!recommendationsResponse.ok) {
           setHasRecommendations(false)
@@ -192,32 +157,29 @@ export default function RecommendedPrintersSection({
           </FoomaticCard>
         ) : (
           recommendations.map((recommendation) => {
-            const printer = printerMap.get(recommendation.id)
-
-            if (!printer) {
-              return null
-            }
+            const model = recommendation.model ?? recommendation.id
+            const manufacturer = recommendation.manufacturer ?? ""
 
             return (
               <FoomaticCard key={recommendation.id} className="p-6">
                 <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
                   <div className="space-y-3">
                     <div>
-                      <p className="text-sm text-muted-foreground">{printer.manufacturer}</p>
-                      <h3 className="text-xl font-semibold tracking-tight">{printer.model}</h3>
+                      <p className="text-sm text-muted-foreground">{manufacturer}</p>
+                      <h3 className="text-xl font-semibold tracking-tight">{model}</h3>
                     </div>
 
                     <div className="flex flex-wrap gap-2">
-                      <FoomaticStatusBadge status={printer.status} />
+                      <FoomaticStatusBadge status={recommendation.status} />
 
                       <FoomaticBadge className="border-border bg-accent/50 text-muted-foreground">
-                        {printer.driverCount} driver
-                        {printer.driverCount === 1 ? "" : "s"}
+                        {recommendation.driverCount} driver
+                        {recommendation.driverCount === 1 ? "" : "s"}
                       </FoomaticBadge>
 
-                      {printer.type !== "unknown" ? (
+                      {recommendation.type !== "unknown" ? (
                         <FoomaticBadge className="border-border bg-accent/50 text-muted-foreground">
-                          {printer.type}
+                          {recommendation.type}
                         </FoomaticBadge>
                       ) : null}
                     </div>
@@ -229,7 +191,7 @@ export default function RecommendedPrintersSection({
                         </p>
                         <ul
                           className="flex flex-wrap gap-2"
-                          aria-label={`Reasons ${printer.manufacturer} ${printer.model} was recommended`}
+                          aria-label={`Reasons ${manufacturer} ${model} was recommended`}
                         >
                           {recommendation.sharedFeatures.map((feature) => (
                             <li key={feature}>
@@ -247,9 +209,9 @@ export default function RecommendedPrintersSection({
                     <ConfidenceBadge score={recommendation.score} />
 
                     <Link
-                      href={printerHref(printer.id, printer.manufacturer)}
+                      href={printerHref(recommendation.id, manufacturer)}
                       className="inline-flex items-center rounded-md border border-border px-4 py-2 text-sm font-medium hover:bg-accent"
-                      aria-label={`View ${printer.manufacturer} ${printer.model}`}
+                      aria-label={`View ${manufacturer} ${model}`}
                     >
                       View printer
                     </Link>

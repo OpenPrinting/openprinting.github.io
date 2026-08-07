@@ -146,17 +146,27 @@ interface Output {
 **Produced by:** `compute-similarity.ts` (same run as above, written per-printer for fetch efficiency)
 **Consumed by:** `RecommendedPrintersSection.tsx`
 
-A single printer's recommendation array — i.e. `recommendations.json`'s `recommendations[id]` value in isolation:
+A single printer's recommendation array — `recommendations.json`'s `recommendations[id]` value, plus the display fields each card needs:
 
 ```ts
 type RecommendationsForPrinter = Array<{
   id: string
   score: number
   sharedFeatures: string[]
+  // Denormalized from printers.json so the printer page can render the
+  // recommendation cards from this one file alone. Defaults mirror the
+  // printersMap.json projection exactly.
+  manufacturer?: string
+  model?: string
+  status: string                     // "Perfect" | "Mostly" | ... | "Unknown"
+  type: string                       // "laser" | "inkjet" | "dot-matrix" | "unknown"
+  driverCount: number
 }>
 ```
 
-The detail page only ever needs the current printer's own recommendations, so fetching this file instead of the ~20+ MB combined `recommendations.json` is what keeps the printer detail page's initial load small (see commit `perf(recommendations): split recommendation data per printer`).
+The detail page only ever needs the current printer's own recommendations, so fetching this file instead of the ~23 MB combined `recommendations.json` is what keeps the printer detail page's initial load small (see commit `perf(recommendations): split recommendation data per printer`).
+
+The denormalized display fields cost roughly 0.9 KB per shard (median 2.2 KB → 3.1 KB) but remove a second ~1.5 MB `printersMap.json` fetch that the section previously needed purely to resolve manufacturer/model/status for the three cards it renders — a net reduction from ~1,495 KB to ~3 KB per printer-page visit. They are intentionally *not* added to the combined `recommendations.json`, which stays a compact diagnostic artifact.
 
 ---
 

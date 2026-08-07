@@ -81,7 +81,7 @@ This is the direct, measured effect of the four feature-addition commits — not
 
 Not a scoring-quality change, but a necessary scale fix once `recommendations.json` grew large: the full recommendation map for ~6,600 printers serializes to **23.15 MB** (measured from the current production artifact — see `compute-similarity.ts` runtime logging). Shipping that to every printer detail page visit would be a significant and unnecessary page-weight cost, since a single page only ever needs one printer's own top-10 list.
 
-The fix splits the combined file into one small file per printer (median 2.2 KB, max 4.9 KB) under `recommendations/<id>.json` (see [foomatic-data-formats.md](./foomatic-data-formats.md#publicfoomatic-dbrecommendationsidjson)), so `RecommendedPrintersSection.tsx` fetches only the relevant slice instead of the full 23 MB map.
+The fix splits the combined file into one small file per printer (median 3.1 KB, max 5.8 KB, including denormalized card fields) under `recommendations/<id>.json` (see [foomatic-data-formats.md](./foomatic-data-formats.md#publicfoomatic-dbrecommendationsidjson)), so `RecommendedPrintersSection.tsx` fetches only the relevant slice instead of the full 23 MB map.
 
 ---
 
