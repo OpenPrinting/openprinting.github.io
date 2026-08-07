@@ -18,23 +18,71 @@ This reproduces the same `logScoreDistribution()`/`logSpotCheck()` diagnostics t
 
 ---
 
+## Scoring Model
+
+The published score is not a bare cosine. Three corrections are applied, each
+introduced because a measured failure mode demanded it:
+
+```
+score(a,b) = cos(a,b) . (1 - exp(-k / tau)) . PROD(conflict penalties)
+```
+
+**1. IDF-weighted features.** Driver-family and command-set dimensions are scaled
+by `idf(t) = ln(1 + N / df(t))`, renormalized to mean 1 across the vocabulary.
+Sharing `postscript` (1,746 of 6,657 printers) yields weight 0.62; sharing
+`necp6` (8 printers) yields 2.64. Without this, every PostScript printer looked
+equally similar to every other, and the top-3 was an arbitrary slice of a
+1,700-printer cluster.
+
+**2. Evidence damping.** Cosine on sparse one-hot vectors returns exactly 1.0
+whenever both vectors are near-empty: two printers sharing one dimension, with
+every other attribute unknown, are geometrically identical. `k` counts the
+dimensions on which both printers are non-zero, and `1 - exp(-k/tau)` with
+`tau = 4` maps k = 1 -> 0.22, 4 -> 0.63, 8 -> 0.86, 12 -> 0.95. Before this,
+recommendations resting on a single catch-all driver scored *higher* on average
+(0.992) than recommendations backed by eleven shared features (0.984).
+
+**3. Capability-conflict penalties.** The vector space can express agreement but
+not contradiction, so a mono printer sharing a driver family with a colour one
+still scored well despite being unable to substitute for it. Hard substitution
+barriers are applied multiplicatively (see the table below).
+
+---
+
 ## The Collapse Problem
 
 The baseline pipeline (driver family + type + functionality only) suffered from a textbook similarity-collapse failure mode: many functionally different printers share the same generic driver, so their feature vectors were nearly identical regardless of actual hardware differences. The measured signature of this is **score saturation** — recommendations clustering at a perfect cosine score of 1.000 even between printers that are not, in fact, equivalent.
 
-### Score saturation (% of all recommendations scoring ≥ 0.9995, i.e. "exact match")
+### Score saturation (% of recommendations scoring >= 0.9995, i.e. "exact match")
 
-| Milestone | Saturated recommendations | Mean score | p10 score |
+Feature engineering alone reduced saturation from 92.0% to 79.8%, but did not
+solve it: four in five recommendations were still presented as perfect matches.
+The scoring-model corrections above removed it entirely.
+
+| Stage | Saturated | Mean score | p10 |
 |---|---|---|---|
-| Baseline | **92.0%** (58,008 / 63,073) | 0.996 | 1.000 |
-| +Color | 88.1% (57,622 / 65,421) | 0.972 | 0.967 |
-| +Commandsets | 84.4% (55,214 / 65,421) | 0.974 | 0.955 |
-| +PS/PCL level | 82.8% (54,228 / 65,469) | 0.973 | 0.953 |
-| +Resolution | **79.8%** (52,386 / 65,616) | 0.969 | 0.935 |
+| Baseline (driver + type + functionality) | **92.0%** | 0.996 | 1.000 |
+| + colour | 88.1% | 0.972 | 0.967 |
+| + commandsets | 84.4% | 0.974 | 0.955 |
+| + PS/PCL level | 82.8% | 0.973 | 0.953 |
+| + resolution (feature engineering complete) | 79.8% | 0.969 | 0.935 |
+| **+ IDF, evidence damping, conflict penalties** | **0.0%** | **0.814** | **0.393** |
 
-At baseline, **92% of all top-10 recommendations across the entire database scored a perfect 1.000** — meaning the engine could not discriminate between the vast majority of candidate printers it considered similar. By the final feature set, that figure dropped to **79.8%**, and the 10th-percentile score dropped from a flat 1.000 to 0.935, meaning the engine's score distribution gained real discriminative range instead of pinning almost everything to "identical."
+Measured over the 19,606 recommendations actually displayed (top-3 per printer).
+The score histogram changed from a single spike (17,212 of 19,827 at 1.0) to a
+spread distribution peaking at 0.9 and reaching down to 0.3.
 
-This is not a cosmetic change: a recommendation engine that scores 92% of its suggestions as "exact matches" is not actually ranking — it's returning an arbitrary subset of same-driver printers. Each feature addition measurably increased the engine's ability to tell printers apart.
+The decisive metric is the correlation between how much evidence supports a
+recommendation and the confidence shown for it:
+
+| | Before | After |
+|---|---|---|
+| Corr(shared features, score) | 0.078 | **0.849** |
+| Mean score, weak evidence (<= 1 shared feature) | 0.992 | 0.393 |
+| Mean score, strong evidence (>= 2) | 0.984 | 0.859 |
+
+Before, the confidence signal was *inverted*: thin recommendations scored higher
+than well-supported ones. It is now strongly aligned.
 
 ### Recommendation churn
 
@@ -66,7 +114,11 @@ All weights live as named constants at the top of `scripts/foomatic/vectorize.ts
 | `FUNCTIONALITY_WEIGHT` | 0.25 | `vectorize.ts` | Linux support grade (A/B/C), weakest signal |
 | `MIN_COMMANDSET_FREQUENCY` | 20 | `vectorize.ts` | Commandset tokens rarer than this are dropped from the vocabulary as noise |
 | `TOP_K` | 10 | `compute-similarity.ts` | Candidates retained per printer |
-| `MIN_SIMILARITY_SCORE` | 0.25 | `compute-similarity.ts` | Candidates below this are discarded entirely |
+| `MIN_SIMILARITY_SCORE` | 0.35 | `compute-similarity.ts` | Floor on the damped score; removes single-dimension matches automatically |
+| `EVIDENCE_TAU` | 4 | `compute-similarity.ts` | Damping constant in `1 - exp(-k/tau)`; larger = harsher on thin evidence |
+| `TYPE_CONFLICT_PENALTY` | 0.5 | `compute-similarity.ts` | Applied when both mechanism types are known and differ |
+| `COLOR_CONFLICT_PENALTY` | 0.6 | `compute-similarity.ts` | Applied when one prints colour and the other does not |
+| `RESOLUTION_CONFLICT_PENALTY` | 0.7 | `compute-similarity.ts` | Applied when max resolutions differ by >= 4x |
 | `EXACT_MATCH_THRESHOLD` | 0.9995 | `RecommendedPrintersSection.tsx` | Score at/above which the UI shows "Exact match" instead of a percentage |
 | `STRONG_MATCH_PERCENT` | 85 | `RecommendedPrintersSection.tsx` | Confidence badge shown in emerald at/above this |
 | `MODERATE_MATCH_PERCENT` | 70 | `RecommendedPrintersSection.tsx` | Confidence badge shown in amber at/above this; muted below |

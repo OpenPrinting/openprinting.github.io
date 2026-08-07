@@ -34,6 +34,22 @@ interface Vocabulary {
   supportedDrivers: string[];
   types: string[];
   commandsets: string[];
+  // Inverse-document-frequency scale per vocabulary term, normalized to mean 1
+  // so overall feature-group balance is preserved while rare terms outweigh
+  // ubiquitous ones. Sharing "postscript" (1746 printers) is weak evidence;
+  // sharing "necp6" (8 printers) is strong evidence.
+  idf: {
+    recommendedDrivers: number[];
+    supportedDrivers: number[];
+    commandsets: number[];
+  };
+}
+
+// idf(t) = ln(1 + N / df(t)), rescaled so the mean across the vocabulary is 1.
+function idfScale(terms: string[], df: Map<string, number>, total: number): number[] {
+  const raw = terms.map((t) => Math.log(1 + total / Math.max(1, df.get(t) ?? 1)));
+  const mean = raw.reduce((a, b) => a + b, 0) / (raw.length || 1);
+  return mean > 0 ? raw.map((v) => v / mean) : raw.map(() => 1);
 }
 
 interface FeatureMatrix {
@@ -65,15 +81,21 @@ function buildVocabularies(printers: Printer[]): Vocabulary {
 
   const commandsetFreq = new Map<string, number>();
 
+  const recommendedFreq = new Map<string, number>();
+
+  const supportedFreq = new Map<string, number>();
+
   for (const printer of printers) {
     const recommended = getRecommendedDriverFamily(printer);
 
     if (recommended) {
       recommendedDrivers.add(recommended);
+      recommendedFreq.set(recommended, (recommendedFreq.get(recommended) ?? 0) + 1);
     }
 
     for (const family of getSupportedDriverFamilies(printer)) {
       supportedDrivers.add(family);
+      supportedFreq.set(family, (supportedFreq.get(family) ?? 0) + 1);
     }
 
     const type = trim(printer.type);
@@ -92,11 +114,20 @@ function buildVocabularies(printers: Printer[]): Vocabulary {
     .map(([cs]) => cs)
     .sort();
 
+  const recommendedList = [...recommendedDrivers].sort();
+  const supportedList = [...supportedDrivers].sort();
+  const total = printers.length;
+
   return {
-    recommendedDrivers: [...recommendedDrivers].sort(),
-    supportedDrivers: [...supportedDrivers].sort(),
+    recommendedDrivers: recommendedList,
+    supportedDrivers: supportedList,
     types: [...types].sort(),
     commandsets,
+    idf: {
+      recommendedDrivers: idfScale(recommendedList, recommendedFreq, total),
+      supportedDrivers: idfScale(supportedList, supportedFreq, total),
+      commandsets: idfScale(commandsets, commandsetFreq, total),
+    },
   };
 }
 
@@ -134,12 +165,16 @@ function encodePrinter(printer: Printer, vocab: Vocabulary): number[] {
   const type = trim(printer.type);
 
   return [
-    ...vocab.recommendedDrivers.map((driver) =>
-      driver === recommended ? RECOMMENDED_DRIVER_WEIGHT : 0,
+    ...vocab.recommendedDrivers.map((driver, i) =>
+      driver === recommended
+        ? RECOMMENDED_DRIVER_WEIGHT * vocab.idf.recommendedDrivers[i]
+        : 0,
     ),
 
-    ...vocab.supportedDrivers.map((driver) =>
-      supported.has(driver) ? SUPPORTED_DRIVER_WEIGHT : 0,
+    ...vocab.supportedDrivers.map((driver, i) =>
+      supported.has(driver)
+        ? SUPPORTED_DRIVER_WEIGHT * vocab.idf.supportedDrivers[i]
+        : 0,
     ),
 
     ...vocab.types.map((t) => (t === type ? TYPE_WEIGHT : 0)),
@@ -148,8 +183,10 @@ function encodePrinter(printer: Printer, vocab: Vocabulary): number[] {
 
     printer.color === true ? COLOR_WEIGHT : 0,
 
-    ...vocab.commandsets.map((cs) =>
-      (printer.commandsetTokens ?? []).includes(cs) ? COMMANDSET_WEIGHT : 0,
+    ...vocab.commandsets.map((cs, i) =>
+      (printer.commandsetTokens ?? []).includes(cs)
+        ? COMMANDSET_WEIGHT * vocab.idf.commandsets[i]
+        : 0,
     ),
 
     printer.psLevel != null ? LANG_WEIGHT : 0,
