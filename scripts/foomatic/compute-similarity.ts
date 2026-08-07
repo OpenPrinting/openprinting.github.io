@@ -2,6 +2,16 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import type { Printer } from "../../lib/foomatic/types";
+import {
+  getRecommendedDriverFamily,
+  getSupportedDriverFamilies,
+} from "../../lib/foomatic/driver-family";
+import {
+  cosineSimilarity,
+  magnitude,
+  insertTopK,
+} from "../../lib/foomatic/similarity-math";
+import type { ScoredCandidate } from "../../lib/foomatic/similarity-math";
 
 const ROOT_DIR = path.join(
   path.dirname(fileURLToPath(import.meta.url)),
@@ -63,107 +73,6 @@ interface Output {
   printerCount: number;
   topK: number;
   recommendations: RecommendationMap;
-}
-
-interface Candidate {
-  index: number;
-  score: number;
-}
-
-const DRIVER_PREFIX_NORMALIZERS: Array<[RegExp, string]> = [
-  [/^Postscript/i, "postscript"],
-  [/^PDF/i, "pdf"],
-  [/^pxlmono/i, "pxlmono"],
-  [/^pxlcolor/i, "pxlcolor"],
-  [/^foo2zjs/i, "foo2zjs"],
-  [/^foo2hp/i, "foo2hp"],
-  [/^foo2qpdl/i, "foo2qpdl"],
-  [/^hpijs/i, "hpijs"],
-  [/^gutenprint/i, "gutenprint"],
-  [/^gimp-print/i, "gutenprint"],
-  [/^hplip/i, "hplip"],
-  [/^ljet/i, "laserjet"],
-  [/^lj/i, "laserjet"],
-];
-
-function trim(value: string | undefined): string {
-  return (value ?? "").trim();
-}
-
-function normalizeDriverFamily(driverName: string): string {
-  const normalized = trim(driverName).replace(/^driver\//i, "");
-
-  for (const [pattern, family] of DRIVER_PREFIX_NORMALIZERS) {
-    if (pattern.test(normalized)) {
-      return family;
-    }
-  }
-
-  return normalized.toLowerCase();
-}
-
-function getRecommendedDriverFamily(printer: Printer): string | null {
-  const driver = trim(printer.recommended_driver);
-
-  if (!driver) {
-    return null;
-  }
-
-  return normalizeDriverFamily(driver);
-}
-
-function getSupportedDriverFamilies(printer: Printer): string[] {
-  const families = new Set<string>();
-
-  for (const driver of printer.drivers ?? []) {
-    const family = normalizeDriverFamily(driver.name);
-
-    if (family) {
-      families.add(family);
-    }
-  }
-
-  return [...families];
-}
-
-function dotProduct(a: number[], b: number[]): number {
-  let sum = 0;
-
-  for (let i = 0; i < a.length; i++) {
-    sum += a[i] * b[i];
-  }
-
-  return sum;
-}
-
-function magnitude(vec: number[]): number {
-  return Math.sqrt(dotProduct(vec, vec));
-}
-
-function cosineSimilarity(
-  a: number[],
-  b: number[],
-  magA: number,
-  magB: number,
-): number {
-  if (magA === 0 || magB === 0) {
-    return 0;
-  }
-
-  return dotProduct(a, b) / (magA * magB);
-}
-
-function insertTopK(topK: Candidate[], candidate: Candidate): void {
-  if (topK.length < TOP_K) {
-    topK.push(candidate);
-    topK.sort((a, b) => a.score - b.score);
-    return;
-  }
-
-  if (candidate.score > topK[0].score) {
-    topK[0] = candidate;
-    topK.sort((a, b) => a.score - b.score);
-  }
 }
 
 function computeSharedFeatures(a: Printer, b: Printer): string[] {
@@ -386,7 +295,7 @@ function main(): void {
     const vecA = matrixData.matrix[i];
     const magA = magnitudes[i];
 
-    const topK: Candidate[] = [];
+    const topK: ScoredCandidate[] = [];
 
     for (let j = 0; j < matrixData.printerCount; j++) {
       if (i === j) {
@@ -402,10 +311,14 @@ function main(): void {
         continue;
       }
 
-      insertTopK(topK, {
-        index: j,
-        score,
-      });
+      insertTopK(
+        topK,
+        {
+          index: j,
+          score,
+        },
+        TOP_K,
+      );
     }
 
     topK.sort((a, b) => b.score - a.score);

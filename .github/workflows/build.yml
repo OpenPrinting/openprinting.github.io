@@ -76,6 +76,9 @@ jobs:
       - name: Run linter
         run: ${{ steps.pm.outputs.runner }} lint
 
+      - name: Run unit tests
+        run: ${{ steps.pm.outputs.runner }} test
+
       - name: Build Next.js
         run: ${{ steps.pm.outputs.runner }} build
         env:

@@ -2,6 +2,12 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import type { Printer } from "../../lib/foomatic/types";
+import {
+  trim,
+  getRecommendedDriverFamily,
+  getSupportedDriverFamilies,
+} from "../../lib/foomatic/driver-family";
+import { encodeFunctionality } from "../../lib/foomatic/printer-attributes";
 
 const ROOT_DIR = path.join(
   path.dirname(fileURLToPath(import.meta.url)),
@@ -39,22 +45,6 @@ interface FeatureMatrix {
   matrix: number[][];
 }
 
-const DRIVER_PREFIX_NORMALIZERS: Array<[RegExp, string]> = [
-  [/^Postscript/i, "postscript"],
-  [/^PDF/i, "pdf"],
-  [/^pxlmono/i, "pxlmono"],
-  [/^pxlcolor/i, "pxlcolor"],
-  [/^foo2zjs/i, "foo2zjs"],
-  [/^foo2hp/i, "foo2hp"],
-  [/^foo2qpdl/i, "foo2qpdl"],
-  [/^hpijs/i, "hpijs"],
-  [/^gutenprint/i, "gutenprint"],
-  [/^gimp-print/i, "gutenprint"],
-  [/^hplip/i, "hplip"],
-  [/^ljet/i, "laserjet"],
-  [/^lj/i, "laserjet"],
-];
-
 const RECOMMENDED_DRIVER_WEIGHT = 3.0;
 const SUPPORTED_DRIVER_WEIGHT = 1.0;
 const TYPE_WEIGHT = 0.5;
@@ -65,59 +55,6 @@ const MIN_COMMANDSET_FREQUENCY = 20;
 const LANG_WEIGHT = 1.0;
 const LANG_LEVEL_WEIGHT = 0.5;
 const RESOLUTION_WEIGHT = 0.75;
-
-function trim(value: string | undefined): string {
-  return (value ?? "").trim();
-}
-
-function encodeFunctionality(value: string | undefined): number {
-  switch ((value ?? "").toUpperCase()) {
-    case "A":
-      return 1.0;
-    case "B":
-      return 0.66;
-    case "C":
-      return 0.33;
-    default:
-      return 0.0;
-  }
-}
-
-function normalizeDriverFamily(driverName: string): string {
-  const normalized = trim(driverName).replace(/^driver\//i, "");
-
-  for (const [pattern, family] of DRIVER_PREFIX_NORMALIZERS) {
-    if (pattern.test(normalized)) {
-      return family;
-    }
-  }
-
-  return normalized.toLowerCase();
-}
-
-function getSupportedDriverFamilies(printer: Printer): string[] {
-  const families = new Set<string>();
-
-  for (const driver of printer.drivers ?? []) {
-    const family = normalizeDriverFamily(driver.name);
-
-    if (family) {
-      families.add(family);
-    }
-  }
-
-  return [...families];
-}
-
-function getRecommendedDriverFamily(printer: Printer): string | null {
-  const driver = trim(printer.recommended_driver);
-
-  if (!driver) {
-    return null;
-  }
-
-  return normalizeDriverFamily(driver);
-}
 
 function buildVocabularies(printers: Printer[]): Vocabulary {
   const recommendedDrivers = new Set<string>();

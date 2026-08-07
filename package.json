@@ -9,6 +9,7 @@
     "build": "yarn generate && next build && tsx scripts/foomatic/generate-legacy-redirects.ts",
     "start": "next start",
     "lint": "next lint",
+    "test": "vitest run",
     "foomatic:pipeline": "tsx scripts/foomatic/data-generate.ts",
     "foomatic:data:vectorize": "tsx scripts/foomatic/vectorize.ts",
     "foomatic:data:similarity": "tsx scripts/foomatic/compute-similarity.ts"
@@ -55,6 +56,7 @@
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
     "tsx": "^4.21.0",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^4.1.10"
   }
 }

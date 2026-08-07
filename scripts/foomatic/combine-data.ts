@@ -2,6 +2,18 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import {
+  getText,
+  getFunctionalityStatus,
+  getPrinterType,
+  getCommandsetTokens,
+  getBooleanCapability,
+  getColorCapability,
+  getDuplexCapability,
+  getMaxDpi,
+  getPSLevel,
+  getPCLLevel,
+} from "../../lib/foomatic/printer-attributes";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -18,90 +30,6 @@ function toArray(value) {
   }
 
   return Array.isArray(value) ? value : [value];
-}
-
-function getText(value) {
-  if (value === undefined || value === null) {
-    return undefined;
-  }
-
-  if (typeof value === "string") {
-    return value.trim() || undefined;
-  }
-
-  if (typeof value === "number" || typeof value === "boolean") {
-    return String(value);
-  }
-
-  if (Array.isArray(value)) {
-    const text = value.map(getText).filter(Boolean).join(", ").trim();
-    return text || undefined;
-  }
-
-  if (typeof value === "object") {
-    if (typeof value.en === "string") {
-      return value.en.trim() || undefined;
-    }
-
-    if (typeof value["#text"] === "string") {
-      return value["#text"].trim() || undefined;
-    }
-
-    for (const key of Object.keys(value)) {
-      const nested = getText(value[key]);
-      if (nested) {
-        return nested;
-      }
-    }
-  }
-
-  return undefined;
-}
-
-function getFunctionalityStatus(func) {
-  if (!func || func === "?") {
-    return "Unknown";
-  }
-
-  switch (func) {
-    case "A":
-      return "Perfect";
-    case "B":
-    case "C":
-      return "Mostly";
-    default:
-      return "Unsupported";
-  }
-}
-
-function getPrinterType(printer) {
-  if (!printer.mechanism) {
-    return "unknown";
-  }
-
-  const mechanism = printer.mechanism;
-
-  if (mechanism.inkjet !== undefined) {
-    return "inkjet";
-  }
-
-  if (mechanism.laser !== undefined) {
-    return "laser";
-  }
-
-  if (mechanism.dotmatrix !== undefined) {
-    return "dot-matrix";
-  }
-
-  if (mechanism.transfer === "i") {
-    return "inkjet";
-  }
-
-  if (mechanism.transfer === "t") {
-    return "laser";
-  }
-
-  return "unknown";
 }
 
 function parseConnectivity(printer) {
@@ -199,54 +127,11 @@ function getCommandsets(printer) {
   return Array.from(new Set(sets));
 }
 
-function normalizeCommandsetToken(raw) {
-  const t = raw.trim();
-  if (!t) return null;
-  const u = t.toUpperCase();
-  if (/^(POSTSCRIPT\d*|ADOBE\s+POSTSCRIPT|ADOBE\s+LEVEL\s+\d+\s+POSTSCRIPT|PS\d?|POSTS$|POSTSCRIP$|POSTSCRI$|POSTSCRIPT\s+EMULATION|POSTSCRIPT\s+LEVEL|POSTSCRIPT\s+LE$|POSTSCRIPT\s+LEV$)/.test(u)) return "POSTSCRIPT";
-  if (/^(PCLXL|PCXL|PCL-XL|PCL6|PCL 6 EMULATION|HP ENHANCED PCL6)$/.test(u)) return "PCLXL";
-  if (/^(PCL5[CE]?\d*|HP ENHANCED PCL5[E]?|ENHANCED PCL5|PCL 5 EMULATION)$/.test(u)) return "PCL5E";
-  if (/^(DW-PCL)$/.test(u)) return "PCL";
-  if (/^(NONE|NA|P$|LPT1|1284\.4|DW-$|AUTOMATIC|DOWNLOAD|RASTER|GDI;MDL|PRINTGEAR;PCL;PLJ)$/.test(u)) return null;
-  return u;
-}
-
 /*
  * Distinct from getCommandsets(), which produces human-readable labels for
  * display (e.g. "PostScript 3"). This produces canonical short tokens
  * (e.g. "POSTSCRIPT") from autodetect data, used as similarity features.
  */
-function getCommandsetTokens(printer) {
-  const a = printer.autodetect;
-  if (!a) return [];
-
-  const rawTokens = [];
-
-  const pushCommaSplit = (val) => {
-    if (!val) return;
-    for (const t of String(val).split(",")) rawTokens.push(t.trim());
-  };
-
-  pushCommaSplit(a.general?.commandset);
-  pushCommaSplit(a.usb?.commandset);
-  pushCommaSplit(a.parallel?.commandset);
-
-  if (a.general?.ieee1284) {
-    const m = String(a.general.ieee1284).match(/CMD:([^;]+)/i);
-    if (m) pushCommaSplit(m[1]);
-  }
-
-  const seen = new Set();
-  const result = [];
-  for (const raw of rawTokens) {
-    const norm = normalizeCommandsetToken(raw);
-    if (norm && !seen.has(norm)) {
-      seen.add(norm);
-      result.push(norm);
-    }
-  }
-  return result.sort();
-}
 
 function getPpdOptions(printer) {
   const ppdNode =
@@ -314,90 +199,6 @@ function getSupportContacts(printer) {
       };
     })
     .filter(Boolean);
-}
-
-function getBooleanCapability(value) {
-  if (value === undefined || value === null) {
-    return "unknown";
-  }
-
-  if (typeof value === "boolean") {
-    return value;
-  }
-
-  const text = getText(value)?.toLowerCase();
-  if (!text) {
-    return "unknown";
-  }
-
-  if (["1", "true", "yes", "y", "color", "duplex"].includes(text)) {
-    return true;
-  }
-
-  if (["0", "false", "no", "n", "mono", "monochrome", "simplex"].includes(text)) {
-    return false;
-  }
-
-  return "unknown";
-}
-
-function getMaxDpi(printer) {
-  const dpi = printer.mechanism?.resolution?.dpi;
-  if (!dpi) return null;
-  const x = Number(dpi.x ?? dpi["@x"] ?? 0);
-  const y = Number(dpi.y ?? dpi["@y"] ?? 0);
-  const max = Math.max(x, y);
-  return max > 0 ? max : null;
-}
-
-function getColorCapability(printer) {
-  if (printer.mechanism && "color" in printer.mechanism) {
-    return true;
-  }
-
-  if (printer.mechanism && Object.keys(printer.mechanism).length > 0) {
-    return false;
-  }
-
-  return getBooleanCapability(
-    printer.color ??
-      printer.colors ??
-      printer.colorDevice ??
-      printer.capabilities?.color
-  );
-}
-
-function getPSLevel(printer) {
-  const ps = printer.lang?.postscript;
-  if (ps === undefined) return null;
-  const raw = (typeof ps === "object" && ps !== null) ? (ps["@level"] ?? ps.level ?? "") : String(ps);
-  const s = String(raw).trim();
-  if (!s || s === "?") return null;
-  if (["3", "III", "3.0"].includes(s)) return 3;
-  if (["2", "II"].includes(s)) return 2;
-  if (["1", "I"].includes(s)) return 1;
-  return 0;
-}
-
-function getPCLLevel(printer) {
-  const pcl = printer.lang?.pcl;
-  if (pcl === undefined) return null;
-  const raw = (typeof pcl === "object" && pcl !== null) ? (pcl["@level"] ?? pcl.level ?? "") : String(pcl);
-  const s = String(raw).trim();
-  if (!s || s === "?") return null;
-  if (/^6|\/6$|,\s*6$|^6\//i.test(s)) return 6;
-  if (/5[eEcC]/.test(s) || /^5/.test(s)) return 5;
-  if (/^4/.test(s)) return 4;
-  if (/^3/.test(s)) return 3;
-  return 0;
-}
-
-function getDuplexCapability(printer) {
-  return getBooleanCapability(
-    printer.duplex ??
-      printer.duplexer ??
-      printer.capabilities?.duplex
-  );
 }
 
 function buildPpdFileName(printerId, driverId) {
