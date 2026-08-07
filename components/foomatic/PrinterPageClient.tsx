@@ -84,7 +84,7 @@ export default function PrinterPageClient({ printerId }: PrinterPageClientProps)
         setLoading(true)
         setError(null)
 
-        const response = await fetch(withBasePath(`/foomatic-db/printers/${printerId}.json`))
+        const response = await fetch(withBasePath(`/foomatic-db/printers/${encodeURIComponent(printerId)}.json`))
         if (!response.ok) {
           throw new Error("This printer entry could not be loaded.")
         }

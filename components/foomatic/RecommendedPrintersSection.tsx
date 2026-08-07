@@ -99,7 +99,7 @@ export default function RecommendedPrintersSection({
 
       try {
         const recommendationsResponse = await fetch(
-          withBasePath(`/foomatic-db/recommendations/${printerId}.json`)
+          withBasePath(`/foomatic-db/recommendations/${encodeURIComponent(printerId)}.json`)
         )
 
         if (cancelled) {
@@ -119,8 +119,11 @@ export default function RecommendedPrintersSection({
 
         setRecommendations(recs.slice(0, 3))
         setHasRecommendations(recs.length > 0)
-      } catch {
+      } catch (err) {
+        // A missing shard is handled by the !ok branch above, so reaching here
+        // means a network or parse failure worth surfacing to the console.
         if (!cancelled) {
+          console.error("Failed to load recommendations:", err)
           setHasRecommendations(false)
         }
       } finally {

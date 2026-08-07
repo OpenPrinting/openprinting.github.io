@@ -5,7 +5,9 @@
 
 import type { Printer } from "./types"
 
-export const DRIVER_PREFIX_NORMALIZERS: Array<[RegExp, string]> = [
+// Add new entries here to fold another upstream driver naming variant onto an
+// existing family. Order matters: the first matching pattern wins.
+const DRIVER_PREFIX_NORMALIZERS: Array<[RegExp, string]> = [
   [/^Postscript/i, "postscript"],
   [/^PDF/i, "pdf"],
   [/^pxlmono/i, "pxlmono"],

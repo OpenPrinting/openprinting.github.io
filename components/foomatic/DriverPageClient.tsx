@@ -84,7 +84,7 @@ export default function DriverPageClient({ driverId }: DriverPageClientProps) {
         setLoading(true)
         setError(null)
 
-        const response = await fetch(withBasePath(`/foomatic-db/drivers/${driverId}.json`))
+        const response = await fetch(withBasePath(`/foomatic-db/drivers/${encodeURIComponent(driverId)}.json`))
         if (!response.ok) {
           throw new Error("This driver entry could not be loaded.")
         }

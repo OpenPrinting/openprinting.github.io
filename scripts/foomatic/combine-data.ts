@@ -7,7 +7,6 @@ import {
   getFunctionalityStatus,
   getPrinterType,
   getCommandsetTokens,
-  getBooleanCapability,
   getColorCapability,
   getDuplexCapability,
   getMaxDpi,
