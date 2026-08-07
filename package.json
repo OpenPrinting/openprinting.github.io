@@ -11,6 +11,10 @@
     "lint": "next lint",
     "test": "vitest run",
     "foomatic:pipeline": "tsx scripts/foomatic/data-generate.ts",
+    "foomatic:generate:xml": "tsx scripts/foomatic/generate-from-xml.ts",
+    "foomatic:generate:ppds": "bash scripts/foomatic/generate-ppds.sh",
+    "foomatic:data:combine": "tsx scripts/foomatic/combine-data.ts",
+    "foomatic:data:split": "tsx scripts/foomatic/split-printers.ts && tsx scripts/foomatic/split-drivers.ts",
     "foomatic:data:vectorize": "tsx scripts/foomatic/vectorize.ts",
     "foomatic:data:similarity": "tsx scripts/foomatic/compute-similarity.ts"
   },

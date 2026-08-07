@@ -250,7 +250,10 @@ function logSpotCheck(
 
 function loadFeatureMatrix(): FeatureMatrix {
   if (!fs.existsSync(MATRIX_FILE)) {
-    throw new Error(`Missing feature matrix: ${MATRIX_FILE}`);
+    throw new Error(
+      `Missing feature matrix: ${MATRIX_FILE}\n` +
+        `Run: yarn foomatic:data:vectorize`,
+    );
   }
 
   return JSON.parse(fs.readFileSync(MATRIX_FILE, "utf-8"));
@@ -258,7 +261,10 @@ function loadFeatureMatrix(): FeatureMatrix {
 
 function loadPrinters(): Printer[] {
   if (!fs.existsSync(PRINTERS_FILE)) {
-    throw new Error(`Missing printers.json: ${PRINTERS_FILE}`);
+    throw new Error(
+      `Missing printers.json: ${PRINTERS_FILE}\n` +
+        `Run: yarn foomatic:generate:xml && yarn foomatic:data:combine`,
+    );
   }
 
   const raw = JSON.parse(fs.readFileSync(PRINTERS_FILE, "utf-8"));
