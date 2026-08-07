@@ -78,3 +78,5 @@ jobs:
 
       - name: Build Next.js
         run: ${{ steps.pm.outputs.runner }} build
+        env:
+          FOOMATIC_SKIP_SIMILARITY: "1"
