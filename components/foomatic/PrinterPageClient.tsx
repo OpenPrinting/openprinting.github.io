@@ -31,19 +31,40 @@ interface PrinterPageClientProps {
 
 function LoadingState() {
   return (
-    <div className="grid gap-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.5fr)]" role="status" aria-label="Loading printer details">
-      <FoomaticCard className="space-y-4 p-6">
-        <div className="h-8 w-36 animate-pulse rounded bg-muted" />
-        <div className="h-5 w-28 animate-pulse rounded bg-muted" />
-        <div className="h-20 animate-pulse rounded-xl bg-muted" />
-      </FoomaticCard>
+    <div className="space-y-6" role="status" aria-label="Loading printer details">
+      <div className="grid gap-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.5fr)]">
+        <FoomaticCard className="space-y-4 p-6">
+          <div className="h-8 w-36 animate-pulse rounded bg-muted" />
+          <div className="h-5 w-28 animate-pulse rounded bg-muted" />
+          <div className="h-20 animate-pulse rounded-xl bg-muted" />
+        </FoomaticCard>
 
-      <div className="space-y-6">
-        {Array.from({ length: 2 }).map((_, index) => (
-          <FoomaticCard key={index} className="space-y-4 p-6">
-            <div className="h-7 w-40 animate-pulse rounded bg-muted" />
-            <div className="h-4 w-56 animate-pulse rounded bg-muted" />
-            <div className="h-20 animate-pulse rounded-xl bg-muted" />
+        <div className="space-y-6">
+          {Array.from({ length: 2 }).map((_, index) => (
+            <FoomaticCard key={index} className="space-y-4 p-6">
+              <div className="h-7 w-40 animate-pulse rounded bg-muted" />
+              <div className="h-4 w-56 animate-pulse rounded bg-muted" />
+              <div className="h-20 animate-pulse rounded-xl bg-muted" />
+            </FoomaticCard>
+          ))}
+        </div>
+      </div>
+
+      <div className="space-y-4">
+        <div className="h-7 w-44 animate-pulse rounded bg-muted" />
+        {Array.from({ length: 3 }).map((_, index) => (
+          <FoomaticCard key={index} className="p-6">
+            <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
+              <div className="flex-1 space-y-3">
+                <div className="h-3.5 w-24 animate-pulse rounded bg-muted" />
+                <div className="h-5 w-48 animate-pulse rounded bg-muted" />
+                <div className="flex gap-2">
+                  <div className="h-6 w-20 animate-pulse rounded-full bg-muted" />
+                  <div className="h-6 w-16 animate-pulse rounded-full bg-muted" />
+                </div>
+              </div>
+              <div className="h-9 w-28 animate-pulse rounded-md bg-muted" />
+            </div>
           </FoomaticCard>
         ))}
       </div>
@@ -121,6 +142,12 @@ export default function PrinterPageClient({ printerId }: PrinterPageClientProps)
   }
 
   const status = calculateAccurateStatus(printer)
+  const hasCapabilities =
+    (printer.color !== undefined && printer.color !== "unknown") ||
+    (printer.duplex !== undefined && printer.duplex !== "unknown") ||
+    printer.maxDpi != null ||
+    (printer.connectivity?.length ?? 0) > 0 ||
+    (printer.commandsets?.length ?? 0) > 0
   const drivers = [...(printer.drivers ?? [])].sort((left, right) => {
     if (left.id === printer.recommended_driver) return -1
     if (right.id === printer.recommended_driver) return 1
@@ -226,63 +253,65 @@ export default function PrinterPageClient({ printerId }: PrinterPageClientProps)
                     <FoomaticStatusBadge status={status} />
                   </dd>
                 </div>
-                {printer.color !== undefined && printer.color !== "unknown" ? (
-                  <div>
-                    <dt className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-                      Color
-                    </dt>
-                    <dd className="mt-2 text-sm text-foreground">
-                      {printer.color ? "Color output" : "Monochrome only"}
-                    </dd>
-                  </div>
-                ) : null}
-                {printer.duplex !== undefined && printer.duplex !== "unknown" ? (
-                  <div>
-                    <dt className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-                      Duplex
-                    </dt>
-                    <dd className="mt-2 text-sm text-foreground">
-                      {printer.duplex ? "Supported" : "Not supported"}
-                    </dd>
-                  </div>
-                ) : null}
-                {printer.maxDpi != null ? (
-                  <div>
-                    <dt className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-                      Max resolution
-                    </dt>
-                    <dd className="mt-2 text-sm text-foreground">{printer.maxDpi} dpi</dd>
-                  </div>
-                ) : null}
-                {printer.connectivity && printer.connectivity.length > 0 ? (
-                  <div>
-                    <dt className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-                      Connectivity
-                    </dt>
-                    <dd className="mt-2 flex flex-wrap gap-2">
-                      {printer.connectivity.map((item) => (
-                        <FoomaticBadge key={item} className="border-border bg-accent/50 text-muted-foreground">
-                          {item}
-                        </FoomaticBadge>
-                      ))}
-                    </dd>
-                  </div>
-                ) : null}
-                {printer.commandsets && printer.commandsets.length > 0 ? (
-                  <div>
-                    <dt className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-                      Page description languages
-                    </dt>
-                    <dd className="mt-2 flex flex-wrap gap-2">
-                      {printer.commandsets.map((item) => (
-                        <FoomaticBadge key={item} className="border-border bg-accent/50 text-muted-foreground">
-                          {item}
-                        </FoomaticBadge>
-                      ))}
-                    </dd>
-                  </div>
-                ) : null}
               </dl>
+
+              {hasCapabilities ? (
+                <div className="mt-6 border-t border-border pt-5">
+                  <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+                    Capabilities
+                  </h3>
+                  <dl className="mt-4 space-y-4">
+                    {printer.color !== undefined && printer.color !== "unknown" ? (
+                      <div>
+                        <dt className="text-xs font-medium text-muted-foreground">Color</dt>
+                        <dd className="mt-1 text-sm text-foreground">
+                          {printer.color ? "Color output" : "Monochrome only"}
+                        </dd>
+                      </div>
+                    ) : null}
+                    {printer.duplex !== undefined && printer.duplex !== "unknown" ? (
+                      <div>
+                        <dt className="text-xs font-medium text-muted-foreground">Duplex</dt>
+                        <dd className="mt-1 text-sm text-foreground">
+                          {printer.duplex ? "Supported" : "Not supported"}
+                        </dd>
+                      </div>
+                    ) : null}
+                    {printer.maxDpi != null ? (
+                      <div>
+                        <dt className="text-xs font-medium text-muted-foreground">Max resolution</dt>
+                        <dd className="mt-1 text-sm text-foreground">{printer.maxDpi} dpi</dd>
+                      </div>
+                    ) : null}
+                    {printer.connectivity && printer.connectivity.length > 0 ? (
+                      <div>
+                        <dt className="text-xs font-medium text-muted-foreground">Connectivity</dt>
+                        <dd className="mt-1 flex flex-wrap gap-2">
+                          {printer.connectivity.map((item) => (
+                            <FoomaticBadge key={item} className="border-border bg-accent/50 text-muted-foreground">
+                              {item}
+                            </FoomaticBadge>
+                          ))}
+                        </dd>
+                      </div>
+                    ) : null}
+                    {printer.commandsets && printer.commandsets.length > 0 ? (
+                      <div>
+                        <dt className="text-xs font-medium text-muted-foreground">
+                          Page description languages
+                        </dt>
+                        <dd className="mt-1 flex flex-wrap gap-2">
+                          {printer.commandsets.map((item) => (
+                            <FoomaticBadge key={item} className="border-border bg-accent/50 text-muted-foreground">
+                              {item}
+                            </FoomaticBadge>
+                          ))}
+                        </dd>
+                      </div>
+                    ) : null}
+                  </dl>
+                </div>
+              ) : null}
 
               {printer.notes ? (
                 <div className="mt-8 border-t border-border pt-6">
