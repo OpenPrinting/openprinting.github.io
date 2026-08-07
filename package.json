@@ -19,6 +19,7 @@
     "@tailwindcss/typography": "^0.5.16",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "dompurify": "^3.4.13",
     "fast-xml-parser": "^5.7.0",
     "framer-motion": "^12.5.0",
     "github-slugger": "^2.0.0",

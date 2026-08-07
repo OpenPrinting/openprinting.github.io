@@ -20,6 +20,7 @@ import {
 import { Button } from "@/components/ui/button"
 import { withBasePath } from "@/lib/foomatic/base-path"
 import { driverHref, printerHref } from "@/lib/foomatic/routes"
+import { sanitizeFoomaticHtml } from "@/lib/foomatic/sanitize"
 import type { DriverRecord } from "@/lib/foomatic/types"
 
 interface DriverPageClientProps {
@@ -339,7 +340,7 @@ export default function DriverPageClient({ driverId }: DriverPageClientProps) {
                 <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-muted-foreground">Description</h3>
                 <div
                   className="prose prose-sm mt-4 max-w-none text-foreground dark:prose-invert"
-                  dangerouslySetInnerHTML={{ __html: driver.comments }}
+                  dangerouslySetInnerHTML={{ __html: sanitizeFoomaticHtml(driver.comments) }}
                 />
               </FoomaticCard>
             ) : driver.shortDescription ? (
