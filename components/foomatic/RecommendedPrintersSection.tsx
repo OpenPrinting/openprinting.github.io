@@ -29,8 +29,14 @@ interface RecommendedPrintersSectionProps {
   printerId: string
 }
 
+// Cosine scores are rounded to 3 decimals upstream, so anything that would
+// display as "100%" is treated as an exact match rather than shown as a score.
+const EXACT_MATCH_THRESHOLD = 0.9995
+const STRONG_MATCH_PERCENT = 85
+const MODERATE_MATCH_PERCENT = 70
+
 function ConfidenceBadge({ score }: { score: number }) {
-  if (score >= 0.9995) {
+  if (score >= EXACT_MATCH_THRESHOLD) {
     return (
       <span className="inline-flex items-center gap-1 text-sm font-medium text-emerald-700 dark:text-emerald-400">
         <CheckCircle2 className="h-3.5 w-3.5" aria-hidden="true" />
@@ -41,9 +47,9 @@ function ConfidenceBadge({ score }: { score: number }) {
 
   const percentage = Math.round(score * 100)
   const toneClass =
-    percentage >= 85
+    percentage >= STRONG_MATCH_PERCENT
       ? "text-emerald-700 dark:text-emerald-400"
-      : percentage >= 70
+      : percentage >= MODERATE_MATCH_PERCENT
         ? "text-amber-700 dark:text-amber-400"
         : "text-muted-foreground"
 

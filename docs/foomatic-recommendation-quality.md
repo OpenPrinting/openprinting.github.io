@@ -49,6 +49,32 @@ This is the direct, measured effect of the four feature-addition commits — not
 
 ---
 
+## Feature Weights and Tunables
+
+All weights live as named constants at the top of `scripts/foomatic/vectorize.ts`; thresholds live in `compute-similarity.ts` and `RecommendedPrintersSection.tsx`. They are the knobs to turn when tuning recommendation behaviour.
+
+| Constant | Value | Where | Effect |
+|---|---|---|---|
+| `RECOMMENDED_DRIVER_WEIGHT` | 3.0 | `vectorize.ts` | Dominant signal — two printers sharing a preferred Linux driver are strongly similar |
+| `COMMANDSET_WEIGHT` | 1.5 | `vectorize.ts` | One-hot per normalized PDL token; highest-weighted post-baseline feature |
+| `SUPPORTED_DRIVER_WEIGHT` | 1.0 | `vectorize.ts` | One-hot per additional supported driver family |
+| `COLOR_WEIGHT` | 1.0 | `vectorize.ts` | Binary colour capability |
+| `LANG_WEIGHT` | 1.0 | `vectorize.ts` | PostScript / PCL support present |
+| `RESOLUTION_WEIGHT` | 0.75 | `vectorize.ts` | One-hot across four DPI tiers (≤300, ≤600, ≤1200, >1200) |
+| `TYPE_WEIGHT` | 0.5 | `vectorize.ts` | Mechanism class (laser / inkjet / dot-matrix) |
+| `LANG_LEVEL_WEIGHT` | 0.5 | `vectorize.ts` | Bonus for matching PostScript 3 / PCL 6 specifically |
+| `FUNCTIONALITY_WEIGHT` | 0.25 | `vectorize.ts` | Linux support grade (A/B/C), weakest signal |
+| `MIN_COMMANDSET_FREQUENCY` | 20 | `vectorize.ts` | Commandset tokens rarer than this are dropped from the vocabulary as noise |
+| `TOP_K` | 10 | `compute-similarity.ts` | Candidates retained per printer |
+| `MIN_SIMILARITY_SCORE` | 0.25 | `compute-similarity.ts` | Candidates below this are discarded entirely |
+| `EXACT_MATCH_THRESHOLD` | 0.9995 | `RecommendedPrintersSection.tsx` | Score at/above which the UI shows "Exact match" instead of a percentage |
+| `STRONG_MATCH_PERCENT` | 85 | `RecommendedPrintersSection.tsx` | Confidence badge shown in emerald at/above this |
+| `MODERATE_MATCH_PERCENT` | 70 | `RecommendedPrintersSection.tsx` | Confidence badge shown in amber at/above this; muted below |
+
+Raising a weight increases how much that attribute pulls two printers together; the vectors are L2-normalized by the cosine denominator, so only the *relative* magnitudes matter.
+
+---
+
 ## Feature-by-Feature Timeline
 
 ### Color features (`6a93780`, 2026-06-10)
