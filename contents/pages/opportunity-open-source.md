@@ -21,13 +21,22 @@ Follow the conference on [LinkedIn](https://www.linkedin.com/company/opportunity
 
 The fourth edition, hosted together with the Google Developer Group (GDG) at IIIT Allahabad. Read the [announcement](/OpenPrinting-News-Opportunity-Open-Source-4.0/).
 
+- [The event's web site](https://oosc.iiita.ac.in/)
+- [Practical info: Location, remote attending/speaking, ...](https://events.canonical.com/event/154/)
+- [Full schedules](https://events.canonical.com/event/154/timetable/?layout=room#all.detailed)
+- [List of contributions](https://events.canonical.com/event/154/contributions/)
+- [Call for proposals](https://events.canonical.com/event/154/abstracts/)
+- Mastodon: [#OpportunityOpenSource](https://ubuntu.social/tags/OpportunityOpenSource)
+- LinkedIn: [@OpportunityOpenSource](https://www.linkedin.com/company/OpportunityOpenSource/)
+
+
 ## Past editions
 
 | Edition | Location | Dates | Links |
 | --- | --- | --- | --- |
-| 3.0 | IIT Kanpur, India | September 5–7, 2025 | [Recap](/OpenPrinting-News-Opportunity-Open-Source-3.0-in-the-IIT-Kanpur,-India/) · [Schedule](https://events.canonical.com/event/134/timetable/) |
-| 2.0 | IIT Kanpur, India | August 24–26, 2024 | [Recap](/OpenPrinting-News-August-2024/#opportunity-open-source-in-iit-kanpur) · [Schedule](https://events.canonical.com/event/89/) |
-| 1.0 | IIT Mandi, India | September 2023 | [Recap](/OpenPrinting-News-September-2023/#opportunitiy-open-source-in-the-iit-mandi-india) · [Schedule](https://events.canonical.com/event/35/) |
+| 3.0 | IIT Kanpur, India | September 5–7, 2025 | [Recap](/OpenPrinting-News-Opportunity-Open-Source-3.0-in-the-IIT-Kanpur,-India/) · [Schedules](https://events.canonical.com/event/134/timetable/) |
+| 2.0 | IIT Kanpur, India | August 24–26, 2024 | [Recap](/OpenPrinting-News-August-2024/#opportunity-open-source-in-iit-kanpur) · [Schedules](https://events.canonical.com/event/89/) |
+| 1.0 | IIT Mandi, India | September 2023 | [Recap](/OpenPrinting-News-September-2023/#opportunitiy-open-source-in-the-iit-mandi-india) · [Schedules](https://events.canonical.com/event/35/) |
 
 ## Get involved
 
