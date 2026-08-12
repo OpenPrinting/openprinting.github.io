@@ -83,24 +83,30 @@ export const CORPUS: CorpusCase[] = [
   { q: "Hewlett Packard 2500C", intent: "PRINTER_LOOKUP", check: resolvedPrinter("HP-2500C") },
   { q: "hewlett-packard 2500c", intent: "PRINTER_LOOKUP", check: resolvedPrinter("HP-2500C") },
   { q: "epson stylus color", intent: "PRINTER_LOOKUP", check: resolvedPrinter("Epson-Stylus_Color") },
-  { q: "apple laserwriter", intent: "PRINTER_LOOKUP", check: resolvedPrinter("Apple-LaserWriter") },
+  { q: "apple laserwriter", intent: "PRINTER_LOOKUP", check: resolvedPrinter("Apple-LaserWriter"), fixtureOnly: true },
 
   // --- ambiguous printer names ----------------------------------------------
   {
     q: "HP LaserJet",
     intent: "PRINTER_LOOKUP",
+    // fixtureOnly: the real database has a printer literally named
+    // "HP LaserJet", so this resolves exactly there.
     check: query => {
       if (query.intent !== "PRINTER_LOOKUP") return "wrong intent"
       return err(query.printer.kind === "ambiguous", `expected ambiguous, got ${query.printer.kind}`)
     },
+    fixtureOnly: true,
   },
   {
     q: "tell me about the laserjet",
     intent: "PRINTER_LOOKUP",
+    // fixtureOnly: the real database contains a printer literally named
+    // "HP LaserJet", which is then a legitimate exact match.
     check: query => {
       if (query.intent !== "PRINTER_LOOKUP") return "wrong intent"
       return err(query.printer.kind !== "resolved", "a family name must not silently resolve")
     },
+    fixtureOnly: true,
   },
 
   // --- no-match entities ------------------------------------------------------

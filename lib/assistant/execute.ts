@@ -15,6 +15,7 @@
 
 import type { PrinterSummary } from "@/lib/foomatic/types"
 import { normalizeDriverId } from "@/lib/foomatic/routes"
+import { fuseText } from "./normalize"
 import { MIN_COMFORTABLE_RESULTS } from "./constants"
 import type {
   AssistantData,
@@ -57,8 +58,10 @@ function buildSpecs(filters: CapabilityFilters): FilterSpec[] {
   const specs: FilterSpec[] = []
 
   if (filters.manufacturer !== undefined) {
-    const make = filters.manufacturer
-    specs.push({ label: make, known: () => true, pass: p => p.manufacturer === make })
+    const make = fuseText(filters.manufacturer)
+    // Fused comparison so casing variants of the same make ("Epson"/"EPSON")
+    // all match the canonical filter value.
+    specs.push({ label: filters.manufacturer, known: () => true, pass: p => fuseText(p.manufacturer) === make })
   }
   if (filters.type !== undefined) {
     const type = filters.type

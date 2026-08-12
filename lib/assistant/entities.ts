@@ -34,7 +34,8 @@ const EXCLUDED_ENTITY_TOKENS = new Set([
   "printer", "printers", "driver", "drivers", "laser", "inkjet", "ink", "jet",
   "dot", "matrix", "impact", "colour", "color", "coloured", "colored", "mono",
   "monochrome", "black", "white", "duplex", "sided", "postscript", "post",
-  "script", "pcl", "pclxl", "dpi", "resolution", "res", "linux", "support",
+  "script", "pcl", "pclxl", "pcl5", "pcl5e", "pcl6", "ps2", "ps3",
+  "dpi", "resolution", "res", "linux", "support",
   "supported", "supports", "supporting", "similar", "like", "alternative",
   "alternatives", "recommend", "recommended", "recommendation", "recommendations",
   "compare", "comparison", "versus", "vs", "best", "better", "good", "great",
@@ -84,6 +85,24 @@ export function buildPrinterIndex(catalog: PrinterSummary[]): PrinterIndex {
     makesByFused: new Map(),
   }
 
+  // The catalogue contains casing variants of the same make ("Epson" and
+  // "EPSON"): the canonical spelling is the most frequent one, ties broken
+  // deterministically. Filtering compares fused names, so records under any
+  // variant still match.
+  const makeCounts = new Map<string, Map<string, number>>()
+  for (const printer of catalog) {
+    const fused = fuseText(printer.manufacturer)
+    const variants = makeCounts.get(fused) ?? new Map<string, number>()
+    variants.set(printer.manufacturer, (variants.get(printer.manufacturer) ?? 0) + 1)
+    makeCounts.set(fused, variants)
+  }
+  for (const [fused, variants] of makeCounts) {
+    const canonical = [...variants.entries()].sort(
+      (a, b) => b[1] - a[1] || a[0].localeCompare(b[0])
+    )[0][0]
+    index.makesByFused.set(fused, canonical)
+  }
+
   for (const printer of catalog) {
     const entry: IndexedPrinter = {
       id: printer.id,
@@ -98,7 +117,6 @@ export function buildPrinterIndex(catalog: PrinterSummary[]): PrinterIndex {
     push(index.byFusedModel, entry.fModel, printer.id)
     index.nameList.push({ key: entry.fName, id: printer.id })
     index.modelList.push({ key: entry.fModel, id: printer.id })
-    index.makesByFused.set(fuseText(printer.manufacturer), printer.manufacturer)
   }
 
   for (const [alias, make] of Object.entries(MANUFACTURER_ALIASES)) {
@@ -169,8 +187,11 @@ export function resolvePrintersInText(tokens: string[], index: PrinterIndex): Pr
   const spans: Span[] = []
 
   const windowFused = (start: number, end: number) => fuseText(tokens.slice(start, end).join(""))
+  // A usable entity window needs at least one token that is neither query
+  // vocabulary nor a bare number: "pcl 6" and "600" are capability phrases,
+  // not model names.
   const windowUsable = (start: number, end: number) =>
-    tokens.slice(start, end).some(token => !EXCLUDED_ENTITY_TOKENS.has(token))
+    tokens.slice(start, end).some(token => !EXCLUDED_ENTITY_TOKENS.has(token) && !/^\d+$/.test(token))
 
   for (let size = Math.min(5, tokens.length); size >= 1; size--) {
     for (let start = 0; start + size <= tokens.length; start++) {
@@ -210,11 +231,29 @@ export function resolvePrintersInText(tokens: string[], index: PrinterIndex): Pr
     }
   }
 
+  // A span directly followed by a model-number token failed to cover the
+  // full name the user typed: "hp deskjet" out of "hp deskjet 5" (the literal
+  // HP-DeskJet record must not swallow the 5), or "brother hl" out of
+  // "brother hl 2270dw". Skipping it during selection lets a longer prefix
+  // span - or the near-miss handling in parse.ts - answer honestly.
+  // Exception: "<model> 600 dpi", where the number belongs to a resolution
+  // constraint, not the name.
+  const truncatesModelNumber = (span: Span) => {
+    const next = span.end < tokens.length ? tokens[span.end] : null
+    return (
+      next !== null &&
+      !EXCLUDED_ENTITY_TOKENS.has(next) &&
+      /\d/.test(next) &&
+      tokens[span.end + 1] !== "dpi"
+    )
+  }
+
   // Greedy selection: strongest, then longest, then leftmost; non-overlapping.
   spans.sort((a, b) => b.score - a.score || (b.end - b.start) - (a.end - a.start) || a.start - b.start)
   const chosen: Span[] = []
   for (const span of spans) {
     if (chosen.length >= 2) break
+    if (truncatesModelNumber(span)) continue
     if (chosen.some(other => span.start < other.end && other.start < span.end)) continue
     // A weaker span of the same text adds nothing next to a stronger one.
     chosen.push(span)
@@ -223,19 +262,6 @@ export function resolvePrintersInText(tokens: string[], index: PrinterIndex): Pr
 
   const refs: PrinterRef[] = []
   for (const span of chosen) {
-    // A weak prefix span directly followed by an unconsumed model-number
-    // token means the span failed to cover the full name the user typed
-    // ("brother hl" out of "brother hl 2270dw"): dropping it lets the
-    // near-miss handling in parse.ts treat the whole region honestly.
-    if (
-      span.score < RESOLVE_MIN_SCORE &&
-      span.end < tokens.length &&
-      !consumed.has(span.end) &&
-      !EXCLUDED_ENTITY_TOKENS.has(tokens[span.end]) &&
-      /\d/.test(tokens[span.end])
-    ) {
-      continue
-    }
     for (let i = span.start; i < span.end; i++) consumed.add(i)
     const text = tokens.slice(span.start, span.end).join(" ")
     if (span.ids.length === 1 && span.score >= RESOLVE_MIN_SCORE) {

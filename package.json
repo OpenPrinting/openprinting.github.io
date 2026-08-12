@@ -17,7 +17,8 @@
     "foomatic:data:split": "tsx scripts/foomatic/split-printers.ts && tsx scripts/foomatic/split-drivers.ts",
     "foomatic:data:vectorize": "tsx scripts/foomatic/vectorize.ts",
     "foomatic:data:similarity": "tsx scripts/foomatic/compute-similarity.ts",
-    "foomatic:eval": "node tools/eval/metrics.mjs && node tools/eval/check-docs.mjs && node tools/eval/grade.mjs"
+    "foomatic:eval": "node tools/eval/metrics.mjs && node tools/eval/check-docs.mjs && node tools/eval/grade.mjs",
+    "assistant:eval": "tsx tools/assistant-eval/run.ts"
   },
   "dependencies": {
     "@giscus/react": "^3.1.0",
