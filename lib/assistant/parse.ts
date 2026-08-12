@@ -280,12 +280,16 @@ export function parseQuery(
     return { intent: "UNSUPPORTED", reason: "unclear" }
   }
 
-  // 7. SUPPORT_QUERY (about one specific printer, not a filtered list)
+  // 7. SUPPORT_QUERY (about one specific printer, not a filtered list).
+  // A duplex question ("does this printer support duplex?") is excluded: the
+  // dataset records duplex for no printer at all, and the honest answer is
+  // the duplex data-gap response, not the printer's Linux support grade.
   if (
     supportSignal &&
     !printersPlural &&
     !listVerb &&
     !recommendSignal &&
+    !filters.duplex &&
     (refs.length > 0 || contextRef || context.pageType === "printer")
   ) {
     return { intent: "SUPPORT_QUERY", printer: printerRef() }
@@ -296,6 +300,13 @@ export function parseQuery(
   const domainWord = has("printer") || has("printers") || driverWord || supportSignal
   if (recommendSignal || bestSignal) {
     return { intent: "CAPABILITY_SEARCH", filters, unapplied, recommend: true }
+  }
+
+  // Duplex questions get the duplex data-gap answer even when a specific
+  // printer was named or implied - the gap is catalogue-wide, and a lookup
+  // response would sidestep the question that was actually asked.
+  if (filters.duplex) {
+    return { intent: "CAPABILITY_SEARCH", filters, unapplied, recommend: false }
   }
 
   // 9. PRINTER_LOOKUP

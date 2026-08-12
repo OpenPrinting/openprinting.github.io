@@ -204,6 +204,10 @@ export const CORPUS: CorpusCase[] = [
   },
 
   // --- duplex (insufficient data downstream) ---------------------------------
+  // Even with a specific printer in scope, a duplex question gets the duplex
+  // data-gap answer - never a redirect to the printer's support grade.
+  { q: "does this printer support duplex", ctx: "printer", intent: "CAPABILITY_SEARCH", check: hasFilter("duplex", true) },
+  { q: "does the hp laserjet 4 support duplex", intent: "CAPABILITY_SEARCH", check: hasFilter("duplex", true) },
   { q: "duplex printer", intent: "CAPABILITY_SEARCH", check: hasFilter("duplex", true) },
   { q: "find a duplex printer", intent: "CAPABILITY_SEARCH", check: hasFilter("duplex", true) },
   { q: "printer with two sided printing", intent: "CAPABILITY_SEARCH", check: hasFilter("duplex", true) },
