@@ -31,7 +31,12 @@ Classification is an ordered deterministic rule cascade (`parse.ts`); earlier ru
 6. GENERAL_INFO — closed topics: support grades, similarity, help. Sits above
    SUPPORT_QUERY so meaning-questions ("what does perfect support mean?") are
    answered generally — page context must never capture a meaning-question
-   and answer it with the current printer's own values.
+   and answer it with the current printer's own values. Definition-shaped
+   questions without an explicit reference ("what is PostScript?", "what is a
+   printer driver?") get the grades definition when they are about Linux
+   support and an honest scope statement otherwise — never a printer list and
+   never a context-captured answer, because the data records which printers
+   support these things, not what they are.
 7. SUPPORT_QUERY — support question about one specific printer
 8. CAPABILITY_SEARCH — recommend/best or any capability filters
 9. PRINTER_LOOKUP — a printer reference and nothing more specific

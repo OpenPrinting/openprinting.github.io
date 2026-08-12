@@ -30,4 +30,4 @@ Driver questions distinguish the recommended driver from the full listed set; "s
 
 > "what does Perfect mean?" · "what does the similarity score mean?" · "what can you do?"
 
-These three topics are answered from fixed text grounded in the site's own definitions. Anything else outside the printer database — weather, general Linux help, documentation content — gets a clear scope statement; the assistant is not a general documentation chatbot.
+These three topics are answered from fixed text grounded in the site's own definitions. Definition questions the database cannot answer ("what is PostScript?") get an honest scope statement rather than a printer list — the data records which printers support such things, not what they are. Anything else outside the printer database — weather, general Linux help, documentation content — gets a clear scope statement; the assistant is not a general documentation chatbot.
