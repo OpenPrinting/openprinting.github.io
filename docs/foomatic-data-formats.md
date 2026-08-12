@@ -65,21 +65,39 @@ interface Driver {
 **Produced by:** `split-printers.ts`
 **Consumed by:** the directory listing page (`app/foomatic/printers/page.tsx`) and `generateStaticParams()` in `app/foomatic/printer/[make]/[id]/page.tsx`
 
-A lightweight projection of `printers.json`, one entry per printer, used so the directory page doesn't need to download every printer's full driver/PPD detail just to render a list:
+A lightweight projection of `printers.json`, one entry per printer, used so a list/filter view doesn't need to download every printer's full driver/PPD detail. Records are built by `toPrinterSummary()` in [`lib/foomatic/catalog.ts`](../lib/foomatic/catalog.ts) — the single source of truth for this schema — and the file is written **minified** (it is fetched by the browser; pretty-printing cost ~490 KB of raw payload for no consumer benefit).
 
 ```ts
 interface PrinterSummary {
   id: string
   manufacturer: string
   model: string
-  type?: string
-  status?: string
+  type?: string                // "laser" | "inkjet" | "dot-matrix" | "unknown"
+  status?: string              // "Perfect" | "Mostly" | "Unsupported" | "Unknown"
   driverCount?: number
-  functionality?: string
+  functionality?: string       // raw Foomatic grade: "A" | "B" | "C" | "?"
+  color?: boolean | "unknown"  // tri-state preserved from the full record
+
+  // Capability fields. Each is OMITTED when the source data does not
+  // establish it — an absent key means "not recorded in Foomatic",
+  // never "the printer lacks this capability".
+  maxDpi?: number              // from Printer.maxDpi (when a number)
+  psLevel?: number             // from Printer.psLevel (when a number)
+  pclLevel?: number            // from Printer.pclLevel (when a number)
+  cs?: string[]                // Printer.commandsetTokens (when non-empty)
+  rd?: string                  // recommended driver family: Printer.recommended_driver
+                               // collapsed via normalizeDriverFamily() (when present)
 }
 ```
 
-`driverCount` is `drivers.length` from the full record; `type`/`status`/`functionality` default to `"unknown"`/`"Unknown"`/`"?"` respectively if absent.
+`driverCount` is `drivers.length` from the full record; `type`/`status`/`functionality`/`color` default to `"unknown"`/`"Unknown"`/`"?"`/`"unknown"` respectively if absent.
+
+Two capability notes:
+
+- The tri-state fields (`color`, `type`) keep an explicit `"unknown"` value because existing consumers branch on it; the newer optional fields use key omission instead, which is cheaper across ~6.6k records. Both conventions mean the same thing: absence of evidence, not evidence of absence.
+- `duplex` is deliberately **not** part of this projection: upstream Foomatic data records duplex capability for zero printers at the current snapshot, so there is nothing to store or filter on. If upstream ever starts recording it, adding it here is a deliberate schema decision (see `lib/foomatic/__tests__/catalog.test.ts`).
+
+The generated artifact is validated record-by-record against `printers.json` by `lib/foomatic/__tests__/catalog-artifact.test.ts` (skipped automatically when the generated data is absent, e.g. in CI's pre-generate test run).
 
 ---
 
