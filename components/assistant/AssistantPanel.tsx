@@ -22,7 +22,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import { usePathname } from "next/navigation"
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion"
+import { motion, useReducedMotion } from "framer-motion"
 import { Loader2, Printer, Send, X } from "lucide-react"
 
 import { parsePageContext } from "@/lib/assistant/context"
@@ -216,15 +216,6 @@ export default function AssistantPanel({ open, onClose, launcherId }: AssistantP
 
   const suggestions = useMemo(() => contextSuggestions(context), [context])
 
-  const panelMotion = reducedMotion
-    ? { initial: { opacity: 1 }, animate: { opacity: 1 }, exit: { opacity: 1 } }
-    : {
-        initial: { opacity: 0, y: 16, scale: 0.97 },
-        animate: { opacity: 1, y: 0, scale: 1 },
-        exit: { opacity: 0, y: 16, scale: 0.97 },
-        transition: { duration: 0.2, ease: "easeOut" as const },
-      }
-
   const messageMotion = reducedMotion
     ? {}
     : {
@@ -233,34 +224,36 @@ export default function AssistantPanel({ open, onClose, launcherId }: AssistantP
         transition: { duration: 0.15, ease: "easeOut" as const },
       }
 
+  // The open/close presentation is deliberately plain CSS driven by `open`:
+  // the closed panel is visibility-hidden and pointer-events-none IMMEDIATELY,
+  // never gated on an animation finishing. (An animation-gated unmount left
+  // the closed sheet invisibly mounted over the page - covering the launcher
+  // and swallowing every tap - whenever exit completion stalled.) Opening
+  // still eases in via a CSS transition; closing is instant, which reduced
+  // motion requires anyway. CSS transitions always settle at their final
+  // state, so no environment can strand the panel half-closed.
   return (
-    <AnimatePresence>
-      {open && (
-        <>
-          {isCompact && (
-            <motion.div
-              key="assistant-backdrop"
-              className="fixed inset-0 z-[65] bg-black/50"
-              aria-hidden="true"
-              onClick={onClose}
-              initial={{ opacity: reducedMotion ? 1 : 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: reducedMotion ? 1 : 0 }}
-            />
-          )}
-          <motion.div
-            key="assistant-panel"
+    <>
+      {isCompact && (
+        <div
+          className={`fixed inset-0 z-[65] bg-black/50 transition-opacity duration-200 motion-reduce:transition-none ${
+            open ? "opacity-100" : "pointer-events-none opacity-0"
+          }`}
+          aria-hidden="true"
+          onClick={open ? onClose : undefined}
+        />
+      )}
+      <div
             id="assistant-panel"
             ref={panelRef}
             role="dialog"
             aria-label="Printer assistant"
-            aria-modal={isCompact || undefined}
-            className={`fixed z-[70] flex flex-col overflow-hidden bg-card shadow-2xl ring-1 ring-black/5 dark:ring-white/10 ${
+            aria-modal={isCompact && open ? true : undefined}
+            className={`fixed z-[70] flex flex-col overflow-hidden bg-card shadow-2xl ring-1 ring-black/5 transition-[opacity,transform] duration-200 ease-out motion-reduce:transition-none dark:ring-white/10 ${
               isCompact
                 ? "inset-0 h-[100dvh] w-full"
                 : "bottom-[5.75rem] right-6 h-[min(37.5rem,calc(100dvh-10.5rem))] w-[400px] rounded-2xl border border-border md:w-[420px]"
-            }`}
-            {...panelMotion}
+            } ${open ? "visible translate-y-0 opacity-100" : "invisible translate-y-3 opacity-0 pointer-events-none"}`}
           >
             <header
               className={`flex items-center justify-between gap-3 border-b border-border bg-card px-4 pb-3 ${
@@ -386,9 +379,7 @@ export default function AssistantPanel({ open, onClose, launcherId }: AssistantP
                 </button>
               </div>
             </form>
-          </motion.div>
-        </>
-      )}
-    </AnimatePresence>
+      </div>
+    </>
   )
 }
