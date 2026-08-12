@@ -59,4 +59,11 @@ for (let i = 0, t = 0; i < mfrs.length && t < 20; i += mstep, t++) {
 }
 
 const out = [...picked.entries()].map(([id, strata]) => ({ id, strata })).sort((a, b) => a.id.localeCompare(b.id))
-console.log(JSON.stringify(out, null, 1))
+
+// Importable for grade.mjs / pairs.mjs; prints JSON when run directly.
+export const sample = out
+
+import { pathToFileURL } from "url"
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  console.log(JSON.stringify(out, null, 1))
+}

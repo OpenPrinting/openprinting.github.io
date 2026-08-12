@@ -42,6 +42,19 @@ dimensions on which both printers are non-zero, and `1 - exp(-k/tau)` with
 recommendations resting on a single catch-all driver scored *higher* on average
 (0.992) than recommendations backed by eleven shared features (0.984).
 
+**What the score is - and is not.** The score is deterministic and bounded in
+[0, 1). It is **not** a probability, not a statistically calibrated confidence,
+not a guarantee of printer compatibility, and not a human-validated accuracy
+figure. The UI presents it as "N% similarity" under one of four tiers -
+**High confidence** (>= 0.85), **Good match** (>= 0.70), **Moderate match**
+(>= 0.50), **Limited evidence** (below). The thresholds sit at the midpoints
+between the mean scores of the observed shared-feature evidence bands
+(<=1 feature: 0.393, 2-3: 0.593, 4-6: 0.787, 7+: 0.921), so each tier reflects
+a real difference in supporting evidence rather than a cosmetic slice of the
+distribution. Measured on the full artifact set, "High confidence"
+recommendations are 90% seven-plus-feature matches with zero capability
+conflicts, and all 1,803 generic-driver-only pairs fall in "Limited evidence".
+
 **3. Capability-conflict penalties.** The vector space can express agreement but
 not contradiction, so a mono printer sharing a driver family with a colour one
 still scored well despite being unable to substitute for it. Hard substitution
@@ -114,14 +127,15 @@ All weights live as named constants at the top of `scripts/foomatic/vectorize.ts
 | `FUNCTIONALITY_WEIGHT` | 0.25 | `vectorize.ts` | Linux support grade (A/B/C), weakest signal |
 | `MIN_COMMANDSET_FREQUENCY` | 20 | `vectorize.ts` | Commandset tokens rarer than this are dropped from the vocabulary as noise |
 | `TOP_K` | 10 | `compute-similarity.ts` | Candidates retained per printer |
-| `MIN_SIMILARITY_SCORE` | 0.35 | `compute-similarity.ts` | Floor on the damped score; removes single-dimension matches automatically |
-| `EVIDENCE_TAU` | 4 | `compute-similarity.ts` | Damping constant in `1 - exp(-k/tau)`; larger = harsher on thin evidence |
-| `TYPE_CONFLICT_PENALTY` | 0.5 | `compute-similarity.ts` | Applied when both mechanism types are known and differ |
-| `COLOR_CONFLICT_PENALTY` | 0.6 | `compute-similarity.ts` | Applied when one prints colour and the other does not |
-| `RESOLUTION_CONFLICT_PENALTY` | 0.7 | `compute-similarity.ts` | Applied when max resolutions differ by >= 4x |
-| `EXACT_MATCH_THRESHOLD` | 0.9995 | `RecommendedPrintersSection.tsx` | Score at/above which the UI shows "Exact match" instead of a percentage |
-| `STRONG_MATCH_PERCENT` | 85 | `RecommendedPrintersSection.tsx` | Confidence badge shown in emerald at/above this |
-| `MODERATE_MATCH_PERCENT` | 70 | `RecommendedPrintersSection.tsx` | Confidence badge shown in amber at/above this; muted below |
+| `MIN_SIMILARITY_SCORE` | 0.35 | `lib/foomatic/scoring.ts` | Floor on the damped score; removes single-dimension matches automatically |
+| `EVIDENCE_TAU` | 4 | `lib/foomatic/scoring.ts` | Damping constant in `1 - exp(-k/tau)`; larger = harsher on thin evidence |
+| `TYPE_CONFLICT_PENALTY` | 0.5 | `lib/foomatic/scoring.ts` | Applied when both mechanism types are known and differ |
+| `COLOR_CONFLICT_PENALTY` | 0.6 | `lib/foomatic/scoring.ts` | Applied when one prints colour and the other does not |
+| `RESOLUTION_CONFLICT_PENALTY` | 0.7 | `lib/foomatic/scoring.ts` | Applied when max resolutions differ by >= 4x |
+| `RESOLUTION_CONFLICT_RATIO` | 4 | `lib/foomatic/scoring.ts` | Max-DPI ratio at/above which the resolution penalty applies |
+| `CONFIDENCE_HIGH_THRESHOLD` | 0.85 | `lib/foomatic/scoring.ts` | "High confidence" tier floor - midpoint between the 4-6 and 7+ shared-feature evidence-band mean scores |
+| `CONFIDENCE_GOOD_THRESHOLD` | 0.7 | `lib/foomatic/scoring.ts` | "Good match" floor - midpoint between the 2-3 and 4-6 evidence bands |
+| `CONFIDENCE_MODERATE_THRESHOLD` | 0.5 | `lib/foomatic/scoring.ts` | "Moderate match" floor; below it sits "Limited evidence", where every generic-driver-only pair lands |
 
 Raising a weight increases how much that attribute pulls two printers together; the vectors are L2-normalized by the cosine denominator, so only the *relative* magnitudes matter.
 
@@ -163,6 +177,99 @@ The fix splits the combined file into one small file per printer (median 3.1 KB,
 
 ---
 
-## Known Limitation Not Yet Measured
+## What the Evaluation Proves - and What It Does Not
 
-No equivalent before/after evidence exists for **subjective recommendation relevance** (i.e., "would a human printer-shopper agree this is a good suggestion?") — the metrics above measure score distribution and ranking churn, which are proxies for discriminative power, not a ground-truth relevance label. There is no labeled validation set in this repository. Building one (a small hand-curated set of "printer X should/shouldn't recommend printer Y" pairs) would be a reasonable follow-up if recommendation quality needs to be defended more rigorously in a final evaluation, but is out of scope for the current proposal.
+The evaluation harness (below) measures internal, mechanically checkable
+properties of the generated artifacts. Re-run against the current artifacts it
+establishes that:
+
+- **The engine is discriminative.** 0% of displayed scores saturate at 1.0
+  (baseline before the scoring-model corrections: 86.8%).
+- **Confidence tracks evidence.** Correlation between shared-feature count and
+  score is 0.849 (baseline: 0.078, with weak pairs *outscoring* strong ones).
+  A single-signal pair mathematically cannot leave the bottom tier.
+- **Capability conflicts are penalized.** Across displayed recommendations:
+  type contradictions 0%, colour contradictions 0.2%, >=4x resolution gaps 0.04%.
+- **Explanations are truthful.** Every user-visible claim (drivers, command
+  sets, PS/PCL levels, colour, type, resolution tiers) is re-validated against
+  `printers.json`: 0 false or misleading claims (baseline: 1,470 false
+  resolution claims).
+- **Output is reproducible.** Deterministic tie-breaking; identical inputs
+  produce byte-identical artifacts.
+- **Under the documented deterministic rubric** (see `tools/eval/grade.mjs`),
+  89.7% of the 195-recommendation stratified sample grades Excellent or Good
+  ("qualitatively usable") and 4.1% grades Weak or Incorrect.
+
+It does **not** establish human-validated relevance. There is no labelled
+ground-truth dataset in this repository asserting "printer A is a good
+alternative to printer B", so figures like the 89.7% above are rubric outcomes
+on a deterministic sample - they must not be read as "89.7% accurate" or as
+compatibility accuracy. Building a small hand-curated pair set is the single
+highest-value follow-up if recommendation quality needs stronger defence.
+
+---
+
+## Known Limitations
+
+- **Identical feature vectors.** Only 1,096 distinct engineered feature vectors
+  exist across 6,657 printers; 90.7% of printers share their vector with at
+  least one other, and in 85.3% of top-3 lists the candidates are byte-identical
+  clones of each other. Given the recorded Foomatic data these printers
+  *genuinely cannot be distinguished*; deterministic id ordering is used so tied
+  results are reproducible, not to pretend to a ranking the data cannot support.
+- **Zero-recommendation printers.** 71 printers (1.07%) currently receive no
+  recommendations: every candidate falls below `MIN_SIMILARITY_SCORE`, almost
+  always because the printer record carries too little data to accumulate
+  evidence. The UI shows an explicit empty state for these.
+- **Catalogue coverage.** Roughly 27% of printers ever appear in someone's
+  top-3; the rest are never surfaced. Driver-family clustering concentrates
+  exposure on a minority of the catalogue.
+- **Same-manufacturer and rebadge concentration.** 47.5% of displayed
+  recommendations are same-manufacturer, and 58.7% of cross-manufacturer ones
+  pair printers within the Ricoh badge family (Ricoh/Lanier/NRG/Gestetner/
+  Savin/Infotec) - technically correct for compatibility, since these are
+  frequently the same hardware, but of limited value as *alternatives*. Roughly
+  22% of recommendations cross to a genuinely different vendor.
+- **No human-labelled ground truth** - the most important limitation; see the
+  section above.
+- **O(n^2) computation.** Every printer is compared against every other
+  (~44M pairs at 6,657 printers), measured at roughly 60-70s single-threaded
+  on a typical development machine. Acceptable at the current database size and
+  re-run only at build/regeneration time, but not unbounded.
+
+---
+
+## Reproducing the Evaluation
+
+Prerequisites: `yarn install`, then generated artifacts in
+`public/foomatic-db/` (`yarn generate`, or `yarn foomatic:pipeline` for the
+foomatic stages alone - see [foomatic-retraining.md](./foomatic-retraining.md)).
+
+```
+yarn foomatic:eval
+```
+
+runs three deterministic checks against the artifacts on disk:
+
+1. **`tools/eval/metrics.mjs`** - full-dataset ranking metrics: score
+   distribution and saturation, tie rates, evidence/score correlation,
+   explanation-truthfulness validation of every displayed claim,
+   manufacturer/rebadge/coverage diversity, and capability contradictions.
+2. **`tools/eval/check-docs.mjs`** - verifies every tunable documented in this
+   file against the values in the source, and greps the docs for retired
+   terminology. Fails non-zero on drift.
+3. **`tools/eval/grade.mjs`** - applies the fixed rubric documented in its
+   header to a deterministic stratified sample (~68 printers across technology,
+   colour, resolution, rarity, and manufacturer strata built by
+   `tools/eval/sample.mjs`; sorted pools, evenly-spaced picks, no randomness -
+   the same artifacts always yield the same sample, so results are not
+   cherry-picked). Pass `--rows` for the per-pair detail.
+
+`node tools/eval/pairs.mjs` prints a maintainer-facing deep-dive of the sampled
+pairs - full source/target capabilities beside the user-visible explanation,
+bucketed into good / low-value / weak / problematic.
+
+The harness proves internal consistency, truthfulness, and discriminative
+behaviour. It does not prove human-validated relevance (no labelled pair set
+exists), and the rubric in `grade.mjs` is itself an engineered heuristic - a
+lens for review, not ground truth.

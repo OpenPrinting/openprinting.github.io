@@ -10,7 +10,10 @@ import fs from "fs"
 const P = JSON.parse(fs.readFileSync(`${process.cwd()}/public/foomatic-db/printers.json`, "utf8")).printers
 const R = JSON.parse(fs.readFileSync(`${process.cwd()}/public/foomatic-db/recommendations.json`, "utf8")).recommendations
 const byId = new Map(P.map((p) => [p.id, p]))
-const sample = JSON.parse(fs.readFileSync(process.argv[2], "utf8"))
+const sampleArg = process.argv.find((a) => a.endsWith(".json"))
+const sample = sampleArg
+  ? JSON.parse(fs.readFileSync(sampleArg, "utf8"))
+  : (await import("./sample.mjs")).sample
 
 const GENERIC = new Set(["postscript", "pdf", "omni", "gutenprint", "laserjet", "hpijs", "pxlmono", "pxlcolor", "gdi"])
 const NORM = [[/^Postscript/i, "postscript"], [/^PDF/i, "pdf"], [/^pxlmono/i, "pxlmono"], [/^pxlcolor/i, "pxlcolor"],
@@ -51,7 +54,7 @@ for (const { id, strata } of sample) {
       sameMfr: a.manufacturer === b.manufacturer })
   }
 }
-if (process.argv[3] === "--rows") {
+if (process.argv.includes("--rows")) {
   for (const r of rows) console.log(`${r.id.padEnd(34)} #${r.rank} -> ${r.rec.padEnd(34)} s=${String(r.score).padEnd(5)} n=${String(r.n).padStart(2)} ${r.sameMfr ? "SAME" : "    "} ${r.grade.padEnd(10)} ${r.why}`)
 }
 const total = Object.values(tally).reduce((a, b) => a + b, 0)

@@ -2,7 +2,7 @@
 
 ## Overview
 
-This document describes the offline, reproducible machine-learning pipeline that turns the upstream [OpenPrinting/foomatic-db](https://github.com/OpenPrinting/foomatic-db) XML dataset into the static printer directory, printer detail pages, and "similar printers" recommendations served from `openprinting.github.io/foomatic`.
+This document describes the offline, reproducible recommendation pipeline that turns the upstream [OpenPrinting/foomatic-db](https://github.com/OpenPrinting/foomatic-db) XML dataset into the static printer directory, printer detail pages, and "similar printers" recommendations served from `openprinting.github.io/foomatic`.
 
 The pipeline is designed to:
 
@@ -11,7 +11,7 @@ The pipeline is designed to:
 - Be fully reproducible from upstream Foomatic XML on every run
 - Refresh automatically via GitHub Actions as the upstream database changes
 
-This is the GSoC "Track A" deliverable: *an offline ML pipeline for printer similarity and compatibility analysis, exported as static artifacts for static-site consumption.*
+This is the GSoC "Track A" deliverable: *an offline pipeline for printer similarity and compatibility analysis, exported as static artifacts for static-site consumption.*
 
 ---
 
@@ -81,9 +81,9 @@ Each stage reads the previous stage's output from `public/foomatic-db/` and writ
                    public/foomatic-db/feature-matrix.json
                                        │
                          ┌─────────────┴─────────────┐
-                         │   compute-similarity.ts    │  pairwise cosine
-                         │                             │  similarity, top-10,
-                         │                             │  explanations
+                         │   compute-similarity.ts    │  IDF-weighted similarity,
+                         │                             │  evidence + conflict
+                         │                             │  scoring, top-10
                          └─────────────┬─────────────┘
                                        ▼
         public/foomatic-db/recommendations.json (full map)
@@ -145,13 +145,32 @@ Builds a weighted numeric feature vector for every printer. See [foomatic-recomm
 
 ### 7. Similarity Computation — `compute-similarity.ts`
 
-For every printer, computes cosine similarity against every other printer's feature vector, keeps the top 10 candidates scoring at or above a minimum threshold, and generates human-readable "why this printer?" explanations. See [foomatic-data-formats.md](./foomatic-data-formats.md) for the exact output schema and methodology details.
+For every printer, scores every other printer with the full model described below (IDF-weighted cosine, evidence damping, capability-conflict penalties), keeps the top 10 candidates at or above `MIN_SIMILARITY_SCORE`, orders them deterministically (score, then id — see `lib/foomatic/scoring.ts`), and generates human-readable "why this printer?" explanations. See [foomatic-data-formats.md](./foomatic-data-formats.md) for the exact output schema.
 
 ---
 
 ## Similarity Methodology Summary
 
-The recommendation engine is a **hand-rolled weighted cosine similarity** over engineered features — not a trained/learned model and not an embedding model. This was a deliberate scope choice: the feature space (driver compatibility, page-description-language support, color, resolution tier) is small, well-understood, and directly interpretable, which is what makes the "why this printer?" explanation feature possible. There is no `scikit-learn`-equivalent or embedding library dependency in this pipeline; the only data-processing dependency is `fast-xml-parser` for stage 1.
+The recommendation engine is an **engineered similarity model** — weighted feature similarity with explicit, individually-motivated corrections — not a trained/learned model and not an embedding model. This was a deliberate scope choice: the feature space (driver compatibility, page-description-language support, color, resolution tier) is small, well-understood, and directly interpretable, which is what makes the "why this printer?" explanation feature possible. There is no `scikit-learn`-equivalent or embedding library dependency in this pipeline; the only data-processing dependency is `fast-xml-parser` for stage 1. Product-level descriptions may call the portal "AI-driven"; at the implementation level this is deterministic engineered similarity, and the docs use that language.
+
+The published score for a candidate pair is
+
+```
+score(a, b) = cos_idf(a, b) * (1 - exp(-k / EVIDENCE_TAU)) * conflictPenalty(a, b)
+```
+
+computed in this order:
+
+1. One-hot feature encoding with fixed per-group weights (`vectorize.ts`)
+2. IDF scaling of driver-family and command-set dimensions — `idf(t) = ln(1 + N/df(t))`, mean-normalized — so ubiquitous drivers (e.g. `postscript`, 1,746 printers) carry less weight than rare, diagnostic ones
+3. Cosine similarity over the weighted vectors
+4. Evidence damping: `k` counts dimensions active in **both** vectors; near-empty vectors can no longer score as perfect matches
+5. Capability-conflict penalties for known type, colour, and extreme-resolution contradictions (`lib/foomatic/scoring.ts`)
+6. `MIN_SIMILARITY_SCORE` floor on the final damped score
+7. Top-K selection with deterministic score-then-id ordering
+8. Explanation generation (`computeSharedFeatures()`) and per-printer shard output
+
+Every constant in that chain is documented, with measured justification, in [foomatic-recommendation-quality.md](./foomatic-recommendation-quality.md).
 
 Computation is brute-force O(n²) — every printer is compared against every other printer. At the current scale of the Foomatic database (several thousand printers), this completes in well under a minute (see `compute-similarity.ts` runtime logging). This is a known, accepted scaling limit; see the **Production Readiness** notes in the project's GSoC midterm audit for the documented ceiling and mitigation options if the dataset grows substantially.
 
