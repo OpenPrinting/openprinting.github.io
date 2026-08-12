@@ -251,6 +251,7 @@ export interface Chip {
 
 export type ResponseBlock =
   | { kind: "text"; text: string }
+  | { kind: "list"; title: string; items: string[] }
   | { kind: "printer-cards"; printers: PrinterCardData[] }
   | { kind: "driver-card"; driver: DriverCardData }
   | { kind: "comparison"; aName: string; bName: string; rows: ComparisonRow[] }

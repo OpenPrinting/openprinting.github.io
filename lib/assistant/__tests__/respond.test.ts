@@ -25,6 +25,8 @@ function allText(plan: ResponsePlan): string {
       switch (block.kind) {
         case "text":
           return block.text
+        case "list":
+          return `${block.title} ${block.items.join(" ")}`
         case "chips":
           return block.chips.map(chip => chip.label).join(" ")
         case "comparison":

@@ -284,6 +284,7 @@ function buildInfo(topic: "support-grades" | "similarity" | "assistant-help"): R
             "the database simply has no grade recorded. The grade describes the printer's own driver situation - " +
             "it is separate from any similarity score."
         ),
+        chips(EXAMPLE_CHIPS),
       ],
     }
   }
@@ -297,6 +298,7 @@ function buildInfo(topic: "support-grades" | "similarity" | "assistant-help"): R
             "Limited evidence) describe how much recorded evidence supports the similarity, and each recommended " +
             "printer's own Linux support grade is always shown separately."
         ),
+        chips(EXAMPLE_CHIPS),
       ],
     }
   }
@@ -568,7 +570,8 @@ function buildExplanation(source: PrinterSummary, entry: RecommendationEntry): R
     ),
   ]
   if (entry.sharedFeatures.length > 0) {
-    blocks.push(text(`The similarity is based on: ${entry.sharedFeatures.join("; ")}.`))
+    // The shard's own explanation strings, verbatim, one per line.
+    blocks.push({ kind: "list", title: "Why it's similar:", items: entry.sharedFeatures })
   } else {
     blocks.push(text("The recommendation lists no individual shared features for this pair."))
   }

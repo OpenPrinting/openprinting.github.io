@@ -29,7 +29,13 @@ describe.skipIf(!present)("assistant against real foomatic artifacts", () => {
     plan.blocks.flatMap(block => (block.kind === "printer-cards" ? block.printers.map(card => card.id) : []))
 
   const planText = (plan: ResponsePlan): string =>
-    plan.blocks.map(block => (block.kind === "text" ? block.text : "")).join(" ")
+    plan.blocks
+      .map(block => {
+        if (block.kind === "text") return block.text
+        if (block.kind === "list") return `${block.title} ${block.items.join(" ")}`
+        return ""
+      })
+      .join(" ")
 
   beforeAll(async () => {
     data = nodeData()

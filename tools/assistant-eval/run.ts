@@ -37,6 +37,7 @@ function planText(plan: ResponsePlan): string {
   return plan.blocks
     .map(block => {
       if (block.kind === "text") return block.text
+      if (block.kind === "list") return `${block.title} ${block.items.join(" ")}`
       if (block.kind === "chips") return block.chips.map(chip => chip.label).join(" ")
       if (block.kind === "comparison") return block.rows.map(row => `${row.label} ${row.a} ${row.b}`).join(" ")
       return ""

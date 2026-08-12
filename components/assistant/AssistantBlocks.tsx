@@ -38,6 +38,18 @@ export function AssistantBlock({ block, onAsk, busy }: BlockProps) {
     case "text":
       return <p className="text-sm leading-relaxed text-foreground">{block.text}</p>
 
+    case "list":
+      return (
+        <div className="space-y-1">
+          <p className="text-sm font-medium text-foreground">{block.title}</p>
+          <ul className="list-disc space-y-0.5 pl-5 text-sm leading-relaxed text-foreground">
+            {block.items.map(item => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </div>
+      )
+
     case "chips":
       return (
         <div className="flex flex-wrap gap-1.5">
