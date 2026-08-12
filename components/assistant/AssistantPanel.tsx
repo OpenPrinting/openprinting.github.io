@@ -1,19 +1,27 @@
 "use client"
 
-// The assistant chat panel: a compact anchored card on desktop, a full-height
-// modal sheet on mobile. Lazy-loaded by AssistantLauncher, so none of this
-// code or its data is part of the initial page load.
+// The assistant chat panel.
 //
-// Accessibility: role="dialog" (aria-modal + focus trap on mobile only -
-// desktop keeps the page interactive, which is why the backdrop exists only
-// on mobile), Escape closes, focus moves to the input on open and returns to
-// the launcher on close, the message list is a polite live region, and all
-// animation collapses under prefers-reduced-motion.
+// Responsive tiers:
+// - mobile (<640px): full-height modal sheet over a backdrop - aria-modal,
+//   focus-trapped, body scroll locked, safe-area padded, keyboard-aware
+//   (dvh sizing plus a visualViewport listener that keeps the newest message
+//   and the input visible while the on-screen keyboard is up);
+// - tablet/desktop (>=640px): a compact anchored surface (400px, 420px from
+//   md up) whose height is capped against the fixed 4rem navbar
+//   (min(600px, 100dvh - 10.5rem)), non-modal so the page stays readable.
+//
+// Stacking: backdrop z-[65] / panel z-[70] - above the navbar (z-50) and the
+// z-40 launcher, below the search modal (z-[100]) and TopLoader (z-[9999]).
+//
+// Accessibility: role="dialog", Escape closes, focus moves to the input on
+// open and returns to the launcher on close, the conversation is a polite
+// live region, and every animation collapses under prefers-reduced-motion.
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import { usePathname } from "next/navigation"
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion"
-import { Send, X } from "lucide-react"
+import { Loader2, Printer, Send, X } from "lucide-react"
 
 import { parsePageContext } from "@/lib/assistant/context"
 import { createBrowserData } from "@/lib/assistant/data"
@@ -62,8 +70,15 @@ export default function AssistantPanel({ open, onClose, launcherId }: AssistantP
     const query = window.matchMedia("(max-width: 639px)")
     const update = () => setIsMobile(query.matches)
     update()
+    // The resize fallback covers environments where matchMedia change events
+    // are unreliable; polling `matches` is cheap and setState is a no-op when
+    // the value is unchanged.
     query.addEventListener("change", update)
-    return () => query.removeEventListener("change", update)
+    window.addEventListener("resize", update)
+    return () => {
+      query.removeEventListener("change", update)
+      window.removeEventListener("resize", update)
+    }
   }, [])
 
   // Warm the catalogue while the user types their first question; failures
@@ -122,6 +137,19 @@ export default function AssistantPanel({ open, onClose, launcherId }: AssistantP
     }
   }, [open, isMobile])
 
+  // When the on-screen keyboard opens/closes the visual viewport resizes;
+  // keep the newest message (and therefore the input above it) in view.
+  useEffect(() => {
+    if (!open || !isMobile) return
+    const viewport = window.visualViewport
+    if (!viewport) return
+    const onResize = () => {
+      logRef.current?.scrollTo({ top: logRef.current.scrollHeight })
+    }
+    viewport.addEventListener("resize", onResize)
+    return () => viewport.removeEventListener("resize", onResize)
+  }, [open, isMobile])
+
   // Return focus to the launcher when the panel closes.
   const wasOpen = useRef(false)
   useEffect(() => {
@@ -132,8 +160,11 @@ export default function AssistantPanel({ open, onClose, launcherId }: AssistantP
   }, [open, launcherId])
 
   useEffect(() => {
-    logRef.current?.scrollTo({ top: logRef.current.scrollHeight })
-  }, [messages, busy])
+    logRef.current?.scrollTo({
+      top: logRef.current.scrollHeight,
+      behavior: reducedMotion ? "auto" : "smooth",
+    })
+  }, [messages, busy, reducedMotion])
 
   const ask = useCallback(
     async (query: string) => {
@@ -162,13 +193,21 @@ export default function AssistantPanel({ open, onClose, launcherId }: AssistantP
 
   const suggestions = useMemo(() => contextSuggestions(context), [context])
 
-  const motionProps = reducedMotion
+  const panelMotion = reducedMotion
     ? { initial: { opacity: 1 }, animate: { opacity: 1 }, exit: { opacity: 1 } }
     : {
-        initial: { opacity: 0, y: 12, scale: 0.98 },
+        initial: { opacity: 0, y: 16, scale: 0.97 },
         animate: { opacity: 1, y: 0, scale: 1 },
-        exit: { opacity: 0, y: 12, scale: 0.98 },
-        transition: { duration: 0.2 },
+        exit: { opacity: 0, y: 16, scale: 0.97 },
+        transition: { duration: 0.2, ease: "easeOut" as const },
+      }
+
+  const messageMotion = reducedMotion
+    ? {}
+    : {
+        initial: { opacity: 0, y: 6 },
+        animate: { opacity: 1, y: 0 },
+        transition: { duration: 0.15, ease: "easeOut" as const },
       }
 
   return (
@@ -178,8 +217,9 @@ export default function AssistantPanel({ open, onClose, launcherId }: AssistantP
           {isMobile && (
             <motion.div
               key="assistant-backdrop"
-              className="fixed inset-0 z-[85] bg-black/40"
+              className="fixed inset-0 z-[65] bg-black/50"
               aria-hidden="true"
+              onClick={onClose}
               initial={{ opacity: reducedMotion ? 1 : 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: reducedMotion ? 1 : 0 }}
@@ -187,23 +227,36 @@ export default function AssistantPanel({ open, onClose, launcherId }: AssistantP
           )}
           <motion.div
             key="assistant-panel"
+            id="assistant-panel"
             ref={panelRef}
             role="dialog"
             aria-label="Printer assistant"
             aria-modal={isMobile || undefined}
-            className="fixed inset-0 z-[90] flex h-[100dvh] w-full flex-col border-border bg-card shadow-xl sm:inset-auto sm:bottom-24 sm:right-6 sm:h-[560px] sm:max-h-[calc(100dvh-7rem)] sm:w-[380px] sm:rounded-xl sm:border"
-            {...motionProps}
+            className="fixed inset-0 z-[70] flex h-[100dvh] w-full flex-col overflow-hidden bg-card shadow-2xl ring-1 ring-black/5 dark:ring-white/10 sm:inset-auto sm:bottom-[5.75rem] sm:right-6 sm:h-[min(37.5rem,calc(100dvh-10.5rem))] sm:w-[400px] sm:rounded-2xl sm:border sm:border-border md:w-[420px]"
+            {...panelMotion}
           >
-            <header className="flex items-center justify-between border-b border-border px-4 py-3">
-              <div>
-                <h2 className="text-sm font-semibold text-foreground">Printer assistant</h2>
-                <p className="text-xs text-muted-foreground">Answers from the Foomatic printer database</p>
+            <header className="flex items-center justify-between gap-3 border-b border-border bg-card px-4 pb-3 pt-[max(0.75rem,env(safe-area-inset-top))] sm:pt-3">
+              <div className="flex min-w-0 items-center gap-3">
+                <span
+                  className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-blue-700 text-white shadow-sm"
+                  aria-hidden="true"
+                >
+                  <Printer className="h-[18px] w-[18px]" />
+                </span>
+                <div className="min-w-0">
+                  <h2 className="truncate text-sm font-semibold tracking-tight text-foreground">
+                    Printer assistant
+                  </h2>
+                  <p className="truncate text-xs text-muted-foreground">
+                    Answers from the Foomatic printer database
+                  </p>
+                </div>
               </div>
               <button
                 type="button"
                 onClick={onClose}
                 aria-label="Close assistant"
-                className="rounded-md p-1.5 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-accent hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               >
                 <X className="h-4 w-4" aria-hidden="true" />
               </button>
@@ -215,41 +268,47 @@ export default function AssistantPanel({ open, onClose, launcherId }: AssistantP
               aria-live="polite"
               aria-busy={busy}
               aria-label="Conversation"
-              className="flex-1 space-y-3 overflow-y-auto overscroll-contain px-4 py-3"
+              className="flex-1 space-y-4 overflow-y-auto overscroll-contain px-4 py-4"
             >
               {messages.length === 0 && (
-                <div className="space-y-3">
-                  <p className="text-sm leading-relaxed text-foreground">
-                    Ask me about the printers, drivers, and Linux support information in OpenPrinting&apos;s
-                    Foomatic database.
-                  </p>
+                <div className="space-y-4 pt-2">
+                  <div className="space-y-1.5">
+                    <p className="text-sm font-medium text-foreground">
+                      Hi - I answer questions from OpenPrinting&apos;s Foomatic printer database.
+                    </p>
+                    <p className="text-sm leading-relaxed text-muted-foreground">
+                      Ask about printers, Linux support, drivers, or similar models - or start with one
+                      of these:
+                    </p>
+                  </div>
                   <AssistantBlock block={{ kind: "chips", chips: suggestions }} onAsk={ask} busy={busy} />
                 </div>
               )}
               {messages.map(message =>
                 message.role === "user" ? (
-                  <div key={message.id} className="flex justify-end">
-                    <p className="max-w-[85%] rounded-lg bg-primary/10 px-3 py-2 text-sm text-foreground">
+                  <motion.div key={message.id} className="flex justify-end" {...messageMotion}>
+                    <p className="max-w-[85%] whitespace-pre-wrap break-words rounded-2xl rounded-br-md bg-blue-600 px-3.5 py-2 text-sm leading-relaxed text-white">
                       {message.text}
                     </p>
-                  </div>
+                  </motion.div>
                 ) : (
-                  <div key={message.id} className="space-y-2">
+                  <motion.div key={message.id} className="space-y-2.5" {...messageMotion}>
                     {message.plan?.blocks.map((block, index) => (
                       <AssistantBlock key={index} block={block} onAsk={ask} busy={busy} />
                     ))}
-                  </div>
+                  </motion.div>
                 )
               )}
               {busy && (
-                <p className="text-xs text-muted-foreground" role="status">
+                <p className="flex items-center gap-2 text-xs text-muted-foreground" role="status">
+                  <Loader2 className="h-3.5 w-3.5 animate-spin motion-reduce:animate-none" aria-hidden="true" />
                   Looking that up…
                 </p>
               )}
             </div>
 
             <form
-              className="border-t border-border px-4 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]"
+              className="border-t border-border bg-card px-4 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]"
               onSubmit={event => {
                 event.preventDefault()
                 void ask(input)
@@ -268,15 +327,19 @@ export default function AssistantPanel({ open, onClose, launcherId }: AssistantP
                   rows={1}
                   maxLength={300}
                   placeholder="e.g. find a colour laser printer"
-                  className="max-h-24 min-h-[2.25rem] flex-1 resize-none rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                  className="max-h-28 min-h-[2.5rem] flex-1 resize-none rounded-xl border border-input bg-background px-3.5 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                 />
                 <button
                   type="submit"
                   disabled={busy || input.trim().length === 0}
                   aria-label="Send question"
-                  className="rounded-md bg-primary p-2 text-primary-foreground transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:opacity-50"
+                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-600 text-white transition-colors hover:bg-blue-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-40"
                 >
-                  <Send className="h-4 w-4" aria-hidden="true" />
+                  {busy ? (
+                    <Loader2 className="h-4 w-4 animate-spin motion-reduce:animate-none" aria-hidden="true" />
+                  ) : (
+                    <Send className="h-4 w-4" aria-hidden="true" />
+                  )}
                 </button>
               </div>
             </form>

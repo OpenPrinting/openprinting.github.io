@@ -4,8 +4,13 @@
 // React over typed data - user text and data fields are rendered as text
 // nodes (React escapes them), links are built exclusively by the canonical
 // printerHref/driverHref helpers, and no HTML string is ever injected.
+//
+// Link/accent colour inside the assistant is the site's blue family
+// (text-gradient-blue et al.) rather than --primary, which is near-white in
+// dark mode and would not read as a link there.
 
 import Link from "next/link"
+import { ArrowRight } from "lucide-react"
 import { FoomaticBadge, FoomaticCard, FoomaticStatusBadge } from "@/components/foomatic/shared"
 import { driverHref, printerHref } from "@/lib/foomatic/routes"
 import type { ResponseBlock } from "@/lib/assistant/types"
@@ -18,6 +23,9 @@ const TONE_CLASSES: Record<string, string> = {
   moderate: "text-amber-700 dark:text-amber-400",
   limited: "text-muted-foreground",
 }
+
+const LINK_CLASSES =
+  "inline-flex items-center gap-1 text-xs font-medium text-blue-600 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring dark:text-blue-400"
 
 interface BlockProps {
   block: ResponseBlock
@@ -32,14 +40,14 @@ export function AssistantBlock({ block, onAsk, busy }: BlockProps) {
 
     case "chips":
       return (
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-1.5">
           {block.chips.map(chip => (
             <button
               key={chip.label + chip.query}
               type="button"
               disabled={busy}
               onClick={() => onAsk(chip.query)}
-              className="rounded-full border border-border bg-card px-3 py-1.5 text-xs font-medium text-foreground transition-colors hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:opacity-50"
+              className="min-h-[2.25rem] max-w-full rounded-full border border-border bg-background px-3.5 py-1.5 text-left text-xs font-medium leading-snug text-foreground transition-colors hover:border-blue-500/50 hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:opacity-50"
             >
               {chip.label}
             </button>
@@ -54,13 +62,15 @@ export function AssistantBlock({ block, onAsk, busy }: BlockProps) {
             const name = `${card.manufacturer} ${card.model}`.trim() || card.id
             return (
               <li key={card.id}>
-                <FoomaticCard className="p-3">
+                <FoomaticCard className="p-3 transition-colors hover:border-blue-500/40">
                   <div className="flex items-start justify-between gap-3">
                     <div className="min-w-0">
                       {card.manufacturer && (
                         <p className="text-xs text-muted-foreground">{card.manufacturer}</p>
                       )}
-                      <p className="truncate text-sm font-semibold text-foreground">{card.model || card.id}</p>
+                      <p className="truncate text-sm font-semibold tracking-tight text-foreground">
+                        {card.model || card.id}
+                      </p>
                     </div>
                     {card.score !== undefined && card.tierLabel && (
                       <div className="shrink-0 text-right">
@@ -73,25 +83,31 @@ export function AssistantBlock({ block, onAsk, busy }: BlockProps) {
                   </div>
                   <div className="mt-2 flex flex-wrap items-center gap-1.5">
                     <FoomaticStatusBadge status={card.status} />
-                    {card.type && <FoomaticBadge className="border-border text-muted-foreground">{card.type}</FoomaticBadge>}
+                    {card.type && (
+                      <FoomaticBadge className="border-border text-muted-foreground">{card.type}</FoomaticBadge>
+                    )}
                     {typeof card.driverCount === "number" && (
                       <FoomaticBadge className="border-border text-muted-foreground">
                         {card.driverCount} {card.driverCount === 1 ? "driver" : "drivers"}
                       </FoomaticBadge>
                     )}
                     {card.features?.map(feature => (
-                      <FoomaticBadge key={feature} className="border-primary/20 bg-primary/5 text-primary">
+                      <FoomaticBadge
+                        key={feature}
+                        className="border-blue-500/20 bg-blue-500/5 text-blue-700 dark:text-blue-300"
+                      >
                         {feature}
                       </FoomaticBadge>
                     ))}
                   </div>
-                  <div className="mt-2">
+                  <div className="mt-2.5">
                     <Link
                       href={printerHref(card.id, card.manufacturer)}
                       aria-label={`View ${name} printer page`}
-                      className="text-xs font-medium text-primary hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                      className={LINK_CLASSES}
                     >
                       View printer
+                      <ArrowRight className="h-3 w-3" aria-hidden="true" />
                     </Link>
                   </div>
                 </FoomaticCard>
@@ -104,9 +120,9 @@ export function AssistantBlock({ block, onAsk, busy }: BlockProps) {
     case "driver-card": {
       const driver = block.driver
       return (
-        <FoomaticCard className="p-3">
-          <p className="text-sm font-semibold text-foreground">{driver.name}</p>
-          <div className="mt-1 flex flex-wrap items-center gap-1.5">
+        <FoomaticCard className="p-3 transition-colors hover:border-blue-500/40">
+          <p className="text-sm font-semibold tracking-tight text-foreground">{driver.name}</p>
+          <div className="mt-1.5 flex flex-wrap items-center gap-1.5">
             {driver.supplier && (
               <FoomaticBadge className="border-border text-muted-foreground">{driver.supplier}</FoomaticBadge>
             )}
@@ -117,13 +133,14 @@ export function AssistantBlock({ block, onAsk, busy }: BlockProps) {
               {driver.printerCount} {driver.printerCount === 1 ? "printer" : "printers"}
             </FoomaticBadge>
           </div>
-          <div className="mt-2">
+          <div className="mt-2.5">
             <Link
               href={driverHref(driver.id)}
               aria-label={`View ${driver.name} driver page`}
-              className="text-xs font-medium text-primary hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              className={LINK_CLASSES}
             >
               View driver
+              <ArrowRight className="h-3 w-3" aria-hidden="true" />
             </Link>
           </div>
         </FoomaticCard>
@@ -132,26 +149,26 @@ export function AssistantBlock({ block, onAsk, busy }: BlockProps) {
 
     case "comparison":
       return (
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto rounded-lg border border-border">
           <table className="w-full border-collapse text-xs">
             <caption className="sr-only">
               Comparison of {block.aName} and {block.bName}
             </caption>
             <thead>
-              <tr className="border-b border-border text-left">
-                <th scope="col" className="py-1.5 pr-2 font-medium text-muted-foreground" />
-                <th scope="col" className="py-1.5 pr-2 font-semibold text-foreground">{block.aName}</th>
-                <th scope="col" className="py-1.5 font-semibold text-foreground">{block.bName}</th>
+              <tr className="border-b border-border bg-muted/50 text-left">
+                <th scope="col" className="px-2.5 py-2 font-medium text-muted-foreground" />
+                <th scope="col" className="px-2.5 py-2 font-semibold text-foreground">{block.aName}</th>
+                <th scope="col" className="px-2.5 py-2 font-semibold text-foreground">{block.bName}</th>
               </tr>
             </thead>
             <tbody>
-              {block.rows.map(row => (
-                <tr key={row.label} className="border-b border-border/60">
-                  <th scope="row" className="py-1.5 pr-2 text-left font-medium text-muted-foreground">
+              {block.rows.map((row, index) => (
+                <tr key={row.label} className={index < block.rows.length - 1 ? "border-b border-border/60" : ""}>
+                  <th scope="row" className="px-2.5 py-2 text-left font-medium text-muted-foreground">
                     {row.label}
                   </th>
-                  <td className="py-1.5 pr-2 text-foreground">{row.a}</td>
-                  <td className="py-1.5 text-foreground">{row.b}</td>
+                  <td className="px-2.5 py-2 text-foreground">{row.a}</td>
+                  <td className="px-2.5 py-2 text-foreground">{row.b}</td>
                 </tr>
               ))}
             </tbody>
