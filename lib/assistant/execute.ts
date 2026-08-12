@@ -210,11 +210,7 @@ export function filtersToQueryText(filters: CapabilityFilters): string {
   return parts.join(" ")
 }
 
-function computeRelaxations(
-  catalog: PrinterSummary[],
-  filters: CapabilityFilters,
-  specLabels: string[]
-): Relaxation[] {
+function computeRelaxations(catalog: PrinterSummary[], filters: CapabilityFilters): Relaxation[] {
   const keys = Object.keys(filters).filter(key => key !== "duplex") as (keyof CapabilityFilters)[]
   if (keys.length < 2) return []
   const relaxations: Relaxation[] = []
@@ -224,7 +220,9 @@ function computeRelaxations(
     delete reduced.duplex
     const { matches } = applySpecs(catalog, buildSpecs(reduced))
     if (matches.length > 0) {
-      const droppedLabel = specLabels[keys.indexOf(key)] ?? String(key)
+      // The dropped filter's label comes from its own spec, so it can never
+      // drift from the wording used elsewhere in the response.
+      const droppedLabel = buildSpecs({ [key]: filters[key] } as CapabilityFilters)[0]?.label ?? String(key)
       relaxations.push({
         droppedLabel,
         resultCount: matches.length,
@@ -395,10 +393,10 @@ async function executeSearch(
   const specs = buildSpecs(applicable)
 
   if (specs.length === 0) {
-    if (insufficient.length > 0) {
+    if (insufficient.length > 0 && unapplied.length === 0) {
       return { kind: "insufficient", state: "INSUFFICIENT_DATA", message: { topic: "duplex", catalogSize: catalog.length } }
     }
-    if (recommend) {
+    if (insufficient.length === 0 && recommend) {
       return { kind: "clarify", state: "AMBIGUOUS", question: { topic: "criteria-needed" } }
     }
     // Only unrecognized constraints ("purple printer").
@@ -423,9 +421,7 @@ async function executeSearch(
   const { ordered, orderingLabel } = orderMatches(matches, applicable)
 
   const relaxations =
-    ordered.length < MIN_COMFORTABLE_RESULTS
-      ? computeRelaxations(catalog, applicable, specs.map(spec => spec.label))
-      : []
+    ordered.length < MIN_COMFORTABLE_RESULTS ? computeRelaxations(catalog, applicable) : []
 
   return {
     kind: "search-results",
@@ -522,7 +518,7 @@ async function executeSimilar(
       insufficient: filters.duplex ? ["duplex"] : [],
       relaxations: [],
       orderingLabel: null,
-      catalogSize: entries.length,
+      catalogSize: byId.size,
     }
   } else if (filters.duplex) {
     diagnostics = {
@@ -531,7 +527,7 @@ async function executeSimilar(
       insufficient: ["duplex"],
       relaxations: [],
       orderingLabel: null,
-      catalogSize: entries.length,
+      catalogSize: byId.size,
     }
   }
 

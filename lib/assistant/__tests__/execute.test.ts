@@ -97,7 +97,7 @@ describe("capability search execution", () => {
     }
   })
 
-  it("offers one-filter relaxations when nothing matches", async () => {
+  it("offers one-filter relaxations when nothing matches, each labelled with its own filter", async () => {
     const execution = await executeQuery(
       search({ color: true, type: "laser", minDpi: 2400 }),
       HOME_CONTEXT,
@@ -107,8 +107,21 @@ describe("capability search execution", () => {
     expect(execution.state).toBe("NO_MATCHES")
     const dropped = execution.diagnostics.relaxations.map(r => r.droppedLabel)
     expect(dropped).toContain("at least 2400 dpi")
+    // Labels must correspond to the dropped filter, not another one: dropping
+    // "colour" from {colour, laser, 2400dpi} leaves laser+2400dpi (0 matches),
+    // so no "colour" relaxation exists; dropping the dpi leaves colour lasers.
+    expect(dropped).not.toContain("colour")
     for (const relaxation of execution.diagnostics.relaxations) {
       expect(relaxation.resultCount).toBeGreaterThan(0)
+    }
+  })
+
+  it("surfaces both the duplex gap and unrecognized constraints together", async () => {
+    const execution = await executeQuery(search({ duplex: true }, ["purple"]), HOME_CONTEXT, data)
+    expect(execution.kind).toBe("search-results")
+    if (execution.kind === "search-results") {
+      expect(execution.diagnostics.insufficient).toEqual(["duplex"])
+      expect(execution.diagnostics.unapplied).toEqual(["purple"])
     }
   })
 })
@@ -136,6 +149,17 @@ describe("similarity execution (PR #224 shards, consumed verbatim)", () => {
     if (execution.kind !== "similar") throw new Error("wrong kind")
     expect(execution.entries.map(e => e.id)).toEqual(["Xerox-Phaser_6100"])
     expect(execution.totalBeforeFilters).toBe(4)
+  })
+
+  it("reports the whole catalogue's size in the duplex caveat, not the shard's", async () => {
+    const execution = await executeQuery(
+      similar({ filters: { duplex: true, color: true } }),
+      LJ4_CONTEXT,
+      data
+    )
+    if (execution.kind !== "similar") throw new Error("wrong kind")
+    expect(execution.diagnostics?.insufficient).toEqual(["duplex"])
+    expect(execution.diagnostics?.catalogSize).toBe(13)
   })
 
   it("clarifies the dimension for unspecified 'better'", async () => {

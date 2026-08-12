@@ -43,6 +43,12 @@ let nextMessageId = 1
 export default function AssistantPanel({ open, onClose, launcherId }: AssistantPanelProps) {
   const pathname = usePathname()
   const context = useMemo(() => parsePageContext(pathname ?? "/"), [pathname])
+  // Latest context for the ask callback: usePathname already excludes any
+  // configured basePath, unlike window.location.pathname.
+  const contextRef = useRef(context)
+  useEffect(() => {
+    contextRef.current = context
+  }, [context])
   const [messages, setMessages] = useState<Message[]>([])
   const [input, setInput] = useState("")
   const [busy, setBusy] = useState(false)
@@ -137,7 +143,7 @@ export default function AssistantPanel({ open, onClose, launcherId }: AssistantP
       setMessages(current => [...current, { id: nextMessageId++, role: "user", text: trimmed }])
       setBusy(true)
       try {
-        const turn = await runAssistant(trimmed, parsePageContext(window.location.pathname), data)
+        const turn = await runAssistant(trimmed, contextRef.current, data)
         setMessages(current => [...current, { id: nextMessageId++, role: "assistant", plan: turn.plan }])
       } finally {
         setBusy(false)
