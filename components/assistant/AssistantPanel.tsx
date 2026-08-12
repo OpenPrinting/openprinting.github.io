@@ -1,14 +1,16 @@
-"use client"
+﻿"use client"
 
 // The assistant chat panel.
 //
-// Responsive tiers:
-// - mobile (<640px): full-height modal sheet over a backdrop - aria-modal,
+// Responsive tiers (JS-driven - the panel never server-renders, so the tier
+// has a single source of truth instead of parallel CSS breakpoints):
+// - compact (width < 640px OR height < 480px, i.e. phones in either
+//   orientation): full-height modal sheet over a backdrop - aria-modal,
 //   focus-trapped, body scroll locked, safe-area padded, keyboard-aware
 //   (dvh sizing plus a visualViewport listener that keeps the newest message
 //   and the input visible while the on-screen keyboard is up);
-// - tablet/desktop (>=640px): a compact anchored surface (400px, 420px from
-//   md up) whose height is capped against the fixed 4rem navbar
+// - anchored (everything else): a compact surface (400px, 420px from md up)
+//   whose height is capped against the fixed 4rem navbar
 //   (min(600px, 100dvh - 10.5rem)), non-modal so the page stays readable.
 //
 // Stacking: backdrop z-[65] / panel z-[70] - above the navbar (z-50) and the
@@ -60,19 +62,24 @@ export default function AssistantPanel({ open, onClose, launcherId }: AssistantP
   const [messages, setMessages] = useState<Message[]>([])
   const [input, setInput] = useState("")
   const [busy, setBusy] = useState(false)
-  const [isMobile, setIsMobile] = useState(false)
+  // Compact tier = the full-height sheet. Applies below the sm breakpoint OR
+  // on short viewports (phone landscape: an anchored card capped against the
+  // navbar would leave a ~200px panel there).
+  const [isCompact, setIsCompact] = useState(false)
   const panelRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLTextAreaElement>(null)
   const logRef = useRef<HTMLDivElement>(null)
   const reducedMotion = useReducedMotion()
 
   useEffect(() => {
-    const query = window.matchMedia("(max-width: 639px)")
-    const update = () => setIsMobile(query.matches)
+    // Derived from innerWidth/innerHeight rather than MediaQueryList.matches:
+    // MQL updates ride the rendering pipeline and can lag (or never fire
+    // change events) in throttled/background documents, while the window
+    // dimensions are always current. The panel never server-renders
+    // (dynamic ssr:false), so the layout tier can safely live in JS state.
+    const update = () => setIsCompact(window.innerWidth < 640 || window.innerHeight < 480)
     update()
-    // The resize fallback covers environments where matchMedia change events
-    // are unreliable; polling `matches` is cheap and setState is a no-op when
-    // the value is unchanged.
+    const query = window.matchMedia("(max-width: 639px)")
     query.addEventListener("change", update)
     window.addEventListener("resize", update)
     return () => {
@@ -111,7 +118,7 @@ export default function AssistantPanel({ open, onClose, launcherId }: AssistantP
 
   // Mobile is modal: lock body scroll and trap Tab inside the sheet.
   useEffect(() => {
-    if (!open || !isMobile) return
+    if (!open || !isCompact) return
     const previousOverflow = document.body.style.overflow
     document.body.style.overflow = "hidden"
     const trap = (event: KeyboardEvent) => {
@@ -135,12 +142,12 @@ export default function AssistantPanel({ open, onClose, launcherId }: AssistantP
       document.body.style.overflow = previousOverflow
       window.removeEventListener("keydown", trap)
     }
-  }, [open, isMobile])
+  }, [open, isCompact])
 
   // When the on-screen keyboard opens/closes the visual viewport resizes;
   // keep the newest message (and therefore the input above it) in view.
   useEffect(() => {
-    if (!open || !isMobile) return
+    if (!open || !isCompact) return
     const viewport = window.visualViewport
     if (!viewport) return
     const onResize = () => {
@@ -148,7 +155,7 @@ export default function AssistantPanel({ open, onClose, launcherId }: AssistantP
     }
     viewport.addEventListener("resize", onResize)
     return () => viewport.removeEventListener("resize", onResize)
-  }, [open, isMobile])
+  }, [open, isCompact])
 
   // Return focus to the launcher when the panel closes.
   const wasOpen = useRef(false)
@@ -214,7 +221,7 @@ export default function AssistantPanel({ open, onClose, launcherId }: AssistantP
     <AnimatePresence>
       {open && (
         <>
-          {isMobile && (
+          {isCompact && (
             <motion.div
               key="assistant-backdrop"
               className="fixed inset-0 z-[65] bg-black/50"
@@ -231,11 +238,19 @@ export default function AssistantPanel({ open, onClose, launcherId }: AssistantP
             ref={panelRef}
             role="dialog"
             aria-label="Printer assistant"
-            aria-modal={isMobile || undefined}
-            className="fixed inset-0 z-[70] flex h-[100dvh] w-full flex-col overflow-hidden bg-card shadow-2xl ring-1 ring-black/5 dark:ring-white/10 sm:inset-auto sm:bottom-[5.75rem] sm:right-6 sm:h-[min(37.5rem,calc(100dvh-10.5rem))] sm:w-[400px] sm:rounded-2xl sm:border sm:border-border md:w-[420px]"
+            aria-modal={isCompact || undefined}
+            className={`fixed z-[70] flex flex-col overflow-hidden bg-card shadow-2xl ring-1 ring-black/5 dark:ring-white/10 ${
+              isCompact
+                ? "inset-0 h-[100dvh] w-full"
+                : "bottom-[5.75rem] right-6 h-[min(37.5rem,calc(100dvh-10.5rem))] w-[400px] rounded-2xl border border-border md:w-[420px]"
+            }`}
             {...panelMotion}
           >
-            <header className="flex items-center justify-between gap-3 border-b border-border bg-card px-4 pb-3 pt-[max(0.75rem,env(safe-area-inset-top))] sm:pt-3">
+            <header
+              className={`flex items-center justify-between gap-3 border-b border-border bg-card px-4 pb-3 ${
+                isCompact ? "pt-[max(0.75rem,env(safe-area-inset-top))]" : "pt-3"
+              }`}
+            >
               <div className="flex min-w-0 items-center gap-3">
                 <span
                   className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-blue-700 text-white shadow-sm"
@@ -252,14 +267,21 @@ export default function AssistantPanel({ open, onClose, launcherId }: AssistantP
                   </p>
                 </div>
               </div>
-              <button
-                type="button"
-                onClick={onClose}
-                aria-label="Close assistant"
-                className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-accent hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-              >
-                <X className="h-4 w-4" aria-hidden="true" />
-              </button>
+              {/* Sheet-only: the sheet covers the launcher and Escape has no
+                  touch equivalent. In the anchored tier the launcher itself
+                  morphs into the close control, so a second X would be
+                  redundant - exactly one close affordance is visible at any
+                  time. */}
+              {isCompact && (
+                <button
+                  type="button"
+                  onClick={onClose}
+                  aria-label="Close assistant"
+                  className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-accent hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                >
+                  <X className="h-4 w-4" aria-hidden="true" />
+                </button>
+              )}
             </header>
 
             <div
@@ -302,7 +324,7 @@ export default function AssistantPanel({ open, onClose, launcherId }: AssistantP
               {busy && (
                 <p className="flex items-center gap-2 text-xs text-muted-foreground" role="status">
                   <Loader2 className="h-3.5 w-3.5 animate-spin motion-reduce:animate-none" aria-hidden="true" />
-                  Looking that up…
+                  Looking that upâ€¦
                 </p>
               )}
             </div>
