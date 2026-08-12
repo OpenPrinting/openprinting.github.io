@@ -1,11 +1,15 @@
 import { describe, expect, it } from "vitest"
 import {
   COLOR_CONFLICT_PENALTY,
+  CONFIDENCE_GOOD_THRESHOLD,
+  CONFIDENCE_HIGH_THRESHOLD,
+  CONFIDENCE_MODERATE_THRESHOLD,
   EVIDENCE_TAU,
   MIN_SIMILARITY_SCORE,
   RESOLUTION_CONFLICT_PENALTY,
   RESOLUTION_CONFLICT_RATIO,
   TYPE_CONFLICT_PENALTY,
+  confidenceTier,
   conflictPenalty,
   evidenceWeight,
   overlapCount,
@@ -149,6 +153,55 @@ describe("resolutionTier", () => {
     // labels must always read as ranges, not as a specific capability claim.
     for (const dpi of [120, 306, 720, 1440, 5760]) {
       expect(resolutionTier(dpi)).toMatch(/^(up to|over|\d+-)/)
+    }
+  })
+})
+
+describe("confidenceTier", () => {
+  const LABELS = ["High confidence", "Good match", "Moderate match", "Limited evidence"]
+
+  it("assigns every representable score to exactly one tier", () => {
+    // Scores are rounded to 3 decimals upstream, so sweep that whole domain.
+    for (let i = 0; i <= 1000; i++) {
+      const tier = confidenceTier(i / 1000)
+      expect(LABELS).toContain(tier.label)
+    }
+  })
+
+  it("maps tier boundaries inclusively at the lower edge", () => {
+    expect(confidenceTier(CONFIDENCE_HIGH_THRESHOLD).label).toBe("High confidence")
+    expect(confidenceTier(CONFIDENCE_HIGH_THRESHOLD - 0.001).label).toBe("Good match")
+    expect(confidenceTier(CONFIDENCE_GOOD_THRESHOLD).label).toBe("Good match")
+    expect(confidenceTier(CONFIDENCE_GOOD_THRESHOLD - 0.001).label).toBe("Moderate match")
+    expect(confidenceTier(CONFIDENCE_MODERATE_THRESHOLD).label).toBe("Moderate match")
+    expect(confidenceTier(CONFIDENCE_MODERATE_THRESHOLD - 0.001).label).toBe("Limited evidence")
+  })
+
+  it("covers the observed score range without an unreachable tier", () => {
+    // Measured bounds of the generated artifacts: min 0.351, max 0.991.
+    expect(confidenceTier(0.351).label).toBe("Limited evidence")
+    expect(confidenceTier(0.991).label).toBe("High confidence")
+    // Even a hypothetical perfect score gets similarity wording, never a
+    // claim of exactness: the model measures similarity, not identity.
+    expect(confidenceTier(1.0).label).toBe("High confidence")
+  })
+
+  it("never labels any score as an exact match", () => {
+    for (let i = 0; i <= 1000; i++) {
+      expect(confidenceTier(i / 1000).label).not.toMatch(/exact/i)
+    }
+  })
+
+  it("keeps a single-signal pair out of every tier above Limited evidence", () => {
+    // evidenceWeight(1) caps a one-dimension overlap at ~0.22 even at perfect
+    // cosine, which is below the Moderate threshold.
+    expect(1.0 * evidenceWeight(1)).toBeLessThan(CONFIDENCE_MODERATE_THRESHOLD)
+    expect(confidenceTier(1.0 * evidenceWeight(1)).label).toBe("Limited evidence")
+  })
+
+  it("is deterministic", () => {
+    for (const s of [0, 0.393, 0.5, 0.7, 0.85, 0.991]) {
+      expect(confidenceTier(s)).toEqual(confidenceTier(s))
     }
   })
 })

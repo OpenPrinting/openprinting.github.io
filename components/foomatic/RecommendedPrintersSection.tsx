@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react"
 import Link from "next/link"
-import { CheckCircle2 } from "lucide-react"
 
 import {
   FoomaticBadge,
@@ -11,6 +10,8 @@ import {
 } from "@/components/foomatic/shared"
 import { withBasePath } from "@/lib/foomatic/base-path"
 import { printerHref } from "@/lib/foomatic/routes"
+import { confidenceTier } from "@/lib/foomatic/scoring"
+import type { ConfidenceTone } from "@/lib/foomatic/scoring"
 
 // Display fields are embedded in each per-printer recommendation shard by
 // compute-similarity.ts, so this section needs exactly one small fetch.
@@ -29,31 +30,28 @@ interface RecommendedPrintersSectionProps {
   printerId: string
 }
 
-// Cosine scores are rounded to 3 decimals upstream, so anything that would
-// display as "100%" is treated as an exact match rather than shown as a score.
-const EXACT_MATCH_THRESHOLD = 0.9995
-const STRONG_MATCH_PERCENT = 85
-const MODERATE_MATCH_PERCENT = 70
+// Tier wording and thresholds live in lib/foomatic/scoring.ts next to the
+// scoring model they interpret. The percentage is labelled "similarity", not
+// "match", because the score is an engineered similarity value — it is not a
+// probability that the printer will work.
+const TONE_CLASSES: Record<ConfidenceTone, string> = {
+  high: "text-emerald-700 dark:text-emerald-400",
+  good: "text-sky-700 dark:text-sky-400",
+  moderate: "text-amber-700 dark:text-amber-400",
+  limited: "text-muted-foreground",
+}
 
 function ConfidenceBadge({ score }: { score: number }) {
-  if (score >= EXACT_MATCH_THRESHOLD) {
-    return (
-      <span className="inline-flex items-center gap-1 text-sm font-medium text-emerald-700 dark:text-emerald-400">
-        <CheckCircle2 className="h-3.5 w-3.5" aria-hidden="true" />
-        Exact match
+  const tier = confidenceTier(score)
+
+  return (
+    <span className="flex flex-col items-end">
+      <span className={`text-sm font-medium ${TONE_CLASSES[tier.tone]}`}>{tier.label}</span>
+      <span className="text-xs text-muted-foreground">
+        {Math.round(score * 100)}% similarity
       </span>
-    )
-  }
-
-  const percentage = Math.round(score * 100)
-  const toneClass =
-    percentage >= STRONG_MATCH_PERCENT
-      ? "text-emerald-700 dark:text-emerald-400"
-      : percentage >= MODERATE_MATCH_PERCENT
-        ? "text-amber-700 dark:text-amber-400"
-        : "text-muted-foreground"
-
-  return <span className={`text-sm font-medium ${toneClass}`}>{percentage}% match</span>
+    </span>
+  )
 }
 
 function RecommendationSkeleton() {

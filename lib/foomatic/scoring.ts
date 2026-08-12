@@ -85,6 +85,36 @@ export function resolutionTier(dpi: number | null | undefined): string | null {
   return "over 1200 dpi"
 }
 
+// User-facing interpretation of the final score. The score is an engineered
+// similarity value (IDF-weighted cosine, damped by evidence, penalized for
+// capability conflicts) — it is not a probability and not a validated
+// compatibility guarantee, so tier wording deliberately avoids implying either.
+//
+// Thresholds sit at the midpoints between the mean scores of the observed
+// evidence bands (<=1 shared feature: 0.393, 2-3: 0.593, 4-6: 0.787,
+// 7+: 0.921), so each tier corresponds to a real difference in supporting
+// evidence rather than to a cosmetic share of the distribution. Measured on
+// the full artifact set: "High confidence" recommendations are 90% 7+-feature
+// matches with zero capability conflicts, while every generic-driver-only
+// pair falls in "Limited evidence".
+export const CONFIDENCE_HIGH_THRESHOLD = 0.85
+export const CONFIDENCE_GOOD_THRESHOLD = 0.7
+export const CONFIDENCE_MODERATE_THRESHOLD = 0.5
+
+export type ConfidenceTone = "high" | "good" | "moderate" | "limited"
+
+export interface ConfidenceTier {
+  label: string
+  tone: ConfidenceTone
+}
+
+export function confidenceTier(score: number): ConfidenceTier {
+  if (score >= CONFIDENCE_HIGH_THRESHOLD) return { label: "High confidence", tone: "high" }
+  if (score >= CONFIDENCE_GOOD_THRESHOLD) return { label: "Good match", tone: "good" }
+  if (score >= CONFIDENCE_MODERATE_THRESHOLD) return { label: "Moderate match", tone: "moderate" }
+  return { label: "Limited evidence", tone: "limited" }
+}
+
 // Candidates with byte-identical feature vectors are genuinely
 // indistinguishable given the recorded data, so ties are broken by id to keep
 // output deterministic across runs and platforms rather than pretending to a
