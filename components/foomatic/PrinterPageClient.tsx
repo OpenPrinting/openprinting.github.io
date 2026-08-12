@@ -24,7 +24,9 @@ import { driverHref, ppdViewHref } from "@/lib/foomatic/routes"
 import { sanitizeFoomaticHtml } from "@/lib/foomatic/sanitize"
 import type { Printer } from "@/lib/foomatic/types"
 import { calculateAccurateStatus } from "@/lib/foomatic/utils"
-import RecommendedPrintersSection from "@/components/foomatic/RecommendedPrintersSection"
+import RecommendedPrintersSection, {
+  SimilarPrintersTeaser,
+} from "@/components/foomatic/RecommendedPrintersSection"
 
 interface PrinterPageClientProps {
   printerId: string
@@ -199,19 +201,23 @@ export default function PrinterPageClient({ printerId }: PrinterPageClientProps)
                 </div>
               </div>
 
-              {printer.recommended_driver ? (
-                <FoomaticCard className="max-w-sm p-4">
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-                    Recommended driver
-                  </p>
-                  <Link
-                    href={driverHref(printer.recommended_driver)}
-                    className="mt-2 inline-block text-sm font-medium text-primary hover:underline"
-                  >
-                    {printer.recommended_driver.replace(/^driver\//, "")}
-                  </Link>
-                </FoomaticCard>
-              ) : null}
+              <div className="flex w-full max-w-sm flex-col gap-4 md:w-auto">
+                {printer.recommended_driver ? (
+                  <FoomaticCard className="p-4">
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+                      Recommended driver
+                    </p>
+                    <Link
+                      href={driverHref(printer.recommended_driver)}
+                      className="mt-2 inline-block text-sm font-medium text-primary hover:underline"
+                    >
+                      {printer.recommended_driver.replace(/^driver\//, "")}
+                    </Link>
+                  </FoomaticCard>
+                ) : null}
+
+                <SimilarPrintersTeaser printerId={printer.id} />
+              </div>
             </div>
           </div>
         </section>

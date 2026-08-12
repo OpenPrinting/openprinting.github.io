@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react"
 import Link from "next/link"
+import { ArrowDown } from "lucide-react"
 
 import {
   FoomaticBadge,
@@ -28,6 +29,31 @@ interface Recommendation {
 
 interface RecommendedPrintersSectionProps {
   printerId: string
+}
+
+// One shard fetch per printer id, shared between the hero teaser and the full
+// section below so mounting both costs a single network request. A missing
+// shard (404) resolves to an empty list; network failures clear the cache so
+// the next mount retries instead of reusing a rejected promise.
+const shardCache = new Map<string, Promise<Recommendation[]>>()
+
+function getRecommendations(printerId: string): Promise<Recommendation[]> {
+  let cached = shardCache.get(printerId)
+
+  if (!cached) {
+    cached = fetch(
+      withBasePath(`/foomatic-db/recommendations/${encodeURIComponent(printerId)}.json`)
+    )
+      .then((response) => (response.ok ? (response.json() as Promise<Recommendation[]>) : []))
+      .catch((error) => {
+        shardCache.delete(printerId)
+        throw error
+      })
+
+    shardCache.set(printerId, cached)
+  }
+
+  return cached
 }
 
 // Tier wording and thresholds live in lib/foomatic/scoring.ts next to the
@@ -82,6 +108,70 @@ function RecommendationSkeleton() {
   )
 }
 
+// Compact hero teaser so the feature is discoverable without scrolling: shows
+// the top similar printer and links down to the full section. Renders nothing
+// while loading or when the printer has no recommendations — an absent teaser
+// is better than advertising an empty section.
+export function SimilarPrintersTeaser({ printerId }: RecommendedPrintersSectionProps) {
+  const [top, setTop] = useState<Recommendation | null>(null)
+  const [count, setCount] = useState(0)
+
+  useEffect(() => {
+    let cancelled = false
+
+    getRecommendations(printerId)
+      .then((recs) => {
+        if (cancelled) return
+        setTop(recs[0] ?? null)
+        setCount(Math.min(recs.length, 3))
+      })
+      .catch(() => {
+        // Network failure: the full section reports it; the teaser stays hidden.
+      })
+
+    return () => {
+      cancelled = true
+    }
+  }, [printerId])
+
+  if (!top) {
+    return null
+  }
+
+  const tier = confidenceTier(top.score)
+
+  return (
+    <FoomaticCard className="p-4">
+      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+        Similar printers
+      </p>
+
+      <p className="mt-2 text-sm font-medium text-foreground">
+        {top.manufacturer ?? ""} {top.model ?? top.id}
+      </p>
+
+      <p className="mt-0.5 text-xs text-muted-foreground">
+        {Math.round(top.score * 100)}% similarity ·{" "}
+        <span className={TONE_CLASSES[tier.tone]}>{tier.label}</span>
+      </p>
+
+      <p className="mt-2 text-xs text-muted-foreground">
+        {count === 1
+          ? "1 printer with similar Linux driver support and hardware capabilities."
+          : `${count} printers with similar Linux driver support and hardware capabilities.`}
+      </p>
+
+      <a
+        href="#similar-printers"
+        className="mt-3 inline-flex items-center gap-1.5 rounded-md border border-border px-3 py-1.5 text-xs font-medium text-foreground hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+      >
+        View all similar printers
+        <ArrowDown className="h-3.5 w-3.5" aria-hidden="true" />
+      </a>
+    </FoomaticCard>
+  )
+}
+
 export default function RecommendedPrintersSection({
   printerId,
 }: RecommendedPrintersSectionProps) {
@@ -96,20 +186,7 @@ export default function RecommendedPrintersSection({
       setLoading(true)
 
       try {
-        const recommendationsResponse = await fetch(
-          withBasePath(`/foomatic-db/recommendations/${encodeURIComponent(printerId)}.json`)
-        )
-
-        if (cancelled) {
-          return
-        }
-
-        if (!recommendationsResponse.ok) {
-          setHasRecommendations(false)
-          return
-        }
-
-        const recs: Recommendation[] = await recommendationsResponse.json()
+        const recs = await getRecommendations(printerId)
 
         if (cancelled) {
           return
@@ -139,7 +216,11 @@ export default function RecommendedPrintersSection({
   }, [printerId])
 
   return (
-    <section aria-labelledby="recommendations-heading" className="space-y-4">
+    <section
+      id="similar-printers"
+      aria-labelledby="recommendations-heading"
+      className="scroll-mt-20 space-y-4 sm:scroll-mt-24"
+    >
       <div>
         <h2 id="recommendations-heading" className="text-2xl font-semibold tracking-tight">
           Similar printers
@@ -176,8 +257,13 @@ export default function RecommendedPrintersSection({
                       <h3 className="text-xl font-semibold tracking-tight">{model}</h3>
                     </div>
 
-                    <div className="flex flex-wrap gap-2">
-                      <FoomaticStatusBadge status={recommendation.status} />
+                    <div className="flex flex-wrap items-center gap-2">
+                      {/* The candidate printer's own Foomatic support grade — independent
+                          of the similarity result shown on the right. */}
+                      <span className="inline-flex items-center gap-1.5">
+                        <span className="text-xs text-muted-foreground">Linux support:</span>
+                        <FoomaticStatusBadge status={recommendation.status} />
+                      </span>
 
                       <FoomaticBadge className="border-border bg-accent/50 text-muted-foreground">
                         {recommendation.driverCount} driver
