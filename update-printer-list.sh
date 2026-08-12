@@ -21,46 +21,66 @@
 # them, too...
 AIRPRT="/tmp/airprint.json"
 DRIVERLESS="public/assets/json/driverless.json"
+TMPDRIVERLESS="/tmp/driverless.json"
 IPPEVE="/tmp/ipp-everywhere.json"
 
-if test $# = 0; then
-	# Generate the driverless.json file...
-	# IPP Everywhere list
-	echo "Getting IPP Everywhere printer list..."
-	curl -s https://www.pwg.org/printers/printers.json >$IPPEVE
+# Apple now provides a search page that is backed by a REST API:
+#
+# https://mfi.apple.com/account/web/api/licensee/getAirprintSearchDetails?PARAMS
+#
+# Parameters:
+#
+# - "size": Number of entries to return (always pass 20000 to get them all)
+# - "searchType": "BRAND", "CATEGORY", or "MODEL"
+# - "page": The page number (always pass 0)
+# - "searchTerm": Any search term (always pass "")
+# - "keyword": Any keyword of interest (always pass "")
+# - "technology": Any technology of interest (always pass "")
+# - "category"
+#   - "accessory_question_v4_pp_print_device_type_dye_sub" for dye-sub
+#   - "accessory_question_v4_pp_print_device_type_ink_print" for inkjet
+#   - "accessory_question_v4_pp_print_device_type_laser" for laser
+#   - "accessory_question_v4_pp_print_device_type_usb_only" for USB-only
+#   - "accessory_question_v4_pp_print_device_type_other" for label
+APURL="https://mfi.apple.com/account/web/api/licensee/getAirprintSearchDetails?size=20000&searchType=CATEGORY&page=0&searchTerm=&keyword=&technology=&category=accessory_question_v4_pp_print_device_type_"
 
-	# AirPrint list (should be a superset of all)
-	echo "Getting AirPrint printer list..."
-	curl -s https://support.apple.com/en-ca/HT201311 | grep '^<li>' | grep -v '<li><' | sed -e '1,$s/<li>/"/g' -e '1,$s/<\/li>/"/g' >$AIRPRT
-
-	# Loop through the AirPrint printers...
-	echo "Generating driverless.json...\c"
-	echo "[{\"model\":\"_dummy_\"}\c" >$DRIVERLESS
-
-	xargs -n 1 ./update-printer-list.sh <$AIRPRT
-
-	# End of array...
-	echo "" >>$DRIVERLESS
-	echo "]" >>$DRIVERLESS
-
-	echo "done."
-
-	# Clean up...
-	rm $AIRPRT
-	rm $IPPEVE
-else
-	# Write a single printer entry using the model name on the command-line...
-	echo ".\c"
-	printer="$*"
-
-	# See if the printer is in the IPP Everywhere list
-	if grep -q "$printer" $IPPEVE; then
-		ippeve="1"
-	else
-		ippeve="0"
-	fi
-
-	# Write the entry...
-	echo "," >>$DRIVERLESS
-	echo "{\"model\":\"$printer\",\"airprt\":\"1\",\"ippeve\":\"$ippeve\"}\c" >>$DRIVERLESS
+# Figure out where Python lives...
+python=$(which python)
+if test "x$python" = x; then
+	python=$(which python3)
 fi
+if test "x$python" = x; then
+	echo "Unable to find python on your system."
+	exit 1
+fi
+
+# IPP Everywhere list
+echo "Getting IPP Everywhere printer list..."
+curl -s https://www.pwg.org/printers/printers.json >$IPPEVE
+
+# Generate the driverless.json file...
+echo "Generating driverless.json:"
+echo "[{\"model\":\"_dummy_\"}\c" >$TMPDRIVERLESS
+
+# AirPrint lists (should be a superset of all)
+for category in dye_sub ink_print laser usb_only other; do
+	echo "    ${category} printers..."
+	curl -s "$APURL$category" >$AIRPRT
+	$python ./convert-airprint.py $AIRPRT $IPPEVE >>$TMPDRIVERLESS
+done
+
+# End of array...
+echo "" >>$TMPDRIVERLESS
+echo "]" >>$TMPDRIVERLESS
+
+# Add IPP Everywhere only printers...
+echo "    IPP Everywhere only printers..."
+$python ./add-ippeve-only.py $TMPDRIVERLESS $IPPEVE >$DRIVERLESS
+
+# All done!
+echo "Done."
+
+# Clean up...
+#rm $AIRPRT
+#rm $IPPEVE
+#rm $TMPDRIVERLESS
