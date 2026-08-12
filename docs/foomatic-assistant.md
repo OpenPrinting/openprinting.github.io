@@ -67,7 +67,7 @@ All artifacts are static JSON under `public/`, fetched with `withBasePath()` and
 
 Nothing loads until the assistant is opened; the launcher itself carries no data. The 44 MB `printers.json`, the feature matrix, and the combined recommendations file are never fetched. Query latency measured by the harness (Node, warm caches, 468 samples): median 0.08 ms, p95 4.46 ms — network transfer of the lazy artifacts dominates, not computation.
 
-JavaScript cost (measured on a clean `next build`): the shared First Load JS is unchanged by the assistant (103 kB before and after — the launcher's increment is below the build output's rounding, inside the 9.1 KB-gzip layout chunk), and the entire lazy assistant chunk (panel UI + engine) is 61,519 B raw / 17,655 B gzip, loaded only on first open.
+JavaScript cost (measured on a clean `next build`): the shared First Load JS is unchanged by the assistant (103 kB before and after — the launcher's increment is below the build output's rounding, inside the 9.1 KB-gzip layout chunk), and the entire lazy assistant chunk (panel UI + engine) is 62,541 B raw / 17,906 B gzip, loaded only on first open.
 
 ## Tunables
 
@@ -80,6 +80,7 @@ Values live in `lib/assistant/constants.ts`; `yarn assistant:eval` fails if this
 | `SCORE_MODEL_EXACT` | 3 | entity score: exact model match (resolves only when unique) |
 | `SCORE_MODEL_PREFIX` | 1 | entity score: prefix match (always surfaces as ambiguity) |
 | `RESOLVE_MIN_SCORE` | 3 | minimum score for silent resolution |
+| `NEAR_MISS_MAX_LENGTH` | 20 | longest fused leftover treated as a near-miss model number |
 | `MAX_CANDIDATES` | 5 | candidates carried by an ambiguity/clarification |
 | `MAX_RESULT_CARDS` | 5 | result cards per response (totals are stated) |
 | `HIGH_RES_MIN_DPI` | 1200 | disclosed interpretation of "high resolution" |

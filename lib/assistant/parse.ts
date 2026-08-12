@@ -106,6 +106,18 @@ export function parseQuery(
     has("this") ||
     (has("it") && tokens.length <= 7)
 
+  // Definition-shaped questions ("what is PostScript?", "what is a printer
+  // driver?") ask for meanings the Foomatic data does not record. They must
+  // never be captured by page context or answered with a printer list -
+  // detection excludes "what is the ..." (a lookup shape) and any query that
+  // carries an explicit reference.
+  const definitionSignal =
+    (hasPhrase(["what", "is"]) || hasPhrase(["what", "are"])) &&
+    !hasPhrase(["what", "is", "the"]) &&
+    !hasPhrase(["what", "are", "the"]) &&
+    !contextRef &&
+    !listVerb
+
   // --- entity resolution (before the lexicon: model names such as
   // "Color LaserJet 4500" contain capability words that must not be eaten)
   const printerScan = resolvePrintersInText(tokens, indexes.printers)
@@ -212,9 +224,22 @@ export function parseQuery(
       return { intent: "DRIVER_SEARCH", driver: { kind: "context" } }
     }
   }
+  // "what does this driver do?" - an explicit reference to the current
+  // driver page answers with that driver's own record.
+  if (hasPhrase(["this", "driver"])) {
+    return { intent: "DRIVER_SEARCH", driver: { kind: "context" } }
+  }
 
-  // 5. DRIVER_LOOKUP ("which driver does X use", "driver for this printer")
-  if (driverWord && !printersPlural && (refs.length > 0 || contextRef || context.pageType === "printer")) {
+  // 5. DRIVER_LOOKUP ("which driver does X use", "driver for this printer").
+  // Definition questions ("what is a printer driver?") are excluded: bare
+  // page context must not turn a vocabulary question into this printer's
+  // driver list.
+  if (
+    driverWord &&
+    !printersPlural &&
+    !definitionSignal &&
+    (refs.length > 0 || contextRef || context.pageType === "printer")
+  ) {
     // A resolved driver mention plus a printer would be ambiguous phrasing;
     // prefer the printer's driver question, which is the common ask.
     return { intent: "DRIVER_LOOKUP", printer: printerRef() }
@@ -234,11 +259,25 @@ export function parseQuery(
     if (has("similarity") || has("score") || has("confidence") || has("tier") || has("recommendation") || has("recommendations")) {
       return { intent: "GENERAL_INFO", topic: "similarity" }
     }
+    // "what does Linux support mean?" - the grades answer IS the definition
+    // of Linux support in this database.
+    if (supportSignal && refs.length === 0 && !contextRef) {
+      return { intent: "GENERAL_INFO", topic: "support-grades" }
+    }
   }
   // "what are the grades?" with no printer in sight is also the general
   // question; with a printer reference it falls through to that printer.
   if ((has("grades") || has("grade")) && refs.length === 0 && !contextRef) {
     return { intent: "GENERAL_INFO", topic: "support-grades" }
+  }
+  // Remaining definition questions ("what is PostScript?"): the data records
+  // which printers support such things, not what they are. Answer with an
+  // honest scope statement instead of a printer list or a captured context.
+  if (definitionSignal && refs.length === 0) {
+    if (supportSignal) {
+      return { intent: "GENERAL_INFO", topic: "support-grades" }
+    }
+    return { intent: "UNSUPPORTED", reason: "unclear" }
   }
 
   // 7. SUPPORT_QUERY (about one specific printer, not a filtered list)
@@ -263,8 +302,12 @@ export function parseQuery(
   if (refs.length > 0) {
     return { intent: "PRINTER_LOOKUP", printer: refs[0] }
   }
-  if (contextRef && (context.pageType === "printer" || context.pageType === "driver")) {
+  if (contextRef && context.pageType === "printer") {
     return { intent: "PRINTER_LOOKUP", printer: { kind: "context" } }
+  }
+  // "what about this?" on a driver page refers to the driver, not a printer.
+  if (contextRef && context.pageType === "driver") {
+    return { intent: "DRIVER_SEARCH", driver: { kind: "context" } }
   }
 
   if (hasFilters || (unapplied.length > 0 && domainWord)) {

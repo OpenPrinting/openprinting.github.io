@@ -353,6 +353,49 @@ export const CORPUS: CorpusCase[] = [
   { q: "tell me about this one", ctx: "printer", intent: "PRINTER_LOOKUP", check: contextPrinter },
   { q: "is this printer colour", ctx: "printer", intent: "PRINTER_LOOKUP", check: contextPrinter },
 
+  // --- definition questions stay general (and are never answered with a
+  // printer list or captured by page context) --------------------------------
+  { q: "what is postscript", ctx: "printer", intent: "UNSUPPORTED" },
+  { q: "what is pcl", ctx: "printer", intent: "UNSUPPORTED" },
+  { q: "what is a printer driver", ctx: "printer", intent: "UNSUPPORTED" },
+  { q: "what is linux support", ctx: "printer", intent: "GENERAL_INFO" },
+  { q: "what does linux support mean", ctx: "printer", intent: "GENERAL_INFO" },
+  // ...while explicit references still resolve through context:
+  { q: "what drivers does this printer use", ctx: "printer", intent: "DRIVER_LOOKUP", check: contextPrinter },
+  { q: "what does this printer support", ctx: "printer", intent: "SUPPORT_QUERY", check: contextPrinter },
+  {
+    q: "what does this driver do",
+    ctx: "driver",
+    intent: "DRIVER_SEARCH",
+    check: query => {
+      if (query.intent !== "DRIVER_SEARCH") return "wrong intent"
+      return err(query.driver.kind === "context", `expected context driver ref, got ${query.driver.kind}`)
+    },
+  },
+  {
+    q: "what about this?",
+    ctx: "driver",
+    intent: "DRIVER_SEARCH",
+    check: query => {
+      if (query.intent !== "DRIVER_SEARCH") return "wrong intent"
+      return err(query.driver.kind === "context", `expected context driver ref, got ${query.driver.kind}`)
+    },
+  },
+
+  // --- adversarial wording ----------------------------------------------------
+  { q: "printer that definitely works", intent: "CAPABILITY_SEARCH", check: unappliedIncludes("definitely") },
+  { q: "printer guaranteed to work", intent: "CAPABILITY_SEARCH", check: unappliedIncludes("guaranteed") },
+  { q: "printer with 100 percent compatibility", intent: "CAPABILITY_SEARCH", check: unappliedIncludes("compatibility") },
+  { q: "which printer has the highest quality", intent: "CAPABILITY_SEARCH", check: unappliedIncludes("quality") },
+  { q: "which printer is perfect", intent: "CAPABILITY_SEARCH", check: unappliedIncludes("perfect") },
+  { q: "4019", intent: "UNSUPPORTED" },
+  { q: "123456789", intent: "UNSUPPORTED" },
+  { q: "hello", intent: "UNSUPPORTED" },
+  { q: "thanks", intent: "UNSUPPORTED" },
+  { q: "tell me a joke", intent: "UNSUPPORTED" },
+  { q: "write python code", intent: "UNSUPPORTED" },
+  { q: "what is the stock price", intent: "UNSUPPORTED" },
+
   // --- unsupported / out-of-domain -------------------------------------------------------------
   { q: "what's the weather?", intent: "UNSUPPORTED" },
   { q: "who won the football game", intent: "UNSUPPORTED" },

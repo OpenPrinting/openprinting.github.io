@@ -16,7 +16,7 @@
 
 import type { DriverSummary, PrinterSummary } from "@/lib/foomatic/types"
 import { normalizeDriverFamily } from "@/lib/foomatic/driver-family"
-import { MAX_CANDIDATES, RESOLVE_MIN_SCORE, SCORE_EXACT, SCORE_MODEL_EXACT, SCORE_MODEL_PREFIX } from "./constants"
+import { MAX_CANDIDATES, NEAR_MISS_MAX_LENGTH, RESOLVE_MIN_SCORE, SCORE_EXACT, SCORE_MODEL_EXACT, SCORE_MODEL_PREFIX } from "./constants"
 import { fuseText } from "./normalize"
 import type { DriverRef, PrinterCandidate, PrinterRef } from "./types"
 
@@ -317,7 +317,11 @@ export function findNearMissPrinter(
   if (leftover.length === 0) return null
   const text = leftover.map(i => tokens[i]).join(" ")
   const fused = fuseText(text)
-  const modelish = fused.length >= 3 && /\d/.test(fused) && (/[a-z]/.test(fused) || make !== null)
+  const modelish =
+    fused.length >= 3 &&
+    fused.length <= NEAR_MISS_MAX_LENGTH &&
+    /\d/.test(fused) &&
+    (/[a-z]/.test(fused) || make !== null)
   if (!modelish) return null
 
   const suggestionIds = [

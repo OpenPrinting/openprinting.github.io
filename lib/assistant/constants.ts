@@ -17,6 +17,11 @@ export const SCORE_MODEL_PREFIX = 1
 // candidate; everything else surfaces as an ambiguity with candidates.
 export const RESOLVE_MIN_SCORE = 3
 
+// Leftover text longer than this (fused) is not treated as a near-miss model
+// number - real model names are short, and phrases like "100 percent
+// compatibility" must not be mistaken for one.
+export const NEAR_MISS_MAX_LENGTH = 20
+
 // How many candidates an ambiguity/clarification response carries.
 export const MAX_CANDIDATES = 5
 
