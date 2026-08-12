@@ -21,7 +21,7 @@ First feature additions have already happened, all Snap support which the [CUPS 
 
 We have applied again  for the Linux Foundation as mentoring organization, as in the previous years, for the [Google Summer of Code](https://summerofcode.withgoogle.com/). The accepted organizations will be announced by Google on Tue, March 9, 2021 ([Timeline](https://developers.google.com/open-source/gsoc/timeline)).
 
-OpenPrinting's project ideas are [posted](https://wiki.linuxfoundation.org/gsoc/google-summer-code-2021-openprinting-projects), but further ideas are still welcome. Note that the projects are half-length this year, 175 hours instead of 350 hours (see our [October news](/OpenPrinting-News-October-2020/#google-summer-of-code-2021). Larger projects we should run in the Linux Foundation Mentoring Program instead of in the GSoC.
+OpenPrinting's project ideas are [posted](https://wiki.linuxfoundation.org/gsoc/google-summer-code-2021-openprinting-projects), but further ideas are still welcome. Note that the projects are half-length this year, 175 hours instead of 350 hours (see our [October news](/OpenPrinting-News-October-2020/#google-summer-of-code-2021)). Larger projects we should run in the Linux Foundation Mentoring Program instead of in the GSoC.
 
 ## CUPS Snap
 **The [CUPS Snap](https://github.com/OpenPrinting/cups-snap) is in the [Snap Store](https://snapcraft.io/cups) now!**
