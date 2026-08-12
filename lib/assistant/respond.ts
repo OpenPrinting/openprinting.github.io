@@ -27,9 +27,12 @@ import type {
   SearchDiagnostics,
 } from "./types"
 
+// Suggestion rule: a chip is a product promise. Its query is the exact text
+// of its label (modulo casing/punctuation), it must parse to a supported
+// intent, and it must never smuggle current-page values into the question.
 const EXAMPLE_CHIPS: Chip[] = [
   { label: "Find a colour laser printer", query: "find a colour laser printer" },
-  { label: "Printers with good Linux support", query: "find printers with good linux support" },
+  { label: "Find printers with good Linux support", query: "find printers with good linux support" },
   { label: "What can you do?", query: "what can you do" },
 ]
 
@@ -182,7 +185,7 @@ export function buildResponse(execution: Execution): ResponsePlan {
         blocks.push(
           chips(
             execution.suggestions.map(candidate => ({
-              label: `${candidate.manufacturer} ${candidate.model}`,
+              label: `Tell me about ${candidate.manufacturer} ${candidate.model}`,
               query: `tell me about ${candidate.manufacturer} ${candidate.model}`,
             }))
           )
@@ -255,7 +258,7 @@ export function buildResponse(execution: Execution): ResponsePlan {
           ),
           chips([
             {
-              label: `Similar to ${printerName(execution.source)}`,
+              label: `Printers similar to ${printerName(execution.source)}`,
               query: `printers similar to ${printerName(execution.source)}`,
             },
           ]),
@@ -330,7 +333,7 @@ function buildClarify(execution: Extract<Execution, { kind: "clarify" }>): Respo
         },
         chips(
           question.candidates.map(candidate => ({
-            label: `${candidate.manufacturer} ${candidate.model}`,
+            label: `Tell me about ${candidate.manufacturer} ${candidate.model}`,
             query: `tell me about ${candidate.manufacturer} ${candidate.model}`,
           }))
         ),
@@ -345,10 +348,10 @@ function buildClarify(execution: Extract<Execution, { kind: "clarify" }>): Respo
               "Tell me what you need and I can filter the catalogue."
           ),
           chips([
-            { label: "Colour laser", query: "find colour laser printers" },
-            { label: "Good Linux support", query: "find printers with good linux support" },
-            { label: "PostScript", query: "find printers with postscript" },
-            { label: "Inkjet", query: "find inkjet printers" },
+            { label: "Find colour laser printers", query: "find colour laser printers" },
+            { label: "Find printers with good Linux support", query: "find printers with good linux support" },
+            { label: "Find printers with PostScript", query: "find printers with postscript" },
+            { label: "Find inkjet printers", query: "find inkjet printers" },
           ]),
         ],
       }
@@ -405,10 +408,10 @@ function buildClarify(execution: Extract<Execution, { kind: "clarify" }>): Respo
         blocks: [
           text(`Which of ${question.sourceName}'s recommendations should I explain?`),
           chips(
-            question.topRecommendations.map(entry => ({
-              label: `${entry.manufacturer ?? ""} ${entry.model ?? entry.id}`.trim(),
-              query: `why was ${entry.manufacturer ?? ""} ${entry.model ?? entry.id} recommended`.trim(),
-            }))
+            question.topRecommendations.map(entry => {
+              const name = `${entry.manufacturer ?? ""} ${entry.model ?? entry.id}`.trim()
+              return { label: `Why was ${name} recommended?`, query: `why was ${name} recommended` }
+            })
           ),
         ],
       }
@@ -445,9 +448,9 @@ function buildPrinterDetails(summary: PrinterSummary, printer: Printer | null): 
       text(`${facts.join("; ")}.`),
       { kind: "printer-cards", printers: [summaryCard(summary)] },
       chips([
-        { label: "Similar printers", query: `printers similar to ${name}` },
-        { label: "Linux support", query: `how good is the linux support for ${name}` },
-        { label: "Drivers", query: `which driver does ${name} use` },
+        { label: `Printers similar to ${name}`, query: `printers similar to ${name}` },
+        { label: `Linux support for ${name}`, query: `linux support for ${name}` },
+        { label: `Which driver does ${name} use?`, query: `which driver does ${name} use` },
       ]),
     ],
   }
@@ -476,7 +479,7 @@ function buildSupport(summary: PrinterSummary, printer: Printer | null): Respons
     blocks: [
       text(parts.join(" ")),
       { kind: "printer-cards", printers: [summaryCard(summary)] },
-      chips([{ label: "What do the grades mean?", query: "what does perfect support mean" }]),
+      chips([{ label: "What do the support grades mean?", query: "what do the support grades mean" }]),
     ],
   }
 }
@@ -643,8 +646,8 @@ function buildSimilar(execution: Extract<Execution, { kind: "similar" }>): Respo
     const topName = `${top.manufacturer ?? ""} ${top.model ?? top.id}`.trim()
     blocks.push(
       chips([
-        { label: `Why ${topName}?`, query: `why was ${topName} recommended` },
-        { label: `Compare with ${topName}`, query: `compare ${sourceName} and ${topName}` },
+        { label: `Why was ${topName} recommended?`, query: `why was ${topName} recommended` },
+        { label: `Compare ${sourceName} and ${topName}`, query: `compare ${sourceName} and ${topName}` },
       ])
     )
   }
@@ -714,23 +717,27 @@ function buildUnappliedNotes(unapplied: string[]): string[] {
   ]
 }
 
+// Same suggestion rule as EXAMPLE_CHIPS: the query IS the label text.
+// Contextual phrasing ("this printer"/"this driver") stays in the submitted
+// message and resolves through the page-context provider - current-page
+// values are never substituted into the question.
 export function contextSuggestions(context: AssistantPageContext): Chip[] {
   if (context.pageType === "printer") {
     return [
       { label: "What printers are similar to this one?", query: "what printers are similar to this one" },
-      { label: "How good is the Linux support?", query: "how good is the linux support for this printer" },
-      { label: "Which driver should I use?", query: "which driver does this printer use" },
+      { label: "How good is the Linux support?", query: "how good is the linux support" },
+      { label: "Which driver does this printer use?", query: "which driver does this printer use" },
     ]
   }
   if (context.pageType === "driver") {
     return [
-      { label: "Which printers use this driver?", query: `which printers use ${context.driverId}` },
+      { label: "Which printers use this driver?", query: "which printers use this driver" },
       { label: "Find a colour laser printer", query: "find a colour laser printer" },
     ]
   }
   return [
     { label: "Find a colour laser printer", query: "find a colour laser printer" },
-    { label: "Printers with good Linux support", query: "find printers with good linux support" },
-    { label: "Compare two printers", query: "compare HP 2500C and HP DeskJet 560C" },
+    { label: "Find printers with good Linux support", query: "find printers with good linux support" },
+    { label: "Compare HP 2500C and HP DeskJet 560C", query: "compare HP 2500C and HP DeskJet 560C" },
   ]
 }

@@ -8,8 +8,10 @@
 //   3. SIMILAR_PRINTERS  (similar/alternatives/better vocabulary)
 //   4. DRIVER_SEARCH     (printers-for-driver phrasing, "same driver")
 //   5. DRIVER_LOOKUP     (driver-of-printer phrasing)
-//   6. SUPPORT_QUERY     (support question about one specific printer)
-//   7. GENERAL_INFO      (meta questions about grades/similarity/help)
+//   6. GENERAL_INFO      (meta questions about grades/similarity/help -
+//                         above SUPPORT_QUERY so meaning-questions are never
+//                         captured by printer-page context)
+//   7. SUPPORT_QUERY     (support question about one specific printer)
 //   8. CAPABILITY_SEARCH (recommend/best or any capability filters)
 //   9. PRINTER_LOOKUP    (a printer reference and nothing more specific)
 //  10. UNSUPPORTED       (unclear-but-domain or out-of-domain)
@@ -43,7 +45,7 @@ const STOPWORDS = new Set([
   "works", "work", "well", "use", "uses", "using", "used", "same",
   "prints", "printing", "print", "there", "than", "no", "not", "if",
   "higher", "lower", "level", "so", "just", "really", "am", "s", "least",
-  "resolution", "res", "options", "similarity",
+  "resolution", "res", "options", "similarity", "status", "grade", "grades",
 ])
 
 const CONTEXT_PHRASES: string[][] = [
@@ -204,6 +206,11 @@ export function parseQuery(
     if (driverRef) {
       return { intent: "DRIVER_SEARCH", driver: driverRef }
     }
+    // "which printers use this driver": a contextual driver reference, valid
+    // only because the phrase itself refers to the current page.
+    if (hasPhrase(["this", "driver"]) || (contextRef && context.pageType === "driver")) {
+      return { intent: "DRIVER_SEARCH", driver: { kind: "context" } }
+    }
   }
 
   // 5. DRIVER_LOOKUP ("which driver does X use", "driver for this printer")
@@ -213,18 +220,10 @@ export function parseQuery(
     return { intent: "DRIVER_LOOKUP", printer: printerRef() }
   }
 
-  // 6. SUPPORT_QUERY (about one specific printer, not a filtered list)
-  if (
-    supportSignal &&
-    !printersPlural &&
-    !listVerb &&
-    !recommendSignal &&
-    (refs.length > 0 || contextRef || context.pageType === "printer")
-  ) {
-    return { intent: "SUPPORT_QUERY", printer: printerRef() }
-  }
-
-  // 7. GENERAL_INFO (closed topics only)
+  // 6. GENERAL_INFO (closed topics only). Deliberately ABOVE SUPPORT_QUERY:
+  // "what does perfect support mean?" asks for the meaning of the grade
+  // vocabulary, and page context must never capture a meaning-question and
+  // answer it with the current printer's own values.
   if (helpSignal) {
     return { intent: "GENERAL_INFO", topic: "assistant-help" }
   }
@@ -235,6 +234,22 @@ export function parseQuery(
     if (has("similarity") || has("score") || has("confidence") || has("tier") || has("recommendation") || has("recommendations")) {
       return { intent: "GENERAL_INFO", topic: "similarity" }
     }
+  }
+  // "what are the grades?" with no printer in sight is also the general
+  // question; with a printer reference it falls through to that printer.
+  if ((has("grades") || has("grade")) && refs.length === 0 && !contextRef) {
+    return { intent: "GENERAL_INFO", topic: "support-grades" }
+  }
+
+  // 7. SUPPORT_QUERY (about one specific printer, not a filtered list)
+  if (
+    supportSignal &&
+    !printersPlural &&
+    !listVerb &&
+    !recommendSignal &&
+    (refs.length > 0 || contextRef || context.pageType === "printer")
+  ) {
+    return { intent: "SUPPORT_QUERY", printer: printerRef() }
   }
 
   // 8. CAPABILITY_SEARCH / recommendation requests

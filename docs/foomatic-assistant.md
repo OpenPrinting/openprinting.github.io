@@ -26,13 +26,22 @@ Classification is an ordered deterministic rule cascade (`parse.ts`); earlier ru
 1. COMPARISON — two printer refs + compare/vs/difference
 2. EXPLANATION — "why" + recommendation vocabulary
 3. SIMILAR_PRINTERS — similar/alternatives/"better …"
-4. DRIVER_SEARCH — printers-for-driver phrasing, "same driver"
+4. DRIVER_SEARCH — printers-for-driver phrasing, "same driver", "this driver"
 5. DRIVER_LOOKUP — driver-of-printer phrasing
-6. SUPPORT_QUERY — support question about one specific printer
-7. GENERAL_INFO — closed topics: support grades, similarity, help
+6. GENERAL_INFO — closed topics: support grades, similarity, help. Sits above
+   SUPPORT_QUERY so meaning-questions ("what does perfect support mean?") are
+   answered generally — page context must never capture a meaning-question
+   and answer it with the current printer's own values.
+7. SUPPORT_QUERY — support question about one specific printer
 8. CAPABILITY_SEARCH — recommend/best or any capability filters
 9. PRINTER_LOOKUP — a printer reference and nothing more specific
 10. UNSUPPORTED — unclear-but-domain, or out-of-domain
+
+Suggestion chips obey a strict rule: a chip's query is the exact text of its
+label, it must parse to a supported intent (tested mechanically for every
+chip the system can produce), and contextual phrasing ("this printer",
+"this driver") stays in the message and resolves through the typed page
+context — current-page values are never substituted into the question.
 
 ## Semantics that must not regress
 
@@ -58,7 +67,7 @@ All artifacts are static JSON under `public/`, fetched with `withBasePath()` and
 
 Nothing loads until the assistant is opened; the launcher itself carries no data. The 44 MB `printers.json`, the feature matrix, and the combined recommendations file are never fetched. Query latency measured by the harness (Node, warm caches, 468 samples): median 0.08 ms, p95 4.46 ms — network transfer of the lazy artifacts dominates, not computation.
 
-JavaScript cost (measured on a clean `next build`): the shared First Load JS is unchanged by the assistant (103 kB before and after — the launcher's increment is below the build output's rounding, inside the 9.1 KB-gzip layout chunk), and the entire lazy assistant chunk (panel UI + engine) is 60,758 B raw / 17,602 B gzip, loaded only on first open.
+JavaScript cost (measured on a clean `next build`): the shared First Load JS is unchanged by the assistant (103 kB before and after — the launcher's increment is below the build output's rounding, inside the 9.1 KB-gzip layout chunk), and the entire lazy assistant chunk (panel UI + engine) is 61,519 B raw / 17,655 B gzip, loaded only on first open.
 
 ## Tunables
 

@@ -624,6 +624,27 @@ async function executeDriverSearch(
     }
   }
 
+  if (ref.kind === "context") {
+    // "this driver" resolves through the page context only - never through a
+    // value injected into the query text.
+    if (context.pageType !== "driver") {
+      return {
+        kind: "clarify",
+        state: "AMBIGUOUS",
+        question: { topic: "context-needed", subject: "driver" },
+      }
+    }
+    const driver = await data.getDriver(context.driverId)
+    if (!driver) {
+      return {
+        kind: "clarify",
+        state: "AMBIGUOUS",
+        question: { topic: "driver-unresolved", text: context.driverId, suggestions: [] },
+      }
+    }
+    return { kind: "driver-search", state: "SUCCESS", driver, anchor: null, anchorDriverName: null }
+  }
+
   if (ref.kind === "same-as") {
     const byId = await catalogById(data)
     const outcome = resolveRef(ref.printer, context, byId)

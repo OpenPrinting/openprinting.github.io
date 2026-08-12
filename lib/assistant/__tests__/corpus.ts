@@ -319,6 +319,13 @@ export const CORPUS: CorpusCase[] = [
   { q: "what is the difference between hp 2500c and hp 2500cm", intent: "COMPARISON", check: query => err(query.intent === "COMPARISON", "expected comparison") },
 
   // --- general info -----------------------------------------------------------------------
+  // Meaning-questions must answer generally even on a printer page: the page
+  // context must never capture them and answer with the printer's own values.
+  { q: "what do the grades mean", ctx: "printer", intent: "GENERAL_INFO" },
+  { q: "what do the support grades mean", ctx: "printer", intent: "GENERAL_INFO" },
+  { q: "what does perfect support mean", ctx: "printer", intent: "GENERAL_INFO" },
+  { q: "what does this printer's support grade mean", ctx: "printer", intent: "GENERAL_INFO" },
+  { q: "what are the grades", intent: "GENERAL_INFO" },
   { q: "what does perfect mean", intent: "GENERAL_INFO" },
   { q: "what do the support grades mean", intent: "GENERAL_INFO" },
   { q: "what does mostly mean", intent: "GENERAL_INFO" },
@@ -329,6 +336,19 @@ export const CORPUS: CorpusCase[] = [
   { q: "help", intent: "GENERAL_INFO" },
 
   // --- contextual bare queries ---------------------------------------------------------------
+  // These DO carry a contextual reference, so page context is the right
+  // resolution - unlike the general grade questions above.
+  { q: "what is the support status of this printer", ctx: "printer", intent: "SUPPORT_QUERY", check: contextPrinter },
+  { q: "what are the grades for this printer", ctx: "printer", intent: "PRINTER_LOOKUP", check: contextPrinter },
+  {
+    q: "which printers use this driver",
+    ctx: "driver",
+    intent: "DRIVER_SEARCH",
+    check: query => {
+      if (query.intent !== "DRIVER_SEARCH") return "wrong intent"
+      return err(query.driver.kind === "context", `expected context driver ref, got ${query.driver.kind}`)
+    },
+  },
   { q: "what about this printer?", ctx: "printer", intent: "PRINTER_LOOKUP", check: contextPrinter },
   { q: "tell me about this one", ctx: "printer", intent: "PRINTER_LOOKUP", check: contextPrinter },
   { q: "is this printer colour", ctx: "printer", intent: "PRINTER_LOOKUP", check: contextPrinter },

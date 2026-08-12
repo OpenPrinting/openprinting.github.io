@@ -38,6 +38,7 @@ export type PrinterRef =
 
 export type DriverRef =
   | { kind: "resolved"; id: string }
+  | { kind: "context" }
   | { kind: "same-as"; printer: PrinterRef }
   | { kind: "family"; family: string; members: string[] }
   | { kind: "unresolved"; text: string; suggestions: string[] }

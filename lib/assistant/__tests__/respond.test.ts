@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest"
 import { runAssistant } from "../engine"
-import { buildResponse } from "../respond"
+import { buildResponse, contextSuggestions } from "../respond"
 import type { AssistantPageContext, Execution, ResponsePlan } from "../types"
 import { CORPUS } from "./corpus"
 import { CATALOG, fixtureData, HOME_CONTEXT, LJ4_CONTEXT, RECOMMENDATIONS } from "./fixtures"
@@ -224,6 +224,104 @@ describe("synthetic diagnostics rendering", () => {
     expect(chips).toBeDefined()
     if (chips && chips.kind === "chips") {
       expect(chips.chips[0].label).toContain("6 printers")
+    }
+  })
+})
+
+describe("suggestion integrity: every chip is an answerable, honest promise", () => {
+  it("the grades suggestion submits its own text and answers generally, never from the current printer", async () => {
+    // The exact reported-bug path: SUPPORT_QUERY response on a printer page
+    // offers a grades chip; clicking it must ask the general question and the
+    // answer must not mention the current printer or inject its grade.
+    const supportTurn = await runAssistant("how good is the linux support", LJ4_CONTEXT, data)
+    expect(supportTurn.execution.kind).toBe("support")
+    const chipsBlock = supportTurn.plan.blocks.find(block => block.kind === "chips")
+    expect(chipsBlock).toBeDefined()
+    if (!chipsBlock || chipsBlock.kind !== "chips") return
+    const gradesChip = chipsBlock.chips.find(chip => chip.label.toLowerCase().includes("grades"))
+    expect(gradesChip).toBeDefined()
+    if (!gradesChip) return
+    // The submitted message is exactly the suggestion text (modulo case and
+    // punctuation) - never a rewrite using current-page data.
+    expect(gradesChip.query.toLowerCase().replace(/[^a-z0-9 ]/g, "")).toBe(
+      gradesChip.label.toLowerCase().replace(/[^a-z0-9 ]/g, "")
+    )
+    const answer = await runAssistant(gradesChip.query, LJ4_CONTEXT, data)
+    expect(answer.execution.kind).toBe("info")
+    if (answer.execution.kind === "info") {
+      expect(answer.execution.topic).toBe("support-grades")
+    }
+    const answerText = allText(answer.plan)
+    expect(answerText).not.toContain("LaserJet 4")
+  })
+
+  it("meaning-questions with grade vocabulary answer generally on a printer page", async () => {
+    for (const q of ["what do the grades mean", "what does perfect support mean", "what does this printer's support grade mean"]) {
+      const turn = await runAssistant(q, LJ4_CONTEXT, data)
+      expect(turn.execution.kind, q).toBe("info")
+      expect(allText(turn.plan), q).not.toContain("LaserJet 4")
+    }
+  })
+
+  it("questions that DO reference this printer still resolve through context", async () => {
+    const turn = await runAssistant("what is the support status of this printer", LJ4_CONTEXT, data)
+    expect(turn.execution.kind).toBe("support")
+    expect(allText(turn.plan)).toContain("HP LaserJet 4")
+  })
+
+  it("'this driver' resolves through page context without injecting the driver id into the query", async () => {
+    const driverContext: AssistantPageContext = {
+      pageType: "driver",
+      route: "/foomatic/driver/hplip",
+      driverId: "hplip",
+    }
+    const turn = await runAssistant("which printers use this driver", driverContext, data)
+    expect(turn.execution.kind).toBe("driver-search")
+    if (turn.execution.kind === "driver-search") {
+      expect(turn.execution.driver.id).toBe("hplip")
+    }
+    // Without driver-page context the same question clarifies, never guesses.
+    const homeTurn = await runAssistant("which printers use this driver", HOME_CONTEXT, data)
+    expect(homeTurn.execution.kind).toBe("clarify")
+  })
+
+  it("every chip the system can produce parses to a supported, answerable query", async () => {
+    const contexts: AssistantPageContext[] = [
+      HOME_CONTEXT,
+      LJ4_CONTEXT,
+      { pageType: "driver", route: "/foomatic/driver/hplip", driverId: "hplip" },
+    ]
+    const seeds = [
+      "how good is the linux support",
+      "what printers are similar to this?",
+      "tell me about hp 2500c",
+      "what is the best printer?",
+      "what are better alternatives?",
+      "why was this recommended?",
+      "brother hl 2270dw",
+      "hp deskjet 5",
+      "colour dot matrix printers with perfect linux support and 2400 dpi",
+      "what can you do",
+    ]
+    for (const context of contexts) {
+      for (const chip of contextSuggestions(context)) {
+        const turn = await runAssistant(chip.query, context, data)
+        expect(turn.execution.kind, `${context.pageType}: "${chip.label}"`).not.toBe("unsupported")
+      }
+      for (const seed of seeds) {
+        const turn = await runAssistant(seed, context, data)
+        for (const block of turn.plan.blocks) {
+          if (block.kind !== "chips") continue
+          for (const chip of block.chips) {
+            const followUp = await runAssistant(chip.query, context, data)
+            expect(
+              followUp.execution.kind,
+              `${context.pageType}: "${seed}" -> chip "${chip.label}" (${chip.query})`
+            ).not.toBe("unsupported")
+            expect(followUp.execution.state).not.toBe("ERROR")
+          }
+        }
+      }
     }
   })
 })
