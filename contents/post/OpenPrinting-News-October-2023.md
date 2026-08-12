@@ -138,7 +138,7 @@ In addition, I departed to the US two days earlier, to not miss the event if fli
 
 
 ## CPDB CUPS backend Snap
-To complete the printing stack in the all-Snap experience of [Ubuntu Core Desktop](https://discourse.ubuntu.com/t/ubuntu-core-desktop-deep-dive/) we still need one more Snap, the one of the [CUPS backend](https://github.com/OpenPrinting/cpdb-backend-cups/) for the [Common Print Dialog Backends (CPDB)](https://openprinting.github.io/achievements/#common-print-dialog-backends).
+To complete the printing stack in the all-Snap experience of [Ubuntu Core Desktop](https://discourse.ubuntu.com/t/ubuntu-core-desktop-deep-dive/) we still need one more Snap, the one of the [CUPS backend](https://github.com/OpenPrinting/cpdb-backend-cups/) for the [Common Print Dialog Backends (CPDB)](/achievements/#common-print-dialog-backends).
 
 This is needed as all the application's print dialogs also need to get switched over to the New Architecture of not having PPD files any more, but instead, IPP print destinations. And exactly this we have implemented in the CPDB backend for CUPS, and now making the dialogs using CPDB we will make them not only working with the upcoming CUPS 3.x and with the CUPS Snap, but also assure that they stay working with further changes in CUPS and also being open for new print services, like for example cloud services.
 

@@ -6,7 +6,7 @@ title: "Replace QPDF by PDFio as PDF manipulation library in libcupsfilters"
 
 1 contributor full-size (350 hours), Level of difficulty: Hard
 
-Like [CUPS](https://openprinting.github.io/cups/), [libcupsfilters](https://github.com/OpenPrinting/libcupsfilters) is principally written in regular C and not in `C++`. We want to avoid `C++` as it has often problems with binary compatibility and the mechanism with which the Debian/Ubuntu build services auto-detect dependencies between Debian packages get very awkward with `C++`.
+Like [CUPS](/cups/), [libcupsfilters](https://github.com/OpenPrinting/libcupsfilters) is principally written in regular C and not in `C++`. We want to avoid `C++` as it has often problems with binary compatibility and the mechanism with which the Debian/Ubuntu build services auto-detect dependencies between Debian packages get very awkward with `C++`.
 
 But libcupsfilters still depends on one library which is written in `C++`, [QPDF](https://github.com/qpdf/qpdf/), a library for manipulating PDF files: Scaling up and down, moving around on the page, rotating, combining several source pages on one destination page, turning filled PDF forms into straight PDF, ... QPDF is used by the filter functions cfFilterPDFToPDF(), cfFilterBannerToPDF(), cfFilterGSToRaster(), and cfFilterRasterToPDF().
 

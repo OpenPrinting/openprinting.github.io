@@ -20,7 +20,7 @@ But unfortunately, there are still exceptions: There is the ultra-cheap USB-only
 
 Solomon Peachy (Gutenprint) answers that inside printers the print engine and the networking engine are separate parts and the IPP support comes from the networking engine, and so IPP-over-USB is usually only available in network printers and not in USB-only printers.
 
-**All-in-all one should really check whether a printer supports driverless IPP protocols like AirPrint or Mopria, according to what is written on the box, and [what most printers do](https://openprinting.github.io/printers/), fortunately.**
+**All-in-all one should really check whether a printer supports driverless IPP protocols like AirPrint or Mopria, according to what is written on the box, and [what most printers do](/printers/), fortunately.**
 
 **And to make it even easier we have now a button to get to our [driverless printer list](/printers/) right in the banner of our [home page](/).**
 

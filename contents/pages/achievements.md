@@ -199,7 +199,7 @@ In September 2020 Michael teamed up with us to [fork](https://github.com/OpenPri
 
 As Apple did not resume the upstream work on CUPS in the following months, we have made OpenPrinting now the official upstream home for CUPS. We now continue developing CUPS, independent of Apple. So we can add features and lead CUPS into the New Architecture without PPD files and with Printer Applications.
 
-CUPS has a [new home page](https://openprinting.github.io/cups/) now and what was formerly our fork is now the [official CUPS repository](https://github.com/OpenPrinting/cups/). We started releasing the 2.4.x series end-2021, now without "opX" suffix of forked CUPS versions. Also all documentation files which come with it are updated to point to the OpenPrinting resources. Mailing list for development discussions is our [printing-architecture](https://lists.linuxfoundation.org/mailman/listinfo/printing-architecture) list.
+CUPS has a [new home page](/cups/) now and what was formerly our fork is now the [official CUPS repository](https://github.com/OpenPrinting/cups/). We started releasing the 2.4.x series end-2021, now without "opX" suffix of forked CUPS versions. Also all documentation files which come with it are updated to point to the OpenPrinting resources. Mailing list for development discussions is our [printing-architecture](https://lists.linuxfoundation.org/mailman/listinfo/printing-architecture) list.
 
 So today Apple CUPS is the version of CUPS that is provided with macOS® and iOS® while OpenPrinting CUPS is the version of CUPS being further developed by OpenPrinting for all operating systems.
 

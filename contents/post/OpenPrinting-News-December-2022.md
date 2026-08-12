@@ -38,7 +38,7 @@ By the way, I had already visited the museum many years ago. The [Babbage Differ
 ## Ubuntu Summit - Videos, pictures, blogs, podcasts ...
 **Update: Impressions of the event: [The Aftermovie!](https://www.youtube.com/watch?v=8XF6jR7XzXM)**
 
-The first [Ubuntu Summit](https://events.canonical.com/event/2/overview) was really one of the greatest and most awesome conferences I have experienced. As reported here already in the [last month](https://openprinting.github.io/OpenPrinting-News-November-2022/#the-first-ubuntu-summit-was-a-success) I and many others have put a lot of work into it and the result was overwhelming ...
+The first [Ubuntu Summit](https://events.canonical.com/event/2/overview) was really one of the greatest and most awesome conferences I have experienced. As reported here already in the [last month](/OpenPrinting-News-November-2022/#the-first-ubuntu-summit-was-a-success) I and many others have put a lot of work into it and the result was overwhelming ...
 
 ### Recordings
 You did not make it to Prague? Or, while you have attended a great session on the Ubuntu Summit an awesome session was taking place in another room? No problem! We have recorded most of the talks and panels in the ballroom and the 4 breakout rooms Karlin 1-4 and they are now available on YouTube in a [playlist](https://www.youtube.com/playlist?list=PL-qBHd6_LXWYutOfi0r_jzyqHGmq1vIhf).
@@ -53,7 +53,7 @@ By the time of writing this News Post the uploading process of the videos to You
 
 **Update: All the recordings of all the 3 days are available now!!**
 
-I have also updated my [report in last month's news](https://openprinting.github.io/OpenPrinting-News-November-2022/#and-the-conference-finally-started-) adding links to the recordings of every session I mentioned there.
+I have also updated my [report in last month's news](/OpenPrinting-News-November-2022/#and-the-conference-finally-started-) adding links to the recordings of every session I mentioned there.
 
 And I have to give a special thank you to Mauro and Aaron as the recordings of all the (non-workshop) sessions where I was the speaker or host of worked out great:
 
@@ -81,8 +81,8 @@ My [lightning talk](https://youtu.be/y7GIiLPjdTk?t=624) about [saving old printe
   + [Ubuntu Summit Memories Live On](https://ubuntu.com/blog/ubuntu-summit-memories-live-on): In the second post-Summit blog Heather gives us the links to the photo galleries and the recordings, and she also motivates to come or even speak next year, or make the next Summit a part of your day job, working at Canonical!
 - [**Canonical's Snap Blog**](https://snapcraft.io/blog)
   + [Snapcrafters: 2022 wrap-up](https://snapcraft.io/blog/snapcrafters-2022-wrap-up): This is about what happened in the volunteer organization [Snapcrafters](https://github.com/snapcrafters) (they snap what upstream is not snapping) during the year 2022. Especially it also tells about the Ubuntu Summit and mentions (and YouTube-links) Dani Llewellyn's plenary talk "Getting started within the Ubuntu Community" and my Snap panel "Your app everywhere, just in a Snap!", the latter even with YouTube thumbnail image.
-- [**OpenPrinting**](https://openprinting.github.io/news/)
-  + [OpenPrinting News - November 2022](https://openprinting.github.io/OpenPrinting-News-November-2022/): I have also written about the Summit, especially my work on contributing to its organization, on creating the Snap tutorial workshop series, preparing the first 2 panel sessions I have hosted in my life, the build-a-plotter workshop (with photos), my 4 sessions, the hallway track, and the success of my lightning talk.
+- [**OpenPrinting**](/news/)
+  + [OpenPrinting News - November 2022](/OpenPrinting-News-November-2022/): I have also written about the Summit, especially my work on contributing to its organization, on creating the Snap tutorial workshop series, preparing the first 2 panel sessions I have hosted in my life, the build-a-plotter workshop (with photos), my 4 sessions, the hallway track, and the success of my lightning talk.
 - [**Jonathan Esk-Riddell**](https://jriddell.org/)
   + [Ubuntu Summit 2022 Prague](https://jriddell.org/2022/11/14/ubuntu-summit-2022-prague/): The KDE-related sessions on the Ubuntu Summit (Jonathan is creator of the KDE Neon distro and former leader of Kubuntu).
 - [**The Register**](https://www.theregister.com/)

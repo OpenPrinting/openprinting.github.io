@@ -4,7 +4,7 @@ title: "Extend PDFio to be a PDF renderer/displayer"
 ### Introduction
 1 contributor full-size (350 hours), Level of difficulty: Hard
 
-Like [CUPS](https://openprinting.github.io/cups/), [libcupsfilters](https://github.com/OpenPrinting/libcupsfilters) is principally written in regular C and not in `C++`. We want to avoid `C++` as it has often problems with binary compatibility and the mechanism with which the Debian/Ubuntu build services auto-detect dependencies between Debian packages get very awkward with `C++`.
+Like [CUPS](/cups/), [libcupsfilters](https://github.com/OpenPrinting/libcupsfilters) is principally written in regular C and not in `C++`. We want to avoid `C++` as it has often problems with binary compatibility and the mechanism with which the Debian/Ubuntu build services auto-detect dependencies between Debian packages get very awkward with `C++`.
 
 In libcupsfilters we now succeeded to eliminate use of `C++`, by replacing the use of the `C++` library [QPDF](https://github.com/qpdf/qpdf/) for PDF manipulation by Michael Sweet's [PDFio](https://www.msweet.org/pdfio/) and also by not using libpoppler any more but using Poppler's command line utilities instead. This was done as a [GSoC project last year](https://medium.com/@uddhavphatak/gsoc-2024-final-report-the-refactor-report-a46756e9d6ce).
 

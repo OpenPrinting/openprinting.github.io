@@ -8,7 +8,7 @@ excerpt: >-
 date: '2020-06-06'
 ---
 ## Google Summer of Code 2020
-On June 1st the coding period of this year's Google Summer of Code has started! All the 7 students (announced here [last month](https://openprinting.github.io/OpenPrinting-News-May-2020/)) have prepared themselves and even partially started with the coding (and first code pieces being comitted to the project's repositories) and now they will all work on their projects. Some of the students are currently getting printers from us to test their work.
+On June 1st the coding period of this year's Google Summer of Code has started! All the 7 students (announced here [last month](/OpenPrinting-News-May-2020/)) have prepared themselves and even partially started with the coding (and first code pieces being comitted to the project's repositories) and now they will all work on their projects. Some of the students are currently getting printers from us to test their work.
 
 Now in the end of each of the three months there will be evaluations which the students have to pass to get the money for the month done and stay in the program to continue their project.
 

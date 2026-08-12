@@ -253,7 +253,7 @@ For the release itself I will still wait a little bit, as Gaurav could find othe
 ## CUPS Snap and snapd printing interface
 **[CUPS Snap](https://github.com/OpenPrinting/cups-snap) in the [Snap Store](https://snapcraft.io/cups)**
 
-Now with the [`cups` snapd interface in place](https://openprinting.github.io/achievements/#the-cups-snap) Snap package maintainers are starting to use it.
+Now with the [`cups` snapd interface in place](/achievements/#the-cups-snap) Snap package maintainers are starting to use it.
 
 Unfortunately, we have hit a bug in snapd with the new `cups` interface. The automatic dependency installation of the CUPS Snap via the pseudo content interface with `default-provider: cups` interferes badly if the Snap using the `cups` interface for printing is seeded (being in the list of default packages used in the OS distribution), even if the CUPS Snap is also seeded ([bug report on snapd](https://github.com/canonical/workshops/issues/32)).
 

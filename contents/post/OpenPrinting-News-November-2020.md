@@ -13,12 +13,12 @@ The days (months?, years?) of only HP being present on the PWG's [certified IPP 
 ## Google Summer of Code 2021
 We are currently looking for project ideas for next year's Google Summer of Code.
 
-As mentioned [last month](https://openprinting.github.io/OpenPrinting-News-October-2020/#google-summer-of-code-2021) student projects will only be half the timr (6 weeks). Google tells that this will probably attract more students, but for us it is a much higher workload as we have to find the double amount of students and get the double amount of students introduced and up to speed to get the same work done.
+As mentioned [last month](/OpenPrinting-News-October-2020/#google-summer-of-code-2021) student projects will only be half the timr (6 weeks). Google tells that this will probably attract more students, but for us it is a much higher workload as we have to find the double amount of students and get the double amount of students introduced and up to speed to get the same work done.
 
 For larger project we should also consider to run them under the Linux Foundation Mentoring Program instead of GSoC.
 
 ## Google Season of Docs 2020
-Our OpenPrinting project is continuing well. Most pages of [Piyush Goyal's project](https://openprinting.github.io/documentation/) are already populated, merely only the scanning part is missing as its coding in our LFMP project is not yet completed.
+Our OpenPrinting project is continuing well. Most pages of [Piyush Goyal's project](/documentation/) are already populated, merely only the scanning part is missing as its coding in our LFMP project is not yet completed.
 
 Next steps for the time being until IPP Scan gets far enough for being documented is to check whether everything is correct, recent API changes in PAPPL taken into account, design of existing Printer Applications, like the [HP PCL](https://github.com/michaelrsweet/hp-printer-app/) and the [PostScript](https://github.com/OpenPrinting/ps-printer-app) Printer Applications explained, ...
 
