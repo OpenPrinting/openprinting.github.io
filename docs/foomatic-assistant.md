@@ -58,6 +58,8 @@ All artifacts are static JSON under `public/`, fetched with `withBasePath()` and
 
 Nothing loads until the assistant is opened; the launcher itself carries no data. The 44 MB `printers.json`, the feature matrix, and the combined recommendations file are never fetched. Query latency measured by the harness (Node, warm caches, 468 samples): median 0.08 ms, p95 4.46 ms — network transfer of the lazy artifacts dominates, not computation.
 
+JavaScript cost (measured on a clean `next build`): the shared First Load JS is unchanged by the assistant (103 kB before and after — the launcher's increment is below the build output's rounding, inside the 8.9 KB-gzip layout chunk), and the entire lazy assistant chunk (panel UI + engine) is 58,036 B raw / 16,778 B gzip, loaded only on first open.
+
 ## Tunables
 
 Values live in `lib/assistant/constants.ts`; `yarn assistant:eval` fails if this table drifts from the code.
