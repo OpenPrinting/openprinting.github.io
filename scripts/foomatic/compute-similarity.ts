@@ -12,6 +12,14 @@ import {
   insertTopK,
 } from "../../lib/foomatic/similarity-math";
 import type { ScoredCandidate } from "../../lib/foomatic/similarity-math";
+import {
+  MIN_SIMILARITY_SCORE,
+  conflictPenalty,
+  evidenceWeight,
+  overlapCount,
+  resolutionTier,
+  scoreThenIdComparator,
+} from "../../lib/foomatic/scoring";
 
 const ROOT_DIR = path.join(
   path.dirname(fileURLToPath(import.meta.url)),
@@ -48,73 +56,6 @@ const RECOMMENDATIONS_DIR = path.join(
 );
 
 const TOP_K = 10;
-// Floor applied to the evidence-damped score. Because w(1) = 0.283, any pair
-// resting on a single shared dimension falls below this automatically, which is
-// what removes "recommended because both use the omni catch-all driver".
-const MIN_SIMILARITY_SCORE = 0.35;
-
-// Cosine on sparse one-hot vectors saturates at 1.0 whenever both vectors are
-// nearly empty: two printers that share a single dimension and have no other
-// known attributes are geometrically identical, yet that is almost no evidence.
-// The raw cosine is therefore damped by the amount of corroborating evidence,
-//     confidence = cos * (1 - exp(-k / EVIDENCE_TAU))
-// where k counts the dimensions on which both printers are non-zero.
-// tau = 3 gives 1 -> 0.28, 3 -> 0.63, 5 -> 0.81, 8 -> 0.93, 11 -> 0.97.
-const EVIDENCE_TAU = 4;
-
-function evidenceWeight(overlap: number): number {
-  return 1 - Math.exp(-overlap / EVIDENCE_TAU);
-}
-
-// The feature vector only rewards agreement; it has no way to express that two
-// capabilities actively conflict. A mono printer sharing a driver family with a
-// colour one still scored well, even though it cannot substitute for it. These
-// multiplicative penalties encode hard substitution barriers.
-const TYPE_CONFLICT_PENALTY = 0.5;
-const COLOR_CONFLICT_PENALTY = 0.6;
-const RESOLUTION_CONFLICT_PENALTY = 0.7;
-const RESOLUTION_CONFLICT_RATIO = 4;
-
-function conflictPenalty(a: Printer, b: Printer): number {
-  let penalty = 1;
-
-  if (
-    a.type &&
-    b.type &&
-    a.type !== "unknown" &&
-    b.type !== "unknown" &&
-    a.type !== b.type
-  ) {
-    penalty *= TYPE_CONFLICT_PENALTY;
-  }
-
-  if (
-    (a.color === true && b.color === false) ||
-    (a.color === false && b.color === true)
-  ) {
-    penalty *= COLOR_CONFLICT_PENALTY;
-  }
-
-  if (a.maxDpi != null && b.maxDpi != null && a.maxDpi > 0 && b.maxDpi > 0) {
-    const ratio =
-      Math.max(a.maxDpi, b.maxDpi) / Math.min(a.maxDpi, b.maxDpi);
-
-    if (ratio >= RESOLUTION_CONFLICT_RATIO) {
-      penalty *= RESOLUTION_CONFLICT_PENALTY;
-    }
-  }
-
-  return penalty;
-}
-
-// Count dimensions where both vectors carry a non-zero weight.
-function overlapCount(a: number[], b: number[]): number {
-  let n = 0;
-  for (let i = 0; i < a.length; i++) {
-    if (a[i] !== 0 && b[i] !== 0) n++;
-  }
-  return n;
-}
 
 interface FeatureMatrix {
   printerCount: number;
@@ -209,17 +150,8 @@ function computeSharedFeatures(a: Printer, b: Printer): string[] {
     shared.push(pclLabel[a.pclLevel] ?? "PCL");
   }
 
-  // Label the tier as the range it actually represents. Naming the tier's upper
-  // bound ("1200 dpi") claimed a resolution neither printer necessarily has.
-  const resTier = (dpi: number | null | undefined): string | null => {
-    if (dpi == null) return null;
-    if (dpi <= 300) return "up to 300 dpi";
-    if (dpi <= 600) return "300-600 dpi";
-    if (dpi <= 1200) return "600-1200 dpi";
-    return "over 1200 dpi";
-  };
-  const aTier = resTier(a.maxDpi);
-  const bTier = resTier(b.maxDpi);
+  const aTier = resolutionTier(a.maxDpi);
+  const bTier = resolutionTier(b.maxDpi);
   if (aTier != null && aTier === bTier) {
     shared.push(`Similar resolution (${aTier})`);
   }
@@ -453,11 +385,7 @@ function main(): void {
       );
     }
 
-    topK.sort(
-      (x, y) =>
-        y.score - x.score ||
-        matrixData.ids[x.index].localeCompare(matrixData.ids[y.index]),
-    );
+    topK.sort(scoreThenIdComparator((index) => matrixData.ids[index]));
 
     const printerId = matrixData.ids[i];
 
