@@ -20,7 +20,7 @@
 # Should Mopria start publishing an updated printer list, we can include
 # them, too...
 AIRPRT="/tmp/airprint.json"
-DRIVERLESS="public/assets/json/driverless.json"
+DRIVERLESS="../public/assets/json/driverless.json"
 TMPDRIVERLESS="/tmp/driverless.json"
 IPPEVE="/tmp/ipp-everywhere.json"
 
@@ -81,6 +81,6 @@ $python ./add-ippeve-only.py $TMPDRIVERLESS $IPPEVE >$DRIVERLESS
 echo "Done."
 
 # Clean up...
-#rm $AIRPRT
-#rm $IPPEVE
-#rm $TMPDRIVERLESS
+rm $AIRPRT
+rm $IPPEVE
+rm $TMPDRIVERLESS
