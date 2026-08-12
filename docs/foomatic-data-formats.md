@@ -175,7 +175,7 @@ type RecommendationsForPrinter = Array<{
 
 The detail page only ever needs the current printer's own recommendations, so fetching this file instead of the ~23 MB combined `recommendations.json` is what keeps the printer detail page's initial load small (see commit `perf(recommendations): split recommendation data per printer`).
 
-The denormalized display fields cost roughly 0.9 KB per shard (median 2.2 KB → 3.1 KB) but remove a second ~1.5 MB `printersMap.json` fetch that the section previously needed purely to resolve manufacturer/model/status for the three cards it renders — a net reduction from ~1,495 KB to ~3 KB per printer-page visit. They are intentionally *not* added to the combined `recommendations.json`, which stays a compact diagnostic artifact.
+The denormalized display fields cost roughly 0.9 KB per shard (median 3.3 KB at the current snapshot) but remove a second ~1.5 MB `printersMap.json` fetch that the section previously needed purely to resolve manufacturer/model/status for the three cards it renders — a net reduction from ~1,495 KB to ~3 KB per printer-page visit. They are intentionally *not* added to the combined `recommendations.json`, which stays a compact diagnostic artifact.
 
 ---
 

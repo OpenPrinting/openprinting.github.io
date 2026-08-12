@@ -81,7 +81,7 @@ The scoring-model corrections above removed it entirely.
 | + resolution (feature engineering complete) | 79.8% | 0.969 | 0.935 |
 | **+ IDF, evidence damping, conflict penalties** | **0.0%** | **0.814** | **0.393** |
 
-Measured over the 19,606 recommendations actually displayed (top-3 per printer).
+Rows through "feature engineering complete" are measured over all retained top-10 recommendations, the pipeline's historical diagnostic basis. The final row, and every current-state figure in this document, is measured over the 19,606 recommendations actually displayed (top-3 per printer); on that displayed basis, pre-correction saturation was 86.8% (17,212 of 19,827).
 The score histogram changed from a single spike (17,212 of 19,827 at 1.0) to a
 spread distribution peaking at 0.9 and reaching down to 0.3.
 
@@ -171,9 +171,9 @@ Raising a weight increases how much that attribute pulls two printers together; 
 
 ## Performance: Per-Printer Data Split (`983f915`, 2026-06-12)
 
-Not a scoring-quality change, but a necessary scale fix once `recommendations.json` grew large: the full recommendation map for ~6,600 printers serializes to **23.15 MB** (measured from the current production artifact — see `compute-similarity.ts` runtime logging). Shipping that to every printer detail page visit would be a significant and unnecessary page-weight cost, since a single page only ever needs one printer's own top-10 list.
+Not a scoring-quality change, but a necessary scale fix once `recommendations.json` grew large: the full recommendation map for ~6,600 printers serializes to **23.8 MB** at the current snapshot (see `compute-similarity.ts` runtime logging). Shipping that to every printer detail page visit would be a significant and unnecessary page-weight cost, since a single page only ever needs one printer's own top-10 list.
 
-The fix splits the combined file into one small file per printer (median 3.1 KB, max 5.8 KB, including denormalized card fields) under `recommendations/<id>.json` (see [foomatic-data-formats.md](./foomatic-data-formats.md#publicfoomatic-dbrecommendationsidjson)), so `RecommendedPrintersSection.tsx` fetches only the relevant slice instead of the full 23 MB map.
+The fix splits the combined file into one small file per printer (median 3.3 KB, max 6.0 KB at the current snapshot, including denormalized card fields) under `recommendations/<id>.json` (see [foomatic-data-formats.md](./foomatic-data-formats.md#publicfoomatic-dbrecommendationsidjson)), so `RecommendedPrintersSection.tsx` fetches only the relevant slice instead of the full ~24 MB map.
 
 ---
 

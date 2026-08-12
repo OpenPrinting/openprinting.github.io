@@ -72,6 +72,8 @@ Everything under `app/foomatic` and `components/foomatic` is a Next.js **client 
 4. `ConfidenceBadge` maps the score to one of four evidence-aligned tiers via `confidenceTier()` in `lib/foomatic/scoring.ts`: **High confidence** (≥ 0.85, emerald), **Good match** (≥ 0.70, sky), **Moderate match** (≥ 0.50, amber), **Limited evidence** (below, muted), with a secondary `N% similarity` line. The wording is deliberate: the score is an engineered similarity value, not a probability that the printer will work, so nothing is ever labelled "exact".
 5. `sharedFeatures` (the explanation strings produced by `computeSharedFeatures()` in the pipeline) are rendered as a labeled chip list under "Why this printer?".
 6. Uses a `cancelled` flag in the `useEffect` cleanup to avoid calling `setState` after unmount (relevant if a user navigates away mid-fetch).
+7. `SimilarPrintersTeaser` (exported from the same file) renders a compact card in the printer-page header beside the Recommended driver box: the top similar printer, its `N% similarity` and confidence tier, and an anchor link to `#similar-printers` on the full section. It shares one shard request with the full section through a module-level per-printer cache, and renders nothing while loading or when the printer has no recommendations.
+8. Inside recommendation cards the candidate's own Foomatic grade badge is prefixed with "Linux support:" specifically to distinguish the candidate's Linux support grade from the similarity result; the bare badge used elsewhere on the site is unchanged.
 
 ---
 

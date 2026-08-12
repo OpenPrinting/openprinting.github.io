@@ -40,7 +40,7 @@ This also runs automatically before every `next build`: the `build` script is `y
 | Flag | Env var equivalent | Effect |
 |---|---|---|
 | `--skip-ppd` | n/a (Windows always skips) | Skip PPD compilation (stage 2) |
-| `--skip-similarity` | `FOOMATIC_SKIP_SIMILARITY=1` | Skip stages 5–6 (vectorize + compute-similarity) |
+| `--skip-similarity` | `FOOMATIC_SKIP_SIMILARITY=1` | Skip stages 6–7 (vectorize + compute-similarity) |
 | `--force` (forwarded to `generate-ppds.sh` only) | `FORCE_PPD_GEN=true` | Force PPD recompilation even if the cached `foomatic-db` git revision hasn't changed |
 
 Example — fast local iteration on UI changes without recomputing recommendations:
