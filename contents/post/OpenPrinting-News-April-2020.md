@@ -35,7 +35,7 @@ In the web interface the structure of pages is already defined, but most pages a
 This also means that things planned for the Printer Application SDK GSoC project will already be done when the coding period starts, but here we will simply be flexible with what will exactly be done during the project. We will be able to do additional things which we did not plan in the beginning.
 
 I am suggesting the following:
-- Take care that all the properties described on [here](https://openprinting.github.io/OpenPrinting-News-March-2020/#printer-application-frameworksdk---pappl) last month are fulfilled. I have agreed with Mike on them. But if Mike does not implement all of these it will be the student's task to add what is missing.
+- Take care that all the properties described on [here](/OpenPrinting-News-March-2020/#printer-application-frameworksdk---pappl) last month are fulfilled. I have agreed with Mike on them. But if Mike does not implement all of these it will be the student's task to add what is missing.
 - One point Mike will most probably not add is the retro-fitting of old PPD/filter drivers. For these we will need to copy over PPD-supporting code from libcups into cups-filters to conserve it for the legacy driver support with a minimum of code creation.
 - Re-structuring of cups-filters to make it easier to use the code of the filters in Printer Applications.
 

@@ -32,11 +32,11 @@ Before doing this release, the second generation of cups-filters, I still want t
 
 So I am re-posting the text here:
 
-> With the background of [CUPS 3.x, planned to get released 2 years from now](https://openprinting.github.io/OpenPrinting-News-October-2021/#cups), not supporting PPD files any more and only considering driverless IPP printers, I have changed the architecture of cups-filters, converting filter executables (CUPS filters) into filter functions (library functions doing a filter's task, with standardized call scheme/interface) so that the code of the filters is preserved but they get more universally usable.
+> With the background of [CUPS 3.x, planned to get released 2 years from now](/OpenPrinting-News-October-2021/#cups), not supporting PPD files any more and only considering driverless IPP printers, I have changed the architecture of cups-filters, converting filter executables (CUPS filters) into filter functions (library functions doing a filter's task, with standardized call scheme/interface) so that the code of the filters is preserved but they get more universally usable.
 >
 > In addition I have created some auxiliary functions (partially filter functions by themselves) to call filter functions in a chain, feed data into a filter function through a pipe, call classic CUPS external filter/backend executable wrapped into a filter function, save data stream between chained filter function calls into a file for debugging, ...
 >
-> Perhaps you have followed all this development [here in the news posts](https://openprinting.github.io/news/) or in the [GIT repository of cups-filters](https://github.com/OpenPrinting/cups-filters/commits/master).
+> Perhaps you have followed all this development [here in the news posts](/news/) or in the [GIT repository of cups-filters](https://github.com/OpenPrinting/cups-filters/commits/master).
 >
 > With this I was especially able to create [Printer Applications retro-fitting classic CUPS printer drivers](https://github.com/OpenPrinting/pappl-retrofit) ([Snap Store](https://snapcraft.io/search?q=OpenPrinting)), an important step to be able to switch to a PPD-less and driverless CUPS without dropping support for legacy printers.
 >
@@ -112,7 +112,7 @@ LPrint the Printer Application for label printers, created by Michael Sweet, got
 
 So not only it gives you support for many label printer models (if your label printer is not supported, some more are supported by the [Ghostscript Printer Application](https://snapcraft.io/ghostscript-printer-app)), but it also is an example for developers who want to create their own native Printer Application.
 
-Announcement of the [**1.1.0 release**](https://openprinting.github.io/lprint-1.1.0/).
+Announcement of the [**1.1.0 release**](/lprint-1.1.0/).
 
 
 ## PDFio

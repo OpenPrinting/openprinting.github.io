@@ -16,7 +16,7 @@ But we have a lot of **good and exciting news**! Not only that we got [accepted 
 
 Some of you were perhaps wondering how to **report security issues** and therefore hesitated to do so, now I succeeded in [getting an intuitive way](#private-bug-reports-for-security-issues).
 
-And **Kurt Pfeifle**, who made me know about CUPS back in mid-2000 by a magazine article and [so made out of me what I am now](https://openprinting.github.io/history/) has retired and now wants to **contribute to the documentation** on OpenPrinting! Welcome back in the team!!
+And **Kurt Pfeifle**, who made me know about CUPS back in mid-2000 by a magazine article and [so made out of me what I am now](/history/) has retired and now wants to **contribute to the documentation** on OpenPrinting! Welcome back in the team!!
 
 
 ## Google Summer of Code 2023 - We are in!!
@@ -70,7 +70,7 @@ Marek Kasik and Matthias Clasen, thanks a lot for guiding Gaurav to get his work
 
 
 ## libcups 3.0b1 - The first piece of CUPS 3.x!
-Michael Sweet has **released the [first beta of libcups 3.0](https://openprinting.github.io/libcups-3.0b1/)!**
+Michael Sweet has **released the [first beta of libcups 3.0](/libcups-3.0b1/)!**
 
 This is the first of the new split components of CUPS 3.x. It will not only have deprecated features removed, like PPD file and classic driver support, but also a lot of new functionality, like for example:
 
@@ -111,7 +111,7 @@ But **cups-browsed** ([MIR](https://bugs.launchpad.net/ubuntu/+source/cups-brows
 
 Therefore we need, not only for our own QA, a **good test infrastructure** for all the software we produce. This is already on our [roadmap](/OpenPrinting-News-September-2022/#openprinting-micro-conference-on-the-linux-plumbers-2022) and we will let two GSoC contributors [work on it](https://wiki.linuxfoundation.org/gsoc/google-summer-code-2023-openprinting-projects#ci_testing_programs_for_libcupsfilters_libpappl-retrofit_libppd_cpdb).
 
-In **cups-filters** ([2.0b4](https://openprinting.github.io/libcupsfilters-and-libppd-Second-Generation-Forth-Beta-Release/)) I have also eliminated warnings about deprecated QPDF functions by making everything using the current QPDF 11 API, as having that many warnings was not much liked by the MIR approval team.
+In **cups-filters** ([2.0b4](/libcupsfilters-and-libppd-Second-Generation-Forth-Beta-Release/)) I have also eliminated warnings about deprecated QPDF functions by making everything using the current QPDF 11 API, as having that many warnings was not much liked by the MIR approval team.
 
 Of the **Common Print Dialog Backends** I released the [second](/Common-Print-Dialog-Backends-Second-Generation-Second-Beta-Release/) and the [third beta](/Common-Print-Dialog-Backends-Second-Generation-Third-Beta-Release/), to have a CPDB release with which [GTK 4.9.4](#common-print-dialog-backends-support-accepted-into-gtk) actually builds and to get the improvements in translation support in, all in time for Lunar's Feature Freeze. All 3 packages (cpdb-libs, cpdb-backend-cups, cpdb-backend-file) already did the migration from -proposed into the release in Universe.
 
@@ -155,7 +155,7 @@ Ubuntu 23.04 (Lunar Lobster) will most probably come with CUPS 2.4.2, perhaps wi
 ## cups-filters
 In the course of the [integration of the new generation of cups-filters in Ubuntu](#the-new-architecture-is-going-into-ubuntu-and-red-hat) I have done two more beta releases to include general bug fixes and also fulfill requirements for Ubuntu. Also several of the bug fixes were done in cooperation with [GSoC contributor candidates](#google-summer-of-code-2023---we-are-in) to whom we have given issue reports as assignments.
 
-**[Third beta](https://openprinting.github.io/cups-filters-Second-Generation-Third-Beta-Release/)**
+**[Third beta](/cups-filters-Second-Generation-Third-Beta-Release/)**
 
 - Monochrome PXL-XL printing (Ghostscript, output device `pxlmono`) did not work due to the `cfFilterGhostscript()` filter function using the sRGB instead of the sGray color profile, which makes Ghostscript erroring out ([commit](https://github.com/OpenPrinting/libcupsfilters/commit/81f0e79)).
 - As in CUPS we have also added the separated polling of the `all` and `media-col-database` attributes from driverless printers to cups-filters ([commit](https://github.com/OpenPrinting/libcupsfilters/commit/789cca62d), [issue](https://github.com/OpenPrinting/cups-filters/issues/492))
@@ -164,7 +164,7 @@ In the course of the [integration of the new generation of cups-filters in Ubunt
 - Removed unnecessary dependencies, especially on C++ in cups-filters and cups-browsed. Thanks, Zdenek Dohnal.
 - Many fixes in the build system and the source code documentation.
 
-**[Forth beta of libcupsfilters and libppd](https://openprinting.github.io/libcupsfilters-and-libppd-Second-Generation-Forth-Beta-Release/)**
+**[Forth beta of libcupsfilters and libppd](/libcupsfilters-and-libppd-Second-Generation-Forth-Beta-Release/)**
 
 - Zdenek Dohnal from Red Hat has run all the components of the new generation of cups-filters through Coverity and found several bugs: Memory leaks, files not closed, possible string overflows, ... He fixed all these bugs in the upstream code. This assures reliability and security of all the new components, especially if being part of permanently running daemons ([PR libcupsfilters](https://github.com/OpenPrinting/libcupsfilters/pull/11), [PR libppd](https://github.com/OpenPrinting/libppd/pull/9)). Thanks a lot, Zdenek!
 - Updated libcupsfilters to work with the latest version of QPDF (11) as building it showed a lot of warnings about the use of deprecated functions in QPDF. Now it should be even ready for the upcoming QPDF 12.
@@ -190,7 +190,7 @@ Zdenek Dohnal also [improved the privilege dropping](https://github.com/OpenPrin
 
 
 ## Common Print Dialog Backends
-For the requirements of the [CPDB support in the GTK print dialog](#common-print-dialog-backends-support-accepted-into-gtk) Gaurav Guleria needed to do a lot of enhancements on CPDB itself, and when his merge request got accepted into GTK, CPDB 2.0b1 was already 2 months old and after that a lot of changes have been done, ending up with GTK's CPDB support [not building with any released version of CPDB](https://gitlab.gnome.org/GNOME/gtk/-/issues/5589). Therefore we have now [released version 2.0b2](https://openprinting.github.io/Common-Print-Dialog-Backends-Second-Generation-Second-Beta-Release/) of all the three components (cpdb-libs, cpdb-backend-cups, cpdb-backend-file) of the CPDB to allow easy building of the first CPDB-supporting GTK.
+For the requirements of the [CPDB support in the GTK print dialog](#common-print-dialog-backends-support-accepted-into-gtk) Gaurav Guleria needed to do a lot of enhancements on CPDB itself, and when his merge request got accepted into GTK, CPDB 2.0b1 was already 2 months old and after that a lot of changes have been done, ending up with GTK's CPDB support [not building with any released version of CPDB](https://gitlab.gnome.org/GNOME/gtk/-/issues/5589). Therefore we have now [released version 2.0b2](/Common-Print-Dialog-Backends-Second-Generation-Second-Beta-Release/) of all the three components (cpdb-libs, cpdb-backend-cups, cpdb-backend-file) of the CPDB to allow easy building of the first CPDB-supporting GTK.
 
 Features added are
 - **Options groups:** This allows better structuring of options in print dialogs. Common options are categorized in groups, like media, print quality, color, finishing, ...
@@ -202,7 +202,7 @@ Features added are
 
 Also several bugs got corrected and work on the documentation done. And there are now three source code download formats: `*.tar.gz`, `*.tar.bz2`, and `*.tar.xz`
 
-Shortly before Feature Freeze for Ubuntu 23.04 I have released the [third beta](https://openprinting.github.io/Common-Print-Dialog-Backends-Second-Generation-Third-Beta-Release/) with improvements in translation support, now having functions to load translations synchronously and asynchronously.
+Shortly before Feature Freeze for Ubuntu 23.04 I have released the [third beta](/Common-Print-Dialog-Backends-Second-Generation-Third-Beta-Release/) with improvements in translation support, now having functions to load translations synchronously and asynchronously.
 
 
 ## PAPPL Scanning Support

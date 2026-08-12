@@ -20,7 +20,7 @@ I will be on this year's [Linux Application Summit](https://conf.linuxappsummit.
 
 There I will give a [talk](https://conf.linuxappsummit.org/event/4/contributions/106/) about the New Architecture of printing and scanning and what is important for developers of desktop applications.
 
-I will give a summary of the changes and tell what needs to be changed in the desktop world, the [new printer setup tool](https://openprinting.github.io/OpenPrinting-News-February-2022/#gui-printer-setup-tool-and-print-dialog---essential-for-user-experience), [print dialog requirements](https://openprinting.github.io/OpenPrinting-News-February-2022/#the-print-dialogs) and [CPDB](https://nilanjanalodh.github.io/common-print-dialog-gsoc17/), snaboxed/distribution-independent packaging, like [Snap](https://openprinting.github.io/OpenPrinting-News-March-2022/#how-to-snap-an-application), [Flatpak](https://openprinting.github.io/OpenPrinting-News-March-2022/#flatpak-and-printing), ...
+I will give a summary of the changes and tell what needs to be changed in the desktop world, the [new printer setup tool](/OpenPrinting-News-February-2022/#gui-printer-setup-tool-and-print-dialog---essential-for-user-experience), [print dialog requirements](/OpenPrinting-News-February-2022/#the-print-dialogs) and [CPDB](https://nilanjanalodh.github.io/common-print-dialog-gsoc17/), snaboxed/distribution-independent packaging, like [Snap](/OpenPrinting-News-March-2022/#how-to-snap-an-application), [Flatpak](/OpenPrinting-News-March-2022/#flatpak-and-printing), ...
 
 This should help application and GUI/desktop developers to get print and scan functionality of their software just work.
 
@@ -52,7 +52,7 @@ The regression has been fixed already and snapd 2.55.3 with the fix is available
 ```
 sudo snap refresh --candidate snapd
 ```
-Then everything should work as described [last month](https://openprinting.github.io/OpenPrinting-News-March-2022/#cups-snap-and-snapd-printing-interface).
+Then everything should work as described [last month](/OpenPrinting-News-March-2022/#cups-snap-and-snapd-printing-interface).
 
 If not, there is still a bug which could affect you:
 
@@ -83,7 +83,7 @@ Anyway, thanks a lot to Michael Vogt and his team on the hard work on snapd.
 
 
 ## AppImage and printing
-I had a quick look (especially also for the talk on Linux App Summit 2022, see above) into [this format](https://appimage.org/) for distribution-independent packaging and found out that it is, as [Flatpak](https://openprinting.github.io/OpenPrinting-News-March-2022/#flatpak-and-printing), also not suitable for packaging system services, like CUPS, ipp-usb, or Printer Applications.
+I had a quick look (especially also for the talk on Linux App Summit 2022, see above) into [this format](https://appimage.org/) for distribution-independent packaging and found out that it is, as [Flatpak](/OpenPrinting-News-March-2022/#flatpak-and-printing), also not suitable for packaging system services, like CUPS, ipp-usb, or Printer Applications.
 
 AppImage is not actually sandboxed packaging, as Snap and Flatpak are. It is simply a single downloadable file, which a user puts into their home directory, makes it executable, and starts it, this way the included (squashfs) file system is mounted and the application started. The file system *is supposed* to contain everything to run the application. So one does not need to install anything.
 

@@ -2,7 +2,7 @@
 title: "Port CUPS and Printer Applications to Zephyr"
 ---
 ### Introduction
-Probably many of you have already thought about that one can take an SBC, install Linux and [CUPS](https://openprinting.github.io/cups) or a Printer Application on it, and connect this to an old printer which is still mechanically perfect but needs a driver which is not available any more for some operating systems. Suddenly the printer turns into a modern, driverless IPP printer which can be used with any operating system.
+Probably many of you have already thought about that one can take an SBC, install Linux and [CUPS](/cups) or a Printer Application on it, and connect this to an old printer which is still mechanically perfect but needs a driver which is not available any more for some operating systems. Suddenly the printer turns into a modern, driverless IPP printer which can be used with any operating system.
 
 But it is a little awkward having a little box dangling behind the printer which also occupies a power outlet. Also one can perhaps also make use of much cheaper SBC.
 
@@ -12,7 +12,7 @@ Such tiny boards are often not powerful enough to run Linux, but there is also t
 
 And this scenario does not only serve for cheap DIY solutions to save old printers, it also can be a base for cost-effective printer firmware development.
 
-This project is about investigating whether one could run the components of the free software printing stack, as [CUPS](https://openprinting.github.io/cups), [PAPPL](https://github.com/michaelrsweet/pappl/), [libcupsfilters](https://github.com/OpenPrinting/libcupsfilters), ... under the Zephyr operating system, and actually let this tiny print server execute printer drivers and print on legacy printers. Also the handling of print data and the need of resources here needs to be investigated. Can we hold several pages? Can we use [Ghostscript](https://ghostscript.com/)? Or do we have to stream raster print data from the client to the printer?
+This project is about investigating whether one could run the components of the free software printing stack, as [CUPS](/cups), [PAPPL](https://github.com/michaelrsweet/pappl/), [libcupsfilters](https://github.com/OpenPrinting/libcupsfilters), ... under the Zephyr operating system, and actually let this tiny print server execute printer drivers and print on legacy printers. Also the handling of print data and the need of resources here needs to be investigated. Can we hold several pages? Can we use [Ghostscript](https://ghostscript.com/)? Or do we have to stream raster print data from the client to the printer?
 
 Most desirable is to do this with PAPPL (Printer APPlication Library), as it is designed to emulate a driverless IPP printer in software, including the so-called "Gadget" mode to appear as an IPP-over-USB device when connecting the power supply USB port of the SBC with the client computer's USB.
 ### Mentors

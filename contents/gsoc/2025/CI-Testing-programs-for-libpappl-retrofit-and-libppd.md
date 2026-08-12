@@ -16,7 +16,7 @@ Test programs are also needed for the so-called 'autopkgtest' tests which are ad
 
 In addition, instruction files and shell scripts are needed to build the software on different platforms/environments, run tests, create GitHub Actions (for the automatic triggering on each commit ...).
 
-This subject got discussed on the OpenPrinting micro-conference on Linux Plumbers 2022: ([Summary](https://openprinting.github.io/OpenPrinting-News-September-2022/#openprinting-micro-conference-on-the-linux-plumbers-2022), [Slides](https://lpc.events/event/16/contributions/1161/attachments/942/1851/lpc-printing-ci-2022.pdf), [Video](https://www.youtube.com/watch?v=c--Uki7cvGE))
+This subject got discussed on the OpenPrinting micro-conference on Linux Plumbers 2022: ([Summary](/OpenPrinting-News-September-2022/#openprinting-micro-conference-on-the-linux-plumbers-2022), [Slides](https://lpc.events/event/16/contributions/1161/attachments/942/1851/lpc-printing-ci-2022.pdf), [Video](https://www.youtube.com/watch?v=c--Uki7cvGE))
 
 Here you can see what we already have in terms of CI, and what is missing ...
 ### Mentors

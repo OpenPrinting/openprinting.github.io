@@ -8,11 +8,11 @@ excerpt: >-
 date: '2021-03-05'
 ---
 ## CUPS has new home at OpenPrinting!
-Due to the fact that CUPS development at Apple has stopped since the beginning of 2020 we had [forked CUPS some months ago](https://openprinting.github.io/OpenPrinting-News-September-2020/#cups) to incorporate patches and fixes from the distributions. As Apple did not resume the upstream work on CUPS, we have made OpenPrinting now the official upstream home for CUPS.
+Due to the fact that CUPS development at Apple has stopped since the beginning of 2020 we had [forked CUPS some months ago](/OpenPrinting-News-September-2020/#cups) to incorporate patches and fixes from the distributions. As Apple did not resume the upstream work on CUPS, we have made OpenPrinting now the official upstream home for CUPS.
 
 This especially means that we can now continue developing CUPS, independent of Apple. So we can add features and lead CUPS into the new architecture without PPD files and with Printer Applications.
 
-CUPS has a [new home page](https://openprinting.github.io/cups/) now and what was formerly our fork is now the [official CUPS repository](https://github.com/OpenPrinting/cups/). Upcoming releases will be of the new 2.4.x series, now without "opX" suffix now. Also all documentation files which come with it are updated to point to the OpenPrinting resources. Mailing list for development discussions is our [printing-architecture](https://lists.linuxfoundation.org/mailman/listinfo/printing-architecture) list.
+CUPS has a [new home page](/cups/) now and what was formerly our fork is now the [official CUPS repository](https://github.com/OpenPrinting/cups/). Upcoming releases will be of the new 2.4.x series, now without "opX" suffix now. Also all documentation files which come with it are updated to point to the OpenPrinting resources. Mailing list for development discussions is our [printing-architecture](https://lists.linuxfoundation.org/mailman/listinfo/printing-architecture) list.
 
 First feature additions have already happened, all Snap support which the [CUPS Snap](https://github.com/OpenPrinting/cups-snap) and the Ubuntu package of CUPS received as package-specific patches is now upstream in CUPS.
 
@@ -21,7 +21,7 @@ First feature additions have already happened, all Snap support which the [CUPS 
 
 We have applied again  for the Linux Foundation as mentoring organization, as in the previous years, for the [Google Summer of Code](https://summerofcode.withgoogle.com/). The accepted organizations will be announced by Google on Tue, March 9, 2021 ([Timeline](https://developers.google.com/open-source/gsoc/timeline)).
 
-OpenPrinting's project ideas are [posted](https://wiki.linuxfoundation.org/gsoc/google-summer-code-2021-openprinting-projects), but further ideas are still welcome. Note that the projects are half-length this year, 175 hours instead of 350 hours (see our [October news](https://openprinting.github.io/OpenPrinting-News-October-2020/#google-summer-of-code-2021). Larger projects we should run in the Linux Foundation Mentoring Program instead of in the GSoC.
+OpenPrinting's project ideas are [posted](https://wiki.linuxfoundation.org/gsoc/google-summer-code-2021-openprinting-projects), but further ideas are still welcome. Note that the projects are half-length this year, 175 hours instead of 350 hours (see our [October news](/OpenPrinting-News-October-2020/#google-summer-of-code-2021). Larger projects we should run in the Linux Foundation Mentoring Program instead of in the GSoC.
 
 ## CUPS Snap
 **The [CUPS Snap](https://github.com/OpenPrinting/cups-snap) is in the [Snap Store](https://snapcraft.io/cups) now!**
@@ -121,7 +121,7 @@ Also, having [hardware-signature-based Snap Store search](https://forum.snapcraf
 ## CUPS
 Currently released is [2.3.3op2](https://github.com/OpenPrinting/cups/releases/tag/v2.3.3op2).
 
-[2.3.3op2](https://openprinting.github.io/cups-2.3.3op2/) is the last release of the 2.3.x series. To mark that CUPS upstream development is now under OpenPrinting, we start 2.4.x.
+[2.3.3op2](/cups-2.3.3op2/) is the last release of the 2.3.x series. To mark that CUPS upstream development is now under OpenPrinting, we start 2.4.x.
 
 Ubuntu Hirsute Hippo (21.04) will ship with CUPS 2.3.3op2, also the CUPS Snap currently uses this version.
 

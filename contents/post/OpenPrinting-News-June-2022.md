@@ -18,13 +18,13 @@ The conference also initiated some interesting discussion with Alexander Pevzner
 
 
 ## GUADEC 2022
-As already mentioned here [last month](https://openprinting.github.io/OpenPrinting-News-May-2022/#guadec-2022) I will be on the [GUADEC](https://events.gnome.org/event/77/) (GNOME developer conference) this year which will take place on July 20-25 in Guadalajara in Mexico.
+As already mentioned here [last month](/OpenPrinting-News-May-2022/#guadec-2022) I will be on the [GUADEC](https://events.gnome.org/event/77/) (GNOME developer conference) this year which will take place on July 20-25 in Guadalajara in Mexico.
 
-I will not only give my [talk](https://events.gnome.org/event/77/contributions/285/) about the New Architecture of printing and scanning for GNOME developers (July 21, 14:20 - 15:00 local time, Bosch Auditorium), but also come with my colleagues from Canonical, similar as on the [LAS 2022](https://openprinting.github.io/OpenPrinting-News-Flash-OpenPrinting-and-Ubuntu-on-the-Linux-App-Summit-2022/) ([video](https://www.youtube.com/watch?v=CBPefa0Ckq8&t=15480s)).
+I will not only give my [talk](https://events.gnome.org/event/77/contributions/285/) about the New Architecture of printing and scanning for GNOME developers (July 21, 14:20 - 15:00 local time, Bosch Auditorium), but also come with my colleagues from Canonical, similar as on the [LAS 2022](/OpenPrinting-News-Flash-OpenPrinting-and-Ubuntu-on-the-Linux-App-Summit-2022/) ([video](https://www.youtube.com/watch?v=CBPefa0Ckq8&t=15480s)).
 
 As of now the Canonical Gang will be me, Heather Ellsworth, Britt Yazel, Marco Trevisan, and Nathan Pratta Teodosio.
 
-Heather will give a lightning talk about the Linux Application Summit 2023 showing how to submit a proposal if one wants to host the event. I hope this will help to have another great LAS as we had [this year](https://openprinting.github.io/OpenPrinting-News-Flash-OpenPrinting-and-Ubuntu-on-the-Linux-App-Summit-2022/). It will take place most probably on July 22, somewhere between 14:25 and 15:05 local time in the Bosch Auditorium.
+Heather will give a lightning talk about the Linux Application Summit 2023 showing how to submit a proposal if one wants to host the event. I hope this will help to have another great LAS as we had [this year](/OpenPrinting-News-Flash-OpenPrinting-and-Ubuntu-on-the-Linux-App-Summit-2022/). It will take place most probably on July 22, somewhere between 14:25 and 15:05 local time in the Bosch Auditorium.
 
 We will also have a Canonical booth. But do not think about at the GUADEC booths being these sales/marketing people in neatly tucked-in company polo shirts, no, on GUADEC booths you will encounter developers there, of the different companies and projects participating. The booths are just tables to sit around them and chat. This makes it much easier to find people for fruitful hallway sessions.
 
@@ -74,7 +74,7 @@ The official coding period starts today and it seems also that the end-semester 
 
 
 ### GNOME Control Center - The new "Printers" module
-I had intense e-mail discussion with the upstream maintainer of the G-C-C "Printers" module, Marek Kasik from Red Hat, and also with Michael Sweet. I got a first answer from Marek Kasik about the original idea of [replacing the module by one for the New Architecture](https://openprinting.github.io/OpenPrinting-News-February-2022/#printer-setup-tool). He suggests a different solution, instead of replacing the module adding the functionality needed for the New Architecture to the current module making it supporting both old and new. CUPS 2.x already supports most features of the New Architecture (printers as IPP service, Printer Applications) and with CUPS 3.x old-style items (like PPD/driver-based queues) simply will not show. I agreed with that.
+I had intense e-mail discussion with the upstream maintainer of the G-C-C "Printers" module, Marek Kasik from Red Hat, and also with Michael Sweet. I got a first answer from Marek Kasik about the original idea of [replacing the module by one for the New Architecture](/OpenPrinting-News-February-2022/#printer-setup-tool). He suggests a different solution, instead of replacing the module adding the functionality needed for the New Architecture to the current module making it supporting both old and new. CUPS 2.x already supports most features of the New Architecture (printers as IPP service, Printer Applications) and with CUPS 3.x old-style items (like PPD/driver-based queues) simply will not show. I agreed with that.
 
 I asked Michael Sweet several questions about how to handle managing printers via pure IPP and he helped a lot. Then finally Marek posted 3 feature requests describing the needed work on the upstream GitLab:
 
@@ -94,14 +94,14 @@ On classic queues we will get the same operations as we already have: Set option
 
 The "Add Printer" part (to be worked on by Mohit Verma) will also support both the current way and the New Architecture. As long as the underlying CUPS supports it, both classic queues with drivers or Printer Applications can get installed for a discovered printer. As long as classic drivers are still available (CUPS 2.x, not the [CUPS Snap](https://snapcraft.io/cups)) it will be possible to choose.
 
-[Internet search](https://openprinting.github.io/OpenPrinting-News-November-2021/#printer-querying-on-the-openprinting-web-server) for OS-distribution-independent packages of Printer Applications will get included as originally planned. Initial tests of installing Printer Application Snaps on the OpenPrinting web server were already performed. Thanks Violet Kurtz from OSUOSL!
+[Internet search](/OpenPrinting-News-November-2021/#printer-querying-on-the-openprinting-web-server) for OS-distribution-independent packages of Printer Applications will get included as originally planned. Initial tests of installing Printer Application Snaps on the OpenPrinting web server were already performed. Thanks Violet Kurtz from OSUOSL!
 
 There will be no "Printers & Scanners" module, due to the very different nature of print, scan, and fax operations for the user we will continue with a "Printers" module. Faxes would be shown on a seperate panel, but the code of the "Printers" module could be shared here.
 
 ### Scan support for PAPPL
 Two GSoC contributors (Rishabh Maheshwari and Deepak Khatri) will continue where [Bhavna Kosta](https://github.com/Bhavna2020/GSoC-2021) has left off in GSoC 2021: They will add scanning support to PAPPL. This will allow complete suppport for multi-function devices (they get really common nowadays, practically the standard form for paper-processing peripherals) and also with Scanner Applications generally a way to provide scanner drivers in OS-distribution-independent packages.
 
-Originally, Rishabh's main part was to make PAPPL accepting and processing eSCL scan jobs and Deepak's main part to do the same for IPP Scan jobs, but it turned out that IPP Scan got a still birth. It is a nicely worked out standard, also IPP as our printing standard, but no one in the hardware industry adopted it, eSCL won as driverless scanning de-facto industry standard, its specs got also [published by Mopria](https://openprinting.github.io/OpenPrinting-News-May-2021/#driverless-scanning), it works also under IPP-over-USB (not being IPP though), so we go eSCL-only in PAPPL.
+Originally, Rishabh's main part was to make PAPPL accepting and processing eSCL scan jobs and Deepak's main part to do the same for IPP Scan jobs, but it turned out that IPP Scan got a still birth. It is a nicely worked out standard, also IPP as our printing standard, but no one in the hardware industry adopted it, eSCL won as driverless scanning de-facto industry standard, its specs got also [published by Mopria](/OpenPrinting-News-May-2021/#driverless-scanning), it works also under IPP-over-USB (not being IPP though), so we go eSCL-only in PAPPL.
 
 This means that we are currently re-organizing and re-defining the projects of our two contributors, to get a great eSCL-based driverless scanning support in PAPPL.
 
@@ -172,7 +172,7 @@ For those who are printing JPEG images shot with digital cameras directly to a P
 
 
 ## ipp-usb: Solution for non-driverless IPP-over-USB-reporting printers
-As a follow-up of the discussion about printers with a 7/1/4 USB interface but not doing driverless IPP via IPP-over-USB on this interface (see [last month](https://openprinting.github.io/OpenPrinting-News-May-2022/#ipp-usb-printer-does-ipp-over-usb-but-not-driverless-ipp-and-driver-vs-driverless)), Alexander Pevzner has found a solution for ipp-usb not blocking classic access to these printers. He simply lets the ipp-usb daemon disconnect as soon as the access to the device during the preparation of the daemon fails. See [Issue #52](https://github.com/OpenPrinting/ipp-usb/issues/52). Thanks, Alex, for this.
+As a follow-up of the discussion about printers with a 7/1/4 USB interface but not doing driverless IPP via IPP-over-USB on this interface (see [last month](/OpenPrinting-News-May-2022/#ipp-usb-printer-does-ipp-over-usb-but-not-driverless-ipp-and-driver-vs-driverless)), Alexander Pevzner has found a solution for ipp-usb not blocking classic access to these printers. He simply lets the ipp-usb daemon disconnect as soon as the access to the device during the preparation of the daemon fails. See [Issue #52](https://github.com/OpenPrinting/ipp-usb/issues/52). Thanks, Alex, for this.
 
 
 ## Snap Store Overview

@@ -223,7 +223,7 @@ A few other bugs got reported and fixed since RC2. These fixes are also included
 
 
 ## PAPPL 1.4.0
-Michael Sweet has released [PAPPL v1.4.0](https://openprinting.github.io/pappl-1.4.0/) which is a new feature release.
+Michael Sweet has released [PAPPL v1.4.0](/pappl-1.4.0/) which is a new feature release.
 
 Especially it adds the new create-printers operation, as API function and IPP request, to let the Printer Application automatically add queeus for any local printers which are supported by it. This function will also be called automatically the first time the Printer Application is run after its installation, so that just installing a Printer Application is usually all what needs to be done to set up a non-driverless printer.
 

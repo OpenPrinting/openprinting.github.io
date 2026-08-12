@@ -7,7 +7,7 @@ excerpt: >-
   all, beh vulnerability, cups-browsed 100% CPU, libppd vs. CUPS sync
 date: '2023-06-20'
 ---
-After the [cups-filters 2.x release party in Brno](https://openprinting.github.io/OpenPrinting-News-May-2023/#linux-app-summit-2023) (Ubuntu 23.04 and Fedora 38 with 2.0rc1) there also came the first bug reports from users. And together with other fixes a lot of stuff came together, so I decided to issue a second release candidate before actually landing the final.
+After the [cups-filters 2.x release party in Brno](/OpenPrinting-News-May-2023/#linux-app-summit-2023) (Ubuntu 23.04 and Fedora 38 with 2.0rc1) there also came the first bug reports from users. And together with other fixes a lot of stuff came together, so I decided to issue a second release candidate before actually landing the final.
 
 ### cups-browsed 100% CPU!
 
@@ -35,7 +35,7 @@ During the development work on the [all-Snap Ubuntu Desktop](https://ubuntu.com/
 
 ### libppd sync-up with CUPS
 
-The development of libppd, a library which conserves all of CUPS' PPD file support for retro-fitting Printer Applications before it gets removed from CUPS in the 3.x generation, [started nearly exactly 3 years ago](https://openprinting.github.io/OpenPrinting-News-July-2020/#cups-filters). Now in these 3 years after grabbing CUPS' PPD supporting code for libppd a lot has happened with CUPS and also this code received several bug fixes (including some memory leaks) and also even small feature additions by adding extra attributes to generated PPDs so that CUPS can better support all IPP functionality of all driverless printers. I have [overtaken these changes](https://github.com/OpenPrinting/libppd/commit/3e332f051da) now to be in sync with CUPS. Especially retro-fitting Printer Applications now always list all media types of the PPD file!
+The development of libppd, a library which conserves all of CUPS' PPD file support for retro-fitting Printer Applications before it gets removed from CUPS in the 3.x generation, [started nearly exactly 3 years ago](/OpenPrinting-News-July-2020/#cups-filters). Now in these 3 years after grabbing CUPS' PPD supporting code for libppd a lot has happened with CUPS and also this code received several bug fixes (including some memory leaks) and also even small feature additions by adding extra attributes to generated PPDs so that CUPS can better support all IPP functionality of all driverless printers. I have [overtaken these changes](https://github.com/OpenPrinting/libppd/commit/3e332f051da) now to be in sync with CUPS. Especially retro-fitting Printer Applications now always list all media types of the PPD file!
 
 ### First Vulnerability Report
 

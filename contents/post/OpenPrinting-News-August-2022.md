@@ -196,7 +196,7 @@ Feature requests so far:
 
 ## Common Print Dialog Backends 2.0
 
-While our GSoC contributor Gaurav Guleria is working on [adding CPDB support to the print dialogs](/current/#the-print-dialogs) (see [above](#google-summer-of-code-2022)) he has also done many fixes and improvements on the [CPDB framework](https://openprinting.github.io/achievements/#common-print-dialog-backends) itself:
+While our GSoC contributor Gaurav Guleria is working on [adding CPDB support to the print dialogs](/current/#the-print-dialogs) (see [above](#google-summer-of-code-2022)) he has also done many fixes and improvements on the [CPDB framework](/achievements/#common-print-dialog-backends) itself:
 
 - Support for human-readable strings for options and choices
 - Removal of CUPS dependencies in the core libraries
@@ -214,7 +214,7 @@ For the release itself I will still wait a little bit, as Gaurav could find othe
 ## CUPS Snap and snapd printing interface
 **[CUPS Snap](https://github.com/OpenPrinting/cups-snap) in the [Snap Store](https://snapcraft.io/cups)**
 
-Now with the [`cups` snapd interface in place](https://openprinting.github.io/achievements/#the-cups-snap) Snap package maintainers are starting to use it.
+Now with the [`cups` snapd interface in place](/achievements/#the-cups-snap) Snap package maintainers are starting to use it.
 
 Some days ago I have worked with my colleagues in the Canonical Desktop Team on [switching their Snaps over](https://discourse.ubuntu.com/t/desktop-team-updates-monday-15th-august-2022/29954/8?u=till-kamppeter) to the new `cups` interface and they did and it is actually working now. At least the Firefox, Chromium, gnome-text-editor, and evince Snaps should be switched over now, at least in the "Edge" channel of the Snap Store. Also of the LibreOffice Snap a switched version will appear soon.
 

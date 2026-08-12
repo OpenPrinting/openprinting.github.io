@@ -14,7 +14,7 @@ To compare graphical content they use the free software computer vision library 
 
 With this we could for example take a PDF file, rasterize it in high quality, then "print" it/send it through a filter chain and afterwards compare the images. We can also OCR raster output to check whether the complete text of the input (plain text or PDF file) is conserved in the output, not having anything cut off at the borders and no glyphs missing or replaced by squares/placeholders for missing glyphs.
 
-See also [my report from the GUADEC 2024](https://openprinting.github.io/OpenPrinting-News-July-2024/#guadec-2024-in-denver), the section "Workshop: openQA testing for your GNOME app, module or service".
+See also [my report from the GUADEC 2024](/OpenPrinting-News-July-2024/#guadec-2024-in-denver), the section "Workshop: openQA testing for your GNOME app, module or service".
 
 Tests which benefit from this are not only our CI testing in libcupsfilters, but also 2 of our other projects on this list:
   * Behavior-accurate simulation of multi-function printers

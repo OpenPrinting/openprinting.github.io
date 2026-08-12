@@ -52,7 +52,7 @@ We especially want to get rid of the PPD files, because ...
 
 - In 1984 Adobe stopped development on PPDs (and also PostScript), so we started with an obsolete (but useful) format right away.
 - In 2006 we [abolished PostScript as print job format](/achievements/#pdf-instead-of-postscript-as-standard-print-job-format) and replaced it by PDF.
-- PPD files can represent user-settable options only as enumerated choice or boolean. Ugly workarounds for things like passwords or color adjustment are needed, implemented in [CUPS](https://openprinting.github.io/cups/doc/spec-ppd.html) and [Foomatic](https://openprinting.org/printers).
+- PPD files can represent user-settable options only as enumerated choice or boolean. Ugly workarounds for things like passwords or color adjustment are needed, implemented in [CUPS](/cups/doc/spec-ppd.html) and [Foomatic](https://openprinting.org/printers).
 
 As CUPS was always following the standards of the Printer Working Group ([PWG](http://www.pwg.org/)), a consortium of printer, OS, general IT, ... industry with which OpenPrinting works closely together and with Michael Sweet (author of CUPS) actively developing on the Internet Printing Protocol (IPP) for decades, we follow them even more to create an all-IPP CUPS without the legacy of PPD files and driver filters.
 
