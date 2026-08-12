@@ -166,11 +166,27 @@ export default function AssistantPanel({ open, onClose, launcherId }: AssistantP
     wasOpen.current = open
   }, [open, launcherId])
 
+  // Scroll policy: a newly completed assistant response is revealed from its
+  // TOP, so the user reads the introduction and any caveats before the result
+  // cards - a ten-card answer must not dump them at the last card. For short
+  // responses the scroll clamps to the bottom naturally (the target sits past
+  // the maximum scroll offset), so nothing jumps. User messages and the busy
+  // indicator still track the bottom so "what you just sent" stays visible.
+  // Only message arrival triggers auto-scroll; manual scrolling is untouched.
   useEffect(() => {
-    logRef.current?.scrollTo({
-      top: logRef.current.scrollHeight,
-      behavior: reducedMotion ? "auto" : "smooth",
-    })
+    const log = logRef.current
+    if (!log) return
+    const behavior = reducedMotion ? ("auto" as const) : ("smooth" as const)
+    const last = messages[messages.length - 1]
+    if (last?.role === "assistant") {
+      const element = log.querySelector<HTMLElement>(`[data-message-id="${last.id}"]`)
+      if (element) {
+        const top = element.getBoundingClientRect().top - log.getBoundingClientRect().top + log.scrollTop
+        log.scrollTo({ top: Math.max(0, top - 8), behavior })
+        return
+      }
+    }
+    log.scrollTo({ top: log.scrollHeight, behavior })
   }, [messages, busy, reducedMotion])
 
   const ask = useCallback(
@@ -314,7 +330,12 @@ export default function AssistantPanel({ open, onClose, launcherId }: AssistantP
                     </p>
                   </motion.div>
                 ) : (
-                  <motion.div key={message.id} className="space-y-2.5" {...messageMotion}>
+                  <motion.div
+                    key={message.id}
+                    data-message-id={message.id}
+                    className="space-y-2.5"
+                    {...messageMotion}
+                  >
                     {message.plan?.blocks.map((block, index) => (
                       <AssistantBlock key={index} block={block} onAsk={ask} busy={busy} />
                     ))}
