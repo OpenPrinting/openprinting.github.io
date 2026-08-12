@@ -20,7 +20,7 @@ The standard length (3 months) projects of this year's Google Summer of Docs hav
 
 Piyush also reported his successful conclusion of GSoD on [LinkedIn](https://www.linkedin.com/feed/update/urn%3Ali%3Aactivity%3A6742723576908038144/) and thanked his mentors and others on OpenPrinting who helped him.
 
-Only part not completed is the [section about Scanning](/documentation/03-designing-scanner-drivers/) as the implementation os scanning support in PAPPL is still work in progress.
+Only part not completed is the [section about Scanning](/documentation/03-designing-scanner-drivers/) as the implementation of scanning support in PAPPL is still work in progress.
 
 ## PAPPL 1.0.0 released!
 Michael Sweet has issued the first stable release of PAPPL, version [1.0.0](https://github.com/michaelrsweet/pappl/releases/tag/v1.0.0).

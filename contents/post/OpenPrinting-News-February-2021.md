@@ -10,7 +10,7 @@ date: '2021-02-08'
 ## Google Summer of Code 2021
 The time window for the mentoring organizations to [apply](https://summerofcode.withgoogle.com/) has opened and the deadline is Feb 19, 2021 ([Timeline](https://developers.google.com/open-source/gsoc/timeline)). We are applying again for the Linux Foundation as mentoring organization, as in the previous years, OpenPrinting being one of the sub groups.
 
-OpenPrinting's project ideas are [posted](https://wiki.linuxfoundation.org/gsoc/google-summer-code-2021-openprinting-projects), but further ideas are still welcome. Note that the projects are half-length this year, 175 hours instead of 350 hours (see our [October news](/OpenPrinting-News-October-2020/#google-summer-of-code-2021). Larger projects we should run in the under the Linux Foundation Mentoring Program instead of GSoC.
+OpenPrinting's project ideas are [posted](https://wiki.linuxfoundation.org/gsoc/google-summer-code-2021-openprinting-projects), but further ideas are still welcome. Note that the projects are half-length this year, 175 hours instead of 350 hours (see our [October news](/OpenPrinting-News-October-2020/#google-summer-of-code-2021)). Larger projects we should run under the Linux Foundation Mentoring Program instead of GSoC.
 
 ## IPP Scan in PAPPL
 The students of our [IPP Scan LFMP project](https://mentorship.lfx.linuxfoundation.org/project/55cdb4a1-76bd-423a-ab48-3bdf1502a171) did not do all points needed to complete the IPP Scan server support, but are still working on the missing points. Michael Sweet posted [on the PAPPL GitHub](https://github.com/michaelrsweet/pappl/projects/3) what is still needs to be done.

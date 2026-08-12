@@ -13,7 +13,7 @@ The days (months?, years?) of only HP being present on the PWG's [certified IPP 
 ## Google Summer of Code 2021
 We are currently looking for project ideas for next year's Google Summer of Code.
 
-As mentioned [last month](/OpenPrinting-News-October-2020/#google-summer-of-code-2021) student projects will only be half the timr (6 weeks). Google tells that this will probably attract more students, but for us it is a much higher workload as we have to find the double amount of students and get the double amount of students introduced and up to speed to get the same work done.
+As mentioned [last month](/OpenPrinting-News-October-2020/#google-summer-of-code-2021) student projects will only be half the time (6 weeks). Google tells that this will probably attract more students, but for us it is a much higher workload as we have to find the double amount of students and get the double amount of students introduced and up to speed to get the same work done.
 
 For larger project we should also consider to run them under the Linux Foundation Mentoring Program instead of GSoC.
 
