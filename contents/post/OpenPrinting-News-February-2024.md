@@ -124,7 +124,7 @@ I will perhaps submit another one with an OpenPrinting subject.
 
 
 ## Open Source Summit and Plumbers in Vienna
-If you have a look into my news posts of the 2 post-pandemic years 2022 and 2023 you see that I have been on many conferences, so I had a lot of trips, sometimes also long ones, to another continent, as for [GUADEC 2022](/OpenPrinting-News-August-2022/#guadec-2022), [Opportunity Open Source](/OpenPrinting-News-September-2023/#opportunitiy-open-source-in-the-iit-mandi-india)/[DebConf 2023](/OpenPrinting-News-September-2023/#debconf-2023-in-kochi-india) and the [GSoC Mentor Summit 2023](/OpenPrinting-News-October-2023/#google-summer-of-code-2023), but I also had a short 2-hour train trip to Brno for the [Linux App Summit 2023](/OpenPrinting-News-May-2023/#linux-app-summit-2023).
+If you have a look into my news posts of the 2 post-pandemic years 2022 and 2023 you see that I have been on many conferences, so I had a lot of trips, sometimes also long ones, to another continent, as for [GUADEC 2022](/OpenPrinting-News-August-2022#guadec-2022), [Opportunity Open Source](/OpenPrinting-News-September-2023#opportunitiy-open-source-in-the-iit-mandi-india)/[DebConf 2023](/OpenPrinting-News-September-2023#debconf-2023-in-kochi-india) and the [GSoC Mentor Summit 2023](/OpenPrinting-News-October-2023#google-summer-of-code-2023), but I also had a short 2-hour train trip to Brno for the [Linux App Summit 2023](/OpenPrinting-News-May-2023#linux-app-summit-2023).
 
 Yes, that conference was really close by, compared to all the others, but it was not really that close, as for this year's Open Source Summit Europe and Linux Plumbers it gets even closer.
 
@@ -143,21 +143,21 @@ The Linux Foundation got accepted as mentoring organization in the 20th GSoC! So
 
 Our selection process has already started some months ago and we already got some promising candidates. If you want to participate, too, have a look at our [project ideas list](https://wiki.linuxfoundation.org/gsoc/google-summer-code-2024-openprinting-projects). Please contact us as soon as possible and not only when Google's application time window opens (March 18 - April 2).
 
-Please send us your resume/CV and tell us what you like to work on, either on one of the project ideas or you can also provide your own project idea. Also have a look what we are doing via the [introduction](https://wiki.linuxfoundation.org/gsoc/google-summer-code-2024-openprinting-projects#introduction) on the project ideas list page (there are also a lot of [videos](https://wiki.linuxfoundation.org/gsoc/google-summer-code-2024-openprinting-projects#videospodcasts)) and the links on our [About Us](/about-us/) and [News and Events](/news/) pages.
+Please send us your resume/CV and tell us what you like to work on, either on one of the project ideas or you can also provide your own project idea. Also have a look what we are doing via the [introduction](https://wiki.linuxfoundation.org/gsoc/google-summer-code-2024-openprinting-projects#introduction) on the project ideas list page (there are also a lot of [videos](https://wiki.linuxfoundation.org/gsoc/google-summer-code-2024-openprinting-projects#videospodcasts)) and the links on our [About Us](/about-us) and [News and Events](/news) pages.
 
 A nice side effect of having the contributors working on assignments we give them is that we get several bugs fixed and smaller features implemented.
 
-This year, the candidate **Rudra Pratap Singh** even landed an **improvement on an external project**. As I told [already last month here](/OpenPrinting-News-January-2024/#snap-automation) I gave him the assignment of applying [Snap update automation](https://ubuntu.com/blog/improving-snap-maintenance-with-automation) on the CUPS Snap and on the Printer Application Snaps. He ran into some problems with the [GitHub action provided for that by Ubuntu](https://github.com/ubuntu/desktop-snaps/) and did some improvements on it. He also made the Snap versioniung automation which I had implemented in a scriptlet in the CUPS Snap available for everyone by adding it to Ubuntu's GitHub action. **All his pull requests got accepted now!**
+This year, the candidate **Rudra Pratap Singh** even landed an **improvement on an external project**. As I told [already last month here](/OpenPrinting-News-January-2024#snap-automation) I gave him the assignment of applying [Snap update automation](https://ubuntu.com/blog/improving-snap-maintenance-with-automation) on the CUPS Snap and on the Printer Application Snaps. He ran into some problems with the [GitHub action provided for that by Ubuntu](https://github.com/ubuntu/desktop-snaps/) and did some improvements on it. He also made the Snap versioniung automation which I had implemented in a scriptlet in the CUPS Snap available for everyone by adding it to Ubuntu's GitHub action. **All his pull requests got accepted now!**
 
-**Biswadeep Purkayastha** applied as contributor already last year on CI testing for OpenPrinting but we did not get enough slots from Google to accommodate his project. So he picked up some tasks at OpenPrinting voluntarily. He attended my [Snap workshop](/OpenPrinting-News-November-2023/#snap-workshops) on the [Opportunity Open Source](/OpenPrinting-News-September-2023/#opportunitiy-open-source-in-the-iit-mandi-india) in Mandi, India, and I asked him, already back in October, to **snap the [CPDB backend for CUPS](https://github.com/OpenPrinting/cpdb-backend-cups/)** (see [October 2023](/OpenPrinting-News-October-2023/#cpdb-cups-backend-snap)), and he worked on that. We ran into some problems, have discussed them on [snapcraft.io](https://forum.snapcraft.io/t/snapping-cpdb-cups-backend-a-user-daemon-using-d-bus/), and he is currently working on the snappability of the code of the CPDB backend.
+**Biswadeep Purkayastha** applied as contributor already last year on CI testing for OpenPrinting but we did not get enough slots from Google to accommodate his project. So he picked up some tasks at OpenPrinting voluntarily. He attended my [Snap workshop](/OpenPrinting-News-November-2023#snap-workshops) on the [Opportunity Open Source](/OpenPrinting-News-September-2023#opportunitiy-open-source-in-the-iit-mandi-india) in Mandi, India, and I asked him, already back in October, to **snap the [CPDB backend for CUPS](https://github.com/OpenPrinting/cpdb-backend-cups/)** (see [October 2023](/OpenPrinting-News-October-2023#cpdb-cups-backend-snap)), and he worked on that. We ran into some problems, have discussed them on [snapcraft.io](https://forum.snapcraft.io/t/snapping-cpdb-cups-backend-a-user-daemon-using-d-bus/), and he is currently working on the snappability of the code of the CPDB backend.
 
-When he got stuck inbetween, he also **added support for CUPS 3.x's libcups3 to libcupsfilters, libppd, and pappl-retrofit** (see also [October 2023](/OpenPrinting-News-October-2023/#libcups3-support)).
+When he got stuck inbetween, he also **added support for CUPS 3.x's libcups3 to libcupsfilters, libppd, and pappl-retrofit** (see also [October 2023](/OpenPrinting-News-October-2023#libcups3-support)).
 
 **Akarshan Kapoor** did great work on **[scanning support in PAPPL](https://dev.to/kappuccino111/sandboxing-scanners-a-leap-into-the-driverless-realm-gsoc-23-report-3eci)** and he wants to continue working on it in this year's GSoC.
 
 So we have already 3 great candidates, but we need more. Unfortunately, many of those to whom we have given GitHub issues as assignments did not report back and seem to have given up.
 
-Since [last month](/OpenPrinting-News-January-2024/#google-summer-of-code-2024) I have also **added 2 new project ideas**:
+Since [last month](/OpenPrinting-News-January-2024#google-summer-of-code-2024) I have also **added 2 new project ideas**:
 
 - [Integrating C-based OpenPrinting projects in OSS-Fuzz testing](https://wiki.linuxfoundation.org/gsoc/google-summer-code-2024-openprinting-projects#integrating_c-based_openprinting_projects_in_oss-fuzz_testing)
 - [Official OCI containers (Docker, ROCKs, podman, ...) of CUPS and Printer Applications](https://wiki.linuxfoundation.org/gsoc/google-summer-code-2024-openprinting-projects#official_oci_containers_docker_rocks_podman__of_cups_and_printer_applications)
@@ -168,18 +168,18 @@ Please [contact us](https://wiki.linuxfoundation.org/gsoc/google-summer-code-202
 ## Printer Applications - New releases
 Michael Sweet has issued new feature releases of his 2 Printer Applications, the [HP Printer Application](https://github.com/michaelrsweet/hp-printer-app/) and [LPrint](https://github.com/michaelrsweet/lprint/).
 
-[**HP Printer Application 1.3.0**](/hp-printer-app-1.3.0/)
+[**HP Printer Application 1.3.0**](/hp-printer-app-1.3.0)
 
 > Adds support for snap server configuration settings and updates the builds.
 
-[**LPrint 1.3.0**](/lprint-1.3.0/)
+[**LPrint 1.3.0**](/lprint-1.3.0)
 
 > Adds a new dithering algorithm, support for new printers, support for configuration files, and fixes a number of bugs.
 
-[**LPrint 1.3.1**](/lprint-1.3.1/)
+[**LPrint 1.3.1**](/lprint-1.3.1)
 
 > Bug fix release.
 
-Also [PAPPL](https://github.com/michaelrsweet/pappl/) got new releases, [1.4.5](/pappl-1.4.5/) and [1.4.6](/pappl-1.4.6/), both bug fix releases.
+Also [PAPPL](https://github.com/michaelrsweet/pappl/) got new releases, [1.4.5](/pappl-1.4.5) and [1.4.6](/pappl-1.4.6), both bug fix releases.
 
 These releases especially remind me to update our retro-fitting Printer Applications to support the newest features of PAPPL 1.4.x, especially support for server configuration settings and configuration files.

@@ -19,7 +19,7 @@ Follow the conference on [LinkedIn](https://www.linkedin.com/company/opportunity
 - **Location:** IIIT Allahabad, Prayagraj, Uttar Pradesh, India
 - **Dates:** August 28–30, 2026
 
-The fourth edition, hosted together with the Google Developer Group (GDG) at IIIT Allahabad. Read the [announcement](/OpenPrinting-News-Opportunity-Open-Source-4.0/).
+The fourth edition, hosted together with the Google Developer Group (GDG) at IIIT Allahabad. Read the [announcement](/OpenPrinting-News-Opportunity-Open-Source-4.0).
 
 - [The event's web site](https://oosc.iiita.ac.in/)
 - [Practical info: Location, remote attending/speaking, ...](https://events.canonical.com/event/154/)
@@ -34,9 +34,9 @@ The fourth edition, hosted together with the Google Developer Group (GDG) at III
 
 | Edition | Location | Dates | Links |
 | --- | --- | --- | --- |
-| 3.0 | IIT Kanpur, India | September 5–7, 2025 | [Recap](/OpenPrinting-News-Opportunity-Open-Source-3.0-in-the-IIT-Kanpur,-India/) · [Schedules](https://events.canonical.com/event/134/timetable/) |
-| 2.0 | IIT Kanpur, India | August 24–26, 2024 | [Recap](/OpenPrinting-News-August-2024/#opportunity-open-source-in-iit-kanpur) · [Schedules](https://events.canonical.com/event/89/) |
-| 1.0 | IIT Mandi, India | September 2023 | [Recap](/OpenPrinting-News-September-2023/#opportunitiy-open-source-in-the-iit-mandi-india) · [Schedules](https://events.canonical.com/event/35/) |
+| 3.0 | IIT Kanpur, India | September 5–7, 2025 | [Recap](/OpenPrinting-News-Opportunity-Open-Source-3.0-in-the-IIT-Kanpur,-India) · [Schedules](https://events.canonical.com/event/134/timetable/) |
+| 2.0 | IIT Kanpur, India | August 24–26, 2024 | [Recap](/OpenPrinting-News-August-2024#opportunity-open-source-in-iit-kanpur) · [Schedules](https://events.canonical.com/event/89/) |
+| 1.0 | IIT Mandi, India | September 2023 | [Recap](/OpenPrinting-News-September-2023#opportunitiy-open-source-in-the-iit-mandi-india) · [Schedules](https://events.canonical.com/event/35/) |
 
 ## Get involved
 

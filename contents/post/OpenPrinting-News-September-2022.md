@@ -16,7 +16,7 @@ So let us start ...
 
 I am back from Dublin, Ireland, now, having attended two conferences, the Linux Plumbers conference and the Open Source Summit (OSS) 2022. Conferences have often nice social events in the evenings after each day of talks and hallway sessions. This time the OSS had their main social event in the Storehouse of Guinness, the place where it is shown how this famous beer is made. And there I have seen something very special ...
 
-You perhaps have read or heard about [how I got to do OpenPrinting](/history/). I did a PhD in physics, was system administrator for the department's network, discovered and deployed CUPS back in 2000, got discovered by MandrakeSoft, and finally switched the subject I was working on to
+You perhaps have read or heard about [how I got to do OpenPrinting](/history). I did a PhD in physics, was system administrator for the department's network, discovered and deployed CUPS back in 2000, got discovered by MandrakeSoft, and finally switched the subject I was working on to
 
 > Structured Deposition of Ink and Toner Particles on Paper Substrates
 
@@ -50,15 +50,15 @@ Cheers!!
 
 ## Saving old printers under Windows is getting easier
 
-You remember my announcement of the HOWTO about running Printer Applications under Windows via WSL to save legacy printers in the [August News](/OpenPrinting-News-August-2022/#using-windows-we-can-help-you-too)?
+You remember my announcement of the HOWTO about running Printer Applications under Windows via WSL to save legacy printers in the [August News](/OpenPrinting-News-August-2022#using-windows-we-can-help-you-too)?
 
 You were perhaps thinking about the poor Windows users whose printers stopped working now having to compile a hell lot of libraries from our site to get their old treasure working again. That is not needed any more. The new version of WSL supports systemd and with this also snapd and with this Snaps, including all the [Printer Application Snaps](https://snapcraft.io/search?q=OpenPrinting). And systemd enables more Linux workflows you are used to in WSL, like auto-starting the daemons (also of the Printer Applications). No compiling, auto-starting daemons, Avahi advertising your printer to the hosting Windows (no manual input of the URI) ...
 
 Here is the [first announcement from Microsoft](https://devblogs.microsoft.com/commandline/systemd-support-is-now-available-in-wsl/) and the first [Ubuntu blog](https://ubuntu.com/blog/ubuntu-wsl-enable-systemd) from Oliver Smith, Product Manager Enterprise Desktop at Canonical.
 
-**Update: Our [HOWTO](/wsl-printer-app/) is now updated.**
+**Update: Our [HOWTO](/wsl-printer-app) is now updated.**
 
-So follow our new version of the [HOWTO](/wsl-printer-app/).
+So follow our new version of the [HOWTO](/wsl-printer-app).
 
 And here is quick overview of the changed steps (details in the HOWTO):
 
@@ -239,7 +239,7 @@ Feature requests so far:
 
 
 ## Common Print Dialog Backends 2.0
-While our GSoC contributor Gaurav Guleria is working on [adding CPDB support to the print dialogs](/current/#the-print-dialogs) (see [above](#google-summer-of-code-2022)) he has continued to do fixes and improvements on the [CPDB framework](/achievements/#common-print-dialog-backends) itself:
+While our GSoC contributor Gaurav Guleria is working on [adding CPDB support to the print dialogs](/current#the-print-dialogs) (see [above](#google-summer-of-code-2022)) he has continued to do fixes and improvements on the [CPDB framework](/achievements#common-print-dialog-backends) itself:
 
 - Support for each media having multiple sets of margins
 - Support for overall default printers
@@ -253,7 +253,7 @@ For the release itself I will still wait a little bit, as Gaurav could find othe
 ## CUPS Snap and snapd printing interface
 **[CUPS Snap](https://github.com/OpenPrinting/cups-snap) in the [Snap Store](https://snapcraft.io/cups)**
 
-Now with the [`cups` snapd interface in place](/achievements/#the-cups-snap) Snap package maintainers are starting to use it.
+Now with the [`cups` snapd interface in place](/achievements#the-cups-snap) Snap package maintainers are starting to use it.
 
 Unfortunately, we have hit a bug in snapd with the new `cups` interface. The automatic dependency installation of the CUPS Snap via the pseudo content interface with `default-provider: cups` interferes badly if the Snap using the `cups` interface for printing is seeded (being in the list of default packages used in the OS distribution), even if the CUPS Snap is also seeded ([bug report on snapd](https://github.com/canonical/workshops/issues/32)).
 
@@ -303,7 +303,7 @@ Now it seems to be all working as intended.
 
 
 ## OpenPrinting web server: Printer Application look-up service is now live
-We have finally deployed the [Printer Application look-up service](/current/#printer-application-look-up-via-the-openprinting-web-site) for printer setup tools on the [OpenPrinting web server for printer/driver look-ups](https://openprinting.org/printers)!
+We have finally deployed the [Printer Application look-up service](/current#printer-application-look-up-via-the-openprinting-web-site) for printer setup tools on the [OpenPrinting web server for printer/driver look-ups](https://openprinting.org/printers)!
 
 I did some tests and everything works as expected. Printer Application Snaps installed on the server find the correct drivers for the given printer device ID and the user (or better the printer setup tool) gets as answer a hierarchy list of what are the best Printer Applications which support their printer and with which internal driver.
 

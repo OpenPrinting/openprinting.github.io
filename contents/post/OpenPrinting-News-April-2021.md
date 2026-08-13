@@ -18,7 +18,7 @@ The [agenda](https://www.pwg.org/chair/meeting-info/may-2021-virtual.html) is al
 ## Google Summer of Code 2021
 With the Linux Foundation being accepted as mentoring organization we are now receiving the student's proposals until the deadline on April 13 ([Timeline](https://developers.google.com/open-source/gsoc/timeline)). After that we have to select the students/projects we want to work with.
 
-OpenPrinting's project ideas are [posted](https://wiki.linuxfoundation.org/gsoc/google-summer-code-2021-openprinting-projects), but further ideas are still welcome. Note that the projects are half-length this year, 175 hours instead of 350 hours (see our [October news](/OpenPrinting-News-October-2020/#google-summer-of-code-2021)). Larger projects we should run in the Linux Foundation Mentoring Program instead of in the GSoC.
+OpenPrinting's project ideas are [posted](https://wiki.linuxfoundation.org/gsoc/google-summer-code-2021-openprinting-projects), but further ideas are still welcome. Note that the projects are half-length this year, 175 hours instead of 350 hours (see our [October news](/OpenPrinting-News-October-2020#google-summer-of-code-2021)). Larger projects we should run in the Linux Foundation Mentoring Program instead of in the GSoC.
 
 ## Google Season of Docs 2021
 We have also applied as mentoring organization in this year’s [Google Season of Docs](https://developers.google.com/season-of-docs/).

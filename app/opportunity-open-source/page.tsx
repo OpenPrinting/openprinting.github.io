@@ -17,12 +17,12 @@ export const metadata: Metadata = {
   title: "Opportunity Open Source | OpenPrinting",
   description:
     "OpenPrinting's annual free and open source software conference in India — the mission, past editions, and the upcoming one.",
-  alternates: { canonical: getSiteUrl("/opportunity-open-source/") },
+  alternates: { canonical: getSiteUrl("/opportunity-open-source") },
   openGraph: {
     title: "Opportunity Open Source | OpenPrinting",
     description:
       "OpenPrinting's annual free and open source software conference in India.",
-    url: getSiteUrl("/opportunity-open-source/"),
+    url: getSiteUrl("/opportunity-open-source"),
     type: "website",
   },
 }

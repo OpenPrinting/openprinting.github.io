@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "generate": "tsx scripts/foomatic/data-generate.ts && tsx scripts/foomatic/generate-query-api.ts && tsx scripts/search/build-index.ts && tsx scripts/search/build-foomatic-index.ts && tsx scripts/generate-rss.ts",
-    "build": "yarn generate && next build && tsx scripts/foomatic/generate-legacy-redirects.ts",
+    "build": "yarn generate && next build && tsx scripts/foomatic/generate-legacy-redirects.ts && tsx scripts/generate-trailing-slash-aliases.ts",
+    "verify:urls": "tsx scripts/verify-urls.ts",
     "start": "next start",
     "lint": "next lint"
   },

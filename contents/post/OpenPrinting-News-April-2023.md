@@ -9,7 +9,7 @@ excerpt: >-
   cups-filters 2.0.0, CPDB support in print dialogs
 date: '2023-04-14'
 ---
-Not long ago that there were the [March News](/OpenPrinting-News-March-2023/), and now we already have the April ones! April News contain important announcements and therefore they cannot be late, usually the new [Ubuntu release](#ubuntu-2304-lunar-lobster-is-coming), and the latest and greatest about the upcoming [Linux App Summit](#linux-app-summit-2023). But no April fool's pranks, like [this one](https://news.itsfoss.com/ubuntu-ditch-snap/), for that we are too late. But don't worry, we will go on [snappy](https://snapcraft.io/search?q=OpenPrinting) ...
+Not long ago that there were the [March News](/OpenPrinting-News-March-2023), and now we already have the April ones! April News contain important announcements and therefore they cannot be late, usually the new [Ubuntu release](#ubuntu-2304-lunar-lobster-is-coming), and the latest and greatest about the upcoming [Linux App Summit](#linux-app-summit-2023). But no April fool's pranks, like [this one](https://news.itsfoss.com/ubuntu-ditch-snap/), for that we are too late. But don't worry, we will go on [snappy](https://snapcraft.io/search?q=OpenPrinting) ...
 
 
 ## Ubuntu 23.04 (Lunar Lobster) is coming!
@@ -34,7 +34,7 @@ The user-facing printing-related changes are lots of bug fixes:
 - Universal CUPS filter for less external filter executable calls by CUPS
 
 In addition, there are included:
-- **CUPS 2.4.2** (with [auto-setting PPD options by print-quality, print-color-mode, and print-content-optiomize job IPP attributes](/OpenPrinting-News-August-2021/#retro-fitting-of-cups-printer-drivers-into-printer-applications))
+- **CUPS 2.4.2** (with [auto-setting PPD options by print-quality, print-color-mode, and print-content-optiomize job IPP attributes](/OpenPrinting-News-August-2021#retro-fitting-of-cups-printer-drivers-into-printer-applications))
 - **Ghostscript 10.0.0** (with fix for [not matching custom page size against PPD](https://github.com/OpenPrinting/cups-filters/issues/484))
 - **HPLIP 3.22.10**
 
@@ -90,7 +90,7 @@ Given by Heather Ellsworth and Igor Ljubuncic.
 
 **Booth**
 
-There will be a Ubuntu/Canonical booth, no marketing people, but a gathering point to meet who makes Ubuntu, to start great hallway chats (like described [here](/OpenPrinting-News-June-2022/#guadec-2022)).
+There will be a Ubuntu/Canonical booth, no marketing people, but a gathering point to meet who makes Ubuntu, to start great hallway chats (like described [here](/OpenPrinting-News-June-2022#guadec-2022)).
 
 **Office Hours**
 
@@ -150,7 +150,7 @@ The other sub-organizations of the Linux Foundation will do the same thing and p
 
 
 ## Release Candidate for cups-filters 2.0.0
-I have [released](/cups-filters-Second-Generation-Release-Candidate/) the release candidates (2.0rc1) of the 4 components [libcupsfilters](https://github.com/OpenPrinting/libcupsfilters/releases/tag/2.0rc1), [libppd](https://github.com/OpenPrinting/libppd/releases/tag/2.0rc1), [cups-filters](https://github.com/OpenPrinting/cups-filters/releases/tag/2.0rc1), and [cups-browsed](https://github.com/OpenPrinting/cups-browsed/releases/tag/2.0rc1) and updated the [Ubuntu 23.04 (Lunar Lobster)](#ubuntu-2304-lunar-lobster-is-coming) packages in time for the Final Freeze last Thursday.
+I have [released](/cups-filters-Second-Generation-Release-Candidate) the release candidates (2.0rc1) of the 4 components [libcupsfilters](https://github.com/OpenPrinting/libcupsfilters/releases/tag/2.0rc1), [libppd](https://github.com/OpenPrinting/libppd/releases/tag/2.0rc1), [cups-filters](https://github.com/OpenPrinting/cups-filters/releases/tag/2.0rc1), and [cups-browsed](https://github.com/OpenPrinting/cups-browsed/releases/tag/2.0rc1) and updated the [Ubuntu 23.04 (Lunar Lobster)](#ubuntu-2304-lunar-lobster-is-coming) packages in time for the Final Freeze last Thursday.
 
 **Filter functions**
 
@@ -168,7 +168,7 @@ And the Release Candidate has [one last, slight API change](https://github.com/O
 
 Change is renaming the function `cfippfindBasedURIConverter()` to `cfResolveURI2()` to not have the function named by the method it uses. Now the names are suitable for using the new API function `httpResolveURI()` of libcups3, `cfResolveURI()` always returning the IPP URI for printing and `cfResolveURI2()` taking an additional boolean argument to tell whether one wants the print or fax out URI.
 
-The [implementation of the libcups3 support](https://github.com/OpenPrinting/libcupsfilters/pull/24) (see also [last month](/OpenPrinting-News-March-2023/#libcupsfilters-and-libcups-3x)) for libcupsfilters is now nearly completed. Thanks to GSoC candidate Gayatri Kapse for his excellent work.
+The [implementation of the libcups3 support](https://github.com/OpenPrinting/libcupsfilters/pull/24) (see also [last month](/OpenPrinting-News-March-2023#libcupsfilters-and-libcups-3x)) for libcupsfilters is now nearly completed. Thanks to GSoC candidate Gayatri Kapse for his excellent work.
 
 **Bug report from Ubuntu 23.04 user**
 
@@ -178,7 +178,7 @@ In the same report he also complained that the auto-generated print queue for hi
 
 **Autopkgtests**
 
-As told here in [February](/OpenPrinting-News-February-2023/#the-new-architecture-is-going-into-ubuntu-and-red-hat) and [March](/OpenPrinting-News-March-2023/#cups-filters-20b4-in-ubuntu-2304) Debian and Ubuntu packages have so-called autopkgtests which are run on the build servers after each upload and build of a new package release, with the package installed on a virtual machine running the destination distribution. This revealed especially two bugs which we fixed in the Release Candidates.
+As told here in [February](/OpenPrinting-News-February-2023#the-new-architecture-is-going-into-ubuntu-and-red-hat) and [March](/OpenPrinting-News-March-2023#cups-filters-20b4-in-ubuntu-2304) Debian and Ubuntu packages have so-called autopkgtests which are run on the build servers after each upload and build of a new package release, with the package installed on a virtual machine running the destination distribution. This revealed especially two bugs which we fixed in the Release Candidates.
 
 After uploading cups-filters 2.0b3 to Ubuntu, the autopkg test of the foo2zjs printer driver package started failing, but only on the ppc64el architecture. Repeating the test also failed, so the problem seemed not to be intermittent. There it always came to a SIGPIPE error when the `foomatic-rip` CUPS filter called Ghostscript. As I do not have easy access to a system based on ppc64el, I talked with Steve Langasek (@vorlon) from the Ubuntu release team on IRC (#ubuntu-release, Libera.Chat) and he had some test setup where he could investigate the problem. He found a fix for this in foomatic-rip and provided a [pull request](https://github.com/OpenPrinting/cups-filters/pull/517). Thanks a lot, Steve.
 
@@ -186,7 +186,7 @@ Another failure caused by the new generation of cups-filters was the failure of 
 
 
 ## Common Print Dialog Backends getting into the dialogs
-Gaurav Guleria is currently working on getting the [merge request for CPDB support in the Qt print dialog](https://codereview.qt-project.org/c/qt/qtbase/+/437301) merged. With that and the [GTK dialog](/OpenPrinting-News-February-2023/#common-print-dialog-backends-support-accepted-into-gtk) we are not yet ready, as [several applications have their own dialogs which also need CPDB support](https://wiki.linuxfoundation.org/gsoc/google-summer-code-2023-openprinting-projects#cpdb_support_for_application_s_print_dialogsfirefox_chromium_libreoffice).
+Gaurav Guleria is currently working on getting the [merge request for CPDB support in the Qt print dialog](https://codereview.qt-project.org/c/qt/qtbase/+/437301) merged. With that and the [GTK dialog](/OpenPrinting-News-February-2023#common-print-dialog-backends-support-accepted-into-gtk) we are not yet ready, as [several applications have their own dialogs which also need CPDB support](https://wiki.linuxfoundation.org/gsoc/google-summer-code-2023-openprinting-projects#cpdb_support_for_application_s_print_dialogsfirefox_chromium_libreoffice).
 
 GSoC candidate Kushagra Sharma, mentored by Gaurav, is already working on this.
 

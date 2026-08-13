@@ -7,7 +7,7 @@ date: '2023-03-16'
 ---
 In this forth beta we have added a test script, to give `make check` functionality but also for using it in the autopkgtests of debian/Ubuntu and for general CI. We also found and fixed many bugs in cups-browsed itself during the development of the script.
 
-The splitting of cups-filters into separate packages for the second generation has put the code of cups-filters into packages which are "new" for Ubuntu. Therefore they have to pass the process of [being included in the "Main" part of the distro](/OpenPrinting-News-February-2023/#the-new-architecture-is-going-into-ubuntu-and-red-hat), especially as at the time when cups-filters was originally created there was not such a Main Inclusion process.
+The splitting of cups-filters into separate packages for the second generation has put the code of cups-filters into packages which are "new" for Ubuntu. Therefore they have to pass the process of [being included in the "Main" part of the distro](/OpenPrinting-News-February-2023#the-new-architecture-is-going-into-ubuntu-and-red-hat), especially as at the time when cups-filters was originally created there was not such a Main Inclusion process.
 
 One requirement are the automatic tests, a build test (`make check`) performed right after compiling the code by the build process of the DEB package, and an autopkgtest, performed when the package is uploaded or when a new version of another package where our package depends on is uploaded (for example upload of CUPS triggers also the autopkgtest of cups-browsed).
 

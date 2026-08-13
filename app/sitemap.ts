@@ -25,35 +25,35 @@ function readDirSlugs(dir: string): string[] {
 
 const STATIC_ROUTES = [
   "/",
-  "/about-us/",
-  "/news/",
-  "/projects/",
-  "/downloads/",
-  "/documentation/",
-  "/upcoming-technologies/",
-  "/driverless/",
-  "/drivers/",
-  "/printers/",
-  "/foomatic/printers/",
-  "/foomatic/drivers/",
-  "/contact/",
-  "/donations/",
-  "/sponsors/",
-  "/opportunity-open-source/",
-  "/contribute/",
-  "/contribute-website/",
-  "/codeofconduct/",
-  "/achievements/",
-  "/history/",
-  "/current/",
-  "/databaseintro/",
-  "/gsoc/",
-  "/gsod/",
-  "/gsod2020/",
-  "/lfmp/",
-  "/lfmp2020/",
-  "/wsl-printer-app/",
-  "/wsl-printer-app-compile/",
+  "/about-us",
+  "/news",
+  "/projects",
+  "/downloads",
+  "/documentation",
+  "/upcoming-technologies",
+  "/driverless",
+  "/drivers",
+  "/printers",
+  "/foomatic/printers",
+  "/foomatic/drivers",
+  "/contact",
+  "/donations",
+  "/sponsors",
+  "/opportunity-open-source",
+  "/contribute",
+  "/contribute-website",
+  "/codeofconduct",
+  "/achievements",
+  "/history",
+  "/current",
+  "/databaseintro",
+  "/gsoc",
+  "/gsod",
+  "/gsod2020",
+  "/lfmp",
+  "/lfmp2020",
+  "/wsl-printer-app",
+  "/wsl-printer-app-compile",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -65,19 +65,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   for (const post of getAllPostRecords()) {
     entries.push({
-      url: getSiteUrl(`/${post.slug}/`),
+      url: getSiteUrl(`/${post.slug}`),
       lastModified: post.date || undefined,
     });
   }
 
   for (const slug of readDirSlugs("projects")) {
-    entries.push({ url: getSiteUrl(`/projects/${slug}/`) });
+    entries.push({ url: getSiteUrl(`/projects/${slug}`) });
   }
   for (const slug of readDirSlugs("documentation")) {
-    entries.push({ url: getSiteUrl(`/documentation/${slug}/`) });
+    entries.push({ url: getSiteUrl(`/documentation/${slug}`) });
   }
   for (const slug of readDirSlugs("upcoming-technologies")) {
-    entries.push({ url: getSiteUrl(`/upcoming-technologies/${slug}/`) });
+    entries.push({ url: getSiteUrl(`/upcoming-technologies/${slug}`) });
   }
 
   for (const route of foomaticRoutes()) {
@@ -97,7 +97,7 @@ function foomaticRoutes(): string[] {
       printers: { id: string; manufacturer: string }[];
     };
     for (const printer of data.printers) {
-      routes.push(`${printerHref(printer.id, printer.manufacturer)}/`);
+      routes.push(printerHref(printer.id, printer.manufacturer));
     }
   }
 
@@ -107,7 +107,7 @@ function foomaticRoutes(): string[] {
       drivers: { id: string }[];
     };
     for (const driver of data.drivers) {
-      routes.push(`${driverHref(driver.id)}/`);
+      routes.push(driverHref(driver.id));
     }
   }
 

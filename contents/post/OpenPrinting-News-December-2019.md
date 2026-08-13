@@ -11,7 +11,7 @@ date: '2019-12-13'
 ## OpenPrinting Mini Summit at IIT Mandi, India
 On November 9 we had a meeting in India presenting the work of OpenPrinting at one of the universities where our Google Summer of Code students came from.
 
-See our [separate news article with pictures](/OpenPrinting-Mini-Summit-at-IIT-Mandi/).
+See our [separate news article with pictures](/OpenPrinting-Mini-Summit-at-IIT-Mandi).
 
 ## Google Summer of Code 2020
 We need to start with the student selection process soon, so that we can let them do assignments to compensate for the missed Google Code-In opportunity.

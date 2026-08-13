@@ -48,7 +48,7 @@ Subscribing/Unsubscribing [instructions](https://subspace.kernel.org/subscribing
 
 
 ## Most hated gets loved under Linux
-Remember when I wrote earlier here about [**HP's madnesses**](/OpenPrinting-News-January-2024/#hp-madness) related to there razor-and-blades business model and how they try to enforce it?
+Remember when I wrote earlier here about [**HP's madnesses**](/OpenPrinting-News-January-2024#hp-madness) related to there razor-and-blades business model and how they try to enforce it?
 
 I got hold on one of these cheapo inkjets from HP now, the **HP Envy 6000**. I did not buy it, I would never do, I got it as a gift from a person who is moving to overseas. It is one of the **Wi-Fi-only species** with a sticker put over its USB port, saying Wi-Fi-only. They want the user to install their software to set it up for the user's Wi-Fi SSID and password (it has also no front panel menus and no WPS support). And this software is pitching the ink subscriptions and trying to update the firmware so that the printer rejects 3rd-party cartridges.
 
@@ -66,7 +66,7 @@ But under Linux, in free software, hardware drivers are conserved for many years
 
 This idea was presented on [Hackaday](https://hackaday.com/2024/06/13/raspberry-pi-saves-printer-from-junk-pile/): A Canon PIXMA MP250 (released 2009) got the death sentence for Windows 11 by Microsoft or Canon but can be used under Linux with the Gutenprint driver. So a Raspberry Pi was used to run CUPS with Gutenprint and the printer shared to the network, appearing as modern, driverless IPP printer under Windows ... The original author wrote a [HOWTO](https://ounapuu.ee/posts/2024/06/12/save-old-printer/).
 
-But we have already shown here that this also works without any additional print server hardware, at least for Windows 10 and newer, just running Linux under WSL. And also, with or without extra hardware, one does not even need CUPS but can simply use Printer Applications instead, as shown in our [HOWTO](/wsl-printer-app/), and also on the [Ubuntu Summit 2022](/OpenPrinting-News-November-2022/#and-the-conference-finally-started-), which got [well accepted](/OpenPrinting-News-December-2022/#blogs-and-articles).
+But we have already shown here that this also works without any additional print server hardware, at least for Windows 10 and newer, just running Linux under WSL. And also, with or without extra hardware, one does not even need CUPS but can simply use Printer Applications instead, as shown in our [HOWTO](/wsl-printer-app), and also on the [Ubuntu Summit 2022](/OpenPrinting-News-November-2022#and-the-conference-finally-started-), which got [well accepted](/OpenPrinting-News-December-2022#blogs-and-articles).
 
 There is a long list of comments on Hackaday and [I have commented, too](https://hackaday.com/2024/06/13/raspberry-pi-saves-printer-from-junk-pile/#comment-6767443), telling about the WSL-based solution and also that a Pi cannot only mimick a driverless network printer but also a driverless USB (USB-over-IPP), thanks to PAPPL.
 
@@ -78,7 +78,7 @@ I have posted the link to our HOWTO for saving old printers with the help of WSL
 ## Opportunity Open Source in IIT Kanpur
 Now we have confirmed it! **The [second Opportunity Open Source](https://events.canonical.com/event/89/) will be held in the Indian Institute of Technology Kanpur, on August 24-26**, the weekend before [UbuCon Asia in Jaipur](https://2024.ubucon.asia/)! We already had some contributors from there, like Shivam Mishra, Mohit Mohan, Pratyush Ranjan, Vikrant Malik, Tanmay Anand, ...
 
-We also got a lot of support. Shivam Mishra, former GSoC contributor for us, made the suggestion to do it in Kanpur and already told us that IIT Kanpur is larger than Mandi and has more ease to travel to from other cities, like Delhi, as alredy told here [earlier](/OpenPrinting-News-March-2024/#opportunity-open-source---2nd-edition). And as we started working it out, Pratham Sahu has taken the lead in the on-location organization and built up a nice volunteer team. He even interviewed several candidates to fill volunteer roles.
+We also got a lot of support. Shivam Mishra, former GSoC contributor for us, made the suggestion to do it in Kanpur and already told us that IIT Kanpur is larger than Mandi and has more ease to travel to from other cities, like Delhi, as alredy told here [earlier](/OpenPrinting-News-March-2024#opportunity-open-source---2nd-edition). And as we started working it out, Pratham Sahu has taken the lead in the on-location organization and built up a nice volunteer team. He even interviewed several candidates to fill volunteer roles.
 
 In contrary to Mandi, the local organizers are also looking for (local) sponsors, to support us financially for things like speaker accommodation and meals, banners, backdrops, conference-specific swag, ... We also do not need to worry about A/V, as this will all get managed for us by the local organizers.
 
@@ -98,7 +98,7 @@ Jiongchi Yu, GSoC contributor for OSS Fuzz testing of OpenPrinting components, a
 
 
 ## UbuCon Asia 2024 in India
-As I already told [last month](/OpenPrinting-News-May-2024/#ubucon-asia-2024-in-india) I will be in [Jaipur](https://2024.ubucon.asia/) the weekend after the Opportunity Open Source, Aug 31 - Sep 2 (Sat - Mon), and give a talk and a workshop about Snap.
+As I already told [last month](/OpenPrinting-News-May-2024#ubucon-asia-2024-in-india) I will be in [Jaipur](https://2024.ubucon.asia/) the weekend after the Opportunity Open Source, Aug 31 - Sep 2 (Sat - Mon), and give a talk and a workshop about Snap.
 
 On the [front page of the event](https://2024.ubucon.asia/) there are 6 featured speakers, the keynote speakers Bhavanishankar Ravindra, Khairul Aizat Kamarudzzaman, and Varshi Gupta, and also Rudra Saraswat (Ubuntu Unity, blendOS, Iona), Buo-Ren Lin (Snap, L10n), and ...
 
@@ -106,7 +106,7 @@ On the [front page of the event](https://2024.ubucon.asia/) there are 6 featured
 
 
 ## Open Source Summit in Vienna
-As I already mentioned here in [February](/OpenPrinting-News-February-2024/#open-source-summit-and-plumbers-in-vienna) this year's [Open Source Summit Europe](https://events.linuxfoundation.org/open-source-summit-europe/) will take place in Vienna (on Sep 16-18).
+As I already mentioned here in [February](/OpenPrinting-News-February-2024#open-source-summit-and-plumbers-in-vienna) this year's [Open Source Summit Europe](https://events.linuxfoundation.org/open-source-summit-europe/) will take place in Vienna (on Sep 16-18).
 
 And I will not just attend because it is around the corner for me, I will also give a talk:
 
@@ -122,7 +122,7 @@ There will also be a Canonical/Ubuntu booth with several people from Canonical, 
 
 
 ## Ubuntu Summit 2024 in The Hague
-After 2 amazing Ubuntu Summit events in [2022](/OpenPrinting-News-November-2022/#the-first-ubuntu-summit-was-a-success) and [2023](/OpenPrinting-News-November-2023/#ubuntu-summit-2023-in-riga), there is only one solution:
+After 2 amazing Ubuntu Summit events in [2022](/OpenPrinting-News-November-2022#the-first-ubuntu-summit-was-a-success) and [2023](/OpenPrinting-News-November-2023#ubuntu-summit-2023-in-riga), there is only one solution:
 
 **Celebrate a third one.**
 
@@ -234,7 +234,7 @@ Here is [Uddhav's work on GitHub](https://github.com/uddhavphatak/libcupsfilters
 ## KDE Print Manager
 Good News! We found a volunteer who will work on the CUPS 3.x support in the KDE Print Manager together with KDE developer Mike Noe!
 
-As [I told in April](/OpenPrinting-News-April-2024/#kde-print-manager) Mike Noe from KDE is working on CUPS 3.x support for KDE's printer setup tool.
+As [I told in April](/OpenPrinting-News-April-2024#kde-print-manager) Mike Noe from KDE is working on CUPS 3.x support for KDE's printer setup tool.
 
 Now, well after the contributor application deadline for this year's GSoC, Tarun Srivastava, student at the Indian institute of Technology Mandi in India, showed interest in participating in OpenPrinting. He started working on a [CUPS issue](https://github.com/OpenPrinting/cups/issues/135) and after some conversation with Michael Sweet, the problem got solved.
 
@@ -242,7 +242,7 @@ He showed more interest in OpenPrinting, reached out also to me, and then I offe
 
 Now Tarun is enthsiastically on it, talking with Mike Noe by e-mail and also discussing on our Telegram channel for the CUPS 3.x support in the GNOME Control Center, as he will have to resemble this functionality in KDE.
 
-So seems that the first [Opportunity Open Source](/OpenPrinting-News-September-2023/#opportunitiy-open-source-in-the-iit-mandi-india) in Mandi was really successful ...
+So seems that the first [Opportunity Open Source](/OpenPrinting-News-September-2023#opportunitiy-open-source-in-the-iit-mandi-india) in Mandi was really successful ...
 
 
 ## Quo vadis, Gutenprint?
@@ -612,7 +612,7 @@ Solomon:
 
 
 ## CPDB 2.0b6
-After 10 months, and working currently on [snapping the CPDB backend for CUPS](/OpenPrinting-News-May-2024/#cpdb-cups-backend-snap), we are [now releasing](/Common-Print-Dialog-Backends-Second-Generation-Sixth-Beta-Release/) the sixth beta of the second generation of the Common Print Dialog Backends (CPDB).
+After 10 months, and working currently on [snapping the CPDB backend for CUPS](/OpenPrinting-News-May-2024#cpdb-cups-backend-snap), we are [now releasing](/Common-Print-Dialog-Backends-Second-Generation-Sixth-Beta-Release) the sixth beta of the second generation of the Common Print Dialog Backends (CPDB).
 
 **Changes on the CPDB libraries**
 
@@ -626,7 +626,7 @@ Changes are
 - Discontinued the [`FILE` backend](https://github.com/OpenPrinting/cpdb-backend-file)
 - Bug fixes
 
-This caused some API and D-Bus communication protocol changes. See the [announcement post](/Common-Print-Dialog-Backends-Second-Generation-Sixth-Beta-Release/).
+This caused some API and D-Bus communication protocol changes. See the [announcement post](/Common-Print-Dialog-Backends-Second-Generation-Sixth-Beta-Release).
 
 **Changes on the CUPS Backend**
 

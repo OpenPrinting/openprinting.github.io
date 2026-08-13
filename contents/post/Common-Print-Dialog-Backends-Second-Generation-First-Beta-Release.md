@@ -9,7 +9,7 @@ date: '2022-12-13'
 ---
 We are now releasing the first beta of the second generation of the Common Print Dialog Backends (CPDB).
 
-As part of making everything ready for the [New Architecture of printing](/current/#the-new-architecture-for-printing-and-scanning) we have finally added CPDB support to the print dialogs of the major desktop environments/GUI toolkits, GNOME/GTK and KDE/Qt. This was done in [Gaurav Guleria's GSoC project](https://github.com/TinyTrebuchet/gsoc22/) and in the course of his work on the print dialogs he also did a lot of improvements on the CPDB framework, mainly due to missing features but also to work well in a PPD-less world.
+As part of making everything ready for the [New Architecture of printing](/current#the-new-architecture-for-printing-and-scanning) we have finally added CPDB support to the print dialogs of the major desktop environments/GUI toolkits, GNOME/GTK and KDE/Qt. This was done in [Gaurav Guleria's GSoC project](https://github.com/TinyTrebuchet/gsoc22/) and in the course of his work on the print dialogs he also did a lot of improvements on the CPDB framework, mainly due to missing features but also to work well in a PPD-less world.
 
 The components we are currently maintaining got all updated and released as version 2.0b1:
 

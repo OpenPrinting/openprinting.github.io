@@ -7,7 +7,7 @@ excerpt: >-
   systems, source code documentation
 date: '2023-01-08'
 ---
-During creation of the Debian/Ubuntu packages for the components of the 2nd-generation cups-filters and also during the further development of the [Common Print Dialog Backends (CPDB)](/achievements/#common-print-dialog-backends) some bugs were discovered which are fixed now.
+During creation of the Debian/Ubuntu packages for the components of the 2nd-generation cups-filters and also during the further development of the [Common Print Dialog Backends (CPDB)](/achievements#common-print-dialog-backends) some bugs were discovered which are fixed now.
 
 Also the adaptation of the source code documentation files to the individual components was not yet complete.
 

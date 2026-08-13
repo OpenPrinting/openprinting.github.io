@@ -21,7 +21,7 @@ Back in April this year, Brodie had [posted on Mastodon](https://mstdn.social/@B
 
 He liked the idea and accepted my offer and we aimed for producing and publishing the show before the northern-hemisphere summer holidays. Unfortunately, in May, the [incident with Canonical](#why-did-canonical-part-with-the-leader-of-linux-printing) happened and I did not know how things with me and with OpenPrinting will go on in the future, and in this situation I did not want to give the interview, so I asked for postponing the production until the issue gets sorted out ...
 
-... when I got the [investment of the Sovereign Tech Agency](/OpenPrinting-News-Sovereign-Tech-Agency-is-investing-in-OpenPrinting/) and so being mostly recovered, I mailed to Brodie again and told him that I am now ready for producing the video, aiming for publication well before the end-of-year holidays. So we did it and it came out great!
+... when I got the [investment of the Sovereign Tech Agency](/OpenPrinting-News-Sovereign-Tech-Agency-is-investing-in-OpenPrinting) and so being mostly recovered, I mailed to Brodie again and told him that I am now ready for producing the video, aiming for publication well before the end-of-year holidays. So we did it and it came out great!
 
 I got many likes and some questions on the social media where I linked the videos and on the videos themselves on YouTube. I answered all the questions, liked many a and disliked a few comments, and I also got a lot of likes for that, also from Brodie.
 
@@ -46,7 +46,7 @@ Subscribing/Unsubscribing [instructions](https://subspace.kernel.org/subscribing
 Brodie's announcement on [Mastodon](https://mstdn.social/@BrodieOnLinux/115590329229450474):
 > Today we have the legendary @till (Till Kamppeter) on the show, the man keeping printers working on Linux to talk about his decades of experience in this space
 
-This is the full interview, in 2 hours I am telling what we are doing at OpenPrinting, how it all began 25 years ago, and also about my layoff from Canonical and how I am recovering (a big thanks again to the [Sovereign Tech Agency](/OpenPrinting-News-Sovereign-Tech-Agency-is-investing-in-OpenPrinting/)!)
+This is the full interview, in 2 hours I am telling what we are doing at OpenPrinting, how it all began 25 years ago, and also about my layoff from Canonical and how I am recovering (a big thanks again to the [Sovereign Tech Agency](/OpenPrinting-News-Sovereign-Tech-Agency-is-investing-in-OpenPrinting)!)
 
 Currently 29 comments on YouTube, including all answers
 
@@ -61,7 +61,7 @@ Do not run for a coffee now to keep yourself awake for the 2 hours, but just wat
 
 ### Why Did Canonical Part With The Leader Of Linux Printing
 
-The first of them is about the incident with Canonical and how I am recovering, and fairly well (thanks again, [Sovereign Tech Agency](/OpenPrinting-News-Sovereign-Tech-Agency-is-investing-in-OpenPrinting/)) as I am covered until end-2026 now!
+The first of them is about the incident with Canonical and how I am recovering, and fairly well (thanks again, [Sovereign Tech Agency](/OpenPrinting-News-Sovereign-Tech-Agency-is-investing-in-OpenPrinting)) as I am covered until end-2026 now!
 
 1 comment on YouTube
 
