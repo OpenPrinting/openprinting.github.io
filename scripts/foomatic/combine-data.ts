@@ -379,7 +379,12 @@ async function combineData() {
     const functionality = getText(printer.functionality) || "?";
     const driverDetails = buildDriverDetails(printerId, driverIds, drivers, generatedPpdPaths);
     const status = getFunctionalityStatus(functionality);
-    const finalStatus = driverDetails.length === 0 && status === "Unknown" ? "Unsupported" : status;
+    // Drivers the database marks obsolete cannot be used, so a printer left with
+    // only obsolete entries has no driver support. Where its support level is
+    // otherwise unknown that makes it unsupported; a graded status is never
+    // overwritten.
+    const usableDrivers = driverDetails.filter((driver) => !driver.obsolete);
+    const finalStatus = usableDrivers.length === 0 && status === "Unknown" ? "Unsupported" : status;
     const recommendedDriverWithPpd =
       driverDetails.find((driver) => driver.id === recommendedDriverId && driver.hasPpd) ||
       driverDetails.find((driver) => driver.hasPpd);

@@ -246,6 +246,14 @@ m.obsoleteClaimExamples = obsoleteExamples
   m.corrDriverCountScore = +(num / Math.sqrt(dx * dy)).toFixed(4)
 }
 
+// A driver marked obsolete cannot be used, so a printer left with only obsolete
+// entries has no driver support and must not still read as merely unrated.
+{
+  const noUsable = P.filter((p) => (p.drivers || []).length > 0 && (p.drivers || []).every((d) => d.obsolete))
+  m.printersWithOnlyObsoleteDrivers = noUsable.length
+  m.printersUnratedWithNoUsableDriver = noUsable.filter((p) => p.status === "Unknown").length
+}
+
 console.log(JSON.stringify(m, null, 1))
 
 // Hard invariants. Everything above is measurement; these two properties the
@@ -253,6 +261,7 @@ console.log(JSON.stringify(m, null, 1))
 const INVARIANTS = [
   ["claimsCitingObsoleteOnlyFamily", m.claimsCitingObsoleteOnlyFamily, 0],
   ["falseOrMisleadingClaims", m.falseOrMisleadingClaims, 0],
+  ["printersUnratedWithNoUsableDriver", m.printersUnratedWithNoUsableDriver, 0],
 ]
 let broken = 0
 for (const [name, actual, expected] of INVARIANTS) {

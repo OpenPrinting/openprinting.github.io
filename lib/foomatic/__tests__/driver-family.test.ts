@@ -148,6 +148,28 @@ describe("getSupportedDriverFamilies", () => {
     expect(getSupportedDriverFamilies(printer)).toEqual([])
   })
 
+  it("excludes an obsolete driver that names no replacement", () => {
+    const printer = {
+      drivers: [
+        { id: "driver/legacy-driver", name: "legacy-driver", obsolete: true, replacedBy: null },
+        { id: "driver/live-driver", name: "live-driver", obsolete: false },
+      ],
+    } as Printer
+
+    expect(getSupportedDriverFamilies(printer)).toEqual(["live-driver"])
+  })
+
+  it("leaves no supported families when every driver is obsolete", () => {
+    const printer = {
+      drivers: [
+        { id: "driver/legacy-driver", name: "legacy-driver", obsolete: true, replacedBy: null },
+        { id: "driver/old-driver", name: "old-driver", obsolete: true, replacedBy: "live-driver" },
+      ],
+    } as Printer
+
+    expect(getSupportedDriverFamilies(printer)).toEqual([])
+  })
+
   it("returns an empty array when the printer has no drivers", () => {
     expect(getSupportedDriverFamilies({} as Printer)).toEqual([])
   })

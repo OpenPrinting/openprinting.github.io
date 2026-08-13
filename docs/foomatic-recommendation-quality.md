@@ -196,6 +196,13 @@ to +0.27). Aggregate quality held: evidence/score correlation 0.849 → 0.851,
 type contradictions 0% → 0%, colour 0.20% → 0.21%, ≥4× resolution gaps 0.04% →
 0.04%, and the deterministic grading sample's usable share unchanged at 89.7%.
 
+An obsolete entry that names no successor is handled by the same path: nothing is
+substituted, so the printer contributes no preferred-driver evidence at all. A printer
+left with only obsolete drivers therefore has no usable driver, and where its recorded
+`functionality` grade is unknown its status becomes `"Unsupported"` rather than
+remaining unrated. A recorded grade is never overwritten. `metrics.mjs` enforces this
+as `printersUnratedWithNoUsableDriver`.
+
 **Known costs, recorded rather than smoothed over:**
 
 - `HP-DeskJet_400C` is the one printer that lost all recommendations. Its only

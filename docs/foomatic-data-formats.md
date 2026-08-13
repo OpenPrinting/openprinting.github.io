@@ -33,6 +33,8 @@ interface Printer {
   drivers?: Driver[]
   type?: string                       // "inkjet" | "laser" | "dot-matrix" | "unknown"
   status?: string                     // "Perfect" | "Mostly" | "Unsupported" | "Unknown"
+                                      // derived from `functionality`; falls to "Unsupported"
+                                      // when no usable driver remains (see below)
   notes?: string                      // HTML from upstream XML — sanitize before rendering
   functionality?: string              // raw Foomatic grade: "A" | "B" | "C" | "?"
   commandsets?: string[]              // normalized PDL tokens, e.g. ["PCLXL", "POSTSCRIPT"]
@@ -80,6 +82,24 @@ interface PrinterSummary {
 ```
 
 `driverCount` is `drivers.length` from the full record; `type`/`status`/`functionality` default to `"unknown"`/`"Unknown"`/`"?"` respectively if absent.
+
+### Usable drivers and support status
+
+A driver entry carries `obsolete` and, when upstream names a successor, `replacedBy`.
+An obsolete driver is still listed and badged on the printer and driver pages, but it
+is not usable: it contributes no compatibility evidence to the recommendation engine,
+and it does not count towards the printer having driver support.
+
+`status` therefore falls to `"Unsupported"` — the site's existing representation of the
+unsupported/"paperweight" level — when a printer has no usable driver **and** its
+recorded `functionality` grade is unknown. A recorded grade is never overwritten: a
+printer graded A or B keeps `"Perfect"`/`"Mostly"` even if every listed driver is
+obsolete, because that grade reflects observed behaviour rather than driver
+availability.
+
+`printersMap.json` carries a driver total but not each driver's `obsolete` flag, so a
+summary cannot recompute this itself; `calculateAccurateStatus()` counts usable drivers
+when given a full record and otherwise defers to the `status` the pipeline stored.
 
 ---
 
