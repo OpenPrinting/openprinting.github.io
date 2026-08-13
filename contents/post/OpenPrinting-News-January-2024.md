@@ -9,9 +9,9 @@ excerpt: >-
   automation, User mailing list
 date: '2024-01-24'
 ---
-You probably remember the [October News](/OpenPrinting-News-October-2023/), where, based on experience of some colleagues and also based on discussions on Mastodon, I changed from recommending HP printers to Brother printers. Unfortunately, there are [many more reasons](#hp-madness) to move on from the formerly well-respected printer manufacturer, mainly their agressive enforcement of their razor-and-blades business model.
+You probably remember the [October News](/OpenPrinting-News-October-2023), where, based on experience of some colleagues and also based on discussions on Mastodon, I changed from recommending HP printers to Brother printers. Unfortunately, there are [many more reasons](#hp-madness) to move on from the formerly well-respected printer manufacturer, mainly their agressive enforcement of their razor-and-blades business model.
 
-Already before reading about all this, back on the [Ubuntu Summit 2023 in November](/OpenPrinting-News-November-2023/#ubuntu-summit-2023-in-riga) after attending [Daniel Schaefer's great talk about Framework laptops](https://www.youtube.com/watch?v=W8IAszo8SjM) and also getting a hallway demo from him, I came to the idea why Framework could not also make a modular, easily upgradeable and repairable multi-function printer and some weeks ago, [I posted this idea on their community forum](https://community.frame.work/t/framework-could-make-repairable-printers-multi-function-devices/).
+Already before reading about all this, back on the [Ubuntu Summit 2023 in November](/OpenPrinting-News-November-2023#ubuntu-summit-2023-in-riga) after attending [Daniel Schaefer's great talk about Framework laptops](https://www.youtube.com/watch?v=W8IAszo8SjM) and also getting a hallway demo from him, I came to the idea why Framework could not also make a modular, easily upgradeable and repairable multi-function printer and some weeks ago, [I posted this idea on their community forum](https://community.frame.work/t/framework-could-make-repairable-printers-multi-function-devices/).
 
 I got a lot of likes, and D.H from Framework's Mainboard Developer Program gave a nice answer:
 
@@ -96,7 +96,7 @@ Most of the sessions in the 32 rooms on the 2 days are already scheduled ... Mos
 
 **On the [Schedules page](https://fosdem.org/2024/schedule/) follow the links to the schedules of each room, full schedules for each day, in which room is which track, ...**
 
-From [my other 4 proposals](/OpenPrinting-News-November-2023/#fosdem-2024) which I have submitted two talks are accepted and scheduled now, and another talk and a workshop got rejected.
+From [my other 4 proposals](/OpenPrinting-News-November-2023#fosdem-2024) which I have submitted two talks are accepted and scheduled now, and another talk and a workshop got rejected.
 
 So here are my scheduled talks up to now:
 
@@ -110,9 +110,9 @@ Main Track
 
 [Video](https://video.fosdem.org/2024/k1105/fosdem-2024-1930-openprinting-we-make-printing-just-work-.av1.webm), [Slides](https://fosdem.org/2024/events/attachments/fosdem-2024-1930-openprinting-we-make-printing-just-work-/slides/20807/talk-openprinting-2024_1f9Sa4r.pdf)
 
-OpenPrinting: What it is, [how it emerged](/history/), [what we are doing](https://wiki.linuxfoundation.org/gsoc/google-summer-code-2024-openprinting-projects#introduction), what are our challenges, what are we in need of ...
+OpenPrinting: What it is, [how it emerged](/history), [what we are doing](https://wiki.linuxfoundation.org/gsoc/google-summer-code-2024-openprinting-projects#introduction), what are our challenges, what are we in need of ...
 
-**(Update)** I will give an overview of our organization and how we make printing just work. I will also give a short overview on the planned development on CUPS and tell about [Windows Protected Print](/OpenPrinting-News-December-2023/#new-architecture-under-windows), the way Microsoft will switch to all-IPP printing in Windows.
+**(Update)** I will give an overview of our organization and how we make printing just work. I will also give a short overview on the planned development on CUPS and tell about [Windows Protected Print](/OpenPrinting-News-December-2023#new-architecture-under-windows), the way Microsoft will switch to all-IPP printing in Windows.
 
 Zdenek Dohnal, printing maintainer at RedHat, originally wanted to participate, but unfortunately, he got sick and is not able to attend FOSDEM. We all wish him that he will get better soon.
 

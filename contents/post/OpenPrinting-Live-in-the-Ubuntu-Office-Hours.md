@@ -22,6 +22,6 @@ Please mark in your calendars:
 
 It will take place on [YouTube](https://www.youtube.com/watch?v=diB3wm4HB1Y) and everyone can participate, without registration and free of charge. Everyone can post questions on the YouTube Live Chat.
 
-For everyone who wants to get some technical background, Michael Sweet and me have talked about the ongoing changes in the architecture of printing with free software six weeks ago in the [Ubuntu Indaba](https://openprinting.github.io/OpenPrinting-News-Flash-Ubuntu-Indaba-and-Ghostscript-Printer-Application/#the-ubuntu-desktop-indabas-and-openprinting---the-recording) (recording on [YouTube](https://www.youtube.com/watch?v=P22DOu_ahBo)).
+For everyone who wants to get some technical background, Michael Sweet and me have talked about the ongoing changes in the architecture of printing with free software six weeks ago in the [Ubuntu Indaba](/OpenPrinting-News-Flash-Ubuntu-Indaba-and-Ghostscript-Printer-Application#the-ubuntu-desktop-indabas-and-openprinting---the-recording) (recording on [YouTube](https://www.youtube.com/watch?v=P22DOu_ahBo)).
 
 See you there!

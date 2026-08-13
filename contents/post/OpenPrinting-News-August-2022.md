@@ -19,13 +19,13 @@ Now, two and a half years later, we must correct:
 
 > This is Till, he makes printing just work, on everything except Mac.
 
-Once, Michael Sweet has left Apple end of 2019, and second, one can [run Printer Applications under Windows](/current/#reviving-legacy-printers-under-windows)!
+Once, Michael Sweet has left Apple end of 2019, and second, one can [run Printer Applications under Windows](/current#reviving-legacy-printers-under-windows)!
 
 Microsoft and Canonical are collaborating and the Desktop Team has a nice WSL (Windows Subsystem for Linux) sub-team now. With this I came up with the idea to run Printer Applications under WSL and this way make legacy printers which are abandoned by Microsoft and also their manufacturers work under Windows again.
 
 My colleague Carlos Nihelton, of the WSL sub-team, has worked out a first approach with my guidance. He made his HP OfficeJet J4660 working under Windows again as his work requires him to use this OS quite often.
 
-About this he has written a HOWTO and contributed it to OpenPrinting. The [HOWTO](/wsl-printer-app/) explains step-by-step how to compile and install a Printer Application under Windows to make ones good old printer working again.
+About this he has written a HOWTO and contributed it to OpenPrinting. The [HOWTO](/wsl-printer-app) explains step-by-step how to compile and install a Printer Application under Windows to make ones good old printer working again.
 
 Thanks a lot, Carlos.
 
@@ -33,15 +33,15 @@ The process is still somewhat awkward, but with further development of WSL (supp
 
 
 ## New web pages about our work are completed
-[Last month](/OpenPrinting-News-July-2022/#new-web-pages-about-our-work) I told about that we want to have a blog post about OpenPrinting at Canonical to make OpenPrinting and Canonical's support for it more visible and that therefore I have decided to write some articles about what OpenPrinting has done and is doing.
+[Last month](/OpenPrinting-News-July-2022#new-web-pages-about-our-work) I told about that we want to have a blog post about OpenPrinting at Canonical to make OpenPrinting and Canonical's support for it more visible and that therefore I have decided to write some articles about what OpenPrinting has done and is doing.
 
-These articles I have completed now (All linked from the "[About Us](/about-us/)" page):
+These articles I have completed now (All linked from the "[About Us](/about-us)" page):
 
-- [How did this all begin?](/history/)
-- [Our principal achievements](/achievements/)
-- [What we are currently doing](/current/)
+- [How did this all begin?](/history)
+- [Our principal achievements](/achievements)
+- [What we are currently doing](/current)
 
-The first is derived from my [blog article about how I got started with OpenPrinting](/How-did-this-all-begin/), the second one is about what we have achieved in all the time, and the third is about what we are currently doing.
+The first is derived from my [blog article about how I got started with OpenPrinting](/How-did-this-all-begin), the second one is about what we have achieved in all the time, and the third is about what we are currently doing.
 
 I have not only added the page about our current activities but also added some forgotten items to the achievements page.
 
@@ -107,7 +107,7 @@ Get in touch with the Ubuntu developers in Prague!!
 ## GUADEC 2022
 I have attended my first [GUADEC](https://events.gnome.org/event/77/overview), in Guadalajara in Mexico and it was a success, and also a lot of fun.
 
-In my [talk](https://events.gnome.org/event/77/contributions/285/) I have first introduced the GNOME Community into the [New Architecture of printing and scanning](/current/#the-new-architecture-for-printing-and-scanning) and then spread the news about our [GSoC](#google-summer-of-code-2022) work on the ["Printers" module of the GNOME Control Center](/current/#gnome-control-center---printers-module) and on the [GTK print dialog](/current/#the-print-dialogs) ([slides](https://events.gnome.org/event/77/contributions/285/attachments/88/187/guadec-2022-new-architecture.pdf), [video](https://youtu.be/_zy_FkDttHQ?t=19194)).
+In my [talk](https://events.gnome.org/event/77/contributions/285/) I have first introduced the GNOME Community into the [New Architecture of printing and scanning](/current#the-new-architecture-for-printing-and-scanning) and then spread the news about our [GSoC](#google-summer-of-code-2022) work on the ["Printers" module of the GNOME Control Center](/current#gnome-control-center---printers-module) and on the [GTK print dialog](/current#the-print-dialogs) ([slides](https://events.gnome.org/event/77/contributions/285/attachments/88/187/guadec-2022-new-architecture.pdf), [video](https://youtu.be/_zy_FkDttHQ?t=19194)).
 
 **Bye Bye, colord!**
 
@@ -131,7 +131,7 @@ Now the second month of the coding period of the Google Summer of Code 2022 has 
 
 7 of the 8 contributors have passed the mid-term evaluations.
 
-I have also mentioned our GSoC work and all the contributors and active mentors on our new page about [our current activity](/current/).
+I have also mentioned our GSoC work and all the contributors and active mentors on our new page about [our current activity](/current).
 
 All of them have posted again a little summary of what they have done in our group chat on Telegram:
 
@@ -196,7 +196,7 @@ Feature requests so far:
 
 ## Common Print Dialog Backends 2.0
 
-While our GSoC contributor Gaurav Guleria is working on [adding CPDB support to the print dialogs](/current/#the-print-dialogs) (see [above](#google-summer-of-code-2022)) he has also done many fixes and improvements on the [CPDB framework](https://openprinting.github.io/achievements/#common-print-dialog-backends) itself:
+While our GSoC contributor Gaurav Guleria is working on [adding CPDB support to the print dialogs](/current#the-print-dialogs) (see [above](#google-summer-of-code-2022)) he has also done many fixes and improvements on the [CPDB framework](/achievements#common-print-dialog-backends) itself:
 
 - Support for human-readable strings for options and choices
 - Removal of CUPS dependencies in the core libraries
@@ -214,7 +214,7 @@ For the release itself I will still wait a little bit, as Gaurav could find othe
 ## CUPS Snap and snapd printing interface
 **[CUPS Snap](https://github.com/OpenPrinting/cups-snap) in the [Snap Store](https://snapcraft.io/cups)**
 
-Now with the [`cups` snapd interface in place](https://openprinting.github.io/achievements/#the-cups-snap) Snap package maintainers are starting to use it.
+Now with the [`cups` snapd interface in place](/achievements#the-cups-snap) Snap package maintainers are starting to use it.
 
 Some days ago I have worked with my colleagues in the Canonical Desktop Team on [switching their Snaps over](https://discourse.ubuntu.com/t/desktop-team-updates-monday-15th-august-2022/29954/8?u=till-kamppeter) to the new `cups` interface and they did and it is actually working now. At least the Firefox, Chromium, gnome-text-editor, and evince Snaps should be switched over now, at least in the "Edge" channel of the Snap Store. Also of the LibreOffice Snap a switched version will appear soon.
 
@@ -222,7 +222,7 @@ Thanks a lot to Oliver Tilloy, Nathan Pratta Teodosio, Sergio Costas, and Heathe
 
 
 ## Approaching cups-filters 2.0
-Completed the restructuring to have **libppd depend on libcupsfilters** instead of **libcupsfilters depend on libppd**, as [introduced in May](/OpenPrinting-News-May-2022/#approaching-cups-filters-20) now!
+Completed the restructuring to have **libppd depend on libcupsfilters** instead of **libcupsfilters depend on libppd**, as [introduced in May](/OpenPrinting-News-May-2022#approaching-cups-filters-20) now!
 
 The commit is [here](https://github.com/OpenPrinting/cups-filters/commit/af98924b376). And the adaptations on [pappl-retrofit](https://github.com/OpenPrinting/pappl-retrofit/) are [here](https://github.com/OpenPrinting/pappl-retrofit/commit/9b8fe83ba6).
 

@@ -72,7 +72,7 @@ export default async function GSoD2020Page() {
               {ideas.map((idea) => (
                 <Link
                   key={idea.slug}
-                  href={`/gsod2020/${idea.slug}/`}
+                  href={`/gsod2020/${idea.slug}`}
                   className="group block rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:border-border/80 hover:bg-accent card-glow"
                 >
                   <div className="mb-4 flex items-start justify-between gap-3">

@@ -35,7 +35,7 @@ And if you really cannot make it to this exciting event, there is some limited r
 
 **OpenPrinting is in Prague, too**
 
-Yes, we are always in need to extend our developer, designer, document writer, ... community and the Ubuntu Summit is all about that kind of community. Therefore we will present our [activity](/current/), our [plans](/OpenPrinting-News-September-2022/#openprinting-micro-conference-on-the-linux-plumbers-2022), and our needs in the session
+Yes, we are always in need to extend our developer, designer, document writer, ... community and the Ubuntu Summit is all about that kind of community. Therefore we will present our [activity](/current), our [plans](/OpenPrinting-News-September-2022#openprinting-micro-conference-on-the-linux-plumbers-2022), and our needs in the session
 
 > OpenPrinting - Join the team to make printing just work!
 
@@ -43,7 +43,7 @@ Yes, we are always in need to extend our developer, designer, document writer, .
 
 There I will be accompanied by Zdenek Dohnal from Red Hat, Johannes Meixner from SUSE, and Deepak Patankar, former GSoC contributor and now mentor, presenting about their contributions and their integration in OpenPrinting. And after our presentations, we have an extended questions and discussion part. Depending on the room where this session will take place, we can also connect Aveek Basu from OpenPrinting and one or another (former) GSoC contributor. And if there is more discussion time needed, we can create spontaneous BoFs to continue the discussion. Unfortunately, I was not able to get BoFs pre-scheduled.
 
-We also will help all these attendees who have relatives or friends who are still stuck in Windows (and also WSL developers who need to boot into Windows for testing), to make their old printers working again. I will show in a 10-min lightning talk that one can easily run our Printer Application Snaps in WSL under Windows, as described in our [HOWTO](/wsl-printer-app/). So do not miss
+We also will help all these attendees who have relatives or friends who are still stuck in Windows (and also WSL developers who need to boot into Windows for testing), to make their old printers working again. I will show in a 10-min lightning talk that one can easily run our Printer Application Snaps in WSL under Windows, as described in our [HOWTO](/wsl-printer-app). So do not miss
 
 > Save Legacy Printers under Windows with WSL and Printer Applications
 
@@ -214,7 +214,7 @@ Feature requests so far:
 
 
 ## Common Print Dialog Backends 2.0
-While our GSoC contributor Gaurav Guleria is working on [adding CPDB support to the print dialogs](/current/#the-print-dialogs) (see [above](#google-summer-of-code-2022)) he has continued to do fixes and improvements on the [CPDB framework](/achievements/#common-print-dialog-backends) itself:
+While our GSoC contributor Gaurav Guleria is working on [adding CPDB support to the print dialogs](/current#the-print-dialogs) (see [above](#google-summer-of-code-2022)) he has continued to do fixes and improvements on the [CPDB framework](/achievements#common-print-dialog-backends) itself:
 
 - Fix for new requirement of glib that the glib headers should no longer be included inside `extern "C" { ... }` blocks ([PR #11](https://github.com/OpenPrinting/cpdb-libs/pull/11))
 - Fixes for code reliability, like crash guards, function reporting success/failure, ... ([PR #12](https://github.com/OpenPrinting/cpdb-libs/pull/12))
@@ -231,13 +231,13 @@ Also this functionality to provide human-readable strings and their translations
 ## CUPS Snap and snapd printing interface
 **[CUPS Snap](https://github.com/OpenPrinting/cups-snap) in the [Snap Store](https://snapcraft.io/cups)**
 
-[Last month](/OpenPrinting-News-September-2022/#cups-snap-and-snapd-printing-interface) we told here that there is a bug in snapd due to which seeded Snaps (being part of the standard installation/ISO image of the OS) cannot use the `cups` interface (and have to stay with `cups-control` for now. There will be no rush to fix this bug. Instead, we have planned to let snapd handle the dependency of the `cups` interface on the CUPS Snap internally to not need the pseudo-content interface any more and that to be implemented within the Ubuntu 23.04 development cycle (before Feature Freeze mid-February 2023). This also does not only work around the bug but pone also needs to only plug `cups` in `snapcraft.yaml`, no additional section for the dependency on CUPS is needed.
+[Last month](/OpenPrinting-News-September-2022#cups-snap-and-snapd-printing-interface) we told here that there is a bug in snapd due to which seeded Snaps (being part of the standard installation/ISO image of the OS) cannot use the `cups` interface (and have to stay with `cups-control` for now. There will be no rush to fix this bug. Instead, we have planned to let snapd handle the dependency of the `cups` interface on the CUPS Snap internally to not need the pseudo-content interface any more and that to be implemented within the Ubuntu 23.04 development cycle (before Feature Freeze mid-February 2023). This also does not only work around the bug but pone also needs to only plug `cups` in `snapcraft.yaml`, no additional section for the dependency on CUPS is needed.
 
-But note that the bug really only concerns the Snaps contained in the standard installation of Ubuntu, if you Snap your application, you can use the [`cups` interface](/achievements/#the-cups-snap) for printing without any problems.
+But note that the bug really only concerns the Snaps contained in the standard installation of Ubuntu, if you Snap your application, you can use the [`cups` interface](/achievements#the-cups-snap) for printing without any problems.
 
 
 ## Approaching cups-filters 2.0
-We get even closer now. I have done most of the cleaning up of all the code to get a unique coding style and to make it more readable, as described [last month](/OpenPrinting-News-September-2022/#approaching-cups-filters-20). This has now be done for the complete libcupsfilters, libppd, and for `foomatic-rip`.
+We get even closer now. I have done most of the cleaning up of all the code to get a unique coding style and to make it more readable, as described [last month](/OpenPrinting-News-September-2022#approaching-cups-filters-20). This has now be done for the complete libcupsfilters, libppd, and for `foomatic-rip`.
 
 When the complete code is cleaned, the current cups-filters project will be split into several parts, similar to CUPS on its transition to the 3.x series. There will be the following parts:
 

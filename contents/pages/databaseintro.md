@@ -61,7 +61,7 @@ This is an <strong>interactive</strong> database; if you know anything useful th
 </p>
 
 <p>
-This entire database (except the driver packages) is available in an XML format as part of the <a href="https://openprinting.github.io/projects/02-foomatic" title="openprinting:foomatic">Foomatic</a> system, which provides configuration tools and filter scripts for a variety of spoolers. All driver packages and the LSB DDK are in <a href="http://www.openprinting.org/download/printdriver/" class="urlextern" title="http://www.openprinting.org/download/printdriver/"  rel="nofollow">this directory</a>.
+This entire database (except the driver packages) is available in an XML format as part of the <a href="/projects/02-foomatic" title="openprinting:foomatic">Foomatic</a> system, which provides configuration tools and filter scripts for a variety of spoolers. All driver packages and the LSB DDK are in <a href="http://www.openprinting.org/download/printdriver/" class="urlextern" title="http://www.openprinting.org/download/printdriver/"  rel="nofollow">this directory</a>.
 </p>
 
 </div>

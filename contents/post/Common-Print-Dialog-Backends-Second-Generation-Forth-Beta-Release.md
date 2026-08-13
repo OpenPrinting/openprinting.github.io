@@ -9,7 +9,7 @@ date: '2023-03-21'
 ---
 We are now releasing the forth beta of the second generation of the Common Print Dialog Backends (CPDB).
 
-Main addition are build test scripts (`make check`) for all the three components, as they are required for [inclusion of the CPDB packages into Ubuntu Main](/OpenPrinting-News-February-2023/#the-new-architecture-is-going-into-ubuntu-and-red-hat). Main is the core part of Ubuntu, which gets full support from Canonical.
+Main addition are build test scripts (`make check`) for all the three components, as they are required for [inclusion of the CPDB packages into Ubuntu Main](/OpenPrinting-News-February-2023#the-new-architecture-is-going-into-ubuntu-and-red-hat). Main is the core part of Ubuntu, which gets full support from Canonical.
 
 To facilitate creation of test scripts for the backends, for creating test scripts which test packages installed into a system (like autopkgtests of Debian and Ubuntu), and also for general development and debugging use, the demo programs of cpdb-libs (former `demo/` sub-directory) got promoted to be development tools. Not only their directory got renamed (to `tools/`) but also the programs get built together with the libraries by `make` and get installed by `make install`. And they got also renamed to nicely live in a system: `cpdb-text-frontend` and `cpdb-pickle-print`.
 

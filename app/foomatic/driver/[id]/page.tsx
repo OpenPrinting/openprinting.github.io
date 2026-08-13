@@ -52,7 +52,7 @@ export async function generateMetadata({ params }: DriverPageProps): Promise<Met
     driver?.shortDescription ||
     `The ${name} printer driver in the OpenPrinting database` +
       (printerCount ? `, supporting ${printerCount} printer model${printerCount === 1 ? "" : "s"}.` : ".")
-  const canonical = getSiteUrl(`/foomatic/driver/${id}/`)
+  const canonical = getSiteUrl(`/foomatic/driver/${id}`)
 
   return {
     title,

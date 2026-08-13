@@ -12,7 +12,7 @@ date: '2022-12-15'
 ---
 This is the last News Post of 2022. Most of us will be meeting family and friends during the holidays. And many of them are not Linux and free software users as we are.
 
-Struggling with their Windows and Mac systems and considering you as computer guru they are asking you to solve their problems. If it is Windows 11 (or at least updateable to 11) and an old printer, you are lucky as we have already posted [the solution](/wsl-printer-app/) here ([video](https://youtu.be/y7GIiLPjdTk?t=624)).
+Struggling with their Windows and Mac systems and considering you as computer guru they are asking you to solve their problems. If it is Windows 11 (or at least updateable to 11) and an old printer, you are lucky as we have already posted [the solution](/wsl-printer-app) here ([video](https://youtu.be/y7GIiLPjdTk?t=624)).
 
 But if there are more severe problems, like for example network printing with Windows, with Windows' printing system being "that mess of Windows 3.0" (of the late 90s, see also [below](#podcasts-and-videos)), it is at the time to convince them to switch over. And for that there is now a nice Christmas gift available, the book "Beginning Ubuntu for Windows and Mac Users" by Nathan Haines, one of my colleagues in the organization committee of the [Ubuntu Summit](#ubuntu-summit---videos-pictures-blogs-podcasts-). Still in doubt that this is the right book? Then let Nathan tell you more about it in the December edition of the [Ubuntu Desktop Team Indaba](https://discourse.ubuntu.com/t/ubuntu-desktop-team-indaba-ama-december-16-2022-4pm-utc/) which has taken place some days ago ([YouTube video](https://www.youtube.com/watch?v=9vP-9vds--g)).
 
@@ -38,7 +38,7 @@ By the way, I had already visited the museum many years ago. The [Babbage Differ
 ## Ubuntu Summit - Videos, pictures, blogs, podcasts ...
 **Update: Impressions of the event: [The Aftermovie!](https://www.youtube.com/watch?v=8XF6jR7XzXM)**
 
-The first [Ubuntu Summit](https://events.canonical.com/event/2/overview) was really one of the greatest and most awesome conferences I have experienced. As reported here already in the [last month](https://openprinting.github.io/OpenPrinting-News-November-2022/#the-first-ubuntu-summit-was-a-success) I and many others have put a lot of work into it and the result was overwhelming ...
+The first [Ubuntu Summit](https://events.canonical.com/event/2/overview) was really one of the greatest and most awesome conferences I have experienced. As reported here already in the [last month](/OpenPrinting-News-November-2022#the-first-ubuntu-summit-was-a-success) I and many others have put a lot of work into it and the result was overwhelming ...
 
 ### Recordings
 You did not make it to Prague? Or, while you have attended a great session on the Ubuntu Summit an awesome session was taking place in another room? No problem! We have recorded most of the talks and panels in the ballroom and the 4 breakout rooms Karlin 1-4 and they are now available on YouTube in a [playlist](https://www.youtube.com/playlist?list=PL-qBHd6_LXWYutOfi0r_jzyqHGmq1vIhf).
@@ -53,7 +53,7 @@ By the time of writing this News Post the uploading process of the videos to You
 
 **Update: All the recordings of all the 3 days are available now!!**
 
-I have also updated my [report in last month's news](https://openprinting.github.io/OpenPrinting-News-November-2022/#and-the-conference-finally-started-) adding links to the recordings of every session I mentioned there.
+I have also updated my [report in last month's news](/OpenPrinting-News-November-2022#and-the-conference-finally-started-) adding links to the recordings of every session I mentioned there.
 
 And I have to give a special thank you to Mauro and Aaron as the recordings of all the (non-workshop) sessions where I was the speaker or host of worked out great:
 
@@ -74,15 +74,15 @@ Have you been on the Ubuntu Summit and taken some interesting shots? Submissions
 ### Blogs and articles
 The conference also attracted several bloggers and news writers, so there is a lot to read about the Summit.
 
-My [lightning talk](https://youtu.be/y7GIiLPjdTk?t=624) about [saving old printers under Windows with WSL and Printer Applications](/wsl-printer-app/) was a special success. When one looks through all these articles and blogs (and especially also the podcasts) it can feel like the conference was a printer-saving-under-Windows Summit despite this subject matter only being presented in a 10-minute lightning talk and the Summit being all about Linux. What perhaps contributed to this was also Mark Shuttleworth who has [mentioned me and my lightning talk as the very first highlight](https://youtu.be/ZtY7_fv0vwo?t=1141) of the Summit in his opening plenary. I have never seen that a lightning talk got so much attention.
+My [lightning talk](https://youtu.be/y7GIiLPjdTk?t=624) about [saving old printers under Windows with WSL and Printer Applications](/wsl-printer-app) was a special success. When one looks through all these articles and blogs (and especially also the podcasts) it can feel like the conference was a printer-saving-under-Windows Summit despite this subject matter only being presented in a 10-minute lightning talk and the Summit being all about Linux. What perhaps contributed to this was also Mark Shuttleworth who has [mentioned me and my lightning talk as the very first highlight](https://youtu.be/ZtY7_fv0vwo?t=1141) of the Summit in his opening plenary. I have never seen that a lightning talk got so much attention.
 
 - [**Canonical's Ubuntu Blog**](https://ubuntu.com/blog)
   + [Ubuntu Summit Highlight Reel](https://ubuntu.com/blog/ubuntu-summit-2022-reflections): Heather Ellsworth (with some help by Mauro Gaspari, Igor Ljubuncic, and me) writes about what has happened: Lots of photos from the sessions (including my Snap panel), the GNOME panel (or better stand-up meeting?), the Mini Pupper and plotter workshops, the foosball action, the Kinetic Knitting workshop of the first night the game night, the boat party ...
   + [Ubuntu Summit Memories Live On](https://ubuntu.com/blog/ubuntu-summit-memories-live-on): In the second post-Summit blog Heather gives us the links to the photo galleries and the recordings, and she also motivates to come or even speak next year, or make the next Summit a part of your day job, working at Canonical!
 - [**Canonical's Snap Blog**](https://snapcraft.io/blog)
   + [Snapcrafters: 2022 wrap-up](https://snapcraft.io/blog/snapcrafters-2022-wrap-up): This is about what happened in the volunteer organization [Snapcrafters](https://github.com/snapcrafters) (they snap what upstream is not snapping) during the year 2022. Especially it also tells about the Ubuntu Summit and mentions (and YouTube-links) Dani Llewellyn's plenary talk "Getting started within the Ubuntu Community" and my Snap panel "Your app everywhere, just in a Snap!", the latter even with YouTube thumbnail image.
-- [**OpenPrinting**](https://openprinting.github.io/news/)
-  + [OpenPrinting News - November 2022](https://openprinting.github.io/OpenPrinting-News-November-2022/): I have also written about the Summit, especially my work on contributing to its organization, on creating the Snap tutorial workshop series, preparing the first 2 panel sessions I have hosted in my life, the build-a-plotter workshop (with photos), my 4 sessions, the hallway track, and the success of my lightning talk.
+- [**OpenPrinting**](/news)
+  + [OpenPrinting News - November 2022](/OpenPrinting-News-November-2022): I have also written about the Summit, especially my work on contributing to its organization, on creating the Snap tutorial workshop series, preparing the first 2 panel sessions I have hosted in my life, the build-a-plotter workshop (with photos), my 4 sessions, the hallway track, and the success of my lightning talk.
 - [**Jonathan Esk-Riddell**](https://jriddell.org/)
   + [Ubuntu Summit 2022 Prague](https://jriddell.org/2022/11/14/ubuntu-summit-2022-prague/): The KDE-related sessions on the Ubuntu Summit (Jonathan is creator of the KDE Neon distro and former leader of Kubuntu).
 - [**The Register**](https://www.theregister.com/)
@@ -169,7 +169,7 @@ Chandresh Soni, working on the [Braille embosser Printer Application](https://gi
 ## Common Print Dialog Backends Second Generation - First Beta Release!
 We are now releasing the first beta of the second generation of the Common Print Dialog Backends (CPDB).
 
-As part of making everything ready for the [New Architecture of printing](/current/#the-new-architecture-for-printing-and-scanning) we have finally added CPDB support to the print dialogs of the major desktop environments/GUI toolkits, GNOME/GTK and KDE/Qt. This was done in [Gaurav Guleria's GSoC project](https://github.com/TinyTrebuchet/gsoc22/) and in the course of his work on the print dialogs he also did a lot of improvements on the CPDB framework, mainly due to missing features but also to work well in a PPD-less world.
+As part of making everything ready for the [New Architecture of printing](/current#the-new-architecture-for-printing-and-scanning) we have finally added CPDB support to the print dialogs of the major desktop environments/GUI toolkits, GNOME/GTK and KDE/Qt. This was done in [Gaurav Guleria's GSoC project](https://github.com/TinyTrebuchet/gsoc22/) and in the course of his work on the print dialogs he also did a lot of improvements on the CPDB framework, mainly due to missing features but also to work well in a PPD-less world.
 
 The components we are currently maintaining got all updated and released as version 2.0b1:
 

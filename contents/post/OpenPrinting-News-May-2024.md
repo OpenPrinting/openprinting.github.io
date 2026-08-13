@@ -27,7 +27,7 @@ And ...
 
 This month we had our annual [OpenPrinting Summit/PWG Meeting](#openprinting-summitpwg-meeting) again, and, as usual [Michael Sweet was reporting about the state of the art of CUPS](https://ftp.pwg.org/pub/pwg/liaison/openprinting/presentations/cups-plenary-may-2024.pdf), with an updated time line. Unfortunatly, things do not go as fast as thought about and therefore the sharing server, as the last component of **CUPS 3.x** to be released **will only be ready mid-2025**, in 1 year from now. And this is the date which marks when distros can switch over to CUPS 3.x, so that **for Ubuntu the switchover will only happen in 25.10**.
 
-Do you want to learn how to package software in the [Snap](https://snapcraft.io/) package format? Most probably you will not look for resources [here on OpenPrinting](https://openprinting.github.io/OpenPrinting-News-November-2023/#snap-workshops) then, but rather at [snapcraft.io](https://snapcraft.io/). I had already talked about this with Graham Morrison, Snap documentation lead at Canonical, on the [Ubuntu Summit last November](https://openprinting.github.io/OpenPrinting-News-November-2023/#ubuntu-summit-2023-in-riga) and now, finally, after meeting him again on the Canonical-internal Engineering Sprint this month, I have created a page about the Snap workshops on snapcraft.io:
+Do you want to learn how to package software in the [Snap](https://snapcraft.io/) package format? Most probably you will not look for resources [here on OpenPrinting](/OpenPrinting-News-November-2023#snap-workshops) then, but rather at [snapcraft.io](https://snapcraft.io/). I had already talked about this with Graham Morrison, Snap documentation lead at Canonical, on the [Ubuntu Summit last November](/OpenPrinting-News-November-2023#ubuntu-summit-2023-in-riga) and now, finally, after meeting him again on the Canonical-internal Engineering Sprint this month, I have created a page about the Snap workshops on snapcraft.io:
 
 **[Learn snapping! - Interactive Snap Workshops](https://forum.snapcraft.io/t/40263)**
 
@@ -54,7 +54,7 @@ The first half of the meeting was dedicated to OpenPrinting, the second half to 
 
 In the OpenPrinting part there was **no Ghostscript session** again. Since having gotten [acquired by ePapyrus](https://artifex.com/news/artifex-announces-acquisition) Artifex has reduced the development activity on Ghostscript a lot and so there were only bug fixes. We used the time again for other topics, this year especially about [**desktop integration**](https://ftp.pwg.org/pub/pwg/liaison/openprinting/presentations/cups-filters-snap-oci-cpdb-desktop-and-more-2024.pdf) and [**software distribution methods (Snap, OCI)**](https://ftp.pwg.org/pub/pwg/liaison/openprinting/presentations/distribution-methods-roadmap-may-2024.pdf).
 
-Most important session was [**Michael Sweet's CUPS plenary**](https://ftp.pwg.org/pub/pwg/liaison/openprinting/presentations/cups-plenary-may-2024.pdf), where he always gives estimated timelines of the upcomimg releases of CUPS. Unfortuntaly, these do not match the [last ones](https://events.canonical.com/event/35/contributions/285/attachments/66/111/oos-cups-september-2023.pdf), presented on the [Opportunity Open Source in September last year](/OpenPrinting-News-September-2023/#opportunitiy-open-source-in-the-iit-mandi-india). The final 3.0.0 releases of the components are now estimated as follows:
+Most important session was [**Michael Sweet's CUPS plenary**](https://ftp.pwg.org/pub/pwg/liaison/openprinting/presentations/cups-plenary-may-2024.pdf), where he always gives estimated timelines of the upcomimg releases of CUPS. Unfortuntaly, these do not match the [last ones](https://events.canonical.com/event/35/contributions/285/attachments/66/111/oos-cups-september-2023.pdf), presented on the [Opportunity Open Source in September last year](/OpenPrinting-News-September-2023#opportunitiy-open-source-in-the-iit-mandi-india). The final 3.0.0 releases of the components are now estimated as follows:
 - [**libcups3**](https://github.com/OpenPrinting/libcups): August/September 2024
 - [**cups-local**](https://github.com/OpenPrinting/cups-local): February/March 2025
 - [**cups-sharing**](https://github.com/OpenPrinting/cups-sharing): April/May 2025
@@ -93,7 +93,7 @@ As Ken is also on this conference, he will be most probably with me in the room 
 
 
 ## aKademy 2024
-This year will be the first time that I attend the [aKademy](https://akademy.kde.org/2024/), KDE's annual conference! This is to raise awareness of the New Architecture for printing also under the KDE folks. Also they need to update their printing support, both in the printer setup tool and the print dialog, to allow for distros to switch to CUPS 3.x. The dialog got already done by [Gaurav Guleria adding CPDB support](https://github.com/TinyTrebuchet/gsoc22/) and the [KDE developer Mike Noe is on the KDE Print Manager](/OpenPrinting-News-April-2024/#kde-print-manager), but to be sure it is better to let the wider KDE developer community know ...
+This year will be the first time that I attend the [aKademy](https://akademy.kde.org/2024/), KDE's annual conference! This is to raise awareness of the New Architecture for printing also under the KDE folks. Also they need to update their printing support, both in the printer setup tool and the print dialog, to allow for distros to switch to CUPS 3.x. The dialog got already done by [Gaurav Guleria adding CPDB support](https://github.com/TinyTrebuchet/gsoc22/) and the [KDE developer Mike Noe is on the KDE Print Manager](/OpenPrinting-News-April-2024#kde-print-manager), but to be sure it is better to let the wider KDE developer community know ...
 
 For that I have submitted a talk proposal to tell what the New Architecture is all about, what it requires from the GUIs, and the state-of-the-art of KDE's work on supporting it.
 
@@ -105,7 +105,7 @@ By the way, the [aKademy 2024](https://akademy.kde.org/2024/) takes place on Sep
 
 
 ## UbuCon Asia 2024 in India
-As I already [told in March](/OpenPrinting-News-March-2024/#opportunity-open-source---2nd-edition) I am working on a second edition of the Opportunity Open Source in India. Having again another conference in India, this time the [UbuCon Asia in Jaipur](https://2024.ubucon.asia/) on Aug 31 - Sep 2 (Sat - Mon) I am planning to run the Opportunity Open Source on Aug 23 - 25 (Fri - Sun), and most probably in the IIT Kanpur, and this way attend two conferences on one trip.
+As I already [told in March](/OpenPrinting-News-March-2024#opportunity-open-source---2nd-edition) I am working on a second edition of the Opportunity Open Source in India. Having again another conference in India, this time the [UbuCon Asia in Jaipur](https://2024.ubucon.asia/) on Aug 31 - Sep 2 (Sat - Mon) I am planning to run the Opportunity Open Source on Aug 23 - 25 (Fri - Sun), and most probably in the IIT Kanpur, and this way attend two conferences on one trip.
 
 Therefore I have submitted several talk proposals and got 2 sessions accepted:
 
@@ -223,7 +223,7 @@ Biswadeep provided the changes via the following Pull Requests which got all mer
 
 I have [posted the news on the thread in snapcraft.io](https://forum.snapcraft.io/t/snapping-cpdb-cups-backend-a-user-daemon-using-d-bus/37397/16?u=till.kamppeter) and snapd developers Zygmunt Krynicki and James Henstridge are looking into how to proceed with the snapping.
 
-See also our coverage here in the [October News](/OpenPrinting-News-October-2023/#cpdb-cups-backend-snap), the [November News](/OpenPrinting-News-November-2023/#cpdb-cups-backend-snap), and the [March News](/OpenPrinting-News-March-2024/#cpdb-cups-backend-snap).
+See also our coverage here in the [October News](/OpenPrinting-News-October-2023#cpdb-cups-backend-snap), the [November News](/OpenPrinting-News-November-2023#cpdb-cups-backend-snap), and the [March News](/OpenPrinting-News-March-2024#cpdb-cups-backend-snap).
 
 
 ## Open Documentation Academy

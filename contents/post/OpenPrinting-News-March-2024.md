@@ -53,7 +53,7 @@ The submission window for contributor proposals has closed yesterday and many pr
 
 At OpenPrinting we had a good amount of candidates this year. ~15 have communicated with us in the weeks before the submission window and received assignments, building and modifying CUPS, issues, ..., some have even contributed valuable voluntary work starting last year.
 
-Here are especially to mention **Rudra Pratap Singh** who went above and beyond on Snap update and versioning automation, **Biswadeep Purkayastha** who made our libraries ready for libcups3 and currently makes CPDB backends snappable, **Ankit Pal Singh** who volunteered on preset support in Printer Applications and contributed comment preservation in `cupsd.conf` when it is modified by `cupsctl`. Rudra's and Biswadeep's work we have covered in more detail [last month](/OpenPrinting-News-February-2024/#google-summer-of-code-2024) here.
+Here are especially to mention **Rudra Pratap Singh** who went above and beyond on Snap update and versioning automation, **Biswadeep Purkayastha** who made our libraries ready for libcups3 and currently makes CPDB backends snappable, **Ankit Pal Singh** who volunteered on preset support in Printer Applications and contributed comment preservation in `cupsd.conf` when it is modified by `cupsctl`. Rudra's and Biswadeep's work we have covered in more detail [last month](/OpenPrinting-News-February-2024#google-summer-of-code-2024) here.
 
 We have also **Akarshan Kapoor** and **Kushagra Sharma** returning to participate this year to continue their great work on scanning support for PAPPL and on CPDB support for print dialogs.
 
@@ -69,7 +69,7 @@ Thanks in advance to make this GSoC amazing!
 
 
 ## Opportunity Open Source - 2nd edition!
-Many of you remember the [Opportunity Open Source](/OpenPrinting-News-September-2023/#opportunitiy-open-source-in-the-iit-mandi-india) conference in the IIT Mandi in India which was grown out of the idea that Aveek Basu and me wanted to meet our GSoC contributors and motivate more people to join the free software community and GSoC.
+Many of you remember the [Opportunity Open Source](/OpenPrinting-News-September-2023#opportunitiy-open-source-in-the-iit-mandi-india) conference in the IIT Mandi in India which was grown out of the idea that Aveek Basu and me wanted to meet our GSoC contributors and motivate more people to join the free software community and GSoC.
 
 It was a great success and therefore we want to make it annual, meaning that we are now aiming for its second edition.
 
@@ -87,7 +87,7 @@ So these are our ideas for now. We appreciate a lot any suggestion or help. If y
 
 
 ## CPDB CUPS backend Snap
-End of last year I have investigated how to make a Snap of the backends of CPDB (Common Print Dialog Backends), especially [the one for CUPS](https://github.com/OpenPrinting/cpdb-backend-cups) and ran into several problems, especially as we have to do with user daemons now and the frontend browses available D-Bus services to find all installed backends. So I started a [discussion on the snapcraft.io forum](https://forum.snapcraft.io/t/snapping-cpdb-cups-backend-a-user-daemon-using-d-bus/) and found out that several things need to be changed on CPDB. Biswadeep Purkayastha who was already volunteering for doing the Snap started doing these changes. We covered this here in the [October News](/OpenPrinting-News-October-2023/#cpdb-cups-backend-snap) and in the [November News](/OpenPrinting-News-November-2023/#cpdb-cups-backend-snap).
+End of last year I have investigated how to make a Snap of the backends of CPDB (Common Print Dialog Backends), especially [the one for CUPS](https://github.com/OpenPrinting/cpdb-backend-cups) and ran into several problems, especially as we have to do with user daemons now and the frontend browses available D-Bus services to find all installed backends. So I started a [discussion on the snapcraft.io forum](https://forum.snapcraft.io/t/snapping-cpdb-cups-backend-a-user-daemon-using-d-bus/) and found out that several things need to be changed on CPDB. Biswadeep Purkayastha who was already volunteering for doing the Snap started doing these changes. We covered this here in the [October News](/OpenPrinting-News-October-2023#cpdb-cups-backend-snap) and in the [November News](/OpenPrinting-News-November-2023#cpdb-cups-backend-snap).
 
 Biswadeep made good progress:
 
@@ -136,7 +136,7 @@ Currently he works on the [implementation of the scanning API functions in PAPPL
 
 
 ## Snap automation working well
-Thanks to the awesome work of Rudra Pratap Singh on the [Ubuntu Snap automation GitHub action](https://github.com/ubuntu/desktop-snaps/) and naturally also on the Snaps themselves we have now deployed [Snap update automation](https://ubuntu.com/blog/improving-snap-maintenance-with-automation) and Snap versioning automation on OpenPrinting's Snaps. See our detailed coverage in the [January News](/OpenPrinting-News-January-2024/#snap-automation).
+Thanks to the awesome work of Rudra Pratap Singh on the [Ubuntu Snap automation GitHub action](https://github.com/ubuntu/desktop-snaps/) and naturally also on the Snaps themselves we have now deployed [Snap update automation](https://ubuntu.com/blog/improving-snap-maintenance-with-automation) and Snap versioning automation on OpenPrinting's Snaps. See our detailed coverage in the [January News](/OpenPrinting-News-January-2024#snap-automation).
 
 What is still missing, is to devide up our Snap GitHub repositories into 2 branches, a development one and a stable one and to have the automation running on the stable branch and the resulting packages uploaded to the "candidate" channel of the Snap Store, controlled by a Launchpad setup, as described in the second part of my [Snap update automation workshop](https://events.canonical.com/event/31/contributions/217/attachments/126/198/Workshop%20Automating%20Snap%20updates%20on%20new%20upstream%20releases.pdf).
 
@@ -148,9 +148,9 @@ But this is good enough to observe whether the automation works correctly, and i
 
 
 ## SpliX 2.0.1
-I know, classic CUPS drivers are deprecated, but there are still enough people with legacy printers needing them. And this driver will live on as part of the [Ghostscript Printer Application](https://snapcraft.io/ghostscript-printer-app/), so that Linux and [Windows](/wsl-printer-app/) users will be able to continue to use their printers.
+I know, classic CUPS drivers are deprecated, but there are still enough people with legacy printers needing them. And this driver will live on as part of the [Ghostscript Printer Application](https://snapcraft.io/ghostscript-printer-app/), so that Linux and [Windows](/wsl-printer-app) users will be able to continue to use their printers.
 
-[SpliX](/splix/) is a CUPS driver for Samsung SPL2 printers and rebranded models from Xerox, Dell, Lexmark, and Toshiba. It was created back in 2006 by Aurelien Croc based on reverse-engineering the protocol. He worked on it continuously improving and updating it, especially also to support new printer models, until mid-2009, shortly after the 2.0.0 release. After that I continued maintaining it, just applying contributed patches for fixing bugs and adding some new printer models, no actual development. I did this until mid-2013.
+[SpliX](/splix) is a CUPS driver for Samsung SPL2 printers and rebranded models from Xerox, Dell, Lexmark, and Toshiba. It was created back in 2006 by Aurelien Croc based on reverse-engineering the protocol. He worked on it continuously improving and updating it, especially also to support new printer models, until mid-2009, shortly after the 2.0.0 release. After that I continued maintaining it, just applying contributed patches for fixing bugs and adding some new printer models, no actual development. I did this until mid-2013.
 
 After that, nothing changed on SpliX, and distros simply included the latest revision, r315, of the [Subversion repository](https://sourceforge.net/p/splix/code/HEAD/tree/) at SourceForge, where SpliX was hosted.
 

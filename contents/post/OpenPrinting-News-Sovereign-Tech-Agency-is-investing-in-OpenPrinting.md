@@ -12,7 +12,7 @@ date: '2025-11-04'
 
 ## I was working at Canonical for a long time ...
 
-Mid-May, on the last Engineering Sprint of Canonical I got the notice that I got laid off by Canonical, after having been with them for near 20 years. The contract ended 4 weeks after that, mid-June and I got 3 months of my monthly payment as indemnity. See also [my earlier post](https://openprinting.github.io/OpenPrinting-News-25-years-of-working-full-time-for-printing-with-free-open-source-software/).
+Mid-May, on the last Engineering Sprint of Canonical I got the notice that I got laid off by Canonical, after having been with them for near 20 years. The contract ended 4 weeks after that, mid-June and I got 3 months of my monthly payment as indemnity. See also [my earlier post](/OpenPrinting-News-25-years-of-working-full-time-for-printing-with-free-open-source-software).
 
 ## ... looking for a new solution ...
 

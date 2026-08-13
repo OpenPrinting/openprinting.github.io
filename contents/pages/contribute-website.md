@@ -19,7 +19,7 @@ If you find any bugs or issues in the website, please feel free to raise the iss
 Different browsers render CSS differently. If you find any inconsistency in CSS rendering, please [report it](https://github.com/OpenPrinting/openprinting.github.io/issues).
 
 ### Content Migration<a id="content"></a>
-We need to move content from our [old website](https://wiki.linuxfoundation.org/openprinting/start) to this [website](https://openprinting.github.io/). 
+We need to move content from our [old website](https://wiki.linuxfoundation.org/openprinting/start) to this [website](/). 
 If you want to move some page or some database, first create [Issue](https://github.com/OpenPrinting/openprinting.github.io/issues) for the same and then work on it.
 
 ### Solving Issues<a id="issues"></a>

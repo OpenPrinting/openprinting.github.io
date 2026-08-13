@@ -12,15 +12,15 @@ At Canonical I got told some weeks ago that someone asked what Canonical is doin
 
 This brought us to the idea to soon post a Ubuntu Blog article and to support such an article we need more detailed information about what OpenPrinting is doing, to link it from there and also partially re-post it in the blog.
 
-Therefore I have decided to add three articles to our static web site (not the [News and Events](/news/) blog series here):
+Therefore I have decided to add three articles to our static web site (not the [News and Events](/news) blog series here):
 
-- [How did this all begin?](/history/)
-- [Our principal achievements](/achievements/)
+- [How did this all begin?](/history)
+- [Our principal achievements](/achievements)
 - What we are currently doing
 
-The first is derived from my [blog article about how I got started with OpenPrinting](/How-did-this-all-begin/), the second one is about what we have achieved in all the time, and the third will be about what we are currently doing. The first two are already available (simply follow the links) and the third I will write soon after I an back from [GUADEC](#guadec-2022).
+The first is derived from my [blog article about how I got started with OpenPrinting](/How-did-this-all-begin), the second one is about what we have achieved in all the time, and the third will be about what we are currently doing. The first two are already available (simply follow the links) and the third I will write soon after I an back from [GUADEC](#guadec-2022).
 
-The new pages are all linked from our "[About Us](/about-us/)" page.
+The new pages are all linked from our "[About Us](/about-us)" page.
 
 
 ## GUADEC 2022
@@ -30,7 +30,7 @@ It is the first time for me to attend a GUADEC and also the first time for me to
 
 In my [talk](https://events.gnome.org/event/77/contributions/285/) (July 21, 14:20 - 15:00 local time, Bosch Auditorium) I will spread the news about our [GSoC](#google-summer-of-code-2022) work on the "Printers" module of the GNOME Control Center and on the GTK print dialog and also introduce the GNOME Community into the New Architecture of printing and scanning (**Update:** [slides](https://events.gnome.org/event/77/contributions/285/attachments/88/187/guadec-2022-new-architecture.pdf)).
 
-You will probably often enough find me at the Canonical booth (or better gathering table, see [last month's news](/OpenPrinting-News-June-2022/#guadec-2022)).
+You will probably often enough find me at the Canonical booth (or better gathering table, see [last month's news](/OpenPrinting-News-June-2022#guadec-2022)).
 
 If you cannot make it to Guadalajara in Mexico but to Berlin, you can get to a satellite event, the [Berlin Mini-GUADEC 2022 in the C-Base](https://wiki.gnome.org/Hackfests/BerlinMiniGUADEC2022) and meet Berlin's/Europe's GNOME community and besides local sessions, hackfests, ... also have a public viewing of the complete GUADEC. And some talks of the GUADEC are even performed in Berlin and transmitted live to Mexico. This is the wonderful world of hybrid (in-person + online) conferences!
 
@@ -105,13 +105,13 @@ Feature requests so far:
 
 The [`cups` snapd interface](https://forum.snapcraft.io/t/new-interface-cups-for-all-snaps-which-print/) is now fully working as [documented](https://forum.snapcraft.io/t/the-cups-interface/)!
 
-The bugs we told about [last month](/OpenPrinting-News-June-2022/#cups-snap-and-snapd-printing-interface) are all fixed and appropriate CUPS Snap and snapd versions are released. Also the CUPS Snap is now auto-connecting the system's `cups-control` interface. So snappers only need to follow the instructions in the mentioned documentation to use the `cups` interface in their apps and users of applications plugging the `cups` interface can just print.
+The bugs we told about [last month](/OpenPrinting-News-June-2022#cups-snap-and-snapd-printing-interface) are all fixed and appropriate CUPS Snap and snapd versions are released. Also the CUPS Snap is now auto-connecting the system's `cups-control` interface. So snappers only need to follow the instructions in the mentioned documentation to use the `cups` interface in their apps and users of applications plugging the `cups` interface can just print.
 
-Note that there is still no further application using the `cups` interface except the [first two](/OpenPrinting-News-June-2022/#cups-snap-and-snapd-printing-interface), especially Firefox, Chromium, and LibreOffice did not switch over to it yet.
+Note that there is still no further application using the `cups` interface except the [first two](/OpenPrinting-News-June-2022#cups-snap-and-snapd-printing-interface), especially Firefox, Chromium, and LibreOffice did not switch over to it yet.
 
 
 ## Approaching cups-filters 2.0
-Continuing the restructuring to have **libppd depend on libcupsfilters** instead of **libcupsfilters depend on libppd**, as [introduced in May](/OpenPrinting-News-May-2022/#approaching-cups-filters-20). Continuing to restructure the code to separate the siamesian twins of the filter functions and PPD file support:
+Continuing the restructuring to have **libppd depend on libcupsfilters** instead of **libcupsfilters depend on libppd**, as [introduced in May](/OpenPrinting-News-May-2022#approaching-cups-filters-20). Continuing to restructure the code to separate the siamesian twins of the filter functions and PPD file support:
 
 - Made the `cfFilterRasterToPWG()`, `cfFilterPWGToRaster()`, `cfFilterGhostscript()`, `cfFilterImageToRaster()` and `cfFilterImageToPDF()` filter functions **free of PPD file support** and created appropriate `ppdFilter...()` wrapper filter functions in libppd for them.
 - Also had a look into the `cfFilter...ToPS()` filter functions but they will not get converted but completely moved over to libppd, **considering not only PPD files obsolete but also the PostScript format** (at least when not used in a PostScript printer driver with PPD).

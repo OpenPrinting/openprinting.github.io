@@ -12,7 +12,7 @@ date: '2024-08-03'
 ---
 This month I will start with a very important warning:
 
-Some months ago I talked here about [HP's crazinesses to lock their users into expensive original ink](/OpenPrinting-News-January-2024/#hp-madness) and that following reported user experience I [recommended to buy Brother printers](/OpenPrinting-News-October-2023/) instead of HP.
+Some months ago I talked here about [HP's crazinesses to lock their users into expensive original ink](/OpenPrinting-News-January-2024#hp-madness) and that following reported user experience I [recommended to buy Brother printers](/OpenPrinting-News-October-2023) instead of HP.
 
 I also told that typical modern printers, also cheap ones, are driverless IPP (AirPrint, Mopria, IPP Everywhere, Wi-Fi Direct Print) nowadays.
 
@@ -20,9 +20,9 @@ But unfortunately, there are still exceptions: There is the ultra-cheap USB-only
 
 Solomon Peachy (Gutenprint) answers that inside printers the print engine and the networking engine are separate parts and the IPP support comes from the networking engine, and so IPP-over-USB is usually only available in network printers and not in USB-only printers.
 
-**All-in-all one should really check whether a printer supports driverless IPP protocols like AirPrint or Mopria, according to what is written on the box, and [what most printers do](https://openprinting.github.io/printers/), fortunately.**
+**All-in-all one should really check whether a printer supports driverless IPP protocols like AirPrint or Mopria, according to what is written on the box, and [what most printers do](/printers), fortunately.**
 
-**And to make it even easier we have now a button to get to our [driverless printer list](/printers/) right in the banner of our [home page](/).**
+**And to make it even easier we have now a button to get to our [driverless printer list](/printers) right in the banner of our [home page](/).**
 
 By the way, **HP has withdrawn from one of their madnesses**. They were selling cheaper versions of several laser printers with an "e" added to the end of the model name and users of those printers were **required** to join HP+ and to keep the printer always connected to the internet. These models [are now discontinued](https://www-druckerchannel-de.translate.goog/artikel.php?ID=5023&t=hp_laserjet_drucker&_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en&_x_tr_pto=wapp) and only the somewhat more expensive versions without "e" but full liberty continue to be available. But existing "e" models continue to require HP+.
 
@@ -165,7 +165,7 @@ With the workshop I got featured speaker on the [front page](https://2024.ubucon
 
 [Full schedules](https://events.canonical.com/event/47/timetable/#all)
 
-I will also meet Soumyadeep Ghosh from the Snapcrafters and present Snap with him at his booth and also work with him on the plans for the Snapcrafters booth and workshops on the [Ubuntu Summit](/OpenPrinting-News-June-2024/#ubuntu-summit-2024-in-the-hague).
+I will also meet Soumyadeep Ghosh from the Snapcrafters and present Snap with him at his booth and also work with him on the plans for the Snapcrafters booth and workshops on the [Ubuntu Summit](/OpenPrinting-News-June-2024#ubuntu-summit-2024-in-the-hague).
 
 
 ## Google Summer of Code 2024

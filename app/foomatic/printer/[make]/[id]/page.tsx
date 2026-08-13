@@ -54,7 +54,7 @@ export async function generateMetadata({ params }: PrinterPageProps): Promise<Me
   const description = printer
     ? `Support information, recommended driver, and ${driverCount} available driver${driverCount === 1 ? "" : "s"} for the ${name} on Linux and Unix via OpenPrinting.`
     : `Printer support information for ${id} from the OpenPrinting database.`
-  const canonical = getSiteUrl(`/foomatic/printer/${make}/${id}/`)
+  const canonical = getSiteUrl(`/foomatic/printer/${make}/${id}`)
 
   return {
     title,

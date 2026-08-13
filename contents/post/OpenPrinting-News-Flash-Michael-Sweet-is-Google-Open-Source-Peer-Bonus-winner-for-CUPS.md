@@ -13,6 +13,6 @@ Yesterday Google has announced the winners of their
 
 and under them is **Michael Sweet** for his exceptional work with his **[CUPS](/cups/)** project.
 
-CUPS solved a lot of problems of the former LPD/LPRng printing platforms and [quickly turned the standard](/history/) for easy printing with Linux, MacOS, and many other Posix-style operating systems.
+CUPS solved a lot of problems of the former LPD/LPRng printing platforms and [quickly turned the standard](/history) for easy printing with Linux, MacOS, and many other Posix-style operating systems.
 
 Congratulations, Mike!!

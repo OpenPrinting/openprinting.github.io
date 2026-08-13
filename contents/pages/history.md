@@ -75,4 +75,4 @@ From then on I did everything to make printing "just work" in non-Mac Unix/Posix
 
 From 2008 on I started organizing the participation of the Linux Foundation in the [Google Summer of Code](http://g.co/gsoc) and got accepted for all but one year until now. Many students worked this way for OpenPrinting and recently we got together a student community to work on development tasks, like our new web site and also on mentoring further GSoC contributors.
 
-[And here is what we have all done so far](/achievements/).
+[And here is what we have all done so far](/achievements).

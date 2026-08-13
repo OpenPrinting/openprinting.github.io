@@ -9,9 +9,9 @@ date: '2020-10-26'
 ---
 ## First year of monthly news posts completed!
 
-It was exactly one year ago, October 2019, when I posted my [first monthly OpenPrinting news](https://openprinting.github.io/OpenPrinting-News-October-2019/) here on [our web site](https://openprinting.github.io/news/)!
+It was exactly one year ago, October 2019, when I posted my [first monthly OpenPrinting news](/OpenPrinting-News-October-2019) here on [our web site](/news)!
 
-Some will tell me now that I already started in September 2019, but the [September 2019 news post](https://openprinting.github.io/OpenPrinting-News-September-2019/) was only a test for the new platform and it was already October when I wrote it as an exact copy of the [original mailing list news post](https://lists.linuxfoundation.org/pipermail/printing-architecture/2019/003733.html).
+Some will tell me now that I already started in September 2019, but the [September 2019 news post](/OpenPrinting-News-September-2019) was only a test for the new platform and it was already October when I wrote it as an exact copy of the [original mailing list news post](https://lists.linuxfoundation.org/pipermail/printing-architecture/2019/003733.html).
 
 ## Google Summer of Code 2020 Mentor Summit
 
@@ -32,7 +32,7 @@ Our OpenPrinting project
 
 is going well. Piyush Goyal has already written a lot and will continue until December 5.
 
-He regularly posts Pull Requests on [our web site GitHub](https://github.com/OpenPrinting/openprinting.github.io) and we have merged them. See his work on [our web site](https://openprinting.github.io/documentation/).
+He regularly posts Pull Requests on [our web site GitHub](https://github.com/OpenPrinting/openprinting.github.io) and we have merged them. See his work on [our web site](/documentation).
 
 He gets currently a lot of input, from me with my [PostScript Printer Application](https://github.com/OpenPrinting/ps-printer-app) as example for a non-Raster and CUPS-driver-retro-fit Printer Application and from Michael Sweet by adding documentation to his [PAPPL project](https://github.com/michaelrsweet/pappl).
 
@@ -48,7 +48,7 @@ We only will move the assignment of the remaining work somewhat. Alexander will 
 ## CUPS Snap
 The [CUPS Snap](https://github.com/OpenPrinting/cups-snap) project is currently still waiting for the [snapd project to add the needed API extensions](https://trello.com/c/9IJToylf/1215-snapd-api-for-checking-client-snaps-whether-they-plug-a-given-interface).
 
-After the [Pull Request](https://github.com/snapcore/snapd/pull/8920) for the implementation of the [interfaces](https://openprinting.github.io/OpenPrinting-News-August-2020/#cups-snap) got merged we are still waiting for the completion of the [pull request](https://github.com/snapcore/snapd/pull/9132) for adding the API functionality so that a Snap can check whether a client Snap plugs the needed interfaces is still in the works.
+After the [Pull Request](https://github.com/snapcore/snapd/pull/8920) for the implementation of the [interfaces](/OpenPrinting-News-August-2020#cups-snap) got merged we are still waiting for the completion of the [pull request](https://github.com/snapcore/snapd/pull/9132) for adding the API functionality so that a Snap can check whether a client Snap plugs the needed interfaces is still in the works.
 
 ## PostScript Printer Application
 After having all needed filter functions and PPD file collection handling implemented in cups-filters and having the [HP PCL Printer Application](https://github.com/michaelrsweet/hp-printer-app) as example I have created a **Printer Application for PostScript printers**.

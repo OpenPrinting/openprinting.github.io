@@ -34,7 +34,7 @@ So now send your Christmas faxes to your loved ones and happy holidays!
 
 ## New Architecture under Windows
 
-[Last month](/OpenPrinting-News-November-2023/) I was citing Michael Tunnell from TuxDigital:
+[Last month](/OpenPrinting-News-November-2023) I was citing Michael Tunnell from TuxDigital:
 
 > There is no such thing like a pain-free experience of printing under Windows ... Linux printing is ridiculously good ...
 
@@ -50,7 +50,7 @@ By the way, I have [participated](https://techcommunity.microsoft.com/t5/securit
 
 They do away with their classic printer drivers because they run with system (highest) privileges, like the print spooler itself and many come from third parties. This makes fixing security vulnerabilities especially challanging, and even worse if there are decade-old drivers installed for which the issuing printer manufacturer has already ceased support.
 
-Microsoft did not present any concept to support non-drierless legacy printers, considering all these printers obsolete. But in reality, at least the ones for which there are drivers under Linux can be continued to be used, thanks to WSL and Printer Applications. Here is [how to do this](/wsl-printer-app/).
+Microsoft did not present any concept to support non-drierless legacy printers, considering all these printers obsolete. But in reality, at least the ones for which there are drivers under Linux can be continued to be used, thanks to WSL and Printer Applications. Here is [how to do this](/wsl-printer-app).
 
 Windows Protected Print can already be tested, in the Insider Preview of Windows 11, as described on [How-To Geek](https://www.howtogeek.com/microsoft-is-revamping-printing-on-windows-11/) and also by [Microsoft itself](https://blogs.windows.com/windows-insider/2023/12/13/announcing-windows-11-insider-preview-build-26016-canary-channel/#:~:text=in%20Build%2026016-,Windows%20Protected%20Print%20Mode,-Windows%20protected%20print).
 
@@ -58,7 +58,7 @@ Note that Print Support Apps (PSA) under Windows are not the same as Printer App
 
 
 ## From the Ubuntu Summit 2023 into YouTube and Podcasts
-The Ubuntu Summit 2023 in Riga was not only successful due to the talks and hallway sessions but also in terms of YouTube videos and podcasts with me. So together with the two recordings from the Engineering Sprint in Riga which I already mentioned [last month](/OpenPrinting-News-November-2023/) you have even more nice alternatives to boring holiday TV programs.
+The Ubuntu Summit 2023 in Riga was not only successful due to the talks and hallway sessions but also in terms of YouTube videos and podcasts with me. So together with the two recordings from the Engineering Sprint in Riga which I already mentioned [last month](/OpenPrinting-News-November-2023) you have even more nice alternatives to boring holiday TV programs.
 
 In less than 2 weeks 4 new videos/shows got released:
 
@@ -78,7 +78,7 @@ This episode is something special in several points: First, being invited to tal
 
 Second, the interview with Mike and me got 1:20 hours long, nearly as a full movie and so this episode is appropriately long and dedicated to the interview!
 
-Third, Monica Ayhens-Madon has bought a little penguin in Riga, a gift for co-host Jill (see [last month](/OpenPrinting-News-November-2023/#ubuntu-summit-2023-in-riga)), and taken photos with it and several important people on the conference, including me ([Mastodon](https://ubuntu.social/@communiteatime@fosstodon.org/111375114801448241)), so I have asked Michael to make my episode the first where Jill has received the penguin and put me into the scene where she presents it. So this episode consists of the "Community Feedback" section where Jill & Till present the penguin and of the interview, nothing more, nothing less.
+Third, Monica Ayhens-Madon has bought a little penguin in Riga, a gift for co-host Jill (see [last month](/OpenPrinting-News-November-2023#ubuntu-summit-2023-in-riga)), and taken photos with it and several important people on the conference, including me ([Mastodon](https://ubuntu.social/@communiteatime@fosstodon.org/111375114801448241)), so I have asked Michael to make my episode the first where Jill has received the penguin and put me into the scene where she presents it. So this episode consists of the "Community Feedback" section where Jill & Till present the penguin and of the interview, nothing more, nothing less.
 
 The Destination Linux team is eager to attend the Ubuntu Summit 2024. I suggested them to produce an episode there.
 
@@ -90,7 +90,7 @@ The production of the Destination Linux episode got scheduled on Sunday, Dec 10,
 
 And if you also want to see many more people doing great things with free software, on the Ubuntu Summit Advent Calendar nearly all the doors are open now, only a few sessions are still missing. Find the recordings of the individual sessions in all rooms on the [Ubuntu Summit 2023 playlist](https://www.youtube.com/playlist?list=PL-qBHd6_LXWZqbxr3542fZs_IMn0gAb2B) on [Ubuntu OnAir](https://www.youtube.com/@UbuntuOnAir/videos).
 
-I have also updated my Ubuntu Summit report from [last month](/OpenPrinting-News-November-2023/#ubuntu-summit-2023-in-riga) with links to all videos and shows which got released.
+I have also updated my Ubuntu Summit report from [last month](/OpenPrinting-News-November-2023#ubuntu-summit-2023-in-riga) with links to all videos and shows which got released.
 
 **Complete [playlist of all sesions](https://www.youtube.com/playlist?list=PL-qBHd6_LXWZqbxr3542fZs_IMn0gAb2B)**
 
@@ -102,9 +102,9 @@ I have also updated my Ubuntu Summit report from [last month](/OpenPrinting-News
 
 **On the [Schedules page](https://fosdem.org/2024/schedule/) follow the links to the schedules of each room, full schedules for each day, in which room is which track, ...**
 
-Of [my 6 proposals](/OpenPrinting-News-November-2023/#fosdem-2024) which I have submitted one is accepted now, 2 are rejected and 3 still pending.
+Of [my 6 proposals](/OpenPrinting-News-November-2023#fosdem-2024) which I have submitted one is accepted now, 2 are rejected and 3 still pending.
 
-The 2 rejected ones are the report about the [Opportunity Open Source conference](/OpenPrinting-News-September-2023/#opportunitiy-open-source-in-the-iit-mandi-india) which I have organized in India, as full-size talk for the Community DevRoom and my [workshop about packaging applications as Snaps (snapping)](/OpenPrinting-News-November-2023/#snap-workshops) in the Distributions DevRoom. There was a really high amount of propoals submitted for these rooms, 89 for Community! And each DevRoom takes place on only one single day.
+The 2 rejected ones are the report about the [Opportunity Open Source conference](/OpenPrinting-News-September-2023#opportunitiy-open-source-in-the-iit-mandi-india) which I have organized in India, as full-size talk for the Community DevRoom and my [workshop about packaging applications as Snaps (snapping)](/OpenPrinting-News-November-2023#snap-workshops) in the Distributions DevRoom. There was a really high amount of propoals submitted for these rooms, 89 for Community! And each DevRoom takes place on only one single day.
 
 My proposal "[Desktop Linux, as easy as a smartphone! Just in a Snap!](https://fosdem.org/2024/schedule/event/fosdem-2024-1860-desktop-linux-as-easy-as-a-smartphone-just-in-a-snap-/)", about Snap, Ubuntu Core, and Ubuntu Core Desktop, in the [Distributions DevRoom](https://fosdem.org/2024/schedule/track/distributions/) got accepted, but only as a short 25-min talk, instead of the originally proposed 55 min. It got scheduled for [Sunday, Feb 4, 13:30 - 13:55](https://fosdem.org/2024/schedule/track/distributions/). Not having gotten the Ubuntu/Canonical booth accepted we have this way at least one representation of Snap and Ubuntu Core Desktop on the conference. I and some colleagues will also demo Ubuntu Core Desktop in the DevRoom and in the hallways.
 

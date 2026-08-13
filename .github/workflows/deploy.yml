@@ -64,10 +64,12 @@ jobs:
             xsltproc \
             python3 \
             python3-pip
+      # Do NOT set `static_site_generator: next` here: it makes configure-pages
+      # write a `next.config.js`, which Next.js prefers over this repo's
+      # `next.config.ts`, so the deployed build silently ignores our config
+      # (#207). Everything it would inject is already in `next.config.ts`.
       - name: Setup Pages
         uses: actions/configure-pages@v5
-        with:
-          static_site_generator: next
       - name: Restore cache
         uses: actions/cache@v4
         with:
@@ -80,6 +82,9 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} build
+      # Blocks the deploy on broken URLs (#207); reads ./out, rebuilds nothing.
+      - name: Verify URL conventions
+        run: ${{ steps.detect-package-manager.outputs.runner }} verify:urls
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

@@ -24,7 +24,7 @@ Such conversations are not recorded, unfortunately, but all the talks on the mai
 
 The descriptions of the two videos on YouTube contain a list of links to the beginnings of each of the talks. The links below are also links to the beginning of the talk in the two day's videos.
 
-Please see also our [News Flash](/OpenPrinting-News-Flash-OpenPrinting-and-Ubuntu-on-the-Linux-App-Summit-2022/) for more info about our talks.
+Please see also our [News Flash](/OpenPrinting-News-Flash-OpenPrinting-and-Ubuntu-on-the-Linux-App-Summit-2022) for more info about our talks.
 
 **Links to the recordings**
 
@@ -91,7 +91,7 @@ I have also posted a proposal for addition of how to use the `cups` interface to
 ## Official Docker image of CUPS and Printer Applications
 On the Linux Application Summit 2022 in Rovereto, Italy, I have, inspired by the critique on slow start-up of desktop application Snaps (Firefox and Chrome in Ubuntu 22.04 especially) and on the fact that there is only one Snap Store, discussed the methods of distribution-independent/sandboxed packaging, mainly with Heather Ellsworth and Robert McQueen.
 
-Especially knowing that from Snap, Flatpak, and AppImage (see also [March](/OpenPrinting-News-March-2022/#flatpak-and-printing) and [April](/OpenPrinting-News-April-2022/#appimage-and-printing) News Posts) only Snap supports packaging system daemons, like CUPS, ipp-usb, and the Printer Applications.
+Especially knowing that from Snap, Flatpak, and AppImage (see also [March](/OpenPrinting-News-March-2022#flatpak-and-printing) and [April](/OpenPrinting-News-April-2022#appimage-and-printing) News Posts) only Snap supports packaging system daemons, like CUPS, ipp-usb, and the Printer Applications.
 
 On systems (and for users/admins) who accept Snaps one can easily get the full printing system right from upstream, OpenPrinting, updated independently of the OS distribution, also after its release, and get support for new printers (and in the future also scanners) in a timely manner.
 
