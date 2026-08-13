@@ -17,11 +17,11 @@ const iconsMap = {
 } as const
 
 const descriptionMap = {
-  "01-printer-application": "Explore how Printer Applications simplify and enhance printing in Linux.",
-  "02-designing-printer-drivers": "Learn the essentials of building reliable and efficient printer drivers.",
-  "03-designing-scanner-drivers": "Guidelines and best practices for creating scanner drivers.",
-  "04-packaging-drivers": "Step-by-step guide to package your drivers and publish to the Snap Store.",
-  "05-User-Manual": "Comprehensive user manual for Printer Applications.",
+  "01-printer-application": "Overview of Printer Applications",
+  "02-designing-printer-drivers": "Creating your first Printer Driver",
+  "03-designing-scanner-drivers": "Scanner driver architecture and guidelines",
+  "04-packaging-drivers": "Packaging and publishing drivers",
+  "05-User-Manual": "Printer Application refernce",
 } as const
 
 export default async function DocumentationPage() {
