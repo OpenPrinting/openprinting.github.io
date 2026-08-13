@@ -1,6 +1,6 @@
 # Foomatic Recommendation Quality — Evolution and Evidence
 
-This document quantifies how the similarity engine's recommendation quality changed across this branch's feature-addition commits. It exists to answer the question a GSoC reviewer will reasonably ask: *"you say you fixed recommendation quality — show me."*
+This document quantifies how the similarity engine's recommendation quality changed across this branch's feature-addition commits, and records the measurements behind each change.
 
 ## Methodology
 

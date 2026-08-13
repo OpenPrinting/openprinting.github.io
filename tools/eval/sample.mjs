@@ -47,7 +47,6 @@ for (const [name, pred] of Object.entries(STRATA)) {
     picked.get(p.id).push(name)
   }
 }
-// manufacturer breadth: one printer from each of 20 evenly-spaced manufacturers
 const mfrs = [...new Set(P.map((p) => p.manufacturer))].sort()
 const mstep = Math.max(1, Math.floor(mfrs.length / 20))
 for (let i = 0, t = 0; i < mfrs.length && t < 20; i += mstep, t++) {

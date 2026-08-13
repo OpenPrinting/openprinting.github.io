@@ -428,16 +428,15 @@ function main(): void {
   fs.mkdirSync(RECOMMENDATIONS_DIR, { recursive: true });
 
   // Each per-printer shard embeds the handful of display fields the UI needs
-  // for its cards. Costs ~0.9 KB per shard, but lets the printer page render
-  // recommendations without also downloading the ~1.5 MB printersMap.json.
+  // for its cards, so the printer page renders recommendations without also
+  // downloading the much larger printersMap.json.
   for (const [printerId, recs] of Object.entries(output.recommendations)) {
     const enriched = recs.map((rec) => {
       const candidate = printerMap.get(rec.id);
 
-      // Status and type defaults mirror split-printers.ts. The number of driver
-      // entries a model accumulates upstream is deliberately not carried here:
-      // it is not a measure of how well the printer is supported, so the cards
-      // must not be in a position to present it as one.
+      // Status and type defaults mirror split-printers.ts. A driver count is
+      // deliberately not carried: the number of entries is not a measure of
+      // support quality, so the cards cannot present it as one.
       return {
         ...rec,
         manufacturer: candidate?.manufacturer,

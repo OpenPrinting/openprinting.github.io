@@ -22,10 +22,10 @@ export const EVIDENCE_TAU = 4
 // which is what removes "recommended because both use a catch-all driver".
 export const MIN_SIMILARITY_SCORE = 0.35
 
-// The feature vector only rewards agreement; it has no way to express that two
-// capabilities actively conflict. A mono printer sharing a driver family with a
-// colour one still scored well, even though it cannot substitute for it. These
-// multiplicative penalties encode hard substitution barriers.
+// The feature vector only rewards agreement and cannot express that two
+// capabilities actively conflict: a mono printer sharing a driver family with a
+// colour one is not a substitute for it. These multiplicative penalties encode
+// hard substitution barriers.
 export const TYPE_CONFLICT_PENALTY = 0.5
 export const COLOR_CONFLICT_PENALTY = 0.6
 export const RESOLUTION_CONFLICT_PENALTY = 0.7
@@ -35,7 +35,6 @@ export function evidenceWeight(overlap: number): number {
   return 1 - Math.exp(-overlap / EVIDENCE_TAU)
 }
 
-// Count dimensions where both vectors carry a non-zero weight.
 export function overlapCount(a: number[], b: number[]): number {
   let n = 0
   for (let i = 0; i < a.length; i++) {
@@ -91,12 +90,9 @@ export function resolutionTier(dpi: number | null | undefined): string | null {
 // compatibility guarantee, so tier wording deliberately avoids implying either.
 //
 // Thresholds sit at the midpoints between the mean scores of the observed
-// evidence bands (<=1 shared feature: 0.393, 2-3: 0.593, 4-6: 0.787,
-// 7+: 0.921), so each tier corresponds to a real difference in supporting
-// evidence rather than to a cosmetic share of the distribution. Measured on
-// the full artifact set: "High confidence" recommendations are 90% 7+-feature
-// matches with zero capability conflicts, while every generic-driver-only
-// pair falls in "Limited evidence".
+// evidence bands, so each tier corresponds to a real difference in supporting
+// evidence rather than to a cosmetic share of the distribution. The measured
+// bands are recorded in docs/foomatic-recommendation-quality.md.
 export const CONFIDENCE_HIGH_THRESHOLD = 0.85
 export const CONFIDENCE_GOOD_THRESHOLD = 0.7
 export const CONFIDENCE_MODERATE_THRESHOLD = 0.5

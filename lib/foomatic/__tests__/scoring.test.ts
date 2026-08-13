@@ -49,9 +49,6 @@ describe("evidenceWeight", () => {
   })
 
   it("keeps a single-signal pair below the score floor even at perfect cosine", () => {
-    // The invariant that removes "recommended because both use a catch-all
-    // driver": cosine can be at most 1, so a one-dimension overlap can never
-    // clear MIN_SIMILARITY_SCORE.
     expect(1.0 * evidenceWeight(1)).toBeLessThan(MIN_SIMILARITY_SCORE)
   })
 
@@ -149,8 +146,8 @@ describe("resolutionTier", () => {
   })
 
   it("never labels a tier with a bare exact figure", () => {
-    // 720 dpi printers were previously labelled "1200 dpi resolution". Tier
-    // labels must always read as ranges, not as a specific capability claim.
+    // Tier labels must always read as ranges, never as a specific capability
+    // claim about either printer.
     for (const dpi of [120, 306, 720, 1440, 5760]) {
       expect(resolutionTier(dpi)).toMatch(/^(up to|over|\d+-)/)
     }
@@ -193,8 +190,6 @@ describe("confidenceTier", () => {
   })
 
   it("keeps a single-signal pair out of every tier above Limited evidence", () => {
-    // evidenceWeight(1) caps a one-dimension overlap at ~0.22 even at perfect
-    // cosine, which is below the Moderate threshold.
     expect(1.0 * evidenceWeight(1)).toBeLessThan(CONFIDENCE_MODERATE_THRESHOLD)
     expect(confidenceTier(1.0 * evidenceWeight(1)).label).toBe("Limited evidence")
   })

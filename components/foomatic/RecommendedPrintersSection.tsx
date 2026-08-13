@@ -56,9 +56,8 @@ function getRecommendations(printerId: string): Promise<Recommendation[]> {
 }
 
 // Tier wording and thresholds live in lib/foomatic/scoring.ts next to the
-// scoring model they interpret. The percentage is labelled "similarity", not
-// "match", because the score is an engineered similarity value — it is not a
-// probability that the printer will work.
+// scoring model they interpret. The percentage is labelled "similarity": the
+// score is not a probability that the printer will work.
 const TONE_CLASSES: Record<ConfidenceTone, string> = {
   high: "text-emerald-700 dark:text-emerald-400",
   good: "text-sky-700 dark:text-sky-400",
@@ -107,10 +106,8 @@ function RecommendationSkeleton() {
   )
 }
 
-// Compact hero teaser so the feature is discoverable without scrolling: shows
-// the top similar printer and links down to the full section. Renders nothing
-// while loading or when the printer has no recommendations — an absent teaser
-// is better than advertising an empty section.
+// Compact hero teaser: the top similar printer plus a link to the full section.
+// Renders nothing while loading or when the printer has no recommendations.
 export function SimilarPrintersTeaser({ printerId }: RecommendedPrintersSectionProps) {
   const [top, setTop] = useState<Recommendation | null>(null)
   const [count, setCount] = useState(0)

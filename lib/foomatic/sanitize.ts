@@ -53,7 +53,6 @@ function registerHooks(): void {
   if (hooksRegistered) return
   hooksRegistered = true
 
-  // Drop every iframe whose src is not the trusted Snapcraft origin.
   DOMPurify.addHook("uponSanitizeElement", (node, data) => {
     if (data.tagName !== "iframe") return
 

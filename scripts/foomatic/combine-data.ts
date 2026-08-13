@@ -126,12 +126,6 @@ function getCommandsets(printer) {
   return Array.from(new Set(sets));
 }
 
-/*
- * Distinct from getCommandsets(), which produces human-readable labels for
- * display (e.g. "PostScript 3"). This produces canonical short tokens
- * (e.g. "POSTSCRIPT") from autodetect data, used as similarity features.
- */
-
 function getPpdOptions(printer) {
   const ppdNode =
     printer.ppdOptions ||

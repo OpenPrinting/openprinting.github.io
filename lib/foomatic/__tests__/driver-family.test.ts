@@ -15,8 +15,6 @@ describe("normalizeDriverFamily", () => {
   })
 
   it("collapses the Ghostscript PCL variants onto one family", () => {
-    // Till Kamppeter's point that a PCL printer accumulates many near-identical
-    // Ghostscript entries: they must not read as four independent signals.
     for (const name of ["ljet4", "ljet4d", "lj4dith", "lj5gray"]) {
       expect(normalizeDriverFamily(name)).toBe("laserjet")
     }
@@ -42,9 +40,6 @@ describe("getRecommendedDriverFamily", () => {
   })
 
   it("resolves an obsolete recommended driver to its declared replacement", () => {
-    // Canon-S200 and HP-DeskJet_400C in the real database: the recommended
-    // driver is gimp-print, which upstream marks obsolete in favour of
-    // gutenprint.
     const printer = {
       recommended_driver: "driver/gimp-print",
       drivers: [
@@ -66,8 +61,8 @@ describe("getRecommendedDriverFamily", () => {
   })
 
   it("contributes no preferred-driver evidence when an obsolete driver names no replacement", () => {
-    // Defensive: every obsolete entry in the current database names a
-    // replacement, but an unreplaced one must not be cited as current evidence.
+    // No obsolete entry in the current database lacks a replacement; this guards
+    // the fallback if that ever changes.
     const printer = {
       recommended_driver: "driver/hpdj",
       drivers: [{ id: "driver/hpdj", name: "hpdj", obsolete: true, replacedBy: null }],
@@ -89,8 +84,8 @@ describe("getRecommendedDriverFamily", () => {
   })
 
   it("falls back to normalizing the id when the driver has no entry in the list", () => {
-    // 579 printers reference a recommended driver whose own XML record is
-    // absent, so obsolescence cannot be determined; the reference still stands.
+    // Some printers reference a recommended driver whose own XML record is
+    // absent, so obsolescence cannot be determined and the reference stands.
     const printer = {
       recommended_driver: "driver/Postscript",
       drivers: [{ id: "driver/other", name: "other", obsolete: false }],
@@ -122,8 +117,6 @@ describe("getSupportedDriverFamilies", () => {
   })
 
   it("excludes a family that is only reachable through an obsolete driver", () => {
-    // HP-2000C in the real database: hpdj is obsolete (replaced by pcl3), yet
-    // it was previously surfaced as "Shared driver family: hpdj".
     const printer = {
       drivers: [
         { id: "driver/hpdj", name: "hpdj", obsolete: true, replacedBy: "pcl3" },
@@ -146,8 +139,8 @@ describe("getSupportedDriverFamilies", () => {
   })
 
   it("does not substitute the replacement driver into the supported set", () => {
-    // foomatic-db records that hpdj is superseded by pcl3, not that pcl3
-    // supports this printer, so pcl3 must not be invented here.
+    // Supersession is not a support claim: the successor must not be invented
+    // for a printer foomatic-db never lists it against.
     const printer = {
       drivers: [{ id: "driver/hpdj", name: "hpdj", obsolete: true, replacedBy: "pcl3" }],
     } as Printer

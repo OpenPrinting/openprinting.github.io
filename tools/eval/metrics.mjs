@@ -79,7 +79,7 @@ for (const [, r] of top3) {
 m.pctGenericDriverOnly = +(genericOnly / top3.length * 100).toFixed(2)
 m.pctFromLargeCluster = +(top3.filter(([pid]) => { const f = recFam(byId.get(pid)); return f && (clusterOf[f] || 0) >= 200 }).length / top3.length * 100).toFixed(2)
 
-// --- confidence/evidence correlation (the key defect) ---
+// --- confidence/evidence correlation ---
 const weak = top3.filter(([, r]) => r.sharedFeatures.length <= 1).map(([, r]) => r.score)
 const strong = top3.filter(([, r]) => r.sharedFeatures.length >= 2).map(([, r]) => r.score)
 m.meanScoreWeakEvidence = +avg(weak).toFixed(4)
@@ -90,7 +90,7 @@ m.confidenceInversion = +(m.meanScoreWeakEvidence - m.meanScoreStrongEvidence).t
   const mx = avg(xs), my = avg(ys)
   let num = 0, dx = 0, dy = 0
   for (let i = 0; i < xs.length; i++) { const a = xs[i] - mx, b = ys[i] - my; num += a * b; dx += a * a; dy += b * b }
-  m.corrEvidenceScore = +(num / Math.sqrt(dx * dy)).toFixed(4) // want strongly positive
+  m.corrEvidenceScore = +(num / Math.sqrt(dx * dy)).toFixed(4) // expected strongly positive
 }
 
 // --- diversity ---
@@ -202,8 +202,7 @@ m.falseClaimBreakdown = falseBy
 // --- obsolete drivers must never be cited as current compatibility evidence ---
 // foomatic-db marks some drivers `<obsolete replace="..."/>`. Those entries are
 // excluded from the similarity features, so no explanation may rest on a family
-// a printer reaches only through an obsolete driver. Regression guard for the
-// "Shared driver family: hpdj" class of claim (417 before the filter landed).
+// a printer reaches only through an obsolete driver.
 const obsoleteOnlyFamilies = new Map()
 for (const p of P) {
   const live = new Set((p.drivers || []).filter((d) => !d.obsolete).map((d) => fam(d.name)))
@@ -230,10 +229,9 @@ m.driverFamilyClaims = driverClaims
 m.claimsCitingObsoleteOnlyFamily = obsoleteClaims
 m.obsoleteClaimExamples = obsoleteExamples
 
-// Driver-list size is reported so the correlation between how many entries a
-// printer accumulates and the score it receives stays visible. It is a measured
-// property of evidence damping, not a support-quality signal, and nothing in the
-// pipeline consumes a driver count.
+// Reported so the relationship between driver-list size and score stays
+// visible. It is a property of evidence damping, not a support-quality signal;
+// nothing in the pipeline consumes a driver count.
 {
   const rows = []
   for (const [pid, recs] of Object.entries(R)) {
@@ -250,9 +248,8 @@ m.obsoleteClaimExamples = obsoleteExamples
 
 console.log(JSON.stringify(m, null, 1))
 
-// Hard invariants. Everything above is measurement; these are the two
-// properties the recommendation UI's honesty depends on, so a violation must
-// fail `yarn foomatic:eval` rather than sit in a report nobody reads.
+// Hard invariants. Everything above is measurement; these two properties the
+// user-facing explanations depend on must fail `yarn foomatic:eval` when broken.
 const INVARIANTS = [
   ["claimsCitingObsoleteOnlyFamily", m.claimsCitingObsoleteOnlyFamily, 0],
   ["falseOrMisleadingClaims", m.falseOrMisleadingClaims, 0],
