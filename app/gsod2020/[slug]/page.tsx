@@ -54,7 +54,7 @@ export default async function GSoD2020IdeaPage({
       <section className="py-10">
         <div className="mx-auto max-w-4xl px-6">
           <Link
-            href="/gsod2020/"
+            href="/gsod2020"
             className="inline-flex items-center gap-2 text-sm font-medium text-blue-600 hover:underline dark:text-blue-400"
           >
             <ArrowLeft className="h-4 w-4" />

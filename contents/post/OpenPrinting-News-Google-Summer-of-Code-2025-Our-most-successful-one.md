@@ -9,22 +9,22 @@ date: '2025-11-20'
 ---
 The [Google Summer of Code 2025](https://summerofcode.withgoogle.com/programs/2025/organizations/the-linux-foundation) has come to its end! And since we started participating back in 2008 this edition was the best one for us, with 11 contributors having delivered amazing work, nobody has failed this time.
 
-What especially helped us were the Opportunity Open Source conferences (OOSC) which we are organizing in India since 2023 ([IIT Mandi](/OpenPrinting-News-September-2023/#opportunitiy-open-source-in-the-iit-mandi-india)) and especially [last year's one in the IIT Kanpur](/OpenPrinting-News-August-2024/#opportunity-open-source-in-iit-kanpur). Mandi helped us already to get 11 contributors for OpenPrinting last year, but last year's OOSC caused even more momentum. We got ~60 inquiries of interested candidates, let 40 write a proposal after passing our selection and onboarding process, and we finally selected 19 proposals to rank and ask slots for from the GSoC organizers.
+What especially helped us were the Opportunity Open Source conferences (OOSC) which we are organizing in India since 2023 ([IIT Mandi](/OpenPrinting-News-September-2023#opportunitiy-open-source-in-the-iit-mandi-india)) and especially [last year's one in the IIT Kanpur](/OpenPrinting-News-August-2024#opportunity-open-source-in-iit-kanpur). Mandi helped us already to get 11 contributors for OpenPrinting last year, but last year's OOSC caused even more momentum. We got ~60 inquiries of interested candidates, let 40 write a proposal after passing our selection and onboarding process, and we finally selected 19 proposals to rank and ask slots for from the GSoC organizers.
 
 Unfortunately, we got only 11 contributor slots, so the 11 highest ranked got our GSoC contributors. This means that after all this effort we did not get more contributors than last year, but we could for the first time select from several candidates for many of our [posted project ideas](https://wiki.linuxfoundation.org/gsoc/google-summer-code-2025-openprinting-projects). And with this we ended up with even more excellent contributors than last year, especially nobody failed in midterm or final evaluations.
 
 They all have done all or at least most of their project work and now they are finishing off some parts or working on their code getting merged upstream.
 
-See also the [details about our selection process](/OpenPrinting-News-Google-Summer-of-Code-2025-Contributors-selected-and-projects-started/#the-selection-process).
+See also the [details about our selection process](/OpenPrinting-News-Google-Summer-of-Code-2025-Contributors-selected-and-projects-started#the-selection-process).
 
-This is the fifth post about this year's Google Summer of Code, after the [presentation of our project ideas](/OpenPrinting-News-Google-Summer-of-Code-2025-Project-Ideas-List-posted/), [the Linux Foundation being accepted as mentoring organization](/OpenPrinting-News-Google-Summer-of-Code-2025-The-Linux-Foundation-is-accepted-as-mentoring-organization/), and the [first reports from the contributors](/OpenPrinting-News-Google-Summer-of-Code-2025-Contributors-selected-and-projects-started/) and the [second reports of most contributors](/OpenPrinting-News-Google-Summer-of-Code-2025-The-amazing-work-is-going-on/).
+This is the fifth post about this year's Google Summer of Code, after the [presentation of our project ideas](/OpenPrinting-News-Google-Summer-of-Code-2025-Project-Ideas-List-posted), [the Linux Foundation being accepted as mentoring organization](/OpenPrinting-News-Google-Summer-of-Code-2025-The-Linux-Foundation-is-accepted-as-mentoring-organization), and the [first reports from the contributors](/OpenPrinting-News-Google-Summer-of-Code-2025-Contributors-selected-and-projects-started) and the [second reports of most contributors](/OpenPrinting-News-Google-Summer-of-Code-2025-The-amazing-work-is-going-on).
 
 In this post I will post new write-ups from the GSoC contributors, links to their official final reports and anything else interesting around their work.
 
 **Thanks a lot to all the contributors who brought the development of printing with FOSS forward, mentors who stepped up voluntarily for selecting the best contributors for their area, introducing and guiding them through their project work, and to the organizers of the Google Summer of Code at Google, especially Stephanie Taylor, for their tireless work on running the program.**
 
 By the way, 17 candidates have already shown their interest to get
-a GSoC contributor for OpenPrinting in 2026. We are already doing the onboarding and give them assignments. So it seems that we are getting more known and especially we were also successful with the [OOSC 3.0](/OpenPrinting-News-Opportunity-Open-Source-3.0-in-the-IIT-Kanpur,-India/) this year.
+a GSoC contributor for OpenPrinting in 2026. We are already doing the onboarding and give them assignments. So it seems that we are getting more known and especially we were also successful with the [OOSC 3.0](/OpenPrinting-News-Opportunity-Open-Source-3.0-in-the-IIT-Kanpur,-India) this year.
 
 **And as usual: Stay updated on Mastodon: [#OpenPrinting](https://ubuntu.social/tags/OpenPrinting) and [@till@ubuntu.social](https://ubuntu.social/@till) and (new) on LinkedIn: [@OpenPrinting](https://www.linkedin.com/company/openprinting/posts/).**
 
@@ -37,7 +37,7 @@ Subscribing/Unsubscribing [instructions](https://subspace.kernel.org/subscribing
 
 
 ## The contributors and their work
-And here are the links to their final reports/work products (with links to their code) and the last write-ups about their work after the [first](/OpenPrinting-News-Google-Summer-of-Code-2025-Contributors-selected-and-projects-started/) and [second](/OpenPrinting-News-Google-Summer-of-Code-2025-The-amazing-work-is-going-on/) news post, of all our contributors.
+And here are the links to their final reports/work products (with links to their code) and the last write-ups about their work after the [first](/OpenPrinting-News-Google-Summer-of-Code-2025-Contributors-selected-and-projects-started) and [second](/OpenPrinting-News-Google-Summer-of-Code-2025-The-amazing-work-is-going-on) news post, of all our contributors.
 
 <BR>
 
@@ -62,7 +62,7 @@ Tarun's feedback of his final evaluation:
 >
 > Since, I will continue to work on this even after GSOC's end. so if the PR not get reviewed before this year's GSOC end, we will still have plenty of time to fix it.
 
-[Tarun had already volunteered](/OpenPrinting-News-June-2024/#kde-print-manager) for [this project](/OpenPrinting-News-April-2024/#kde-print-manager) for some time and is now finishing it as a GSoC project.
+[Tarun had already volunteered](/OpenPrinting-News-June-2024#kde-print-manager) for [this project](/OpenPrinting-News-April-2024#kde-print-manager) for some time and is now finishing it as a GSoC project.
 
 <BR>
 
@@ -81,7 +81,7 @@ Soumyadeep's feedback of his final evaluation:
 
 <BR>
 
-[Soumyadeep](/OpenPrinting-News-August-2024/#soumyadeep-ghosh) has continued presenting his GSoC work in his blog:
+[Soumyadeep](/OpenPrinting-News-August-2024#soumyadeep-ghosh) has continued presenting his GSoC work in his blog:
 - [GSOC: PyCups3 is intelligent?](https://soumyadghosh.github.io/website/interns/gsoc-2025/gsoc-pycups-is-intelligent/)
 - [GSOC: PyCups3 is Abstracting!](https://soumyadghosh.github.io/website/interns/gsoc-2025/gsoc-pycups-is-abstracting/)
 
@@ -273,9 +273,9 @@ Yash's feedback of his final evaluation:
 
 <BR>
 
-If you had read the [last news post about our GSoC progress](/OpenPrinting-News-Google-Summer-of-Code-2025-The-amazing-work-is-going-on/#gtk-print-dialog-modern-dialog-with-built-in-preview-in-main-view-by-yash-kumar-kasaudhan) you are probably wondering that Yash's project has a completely different title now.
+If you had read the [last news post about our GSoC progress](/OpenPrinting-News-Google-Summer-of-Code-2025-The-amazing-work-is-going-on#gtk-print-dialog-modern-dialog-with-built-in-preview-in-main-view-by-yash-kumar-kasaudhan) you are probably wondering that Yash's project has a completely different title now.
 
-Yash was originally selected on his proposal to [modernize the UI of GTK's print dialog](/OpenPrinting-News-Google-Summer-of-Code-2025-Contributors-selected-and-projects-started/#gtk-print-dialog-modern-dialog-with-built-in-preview-in-main-view-by-yash-kumar-kasaudhan), especially adding an embedded preview as we already have in the dialogs of
+Yash was originally selected on his proposal to [modernize the UI of GTK's print dialog](/OpenPrinting-News-Google-Summer-of-Code-2025-Contributors-selected-and-projects-started#gtk-print-dialog-modern-dialog-with-built-in-preview-in-main-view-by-yash-kumar-kasaudhan), especially adding an embedded preview as we already have in the dialogs of
 LibreOffice, Mozilla (Firefox, Thunderbird), and the Chromium Browser.
 
 He also interacted with the upstream developers, starting a thread on

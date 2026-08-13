@@ -17,7 +17,7 @@ Is this solution the perfect solution making sure that every new printer from no
 
 To avoid such problems, the [PWG](http://www.pwg.org/) (Printer Working Group), [creator of the IPP](https://www.pwg.org/ipp/) (Internet Printing Protocol) has created a [self-certification program](https://www.pwg.org/ippeveselfcert/) for their own flavor of driverless IPP printing, [IPP Everywhere](https://www.pwg.org/ipp/everywhere.html), so that manufacturers can certify their printers, and several did.
 
-So we have a [long list](/printers/) of printers, either listed by Apple as supporting AirPrint or certified to support IPP Everywhere, more than 8000 printers!
+So we have a [long list](/printers) of printers, either listed by Apple as supporting AirPrint or certified to support IPP Everywhere, more than 8000 printers!
 
 For the printers listed as only supporting AirPrint and not IPP Everywhere we do not exactly know how Apple tests the compatibility and how Apple's operating systems exactly communicate with the printers. This can easily lead to issues like [this one](https://github.com/OpenPrinting/cups-filters/issues/492) where a printer does perfectly do AirPrint with Apple clients but has problems when the client is running Linux. Changing the way how to poll the printer's capabilities via IPP solves the problem.
 
@@ -101,7 +101,7 @@ Thanks a lot for all this great work!
 
 
 ## Linux App Summit 2023
-Probably you remember the great [Linux App Summit 2022 in Rovereto, Italy](/OpenPrinting-News-Flash-OpenPrinting-and-Ubuntu-on-the-Linux-App-Summit-2022/). We will this year have a [Linux App Summit](https://linuxappsummit.org/) again, this time in Brno in the Czech Republic.
+Probably you remember the great [Linux App Summit 2022 in Rovereto, Italy](/OpenPrinting-News-Flash-OpenPrinting-and-Ubuntu-on-the-Linux-App-Summit-2022). We will this year have a [Linux App Summit](https://linuxappsummit.org/) again, this time in Brno in the Czech Republic.
 
 Brno is home of a Red Hat office and so many of our free software colleagues are located there, especially those on GNOME. And they will be for sure on the LAS, making this year's edition an awesome conference.
 
@@ -137,7 +137,7 @@ For the new component packages of cups-filters we do only a simplified MIR, as t
 
 Here I want to thank Sebastien Bacher for helping me with the preparation of the packages for the MIR requirements, especially the new ones which got introduced after my last MIR several years ago.
 
-Another challenge was that I found an [old package named "libppd"](http://sourceforge.net/project/showfiles.php?group_id=3800&package_id=11729) which was a library providing the PPD support functionality ripped out of libcups to LPD users, via the "gpr" and "ppdfilt" utilities. It stayed unmaintained (and forgotten) for more than 20 years while [all the distros had switched to CUPS](/achievements/#getting-all-linux-distributions-to-use-cups). This package is clashing with the name of the libppd of the new generation of cups-filters.
+Another challenge was that I found an [old package named "libppd"](http://sourceforge.net/project/showfiles.php?group_id=3800&package_id=11729) which was a library providing the PPD support functionality ripped out of libcups to LPD users, via the "gpr" and "ppdfilt" utilities. It stayed unmaintained (and forgotten) for more than 20 years while [all the distros had switched to CUPS](/achievements#getting-all-linux-distributions-to-use-cups). This package is clashing with the name of the libppd of the new generation of cups-filters.
 
 I discussed its removal/renaming with [Debian folks](https://lists.debian.org/debian-printing/2022/12/msg00023.html) and we settled on renaming this into "libppd-legacy" after the Debian Bookworm release. The renaming has already taken place in Debian Experimental now, where all the packages of the New Architecture will go for now until Bookworm is released.
 
@@ -155,7 +155,7 @@ I need to later on add the separate polling of `all` and `media-col-database` al
 
 During packaging of the components in Debian packages I have found and fixed some build system and documentation bugs and also an [API bug](https://github.com/OpenPrinting/libcupsfilters/commit/389d233a) discovered during the CPDB work.
 
-**After that I have [released the second beta](/cups-filters-Second-Generation-Second-Beta-Release/):**
+**After that I have [released the second beta](/cups-filters-Second-Generation-Second-Beta-Release):**
 
 In addition to documentation and build system fixes discovered during the Debian packaging, the following changes have been done:
 

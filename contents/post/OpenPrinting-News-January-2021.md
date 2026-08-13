@@ -12,7 +12,7 @@ The time window for the mentoring organizations to [apply](https://summerofcode.
 
 We are still looking for project ideas to get a good number lined up before applying.
 
-As mentioned [already in October](/OpenPrinting-News-October-2020/#google-summer-of-code-2021) student projects will only be half the time (6 weeks). So this has to be taken into account and larger projects we should consider to run under the Linux Foundation Mentoring Program instead of GSoC.
+As mentioned [already in October](/OpenPrinting-News-October-2020#google-summer-of-code-2021) student projects will only be half the time (6 weeks). So this has to be taken into account and larger projects we should consider to run under the Linux Foundation Mentoring Program instead of GSoC.
 
 ## Linux Foundation Mentorship Program
 Our [IPP Scan LFMP project](https://mentorship.lfx.linuxfoundation.org/project/55cdb4a1-76bd-423a-ab48-3bdf1502a171) has ended, with both Abhik Chakraborty and Rishabh Arya having completed their work successfully and preparing their final reports. Their work of adding IPP Scan as a server to PAPPL is currently available in [Abhik's GitHub repository](https://github.com/Abhik1998/pappl) and Rishabh's earlier work on [sane-airscan](https://github.com/alexpevzner/sane-airscan/) in the [IPP Scan repository of sane-airscan](https://github.com/alexpevzner/sane-airscan-ipp/).

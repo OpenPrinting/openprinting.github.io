@@ -98,7 +98,7 @@ We will
 
 By a **[Call for Proposals](https://events.canonical.com/event/35/abstracts/)** (extended to August 14) we hope to get even more contributions.
 
-And for the attendees getting some real-life experience we are running this year’s OpenPrinting Roadmap Sprint (like our micro-conferences on Linux Plumbers: [2019](/OpenPrinting-Microconference-on-Linux-Plumbers-Conference-2019/), [2020](/OpenPrinting-News-September-2020/#openprinting-microconference-on-linux-plumbers-conference-2020), [2021](/OpenPrinting-News-October-2021/#openprinting-micro-conference-on-the-linux-plumbers-2021), [2022](/OpenPrinting-News-September-2022/#openprinting-micro-conference-on-the-linux-plumbers-2022)) on the conference and attendees can participate in the discussion and planning of the next 12 months in printing and scanning.
+And for the attendees getting some real-life experience we are running this year’s OpenPrinting Roadmap Sprint (like our micro-conferences on Linux Plumbers: [2019](/OpenPrinting-Microconference-on-Linux-Plumbers-Conference-2019), [2020](/OpenPrinting-News-September-2020#openprinting-microconference-on-linux-plumbers-conference-2020), [2021](/OpenPrinting-News-October-2021#openprinting-micro-conference-on-the-linux-plumbers-2021), [2022](/OpenPrinting-News-September-2022#openprinting-micro-conference-on-the-linux-plumbers-2022)) on the conference and attendees can participate in the discussion and planning of the next 12 months in printing and scanning.
 
 We will also live-stream and record everything and allow remote participation.
 
@@ -175,7 +175,7 @@ First, do not rush out to grab Ubuntu 23.10 (Mantic Minotaur) and install it for
 
 I worked together with Sebastien Bacher, leader of the distro squad in the Canonical Desktop Team. He told me what is needed for the installation image inclusion ("seeding") of my Snaps and I told him which Snaps have to get seeded and which Debian packages removed, and finally he switched over and current daily ISOs use the CUPS Snap as their printing system.
 
-The [Snaps](https://snapcraft.io/publisher/openprinting) being all migrated to `core22` (Ubuntu 22.04 LTS) as base distro and all their components updated to the newest upstream versions already [last month](/OpenPrinting-News-June-2023/#snap-updates) I now had to give them version numbers nad release all of them on the "stable" channel in the Snap Store.
+The [Snaps](https://snapcraft.io/publisher/openprinting) being all migrated to `core22` (Ubuntu 22.04 LTS) as base distro and all their components updated to the newest upstream versions already [last month](/OpenPrinting-News-June-2023#snap-updates) I now had to give them version numbers nad release all of them on the "stable" channel in the Snap Store.
 
 CUPS is already versioned, by CUPS' upstream version number plus a package release number, similar to the (classic) packages of Linux distributions. The upstream version number is taken from the metadata of the GIT snapshot of the CUPS upstream code loaded. The correct GIT snapshot is selected via the release tag (`source-tag:` in `snapcraft.yaml`). This method is already a preparation for future automation of [updating the CUPS Snap triggered by a new upstream release of CUPS via GutHub workflow](https://ubuntu.com/blog/improving-snap-maintenance-with-automation).
 

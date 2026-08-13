@@ -12,12 +12,12 @@ export const metadata: Metadata = {
   title: "Sponsors & Supporters | OpenPrinting",
   description:
     "The organizations and supporters who sponsor OpenPrinting, and how to become a sponsor or make a donation.",
-  alternates: { canonical: getSiteUrl("/sponsors/") },
+  alternates: { canonical: getSiteUrl("/sponsors") },
   openGraph: {
     title: "Sponsors & Supporters | OpenPrinting",
     description:
       "The organizations and supporters who sponsor OpenPrinting, and how to become a sponsor or make a donation.",
-    url: getSiteUrl("/sponsors/"),
+    url: getSiteUrl("/sponsors"),
     type: "website",
   },
 }

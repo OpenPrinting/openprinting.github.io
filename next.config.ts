@@ -8,7 +8,9 @@ const nextConfig: NextConfig = {
   output: "export",
   basePath: siteConfig.urls.basePath,
   assetPrefix: siteConfig.urls.basePath ? `${siteConfig.urls.basePath}/` : "",
-  trailingSlash: true,
+  // Canonical URLs carry no trailing slash; `/some-page/` stays reachable
+  // through scripts/generate-trailing-slash-aliases.ts (#207).
+  trailingSlash: false,
   images: { unoptimized: true },
   env: {
     NEXT_PUBLIC_BASE_PATH: siteConfig.urls.basePath,

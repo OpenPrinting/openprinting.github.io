@@ -10,7 +10,7 @@ author: CNihelton
 
 ## Introduction
 
-In the [previous HOWTO](/wsl-printer-app-compile/) we've seen how WSL 2 and Printer Applications can revive older printers which Windows doesn't offer drivers for.
+In the [previous HOWTO](/wsl-printer-app-compile) we've seen how WSL 2 and Printer Applications can revive older printers which Windows doesn't offer drivers for.
 Although effective, it's quite complicated to build the necessary components from source. 
 
 That complexity is really not necessary anymore.
@@ -27,7 +27,7 @@ As before, it’s necessary to point out that the following steps would simply b
 
 ## How to
 
-**Editor's Note:** USB IPD only needs to get installed if the printer gets actually connected by USB. For network-connected (Ethernet/Wi-Fi) printers it is not needed. Depending on your printer model you will perhaps need a different Printer Application ([OpenPrinting](https://snapcraft.io/search?q=OpenPrinting), [LPrint](https://snapcraft.io/lprint), or if you are in doubt, use our [look-up service](/OpenPrinting-News-September-2022/#openprinting-web-server-printer-application-look-up-service-is-now-live)).
+**Editor's Note:** USB IPD only needs to get installed if the printer gets actually connected by USB. For network-connected (Ethernet/Wi-Fi) printers it is not needed. Depending on your printer model you will perhaps need a different Printer Application ([OpenPrinting](https://snapcraft.io/search?q=OpenPrinting), [LPrint](https://snapcraft.io/lprint), or if you are in doubt, use our [look-up service](/OpenPrinting-News-September-2022#openprinting-web-server-printer-application-look-up-service-is-now-live)).
 
 1. Connect the printer to the USB port. Make sure it’s not supported on Windows by checking Settings > Bluetooth & devices > Printers & scanners.
 

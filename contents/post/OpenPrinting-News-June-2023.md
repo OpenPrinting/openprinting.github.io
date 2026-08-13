@@ -9,7 +9,7 @@ excerpt: >-
   cups-filters 2.0rc2, Snap updates, Test the CUPS Snap!
 date: '2023-06-29'
 ---
-Perhaps one or another of you remembers that in [last month's news](/OpenPrinting-News-May-2023/) I have announced that I want to switch Ubuntu 23.10 (Mantic Minotaur) from the CUPS packages in Debian format to the CUPS Snap as its printing environment and correspondingly to Printer Applications instead of classic CUPS printer drivers.
+Perhaps one or another of you remembers that in [last month's news](/OpenPrinting-News-May-2023) I have announced that I want to switch Ubuntu 23.10 (Mantic Minotaur) from the CUPS packages in Debian format to the CUPS Snap as its printing environment and correspondingly to Printer Applications instead of classic CUPS printer drivers.
 
 And this announcement had a high impact, opened a downright can of worms ...
 
@@ -29,7 +29,7 @@ All files needed for that are available in a [GitHub repository](https://github.
 
 We have also progress in many other OpenPrinting projects thanks to our Google Summer of Code contributors, they [tell us what they have done](#google-summer-of-code-2023) since our previous news post. 
 
-And Canonical's security team liked my [GitHub security bug tutorial](/OpenPrinting-News-May-2023/#handling-reported-security-bugs-with-github) from last month. It made it into their [Ubuntu Security podcast](https://ubuntusecuritypodcast.org/episode-197/)! But note, the first, near 20 min of the podcast is a, for many people rather boring, list of all security fixes which got done in that week. The part about our tutorial starts at 19:33 min into the podcast.
+And Canonical's security team liked my [GitHub security bug tutorial](/OpenPrinting-News-May-2023#handling-reported-security-bugs-with-github) from last month. It made it into their [Ubuntu Security podcast](https://ubuntusecuritypodcast.org/episode-197/)! But note, the first, near 20 min of the podcast is a, for many people rather boring, list of all security fixes which got done in that week. The part about our tutorial starts at 19:33 min into the podcast.
 
 
 ## GUADEC 2023 in Riga
@@ -144,7 +144,7 @@ Looong, looong ago ... we had the [release of CUPS 2.4.2](https://github.com/Ope
 
 But finally, we have a new release. One? No, even 4 in quick sequence, as probably during the enthusiasm of releasing again, some glitches got overlooked and in addition, another security bug got reported.
 
-So we are at [CUPS 2.4.6](https://github.com/OpenPrinting/cups/releases/tag/v2.4.6) now, providing us with tons of bug fixes and among them also two security fixes, and both handled with [GitHubs security vulnerability report functionality](/OpenPrinting-News-May-2023/#handling-reported-security-bugs-with-github).
+So we are at [CUPS 2.4.6](https://github.com/OpenPrinting/cups/releases/tag/v2.4.6) now, providing us with tons of bug fixes and among them also two security fixes, and both handled with [GitHubs security vulnerability report functionality](/OpenPrinting-News-May-2023#handling-reported-security-bugs-with-github).
 
 Highlights of release [2.4.3](https://github.com/OpenPrinting/cups/releases/tag/v2.4.3) were my [pull request](https://github.com/OpenPrinting/cups/pull/599) for polling the `media-col-database` IPP attribute separately if needed when doing a `get-printer-attributes` IPP request to get the printer's capabilities, and the fix for security vulnerability [CVE-2023-32324](https://github.com/OpenPrinting/cups/security/advisories/GHSA-cxc6-w2g7-69p7), a possible heap buffer overflow in `_cups_strlcpy()`.
 
@@ -160,19 +160,19 @@ I hope we will be able to return to more healthy bug fix release intervals now.
 
 
 ## Approaching final release of cups-filters 2.0.0
-Good News! All the bugs I mentioned here [last month](/OpenPrinting-News-May-2023/#approaching-final-release-of-cups-filters-200) are fixed now and appropriate Stable Release Updates (SRUs) are released to Ubuntu 23.04 Lunar Lobster.
+Good News! All the bugs I mentioned here [last month](/OpenPrinting-News-May-2023#approaching-final-release-of-cups-filters-200) are fixed now and appropriate Stable Release Updates (SRUs) are released to Ubuntu 23.04 Lunar Lobster.
 
-Also a fix resulting from testing the [fully updated CUPS Snap](#snap-updates) are included, and the fix for [our first security vulnerability report](/cups-filters-Second-Generation-Release-Candidate-2/#first-vulnerability-report).
+Also a fix resulting from testing the [fully updated CUPS Snap](#snap-updates) are included, and the fix for [our first security vulnerability report](/cups-filters-Second-Generation-Release-Candidate-2#first-vulnerability-report).
 
-But I did not yet do the final release and did a [second release candidate](/cups-filters-Second-Generation-Release-Candidate-2/) first, as I have synced the libppd code with the PPD file support code of current CUPS. The PPD support code of CUPS got spun out for starting libppd three years ago and after that there happened many changes not being synced during all this time, and therefore there should be a little more time for testing.
+But I did not yet do the final release and did a [second release candidate](/cups-filters-Second-Generation-Release-Candidate-2) first, as I have synced the libppd code with the PPD file support code of current CUPS. The PPD support code of CUPS got spun out for starting libppd three years ago and after that there happened many changes not being synced during all this time, and therefore there should be a little more time for testing.
 
-Here are some highlights of the work on our [second release candidate](/cups-filters-Second-Generation-Release-Candidate-2/):
+Here are some highlights of the work on our [second release candidate](/cups-filters-Second-Generation-Release-Candidate-2):
 
-- [cups-browsed 100% CPU!](/cups-filters-Second-Generation-Release-Candidate-2/#cups-browsed-100-cpu)
-- [The Unsupported Resolution Attack!!](/cups-filters-Second-Generation-Release-Candidate-2/#the-unsupported-resolution-attack)
-- [All-Snap Ubuntu Desktop](/cups-filters-Second-Generation-Release-Candidate-2/#all-snap-ubuntu-desktop)
-- [libppd sync-up with CUPS](/cups-filters-Second-Generation-Release-Candidate-2/#libppd-sync-up-with-cups)
-- [First Vulnerability Report](/cups-filters-Second-Generation-Release-Candidate-2/#first-vulnerability-report)
+- [cups-browsed 100% CPU!](/cups-filters-Second-Generation-Release-Candidate-2#cups-browsed-100-cpu)
+- [The Unsupported Resolution Attack!!](/cups-filters-Second-Generation-Release-Candidate-2#the-unsupported-resolution-attack)
+- [All-Snap Ubuntu Desktop](/cups-filters-Second-Generation-Release-Candidate-2#all-snap-ubuntu-desktop)
+- [libppd sync-up with CUPS](/cups-filters-Second-Generation-Release-Candidate-2#libppd-sync-up-with-cups)
+- [First Vulnerability Report](/cups-filters-Second-Generation-Release-Candidate-2#first-vulnerability-report)
 
 If nothing severe happens, I will release cups-filters 2.0.0 final in a few weeks, so that perhaps we can celebrate it on the [GUADEC](#guadec-2023-in-riga) ...
 
@@ -334,7 +334,7 @@ to see which jobs are currently in the queue.
 
 Now you have done basic tests of the CUPS Snap, you can try all of CUPS' command line utilities. If you want to try the utilities which are provided by the Snap, call them via `cups.` followed by the command name, like `cups.lpstat -v`. Use these command line utilities also if the "normal" ones fail in some way.
 
-Next step is the desktop. Follow my first call for testing, for the desktop libraries and applications which are already updated for the New Architecture, from my PPA. Simply go to [my call for testing for the GUI changes in the May News](/OpenPrinting-News-May-2023/#test-the-gui-changes-for-the-new-architecture) and follow the instructions there, but do it on your system where you are using the CUPS Snap instead of the standard Debian/Ubuntu CUPS packages.
+Next step is the desktop. Follow my first call for testing, for the desktop libraries and applications which are already updated for the New Architecture, from my PPA. Simply go to [my call for testing for the GUI changes in the May News](/OpenPrinting-News-May-2023#test-the-gui-changes-for-the-new-architecture) and follow the instructions there, but do it on your system where you are using the CUPS Snap instead of the standard Debian/Ubuntu CUPS packages.
 
 ### Ubuntu Core (immutable)
 Another test case is [Ubuntu Core](https://ubuntu.com/core), an immutable distribution for IoT and servers. This one is Snap-only. Any change or application installation can only be done by means of Snaps.

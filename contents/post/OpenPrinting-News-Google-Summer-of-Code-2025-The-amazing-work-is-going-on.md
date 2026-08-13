@@ -9,7 +9,7 @@ excerpt: >-
   taking shape ... And we also have some volunteers!
 date: '2025-08-21'
 ---
-We are well in the middle of our journey now and everybody is doing great. This is the forth post about this year's Google Summer of Code, after the [presentation of our project ideas](/OpenPrinting-News-Google-Summer-of-Code-2025-Project-Ideas-List-posted/), [the Linux Foundation being accepted as mentoring organization](/OpenPrinting-News-Google-Summer-of-Code-2025-The-Linux-Foundation-is-accepted-as-mentoring-organization/), and the [first reports from the contributors](/OpenPrinting-News-Google-Summer-of-Code-2025-Contributors-selected-and-projects-started/) we present now the second reports of most contributors.
+We are well in the middle of our journey now and everybody is doing great. This is the forth post about this year's Google Summer of Code, after the [presentation of our project ideas](/OpenPrinting-News-Google-Summer-of-Code-2025-Project-Ideas-List-posted), [the Linux Foundation being accepted as mentoring organization](/OpenPrinting-News-Google-Summer-of-Code-2025-The-Linux-Foundation-is-accepted-as-mentoring-organization), and the [first reports from the contributors](/OpenPrinting-News-Google-Summer-of-Code-2025-Contributors-selected-and-projects-started) we present now the second reports of most contributors.
 
 In this post I will not only post write-ups of the actual GSoC contributors but also mention some valuable work contributed voluntarily.
 
@@ -58,7 +58,7 @@ He writes:
 
 **Scanning support in PAPPL/Scanner Applications**
 
-**Akarshan Kapoor** had worked on [scanning support in PAPPL](https://www.youtube.com/watch?v=AAeUseU35Cc) (to get [Scanner Applications](/current/#scanner-applications) for sandboxed packaging of scanner drivers) in GSoC [2023](https://dev.to/kappuccino111/sandboxing-scanners-a-leap-into-the-driverless-realm-gsoc-23-report-3eci) and [2024](https://dev.to/kappuccino111/pappl-scan-api-bridging-gsoc-2024-project-report-2hoc) and as he did already 2 GSoC with that he is not eligible as contributor any more. **Kshiitij Sharma** has stepped up as a volunteer to finish the project together with Akarshan.
+**Akarshan Kapoor** had worked on [scanning support in PAPPL](https://www.youtube.com/watch?v=AAeUseU35Cc) (to get [Scanner Applications](/current#scanner-applications) for sandboxed packaging of scanner drivers) in GSoC [2023](https://dev.to/kappuccino111/sandboxing-scanners-a-leap-into-the-driverless-realm-gsoc-23-report-3eci) and [2024](https://dev.to/kappuccino111/pappl-scan-api-bridging-gsoc-2024-project-report-2hoc) and as he did already 2 GSoC with that he is not eligible as contributor any more. **Kshiitij Sharma** has stepped up as a volunteer to finish the project together with Akarshan.
 
 **PDF renderer/displayer based on PDFio**
 
@@ -66,7 +66,7 @@ And **Uddhav Phatak**, contributor in the GSoC 2024, on [Replace QPDF by PDFio a
 
 
 ## The contributors and their work
-And here is the second round of write-ups from our GSoC contributors. The descriptions of the projects you find in [the first round of contributor reports](/OpenPrinting-News-Google-Summer-of-Code-2025-Contributors-selected-and-projects-started/).
+And here is the second round of write-ups from our GSoC contributors. The descriptions of the projects you find in [the first round of contributor reports](/OpenPrinting-News-Google-Summer-of-Code-2025-Contributors-selected-and-projects-started).
 
 ### KDE Print Manager vs. CUPS 3.x, by Tarun Srivastava
 Mentors: **Mike Noe**, **Till Kamppeter**, Nicolas Fella, Zdenek Dohnal
@@ -77,7 +77,7 @@ Mentors: **Mike Noe**, **Till Kamppeter**, Nicolas Fella, Zdenek Dohnal
 >
 > Now, we have to add the unit test for all the previous and newer functionality of printer manager for automated testing before moving ahead with CUPS related changes.
 
-[Tarun had already volunteered](/OpenPrinting-News-June-2024/#kde-print-manager) for [this project](/OpenPrinting-News-April-2024/#kde-print-manager) for some time and is now finishing it as a GSoC project.
+[Tarun had already volunteered](/OpenPrinting-News-June-2024#kde-print-manager) for [this project](/OpenPrinting-News-April-2024#kde-print-manager) for some time and is now finishing it as a GSoC project.
 
 
 ### Porting pyCUPS to CUPS 3.x API and implementing it in system config printer, by Soumyadeep Ghosh

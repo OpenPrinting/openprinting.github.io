@@ -29,7 +29,7 @@ But it is not such a big problem of the BoF not being accepted, we will have our
 
 
 ## GUADEC 2023
-After a great [first GUADEC for me in Mexico last year](/OpenPrinting-News-August-2022/#guadec-2022) I will continue attending GUADECs. This year I do not need to cross the ocean, [GUADEC](https://events.gnome.org/event/101/overview) takes place in [Riga, in Latvia](https://events.gnome.org/event/101/page/168-the-city) on July 26-31, as last year 3 days of talks, 2 days of BoFs and workshops, and 1 day of touristing.
+After a great [first GUADEC for me in Mexico last year](/OpenPrinting-News-August-2022#guadec-2022) I will continue attending GUADECs. This year I do not need to cross the ocean, [GUADEC](https://events.gnome.org/event/101/overview) takes place in [Riga, in Latvia](https://events.gnome.org/event/101/page/168-the-city) on July 26-31, as last year 3 days of talks, 2 days of BoFs and workshops, and 1 day of touristing.
 
 Yesterday the Call for Proposals had its original deadline, but as there were not enough proposals to comfortably fill all the time slots the [**submissions got re-opened**](https://events.gnome.org/event/101/abstracts/), this time without showing any deadline, but [their Tweet](https://twitter.com/guadec/status/1640654976086323200) reveals that the extension is for a week, meaning that the deadline is April 4 now.
 
@@ -47,7 +47,7 @@ Now all our candidates have decided on the project they want to do and are famil
 
 The most enthusiastic of them have already started on their projects weeks ago and worked with me and other mentors, often contributors of the previous years, on investigating of what has to be done and planning how to do it.
 
-Especially Akarshan Kapoor who is doing the scanning support in PAPPL has started off very well with his mentors Rishabh Maheshwari ([Last year's contributor on eSCL support](/OpenPrinting-News-November-2022/#google-summer-of-code-2022)), Deepak Patankar (Mentor on PAPPL scanning also last year), and me.
+Especially Akarshan Kapoor who is doing the scanning support in PAPPL has started off very well with his mentors Rishabh Maheshwari ([Last year's contributor on eSCL support](/OpenPrinting-News-November-2022#google-summer-of-code-2022)), Deepak Patankar (Mentor on PAPPL scanning also last year), and me.
 
 First, he [updated PAPPL's documentation](https://github.com/Kappuccino111/pappl/blob/53708f82a31db2a0be4f9e9a31707b141f8f727c/doc/pappl.html) with the scanning API Bhavna Kosta had added in [GSoC 2021](https://github.com/Bhavna2020/GSoC-2021).
 
@@ -61,7 +61,7 @@ For this news post he writes:
 
 
 ## cups-filters 2.0b4 in Ubuntu 23.04
-As [reported last month](/OpenPrinting-News-February-2023/#the-new-architecture-is-going-into-ubuntu-and-red-hat) all new packeges which are put into the Canonical-supported core part of Ubuntu ("Main") need a build test and an autopkgtest which are run on 6 architectures everytime when a new release of the package itself or any package depending on it gets uploaded.
+As [reported last month](/OpenPrinting-News-February-2023#the-new-architecture-is-going-into-ubuntu-and-red-hat) all new packeges which are put into the Canonical-supported core part of Ubuntu ("Main") need a build test and an autopkgtest which are run on 6 architectures everytime when a new release of the package itself or any package depending on it gets uploaded.
 
 **cups-browsed** was still lacking both tests and the **Common Print Dialog Backends (CPDB)** packages were missing a build test. So I have created appropriate scripts and added them to [cups-browsed](#cups-browsed) and to the three [CPDB](#common-print-dialog-backends) packages. All these tests are run by `make check` called after building the repective package.
 
@@ -85,7 +85,7 @@ The packages for the Common Print dialog Backends, [cpdb-libs](https://bugs.laun
 
 
 ## libcupsfilters and libcups 3.x
-With [libcups 3.0b1](/libcups-3.0b1/) available I have investigated on how well the code of libcupsfilters 2.x is prepared for the new CUPS library, and it seems that we are in a good shape ...
+With [libcups 3.0b1](/libcups-3.0b1) available I have investigated on how well the code of libcupsfilters 2.x is prepared for the new CUPS library, and it seems that we are in a good shape ...
 
 First, Michael Sweet has prepared the migration to the new library very well, by his always excellent documentation, here the [`MIGRATING.md`](https://github.com/OpenPrinting/libcups/blob/master/MIGRATING.md) file in the new library's source package. The file describes everything what changed, which functions and data types got renamed, which got removed, also what the new names are.
 
@@ -137,7 +137,7 @@ With all this libcupsfilters should work perfectly well in the new CUPS 3.x worl
 
 
 ## cups-browsed
-cups-browsed got a [forth beta release](/cups-browsed-Second-Generation-Forth-Beta-Release/) centered in getting test scripts.
+cups-browsed got a [forth beta release](/cups-browsed-Second-Generation-Forth-Beta-Release) centered in getting test scripts.
 
 Here I have created a script which serves both as build test (`make check`) to be run as non-root, with its own CUPS instance, and as CI or autopkgtest running as root with installed packages. It runs emulations of IPP printers to be picked up by cups-browsed to auto-create CUPS queues on them. On these queues a test job is printed and cups-browsed has to dispatch the job to the printer.
 
@@ -159,7 +159,7 @@ There are more issues resulting from a Coverity run by Canonical's security team
 
 
 ## Common Print Dialog Backends
-The [4th beta release towards 2.0.0](/Common-Print-Dialog-Backends-Second-Generation-Forth-Beta-Release/) was all about getting build tests (`make check`) added to fulfill the requirements for getting into Ubuntu Main. The tests of the backends start the backend and also the text-based sample frontend of cpdb-libs to check whether printers appear in the frontend's list and whether one can print on them. The test of the CUPS backend even runs its own instance of cupsd (like the tests of CUPS and cups-browsed also do) to let the backend discover the CUPS queues.
+The [4th beta release towards 2.0.0](/Common-Print-Dialog-Backends-Second-Generation-Forth-Beta-Release) was all about getting build tests (`make check`) added to fulfill the requirements for getting into Ubuntu Main. The tests of the backends start the backend and also the text-based sample frontend of cpdb-libs to check whether printers appear in the frontend's list and whether one can print on them. The test of the CUPS backend even runs its own instance of cupsd (like the tests of CUPS and cups-browsed also do) to let the backend discover the CUPS queues.
 
 In addition, cpdb-libs facilitates creating test scripts by installing its text-based demo frontend as a developer utility, with the name `cpdb-text-frontend` and by allowing to search for backends in an aleternative directory, specified by an environment variable.
 

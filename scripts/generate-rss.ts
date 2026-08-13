@@ -64,12 +64,18 @@ async function generateRss() {
   const items = posts
     .slice(0, MAX_ITEMS)
     .map((post) => {
-      const url = `${SITE_URL}/${post.slug}/`;
+      // Aggregators consume <link> verbatim, so it must be the canonical
+      // slashless URL (#207).
+      const url = `${SITE_URL}/${post.slug}`;
+      // <guid> is the item's identity: it keeps the historical trailing-slash
+      // URL readers already stored, or they re-announce old articles as new.
+      // The alias stubs keep that URL resolvable, so isPermaLink stays true.
+      const guid = `${SITE_URL}/${post.slug}/`;
       const lines = [
         `    <item>`,
         `      <title>${escapeXml(post.title)}</title>`,
         `      <link>${url}</link>`,
-        `      <guid isPermaLink="true">${url}</guid>`,
+        `      <guid isPermaLink="true">${guid}</guid>`,
       ];
       if (post.date) lines.push(`      <pubDate>${toRfc822(post.date)}</pubDate>`);
       if (post.author) lines.push(`      <author>${escapeXml(post.author)}</author>`);

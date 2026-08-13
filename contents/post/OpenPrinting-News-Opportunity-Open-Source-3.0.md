@@ -16,15 +16,15 @@ After two great Opportunity Open Source conferences we go into the third round!
 
 ## IIT Kanpur
 
-With the success we had [last year in the IIT Kanpur](/OpenPrinting-News-August-2024/#opportunity-open-source-in-iit-kanpur), especially also because of the great on-location organization team of the IIT Kanpur (thanks again), and them having offered to us to organize the conference again, we have decided to [do it in Kanpur a second time](https://oosc3ubucon.netlify.app/). Sanskar Yaduka and Shreya Shree, students at the IIT Kanpur are leading the on-location organization, setting up a team of volunteers and looking for local sponsors.
+With the success we had [last year in the IIT Kanpur](/OpenPrinting-News-August-2024#opportunity-open-source-in-iit-kanpur), especially also because of the great on-location organization team of the IIT Kanpur (thanks again), and them having offered to us to organize the conference again, we have decided to [do it in Kanpur a second time](https://oosc3ubucon.netlify.app/). Sanskar Yaduka and Shreya Shree, students at the IIT Kanpur are leading the on-location organization, setting up a team of volunteers and looking for local sponsors.
 
 As in the other years we want to motivate students (and also professors and researchers) to learn about free and open-source software and to join the community of developers and contributors. Not only coding and debugging can be contributed, but also designers, technical authors, evangelists, ... are highly welcome.
 
 ## Ubuntu meets Opportunity Open Source
 
-Last year, we had the Opportunity Open Source one week before the [UbuCon Asia 2024](/OpenPrinting-News-August-2024/#ubucon-asia-2024-in-india) which had taken place in Jaipur, also in India. Having people of the Indian Ubuntu community organizing the event and also others attending it, they decided to reactivate the [Ubuntu Local Community (LoCo) India](https://discourse.ubuntu.com/c/170). Bhavanishankar Ravindra ("Bhavi") and [Soumyadeep Ghosh](/OpenPrinting-News-August-2024/#soumyadeep-ghosh) are currently leading these efforts.
+Last year, we had the Opportunity Open Source one week before the [UbuCon Asia 2024](/OpenPrinting-News-August-2024#ubucon-asia-2024-in-india) which had taken place in Jaipur, also in India. Having people of the Indian Ubuntu community organizing the event and also others attending it, they decided to reactivate the [Ubuntu Local Community (LoCo) India](https://discourse.ubuntu.com/c/170). Bhavanishankar Ravindra ("Bhavi") and [Soumyadeep Ghosh](/OpenPrinting-News-August-2024#soumyadeep-ghosh) are currently leading these efforts.
 
-They also want to have an [UbuCon](https://ubucon.org/) India conference and I suggested to co-locate it with the upcoming Opportunity Open Source, as many UbuCons are co-located ([UbuCon North America on SCaLE](https://ubucon.org/scale), [UbuCon Portugal on Festa do Software Livre](/OpenPrinting-News-October-2024/#festa-do-software-livreubucon-portugal-2024), [UbuCon Europe on OpenSouthCode](https://discourse.ubuntu.com/t/57060), ...), they accepted my suggestion, and we started planning ...
+They also want to have an [UbuCon](https://ubucon.org/) India conference and I suggested to co-locate it with the upcoming Opportunity Open Source, as many UbuCons are co-located ([UbuCon North America on SCaLE](https://ubucon.org/scale), [UbuCon Portugal on Festa do Software Livre](/OpenPrinting-News-October-2024#festa-do-software-livreubucon-portugal-2024), [UbuCon Europe on OpenSouthCode](https://discourse.ubuntu.com/t/57060), ...), they accepted my suggestion, and we started planning ...
 
 Canonical also offered to sponsor a conference in India, Opportunity Open Source or UbuCon India, and now with the co-location both.
 

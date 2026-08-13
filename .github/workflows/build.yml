@@ -78,3 +78,6 @@ jobs:
 
       - name: Build Next.js
         run: ${{ steps.pm.outputs.runner }} build
+
+      - name: Verify URL conventions
+        run: ${{ steps.pm.outputs.runner }} verify:urls

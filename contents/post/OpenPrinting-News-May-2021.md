@@ -44,7 +44,7 @@ With our application for this year’s [Google Season of Docs](https://developer
 ## CUPS Snap
 **[CUPS Snap](https://github.com/OpenPrinting/cups-snap) in the [Snap Store](https://snapcraft.io/cups), Call for testing on the [snapcraft.io forum](https://forum.snapcraft.io/t/call-for-testing-openprintings-cups-snap/) and on the [Ubuntu Discourse](https://discourse.ubuntu.com/t/cups-snap-call-for-testing/)**
 
-As [reported in the April news](/OpenPrinting-News-April-2021/#cups-snap) I have worked out a security concept with the snapd developers to print from user application Snaps without allowing administrative access to CUPS. With this we can let developers upload applications to the Snap Store which automatically connect to the `cups` interface for printing, without the risk that such applications mess with CUPS.
+As [reported in the April news](/OpenPrinting-News-April-2021#cups-snap) I have worked out a security concept with the snapd developers to print from user application Snaps without allowing administrative access to CUPS. With this we can let developers upload applications to the Snap Store which automatically connect to the `cups` interface for printing, without the risk that such applications mess with CUPS.
 
 We have discussed the concept further on the [snapcraft.io forum](https://forum.snapcraft.io/t/handling-of-the-cups-plug-by-snapd-especially-auto-connection/23419/39?u=till.kamppeter) (this post and the following) to work out the details. Now only the finalization in snapd is needed. The final concept is [here](https://forum.snapcraft.io/t/handling-of-the-cups-plug-by-snapd-especially-auto-connection/23419/43?u=till.kamppeter), only the paths for the CUPS socket needed to get adjusted. 
 

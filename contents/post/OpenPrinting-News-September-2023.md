@@ -18,7 +18,7 @@ And what made Richard coming to this idea is the same as what made me promoting 
 
 [Richard´s problem](https://amogh.medium.com/the-story-of-open-source-so-far-bfcb685d85a4) was that back in 1980 at the MIT Artificial Intelligence Laboratory, where he was working, they got a shiny new Xerox 9700 and Xerox denied him access to the source code of the printer's software, for him to make the users get informed about finished jobs, paper jams, ... (note that CUPS came well later) Exactly this he did with the software of the previous printer. See the whole story in ["Free as in Freedom", by Sam Williams, chapter 1](https://www.oreilly.com/openbook/freedom/ch01.html).
 
-[My problem](/history/) was that back in 1998 in the Theoretical Physics department of the University of Bayreuth in Germany, where I did my PhD, they got a shiny new Tektronix Phaser color laser printer and it only came with proprietary software for commercial Unixes and not for Linux. Only by deploying CUPS with its perfect PostScript printer support I solved the problem.
+[My problem](/history) was that back in 1998 in the Theoretical Physics department of the University of Bayreuth in Germany, where I did my PhD, they got a shiny new Tektronix Phaser color laser printer and it only came with proprietary software for commercial Unixes and not for Linux. Only by deploying CUPS with its perfect PostScript printer support I solved the problem.
 
 But my problem had never showed when there had not been Richard's ...
 
@@ -50,7 +50,7 @@ But no worries, [she is at **Thunderbird** now](https://ubuntu.social/@killyourf
 
 Also Monica Ayhens-Madon, especially known as host of the [Ubuntu Community Office Hours](https://www.youtube.com/watch?v=diB3wm4HB1Y) back in 2021, who left Canonical already last year, [is now at Thunderbird](https://ubuntu.social/@communiteatime@fosstodon.org/111144927870000249), at least part-time.
 
-And by the way, I have shown here already, [exactly a year ago](/OpenPrinting-News-September-2022/), a printer which prints on beer foam, in the Guinness Storehouse in Dublin, Ireland, and I have [seen it again in Vienna](https://ubuntu.social/@till/111137094247325237), where I live. It's a [Ripple Maker](https://www.drinkripples.com/), controlled by its touch screen and a web app, most probably not a driverless IPP printer.
+And by the way, I have shown here already, [exactly a year ago](/OpenPrinting-News-September-2022), a printer which prints on beer foam, in the Guinness Storehouse in Dublin, Ireland, and I have [seen it again in Vienna](https://ubuntu.social/@till/111137094247325237), where I live. It's a [Ripple Maker](https://www.drinkripples.com/), controlled by its touch screen and a web app, most probably not a driverless IPP printer.
 
 **Special tip:** You are on **NixOS**? Printing is not enabled by default there. Please follow [these instructions](https://nixos.wiki/wiki/Printing) (Thanks, [Linux Matters](https://linuxmatters.sh/) team for the hint in [episode #13](https://linuxmatters.sh/13/)).
 
@@ -205,7 +205,7 @@ I plan to give a lightning talk about the Opportunity Open Source in Mandi.
 
 
 ## cups-filters Second Generation - Final 2.0.0 Release!
-Now, in the last 3 months, we got only few bug reports, and a security vulnerability in CUPS, in code which got overtaken into libppd, and therefore the vulnerability is also there. To get the security fix into a release and 3 months being a long time after RC2 I am [finally releasing 2.0.0](/cups-filters-Second-Generation-Final-2.0.0-Release/) right now.
+Now, in the last 3 months, we got only few bug reports, and a security vulnerability in CUPS, in code which got overtaken into libppd, and therefore the vulnerability is also there. To get the security fix into a release and 3 months being a long time after RC2 I am [finally releasing 2.0.0](/cups-filters-Second-Generation-Final-2.0.0-Release) right now.
 
 Ubuntu 23.10 will ship with this release.
 
@@ -219,11 +219,11 @@ This is fixed by adding the missing NULL check when, after a backslash was read,
 
 **Miscellaneous fixes**
 
-A few other bugs got reported and fixed since RC2. These fixes are also included. See the lists in the [original announcement](/cups-filters-Second-Generation-Final-2.0.0-Release/).
+A few other bugs got reported and fixed since RC2. These fixes are also included. See the lists in the [original announcement](/cups-filters-Second-Generation-Final-2.0.0-Release).
 
 
 ## PAPPL 1.4.0
-Michael Sweet has released [PAPPL v1.4.0](/pappl-1.4.0/) which is a new feature release.
+Michael Sweet has released [PAPPL v1.4.0](/pappl-1.4.0) which is a new feature release.
 
 Especially it adds the new create-printers operation, as API function and IPP request, to let the Printer Application automatically add queeus for any local printers which are supported by it. This function will also be called automatically the first time the Printer Application is run after its installation, so that just installing a Printer Application is usually all what needs to be done to set up a non-driverless printer.
 
