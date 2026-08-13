@@ -167,6 +167,181 @@ Raising a weight increases how much that attribute pulls two printers together; 
 **Change:** Added a 0.75-weighted one-hot feature across four DPI tiers (≤300, 300–600, 600–1200, >1200).
 **Measured effect:** Saturation dropped from 82.8% → 79.8% — the largest p10 drop of any single addition (0.953 → 0.935), reflecting that resolution tier is a meaningfully independent axis of variation across the dataset.
 
+### Obsolete driver exclusion (2026-08-13)
+
+**Problem:** foomatic-db marks some driver entries `<obsolete replace="..."/>`.
+The printer and driver pages already badge those as obsolete, but the similarity
+features did not filter them, so a dead driver could act as live compatibility
+evidence. Measured on the artifacts before this change: **417** of 34,424
+driver-family claims in displayed recommendations named a family that one side
+reached *only* through an obsolete driver — including `Shared driver family:
+hpdj` as the leading reason on `HP-2000C`, where `hpdj` is obsolete in favour of
+`pcl3`.
+
+**Change:** `getSupportedDriverFamilies()` skips entries with `obsolete === true`,
+and `getRecommendedDriverFamily()` resolves an obsolete recommended driver to the
+successor foomatic-db names in `replacedBy`. Only the explicitly recorded
+replacement is used; none is ever inferred. A replacement is *not* added to the
+supported set, because upstream records that a driver is superseded — not that
+the successor supports this particular printer. No weight, threshold, or
+scoring-formula change accompanies this.
+
+**Measured effect:** Obsolete-only explanation claims **417 → 0** (now a hard
+invariant in `tools/eval/metrics.mjs`). The supported-driver vocabulary shrank
+198 → 150 and the feature count 463 → 415, because 48 families existed only via
+obsolete entries catalogue-wide. Displayed rankings moved for a small minority:
+**157 printers (2.4%)** got a different top recommendation and **271 (4.1%)** a
+different top-3, with a mean displayed-score delta of **+0.0007** (range −0.104
+to +0.27). Aggregate quality held: evidence/score correlation 0.849 → 0.851,
+type contradictions 0% → 0%, colour 0.20% → 0.21%, ≥4× resolution gaps 0.04% →
+0.04%, and the deterministic grading sample's usable share unchanged at 89.7%.
+
+**Known costs, recorded rather than smoothed over:**
+
+- `HP-DeskJet_400C` is the one printer that lost all recommendations. Its only
+  driver entry is the obsolete `gimp-print`, and it has no recorded type, colour,
+  resolution, or command set, so after the filter there is too little live
+  evidence to clear `MIN_SIMILARITY_SCORE`. It previously showed three
+  bottom-tier suggestions whose sole stated reason came from that dead driver; an
+  empty section is the more honest outcome.
+- 39 printers whose top recommendation was a same-manufacturer sibling now show a
+  different vendor there. **35 of those are exact score ties** where only the
+  deterministic id tie-break differs, and **none** is a score decrease — 4 score
+  higher than before. Catalogue-wide the same-manufacturer share of top
+  recommendations moved 47.57% → 47.00%.
+- Individual sibling pairs can still be reordered out of the visible top-3 when
+  their strongest shared signal was the obsolete driver. `Canon-BJC-620` is the
+  clearest case: `Canon-BJC-610` moves from first to fourth. It was **not
+  outranked by better-matching printers** — after the obsolete `bjc610XY.upp`
+  uniprint profile is excluded, `Canon-BJC-610`, `Canon-BJC-4100` and
+  `Canon-BJC-4200` have identical live driver sets (`bjc600` + `omni`) and
+  identical type, colour, resolution and functionality, so all three score
+  **exactly 0.770**. The three-way tie is resolved by `scoreThenIdComparator`'s
+  deterministic ascending-id ordering, under which `Canon-BJC-4100` and
+  `Canon-BJC-4200` sort before `Canon-BJC-610`. What the obsolete profile had
+  supplied was a seventh shared dimension, lifting `evidenceWeight(7) = 0.826`
+  over `evidenceWeight(6) = 0.777`; without it the model genuinely cannot
+  distinguish the three candidates, which is an accurate statement about the live
+  data even though a maintainer would place the BJC-610 first on generation
+  grounds. Ties like this are the norm rather than the exception here: 75% of
+  printers have every retained recommendation tied at one score
+  (`pctAllRetainedTied`), so this fix pushes additional printers into a
+  pre-existing weakness rather than creating a new one.
+- 44 of the 157 changed top recommendations belong to printers with **no**
+  obsolete driver at all. Those moved because IDF is renormalized to mean 1 over
+  the smaller vocabulary, so every supported-driver weight shifts slightly. This
+  is a side effect of the vocabulary shrinking, not of any per-printer edit.
+
+### What excluding obsolete drivers costs
+
+The exclusion is not a strict improvement, and it is worth being precise about
+what it gives up. Measured against the pre-filter artifacts:
+
+| | Families | Median printers covered | Mean | Max |
+| --- | --- | --- | --- | --- |
+| Dropped (reachable only via obsolete entries) | 48 | 2 | 4.9 | 48 |
+| Kept (reachable via a current driver) | 150 | 3 | 79.6 | 3,851 |
+
+The dropped families are narrow, per-model legacy drivers — `cdj670` (29
+printers), `bjc610xy.upp` (7), `stc600x.upp` (4), `drv_z42` (4). Because IDF
+rewards rarity, they were the most discriminative driver evidence available. What
+remains are broad umbrellas: `postscript` (3,851), `gutenprint` (1,635), `pdf`
+(1,578), `hplip` (472). An obsolete legacy driver was often written for one
+model generation, so sharing it was in practice a proxy for **model-generation or
+OEM-rebadge kinship** — information the live umbrella drivers cannot express,
+because they each cover hundreds of unrelated models.
+
+**180** printers lost a narrow family. **137** of those retain another narrow
+family and are unaffected in practice. **43** lost their only narrow family and
+are now ranked purely on umbrella evidence; of those, 21 show a changed top-3 and
+3 lost a same-manufacturer top recommendation. That is 0.65% of the catalogue.
+The affected set is coherent: mid-range Epson Stylus Color/Photo models, HP
+OfficeJet 5xx–7xx and R-series, HP DeskJet 1600C/810C/815C/955C, HP LaserJet
+1010/1012, Lexmark Z42/Z43/X73, Compaq-IJ1200, Canon BJC-6000/6200/S450.
+
+`Compaq-IJ1200` is the clearest loss. Its top three used to be `Lexmark-X73`,
+`Lexmark-Z42` and `Lexmark-Z43`, all sharing the obsolete `drv_z42` — and the
+Compaq IJ1200 is a rebadged Lexmark, so that driver was effectively an
+OEM-identity fingerprint, arguably the most useful kind of match this engine can
+surface. Its top three are now unrelated Epson inkjets sharing only
+`gutenprint` + inkjet + colour + resolution tier. `Epson-Stylus_Color_II`
+similarly lost `Epson-Stylus_Color_IIs`, its own variant, which was linked via
+the obsolete `stc2X.upp`.
+
+None of this argues for treating obsolete drivers as current compatibility
+evidence. A recommendation that says two printers are compatible because they
+share a driver upstream marks `<obsolete replace="..."/>` is telling the reader
+to rely on something foomatic-db says not to use, whatever incidental
+hardware-kinship information that entry also carried. The correct way to recover
+the signal is a dedicated **model-series / OEM-family feature** derived from live
+data — manufacturer plus model-series tokens, and explicit rebadge groupings —
+which would restore the Compaq/Lexmark and Stylus Color II/IIs pairings on
+defensible grounds. That is a new feature dimension requiring its own
+recalibration and is deliberately **out of scope for this change**; it is
+recorded here as the intended follow-up.
+
+Two smaller debits, recorded for completeness: colour-contradiction pairs among
+displayed recommendations moved 41 → 42 (3 new, 2 removed), and pairs reaching
+"Good match" or above on 4 or fewer shared features moved 10.04% → 10.29%,
+because removing dimensions from a target's vector raises its cosine against
+every candidate. `Epson-Stylus_Color_1500` crossed 0.588 → 0.712 without any
+change to its evidence set.
+
+---
+
+## Driver Count Is Not a Support-Quality Signal
+
+Raised in review of the recommendation work: the number of drivers supporting a
+printer must not be read as a measure of support quality. Many entries can
+accumulate for reasons unrelated to how well the printer works — a model that
+speaks PostScript and PCL alongside a proprietary language attracts drivers for
+each; a PCL printer collects the several near-identical Ghostscript built-ins
+plus HPLIP; a proprietary-language printer can attract multiple independent
+reverse-engineering efforts of very different maturity; and some entries are
+marked obsolete outright.
+
+The dataset bears this out. Driver-entry count correlates only 0.24 with the
+Foomatic `functionality` grade. `Generic-GDI_Printer` carries 9 driver entries at
+grade F; `Canon-imageRunner_2800` carries 5 (`lj4dith`, `ljet4`, `ljet4d`,
+`Postscript`, `pxlmono`) at grade D; meanwhile 1,558 printers are grade A on a
+single driver, and 154 are grade A with no driver entry at all. Of the 1,961
+printers with three or more entries, 44.2% have every family in the generic
+PostScript/PCL set. `Kyocera-FS-1000` has 11 entries that reduce to 6 families,
+all of them PostScript or PCL5 paths.
+
+What the pipeline therefore does and does not do:
+
+- **Driver count is never a scoring input.** There is no count dimension in the
+  feature vector, nothing in `lib/foomatic/scoring.ts` reads a driver list
+  length, and no explanation string is derived from one. The recommendation cards
+  do not display a count either.
+- **Shared driver *family* is used as compatibility evidence, and is kept.**
+  `recommended_driver:<family>` (one-hot, weight 3.0 × IDF) and
+  `supported_driver:<family>` (set membership, weight 1.0 × IDF) answer whether
+  two printers can be driven the same way. `normalizeDriverFamily()` folds the
+  naming variants of one family together, so the four Ghostscript LaserJet
+  entries above count once, and IDF downweights ubiquitous families so sharing
+  `postscript` is weak evidence while sharing a rare family is strong.
+- **Obsolete drivers are excluded from current compatibility evidence**, per the
+  timeline entry above.
+- **Foomatic exposes no machine-readable measure of driver maturity or
+  comprehensiveness**, so none is inferred. `obsolete`/`replacedBy` and the
+  `execution` class are the only quality-adjacent fields available; nothing
+  distinguishes a comprehensive, actively maintained driver from a minimal
+  abandoned one. That distinction remains outside what this data supports, and
+  the pipeline does not pretend otherwise.
+
+Note what has *not* been solved. Excluding obsolete entries removes dead evidence
+and dropping the card badge removes a misleading presentation; neither amounts to
+assessing driver quality. Separately, the size of a printer's live driver-family
+set still reaches the score indirectly, because more non-zero dimensions raise
+the shared-dimension count that `evidenceWeight()` rewards: the correlation
+between driver-entry count and mean displayed score is 0.378 (tracked as
+`corrDriverCountScore`), essentially unchanged by the obsolete filter. That
+coupling is a property of evidence damping — a printer with more recorded
+attributes of every kind earns more confidence — and is deliberately left in
+place rather than tuned here.
+
 ---
 
 ## Performance: Per-Printer Data Split (`983f915`, 2026-06-12)
@@ -193,7 +368,9 @@ establishes that:
 - **Explanations are truthful.** Every user-visible claim (drivers, command
   sets, PS/PCL levels, colour, type, resolution tiers) is re-validated against
   `printers.json`: 0 false or misleading claims (baseline: 1,470 false
-  resolution claims).
+  resolution claims). No claim rests on an obsolete driver
+  (`claimsCitingObsoleteOnlyFamily` = 0, down from 417). Both are enforced as
+  hard invariants: `metrics.mjs` exits non-zero if either regresses.
 - **Output is reproducible.** Deterministic tie-breaking; identical inputs
   produce byte-identical artifacts.
 - **Under the documented deterministic rubric** (see `tools/eval/grade.mjs`),

@@ -1,5 +1,6 @@
 // Ranking-quality metrics for the Foomatic recommendation engine.
-// Pure measurement: reads generated artifacts, computes, prints JSON.
+// Reads the generated artifacts, computes, prints JSON, then enforces the hard
+// invariants listed at the bottom of the file (exits non-zero on violation).
 import fs from "fs"
 
 const ROOT = process.cwd()
@@ -11,7 +12,18 @@ const NORM = [[/^Postscript/i, "postscript"], [/^PDF/i, "pdf"], [/^pxlmono/i, "p
   [/^foo2zjs/i, "foo2zjs"], [/^foo2hp/i, "foo2hp"], [/^foo2qpdl/i, "foo2qpdl"], [/^hpijs/i, "hpijs"],
   [/^gutenprint/i, "gutenprint"], [/^gimp-print/i, "gutenprint"], [/^hplip/i, "hplip"], [/^ljet/i, "laserjet"], [/^lj/i, "laserjet"]]
 const fam = (n) => { const s = (n || "").trim().replace(/^driver\//i, ""); for (const [re, f] of NORM) if (re.test(s)) return f; return s.toLowerCase() }
-const recFam = (p) => { const d = (p.recommended_driver || "").trim(); return d ? fam(d) : null }
+// Mirrors lib/foomatic/driver-family.ts deliberately (an independent
+// re-implementation, so a drift between the two shows up as a failed claim):
+// obsolete drivers are not compatibility evidence, and an obsolete recommended
+// driver resolves to the replacement foomatic-db names explicitly.
+const liveFams = (p) => new Set((p.drivers || []).filter((d) => !d.obsolete).map((d) => fam(d.name)))
+const recFam = (p) => {
+  const d = (p.recommended_driver || "").trim()
+  if (!d) return null
+  const entry = (p.drivers || []).find((x) => x.id === d)
+  if (entry && entry.obsolete) return entry.replacedBy ? fam(entry.replacedBy) : null
+  return fam(d)
+}
 const REBADGE = new Set(["Ricoh", "Lanier", "NRG", "Gestetner", "Savin", "Infotec", "Rex-Rotary", "Nashuatec"])
 
 const clusterOf = {}
@@ -148,8 +160,8 @@ const falseBy = {}
 const bump = (k) => { falseBy[k] = (falseBy[k] || 0) + 1; falseClaims++ }
 for (const [pid, r] of top3) {
   const a = byId.get(pid), b = byId.get(r.id)
-  const aFams = new Set((a.drivers || []).map((d) => fam(d.name)))
-  const bFams = new Set((b.drivers || []).map((d) => fam(d.name)))
+  const aFams = liveFams(a)
+  const bFams = liveFams(b)
   const aCmd = new Set(a.commandsetTokens || []), bCmd = new Set(b.commandsetTokens || [])
   for (const f of r.sharedFeatures) {
     claims++
@@ -187,4 +199,72 @@ m.falseOrMisleadingClaims = falseClaims
 m.pctClaimsFalseOrMisleading = +(falseClaims / claims * 100).toFixed(2)
 m.falseClaimBreakdown = falseBy
 
+// --- obsolete drivers must never be cited as current compatibility evidence ---
+// foomatic-db marks some drivers `<obsolete replace="..."/>`. Those entries are
+// excluded from the similarity features, so no explanation may rest on a family
+// a printer reaches only through an obsolete driver. Regression guard for the
+// "Shared driver family: hpdj" class of claim (417 before the filter landed).
+const obsoleteOnlyFamilies = new Map()
+for (const p of P) {
+  const live = new Set((p.drivers || []).filter((d) => !d.obsolete).map((d) => fam(d.name)))
+  const dead = new Set()
+  for (const d of p.drivers || []) {
+    if (d.obsolete && !live.has(fam(d.name))) dead.add(fam(d.name))
+  }
+  obsoleteOnlyFamilies.set(p.id, dead)
+}
+let driverClaims = 0, obsoleteClaims = 0
+const obsoleteExamples = []
+for (const [pid, r] of top3) {
+  for (const f of r.sharedFeatures) {
+    const mm = /^(?:Shared driver family|Preferred Linux driver): (.+)$/.exec(f)
+    if (!mm) continue
+    driverClaims++
+    if (obsoleteOnlyFamilies.get(pid)?.has(mm[1]) || obsoleteOnlyFamilies.get(r.id)?.has(mm[1])) {
+      obsoleteClaims++
+      if (obsoleteExamples.length < 5) obsoleteExamples.push(`${pid} -> ${r.id}: ${f}`)
+    }
+  }
+}
+m.driverFamilyClaims = driverClaims
+m.claimsCitingObsoleteOnlyFamily = obsoleteClaims
+m.obsoleteClaimExamples = obsoleteExamples
+
+// Driver-list size is reported so the correlation between how many entries a
+// printer accumulates and the score it receives stays visible. It is a measured
+// property of evidence damping, not a support-quality signal, and nothing in the
+// pipeline consumes a driver count.
+{
+  const rows = []
+  for (const [pid, recs] of Object.entries(R)) {
+    const p = byId.get(pid)
+    if (!p || !recs.length) continue
+    rows.push([(p.drivers || []).length, avg(recs.slice(0, 3).map((r) => r.score))])
+  }
+  const xs = rows.map((r) => r[0]), ys = rows.map((r) => r[1])
+  const mx = avg(xs), my = avg(ys)
+  let num = 0, dx = 0, dy = 0
+  for (let i = 0; i < xs.length; i++) { const a = xs[i] - mx, b = ys[i] - my; num += a * b; dx += a * a; dy += b * b }
+  m.corrDriverCountScore = +(num / Math.sqrt(dx * dy)).toFixed(4)
+}
+
 console.log(JSON.stringify(m, null, 1))
+
+// Hard invariants. Everything above is measurement; these are the two
+// properties the recommendation UI's honesty depends on, so a violation must
+// fail `yarn foomatic:eval` rather than sit in a report nobody reads.
+const INVARIANTS = [
+  ["claimsCitingObsoleteOnlyFamily", m.claimsCitingObsoleteOnlyFamily, 0],
+  ["falseOrMisleadingClaims", m.falseOrMisleadingClaims, 0],
+]
+let broken = 0
+for (const [name, actual, expected] of INVARIANTS) {
+  if (actual !== expected) {
+    console.error(`INVARIANT FAILED: ${name} = ${actual}, expected ${expected}`)
+    broken++
+  }
+}
+if (broken > 0) {
+  if (m.obsoleteClaimExamples.length) console.error(`examples: ${m.obsoleteClaimExamples.join(" | ")}`)
+  process.exit(1)
+}
