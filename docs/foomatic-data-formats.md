@@ -163,19 +163,20 @@ type RecommendationsForPrinter = Array<{
   score: number
   sharedFeatures: string[]
   // Denormalized from printers.json so the printer page can render the
-  // recommendation cards from this one file alone. Defaults mirror the
-  // printersMap.json projection exactly.
+  // recommendation cards from this one file alone. `status` and `type`
+  // defaults mirror the printersMap.json projection.
   manufacturer?: string
   model?: string
   status: string                     // "Perfect" | "Mostly" | ... | "Unknown"
   type: string                       // "laser" | "inkjet" | "dot-matrix" | "unknown"
-  driverCount: number
 }>
 ```
 
 The detail page only ever needs the current printer's own recommendations, so fetching this file instead of the ~23 MB combined `recommendations.json` is what keeps the printer detail page's initial load small (see commit `perf(recommendations): split recommendation data per printer`).
 
-The denormalized display fields cost roughly 0.9 KB per shard (median 3.3 KB at the current snapshot) but remove a second ~1.5 MB `printersMap.json` fetch that the section previously needed purely to resolve manufacturer/model/status for the three cards it renders — a net reduction from ~1,495 KB to ~3 KB per printer-page visit. They are intentionally *not* added to the combined `recommendations.json`, which stays a compact diagnostic artifact.
+A driver count is deliberately **not** among these fields. `printersMap.json` still carries `driverCount` for the directory listing and search index, but a recommendation card must not be able to render it: the number of driver entries a model accumulates upstream is not a measure of how well it is supported (see [foomatic-recommendation-quality.md](./foomatic-recommendation-quality.md#driver-count-is-not-a-support-quality-signal)).
+
+The denormalized display fields cost roughly 0.8 KB per shard (median 3.3 KB at the current snapshot) but remove a second ~1.5 MB `printersMap.json` fetch that the section previously needed purely to resolve manufacturer/model/status for the three cards it renders — a net reduction from ~1,495 KB to ~3 KB per printer-page visit. They are intentionally *not* added to the combined `recommendations.json`, which stays a compact diagnostic artifact.
 
 ---
 

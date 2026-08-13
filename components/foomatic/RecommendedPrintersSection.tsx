@@ -24,7 +24,6 @@ interface Recommendation {
   model?: string
   status: string
   type: string
-  driverCount: number
 }
 
 interface RecommendedPrintersSectionProps {
@@ -264,11 +263,6 @@ export default function RecommendedPrintersSection({
                         <span className="text-xs text-muted-foreground">Linux support:</span>
                         <FoomaticStatusBadge status={recommendation.status} />
                       </span>
-
-                      <FoomaticBadge className="border-border bg-accent/50 text-muted-foreground">
-                        {recommendation.driverCount} driver
-                        {recommendation.driverCount === 1 ? "" : "s"}
-                      </FoomaticBadge>
 
                       {recommendation.type !== "unknown" ? (
                         <FoomaticBadge className="border-border bg-accent/50 text-muted-foreground">

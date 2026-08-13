@@ -434,15 +434,16 @@ function main(): void {
     const enriched = recs.map((rec) => {
       const candidate = printerMap.get(rec.id);
 
-      // Defaults mirror split-printers.ts's printersMap projection exactly, so
-      // the rendered cards are identical to the previous map-based lookup.
+      // Status and type defaults mirror split-printers.ts. The number of driver
+      // entries a model accumulates upstream is deliberately not carried here:
+      // it is not a measure of how well the printer is supported, so the cards
+      // must not be in a position to present it as one.
       return {
         ...rec,
         manufacturer: candidate?.manufacturer,
         model: candidate?.model,
         status: candidate?.status || "Unknown",
         type: candidate?.type || "unknown",
-        driverCount: candidate?.drivers ? candidate.drivers.length : 0,
       };
     });
 
