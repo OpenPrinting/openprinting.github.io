@@ -2,7 +2,7 @@ import fs from "fs/promises"
 import path from "path"
 import matter from "gray-matter"
 import type { Metadata } from "next"
-import { MarkdownRenderer } from "@/components/markdown-renderer"
+import { ContentWithToc } from "@/components/content-with-toc"
 import { getSiteUrl } from "@/lib/site"
 
 export const dynamic = "force-static"
@@ -75,7 +75,7 @@ export default async function UpcomingTechnologyDetail({
         <h1 className="text-3xl md:text-4xl font-bold mb-8">{title}</h1>
 
         <div className="prose max-w-none">
-          <MarkdownRenderer content={content} showMeta={false} />
+          <ContentWithToc content={content} data={data} showMeta={false} noCard={false} />
         </div>
       </div>
     </main>

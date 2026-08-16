@@ -2,7 +2,7 @@ import fs from "fs/promises"
 import path from "path"
 import matter from "gray-matter"
 import Link from "next/link"
-import { MarkdownRenderer } from "@/components/markdown-renderer"
+import { ContentWithToc } from "@/components/content-with-toc"
 
 const PAGE_MD = path.join(process.cwd(), "contents", "pages", "projects.md")
 const PROJECTS_DIR = path.join(process.cwd(), "contents", "projects")
@@ -42,7 +42,7 @@ export default async function ProjectsPage() {
         </h1>
 
         <div className="prose max-w-none mb-10">
-          <MarkdownRenderer content={content} showMeta={false} />
+          <ContentWithToc content={content} data={data} showMeta={false} noCard={false} />
         </div>
 
         <h2 className="text-2xl font-bold mb-6">Project List</h2>

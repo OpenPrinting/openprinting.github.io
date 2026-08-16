@@ -1,7 +1,7 @@
 import fs from "fs/promises"
 import path from "path"
 import matter from "gray-matter"
-import { MarkdownRenderer } from "@/components/markdown-renderer"
+import { ContentWithToc } from "@/components/content-with-toc"
 
 export const dynamic = "force-static"
 export const dynamicParams = false
@@ -74,7 +74,7 @@ export default async function ProjectDetail({
         </h1>
 
         <div className="prose max-w-none">
-          <MarkdownRenderer content={content} />
+          <ContentWithToc content={content} data={data} showMeta noCard={false} />
         </div>
       </div>
     </main>

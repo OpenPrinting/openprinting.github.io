@@ -2,7 +2,6 @@
 
 import React, { useMemo, MouseEvent } from "react";
 import { toString } from "mdast-util-to-string";
-import { visit } from "unist-util-visit";
 import GithubSlugger from "github-slugger";
 import { unified } from "unified";
 import remarkParse from "remark-parse";
@@ -19,23 +18,126 @@ interface TableOfContentsProps {
   isSticky?: boolean;
 }
 
+interface MdastNode extends Node {
+  value?: string;
+  depth?: number;
+  children?: MdastNode[];
+}
+
+// Matches either a complete <hN ..>...</hN> pair or a lone opening/closing tag
+const HEADING_PAIR_OR_TAG_REGEX =
+  /<h([1-6])\b([^>]*)>([\s\S]*?)<\/h\1>|<(\/?)h([1-6])\b([^>]*)>/gi;
+const ID_ATTR_REGEX = /\bid\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s>]+))/i;
+const TAG_REGEX = /<[^>]+>/g;
+
+function stripTags(html: string): string {
+  return html
+    .replace(TAG_REGEX, "")
+    .replace(/&amp;/g, "&")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;|&apos;/g, "'")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function extractId(attrs: string): string | undefined {
+  const match = ID_ATTR_REGEX.exec(attrs);
+  if (!match) return undefined;
+  const id = (match[1] ?? match[2] ?? match[3] ?? "").trim();
+  return id === "" ? undefined : id;
+}
+
 export function TableOfContents({ content, isSticky = false }: TableOfContentsProps) {
   const toc = useMemo(() => {
     const slugger = new GithubSlugger();
     const tocEntries: TocEntry[] = [];
 
-    const tree = unified().use(remarkParse).parse(content);
+    const tree = unified().use(remarkParse).parse(content) as MdastNode;
 
-    visit(tree, "heading", (node: Node) => {
-      const textContent = toString(node);
-      const heading = node as unknown as { depth?: number };
+    // Raw HTML headings (e.g. <h2 id="introduction">) are mdast "html" nodes,
+    // not "heading" nodes, and inline ones inside lists/paragraphs are split
+    // into separate open-tag / text / close-tag siblings. Track a dangling
+    // opening tag so both forms are captured in document order.
+    let openHeading: { depth: number; id?: string; parts: string[] } | null =
+      null;
 
-      tocEntries.push({
-        value: textContent,
-        url: slugger.slug(textContent),
-        depth: heading.depth ?? 1,
-      });
-    });
+    const flushOpenHeading = () => {
+      if (!openHeading) return;
+      const text = stripTags(openHeading.parts.join(" "));
+      if (text !== "") {
+        tocEntries.push({
+          value: text,
+          url: openHeading.id ?? slugger.slug(text),
+          depth: openHeading.depth,
+        });
+      }
+      openHeading = null;
+    };
+
+    const handleHtml = (html: string) => {
+      HEADING_PAIR_OR_TAG_REGEX.lastIndex = 0;
+      let match: RegExpExecArray | null;
+      while ((match = HEADING_PAIR_OR_TAG_REGEX.exec(html)) !== null) {
+        if (match[1]) {
+          // complete pair
+          flushOpenHeading();
+          const text = stripTags(match[3]);
+          if (text === "") continue;
+          tocEntries.push({
+            value: text,
+            url: extractId(match[2]) ?? slugger.slug(text),
+            depth: Number(match[1]),
+          });
+        } else {
+          const isClosingTag = match[4] === "/";
+          const depth = Number(match[5]);
+          if (isClosingTag) {
+            if (openHeading && openHeading.depth === depth) {
+              flushOpenHeading();
+            }
+          } else {
+            flushOpenHeading();
+            openHeading = { depth, id: extractId(match[6]), parts: [] };
+          }
+        }
+      }
+    };
+
+    const walk = (node: MdastNode) => {
+      if (node.type === "heading") {
+        flushOpenHeading();
+        const text = toString(node);
+        tocEntries.push({
+          value: text,
+          url: slugger.slug(text),
+          depth: node.depth ?? 1,
+        });
+        return;
+      }
+
+      if (node.type === "html") {
+        handleHtml(node.value ?? "");
+        return;
+      }
+
+      if (!node.children) return;
+
+      for (const child of node.children) {
+        if (openHeading && child.type !== "html" && child.type !== "heading") {
+          // text node between a split <hN> ... </hN>
+          const text = toString(child).trim();
+          if (text !== "") openHeading.parts.push(text);
+          continue;
+        }
+        walk(child);
+      }
+
+      flushOpenHeading();
+    };
+
+    walk(tree);
 
     return tocEntries;
   }, [content]);

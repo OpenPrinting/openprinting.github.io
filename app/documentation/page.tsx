@@ -2,7 +2,7 @@ import fs from "fs/promises"
 import path from "path"
 import matter from "gray-matter"
 import Link from "next/link"
-import { MarkdownRenderer } from "@/components/markdown-renderer"
+import { ContentWithToc } from "@/components/content-with-toc"
 
 const PAGE_MD = path.join(process.cwd(), "contents", "pages", "documentation.md")
 const DOCS_DIR = path.join(process.cwd(), "contents", "documentation")
@@ -41,7 +41,7 @@ export default async function DocumentationPage() {
 
         {hasContent && (
           <div className="prose max-w-none mb-10">
-            <MarkdownRenderer content={content} showMeta={false} />
+            <ContentWithToc content={content} data={data} showMeta={false} noCard={false} />
           </div>
         )}
 
