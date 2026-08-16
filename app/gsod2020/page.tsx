@@ -3,7 +3,7 @@ import path from "path"
 import matter from "gray-matter"
 import Link from "next/link"
 import { ArrowRight, Lightbulb } from "lucide-react"
-import { MarkdownRenderer } from "@/components/markdown-renderer"
+import { ContentWithToc } from "@/components/content-with-toc"
 import { GsodHero } from "@/components/gsod-hero"
 
 const MAIN_FILE = path.join(process.cwd(), "contents", "pages", "gsod2020.md")
@@ -58,7 +58,7 @@ export default async function GSoD2020Page() {
       <section className="py-16">
         <div className="mx-auto max-w-4xl px-6">
           <div className="rounded-xl border border-border bg-card p-6 md:p-8">
-            <MarkdownRenderer content={cleanedContent} showMeta={false} noCard={true} />
+            <ContentWithToc content={cleanedContent} data={data} />
           </div>
         </div>
       </section>

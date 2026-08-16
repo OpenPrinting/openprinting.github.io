@@ -4,7 +4,7 @@ import matter from "gray-matter"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { ArrowLeft } from "lucide-react"
-import { MarkdownRenderer } from "@/components/markdown-renderer"
+import { ContentWithToc } from "@/components/content-with-toc"
 import { GsodHero } from "@/components/gsod-hero"
 
 const IDEAS_DIR = path.join(process.cwd(), "contents", "gsod", "gsod2020")
@@ -18,7 +18,7 @@ async function getIdeaBySlug(slug: string) {
     const title =
       typeof data.title === "string" ? data.title : slug.replace(/-/g, " ")
 
-    return { title, content }
+    return { title, content, data }
   } catch {
     return null
   }
@@ -66,7 +66,7 @@ export default async function GSoD2020IdeaPage({
       <section className="py-10">
         <div className="mx-auto max-w-4xl px-6">
           <div className="rounded-xl border border-border bg-card p-6 md:p-8">
-            <MarkdownRenderer content={idea.content} showMeta={false} noCard={true} />
+            <ContentWithToc content={idea.content} data={idea.data} />
           </div>
         </div>
       </section>

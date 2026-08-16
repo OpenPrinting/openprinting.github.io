@@ -1,7 +1,7 @@
 import fs from "fs/promises"
 import path from "path"
 import matter from "gray-matter"
-import { MarkdownRenderer } from "@/components/markdown-renderer"
+import { ContentWithToc } from "@/components/content-with-toc"
 import AuthorCard from "@/components/AuthorCard"
 import { PageHero } from "@/components/page-hero"
 
@@ -14,7 +14,7 @@ const FILE_PATH = path.join(
 
 export default async function WSLPrinterAppPage() {
   const raw = await fs.readFile(FILE_PATH, "utf8")
-  const { data } = matter(raw)
+  const { data, content } = matter(raw)
 
   const title =
     typeof data.title === "string" ? data.title : "Reviving an older printer with Ubuntu WSL and Printer Application Snaps"
@@ -38,7 +38,7 @@ export default async function WSLPrinterAppPage() {
             )}
             
             <div className={author ? "lg:col-span-3" : "lg:col-span-4"}>
-              <MarkdownRenderer content={raw} showMeta={false} noCard={true} />
+              <ContentWithToc content={content} data={data} />
             </div>
           </div>
         </div>

@@ -2,7 +2,7 @@ import fs from "fs/promises"
 import path from "path"
 import matter from "gray-matter"
 import Image from "next/image"
-import { MarkdownRenderer } from "@/components/markdown-renderer"
+import { ContentWithToc } from "@/components/content-with-toc"
 import { getAssetPath } from "@/lib/utils";
 
 const FILE_PATH = path.join(
@@ -65,7 +65,7 @@ export default async function DriverlessPage() {
             </h1>
 
             <div className="prose prose-invert max-w-none">
-              <MarkdownRenderer content={content} showMeta={false} noCard={true} />
+              <ContentWithToc content={content} data={data} />
             </div>
           </div>
         </div>
