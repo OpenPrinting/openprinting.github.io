@@ -1,5 +1,5 @@
 ---
-title: Designing scanner drivers
+title: Scanner driver architecture and guidelines
 toc: true
 toc_sticky: true
 h_range: [1,3]

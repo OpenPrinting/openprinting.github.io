@@ -1,5 +1,5 @@
 ---
-title: Packaging drivers and release them to the Snap Store
+title: Packaging and publishing drivers
 toc: true
 toc_sticky: true
 h_range: [1,3]
