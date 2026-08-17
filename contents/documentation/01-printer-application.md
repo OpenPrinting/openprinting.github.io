@@ -1,5 +1,5 @@
 ---
-title: Overview of the printer applications
+title: Overview of printer applications
 toc: true
 toc_sticky: true
 ---
