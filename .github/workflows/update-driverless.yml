@@ -42,7 +42,16 @@ jobs:
           except Exception as e:
               print(f'::error::driverless.json is not valid JSON ({e}). Aborting.')
               sys.exit(1)
-          count = sum(1 for p in data if p.get('model') != '_dummy_')
+          if not isinstance(data, list):
+              print(f'::error::driverless.json must be a JSON array, got {type(data).__name__}. Aborting.')
+              sys.exit(1)
+          count = 0
+          for p in data:
+              if not isinstance(p, dict) or 'model' not in p:
+                  print(f'::error::driverless.json contains a malformed entry: {p!r}. Aborting.')
+                  sys.exit(1)
+              if p['model'] != '_dummy_':
+                  count += 1
           print(f'Driverless printers: {count}')
           if count < 5000:
               print(f'::error::driverless.json has only {count} printers; expected thousands. Aborting.')
