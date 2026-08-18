@@ -1,5 +1,5 @@
 ---
-title: Printer Applications - A new way to print in Linux
+title: Overview of printer applications
 toc: true
 toc_sticky: true
 ---

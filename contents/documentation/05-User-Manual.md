@@ -1,5 +1,5 @@
 ---
-title: User Manual for Printer Applications
+title: Printer application reference
 toc: true
 toc_sticky: true
 h_range: [1,3]
