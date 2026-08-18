@@ -1,5 +1,5 @@
 ---
-title: Creating Your first printer Driver
+title: Creating your first printer driver
 toc: true
 toc_sticky: true
 h_range: [1,2]
