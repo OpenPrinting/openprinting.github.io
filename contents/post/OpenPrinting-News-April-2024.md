@@ -10,7 +10,7 @@ excerpt: >-
   Manager, CUPS 2.4.8, pycups 2.0.4
 date: '2024-04-30'
 ---
-We had three releases of free software operating systems in the last weeks. Both Ubuntu and Fedora came with their 40th release! [Ubuntu 24.04 LTS](https://www.omgubuntu.co.uk/2024/04/ubuntu-24-04-lts-20-changes-to-look-out-for) (Long Term Support) and Fedora 40. Unfortunately we did not have a [Linux App Summit for a joint release party](/OpenPrinting-News-April-2023/#release-party) in that week. This year the [Linux App Summit](#linux-app-summit-2024) will only take place in October (so one could celebrate 20 years of Ubuntu there).
+We had three releases of free software operating systems in the last weeks. Both Ubuntu and Fedora came with their 40th release! [Ubuntu 24.04 LTS](https://www.omgubuntu.co.uk/2024/04/ubuntu-24-04-lts-20-changes-to-look-out-for) (Long Term Support) and Fedora 40. Unfortunately we did not have a [Linux App Summit for a joint release party](/OpenPrinting-News-April-2023#release-party) in that week. This year the [Linux App Summit](#linux-app-summit-2024) will only take place in October (so one could celebrate 20 years of Ubuntu there).
 
 Printing-wise there is not anything special to tell about in these two releases. In Ubuntu I have taken care that from all components the newest release is included and I have applied some bug fixes, and in Fedora probably the same thing got done.
 
@@ -142,7 +142,7 @@ This means that system-config-printer is also the gold standard for assigning th
 
 For switching distributions into the New Architecture, meaning from CUPS 2.x to CUPS 3.x, the printer setup tool needs to get appropriately adapted, to list IPP print destinations with appropriate configuration options, especially access to their web admin interfaces, and assign Printer Applications to non-driverless printers.
 
-And one needs to be very careful with switching over Ubuntu. The original distro from Canonical is GNOME-based, but there are the flavors, community-maintained distros derived from Ubuntu but with all kinds of different desktops. And the base of all of them is the same, and the printing stack, especially also CUPS is part of the base. So simply taking care of GNOME and then switching over is [failing miserably](/OpenPrinting-News-August-2023/#the-cups-snap-not-in-ubuntu-2310) ...
+And one needs to be very careful with switching over Ubuntu. The original distro from Canonical is GNOME-based, but there are the flavors, community-maintained distros derived from Ubuntu but with all kinds of different desktops. And the base of all of them is the same, and the printing stack, especially also CUPS is part of the base. So simply taking care of GNOME and then switching over is [failing miserably](/OpenPrinting-News-August-2023#the-cups-snap-not-in-ubuntu-2310) ...
 
 One could also think about dropping the concept of printer setup tools altogether as modern, driverless printers are simply there, but it is not very intuitive for a user to have to find a Printer Application and install it to make a non-driverless printer working and that for driverless printers and Printer Applications there are web admin interfaces and how to access them.
 
@@ -180,7 +180,7 @@ Half a year's worth of bug fixes, especially such important things like a race c
 
 Get it [here](https://github.com/OpenPrinting/cups/releases/tag/v2.4.8) and see [all the changes in detail](https://github.com/OpenPrinting/cups/blob/v2.4.8/CHANGES.md#changes-in-cups-v248-2024-04-26).
 
-And the [CUPS Snap](https://snapcraft.io/cups/) is also already the current version, 2.4.8, thanks to [Snap release automation](/OpenPrinting-News-March-2024/#snap-automation-working-well)!
+And the [CUPS Snap](https://snapcraft.io/cups/) is also already the current version, 2.4.8, thanks to [Snap release automation](/OpenPrinting-News-March-2024#snap-automation-working-well)!
 
 ## pycups 2.0.4
 The Python bindings for CUPS also received an update. This time it is all about compatibility with newer Python versions, 3.10 and newer.

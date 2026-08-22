@@ -13,7 +13,7 @@ Now it is official and we do not need to tell any more to any interested contrib
 
 Already near the end of 2024, well before applying as mentoring organization for 2025, even before all of our GSoC 2024 projects have been completed, we have already watched out for contributors for this year, giving them onboarding materials, first assignments, talked about our fields of work with them ...
 
-[A month ago](/OpenPrinting-News-Google-Summer-of-Code-2025-Project-Ideas-List-posted/), before the application window for mentoring organizations opened, we published our [project ideas list](https://wiki.linuxfoundation.org/gsoc/google-summer-code-2025-openprinting-projects).
+[A month ago](/OpenPrinting-News-Google-Summer-of-Code-2025-Project-Ideas-List-posted), before the application window for mentoring organizations opened, we published our [project ideas list](https://wiki.linuxfoundation.org/gsoc/google-summer-code-2025-openprinting-projects).
 
 This brought in another bunch of people contacting us to express that they want to get a GSoC contributor in our organization, some have even brought their own idea.
 

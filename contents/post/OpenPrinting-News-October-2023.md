@@ -11,11 +11,11 @@ date: '2023-10-31'
 ---
 Probably many of you are using a modern driverless multi-function printer and scanner device, and it does not only print but also scan perfectly on your Linux system, or you have your driverless printer connected via USB and it also just works without any device-model-specific driver.
 
-This works especially thanks to **Alexander Pevzner's** excellent voluntary work of creating the IPP-over-USB daemon [ipp-usb](/achievements/#driverless-printers-on-usb---ipp-over-usb) and the SANE backend [sane-airscan](/achievements/#sane-backends-for-driverless-scanning---escl-and-wsd-airscan) for driverless scanning with both the eSCL and the WSD standards.
+This works especially thanks to **Alexander Pevzner's** excellent voluntary work of creating the IPP-over-USB daemon [ipp-usb](/achievements#driverless-printers-on-usb---ipp-over-usb) and the SANE backend [sane-airscan](/achievements#sane-backends-for-driverless-scanning---escl-and-wsd-airscan) for driverless scanning with both the eSCL and the WSD standards.
 
 For a longer time he has been very busy with other things and so he was keeping his OpenPrinting work in "maintenance mode", but now he showed up again and worked on some issues in CUPS and cups-filters.
 
-And he has also written an **amazing article** ([Original](https://habr.com/en/articles/751214/), [Google-translated to English](https://habr-com.translate.goog/en/articles/751214/?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en&_x_tr_pto=wapp&_x_tr_hist=true)) about his work, how he got into it, and especially praising me for my cooperation with him. And thanks a lot to Anton Gladky, without his hint on the [DebConf2023](/OpenPrinting-News-September-2023/#debconf-2023-in-kochi-india) I had never got note of it.
+And he has also written an **amazing article** ([Original](https://habr.com/en/articles/751214/), [Google-translated to English](https://habr-com.translate.goog/en/articles/751214/?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en&_x_tr_pto=wapp&_x_tr_hist=true)) about his work, how he got into it, and especially praising me for my cooperation with him. And thanks a lot to Anton Gladky, without his hint on the [DebConf2023](/OpenPrinting-News-September-2023#debconf-2023-in-kochi-india) I had never got note of it.
 
 Some days ago, Alan Pope ("[Popey](https://ubuntu.social/@popey)"), a former colleague of mine at Canonical, and owner of the [ubuntu.social](https://ubuntu.social/) instance of Mastodon, posted on Mastodon [asking for help which printer to buy](https://ubuntu.social/@popey/111319371893037213). I read the busy thread and answered several times, telling about OpenPrinting's list of driverless printers, confirming that the Xerox somebody else suggested is actually on the list, warning about (mainly HP and Canon) printers which stop scanning when they run out of ink/toner, ...
 
@@ -33,7 +33,7 @@ So let us now start with what we did at OpenPrinting in October ...
 ## Ubuntu Summit 2023 in Riga
 The [Summit](https://events.canonical.com/event/31/) is coming close, I am already in Riga since yesterday and today at 2pm EET (CET) it will actually start. A lot of [exciting stuff](https://events.canonical.com/event/31/ngtimetable/) is waiting there in 5 rooms for 2.5 days. And there will be also a surprise!
 
-The best of all is that one will meet each other again, like [last year on the Ubuntu Summit 2022 in Prague](/OpenPrinting-News-December-2022/#ubuntu-summit---videos-pictures-blogs-podcasts-) in these 3.5 days (many arrived early, to enjoy Riga, get rid of jet lag, have a margin for flight delays, attending the Canonical-internal Sprint before the Summit ...).
+The best of all is that one will meet each other again, like [last year on the Ubuntu Summit 2022 in Prague](/OpenPrinting-News-December-2022#ubuntu-summit---videos-pictures-blogs-podcasts-) in these 3.5 days (many arrived early, to enjoy Riga, get rid of jet lag, have a margin for flight delays, attending the Canonical-internal Sprint before the Summit ...).
 
 And on the conference itself I will give my third Snap workshop! It is
 
@@ -128,7 +128,7 @@ Next month I will post an overview with links to all the final reports.
 
 And I was in Sunnyvale at Google on the [Mentor Summit](https://sites.google.com/view/gsoc2023mentorsummit/) meeting my fellow mentors again, especially also Deepak Patankar, who was lucky to get a spot through the waitlist. The event was smaller than the 2018 edition which has taken place in the same location, as each mentoring organization got only one guaranteed delegate spot and not two. But nevertheless it was still fun.
 
-Especially I have given a 3-min (!) lightning talk about the participation of the Linux Foundation and the [Opportunity Open Source in the IIT Mandi](/OpenPrinting-News-September-2023/#opportunitiy-open-source-in-the-iit-mandi-india). It was in [one of two sessions](shttps://sites.google.com/view/gsoc2023mentorsummit/schedule/lightning-talks-speaker-order) where every mentoring organization could give a brief presentation about something interesting or important, usually success stories about exceptional contributors. So mine was somehow different, but in some form also a success story of a contributor, of Akarshan doing the excellent local part of the organization of the event ...
+Especially I have given a 3-min (!) lightning talk about the participation of the Linux Foundation and the [Opportunity Open Source in the IIT Mandi](/OpenPrinting-News-September-2023#opportunitiy-open-source-in-the-iit-mandi-india). It was in [one of two sessions](shttps://sites.google.com/view/gsoc2023mentorsummit/schedule/lightning-talks-speaker-order) where every mentoring organization could give a brief presentation about something interesting or important, usually success stories about exceptional contributors. So mine was somehow different, but in some form also a success story of a contributor, of Akarshan doing the excellent local part of the organization of the event ...
 
 And even quicker was the self-presentation of each of the 175 attendees. We only could use 4 words! I used OpenPrinting - Snap - Ubuntu - Community.
 
@@ -138,7 +138,7 @@ In addition, I departed to the US two days earlier, to not miss the event if fli
 
 
 ## CPDB CUPS backend Snap
-To complete the printing stack in the all-Snap experience of [Ubuntu Core Desktop](https://discourse.ubuntu.com/t/ubuntu-core-desktop-deep-dive/) we still need one more Snap, the one of the [CUPS backend](https://github.com/OpenPrinting/cpdb-backend-cups/) for the [Common Print Dialog Backends (CPDB)](https://openprinting.github.io/achievements/#common-print-dialog-backends).
+To complete the printing stack in the all-Snap experience of [Ubuntu Core Desktop](https://discourse.ubuntu.com/t/ubuntu-core-desktop-deep-dive/) we still need one more Snap, the one of the [CUPS backend](https://github.com/OpenPrinting/cpdb-backend-cups/) for the [Common Print Dialog Backends (CPDB)](/achievements#common-print-dialog-backends).
 
 This is needed as all the application's print dialogs also need to get switched over to the New Architecture of not having PPD files any more, but instead, IPP print destinations. And exactly this we have implemented in the CPDB backend for CUPS, and now making the dialogs using CPDB we will make them not only working with the upcoming CUPS 3.x and with the CUPS Snap, but also assure that they stay working with further changes in CUPS and also being open for new print services, like for example cloud services.
 
@@ -157,7 +157,7 @@ Thanks a lot, Biswadeep, for all your great work on this!
 ## libcups3 support
 Michael Sweet is not only deep into the development of [libcups3](https://github.com/OpenPrinting/libcups), the CUPS library of the new CUPS 3.x, but he is also already switching PAPPL to it. The current stable release 1.4.2 can be built with either libcups2 or libcups3, the library being autodetected by the `./configure` script, and the master branch in the GIT repository which is approaching version 2.0 is even libcups3-only.
 
-So Michael seems to be eager to switch us into the [New Generation](/current/#the-new-architecture-for-printing-and-scanning) of all-IPP, PPD-less printing as soon as possible and probably also considers Printer Applications as a thing of the New Generation CUPS 3.x world.
+So Michael seems to be eager to switch us into the [New Generation](/current#the-new-architecture-for-printing-and-scanning) of all-IPP, PPD-less printing as soon as possible and probably also considers Printer Applications as a thing of the New Generation CUPS 3.x world.
 
 Akarshan Kapoor has [added scanning support to PAPPL](https://dev.to/kappuccino111/sandboxing-scanners-a-leap-into-the-driverless-realm-gsoc-23-report-3eci) during this year's GSoC and posted a [Pull Request](https://github.com/michaelrsweet/pappl/pull/249) for its inclusion. As it is a significant new feature it will most probably not be accepted into the 1.4.x series but only into 2.x which would require that PAPPL-based Scanner Applications will háve to use libcups3.
 

@@ -18,7 +18,7 @@ Foomatic consists of three packages:
 	Foomatic database extension consisting of manufacturer-supplied PPD files released under non-free licenses which restricts them in how they can get redistributed. 
 
 ### Project Links
-* <a href="/downloads/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+* <a href="/downloads" itemprop="sameAs" rel="nofollow noopener noreferrer">
 	<i class="fas fa-fw fa-link" aria-hidden="true"></i>
 	Downloads
 	</a>

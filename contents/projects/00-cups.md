@@ -9,7 +9,7 @@ development of CUPS to further improve printing.
 
 ### Project Links
 
-* <a href="https://openprinting.github.io/cups/" itemprop="sameAs" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-home" aria-hidden="true"></i>Home Page</a>
+* <a href="/cups/" itemprop="sameAs" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-home" aria-hidden="true"></i>Home Page</a>
 
 * <a href="https://github.com/OpenPrinting/cups" itemprop="sameAs" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i>GitHub</a>
 

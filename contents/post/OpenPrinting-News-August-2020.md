@@ -10,25 +10,25 @@ date: '2020-08-13'
 ## 20 Years of working on printing with free software!
 This month I have my 20th work anniversary of working with printing under Linux and free software. In August 2000 I have started at MandrakeSoft in Paris (later Mandriva) to switch the first Linux distribution from LPD/LPRng to CUPS.
 
-See [how all began](https://openprinting.github.io/How-did-this-all-begin/).
+See [how all began](/How-did-this-all-begin).
 
 
 ## OpenPrinting Microconference on Linux Plumbers Conference 2020
 **Update:** [Recording on YouTube](https://youtu.be/MPGh9FUW4as)
 
-As already back in [2019](https://openprinting.github.io/OpenPrinting-Microconference-on-Linux-Plumbers-Conference-2019/) we are holding a Microconference on the [Linux Plumbers 2020](https://www.linuxplumbersconf.org/), this year in ...
+As already back in [2019](/OpenPrinting-Microconference-on-Linux-Plumbers-Conference-2019) we are holding a Microconference on the [Linux Plumbers 2020](https://www.linuxplumbersconf.org/), this year in ...
 
 ... the wider Internet!! Yes, due to COVID-19 it is all virtual this time, no travelling, no 12 hours with a mask in an airplane full of people. But also no nice sights and delicious restaurants, not tourist-guiding my co-workers with the help of my knowledge of the Portuguese language through a nice city.
 
 But it has also one big advantage: It is much easier to get the desired speakers, as one does not need to get their travel funded. So we will have Michael Sweet, Ira McDonald, Aveek Basu, Alexander Pevzner, and Rithvik Patibandla on our virtual stage, and me naturally, too.
 
-We will talk about the following [subjects](https://openprinting.github.io/upcoming-technologies/):
+We will talk about the following [subjects](/upcoming-technologies):
 
-- [Printer Applications - A new way to print in Linux](https://openprinting.github.io/upcoming-technologies/01-printer-application/)
-- [IPP scan (or virtual MF device) server (Scanner Application)](https://openprinting.github.io/upcoming-technologies/02-ipp-scan/)
-- [3D Printing](https://openprinting.github.io/upcoming-technologies/03-3d-printing/)
-- [IPP Fax Out - A new reality](https://openprinting.github.io/upcoming-technologies/04-ipp-fax/)
-- [Designing and Packaging Printer and Scanner Drivers](https://openprinting.github.io/upcoming-technologies/05-designing-packaging-drivers/)
+- [Printer Applications - A new way to print in Linux](/upcoming-technologies/01-printer-application)
+- [IPP scan (or virtual MF device) server (Scanner Application)](/upcoming-technologies/02-ipp-scan)
+- [3D Printing](/upcoming-technologies/03-3d-printing)
+- [IPP Fax Out - A new reality](/upcoming-technologies/04-ipp-fax)
+- [Designing and Packaging Printer and Scanner Drivers](/upcoming-technologies/05-designing-packaging-drivers)
 
 The conference takes place from **Monday, August 24 to Friday, August 28, every day from 2pm - 6pm UTC**. Our day will be the **Friday, August 28**, with our microconference to span all the 4 hours. Everyone is invited to visit us.
 
@@ -210,8 +210,8 @@ cups-filters 2.0.0 should contain the following features:
 - Filter function to chain filters
 - Wrappers for the filters to allow their use from CUPS
 - IPP handling functions, mainly to be used for filter functions
-- [libppd](https://openprinting.github.io/OpenPrinting-News-July-2020/#cups-filters) for retro-fitting classic drivers and [manufacturer-supplied PPDs for PostScript printers](https://lists.linuxfoundation.org/pipermail/printing-architecture/2020/003846.html) into Printer Applications
-- [pclmtoraster](https://openprinting.github.io/OpenPrinting-News-July-2020/#cups-filters) filter function to convert PDF files from scanners into PWG/CUPS/Apple Raster without loss of image quality
+- [libppd](/OpenPrinting-News-July-2020#cups-filters) for retro-fitting classic drivers and [manufacturer-supplied PPDs for PostScript printers](https://lists.linuxfoundation.org/pipermail/printing-architecture/2020/003846.html) into Printer Applications
+- [pclmtoraster](/OpenPrinting-News-July-2020#cups-filters) filter function to convert PDF files from scanners into PWG/CUPS/Apple Raster without loss of image quality
 - cups-browsed with multi-threading to better scale with larger amounts of printers in the network
 - Options for the `./configure` script for partial builds: No cups-browsed, no libppd/PPD support, no libqpdf, raster-only printing/scanning, ... to allow Snaps build only the part of cups-filters which they actually need
 

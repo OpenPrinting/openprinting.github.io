@@ -91,7 +91,7 @@ Flatpaked desktop applications communicate with the host system/the outside worl
 
 In contrary to Snap's interfaces the Portal is not an AppArmor permission to access a certain part of the host system (or another Snap) or a mount of certain parts of the host's (or another Snap's) file system, but instead, it is a D-Bus API which provides **common GUI dialogs** for common tasks (choose file, save file, **print**, ...), where the dialog comes from the desktop environment (GNOME or KDE) and so is the one of the desktop environment, a *common* dialog and is de-coupled from the user application via the D-Bus interface. So when using the GNOME desktop and printing from a flatpaked KDE app we should see GNOME's print dialog.
 
-See more details in my "[Flatpak and Printing](/OpenPrinting-News-March-2022/#flatpak-and-printing)" article.
+See more details in my "[Flatpak and Printing](/OpenPrinting-News-March-2022#flatpak-and-printing)" article.
 
 
 ## Grand Unified Ghostscript: CUPS support, third-party built-in drivers ...
@@ -199,11 +199,11 @@ In September 2020 Michael teamed up with us to [fork](https://github.com/OpenPri
 
 As Apple did not resume the upstream work on CUPS in the following months, we have made OpenPrinting now the official upstream home for CUPS. We now continue developing CUPS, independent of Apple. So we can add features and lead CUPS into the New Architecture without PPD files and with Printer Applications.
 
-CUPS has a [new home page](https://openprinting.github.io/cups/) now and what was formerly our fork is now the [official CUPS repository](https://github.com/OpenPrinting/cups/). We started releasing the 2.4.x series end-2021, now without "opX" suffix of forked CUPS versions. Also all documentation files which come with it are updated to point to the OpenPrinting resources. Mailing list for development discussions is our [printing-architecture](https://lists.linuxfoundation.org/mailman/listinfo/printing-architecture) list.
+CUPS has a [new home page](/cups/) now and what was formerly our fork is now the [official CUPS repository](https://github.com/OpenPrinting/cups/). We started releasing the 2.4.x series end-2021, now without "opX" suffix of forked CUPS versions. Also all documentation files which come with it are updated to point to the OpenPrinting resources. Mailing list for development discussions is our [printing-architecture](https://lists.linuxfoundation.org/mailman/listinfo/printing-architecture) list.
 
 So today Apple CUPS is the version of CUPS that is provided with macOS® and iOS® while OpenPrinting CUPS is the version of CUPS being further developed by OpenPrinting for all operating systems.
 
-This way we could establish a [roadmap](/OpenPrinting-News-October-2021/#cups) for upcoming CUPS releases, especially in the end of 2023 releasing CUPS 3.x with the NEW Architecture of handling printers IPP-only without PPDs and classic drivers. Michael has presented development plans on [Linux Plumbers 2021](/OpenPrinting-News-October-2021/#openprinting-micro-conference-on-the-linux-plumbers-2021) and the [OpenPrinting Summt/PWG Meeting 2022](/OpenPrinting-News-June-2022/#openprinting-summitpwg-meeting).
+This way we could establish a [roadmap](/OpenPrinting-News-October-2021#cups) for upcoming CUPS releases, especially in the end of 2023 releasing CUPS 3.x with the NEW Architecture of handling printers IPP-only without PPDs and classic drivers. Michael has presented development plans on [Linux Plumbers 2021](/OpenPrinting-News-October-2021#openprinting-micro-conference-on-the-linux-plumbers-2021) and the [OpenPrinting Summt/PWG Meeting 2022](/OpenPrinting-News-June-2022#openprinting-summitpwg-meeting).
 
 
 ## The CUPS Snap
@@ -215,7 +215,7 @@ Snap has also a rigorous security system, encapsulating the application's file s
 
 My work on the CUPS Snap got motivated by Canonical's plans of creating an all-Snap Linux distribution, not using Debian packages at all any more. So everything, including the printing system (and also the printer drivers) had to be in Snaps.
 
-Fortunately, Snap was so well-designed that it allows also packaging command line tools and even system daemons ([Flatpak](https://flatpak.org/) for example only packages GUI applications, see [my blog post](/OpenPrinting-News-March-2022/#flatpak-and-printing)) and so I could snap right away.
+Fortunately, Snap was so well-designed that it allows also packaging command line tools and even system daemons ([Flatpak](https://flatpak.org/) for example only packages GUI applications, see [my blog post](/OpenPrinting-News-March-2022#flatpak-and-printing)) and so I could snap right away.
 
 But there were a lot of challenges in these 5 years until the CUPS Snap got into production use for the first time:
 - [How to add printer drivers](https://forum.snapcraft.io/t/snapping-cups-drivers-as-plugins) (note that Michael Sweet brought in the solution with the Printer Applications only on the [OpenPrinting Summit 2018](https://pwg.org/chair/meeting-info/may-2018-sunnyvale.html), [slides](https://ftp.pwg.org/pub/pwg/liaison/openprinting/presentations/cups-plenary-may-18.pdf))
@@ -270,7 +270,7 @@ But now one can think why did we rush the classic printer drivers into Printer A
 
 And all the talk about an all-Snap Ubuntu distribution ...
 
-Yes, I have transferred [all free software printer drivers](/OpenPrinting-News-November-2021/#practically-all-free-printer-drivers-in-printer-applications) which come with Debian (and so also with Ubuntu) into [4 driver-retro-fitting Printer Applications](https://snapcraft.io/search?q=OpenPrinting). Only driver not transferred (yet) is the Braille printer driver included in cups-filters (but this is in the works now).
+Yes, I have transferred [all free software printer drivers](/OpenPrinting-News-November-2021#practically-all-free-printer-drivers-in-printer-applications) which come with Debian (and so also with Ubuntu) into [4 driver-retro-fitting Printer Applications](https://snapcraft.io/search?q=OpenPrinting). Only driver not transferred (yet) is the Braille printer driver included in cups-filters (but this is in the works now).
 
 But do not think I have all these drivers rewritten into filter functions and turned their PPD file generators into `get-printer-attributes` IPP responders. No, I would never do it, as such code changes one has to test, and how should I test the drivers for ~10000 printer models without having the actual printers, but having a hall with 10000 printers inside one would also need a lot of people to do the testing. So the way to go is "do not touch the running code" and encapsulate it in Printer Applications.
 
@@ -293,7 +293,7 @@ And Michael Sweet has also made a Printer Application for label printers, based 
 
 - [**LPrint**](https://github.com/michaelrsweet/lprint) ([Snap Store](https://snapcraft.io/lprint)): Supports Dymo LabelWriter and Zebra ZPL label printers, with all label-printer-typical options: Label modes, tear-off offsets, media tracking, media top offset, print darkness, resolution, roll selection, speed, ... Note that this is a native Printer Application. It does not simply encapsulate the CUPS filters and PPD files which come with CUPS.
 
-And there is also a [Legacy Printer Application](/OpenPrinting-News-November-2021/#your-driver-not-in-a-printer-application---the-legacy-printer-application) (included in the pappl-retrofit) project which, when classically installed (do not try to snap it) sees all classically installed CUPS drivers and makes them available in a Printer Application. This is especially useful for proprietary drivers.
+And there is also a [Legacy Printer Application](/OpenPrinting-News-November-2021#your-driver-not-in-a-printer-application---the-legacy-printer-application) (included in the pappl-retrofit) project which, when classically installed (do not try to snap it) sees all classically installed CUPS drivers and makes them available in a Printer Application. This is especially useful for proprietary drivers.
 
 So we will not lose the support for any of the currently supported printers when switching over into the PPD-less, all-IPP New Architecture ... Now the third generation of printing with free software can start ...
 
@@ -328,7 +328,7 @@ Due to this there is no known operating system using ippusbxd any more. Therefor
 
 Linux distributions use ipp-usb and with this driverless printing and scanning on USB-connected devices generally works.
 
-Only problem is that this connection type has many device-specific quirks and Alexander is following the reports and trying to fix as many as possible, producing an everytime longer list of quirk workarounds in ipp-usb's code. Especially there are also devices which [support the IPP-over-USB USB protocol but not driverless printing and scanning](/OpenPrinting-News-May-2022/#ipp-usb-printer-does-ipp-over-usb-but-not-driverless-ipp-and-driver-vs-driverless).
+Only problem is that this connection type has many device-specific quirks and Alexander is following the reports and trying to fix as many as possible, producing an everytime longer list of quirk workarounds in ipp-usb's code. Especially there are also devices which [support the IPP-over-USB USB protocol but not driverless printing and scanning](/OpenPrinting-News-May-2022#ipp-usb-printer-does-ipp-over-usb-but-not-driverless-ipp-and-driver-vs-driverless).
 
 
 ## "localhost" support in Avahi
@@ -348,7 +348,7 @@ Most modern printers do driverless IPP and many of them are multi-function devic
 
 Driverless scanning means, as also for driverless printing, not needing a driver, where a driver is any type of device-model-specific software or data. And this means that the device has to use standard protocols, for which client software can easily be made part of the operating system. The standard here is AirScan, Apple's extension of AirPrint so that the complete multi-function device can be used with an iPhone or iPad. The underlying communication protocols are eSCL (an HTTP-based protocol, the more common one) and [WSD](https://en.wikipedia.org/wiki/Web_Services_for_Devices) (Web Services for Devices, from Microsoft), one of the two the device has to support in order to fulfill the standard.
 
-Back in 2019 the situation was really inSANE, there was no SANE backend supporting eSCL or WSD, but "between the years" 2019 and 2020, between Christmas and New Year I was reading great news on the SANE mailing list: [Two independently developed backends for eSCL support](/OpenPrinting-News-January-2020/#driverless-scanning) got announced!
+Back in 2019 the situation was really inSANE, there was no SANE backend supporting eSCL or WSD, but "between the years" 2019 and 2020, between Christmas and New Year I was reading great news on the SANE mailing list: [Two independently developed backends for eSCL support](/OpenPrinting-News-January-2020#driverless-scanning) got announced!
 
 These are “[escl](https://gitlab.com/sane-project/backends/merge_requests/242)” (small, light, basic, already included in SANE 1.0.29) and “[airscan](https://github.com/alexpevzner/sane-airscan)” (complete functionality). And there is also an AirScan server, [AirSane](https://github.com/SimulPiscator/AirSane), which is a SANE frontend which emulates an AirScan (eSCL) scanner scanning on any physical scanner supported by SANE, so it is nothing more than an early Scanner Application.
 
@@ -356,12 +356,12 @@ After that I worked a lot together with the authors to make it all working on my
 
 Both "escl" (as part of sane-backends) and "airsane" (separate package) made it into all major Linux distributions and so the scanners in thousands of multi-function printers are working under Linux now.
 
-And the specs of eSCL got finally [published by Mopria](/OpenPrinting-News-May-2021/#driverless-scanning) in May 2021!
+And the specs of eSCL got finally [published by Mopria](/OpenPrinting-News-May-2021#driverless-scanning) in May 2021!
 
 
 ## The OpenPrinting web site
 
-[From the March 2022 New](/OpenPrinting-News-March-2022/#openprinting-web-site)
+[From the March 2022 New](/OpenPrinting-News-March-2022#openprinting-web-site)
 
 The part of the web site for looking up (legacy, non-driverless) printers and drivers (the [OpenPrinting database web app](https://github.com/OpenPrinting/foomatic-db-webapp/) has moved to a new server at Oregon State University Open Source Lab ([OSUOSL](https://osuosl.org)). As the old server did not receive a system upgrade for many years there were a lot of problems with the compatibility of the code (SQL and PHP) with the new, modern server.
 
@@ -371,4 +371,4 @@ The UI of the web app did not change, but there are changes in the internal func
 
 Also the `query.php` script for machine queries got fixed and is fully working again.
 
-This is especially important as we want to add a [query service for printer setup tools](/OpenPrinting-News-November-2021/#printer-querying-on-the-openprinting-web-server) to find the correct Printer Application(s) for a printer based on its device ID. This is currently [in the works](/current/#printer-application-look-up-via-the-openprinting-web-site).
+This is especially important as we want to add a [query service for printer setup tools](/OpenPrinting-News-November-2021#printer-querying-on-the-openprinting-web-server) to find the correct Printer Application(s) for a printer based on its device ID. This is currently [in the works](/current#printer-application-look-up-via-the-openprinting-web-site).

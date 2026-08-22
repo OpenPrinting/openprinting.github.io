@@ -28,7 +28,7 @@ And we already have one extra project idea since last month:
 ## OpenPrinting web site
 First, we are working on a prominent note that most modern printers are driverless on our front page and an (automated?) list of available driverless IPP printers. See the discussion in [this issue report](https://github.com/OpenPrinting/openprinting.github.io/issues/138).
 
-**Update: Michael Sweet has updated the [front page](https://openprinting.github.io/) now, adding a prominent hint that most modern printers are driverless and also linked a [list of driverless printers](https://openprinting.github.io/printers/) right from the front page. Thanks a lot, Michael.**
+**Update: Michael Sweet has updated the [front page](/) now, adding a prominent hint that most modern printers are driverless and also linked a [list of driverless printers](/printers) right from the front page. Thanks a lot, Michael.**
 
 The part of the web site for looking up (legacy, non-driverless) printers and drivers (the [OpenPrinting database web app](https://github.com/OpenPrinting/foomatic-db-webapp/) has moved to a new server at Oregon State University Open Source Lab ([OSUOSL](https://osuosl.org)). As the old server did not receive a system upgrade for many years there were a lot of problems with the compatibility of the code (SQL and PHP) with the new, modern server.
 
@@ -38,7 +38,7 @@ The UI of the web app did not change, but there are changes in the internal func
 
 Also the `query.php` script for machine queries got fixed and is fully working again.
 
-This is especially important as we soon want to add a [query service for printer setup tools](https://openprinting.github.io/OpenPrinting-News-November-2021/#printer-querying-on-the-openprinting-web-server) to find the correct Printer Application(s) for a printer based on its device ID.
+This is especially important as we soon want to add a [query service for printer setup tools](/OpenPrinting-News-November-2021#printer-querying-on-the-openprinting-web-server) to find the correct Printer Application(s) for a printer based on its device ID.
 
 Note that the UI still needs some updating, especially removing obsolete links.
 

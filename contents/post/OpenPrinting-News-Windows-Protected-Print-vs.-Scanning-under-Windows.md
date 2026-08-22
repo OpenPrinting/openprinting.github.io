@@ -7,7 +7,7 @@ author: Till
 excerpt: Windows Protected Print protects you from scanning
 date: '2025-01-20'
 ---
-Around a year ago [I reported here](/OpenPrinting-News-December-2023/#new-architecture-under-windows) about Microsoft's plans to make printing under Windows more secure, going the same way as we are going with the [New Architecture in CUPS 3.x](/current/#the-new-architecture-for-printing-and-scanning), an all-IPP print environment without printer drivers, only supporting modern, driverless IPP printers. In Windows it is especially important to get rid of printer drivers, as they are closed-source code pieces running in system or even kernel level. For Windows Protected Print (WPP) Windows does not use CUPS, but Mopria instead, and they do not have a concept for non-driverless legacy printers, whereas we have the [Printer Applications](/current/#printer-applications) ([which can also be used under Windows](/wsl-printer-app/)).
+Around a year ago [I reported here](/OpenPrinting-News-December-2023#new-architecture-under-windows) about Microsoft's plans to make printing under Windows more secure, going the same way as we are going with the [New Architecture in CUPS 3.x](/current#the-new-architecture-for-printing-and-scanning), an all-IPP print environment without printer drivers, only supporting modern, driverless IPP printers. In Windows it is especially important to get rid of printer drivers, as they are closed-source code pieces running in system or even kernel level. For Windows Protected Print (WPP) Windows does not use CUPS, but Mopria instead, and they do not have a concept for non-driverless legacy printers, whereas we have the [Printer Applications](/current#printer-applications) ([which can also be used under Windows](/wsl-printer-app)).
 
 Microsoft's plans were reported about in a [blog on Microsoft's community forum](https://techcommunity.microsoft.com/blog/MicrosoftSecurityandCompliance/a-new-modern-and-secure-print-experience-from-windows/4002645), where I also left some comments.
 
@@ -17,7 +17,7 @@ Also [on The Register got reported](https://www.theregister.com/2025/01/02/scann
 
 Microsoft promised to fix the bug by end-January, but they already left their users without scanning working for many weeks.
 
-But for the seasoned WSL tinkerer (**Warning: Command line use required!**) it should be solvable. Proceed as [described here for legacy printers](/wsl-printer-app/), but instead of (or in addition to) installing a Printer Application, install [SANE](http://www.sane-project.org/) (Scanner Access Now Easy):
+But for the seasoned WSL tinkerer (**Warning: Command line use required!**) it should be solvable. Proceed as [described here for legacy printers](/wsl-printer-app), but instead of (or in addition to) installing a Printer Application, install [SANE](http://www.sane-project.org/) (Scanner Access Now Easy):
 ```
 sudo apt install sane-backends sane-airscan sane-utils
 ```
@@ -25,7 +25,7 @@ and then use the `scanimage` command. Enter `man scanimage` for how to use it.
 
 I hope this makes Windows 11 SANE for the time being.
 
-We will soon have [Scanner Applications](/current/#scanner-applications) which emulate driverless scanners (eSCL, WSD), but note that current Windows has especially problems with those.
+We will soon have [Scanner Applications](/current#scanner-applications) which emulate driverless scanners (eSCL, WSD), but note that current Windows has especially problems with those.
 
 
 **And as usual: Stay updated on Mastodon: [#OpenPrinting](https://ubuntu.social/tags/OpenPrinting) and [@till@ubuntu.social](https://ubuntu.social/@till).**

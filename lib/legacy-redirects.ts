@@ -42,13 +42,13 @@ export const LEGACY_REDIRECTS: Record<string, string> = {
   "/gsoc2021": "/gsoc/2021",
   "/gsoc-2020-students": "/gsoc/2020",
   "/gsoc-2021-students": "/gsoc/2021",
-  "/driverless/00-introduction": "/driverless/#introduction",
-  "/driverless/01-standards-and-their-pdls": "/driverless/#standards",
-  "/driverless/02-workflow": "/driverless/#workflow",
+  "/driverless/00-introduction": "/driverless#introduction",
+  "/driverless/01-standards-and-their-pdls": "/driverless#standards",
+  "/driverless/02-workflow": "/driverless#workflow",
   "/lfmp-2020-students": "/lfmp",
-  "/lfmp2020/01-Wrapping-proprietary-printer-drivers-into-a-Printer-Application": "/lfmp2020/#wrapping-proprietary-printer-drivers-into-a-printer-application",
-  "/lfmp2020/02-Support-IPP-Fax-Out": "/lfmp2020/#support-for-ipp-fax-out",
-  "/lfmp2020/03-ipp-scan-application": "/lfmp2020/#ipp-scan-or-virtual-mf-device-server-scanner-application"
+  "/lfmp2020/01-Wrapping-proprietary-printer-drivers-into-a-Printer-Application": "/lfmp2020#wrapping-proprietary-printer-drivers-into-a-printer-application",
+  "/lfmp2020/02-Support-IPP-Fax-Out": "/lfmp2020#support-for-ipp-fax-out",
+  "/lfmp2020/03-ipp-scan-application": "/lfmp2020#ipp-scan-or-virtual-mf-device-server-scanner-application"
 };
 
 export function getLegacyRedirect(pathOrSlug: string): string | undefined {

@@ -1,7 +1,7 @@
 import fs from "fs/promises"
 import path from "path"
 import matter from "gray-matter"
-import { MarkdownRenderer } from "@/components/markdown-renderer"
+import { ContentWithToc } from "@/components/content-with-toc"
 
 export const dynamic = "force-static"
 export const dynamicParams = false
@@ -35,14 +35,12 @@ export default async function DocumentationDetail({
 
   return (
     <main className="min-h-screen bg-background text-foreground pt-24 pb-10">
-      <div className="max-w-4xl mx-auto px-4">
+      <div className="max-w-6xl mx-auto px-4">
         <h1 className="text-3xl md:text-4xl font-bold mb-8">
           {title}
         </h1>
 
-        <div className="prose max-w-none">
-          <MarkdownRenderer content={content} />
-        </div>
+        <ContentWithToc content={content} data={data} />
       </div>
     </main>
   )

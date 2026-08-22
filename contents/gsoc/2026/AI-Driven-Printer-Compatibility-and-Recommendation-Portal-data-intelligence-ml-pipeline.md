@@ -6,7 +6,7 @@ title: "AI-Driven Printer Compatibility and Recommendation Portal: Printer Data 
 
 1 contributor, large-size (350 hours), Level of difficulty: Hard
 
-OpenPrinting maintains large and continuously evolving datasets such as the [Foomatic printer database](https://www.openprinting.org/printers/) and [driverless printer support](https://openprinting.github.io/printers/) lists. While these datasets are rich in information, they are currently consumed as static listings, requiring users to manually reason about printer compatibility, feature equivalence, and suitable alternatives. As the number of supported printers continues to grow, this approach becomes increasingly difficult to maintain and use effectively.
+OpenPrinting maintains large and continuously evolving datasets such as the [Foomatic printer database](https://www.openprinting.org/printers/) and [driverless printer support](/printers) lists. While these datasets are rich in information, they are currently consumed as static listings, requiring users to manually reason about printer compatibility, feature equivalence, and suitable alternatives. As the number of supported printers continues to grow, this approach becomes increasingly difficult to maintain and use effectively.
 
 The objective of this project is to design and implement an **offline, reproducible machine-learning pipeline** that transforms OpenPrinting’s printer metadata into structured, actionable intelligence suitable for downstream web applications.
 

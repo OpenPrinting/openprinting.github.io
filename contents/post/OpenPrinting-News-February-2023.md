@@ -16,7 +16,7 @@ But we have a lot of **good and exciting news**! Not only that we got [accepted 
 
 Some of you were perhaps wondering how to **report security issues** and therefore hesitated to do so, now I succeeded in [getting an intuitive way](#private-bug-reports-for-security-issues).
 
-And **Kurt Pfeifle**, who made me know about CUPS back in mid-2000 by a magazine article and [so made out of me what I am now](https://openprinting.github.io/history/) has retired and now wants to **contribute to the documentation** on OpenPrinting! Welcome back in the team!!
+And **Kurt Pfeifle**, who made me know about CUPS back in mid-2000 by a magazine article and [so made out of me what I am now](/history) has retired and now wants to **contribute to the documentation** on OpenPrinting! Welcome back in the team!!
 
 
 ## Google Summer of Code 2023 - We are in!!
@@ -24,7 +24,7 @@ First off, the Linux Foundation got accepted as mentoring organization. So we ar
 
 Our selection process has already started some months ago and we already got some promising candidates. If you want to participate, too, have a look at our [project ideas list](https://wiki.linuxfoundation.org/gsoc/google-summer-code-2023-openprinting-projects). Please contact us as soon as possible and not only when Google's application time window opens (March 20 - April 4).
 
-Please send us your resume/CV and tell us what you like to work on, either on one of the project ideas or you can also provide your own project idea. Also have a look what we are doing via the links on our [About Us](/about-us/) and [News and Events](/news/) pages.
+Please send us your resume/CV and tell us what you like to work on, either on one of the project ideas or you can also provide your own project idea. Also have a look what we are doing via the links on our [About Us](/about-us) and [News and Events](/news) pages.
 
 A nice side effect of having the contributors working on GitHub issues as part of the process is that we get several bugs fixed or feature requests implemented. For example we have completely overlooked to transfer the handy utility `cupstestppd` into [libppd](#cups-filters). Now, thanks to a contributor candidate we have it even as library function, `ppdTest()`, in addition to the new command line utility `testppdfile`. Also several bugs in the print filters got fixed.
 
@@ -34,7 +34,7 @@ Thanks a lot to all contributor candidates who helped us fixing bugs and accompl
 ## Linux App Summit 2023
 The [Linux App Summit 2023](https://linuxappsummit.org/) in Brno in the Czech Republic is coming closer. The conference will actually take place on Saturday, April 22 and Sunday April 23. On Friday, April 21 there will be a pre-registration. Here is some info about [the venue, the location, and how to get there](https://linuxappsummit.org/local/).
 
-The Call for Proposals has closed and we got a lot of great abstracts, for talks, lightning talks, workshops, and BoFs, 44 in total. So now we have the hard work of selecting the best ones to accommodate in the two rooms we have, like [last year in Rovereto](/OpenPrinting-News-Flash-OpenPrinting-and-Ubuntu-on-the-Linux-App-Summit-2022/) an auditorium for the talks and lightning talks and a classroom for the workshops and BoFs.
+The Call for Proposals has closed and we got a lot of great abstracts, for talks, lightning talks, workshops, and BoFs, 44 in total. So now we have the hard work of selecting the best ones to accommodate in the two rooms we have, like [last year in Rovereto](/OpenPrinting-News-Flash-OpenPrinting-and-Ubuntu-on-the-Linux-App-Summit-2022) an auditorium for the talks and lightning talks and a classroom for the workshops and BoFs.
 
 Provided that it gets accepted I will give a talk about the **Printing GUI work to support the New Architecture**, on the [GNOME Control Center](https://github.com/vermamohit13/GSOC_2022_Summary) and on the print dialogs, especially the [GTK one](#common-print-dialog-backends-support-accepted-into-gtk), and perhaps also give a short demo. I will leave plenty of time in the end for an AMA (Ask Me Anything) and for further Q&A and discussion I will also run an **OpenPrinting BoF** session afterwards.
 
@@ -46,7 +46,7 @@ On my two printing sessions you will also have the chance to meet
 
 They will be in the rooms to answer questions and participate in the discussion.
 
-I will also make use of the fact that this year we will for the first time offer workshops and give a **workshop to learn how to snap (= package as a Snap) applications** for distributing them via the Snap Store. So anyone who has missed [my Snap workshop series on the Ubuntu Summit](/OpenPrinting-News-November-2022/#and-the-conference-finally-started-), here is another chance. There is only this one workshop for the basics, but I have also seen some talks about advanced topics under the submissions and have given good reviews to them.
+I will also make use of the fact that this year we will for the first time offer workshops and give a **workshop to learn how to snap (= package as a Snap) applications** for distributing them via the Snap Store. So anyone who has missed [my Snap workshop series on the Ubuntu Summit](/OpenPrinting-News-November-2022#and-the-conference-finally-started-), here is another chance. There is only this one workshop for the basics, but I have also seen some talks about advanced topics under the submissions and have given good reviews to them.
 
 Accepted contributions will get announced on March 1.
 
@@ -70,7 +70,7 @@ Marek Kasik and Matthias Clasen, thanks a lot for guiding Gaurav to get his work
 
 
 ## libcups 3.0b1 - The first piece of CUPS 3.x!
-Michael Sweet has **released the [first beta of libcups 3.0](https://openprinting.github.io/libcups-3.0b1/)!**
+Michael Sweet has **released the [first beta of libcups 3.0](/libcups-3.0b1)!**
 
 This is the first of the new split components of CUPS 3.x. It will not only have deprecated features removed, like PPD file and classic driver support, but also a lot of new functionality, like for example:
 
@@ -93,7 +93,7 @@ And there is already a GSoC contributor candidate on it to start the adaptation.
 
 **Ubuntu**
 
-I have continued the Ubuntu integration work. See also my [report on it from last month](/OpenPrinting-News-January-2023/#new-architecture-makes-it-into-ubuntu-and-debian), where I have especially talked about the concepts and requirements.
+I have continued the Ubuntu integration work. See also my [report on it from last month](/OpenPrinting-News-January-2023#new-architecture-makes-it-into-ubuntu-and-debian), where I have especially talked about the concepts and requirements.
 
 Of all the packages libcupsfilters, libppd, cups-filters. cups-browsed, pappl, pappl-retrofit, cpdb-libs, cpdb-backend-cups, and cpdb-backend-file, the current versions are uploaded.
 
@@ -109,23 +109,23 @@ Next step are the **tests**: **libcupsfilters** and **libppd** ([MIR](https://bu
 
 But **cups-browsed** ([MIR](https://bugs.launchpad.net/ubuntu/+source/cups-browsed/+bug/2003259)) has no tests at all and **cpdb-libs** ([MIR](https://bugs.launchpad.net/ubuntu/+source/cpdb-libs/+bug/1747759)), **cpdb-backend-cups** ([MIR](https://bugs.launchpad.net/ubuntu/+source/cpdb-backend-cups/+bug/1747760)), and **cpdb-backend-file** ([MIR](https://bugs.launchpad.net/ubuntu/+source/cpdb-backend-file/+bug/2003272)) lack build tests.
 
-Therefore we need, not only for our own QA, a **good test infrastructure** for all the software we produce. This is already on our [roadmap](/OpenPrinting-News-September-2022/#openprinting-micro-conference-on-the-linux-plumbers-2022) and we will let two GSoC contributors [work on it](https://wiki.linuxfoundation.org/gsoc/google-summer-code-2023-openprinting-projects#ci_testing_programs_for_libcupsfilters_libpappl-retrofit_libppd_cpdb).
+Therefore we need, not only for our own QA, a **good test infrastructure** for all the software we produce. This is already on our [roadmap](/OpenPrinting-News-September-2022#openprinting-micro-conference-on-the-linux-plumbers-2022) and we will let two GSoC contributors [work on it](https://wiki.linuxfoundation.org/gsoc/google-summer-code-2023-openprinting-projects#ci_testing_programs_for_libcupsfilters_libpappl-retrofit_libppd_cpdb).
 
-In **cups-filters** ([2.0b4](https://openprinting.github.io/libcupsfilters-and-libppd-Second-Generation-Forth-Beta-Release/)) I have also eliminated warnings about deprecated QPDF functions by making everything using the current QPDF 11 API, as having that many warnings was not much liked by the MIR approval team.
+In **cups-filters** ([2.0b4](/libcupsfilters-and-libppd-Second-Generation-Forth-Beta-Release)) I have also eliminated warnings about deprecated QPDF functions by making everything using the current QPDF 11 API, as having that many warnings was not much liked by the MIR approval team.
 
-Of the **Common Print Dialog Backends** I released the [second](/Common-Print-Dialog-Backends-Second-Generation-Second-Beta-Release/) and the [third beta](/Common-Print-Dialog-Backends-Second-Generation-Third-Beta-Release/), to have a CPDB release with which [GTK 4.9.4](#common-print-dialog-backends-support-accepted-into-gtk) actually builds and to get the improvements in translation support in, all in time for Lunar's Feature Freeze. All 3 packages (cpdb-libs, cpdb-backend-cups, cpdb-backend-file) already did the migration from -proposed into the release in Universe.
+Of the **Common Print Dialog Backends** I released the [second](/Common-Print-Dialog-Backends-Second-Generation-Second-Beta-Release) and the [third beta](/Common-Print-Dialog-Backends-Second-Generation-Third-Beta-Release), to have a CPDB release with which [GTK 4.9.4](#common-print-dialog-backends-support-accepted-into-gtk) actually builds and to get the improvements in translation support in, all in time for Lunar's Feature Freeze. All 3 packages (cpdb-libs, cpdb-backend-cups, cpdb-backend-file) already did the migration from -proposed into the release in Universe.
 
 For **PAPPL** I posted the [MIR](https://bugs.launchpad.net/ubuntu/+source/pappl/+bug/2004119). The package ([1.3.1](https://launchpad.net/ubuntu/+source/pappl/1.3.1-2)) synced already from Debian.
 
-For the [first Debian/Ubuntu package](https://launchpad.net/ubuntu/+source/pappl-retrofit) of **pappl-retrofit** I have released the [second beta](/pappl-retrofit-Second-Beta-Release/) upstream. It especially includes the systemd `*.service` file for auto-starting the Legacy Printer Application as system service. The Debian package contains a binary package of the [Legacy Printer Application](https://github.com/OpenPrinting/pappl-retrofit#legacy-printer-application) for making classically installed (also proprietary) printer drivers available for the CUPS Snap and for CUPS 3.x.
+For the [first Debian/Ubuntu package](https://launchpad.net/ubuntu/+source/pappl-retrofit) of **pappl-retrofit** I have released the [second beta](/pappl-retrofit-Second-Beta-Release) upstream. It especially includes the systemd `*.service` file for auto-starting the Legacy Printer Application as system service. The Debian package contains a binary package of the [Legacy Printer Application](https://github.com/OpenPrinting/pappl-retrofit#legacy-printer-application) for making classically installed (also proprietary) printer drivers available for the CUPS Snap and for CUPS 3.x.
 
 **Red Hat**
 
 The new packages, for now at least libcupsfilters, libppd, cups-filters, and cups-browsed will replace the old cups-filters package also in Red Hat and Fedora Linux. Therefore Red Hat's printing maintainer Zdenek Dohnal did a lot of fixes and clean-up on the upstream source code and build systems of these packages.
 
-He [removed some unnecessary dependencies](https://github.com/OpenPrinting/libcupsfilters/pull/7) (Avahi, GLib, zlib, Freetype) from libcupsfilters which got overlooked during the separation. He also removed overlooked dependencies in the other packages, especially on C++ in cups-filters and cups-browsed and added explanations for the actual dependencies to the `INSTALL` files. These changes are in my release of the [third beta](/cups-filters-Second-Generation-Third-Beta-Release/).
+He [removed some unnecessary dependencies](https://github.com/OpenPrinting/libcupsfilters/pull/7) (Avahi, GLib, zlib, Freetype) from libcupsfilters which got overlooked during the separation. He also removed overlooked dependencies in the other packages, especially on C++ in cups-filters and cups-browsed and added explanations for the actual dependencies to the `INSTALL` files. These changes are in my release of the [third beta](/cups-filters-Second-Generation-Third-Beta-Release).
 
-Zdenek ran also Coverity on libcupsfilters ([PR](https://github.com/OpenPrinting/libcupsfilters/pull/11)) and libppd ([PR](https://github.com/OpenPrinting/libppd/pull/9)), discovering several bugs (memory leaks, possible buffer overflows, ...) and fixed those. This fixes are available in the [forth beta](/libcupsfilters-and-libppd-Second-Generation-Forth-Beta-Release/) now.
+Zdenek ran also Coverity on libcupsfilters ([PR](https://github.com/OpenPrinting/libcupsfilters/pull/11)) and libppd ([PR](https://github.com/OpenPrinting/libppd/pull/9)), discovering several bugs (memory leaks, possible buffer overflows, ...) and fixed those. This fixes are available in the [forth beta](/libcupsfilters-and-libppd-Second-Generation-Forth-Beta-Release) now.
 
 Thank you very much, Zdenek for all this amazing work! 
 
@@ -155,7 +155,7 @@ Ubuntu 23.04 (Lunar Lobster) will most probably come with CUPS 2.4.2, perhaps wi
 ## cups-filters
 In the course of the [integration of the new generation of cups-filters in Ubuntu](#the-new-architecture-is-going-into-ubuntu-and-red-hat) I have done two more beta releases to include general bug fixes and also fulfill requirements for Ubuntu. Also several of the bug fixes were done in cooperation with [GSoC contributor candidates](#google-summer-of-code-2023---we-are-in) to whom we have given issue reports as assignments.
 
-**[Third beta](https://openprinting.github.io/cups-filters-Second-Generation-Third-Beta-Release/)**
+**[Third beta](/cups-filters-Second-Generation-Third-Beta-Release)**
 
 - Monochrome PXL-XL printing (Ghostscript, output device `pxlmono`) did not work due to the `cfFilterGhostscript()` filter function using the sRGB instead of the sGray color profile, which makes Ghostscript erroring out ([commit](https://github.com/OpenPrinting/libcupsfilters/commit/81f0e79)).
 - As in CUPS we have also added the separated polling of the `all` and `media-col-database` attributes from driverless printers to cups-filters ([commit](https://github.com/OpenPrinting/libcupsfilters/commit/789cca62d), [issue](https://github.com/OpenPrinting/cups-filters/issues/492))
@@ -164,7 +164,7 @@ In the course of the [integration of the new generation of cups-filters in Ubunt
 - Removed unnecessary dependencies, especially on C++ in cups-filters and cups-browsed. Thanks, Zdenek Dohnal.
 - Many fixes in the build system and the source code documentation.
 
-**[Forth beta of libcupsfilters and libppd](https://openprinting.github.io/libcupsfilters-and-libppd-Second-Generation-Forth-Beta-Release/)**
+**[Forth beta of libcupsfilters and libppd](/libcupsfilters-and-libppd-Second-Generation-Forth-Beta-Release)**
 
 - Zdenek Dohnal from Red Hat has run all the components of the new generation of cups-filters through Coverity and found several bugs: Memory leaks, files not closed, possible string overflows, ... He fixed all these bugs in the upstream code. This assures reliability and security of all the new components, especially if being part of permanently running daemons ([PR libcupsfilters](https://github.com/OpenPrinting/libcupsfilters/pull/11), [PR libppd](https://github.com/OpenPrinting/libppd/pull/9)). Thanks a lot, Zdenek!
 - Updated libcupsfilters to work with the latest version of QPDF (11) as building it showed a lot of warnings about the use of deprecated functions in QPDF. Now it should be even ready for the upcoming QPDF 12.
@@ -190,7 +190,7 @@ Zdenek Dohnal also [improved the privilege dropping](https://github.com/OpenPrin
 
 
 ## Common Print Dialog Backends
-For the requirements of the [CPDB support in the GTK print dialog](#common-print-dialog-backends-support-accepted-into-gtk) Gaurav Guleria needed to do a lot of enhancements on CPDB itself, and when his merge request got accepted into GTK, CPDB 2.0b1 was already 2 months old and after that a lot of changes have been done, ending up with GTK's CPDB support [not building with any released version of CPDB](https://gitlab.gnome.org/GNOME/gtk/-/issues/5589). Therefore we have now [released version 2.0b2](https://openprinting.github.io/Common-Print-Dialog-Backends-Second-Generation-Second-Beta-Release/) of all the three components (cpdb-libs, cpdb-backend-cups, cpdb-backend-file) of the CPDB to allow easy building of the first CPDB-supporting GTK.
+For the requirements of the [CPDB support in the GTK print dialog](#common-print-dialog-backends-support-accepted-into-gtk) Gaurav Guleria needed to do a lot of enhancements on CPDB itself, and when his merge request got accepted into GTK, CPDB 2.0b1 was already 2 months old and after that a lot of changes have been done, ending up with GTK's CPDB support [not building with any released version of CPDB](https://gitlab.gnome.org/GNOME/gtk/-/issues/5589). Therefore we have now [released version 2.0b2](/Common-Print-Dialog-Backends-Second-Generation-Second-Beta-Release) of all the three components (cpdb-libs, cpdb-backend-cups, cpdb-backend-file) of the CPDB to allow easy building of the first CPDB-supporting GTK.
 
 Features added are
 - **Options groups:** This allows better structuring of options in print dialogs. Common options are categorized in groups, like media, print quality, color, finishing, ...
@@ -202,7 +202,7 @@ Features added are
 
 Also several bugs got corrected and work on the documentation done. And there are now three source code download formats: `*.tar.gz`, `*.tar.bz2`, and `*.tar.xz`
 
-Shortly before Feature Freeze for Ubuntu 23.04 I have released the [third beta](https://openprinting.github.io/Common-Print-Dialog-Backends-Second-Generation-Third-Beta-Release/) with improvements in translation support, now having functions to load translations synchronously and asynchronously.
+Shortly before Feature Freeze for Ubuntu 23.04 I have released the [third beta](/Common-Print-Dialog-Backends-Second-Generation-Third-Beta-Release) with improvements in translation support, now having functions to load translations synchronously and asynchronously.
 
 
 ## PAPPL Scanning Support
@@ -210,6 +210,6 @@ One of our GSoC contributor candidates is preparing for working on the GSoC proj
 
 
 ## pappl-retrofit
-I have released the [second beta](/pappl-retrofit-Second-Beta-Release/). It especially includes the systemd `*.service` file for auto-starting the [Legacy Printer Application](https://github.com/OpenPrinting/pappl-retrofit#legacy-printer-application) as system service, so that it can easily be used for making classically installed (also proprietary) printer drivers available for the CUPS Snap and for CUPS 3.x.
+I have released the [second beta](/pappl-retrofit-Second-Beta-Release). It especially includes the systemd `*.service` file for auto-starting the [Legacy Printer Application](https://github.com/OpenPrinting/pappl-retrofit#legacy-printer-application) as system service, so that it can easily be used for making classically installed (also proprietary) printer drivers available for the CUPS Snap and for CUPS 3.x.
 
 As an example case for the Legacy Printer Application we can take this [bug](https://github.com/OpenPrinting/cups-filters/issues/497) where it turns out that a printer designed to be driverless does not work correctly when used as such and the manufacturer worked around the bug with their proprietary driver, defeating the original driverless design of the printer. In the end of the bug's discussion thread I discussed with Zdenek Dohnal (Red Hat) and Brian Potkin (Debian) about how to use legacy CUPS drivers with the Legacy Printer Application in the era of the New Architecture/CUPS 3.x.

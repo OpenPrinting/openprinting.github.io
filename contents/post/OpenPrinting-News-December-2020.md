@@ -10,17 +10,17 @@ date: '2020-12-11'
 ## Google Summer of Code 2021
 We are currently looking for project ideas for next year's Google Summer of Code.
 
-As mentioned [already in October](https://openprinting.github.io/OpenPrinting-News-October-2020/#google-summer-of-code-2021) student projects will only be half the time (6 weeks). Google tells that this will probably attract more students, but for us it is a much higher workload as we have to find the double amount of students and get the double amount of students introduced and up to speed to get the same work done.
+As mentioned [already in October](/OpenPrinting-News-October-2020#google-summer-of-code-2021) student projects will only be half the time (6 weeks). Google tells that this will probably attract more students, but for us it is a much higher workload as we have to find the double amount of students and get the double amount of students introduced and up to speed to get the same work done.
 
 For larger projects we should also consider to run them under the Linux Foundation Mentoring Program instead of GSoC.
 
 ## Google Season of Docs 2020
 
-The standard length (3 months) projects of this year's Google Summer of Docs have ended and so also our OpenPrinting project done by Piyush Goyal. His work continues to be available [on our web site](https://openprinting.github.io/documentation/) and he has also put up his [final report](https://docs.google.com/document/d/1ZWaDt897MyoiNDkgrvO8vU_SlGwQI8cIfuhsA0c3Q7A/).
+The standard length (3 months) projects of this year's Google Summer of Docs have ended and so also our OpenPrinting project done by Piyush Goyal. His work continues to be available [on our web site](/documentation) and he has also put up his [final report](https://docs.google.com/document/d/1ZWaDt897MyoiNDkgrvO8vU_SlGwQI8cIfuhsA0c3Q7A/).
 
 Piyush also reported his successful conclusion of GSoD on [LinkedIn](https://www.linkedin.com/feed/update/urn%3Ali%3Aactivity%3A6742723576908038144/) and thanked his mentors and others on OpenPrinting who helped him.
 
-Only part not completed is the [section about Scanning](https://openprinting.github.io/documentation/03-designing-scanner-drivers/) as the implementation os scanning support in PAPPL is still work in progress.
+Only part not completed is the [section about Scanning](/documentation/03-designing-scanner-drivers) as the implementation of scanning support in PAPPL is still work in progress.
 
 ## PAPPL 1.0.0 released!
 Michael Sweet has issued the first stable release of PAPPL, version [1.0.0](https://github.com/michaelrsweet/pappl/releases/tag/v1.0.0).

@@ -14,7 +14,7 @@ Effective testing of printing protocols and Domain-specific languages (DSL) like
 
 **Contributors are expected to achieve:**
   * Thoroughly understand and summarize the key aspects of printing protocols used in OpenPrinting, such as IPP and PostScript.
-  * Develop tailored testing strategies for these protocols, referencing standards such as [RFC 8011](https://datatracker.ietf.org/doc/html/rfc8011), and [OpenPrinting's 17 IPP specifications](https://openprinting.github.io/cups/doc/spec-ipp.html)
+  * Develop tailored testing strategies for these protocols, referencing standards such as [RFC 8011](https://datatracker.ietf.org/doc/html/rfc8011), and [OpenPrinting's 17 IPP specifications](/cups/doc/spec-ipp.html)
   * Implement high-quality unit tests, differential tests, and fuzzing drivers along with protocol-tailed testing oracles within OpenPrinting projects. Contributors will also be responsible for identifying any discrepancies or bugs, reporting them, and coordinating with developers to facilitate necessary fixes.
 
 *The outputs of this project will not only serve as a valuable reference for generalizing testing across all OpenPrinting projects but also the documented progress can also lead to potential academic contributions, such as technical reports or research papers.*

@@ -9,7 +9,7 @@ This month's news post is somewhat shorter, as not many important features, mile
 
 But we are not completely without milestones, as **CUPS 2.4.0** got released as the **first stable feature release of CUPS on OpenPrinting**. We are back with a new stable release series of CUPS and Ubuntu 22.04 LTS and probably many other distributions will come with a 2.4.x version of CUPS.
 
-And also keep in mind that for 2022 **everyone** can participate as code contributor in the Google Summer of Code, not only students. See [last month's edition](https://openprinting.github.io/OpenPrinting-News-November-2021/#google-summer-of-code-2022). So if you like to participate, or at least be part of the OpenPrinting developer community, please speak up (`till at linux dot com`).
+And also keep in mind that for 2022 **everyone** can participate as code contributor in the Google Summer of Code, not only students. See [last month's edition](/OpenPrinting-News-November-2021#google-summer-of-code-2022). So if you like to participate, or at least be part of the OpenPrinting developer community, please speak up (`till at linux dot com`).
 
 We need also project ideas for the GSoC 2022. Note that there are 2 sizes now, 3 months like on GSoC 2020 and before and 6 weeks like on GSoC 2021.
 
@@ -55,7 +55,7 @@ From OpenPrinting we have already [6 Snaps in the Snap Store](https://snapcraft.
 ## CUPS
 Currently released is [**2.4.0**](https://github.com/OpenPrinting/cups/releases/tag/v2.4.0).
 
-This is the **first feature release of CUPS on OpenPrinting**. Thanks to Zdenek Dohnal (RedHat) for having taken the role of the release manager for the CUPS 2.4.x series. See our [development roadmap](https://openprinting.github.io/OpenPrinting-News-October-2021/#cups) posted earlier here for details.
+This is the **first feature release of CUPS on OpenPrinting**. Thanks to Zdenek Dohnal (RedHat) for having taken the role of the release manager for the CUPS 2.4.x series. See our [development roadmap](/OpenPrinting-News-October-2021#cups) posted earlier here for details.
 
 Ubuntu Jammy Jellyfish ([22.04 LTS](https://discourse.ubuntu.com/t/jammy-jellyfish-release-schedule/)) will come with CUPS 2.4.x, if all works well, as Snap. The CUPS Snap and our CUPS-driver-retro-fitting Printer Application Snaps use the current GIT master of CUPS.
 

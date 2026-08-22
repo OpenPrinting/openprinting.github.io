@@ -50,6 +50,20 @@ If a PR changes generated output without changing the inputs that produce it, ca
 - A large part of the site is Markdown-driven. Review content pipeline changes for frontmatter assumptions, slug handling, excerpt/title sanitization, and image resolution.
 - This repo uses Yarn as the expected package manager. Flag changes that introduce package-manager drift or inconsistent lockfile/package-manager usage unless the migration is intentional.
 
+### URL conventions (see #207)
+
+- Canonical URLs have **no trailing slash**: `/some-page`. `next.config.ts` sets
+  `trailingSlash: false`, so the export writes `out/some-page.html` and GitHub
+  Pages serves it directly for `/some-page`.
+- Write internal links, canonical URLs, sitemap entries and RSS `<link>`s in
+  that form. Two deliberate exceptions: `/cups/` (separate CUPS Pages site) and
+  RSS `<guid>`s, which keep their historical trailing slash because they are
+  item identities -- changing them makes feed readers re-announce old articles.
+- `scripts/generate-trailing-slash-aliases.ts` writes `out/some-page/index.html`
+  redirect stubs after the export so old inbound links ending in `/` keep
+  working.
+- `yarn verify:urls` checks these invariants and gates both CI and deployment.
+
 ## Configuration & Portability
 
 - **Single Source of Truth**: All deployment-specific values, such as GitHub organization / repository names, base paths, and external URLs (e.g., Giscus configs, CI pipelines), are centralized in `config/site.config.ts`.

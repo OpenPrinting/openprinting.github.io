@@ -16,7 +16,7 @@ After three great Opportunity Open Source conferences we will celebrate the fort
 
 *Photos and description of the location contributed by Sudhanshu Sah*
 
-Our [Call for Locations](/OpenPrinting-News-Opportunity-Open-Source-4.0-Call-for-Locations/) showed a lot of interest. Several groups from different places in India have answered (mainly on [LinkedIn](https://www.linkedin.com/pulse/opportunity-open-source-40-call-locations-till-kamppeter-ktr2f/)). Some only told in a short answer that they are interested but did not follow up, and 4 groups gave more detailed information and had a video meeting with us. In the end, the most convincing bid came from the Google Developer Group (GDG) IIIT Allahabad and we settled with them.
+Our [Call for Locations](/OpenPrinting-News-Opportunity-Open-Source-4.0-Call-for-Locations) showed a lot of interest. Several groups from different places in India have answered (mainly on [LinkedIn](https://www.linkedin.com/pulse/opportunity-open-source-40-call-locations-till-kamppeter-ktr2f/)). Some only told in a short answer that they are interested but did not follow up, and 4 groups gave more detailed information and had a video meeting with us. In the end, the most convincing bid came from the Google Developer Group (GDG) IIIT Allahabad and we settled with them.
 
 **IIIT Allahabad** stands among **India’s premier technology institutes**, located in the historic and intellectually vibrant city of **Prayagraj**, in the state **Uttar Pradesh** in India. Renowned for its rich cultural legacy, academic excellence, and deep-rooted scholarly atmosphere, Prayagraj has long been a meeting point of ideas, innovation, and learning.
 

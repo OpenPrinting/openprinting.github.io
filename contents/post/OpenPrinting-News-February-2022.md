@@ -52,16 +52,16 @@ UI design work is needed for the “Add Printer” part and perhaps on improving
 
 See below the links to the OpenPrinting Micro-Conference on the Linux Plumbers Conference 2021, especially the presentation about the Print Management GUI, which shows more in-depth how the new printer setup tool should look like. Also see the links to OpenPrinting discussion, GSoC 2020/2021 projects, and Frederik Feichtmeier’s Flutter counerpart to G-C-C.
 
-- [OpenPrinting Micro-Conference on the Linux Plumbers Conference 2021](https://openprinting.github.io/OpenPrinting-News-October-2021/#openprinting-micro-conference-on-the-linux-plumbers-2021)
+- [OpenPrinting Micro-Conference on the Linux Plumbers Conference 2021](/OpenPrinting-News-October-2021#openprinting-micro-conference-on-the-linux-plumbers-2021)
 - [Session about printer setup tool on Linux Plumbers Conference 2021](https://linuxplumbersconf.org/event/11/contributions/1027/attachments/774/1460/Print-Management-GUI.pdf)
 - [Session about print dialog on Linux Plumbers Conference 2021](https://linuxplumbersconf.org/event/11/contributions/1028/attachments/762/1433/Common-Print-Dialog-Backends.pdf)
 - [Recording of the OpenPrinting Micro-Conference on Linux Plumbers Conference 2021](https://www.youtube.com/watch?v=5KogjLb1Hb4)
-- [First thoughts and discussions on a printer setup tool for the New Architecture](https://openprinting.github.io/OpenPrinting-News-March-2021/#user-experience-automatic-printer-setup-printer-setup-tools)
+- [First thoughts and discussions on a printer setup tool for the New Architecture](/OpenPrinting-News-March-2021#user-experience-automatic-printer-setup-printer-setup-tools)
 - [IPP System Service config/status panel (GSoC 2020)](https://github.com/lbandlish/Administrate-MF-Devices-GUI)
 - [Main window/panel to list and manage IPP services (GSoC 2021)](https://github.com/divyashk/GSOC21_summary)
 - [GNOME-Control-Center fork with new printer setup tool (at least main panel)](https://github.com/divyashk/gnome-control-center/tree/devCups)
 - [Flutter alternative to GNOME-Control-Center, printer part is planned to be done following the New Architecture](https://github.com/Feichtmeier/settings)
-- [Service on OpenPrinting web server for finding the correct Printer Application for a given, non-driverless printer](https://openprinting.github.io/OpenPrinting-News-November-2021/#printer-querying-on-the-openprinting-web-server)
+- [Service on OpenPrinting web server for finding the correct Printer Application for a given, non-driverless printer](/OpenPrinting-News-November-2021#printer-querying-on-the-openprinting-web-server)
 
 ### The Print Dialogs
 Most print jobs are sent via the print dialog of a desktop application, like evince, Chrome, LibreOffice, DarkTable, … Print dialogs are usually, like “Open …” or “Save as …” dialogs, provided by the GUI toolkits, in most cases GTK or Qt, sometimes applications come also with their own creations, like LibreOffice or Chrome.
@@ -153,7 +153,7 @@ Many smaller bugs and glitches got also fixed.
 
 Another backport series to the 1.x branch is planned.
 
-Some time ago I have started a [discussion thread on the OpenPrinting mailing list](https://lists.linuxfoundation.org/pipermail/printing-architecture/2021/004100.html) and, after not getting any answer, posted a copy [in the January news](https://openprinting.github.io/OpenPrinting-News-January-2022/#approaching-cups-filters-20).
+Some time ago I have started a [discussion thread on the OpenPrinting mailing list](https://lists.linuxfoundation.org/pipermail/printing-architecture/2021/004100.html) and, after not getting any answer, posted a copy [in the January news](/OpenPrinting-News-January-2022#approaching-cups-filters-20).
 
 Now I got some [remarks from Zdenek Dohnal](https://lists.linuxfoundation.org/pipermail/printing-architecture/2022/004107.html) and [answered with clarifications](https://lists.linuxfoundation.org/pipermail/printing-architecture/2022/004108.html).
 
@@ -199,9 +199,9 @@ From OpenPrinting we have already [6 Snaps in the Snap Store](https://snapcraft.
 ## CUPS
 Currently released is [**2.4.1**](https://github.com/OpenPrinting/cups/releases/tag/v2.4.1).
 
-CUPS 2.4.1 got released, adding several bug fixes, especially that the ColorModel default in generated PPD files for driverless printers is taken from the printer and also configurable which I told about [last month](https://openprinting.github.io/OpenPrinting-News-January-2022/#cups).
+CUPS 2.4.1 got released, adding several bug fixes, especially that the ColorModel default in generated PPD files for driverless printers is taken from the printer and also configurable which I told about [last month](/OpenPrinting-News-January-2022#cups).
 
-Michael Sweet is also **already working on the libcups of [CUPS 3.x](https://openprinting.github.io/OpenPrinting-News-October-2021/#cups)** ([Michael's personal libcups repo](https://github.com/michaelrsweet/libcups)). 
+Michael Sweet is also **already working on the libcups of [CUPS 3.x](/OpenPrinting-News-October-2021#cups)** ([Michael's personal libcups repo](https://github.com/michaelrsweet/libcups)). 
 
 Ubuntu Jammy Jellyfish ([22.04 LTS](https://discourse.ubuntu.com/t/jammy-jellyfish-release-schedule/)) will come with CUPS 2.4.x, most probably 2.4.1. It will still come as classic Debian package and all the drivers, too. The full snapd integration of the CUPS Snap is only happening right now ([see above](#cups-snap-and-snapd-printing-interface)) and we also did not succeed to release cups-filters 2.x and pappl-retrofit 1.x (for the Legacy Printer Application). More important even, we need the changes in the GUI tools ([see above](#approaching-cups-filters-20)).
 

@@ -58,7 +58,7 @@ Presenter: Aveek Basu<br>
 
 
 ## The Summer of Printers in the Ubuntu Office Hours
-On last week's episode of the Ubuntu Office Hours we have talked about our success with the Google Summer of Code (see also the announcement here [last month](/OpenPrinting-News-September-2021/#the-summer-of-printers-in-the-ubuntu-office-hours)). Not only me and Aveek Basu have been in the virtual studio but also two of our GSoC 2021 students, Divyasheel ([Printer management GUI](https://github.com/divyashk/GSOC21_summary)) and Pranshu Kharkwal ([Universal CUPS filter](https://gist.github.com/pranshukharkwal/9413499a6744049ef549159948392023)).
+On last week's episode of the Ubuntu Office Hours we have talked about our success with the Google Summer of Code (see also the announcement here [last month](/OpenPrinting-News-September-2021#the-summer-of-printers-in-the-ubuntu-office-hours)). Not only me and Aveek Basu have been in the virtual studio but also two of our GSoC 2021 students, Divyasheel ([Printer management GUI](https://github.com/divyashk/GSOC21_summary)) and Pranshu Kharkwal ([Universal CUPS filter](https://gist.github.com/pranshukharkwal/9413499a6744049ef549159948392023)).
 
 Our conversation with host Monica Ayhens-Madon why and how we are doing GSoC, finding students, introducing them to our projects, getting them as developer community members, ... The students also told about their experience with us, we all have also given some tips to everyone who wants to participate in the GSoC, as student, mentor, or organization, and in the end we answered some spectator's questions from the Live Chat.
 
@@ -69,7 +69,7 @@ Thanks a lot to Monica Ayhens-Madon for inviting us!
 
 ## Print Management GUI in Flutter
 
-As Michael Sweet and me talked about the New Architecture (Driverless IPP, Printer Applications, R. I. P. PPD files, ...) in the [Ubuntu Indaba in August](/OpenPrinting-News-Flash-Ubuntu-Indaba-and-Ghostscript-Printer-Application/#the-ubuntu-desktop-indabas-and-openprinting---the-recording) and I also mentioned that the printer setup tools need to change for this, the host, Heather Ellsworth from Canonical, brought me together with Frederik Feichtmeier, who is writing a replacement for the GNOME Control Center completely in the Dart programming language with the Flutter GUI toolkit ([the GitHub](https://github.com/Feichtmeier/settings)).
+As Michael Sweet and me talked about the New Architecture (Driverless IPP, Printer Applications, R. I. P. PPD files, ...) in the [Ubuntu Indaba in August](/OpenPrinting-News-Flash-Ubuntu-Indaba-and-Ghostscript-Printer-Application#the-ubuntu-desktop-indabas-and-openprinting---the-recording) and I also mentioned that the printer setup tools need to change for this, the host, Heather Ellsworth from Canonical, brought me together with Frederik Feichtmeier, who is writing a replacement for the GNOME Control Center completely in the Dart programming language with the Flutter GUI toolkit ([the GitHub](https://github.com/Feichtmeier/settings)).
 
 He showed much interest in making the printing part of his tool to work with the New Architecture. I introduced him into everything, giving him links to my news posts, our GutHub, the slides (especially [these ones](https://linuxplumbersconf.org/event/11/contributions/1027/attachments/774/1460/Print-Management-GUI.pdf)) and video of the Linux Plumbers conferences, the Indaba, the Office Hours, ...
 

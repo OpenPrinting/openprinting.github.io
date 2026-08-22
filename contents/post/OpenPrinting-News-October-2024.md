@@ -24,9 +24,9 @@ On the Festa do Software Livre we recorded 2 episodes of the Podcast Ubuntu Port
 
 The [GSoC](#google-summer-of-code-2024) has ended and our 11 contributors have all done amazing work to put together our most successful GSoC year. We had never that many contributors and all have actually done code which we can merge upstream.
 
-And there were also several [new releases](#new-releases) at OpenPrinting, starting with the 2.1.0 releases of libcupsfilters, libppd, and cups-browsed to include the fixes for the [recent vulnerabilities](/OpenPrinting-News-Flash-cups-browsed-Remote-Code-Execution-vulnerability/) and updates of libcups3 and PAPPL.
+And there were also several [new releases](#new-releases) at OpenPrinting, starting with the 2.1.0 releases of libcupsfilters, libppd, and cups-browsed to include the fixes for the [recent vulnerabilities](/OpenPrinting-News-Flash-cups-browsed-Remote-Code-Execution-vulnerability) and updates of libcups3 and PAPPL.
 
-Videos of the talks on the [UbuCon Asia 2024](https://www.youtube.com/playlist?list=PLr8g8zdbZAgH7pLbMXfwdEI-c9Ck-gcHI) and on the [Open Source Summit Europe 2024](https://www.youtube.com/playlist?list=PLbzoR-pLrL6rC7SpO7MJCZm22Qp5ns3p-) are available now. See links to the recordings of my talks in the appropriate sections in the [August News](/OpenPrinting-News-August-2024/).
+Videos of the talks on the [UbuCon Asia 2024](https://www.youtube.com/playlist?list=PLr8g8zdbZAgH7pLbMXfwdEI-c9Ck-gcHI) and on the [Open Source Summit Europe 2024](https://www.youtube.com/playlist?list=PLbzoR-pLrL6rC7SpO7MJCZm22Qp5ns3p-) are available now. See links to the recordings of my talks in the appropriate sections in the [August News](/OpenPrinting-News-August-2024).
 
 So let us see what happened at OpenPrinting in October ...
 
@@ -42,7 +42,7 @@ Subscribing/Unsubscribing [instructions](https://subspace.kernel.org/subscribing
 
 
 ## Festa do Software Livre/UbuCon Portugal 2024
-After 20 years I was again on a a conference held in Portuguese laguage, this time on the [Festa do Software Livre](https://festa2024.softwarelivre.eu/) in Aveiro, Portugal, a 2-day conference with a main track and several sub-conferences co-located by different open-source organizations: Drupal, Flutter, WikiMedia Portugal, Inêrcia, and the [UbuCon Portugal](https://ubuconpt2024.ubuntu-pt.org). I followed the [invitation of Diogo Constantino](/OpenPrinting-News-September-2024/#festa-do-software-livreubucon-portugal-2024).
+After 20 years I was again on a a conference held in Portuguese laguage, this time on the [Festa do Software Livre](https://festa2024.softwarelivre.eu/) in Aveiro, Portugal, a 2-day conference with a main track and several sub-conferences co-located by different open-source organizations: Drupal, Flutter, WikiMedia Portugal, Inêrcia, and the [UbuCon Portugal](https://ubuconpt2024.ubuntu-pt.org). I followed the [invitation of Diogo Constantino](/OpenPrinting-News-September-2024#festa-do-software-livreubucon-portugal-2024).
 
 I was departing early in the morning, on the day before the conference started, and when telling to my colleagues in Canonical's Desktop Team, that I am heading to Aveiro, Ana Sereijo, UX designer, spoke up telling me that she came from there. So, as I was arriving in Aveiro at lunch time, I asked her for restaurant recommendations and this way got to an excellent, delicious place for classic Portuguese food. I ate grilled sardines and it reminded me to when I lived in Portugal for a year back in 2007.
 
@@ -52,7 +52,7 @@ The conference has taken place in the Departamento de Eletrónica, Telecomunica�
 
 Here are the schedules: [Festa do Software Livre](https://festa2024.softwarelivre.eu/pt-pt/agenda/), [UbuCon Portugal](https://ubuconpt2024.ubuntu-pt.org/sessions/)
 
-I have given 3 sessions, all in Portuguese, as announced [last month](/OpenPrinting-News-September-2024/#festa-do-software-livreubucon-portugal-2024).
+I have given 3 sessions, all in Portuguese, as announced [last month](/OpenPrinting-News-September-2024#festa-do-software-livreubucon-portugal-2024).
 
 On the first day, Friday, I gave my talk about the history and the current work of OpenPrinting, but in Portuguese:
 
@@ -60,9 +60,9 @@ On the first day, Friday, I gave my talk about the history and the current work 
 
 [Video](https://www.youtube.com/live/UaKzri016Zc?t=11250s)
 
-I have given it in the main track. I ended up talking about how I got into free software, the history of OpenPrinting, our current work on CUPS 3.x including its integration in the desktop, [Windows Protected Print](/OpenPrinting-News-December-2023/#new-architecture-under-windows), ... for 70 minutes and afterwards did a 14 min [Q&A session](https://www.youtube.com/live/UaKzri016Zc?t=15505s). I also got some printing-related questions during the coffee breaks on both days.
+I have given it in the main track. I ended up talking about how I got into free software, the history of OpenPrinting, our current work on CUPS 3.x including its integration in the desktop, [Windows Protected Print](/OpenPrinting-News-December-2023#new-architecture-under-windows), ... for 70 minutes and afterwards did a 14 min [Q&A session](https://www.youtube.com/live/UaKzri016Zc?t=15505s). I also got some printing-related questions during the coffee breaks on both days.
 
-And I did not talk about the [recent vulnerabilities](/OpenPrinting-News-Flash-cups-browsed-Remote-Code-Execution-vulnerability/) and nobody asked me about them during the Q&A (if you want to hear me talking in Portuguese about that, see my [Podcast Ubuntu Portugal participation](#4-times-in-podcast-ubuntu-portugal), episodes [E321](https://podcastubuntuportugal.org/e321/) and [E322](https://podcastubuntuportugal.org/e322/)).
+And I did not talk about the [recent vulnerabilities](/OpenPrinting-News-Flash-cups-browsed-Remote-Code-Execution-vulnerability) and nobody asked me about them during the Q&A (if you want to hear me talking in Portuguese about that, see my [Podcast Ubuntu Portugal participation](#4-times-in-podcast-ubuntu-portugal), episodes [E321](https://podcastubuntuportugal.org/e321/) and [E322](https://podcastubuntuportugal.org/e322/)).
 
 On the second day, we had the UbuCon Portugal, where the morning part was all about Snap. First, I gave a Portuguese version of my talk in which I explain what Snap is, how it works and how it is motivated, and about the Snap-only operating systems Ubuntu Core and Ubuntu Core Desktop:
 
@@ -88,7 +88,7 @@ Each night we have produced an episode of the [Podcast Ubuntu Portugal](https://
 
 At the second day's dinner we had also a post-conference meeting talking about what went well and what not so well at the conference and what one can improve in the next edition.
 
-And before the dinner Diogo and me exchanged our experience in recording and live-streaming the Festa do Software Livre and the [Opportunity Open Source](/OpenPrinting-News-August-2024/#opportunity-open-source-in-iit-kanpur) resp. Diogo fell in love with the wireless clip-on mic kits (from Tonor) which I brought (and used several times on the conference) and bought such a kit right when he got home. And we concluded that we need to develop a better method for live-streaming/recording/remote speaking and document it somewhere.
+And before the dinner Diogo and me exchanged our experience in recording and live-streaming the Festa do Software Livre and the [Opportunity Open Source](/OpenPrinting-News-August-2024#opportunity-open-source-in-iit-kanpur) resp. Diogo fell in love with the wireless clip-on mic kits (from Tonor) which I brought (and used several times on the conference) and bought such a kit right when he got home. And we concluded that we need to develop a better method for live-streaming/recording/remote speaking and document it somewhere.
 
 
 ## Ubuntu Summit 2024 in the Hague
@@ -128,7 +128,7 @@ It was originally planned to open the exhibition only after the opening plenary,
 
 **Snapcrafters Booth and Workshops**
 
-I was participating in the [Snapcrafters booth](https://events.canonical.com/event/51/contributions/524/), together with Soumyadeep Ghosh, Merlijn Sebrechts, Lucy Llewellyn and so we were also setting up our booth. As I have [already run a Snapcrafters booth with Soumyadeep on the UbuCon Asia](/OpenPrinting-News-August-2024/#soumyadeep-ghosh) Soumyadeep had already a slide show for the booth screen where he only needed to update the workshop announcements. Our booth tables were full of Snapcrafters stickers and Origami Snapcraft birds.
+I was participating in the [Snapcrafters booth](https://events.canonical.com/event/51/contributions/524/), together with Soumyadeep Ghosh, Merlijn Sebrechts, Lucy Llewellyn and so we were also setting up our booth. As I have [already run a Snapcrafters booth with Soumyadeep on the UbuCon Asia](/OpenPrinting-News-August-2024#soumyadeep-ghosh) Soumyadeep had already a slide show for the booth screen where he only needed to update the workshop announcements. Our booth tables were full of Snapcrafters stickers and Origami Snapcraft birds.
 
 With the same people I was also participating in the organization of the two Snap workshops:
 
@@ -138,7 +138,7 @@ and
 
 "**[How to build and test your snaps automatically using GitHub actions](https://events.canonical.com/event/51/contributions/587/)**" ([Slides](https://events.canonical.com/event/51/contributions/587/attachments/285/528/CI%20Workshop.pdf), [Exercises](https://github.com/snapcrafters/discord), [Video](https://www.youtube.com/watch?v=Rmcj-Zjiaoo))
 
-I did not do the presentations themselves, this was done my Soumyadeep Ghosh and Merlijn Sebrechts, but I have given a [short introduction](https://www.youtube.com/watch?v=XJXMQYfkubg&t=0s) telling how the Snap workshops had their roots in my [Snap workshop series on the Ubuntu Summit 2022](/OpenPrinting-News-November-2022/#the-first-ubuntu-summit-was-a-success) and the first one being based on Heathers's original workshop ["Snapping like Hell(sworth)"](https://events.canonical.com/event/2/contributions/15/) which was afterwards given on many other conferences, [mainly by me](https://forum.snapcraft.io/t/40263) but also by [Lucy](https://www.dorscluc.org/dors-2023/) and by [Soumyadeep](/OpenPrinting-News-August-2024/#soumyadeep-ghosh). In the second workshop, in the end of the presentation part, I have also [told about our plans to merge](https://www.youtube.com/watch?v=Rmcj-Zjiaoo&t=1390s) the [Snapcrafter's GitHub action](https://github.com/snapcrafters/ci) with the [Canonical Desktop Team's GitHub Action](https://github.com/ubuntu/desktop-snaps). I (and several other Snap experts) have also been in the room to help on the exercises, as these workshops were, in contrary to several others, really interactive.
+I did not do the presentations themselves, this was done my Soumyadeep Ghosh and Merlijn Sebrechts, but I have given a [short introduction](https://www.youtube.com/watch?v=XJXMQYfkubg&t=0s) telling how the Snap workshops had their roots in my [Snap workshop series on the Ubuntu Summit 2022](/OpenPrinting-News-November-2022#the-first-ubuntu-summit-was-a-success) and the first one being based on Heathers's original workshop ["Snapping like Hell(sworth)"](https://events.canonical.com/event/2/contributions/15/) which was afterwards given on many other conferences, [mainly by me](https://forum.snapcraft.io/t/40263) but also by [Lucy](https://www.dorscluc.org/dors-2023/) and by [Soumyadeep](/OpenPrinting-News-August-2024#soumyadeep-ghosh). In the second workshop, in the end of the presentation part, I have also [told about our plans to merge](https://www.youtube.com/watch?v=Rmcj-Zjiaoo&t=1390s) the [Snapcrafter's GitHub action](https://github.com/snapcrafters/ci) with the [Canonical Desktop Team's GitHub Action](https://github.com/ubuntu/desktop-snaps). I (and several other Snap experts) have also been in the room to help on the exercises, as these workshops were, in contrary to several others, really interactive.
 
 **Talks and Workshops**
 
@@ -152,7 +152,7 @@ The session was announced as a workshop and had taken place in the workshop room
 
 "**[Live build your submarine step-by-step](https://events.canonical.com/event/51/contributions/541/)**" by Juanmi Taboada ([Video](https://www.youtube.com/watch?v=30IoA-m4JuA))
 
-Here I was in the good hope to put my hands on some hardware, but, as the Inkscape "workshop" this was also only a demo. Juanmi, who brought his remote-operated and free-software-controlled submersible already to [last year's Summit](/OpenPrinting-News-November-2023/#ubuntu-summit-2023-in-riga) explained the free-software-driven hardware-components, showed them and put them together, but there were no extra copies for the audience to try it by themselves.
+Here I was in the good hope to put my hands on some hardware, but, as the Inkscape "workshop" this was also only a demo. Juanmi, who brought his remote-operated and free-software-controlled submersible already to [last year's Summit](/OpenPrinting-News-November-2023#ubuntu-summit-2023-in-riga) explained the free-software-driven hardware-components, showed them and put them together, but there were no extra copies for the audience to try it by themselves.
 
 "**[Fuzzing in the open: Integrate your project in OSS-Fuzz for continuous fuzzing](https://events.canonical.com/event/51/contributions/540/)**" by Dongge Liu, George-Andrei Iosif, Jiongchi Yu ([Slides](https://events.canonical.com/event/51/contributions/540/attachments/230/529/Presentation.pdf), [Exercises](https://github.com/iosifache/fuzzingintheopen), [Video](https://www.youtube.com/watch?v=S0IyScIRzb8))
 
@@ -182,7 +182,7 @@ Our [GSoC](#google-summer-of-code-2024) contributor Akarshan Kapoor was on the U
 
 > This is AK, who will revolutionize my personal live. Because train travel in Germany really is not, what you want it to be, and if it is really not what you want it to be, you at least want to have the toilets working ...
 
-And Akarshan, when he introduced himself in the beginning, he told that he was already speaking on the [Summit last year](/OpenPrinting-News-November-2023/#ubuntu-summit-2023-in-riga), about his [Scanner Application work for OpenPrinting](https://dev.to/kappuccino111/pappl-scan-api-bridging-gsoc-2024-project-report-2hoc), and [he shouted me out](https://www.youtube.com/watch?v=kWMt8PLVEE0&t=82s)!
+And Akarshan, when he introduced himself in the beginning, he told that he was already speaking on the [Summit last year](/OpenPrinting-News-November-2023#ubuntu-summit-2023-in-riga), about his [Scanner Application work for OpenPrinting](https://dev.to/kappuccino111/pappl-scan-api-bridging-gsoc-2024-project-report-2hoc), and [he shouted me out](https://www.youtube.com/watch?v=kWMt8PLVEE0&t=82s)!
 
 **Lightning Talks**
 
@@ -209,7 +209,7 @@ Yuning has also given the talk about RISC-V, together with Gordan Markus from Ca
 
 **[Framework](https://events.canonical.com/event/51/contributions/562/)**: Right nect to the Deep Computing booth was the Framework booth where you could see and try out their laptops and their laptop's modularity. Naturally, they also had Deep Computings RISC-V board on their booth. Nirav Patel, their CEO, has done the lightning demo of changing the motherboard in five minutes (see above).
 
-**[UBPorts](https://events.canonical.com/event/51/contributions/561/)**: This was the place where you could find **Diogo Constantino** (of the LoCo Portugal) most easily, as participant of this booth and Ubuntu Touch enthusiast who even uses this system as daily driver. Also **Alfred Neumayer**, [master of Snap on Ubuntu Touch](/OpenPrinting-News-February-2024/#cups-snap-on-ubuntu-touch) was participating (and giving a [talk](https://events.canonical.com/event/51/contributions/513/), [Slides](https://events.canonical.com/event/51/contributions/513/attachments/301/441/SnapsOnUbuntuTouchLibreoffice.pdf), [Video](https://www.youtube.com/watch?v=osQSYJttoco)).
+**[UBPorts](https://events.canonical.com/event/51/contributions/561/)**: This was the place where you could find **Diogo Constantino** (of the LoCo Portugal) most easily, as participant of this booth and Ubuntu Touch enthusiast who even uses this system as daily driver. Also **Alfred Neumayer**, [master of Snap on Ubuntu Touch](/OpenPrinting-News-February-2024#cups-snap-on-ubuntu-touch) was participating (and giving a [talk](https://events.canonical.com/event/51/contributions/513/), [Slides](https://events.canonical.com/event/51/contributions/513/attachments/301/441/SnapsOnUbuntuTouchLibreoffice.pdf), [Video](https://www.youtube.com/watch?v=osQSYJttoco)).
 
 **[Back to the Future of Open Source 3D Printing Hardware](https://events.canonical.com/event/51/contributions/517/)**: Here I met Yatin Khurana, from [Boltz R&D](https://boltzrnd.com/) in India, developing truly Open-Source hardware for 3D printers, in contrary to most manufacturers going more and more closed-source. I am looking into getting him onto the next Opportunity Open Source conference. Yatin has also given a lightning talk (see above).
 
@@ -219,7 +219,7 @@ Yuning has also given the talk about RISC-V, together with Gordan Markus from Ca
 
 When **Diogo Constantino** showed up at our Snapcrafters booth I started chatting with him, in Portuguese, and not taking it actually seriously, telling him that we should record an episode for [Podcast Ubuntu Portugal](https://podcastubuntuportugal.org/) on the Summit, and he found that a good idea, and then he asked the organizers for a room and we started gathering people who speak Portuguese end ended up to produce [episode E322](https://podcastubuntuportugal.org/e322/) with Diogo, **Cristovão Cordeiro** (Canonical Containerization/Rockcraft), **Carlos Nihelton** (Canonical Desktop Team/WSL), **Diogo Sousa** (Canonical Security Engineering), and me. This was the [4th time of me being in the Podcast Ubuntu Portugal](#4-times-in-podcast-ubuntu-portugal).
 
-On the UbuCon Asia in Jaipur, where I met **Soumyadeep Ghosh** for the first time and [I was talking with him about a lot of my free software activity and experience](/OpenPrinting-News-August-2024/#soumyadeep-ghosh), he came to the idea to create a monthly Ubuntu podcast, probably because I told him also about Heather's famous Indabas.
+On the UbuCon Asia in Jaipur, where I met **Soumyadeep Ghosh** for the first time and [I was talking with him about a lot of my free software activity and experience](/OpenPrinting-News-August-2024#soumyadeep-ghosh), he came to the idea to create a monthly Ubuntu podcast, probably because I told him also about Heather's famous Indabas.
 
 On the Summit he was then looking for help on how to do the logistics of a podcast, and it was great that Diogo as experienced podcaster was there and he explained everything to Soumyadeep and we created a room on Matrix for further planning.
 
@@ -231,7 +231,7 @@ On the evening of the 26th, right after the talks, meeting rooms were set up for
 
 The groups who got a room were Ubuntu Flavours, Governance & Autoinstall, Open Source Security, Linux Gaming, Juju & Friends, and the Open Documentation Academy.
 
-As OpenPrinting is [participating as organization](/OpenPrinting-News-May-2024/#open-documentation-academy) in the [Open Documentation Academy (ODA)](https://discourse.ubuntu.com/t/39615), I have participated in their room. Our activity was running an episode of the weekly [Open Documentation Hour](https://discourse.ubuntu.com/t/42771) live session (Episode 35, [Video](https://www.youtube.com/watch?v=J5GEAzAZOS0)). **Graham Morrison**, at Canonical responsible for the Snap documentation and also project lead of the ODA (at the very right in the frame, but not visible in the first few minutes), is hosting the session.
+As OpenPrinting is [participating as organization](/OpenPrinting-News-May-2024#open-documentation-academy) in the [Open Documentation Academy (ODA)](https://discourse.ubuntu.com/t/39615), I have participated in their room. Our activity was running an episode of the weekly [Open Documentation Hour](https://discourse.ubuntu.com/t/42771) live session (Episode 35, [Video](https://www.youtube.com/watch?v=J5GEAzAZOS0)). **Graham Morrison**, at Canonical responsible for the Snap documentation and also project lead of the ODA (at the very right in the frame, but not visible in the first few minutes), is hosting the session.
 
 At [2:00 min](https://www.youtube.com/watch?v=J5GEAzAZOS0&t=120s) we discussed the use of GIT to manage the documentation and I (second to the right in the frame, in the beginning at the very right) am telling that I use it for all content on OpenPrinting without problems. Right after ([3:18 min](https://www.youtube.com/watch?v=J5GEAzAZOS0&t=198s)) Graham is introducing me as responsible for OpenPrinting and then I tell what OpenPrinting is, about CUPS, Michael Sweet, and our need of documentation and that therefore I joined the ODA as the first non-Canonical organization. I also tell that Michael Sweet is an excellent example of a programmer who is also doing all the documentation for his work. Graham tells that Thunderbird is also joining, as the second non-Canonical organization. My part ends at 10:23 min.
 
@@ -242,7 +242,7 @@ Here are some blogs, articles, videos, and podcasts about the event (taken from 
 - **[The Source - Canonical on LinkedIn](https://www.linkedin.com/newsletters/the-source-7108409718422839296/)**
   - [Thank YOU for open source](https://www.linkedin.com/pulse/thank-you-open-source-canonical-eyroe/): Canonical's official report of the Summit on LinkedIn, featuring [Ngazetungue Muheue’s talk on open source in Africa](https://youtu.be/mPP7amqTGFA), the work of the Hack Club, creating free software with high school teenagers, including the [talk about the Boreal Express](https://youtu.be/AdgU-_1vDco), by Zach Latta, founder of the organization, [Akarshan's talk about the free software use in train toilet monitoring](https://www.youtube.com/watch?v=kWMt8PLVEE0) (see above), Juanmi Taboada's [submersible workshop](https://www.youtube.com/watch?v=30IoA-m4JuA), and as the higlight at the end, the [Framework lightning demo](https://www.youtube.com/watch?v=l6khGznGeyY) (see above).
 - **[Soumyadeep Ghosh on GitHub](https://soumyadghosh.github.io/website/)**
-  - [Ubuntu Summit 2024: A joyful experience filled with sorrow](https://soumyadghosh.github.io/website/blog/ubuntu-summit-2024/): Soumyadeep's second conference in his life (The first was the [UbuCon Asia 2024](/OpenPrinting-News-August-2024/#soumyadeep-ghosh)) and his first international trip, was the Ubuntu Summit. He tells about his arrival, the people he met, the Snapcrafters booth, the Snap workshops, the sessions he attended, with many photos of the people ... But he also tells that his grandpa passed away while he was on the Summit. R. I. P.
+  - [Ubuntu Summit 2024: A joyful experience filled with sorrow](https://soumyadghosh.github.io/website/blog/ubuntu-summit-2024/): Soumyadeep's second conference in his life (The first was the [UbuCon Asia 2024](/OpenPrinting-News-August-2024#soumyadeep-ghosh)) and his first international trip, was the Ubuntu Summit. He tells about his arrival, the people he met, the Snapcrafters booth, the Snap workshops, the sessions he attended, with many photos of the people ... But he also tells that his grandpa passed away while he was on the Summit. R. I. P.
 - **[Akarshan Kapoor on LinkedIn](https://www.linkedin.com/in/akarshan111/)**
   - [That’s what happens when you combine a love for OpenSourcery with the celebration of 20 years of Ubuntu](https://www.linkedin.com/posts/akarshan111_opensourcery-ubuntu-ubuntusummit2024-activity-7268895366660390912-hnOv): Akarshan giving a nice short summary of the people he met on the Summit by doing one-line-shoutouts of each of them. And I got shouted out near the top of the long list!
 - **[The Register](https://www.theregister.com/)**
@@ -264,7 +264,7 @@ Here are some blogs, articles, videos, and podcasts about the event (taken from 
 
 
 ## 4 times in Podcast Ubuntu Portugal
-As [reported in July](/OpenPrinting-News-July-2024/), **Diogo Constantino**, leader of the Ubuntu local community (LoCo) Portugal, had [interviewed me](https://podcastubuntuportugal.org/e310/) in the [Podcast Ubuntu Portugal](https://podcastubuntuportugal.org/), a podcast in Portuguese language about Linux and especially Ubuntu.
+As [reported in July](/OpenPrinting-News-July-2024), **Diogo Constantino**, leader of the Ubuntu local community (LoCo) Portugal, had [interviewed me](https://podcastubuntuportugal.org/e310/) in the [Podcast Ubuntu Portugal](https://podcastubuntuportugal.org/), a podcast in Portuguese language about Linux and especially Ubuntu.
 
 In the end of the interview Diogo invited me to the [Festa do Software Livre/UbuCon Portugal](#festa-do-software-livreubucon-portugal-2024) in Aveiro in Portugal, where on both conference days I had dinner with Diogo and the organizers of the event and some others, and after each of the two dinners we recorded an episode of the podcast.
 
@@ -279,7 +279,7 @@ So this way I made it into the Podcast Ubuntu Portugal 4 times:
 
 If you feel more comfortable to listen to people speaking Portuguese and not English, together with the recordings of my talks on the Festa do Software Livre, there are a lot of opportunities to listen to me now.
 
-Also if you feel more comfortable to get the [recent vulnerabilities](/OpenPrinting-News-Flash-cups-browsed-Remote-Code-Execution-vulnerability/) explained in Portuguese, I did so in [E321](https://podcastubuntuportugal.org/e321/) and [E322](https://podcastubuntuportugal.org/e322/).
+Also if you feel more comfortable to get the [recent vulnerabilities](/OpenPrinting-News-Flash-cups-browsed-Remote-Code-Execution-vulnerability) explained in Portuguese, I did so in [E321](https://podcastubuntuportugal.org/e321/) and [E322](https://podcastubuntuportugal.org/e322/).
 
 
 ## Google Summer of Code 2024
@@ -516,9 +516,9 @@ Contributor: Uddhav Phatak
 ## New Releases
 Since the last OpenPrinting News we had again several releases:
 
-[**libcupsfilters, libppd, cups-browsed 2.1.0**](/libcupsfilters,-libppd,-cups-filters-2.1.0-Releases-including-vulnerability-fix/)
+[**libcupsfilters, libppd, cups-browsed 2.1.0**](/libcupsfilters,-libppd,-cups-filters-2.1.0-Releases-including-vulnerability-fix)
 
-First of all, we have done upstream releases of the packages which got fixed because of the [recently reported remote code execution and DDoS vulnerabilities](/OpenPrinting-News-Flash-cups-browsed-Remote-Code-Execution-vulnerability/).
+First of all, we have done upstream releases of the packages which got fixed because of the [recently reported remote code execution and DDoS vulnerabilities](/OpenPrinting-News-Flash-cups-browsed-Remote-Code-Execution-vulnerability).
 
 We have especially removed support for legacy CUPS browsing and for LDAP from **cups-browsed** to eliminate the entrance point for the attacks, the acceptance of UDP packages from arbitrary sources on port 631. In addition we validate and sanitize incoming IPP responses and PPD file entries in both **libcupsfilters** and **libppd**.
 
@@ -526,7 +526,7 @@ After the 2.0.0 release we had also added some new features during all the month
 
 **libcupsfilters** received a facility for **CI/build/unit testing of filter functions** using an easily-editable table describing the test cases. This was Pratyush Ranjan's [GSoC 2023 project](https://github.com/pranjanpr/GSoC-23) at OpenPrinting.
 
-**libcups [3.0rc1](/libcups-3.0rc1/), [3.0rc2](/libcups-3.0rc2/), and [3.0rc3](/libcups-3.0rc3/)**
+**libcups [3.0rc1](/libcups-3.0rc1), [3.0rc2](/libcups-3.0rc2), and [3.0rc3](/libcups-3.0rc3)**
 
 The development of libcups3 has reached release candidate (RC) state. Then usually all planned features should be included band final testing and bug fixing will happen. So it now will not take long any more until the first stable release of a CUPS-3.x component.
 
@@ -552,6 +552,6 @@ The last feature additions are here:
 
 In addition. many bugs got fixed.
 
-**PAPPL [1.4.7](/pappl-1.4.7/) and [1.4.8](/pappl-1.4.8/)**
+**PAPPL [1.4.7](/pappl-1.4.7) and [1.4.8](/pappl-1.4.8)**
 
 These releases fix several bugs, including a [security issue](https://github.com/michaelrsweet/pappl/issues/373): If a password is set for the web admin interface, it got ingnored when logging in and so anybody could log in.

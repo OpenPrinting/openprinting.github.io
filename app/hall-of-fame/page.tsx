@@ -16,11 +16,11 @@ const ANNOUNCEMENT_PATH = "/OpenPrinting-News-The-New-OpenPrinting-Website"
 export const metadata: Metadata = {
   title,
   description,
-  alternates: { canonical: getSiteUrl("/hall-of-fame/") },
+  alternates: { canonical: getSiteUrl("/hall-of-fame") },
   openGraph: {
     title,
     description,
-    url: getSiteUrl("/hall-of-fame/"),
+    url: getSiteUrl("/hall-of-fame"),
     type: "website",
   },
 }

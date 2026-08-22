@@ -10,6 +10,7 @@ import authors from "@/data/authors"
 import { getAuthorImageSrc, getImageSrc } from "@/lib/utils"
 import { getTeaserImage } from "@/lib/get-latest-posts"
 import { siteConfig } from "@/config/site.config";
+import readingTime from "reading-time"
 
 type Post = {
   slug: string
@@ -49,13 +50,27 @@ export default async function NewsPage() {
           authorImage = getAuthorImageSrc(authorDef.image);
         }
 
+        const readTimeText = (() => {
+          const minutes = readingTime(content).minutes;
+
+          if (typeof data.readTime === "string" && data.readTime.trim()) {
+            return data.readTime.trim();
+          }
+
+          if (typeof data.readTime === "number" && Number.isFinite(data.readTime)) {
+            return `${Math.max(1, Math.round(data.readTime))} min read`;
+          }
+
+          return minutes < 1 ? "less than 1 minute read" : `${Math.max(1, Math.round(minutes))} min read`;
+        })();
+
         return {
           slug: file.replace(/\.md$/, ""),
-          title: typeof data.title === "string" ? data.title.replace(/\\/g, ""): file.replace(/\.md$/, ""),
+          title: typeof data.title === "string" ? data.title.replace(/\\/g, "") : file.replace(/\.md$/, ""),
           excerpt: typeof data.excerpt === "string" ? data.excerpt : "",
           date,
           year: date.getFullYear(),
-          readTime: typeof data.readTime === "string" ? data.readTime : "less than 1 minute read",
+          readTime: readTimeText,
           authorKey: authorKeyRaw,
           authorName: authorDef ? authorDef.name : authorKeyRaw,
           authorImage,

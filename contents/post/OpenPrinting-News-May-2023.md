@@ -10,11 +10,11 @@ excerpt: >-
   testing, CPDB in print dialogs, security bugs
 date: '2023-05-24'
 ---
-**Update: [Michael Sweet wins Google Open Source Peer Bonus for his CUPS project](/OpenPrinting-News-Flash-Michael-Sweet-is-Google-Open-Source-Peer-Bonus-winner-for-CUPS/)! Congratulations to him!!**
+**Update: [Michael Sweet wins Google Open Source Peer Bonus for his CUPS project](/OpenPrinting-News-Flash-Michael-Sweet-is-Google-Open-Source-Peer-Bonus-winner-for-CUPS)! Congratulations to him!!**
 
 Lots of conferences during the last 4 weeks: the [Linux App Summit 2023](#linux-app-summit-2023) in Brno, then home for a week and after that back to the Czech Republic for a week in Prague for Canonical's Engineering Sprint, another conference-free week again and this week we had our annual [OpenPrinting Summit](#openprinting-summitpwg-meeting) together with the Printer Working Group (PWG) again, but completely online, so no third trip within a month.
 
-Hot news from the OpenPrinting Summit, not so nice, by Michael Sweet, author of and maintainer of CUPS: He showed in his [CUPS Plenary](https://ftp.pwg.org/pub/pwg/liaison/openprinting/presentations/cups-plenary-may-2023.pdf) a nice roadmap for the CUPS 2.5.x releases, in contrary to our [last micro-conference](/OpenPrinting-News-September-2022/#openprinting-micro-conference-on-the-linux-plumbers-2022) in the end of this year. So I have asked him what about CUPS 3.x and he told that he has [pushed it out by one year](#cups-3x-release-postponed), to end-2024 ...
+Hot news from the OpenPrinting Summit, not so nice, by Michael Sweet, author of and maintainer of CUPS: He showed in his [CUPS Plenary](https://ftp.pwg.org/pub/pwg/liaison/openprinting/presentations/cups-plenary-may-2023.pdf) a nice roadmap for the CUPS 2.5.x releases, in contrary to our [last micro-conference](/OpenPrinting-News-September-2022#openprinting-micro-conference-on-the-linux-plumbers-2022) in the end of this year. So I have asked him what about CUPS 3.x and he told that he has [pushed it out by one year](#cups-3x-release-postponed), to end-2024 ...
 
 But nevertheless, we will all continue working on the New Architecture, the Printer and Scanner Applications, the Snaps, ... and I will switch Ubuntu 23.10, the Mantic Minotaur, as planned, to use the CUPS Snap as its printing system and the Printer Application Snaps as drivers for non-IPP-driverless printers.
 
@@ -44,7 +44,7 @@ My second [Linux App Summit 2023](https://linuxappsummit.org/) has taken place i
 
 **Recordings: [Day 1, room 1](https://www.youtube.com/watch?v=3-_aUNZMvko), [Day 2, room 1](https://www.youtube.com/watch?v=J7-3Qj_oVMM), [Day 2, room 2](https://www.youtube.com/watch?v=jwMEDI4WsAE). Direct links to all sessions are in the comments of the videos (thanks, Ban Jo @Enry211). Unfortunately, there are no recordings of room 2 on day 1.**
 
-**I have also added links to the recordings of all mentioned sessions in the [April News](/OpenPrinting-News-April-2023/#linux-app-summit-2023)**
+**I have also added links to the recordings of all mentioned sessions in the [April News](/OpenPrinting-News-April-2023#linux-app-summit-2023)**
 
 On Friday morning I went by train from Vienna to Brno, a trip of only 2 hours, and so I already had lunch with my colleagues from Canonical and the Ubuntu community, Heather Ellsworth, Jeremy Bicha, Dennis Loose, Igor Ljubuncic, and Lucy Llewellyn. In the afternoon we also met Michal Kohutek, with whom we picked up the letters for the decoration of the release party (Ubuntu 23.04, Fedora 38, cups-filters 2.0). Then we all got to the pre-registration social event at Harry's Pivovar (brewery), where we met a lot of people, especially we met Jason Evangelho from Thunderbird (one of the sponsors of LAS) who was hanging out with us most of the time from then on and I also met Keywan Tonekaboni from the German c't computer magazine, who was very interested in my OpenPrinting work.
 
@@ -103,7 +103,7 @@ More about Snap: [The Powers](https://www.youtube.com/watch?v=TfB6QwR2GYg), [The
 
 And as usual, I come with my colleagues, this time the Canonical Gang consists of Jeremy Bicha, Jesús Soto, Marco Trevisan, Mauro Gaspari, and me.
 
-There will be an orange Ubuntu booth again, as last year, a nice point to find us and to start interesting hallway sessions ([Developers, not marketing people](/OpenPrinting-News-June-2022/#guadec-2022)).
+There will be an orange Ubuntu booth again, as last year, a nice point to find us and to start interesting hallway sessions ([Developers, not marketing people](/OpenPrinting-News-June-2022#guadec-2022)).
 
 And, in addition to my two sessions mentioned above, you will see my colleagues in these sessions:
 
