@@ -76,8 +76,13 @@ jobs:
       - name: Run linter
         run: ${{ steps.pm.outputs.runner }} lint
 
+      - name: Run unit tests
+        run: ${{ steps.pm.outputs.runner }} test
+
       - name: Build Next.js
         run: ${{ steps.pm.outputs.runner }} build
+        env:
+          FOOMATIC_SKIP_SIMILARITY: "1"
 
       - name: Verify URL conventions
         run: ${{ steps.pm.outputs.runner }} verify:urls

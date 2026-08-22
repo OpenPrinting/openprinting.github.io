@@ -14,6 +14,7 @@ import { Button } from "@/components/ui/button"
 import { withBasePath } from "@/lib/foomatic/base-path"
 import { ppdFilePath } from "@/lib/foomatic/routes"
 
+// Restrict to known PPD output dirs and reject ".." to prevent path traversal.
 function isValidPpdPath(path: string | null) {
   return Boolean(path && (path.startsWith("/ppd/") || path.startsWith("/ppds/")) && !path.includes(".."))
 }

@@ -2,6 +2,17 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import {
+  getText,
+  getFunctionalityStatus,
+  getPrinterType,
+  getCommandsetTokens,
+  getColorCapability,
+  getDuplexCapability,
+  getMaxDpi,
+  getPSLevel,
+  getPCLLevel,
+} from "../../lib/foomatic/printer-attributes";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -18,90 +29,6 @@ function toArray(value) {
   }
 
   return Array.isArray(value) ? value : [value];
-}
-
-function getText(value) {
-  if (value === undefined || value === null) {
-    return undefined;
-  }
-
-  if (typeof value === "string") {
-    return value.trim() || undefined;
-  }
-
-  if (typeof value === "number" || typeof value === "boolean") {
-    return String(value);
-  }
-
-  if (Array.isArray(value)) {
-    const text = value.map(getText).filter(Boolean).join(", ").trim();
-    return text || undefined;
-  }
-
-  if (typeof value === "object") {
-    if (typeof value.en === "string") {
-      return value.en.trim() || undefined;
-    }
-
-    if (typeof value["#text"] === "string") {
-      return value["#text"].trim() || undefined;
-    }
-
-    for (const key of Object.keys(value)) {
-      const nested = getText(value[key]);
-      if (nested) {
-        return nested;
-      }
-    }
-  }
-
-  return undefined;
-}
-
-function getFunctionalityStatus(func) {
-  if (!func || func === "?") {
-    return "Unknown";
-  }
-
-  switch (func) {
-    case "A":
-      return "Perfect";
-    case "B":
-    case "C":
-      return "Mostly";
-    default:
-      return "Unsupported";
-  }
-}
-
-function getPrinterType(printer) {
-  if (!printer.mechanism) {
-    return "unknown";
-  }
-
-  const mechanism = printer.mechanism;
-
-  if (mechanism.inkjet !== undefined) {
-    return "inkjet";
-  }
-
-  if (mechanism.laser !== undefined) {
-    return "laser";
-  }
-
-  if (mechanism.dotmatrix !== undefined) {
-    return "dot-matrix";
-  }
-
-  if (mechanism.transfer === "i") {
-    return "inkjet";
-  }
-
-  if (mechanism.transfer === "t") {
-    return "laser";
-  }
-
-  return "unknown";
 }
 
 function parseConnectivity(printer) {
@@ -265,48 +192,6 @@ function getSupportContacts(printer) {
       };
     })
     .filter(Boolean);
-}
-
-function getBooleanCapability(value) {
-  if (value === undefined || value === null) {
-    return "unknown";
-  }
-
-  if (typeof value === "boolean") {
-    return value;
-  }
-
-  const text = getText(value)?.toLowerCase();
-  if (!text) {
-    return "unknown";
-  }
-
-  if (["1", "true", "yes", "y", "color", "duplex"].includes(text)) {
-    return true;
-  }
-
-  if (["0", "false", "no", "n", "mono", "monochrome", "simplex"].includes(text)) {
-    return false;
-  }
-
-  return "unknown";
-}
-
-function getColorCapability(printer) {
-  return getBooleanCapability(
-    printer.color ??
-      printer.colors ??
-      printer.colorDevice ??
-      printer.capabilities?.color
-  );
-}
-
-function getDuplexCapability(printer) {
-  return getBooleanCapability(
-    printer.duplex ??
-      printer.duplexer ??
-      printer.capabilities?.duplex
-  );
 }
 
 function buildPpdFileName(printerId, driverId) {
@@ -494,7 +379,12 @@ async function combineData() {
     const functionality = getText(printer.functionality) || "?";
     const driverDetails = buildDriverDetails(printerId, driverIds, drivers, generatedPpdPaths);
     const status = getFunctionalityStatus(functionality);
-    const finalStatus = driverDetails.length === 0 && status === "Unknown" ? "Unsupported" : status;
+    // Drivers the database marks obsolete cannot be used, so a printer left with
+    // only obsolete entries has no driver support. Where its support level is
+    // otherwise unknown that makes it unsupported; a graded status is never
+    // overwritten.
+    const usableDrivers = driverDetails.filter((driver) => !driver.obsolete);
+    const finalStatus = usableDrivers.length === 0 && status === "Unknown" ? "Unsupported" : status;
     const recommendedDriverWithPpd =
       driverDetails.find((driver) => driver.id === recommendedDriverId && driver.hasPpd) ||
       driverDetails.find((driver) => driver.hasPpd);
@@ -515,9 +405,13 @@ async function combineData() {
       ...(recommendedDriverWithPpd?.ppdPath ? { ppdPath: recommendedDriverWithPpd.ppdPath } : {}),
       supportContacts: getSupportContacts(printer),
       commandsets: getCommandsets(printer),
+      commandsetTokens: getCommandsetTokens(printer),
       ppdOptions: getPpdOptions(printer),
       color: getColorCapability(printer),
       duplex: getDuplexCapability(printer),
+      psLevel: getPSLevel(printer),
+      pclLevel: getPCLLevel(printer),
+      maxDpi: getMaxDpi(printer),
       recommended: Boolean(printer.driver || recommendedDriverId),
       hasOwnEntry: printersWithOwnEntry.has(printerId),
     });
