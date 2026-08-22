@@ -261,18 +261,17 @@ export default function HomePage() {
 
     if (selectedColorCapability !== "all") {
       result = result.filter((printer) => {
-        const type = printer.type?.toLowerCase() || ""
-        const model = typeof printer.model === "string" ? printer.model.toLowerCase() : ""
+        const color = printer.color
 
         if (selectedColorCapability === "color") {
-          return type.includes("color") || model.includes("color")
+          return color === true
         }
 
         if (selectedColorCapability === "monochrome") {
-          return type.includes("mono") || type.includes("dot-matrix") || model.includes("mono")
+          return color === false
         }
 
-        return true
+        return color === "unknown" || color === undefined
       })
     }
 

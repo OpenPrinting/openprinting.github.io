@@ -4,6 +4,10 @@ on:
   push:
     branches: [master]
 
+  # Weekly rebuild so recommendations pick up upstream foomatic-db changes.
+  schedule:
+    - cron: "0 2 * * 1"
+
   workflow_dispatch:
 
 permissions:
