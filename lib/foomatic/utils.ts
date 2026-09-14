@@ -12,18 +12,22 @@ export function calculateAccurateStatus(
 
   const functionality = typeof rawFunctionality === "string" ? rawFunctionality : undefined
 
-  const driverCount =
-  "driverCount" in printer
-    ? (printer as PrinterSummary).driverCount
-    : "drivers" in printer
-    ? Array.isArray((printer as Printer).drivers)
-      ? (printer as Printer).drivers!.length
-      : 0
-    : 0
+  // A driver the database marks obsolete cannot be used, so it is not driver
+  // support. Full printer records carry the driver list and can be counted
+  // directly; the summary projection only carries a total and cannot tell the
+  // two apart, which is why its precomputed status is preferred below.
+  const drivers = (printer as Printer).drivers
 
+  const usableDriverCount = Array.isArray(drivers)
+    ? drivers.filter((driver) => !driver.obsolete).length
+    : ((printer as PrinterSummary).driverCount ?? 0)
+
+  const noUsableDrivers = (): boolean =>
+    usableDriverCount === 0 ||
+    (!Array.isArray(drivers) && (printer as PrinterSummary).status === "Unsupported")
 
   if (!functionality || functionality === "?" || functionality === "unknown") {
-    if (driverCount === 0) {
+    if (noUsableDrivers()) {
       return "Unsupported"
     }
     return "Unknown"
@@ -49,7 +53,7 @@ export function calculateAccurateStatus(
       return "Unsupported"
 
     default:
-      if (driverCount === 0) {
+      if (noUsableDrivers()) {
         return "Unsupported"
       }
       return "Unknown"

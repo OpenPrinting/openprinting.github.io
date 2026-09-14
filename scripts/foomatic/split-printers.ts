@@ -14,6 +14,7 @@ type PrinterRecord = {
   status?: string
   functionality?: string
   drivers?: unknown[]
+  color?: boolean | "unknown"
 }
 
 type PrintersPayload = {
@@ -40,7 +41,8 @@ async function splitPrintersData() {
         type: printer.type || 'unknown',
         status: printer.status || 'Unknown',
         functionality: printer.functionality || '?',
-        driverCount: printer.drivers ? printer.drivers.length : 0
+        driverCount: printer.drivers ? printer.drivers.length : 0,
+        color: printer.color ?? 'unknown',
       }))
     }
     const mapPath = path.join(ROOT_DIR, 'public', 'foomatic-db', 'printersMap.json')
