@@ -11,7 +11,9 @@ CUPS 2.4.20 provides amount of bug fixes and security fixes:
 Assigned ids:
 - CVE-2025-55480, CVE-2026-61702, CVE-2026-87875, CVE-2026-87876, CVE-2026-55453, CVE-2026-55467, CVE-2026-105326
 
-Several fixes use GHSA id, because we changed policy for vulnerabilities with CVSS < 7.0 due long waiting time for ids from CNA, which we take as lower priority vulnerabilities unless print admin rights are required for triggering them, or we explicitly mention the advisory is security hardening, and not vulnerability fix.
+Several fixes use GHSA id, because we changed policy for vulnerabilities with CVSS < 7.0 due long waiting time for ids from CNA, which we take as lower priority vulnerabilities.
+
+Issues requiring print admin rights for triggering them, or the issues where it is explicitly mentioned the advisory is security hardening, is not taken as a vulnerability fix.
 
 More details in CHANGES.md.
 
