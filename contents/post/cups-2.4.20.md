@@ -13,7 +13,7 @@ Assigned ids:
 
 Several fixes use GHSA id, because we changed policy for vulnerabilities with CVSS < 7.0 due long waiting time for ids from CNA, which we take as lower priority vulnerabilities.
 
-Issues requiring print admin rights for triggering them, or the issues where it is explicitly mentioned the advisory is security hardening, is not taken as a vulnerability fix.
+Issues requiring print admin rights for triggering them, or the issues where it is explicitly mentioned the advisory is security hardening, are not taken as vulnerability fixes.
 
 More details in CHANGES.md.
 
