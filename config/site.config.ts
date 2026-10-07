@@ -34,6 +34,7 @@ export interface SiteConfig {
   };
   destinations: {
     github: string;
+    support: string;
     cups: string;
     drivers: string;
     legacyPrinters: string;
@@ -69,6 +70,7 @@ const canonicalOrigin =
 // override is honored; set NEXT_PUBLIC_BASE_PATH only for project-subpath previews.
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const assetPrefix = basePath ? `${basePath}/` : "";
+const supportUrl = "https://github.com/OpenPrinting/cups/discussions/categories/q-a";
 
 export const siteConfig: SiteConfig = {
   repo: {
@@ -97,6 +99,7 @@ export const siteConfig: SiteConfig = {
   },
   destinations: {
     github: "https://github.com/OpenPrinting",
+    support: supportUrl,
     cups: "https://openprinting.github.io/cups/",
     drivers: "https://openprinting.org/drivers",
     legacyPrinters: "https://openprinting.org/printers",
@@ -138,6 +141,7 @@ export const siteConfig: SiteConfig = {
       {
         title: "Community",
         links: [
+          { name: "Get Help", href: supportUrl },
           { name: "GitHub", href: "https://github.com/OpenPrinting" },
           { name: "Google Summer of Code", href: "/gsoc" },
           { name: "Google Season of Docs", href: "/gsod" },
