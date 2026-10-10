@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Get help with printing
+    url: https://github.com/OpenPrinting/cups/discussions/categories/q-a
+    about: Ask printer setup, troubleshooting, and CUPS questions in OpenPrinting's community Q&A.

@@ -22,7 +22,7 @@ export default async function ContactPage() {
     <>
       <PageHero
         title={title}
-        description="Get in touch with the OpenPrinting community"
+        description="Get help with printing and connect with the OpenPrinting community"
       />
 
       <main className="min-h-screen bg-background text-foreground pt-24 pb-16">

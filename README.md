@@ -4,6 +4,11 @@ The official website for [OpenPrinting](https://openprinting.github.io/), built 
 
 OpenPrinting is a Linux Foundation workgroup that manages the printing architecture for Linux and UNIX-like operating systems.
 
+## Need help with printing?
+
+Ask in [OpenPrinting's Q&A forum](https://github.com/OpenPrinting/cups/discussions/categories/q-a).
+See the [support guide](.github/SUPPORT.md) for more details.
+
 ## Getting Started
 
 You need [Node.js](https://nodejs.org/) and [Yarn](https://yarnpkg.com/). Note that the
