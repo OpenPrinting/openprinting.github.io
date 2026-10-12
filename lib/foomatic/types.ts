@@ -45,11 +45,15 @@ export interface Printer {
   ppdPath?: string
   supportContacts?: SupportContact[]
   commandsets?: string[]
+  commandsetTokens?: string[]
   ppdOptions?: PpdOption[]
   color?: boolean | "unknown"
   duplex?: boolean | "unknown"
   recommended?: boolean
   hasOwnEntry?: boolean
+  psLevel?: number | null
+  pclLevel?: number | null
+  maxDpi?: number | null
 }
 
 export type PrinterStatus = 'Perfect' | 'Mostly' | 'Unsupported' | 'Unknown'
@@ -66,6 +70,15 @@ export interface PrinterSummary {
   status?: string
   driverCount?: number
   functionality?: string
+  color?: boolean | "unknown"
+  // Capability fields below are omitted when the source data does not
+  // establish them (never null/[]): an absent key means "not recorded in
+  // Foomatic", not "the printer lacks this". Built by lib/foomatic/catalog.ts.
+  maxDpi?: number
+  psLevel?: number
+  pclLevel?: number
+  cs?: string[] // commandsetTokens from the full Printer record
+  rd?: string // recommended driver family (normalizeDriverFamily)
 }
 
 export interface DriverPrinterRef {
