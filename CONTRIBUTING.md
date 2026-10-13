@@ -44,7 +44,11 @@ date: '2026-10-05'
 
 ## Setting up the site locally
 
-You need [Node.js](https://nodejs.org/) 20 (the version CI uses) and Yarn. The Yarn version is pinned in `package.json`, and Corepack picks it up for you:
+You need [Node.js](https://nodejs.org/) 20 (the version CI uses) and Yarn.
+
+To install Node.js, download it from [nodejs.org](https://nodejs.org/). On Debian and Ubuntu you can also use `sudo apt install nodejs npm`, but that package can be older than version 20, so check it with `node --version`. Yarn comes with Node.js through Corepack, so you don't have to install it separately. `corepack enable` below turns it on, and the exact Yarn version is pinned in `package.json`. Check your setup with `node --version` and `yarn --version`.
+
+Then clone your fork and start the site:
 
 ```bash
 git clone https://github.com/<your-username>/openprinting.github.io.git
@@ -56,16 +60,19 @@ yarn dev
 
 Then open http://localhost:3000. On Debian and Ubuntu the Yarn command may be called `yarnpkg`; the [README](README.md) explains this.
 
-`yarn dev` does not build the printer database or the search index. Run `yarn generate` once if you need the printer and driver pages or the site search locally. The PPD files it creates need Foomatic tools that only exist on Linux, so on macOS run `SKIP_PPD_GEN=true yarn generate` instead. Everything else is still generated. For a full `yarn build` outside Linux, use the dev container in `.devcontainer/` or let CI build your pull request.
+`yarn dev` does not build the printer database or the search index. Run `yarn generate` once if you need the printer and driver pages or the site search locally. The PPD files it creates need Foomatic tools that only exist on Linux, so on macOS run `SKIP_PPD_GEN=true yarn generate` instead. Everything else is still generated. For a full `yarn build` outside Linux, use the dev container in `.devcontainer/`. See [Before you open a pull request](#before-you-open-a-pull-request).
 
 ## Before you open a pull request
 
-Run these two checks. CI runs them too, together with `yarn build`, on every pull request:
+Run these checks. CI runs them too on every pull request, but it's better to catch problems before you push:
 
 ```bash
 yarn lint
+yarn build
 yarn verify:urls
 ```
+
+`yarn build` generates the printer database and builds the whole site, so it shows you problems that `yarn dev` doesn't. It needs the Foomatic tools that only exist on Linux. On macOS or Windows, run it in the dev container in `.devcontainer/`, and if you can't, say so in your pull request so CI's result is the first full build.
 
 A few rules that are easy to miss:
 
@@ -73,7 +80,7 @@ A few rules that are easy to miss:
 - Don't hardcode the site URL or the repository name. Use `siteConfig` from `config/site.config.ts`.
 - In code, pass image paths through `getAssetPath()` or `getImageSrc()` from `lib/utils.ts`.
 - Don't commit generated files. `public/search/`, `public/foomatic-db/`, `public/query/`, `public/ppds/` and `public/feed.xml` are rebuilt on every build and are in `.gitignore`.
-- If `yarn install` changed `yarn.lock`, undo that with `git checkout -- yarn.lock` before you commit.
+- If `yarn install` changed `yarn.lock` and you didn't change any dependencies on purpose, undo that with `git checkout -- yarn.lock` before you commit. Only commit `yarn.lock` when your pull request really adds or updates a dependency.
 - For visual changes, check light and dark mode on both a phone and a desktop width.
 
 ## Working with issues
@@ -88,7 +95,7 @@ A few rules that are easy to miss:
 1. Fork the repository and create a branch from the latest `master`.
 2. Keep each pull request to one topic.
 3. Explain what you changed and why, and link the issue (for example `Fixes #202`).
-4. Add screenshots if the change is visible.
+4. Add media (screenshots or a short screen recording) if the change is visible.
 5. Reviewers may ask for changes. Push them to the same branch and the pull request updates itself.
 
 If your pull request hasn't had any review after a week, feel free to ask in the pull request or in the [Telegram chat](https://t.me/+RizBbjXz4uU2ZWM1).
