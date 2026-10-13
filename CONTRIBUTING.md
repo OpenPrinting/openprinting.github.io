@@ -72,7 +72,14 @@ yarn build
 yarn verify:urls
 ```
 
-`yarn build` generates the printer database and builds the whole site, so it shows you problems that `yarn dev` doesn't. It needs the Foomatic tools that only exist on Linux. On macOS or Windows, run it in the dev container in `.devcontainer/`, and if you can't, say so in your pull request so CI's result is the first full build.
+`yarn build` generates the printer database and builds the whole site, so it shows you problems that `yarn dev` doesn't. Please run all three commands before you commit, so you don't need extra commits to fix what CI finds.
+
+`yarn build` needs the Foomatic tools, which only exist on Linux:
+
+- On Debian and Ubuntu, install them once with `sudo apt install foomatic-db-engine foomatic-db-compressed-ppds cups-filters ghostscript bsdmainutils libxml2-utils xsltproc python3 python3-pip`. This is the same list CI uses.
+- On macOS or Windows, use the dev container. Install [Docker](https://docs.docker.com/get-docker/), [Visual Studio Code](https://code.visualstudio.com/) and its Dev Containers extension, open the repository folder in VS Code, and choose "Reopen in Container" from the notification or the Command Palette. The first start takes a few minutes, because it builds the image and runs `yarn install` and `yarn generate`. Then run the three commands above in the terminal inside VS Code.
+
+If none of this works for you, say so in your pull request, so everyone knows CI's result is the first full build.
 
 A few rules that are easy to miss:
 
@@ -95,7 +102,7 @@ A few rules that are easy to miss:
 1. Fork the repository and create a branch from the latest `master`.
 2. Keep each pull request to one topic.
 3. Explain what you changed and why, and link the issue (for example `Fixes #202`).
-4. Add media (screenshots or a short screen recording) if the change is visible.
+4. Add screenshots if the change is visible.
 5. Reviewers may ask for changes. Push them to the same branch and the pull request updates itself.
 
 If your pull request hasn't had any review after a week, feel free to ask in the pull request or in the [Telegram chat](https://t.me/+RizBbjXz4uU2ZWM1).
