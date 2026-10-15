@@ -31,6 +31,7 @@ export interface SiteConfig {
     basePath: string;
     assetPrefix: string;
     rssPath: string;
+    rssGuidOrigin: string;
   };
   destinations: {
     github: string;
@@ -63,10 +64,9 @@ const repoOwner = "OpenPrinting";
 const repoName = "openprinting.github.io";
 const repoSlug = `${repoOwner}/${repoName}` as const;
 const canonicalOrigin =
-  process.env.NEXT_PUBLIC_BASE_URL || "https://openprinting.github.io";
-// This deploys to the OpenPrinting organization *root* Pages site
-// (https://openprinting.github.io/), so the site is served from the domain
-// root and basePath must be empty. `??` (not `||`) so an explicit empty
+  process.env.NEXT_PUBLIC_BASE_URL || "https://openprinting.org";
+// The organization Pages site is served at the custom domain's root,
+// so basePath must be empty. `??` (not `||`) so an explicit empty
 // override is honored; set NEXT_PUBLIC_BASE_PATH only for project-subpath previews.
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const assetPrefix = basePath ? `${basePath}/` : "";
@@ -96,6 +96,8 @@ export const siteConfig: SiteConfig = {
     basePath,
     assetPrefix,
     rssPath: "/feed.xml",
+    // Keep published RSS identities stable across domain changes and previews.
+    rssGuidOrigin: "https://openprinting.github.io",
   },
   destinations: {
     github: "https://github.com/OpenPrinting",
