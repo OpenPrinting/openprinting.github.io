@@ -46,7 +46,7 @@ date: '2026-10-05'
 
 You need [Node.js](https://nodejs.org/) 20 (the version CI uses) and Yarn.
 
-To install Node.js, download it from [nodejs.org](https://nodejs.org/). On Debian and Ubuntu you can also use `sudo apt install nodejs npm`, but that package can be older than version 20, so check it with `node --version`. Yarn comes with Node.js through Corepack, so you don't have to install it separately. `corepack enable` below turns it on, and the exact Yarn version is pinned in `package.json`. Check your setup with `node --version` and `yarn --version`.
+To install Node.js, download it from [nodejs.org](https://nodejs.org/). On Debian and Ubuntu you can also use `sudo apt install nodejs npm`, but that package can be older than version 20, so check it with `node --version`. Yarn is provided by Corepack, which ships with Node.js up to version 24, so you don't have to install Yarn separately. `corepack enable` below turns it on, and Corepack then runs the exact Yarn version pinned in `package.json`. Node.js 25 and later no longer include Corepack, so there install it first with `npm install -g corepack`. Note that `npm install -g yarn` installs Yarn 1, which is not the version this project uses. Check your setup with `node --version` and `yarn --version`; inside the repository, `yarn --version` should print the pinned version.
 
 Then clone your fork and start the site:
 
