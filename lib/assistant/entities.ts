@@ -31,7 +31,8 @@ export const MANUFACTURER_ALIASES: Record<string, string> = {
 // Tokens that are capability/query vocabulary, never part of an entity name.
 // Without this, "laser" would prefix-match every LaserJet model.
 const EXCLUDED_ENTITY_TOKENS = new Set([
-  "printer", "printers", "driver", "drivers", "laser", "inkjet", "ink", "jet",
+  "printer", "printers", "print", "prints", "printing", "printed",
+  "driver", "drivers", "laser", "inkjet", "ink", "jet",
   "dot", "matrix", "impact", "colour", "color", "coloured", "colored", "mono",
   "monochrome", "black", "white", "duplex", "sided", "postscript", "post",
   "script", "pcl", "pclxl", "pcl5", "pcl5e", "pcl6", "ps2", "ps3",
