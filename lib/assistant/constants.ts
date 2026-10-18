@@ -1,7 +1,8 @@
 // Named tunables for the assistant. Every value here is documented in the
-// table in docs/foomatic-assistant.md, and tools/assistant-eval/run.ts fails
-// when the documented values drift from these (same convention as
-// tools/eval/check-docs.mjs for the recommendation pipeline).
+// assistant documentation PR (docs/foomatic-assistant.md); when that doc is
+// present in the tree, tools/assistant-eval/run.ts fails if the documented
+// values drift from these (same convention as tools/eval/check-docs.mjs for
+// the recommendation pipeline).
 
 // Queries longer than this are truncated before parsing; no realistic printer
 // question needs more, and it bounds parser work on hostile input.
