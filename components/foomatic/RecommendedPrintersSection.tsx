@@ -31,9 +31,8 @@ interface RecommendedPrintersSectionProps {
 }
 
 // One shard fetch per printer id, shared between the hero teaser and the full
-// section below so mounting both costs a single network request. A missing
-// shard (404) resolves to an empty list; network failures clear the cache so
-// the next mount retries instead of reusing a rejected promise.
+// section below so mounting both costs a single network request. A rejected
+// promise is evicted so the next mount retries instead of reusing the failure.
 const shardCache = new Map<string, Promise<Recommendation[]>>()
 
 function getRecommendations(printerId: string): Promise<Recommendation[]> {
@@ -55,9 +54,6 @@ function getRecommendations(printerId: string): Promise<Recommendation[]> {
   return cached
 }
 
-// Tier wording and thresholds live in lib/foomatic/scoring.ts next to the
-// scoring model they interpret. The percentage is labelled "similarity": the
-// score is not a probability that the printer will work.
 const TONE_CLASSES: Record<ConfidenceTone, string> = {
   high: "text-emerald-700 dark:text-emerald-400",
   good: "text-sky-700 dark:text-sky-400",
@@ -65,6 +61,8 @@ const TONE_CLASSES: Record<ConfidenceTone, string> = {
   limited: "text-muted-foreground",
 }
 
+// The percentage is labelled "similarity": the score is not a probability that
+// the printer will work.
 function ConfidenceBadge({ score }: { score: number }) {
   const tier = confidenceTier(score)
 
@@ -106,8 +104,6 @@ function RecommendationSkeleton() {
   )
 }
 
-// Compact hero teaser: the top similar printer plus a link to the full section.
-// Renders nothing while loading or when the printer has no recommendations.
 export function SimilarPrintersTeaser({ printerId }: RecommendedPrintersSectionProps) {
   const [top, setTop] = useState<Recommendation | null>(null)
   const [count, setCount] = useState(0)

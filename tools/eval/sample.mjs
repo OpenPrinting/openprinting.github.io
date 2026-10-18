@@ -5,7 +5,7 @@
 import fs from "fs"
 
 const P = JSON.parse(fs.readFileSync(`${process.cwd()}/public/foomatic-db/printers.json`, "utf8")).printers
-const R = JSON.parse(fs.readFileSync(`${process.cwd()}/public/foomatic-db/recommendations.json`, "utf8")).recommendations
+const R = JSON.parse(fs.readFileSync(`${process.cwd()}/cache/foomatic/recommendations.json`, "utf8")).recommendations
 
 const nameOf = (p) => `${p.manufacturer} ${p.model}`
 const drvNames = (p) => (p.drivers || []).map((d) => d.name).join(" ").toLowerCase()
@@ -23,7 +23,6 @@ const STRATA = {
   highRes: (p) => p.maxDpi != null && p.maxDpi >= 2400,
   lowRes: (p) => p.maxDpi != null && p.maxDpi <= 300,
   postscript: (p) => p.psLevel != null,
-  // rarity by how many printers share the same recommended driver
 }
 const NORM = [[/^Postscript/i, "postscript"], [/^PDF/i, "pdf"], [/^pxlmono/i, "pxlmono"], [/^pxlcolor/i, "pxlcolor"],
   [/^foo2zjs/i, "foo2zjs"], [/^foo2hp/i, "foo2hp"], [/^foo2qpdl/i, "foo2qpdl"], [/^hpijs/i, "hpijs"],

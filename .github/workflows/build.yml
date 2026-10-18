@@ -79,10 +79,12 @@ jobs:
       - name: Run unit tests
         run: ${{ steps.pm.outputs.runner }} test
 
+      # Runs the same pipeline as deploy.yml, similarity included, so a PR that
+      # breaks vectorize.ts or compute-similarity.ts fails here rather than on
+      # the deploy run after merge. The recommendation artifacts are generated,
+      # never committed, so there is nothing pre-built for CI to fall back on.
       - name: Build Next.js
         run: ${{ steps.pm.outputs.runner }} build
-        env:
-          FOOMATIC_SKIP_SIMILARITY: "1"
 
       - name: Verify URL conventions
         run: ${{ steps.pm.outputs.runner }} verify:urls

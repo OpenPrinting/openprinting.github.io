@@ -27,10 +27,14 @@ const ROOT_DIR = path.join(
   "..",
 );
 
+// Build-time intermediates live outside public/: the feature matrix and the
+// combined recommendation map are inputs to this script and to tools/eval, and
+// nothing in the browser fetches either, so shipping them in the static export
+// would add ~50 MB to GitHub Pages for no runtime benefit.
 const MATRIX_FILE = path.join(
   ROOT_DIR,
-  "public",
-  "foomatic-db",
+  "cache",
+  "foomatic",
   "feature-matrix.json",
 );
 
@@ -43,11 +47,13 @@ const PRINTERS_FILE = path.join(
 
 const OUTPUT_FILE = path.join(
   ROOT_DIR,
-  "public",
-  "foomatic-db",
+  "cache",
+  "foomatic",
   "recommendations.json",
 );
 
+// The per-printer shards are the only client-facing output of this script, so
+// they alone belong under public/.
 const RECOMMENDATIONS_DIR = path.join(
   ROOT_DIR,
   "public",

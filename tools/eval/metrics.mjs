@@ -5,7 +5,7 @@ import fs from "fs"
 
 const ROOT = process.cwd()
 const P = JSON.parse(fs.readFileSync(`${ROOT}/public/foomatic-db/printers.json`, "utf8")).printers
-const R = JSON.parse(fs.readFileSync(`${ROOT}/public/foomatic-db/recommendations.json`, "utf8")).recommendations
+const R = JSON.parse(fs.readFileSync(`${ROOT}/cache/foomatic/recommendations.json`, "utf8")).recommendations
 const byId = new Map(P.map((p) => [p.id, p]))
 
 const NORM = [[/^Postscript/i, "postscript"], [/^PDF/i, "pdf"], [/^pxlmono/i, "pxlmono"], [/^pxlcolor/i, "pxlcolor"],

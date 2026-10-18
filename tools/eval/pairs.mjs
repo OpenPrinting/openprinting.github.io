@@ -18,7 +18,7 @@
 import fs from "fs"
 
 const P = JSON.parse(fs.readFileSync(`${process.cwd()}/public/foomatic-db/printers.json`, "utf8")).printers
-const R = JSON.parse(fs.readFileSync(`${process.cwd()}/public/foomatic-db/recommendations.json`, "utf8")).recommendations
+const R = JSON.parse(fs.readFileSync(`${process.cwd()}/cache/foomatic/recommendations.json`, "utf8")).recommendations
 const byId = new Map(P.map((p) => [p.id, p]))
 const sampleArg = process.argv.find((a) => a.endsWith(".json"))
 const sample = sampleArg

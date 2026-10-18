@@ -22,10 +22,13 @@ const INPUT_FILE = path.join(
   "printers.json",
 );
 
+// Build-time intermediate: read back only by compute-similarity.ts and never
+// fetched by the site, so it is written outside public/ to keep it out of the
+// static export.
 const OUTPUT_FILE = path.join(
   ROOT_DIR,
-  "public",
-  "foomatic-db",
+  "cache",
+  "foomatic",
   "feature-matrix.json",
 );
 
