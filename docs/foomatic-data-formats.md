@@ -64,8 +64,8 @@ interface Driver {
 
 ## `public/foomatic-db/printersMap.json`
 
-**Produced by:** `split-printers.ts`
-**Consumed by:** the directory listing page (`app/foomatic/printers/page.tsx`) and `generateStaticParams()` in `app/foomatic/printer/[make]/[id]/page.tsx`
+**Produced by:** `split-printers.ts`, one `toPrinterSummary()` call per printer (`lib/foomatic/catalog.ts` is the single source of truth for this shape); written minified
+**Consumed by:** the directory listing page (`app/foomatic/printers/page.tsx`), `generateStaticParams()` in `app/foomatic/printer/[make]/[id]/page.tsx`, and the printer assistant catalogue (see [foomatic-assistant.md](./foomatic-assistant.md))
 
 A lightweight projection of `printers.json`, one entry per printer, used so the directory page doesn't need to download every printer's full driver/PPD detail just to render a list:
 
@@ -78,10 +78,19 @@ interface PrinterSummary {
   status?: string
   driverCount?: number
   functionality?: string
+  color?: boolean | "unknown"
+  // Capability fields, omitted when Foomatic does not record them
+  maxDpi?: number
+  psLevel?: number
+  pclLevel?: number
+  cs?: string[]              // commandsetTokens from the full record
+  rd?: string                // recommended driver family
 }
 ```
 
-`driverCount` is `drivers.length` from the full record; `type`/`status`/`functionality` default to `"unknown"`/`"Unknown"`/`"?"` respectively if absent.
+`driverCount` is `drivers.length` from the full record; `type`/`status`/`functionality`/`color` default to `"unknown"`/`"Unknown"`/`"?"`/`"unknown"` respectively if absent.
+
+The five capability fields exist so the assistant can answer capability queries from this one file. They are **omitted** when the source data does not establish them, never emitted as `null`, `"unknown"` or `[]`: an absent key means "not recorded in Foomatic", not "the printer lacks this". `duplex` is deliberately not projected because upstream records it for no printer.
 
 ### Usable drivers and support status
 
