@@ -131,8 +131,8 @@ export default function Navbar() {
                 size="sm"
                 className="bg-foreground text-background hover:bg-foreground/90 text-xs font-medium h-8 px-4 rounded-full transition-all duration-200"
               >
-                <Link href={siteConfig.destinations.github} target="_blank" rel="noopener noreferrer">
-                  GitHub
+                <Link href={siteConfig.destinations.support}>
+                  Get Help
                 </Link>
               </Button>
             </motion.div>
@@ -251,8 +251,8 @@ export default function Navbar() {
                   className="w-full bg-foreground text-background hover:bg-foreground/90 text-xs font-medium rounded-full"
                   onClick={() => setIsOpen(false)}
                 >
-                  <Link href={siteConfig.destinations.github} target="_blank" rel="noopener noreferrer">
-                    GitHub
+                  <Link href={siteConfig.destinations.support}>
+                    Get Help
                   </Link>
                 </Button>
               </motion.div>

@@ -1,0 +1,336 @@
+// Free text -> typed AssistantQuery.
+//
+// Intent classification is an ordered, deterministic rule cascade. The
+// precedence is deliberate and documented in docs/foomatic-assistant.md:
+//
+//   1. COMPARISON        (two printer refs + compare marker)
+//   2. EXPLANATION       (why + recommendation vocabulary)
+//   3. SIMILAR_PRINTERS  (similar/alternatives/better vocabulary)
+//   4. DRIVER_SEARCH     (printers-for-driver phrasing, "same driver")
+//   5. DRIVER_LOOKUP     (driver-of-printer phrasing)
+//   6. GENERAL_INFO      (meta questions about grades/similarity/help -
+//                         above SUPPORT_QUERY so meaning-questions are never
+//                         captured by printer-page context)
+//   7. SUPPORT_QUERY     (support question about one specific printer)
+//   8. CAPABILITY_SEARCH (recommend/best or any capability filters)
+//   9. PRINTER_LOOKUP    (a printer reference and nothing more specific)
+//  10. UNSUPPORTED       (unclear-but-domain or out-of-domain)
+//
+// Specific rules sit above generic ones so "why was this recommended?" can
+// never be swallowed by the recommendation rule, and "compare X and Y" can
+// never be read as a lookup of X.
+
+import type { DriverIndex, PrinterIndex } from "./entities"
+import { findNearMissPrinter, resolveDriverInText, resolvePrintersInText } from "./entities"
+import { countFilters, extractFilters } from "./lexicon"
+import { tokenize } from "./normalize"
+import type { AssistantPageContext, AssistantQuery, BetterDimension, PrinterRef } from "./types"
+
+// Words that are query mechanics, not constraints: leftovers on this list are
+// ignored; anything else left over surfaces as an unapplied constraint.
+const STOPWORDS = new Set([
+  "a", "an", "the", "i", "me", "my", "we", "you", "it", "they", "them", "please",
+  "find", "show", "search", "list", "give", "get", "need", "want", "looking",
+  "buy", "tell", "about", "suggest", "recommend", "recommended", "recommendation",
+  "recommendations", "best", "better", "good", "great", "top",
+  "printer", "printers", "device", "machine", "model", "models", "driver", "drivers",
+  "with", "and", "or", "that", "which", "what", "who", "why", "how", "when",
+  "is", "are", "was", "were", "be", "been", "does", "do", "did", "has", "have",
+  "can", "could", "would", "should", "will",
+  "in", "on", "to", "of", "for", "at", "by", "from", "as",
+  "this", "one", "some", "any", "all", "more", "most", "very",
+  "similar", "like", "alternative", "alternatives", "replacement", "instead",
+  "compare", "comparison", "versus", "vs",
+  "support", "supported", "supports", "supporting", "linux",
+  "works", "work", "well", "use", "uses", "using", "used", "same",
+  "prints", "printing", "print", "there", "than", "no", "not", "if",
+  "higher", "lower", "level", "so", "just", "really", "am", "s", "least",
+  "resolution", "res", "options", "similarity", "status", "grade", "grades",
+])
+
+const CONTEXT_PHRASES: string[][] = [
+  ["this", "printer"],
+  ["this", "driver"],
+  ["this", "one"],
+  ["this", "model"],
+  ["this", "device"],
+]
+
+export interface ParseInputs {
+  printers: PrinterIndex
+  drivers: DriverIndex
+}
+
+export function parseQuery(
+  input: string,
+  context: AssistantPageContext,
+  indexes: ParseInputs
+): AssistantQuery {
+  const tokens = tokenize(input)
+  if (tokens.length === 0) {
+    return { intent: "UNSUPPORTED", reason: "empty" }
+  }
+
+  const has = (word: string) => tokens.includes(word)
+  const hasPhrase = (phrase: string[]) =>
+    tokens.some((_, i) => phrase.every((word, j) => tokens[i + j] === word))
+
+  // --- signals (read from the raw token stream, independent of consumption)
+  const compareSignal =
+    has("compare") || has("comparison") || has("versus") || has("vs") ||
+    has("difference") || has("differences")
+  const whySignal = has("why")
+  const recommendSignal =
+    has("recommend") || has("recommended") || has("recommendation") ||
+    has("recommendations") || has("suggest") || has("suggested") || has("suggests") ||
+    hasPhrase(["should", "i"])
+  const similarSignal =
+    has("similar") || has("alternative") || has("alternatives") ||
+    has("replacement") || hasPhrase(["like", "this"]) || hasPhrase(["instead", "of"])
+  const betterSignal = has("better") || hasPhrase(["best", "alternatives"]) || hasPhrase(["best", "alternative"])
+  const bestSignal = has("best")
+  const driverWord = has("driver") || has("drivers")
+  const printersPlural = has("printers")
+  const supportSignal = has("support") || has("supported") || has("linux")
+  const listVerb =
+    has("find") || has("show") || has("search") || has("list") ||
+    has("need") || has("want") || has("looking") || has("get") || has("give")
+  const meaningSignal = has("mean") || has("means") || has("meaning") || has("meant")
+  const helpSignal =
+    hasPhrase(["what", "can", "you", "do"]) || hasPhrase(["who", "are", "you"]) ||
+    (tokens.length <= 2 && has("help"))
+
+  // --- context references ("this printer", bare "this"/"it" in short queries)
+  const contextRef =
+    CONTEXT_PHRASES.some(hasPhrase) ||
+    has("this") ||
+    (has("it") && tokens.length <= 7)
+
+  // Definition-shaped questions ("what is PostScript?", "what is a printer
+  // driver?") ask for meanings the Foomatic data does not record. They must
+  // never be captured by page context or answered with a printer list -
+  // detection excludes "what is the ..." (a lookup shape) and any query that
+  // carries an explicit reference.
+  const definitionSignal =
+    (hasPhrase(["what", "is"]) || hasPhrase(["what", "are"])) &&
+    !hasPhrase(["what", "is", "the"]) &&
+    !hasPhrase(["what", "are", "the"]) &&
+    !contextRef &&
+    !listVerb
+
+  // --- entity resolution (before the lexicon: model names such as
+  // "Color LaserJet 4500" contain capability words that must not be eaten)
+  const printerScan = resolvePrintersInText(tokens, indexes.printers)
+  const refs = printerScan.refs
+  const consumed = printerScan.consumed
+
+  const printerRef = (): PrinterRef => refs[0] ?? { kind: "context" }
+
+  // --- capability filters on what remains
+  const lexicon = extractFilters(tokens.map((token, i) => (consumed.has(i) ? "" : token)))
+  const filters = lexicon.filters
+  for (const i of lexicon.consumed) consumed.add(i)
+  if (printerScan.makeOnly) {
+    filters.manufacturer = printerScan.makeOnly
+  }
+
+  // --- near-miss models ("brother hl 2270dw"): after the lexicon, so
+  // capability tokens can never be misread as model numbers. Skipped for
+  // driver-shaped queries, whose leftover token is a driver name.
+  const driverShaped =
+    driverWord || hasPhrase(["same", "driver"]) || hasPhrase(["same", "drivers"]) ||
+    (printersPlural && (has("use") || has("uses") || has("using") || has("work") || has("works")))
+  if (refs.length === 0 && !driverShaped) {
+    const nearMiss = findNearMissPrinter(
+      tokens,
+      consumed,
+      indexes.printers,
+      printerScan.makeOnly,
+      token => STOPWORDS.has(token)
+    )
+    if (nearMiss) {
+      refs.push(nearMiss.ref)
+      for (const i of nearMiss.used) consumed.add(i)
+      delete filters.manufacturer
+    }
+  }
+
+  // --- unapplied constraints: leftover content words
+  const unapplied: string[] = []
+  for (let i = 0; i < tokens.length; i++) {
+    if (!consumed.has(i) && !STOPWORDS.has(tokens[i]) && !/^\d+$/.test(tokens[i])) {
+      unapplied.push(tokens[i])
+    }
+  }
+
+  // --- "better" comparison dimension, when one was named
+  const wantsBetter = betterSignal || (bestSignal && similarSignal)
+  const betterDimension = ((): BetterDimension | null => {
+    if (!wantsBetter && !similarSignal) return null
+    if (wantsBetter && filters.support) return "support"
+    if ((wantsBetter || has("higher")) && (has("resolution") || has("res"))) return "resolution"
+    if (hasPhrase(["driver", "options"]) || hasPhrase(["more", "drivers"]) || (wantsBetter && driverWord)) return "drivers"
+    if (wantsBetter && has("similarity")) return "similarity"
+    return null
+  })()
+
+  // ------------------------------------------------------------- cascade
+
+  // 1. COMPARISON
+  if (compareSignal) {
+    if (refs.length === 2) {
+      return { intent: "COMPARISON", printers: [refs[0], refs[1]] }
+    }
+    if (refs.length === 1 && (contextRef || context.pageType === "printer")) {
+      return { intent: "COMPARISON", printers: [{ kind: "context" }, refs[0]] }
+    }
+    return { intent: "UNSUPPORTED", reason: "unclear" }
+  }
+
+  // 2. EXPLANATION
+  if (whySignal && (recommendSignal || similarSignal)) {
+    // "why was X recommended?" reads X as the recommended candidate and the
+    // current page's printer as the recommendation source.
+    const candidate = refs[0] ?? null
+    return { intent: "EXPLANATION", source: { kind: "context" }, candidate }
+  }
+
+  // 3. SIMILAR_PRINTERS (including "better alternatives")
+  if (similarSignal || wantsBetter) {
+    const better = betterDimension ?? (wantsBetter ? "unspecified" : undefined)
+    if (better) {
+      // The support filter extracted from "better linux support" is the
+      // comparison dimension here, not a result filter.
+      if (betterDimension === "support") delete filters.support
+      return { intent: "SIMILAR_PRINTERS", printer: printerRef(), filters, unapplied, better }
+    }
+    return { intent: "SIMILAR_PRINTERS", printer: printerRef(), filters, unapplied }
+  }
+
+  // 4. DRIVER_SEARCH ("which printers use ...", "same driver as this")
+  if (hasPhrase(["same", "driver"]) || hasPhrase(["same", "drivers"])) {
+    return { intent: "DRIVER_SEARCH", driver: { kind: "same-as", printer: printerRef() } }
+  }
+  if (printersPlural && (driverWord || has("use") || has("uses") || has("using") || has("work") || has("works"))) {
+    // Fresh consumption set: in a printers-for-driver query, the driver name
+    // may have been speculatively claimed by the printer scan ("laserjet").
+    const driverRef = resolveDriverInText(tokens, new Set(), indexes.drivers, true)
+    if (driverRef) {
+      return { intent: "DRIVER_SEARCH", driver: driverRef }
+    }
+    // "which printers use this driver": a contextual driver reference, valid
+    // only because the phrase itself refers to the current page.
+    if (hasPhrase(["this", "driver"]) || (contextRef && context.pageType === "driver")) {
+      return { intent: "DRIVER_SEARCH", driver: { kind: "context" } }
+    }
+  }
+  // "what does this driver do?" - an explicit reference to the current
+  // driver page answers with that driver's own record.
+  if (hasPhrase(["this", "driver"])) {
+    return { intent: "DRIVER_SEARCH", driver: { kind: "context" } }
+  }
+
+  // 5. DRIVER_LOOKUP ("which driver does X use", "driver for this printer").
+  // Definition questions ("what is a printer driver?") are excluded: bare
+  // page context must not turn a vocabulary question into this printer's
+  // driver list.
+  if (
+    driverWord &&
+    !printersPlural &&
+    !definitionSignal &&
+    (refs.length > 0 || contextRef || context.pageType === "printer")
+  ) {
+    // A resolved driver mention plus a printer would be ambiguous phrasing;
+    // prefer the printer's driver question, which is the common ask.
+    return { intent: "DRIVER_LOOKUP", printer: printerRef() }
+  }
+
+  // 6. GENERAL_INFO (closed topics only). Deliberately ABOVE SUPPORT_QUERY:
+  // "what does perfect support mean?" asks for the meaning of the grade
+  // vocabulary, and page context must never capture a meaning-question and
+  // answer it with the current printer's own values.
+  if (helpSignal) {
+    return { intent: "GENERAL_INFO", topic: "assistant-help" }
+  }
+  if (meaningSignal || hasPhrase(["how", "does"]) || has("explain")) {
+    if (has("perfect") || has("mostly") || has("unsupported") || has("grade") || has("grades") || has("functionality")) {
+      return { intent: "GENERAL_INFO", topic: "support-grades" }
+    }
+    if (has("similarity") || has("score") || has("confidence") || has("tier") || has("recommendation") || has("recommendations")) {
+      return { intent: "GENERAL_INFO", topic: "similarity" }
+    }
+    // "what does Linux support mean?" - the grades answer IS the definition
+    // of Linux support in this database.
+    if (supportSignal && refs.length === 0 && !contextRef) {
+      return { intent: "GENERAL_INFO", topic: "support-grades" }
+    }
+  }
+  // "what are the grades?" with no printer in sight is also the general
+  // question; with a printer reference it falls through to that printer.
+  if ((has("grades") || has("grade")) && refs.length === 0 && !contextRef) {
+    return { intent: "GENERAL_INFO", topic: "support-grades" }
+  }
+  // Remaining definition questions ("what is PostScript?"): the data records
+  // which printers support such things, not what they are. Answer with an
+  // honest scope statement instead of a printer list or a captured context.
+  if (definitionSignal && refs.length === 0) {
+    if (supportSignal) {
+      return { intent: "GENERAL_INFO", topic: "support-grades" }
+    }
+    return { intent: "UNSUPPORTED", reason: "unclear" }
+  }
+
+  // 7. SUPPORT_QUERY (about one specific printer, not a filtered list).
+  // A duplex question ("does this printer support duplex?") is excluded: the
+  // dataset records duplex for no printer at all, and the honest answer is
+  // the duplex data-gap response, not the printer's Linux support grade.
+  if (
+    supportSignal &&
+    !printersPlural &&
+    !listVerb &&
+    !recommendSignal &&
+    !filters.duplex &&
+    (refs.length > 0 || contextRef || context.pageType === "printer")
+  ) {
+    return { intent: "SUPPORT_QUERY", printer: printerRef() }
+  }
+
+  // 8. CAPABILITY_SEARCH / recommendation requests
+  const hasFilters = countFilters(filters) > 0
+  const domainWord = has("printer") || has("printers") || driverWord || supportSignal
+  if (recommendSignal || bestSignal) {
+    return { intent: "CAPABILITY_SEARCH", filters, unapplied, recommend: true }
+  }
+
+  // Duplex questions get the duplex data-gap answer even when a specific
+  // printer was named or implied - the gap is catalogue-wide, and a lookup
+  // response would sidestep the question that was actually asked.
+  if (filters.duplex) {
+    return { intent: "CAPABILITY_SEARCH", filters, unapplied, recommend: false }
+  }
+
+  // 9. PRINTER_LOOKUP
+  if (refs.length > 0) {
+    return { intent: "PRINTER_LOOKUP", printer: refs[0] }
+  }
+  if (contextRef && context.pageType === "printer") {
+    return { intent: "PRINTER_LOOKUP", printer: { kind: "context" } }
+  }
+  // "what about this?" on a driver page refers to the driver, not a printer.
+  if (contextRef && context.pageType === "driver") {
+    return { intent: "DRIVER_SEARCH", driver: { kind: "context" } }
+  }
+
+  if (hasFilters || (unapplied.length > 0 && domainWord)) {
+    return { intent: "CAPABILITY_SEARCH", filters, unapplied, recommend: false }
+  }
+
+  // "find me a good printer": a list request with no usable criteria asks for
+  // criteria instead of dead-ending.
+  if (domainWord && listVerb && unapplied.length === 0) {
+    return { intent: "CAPABILITY_SEARCH", filters, unapplied, recommend: true }
+  }
+
+  // 10. UNSUPPORTED
+  return { intent: "UNSUPPORTED", reason: domainWord ? "unclear" : "out-of-domain" }
+}
