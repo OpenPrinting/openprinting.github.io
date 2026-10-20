@@ -45,11 +45,15 @@ export interface Printer {
   ppdPath?: string
   supportContacts?: SupportContact[]
   commandsets?: string[]
+  commandsetTokens?: string[]
   ppdOptions?: PpdOption[]
   color?: boolean | "unknown"
   duplex?: boolean | "unknown"
   recommended?: boolean
   hasOwnEntry?: boolean
+  psLevel?: number | null
+  pclLevel?: number | null
+  maxDpi?: number | null
 }
 
 export type PrinterStatus = 'Perfect' | 'Mostly' | 'Unsupported' | 'Unknown'
@@ -66,6 +70,7 @@ export interface PrinterSummary {
   status?: string
   driverCount?: number
   functionality?: string
+  color?: boolean | "unknown"
 }
 
 export interface DriverPrinterRef {
