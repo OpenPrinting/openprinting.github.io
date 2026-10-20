@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import TopLoader from "@/components/top-loader";
+import AssistantLauncher from "@/components/assistant/AssistantLauncher";
 import { ThemeProvider } from "@/components/theme-provider";
 import { siteConfig } from "@/config/site.config";
 import { getSiteUrl } from "@/lib/site";
@@ -45,6 +46,7 @@ export default function RootLayout({
           <Navbar />
           {children}
           <Footer />
+          <AssistantLauncher />
         </ThemeProvider>
       </body>
     </html>

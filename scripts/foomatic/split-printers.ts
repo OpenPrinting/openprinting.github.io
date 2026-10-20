@@ -1,24 +1,15 @@
 import fs from 'fs/promises'
 import path from 'path'
 import { fileURLToPath } from 'url'
+import { toPrinterSummary } from '../../lib/foomatic/catalog.ts'
+import type { Printer } from '../../lib/foomatic/types.ts'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 const ROOT_DIR = path.join(__dirname, "..", "..")
 
-type PrinterRecord = {
-  id: string
-  manufacturer?: string
-  model?: string
-  type?: string
-  status?: string
-  functionality?: string
-  drivers?: unknown[]
-  color?: boolean | "unknown"
-}
-
 type PrintersPayload = {
-  printers: PrinterRecord[]
+  printers: Printer[]
 }
 
 async function splitPrintersData() {
@@ -34,19 +25,13 @@ async function splitPrintersData() {
     await fs.mkdir(printersDir, { recursive: true })
     
     const printersMap = {
-      printers: data.printers.map(printer => ({
-        id: printer.id,
-        manufacturer: printer.manufacturer,
-        model: printer.model,
-        type: printer.type || 'unknown',
-        status: printer.status || 'Unknown',
-        functionality: printer.functionality || '?',
-        driverCount: printer.drivers ? printer.drivers.length : 0,
-        color: printer.color ?? 'unknown',
-      }))
+      printers: data.printers.map(toPrinterSummary)
     }
     const mapPath = path.join(ROOT_DIR, 'public', 'foomatic-db', 'printersMap.json')
-    await fs.writeFile(mapPath, JSON.stringify(printersMap, null, 2))
+    // Minified on purpose: this artifact is fetched by the browser (directory
+    // page and, later, the assistant catalogue), and pretty-printing it costs
+    // ~490 KB of raw payload for zero consumer benefit.
+    await fs.writeFile(mapPath, JSON.stringify(printersMap))
     console.log(`Created lightweight index: ${mapPath}`)
     let processed = 0
     const batchSize = 100
@@ -54,7 +39,7 @@ async function splitPrintersData() {
     for (let i = 0; i < data.printers.length; i += batchSize) {
       const batch = data.printers.slice(i, i + batchSize)
       
-      await Promise.all(batch.map(async (printer: PrinterRecord) => {
+      await Promise.all(batch.map(async (printer: Printer) => {
         const printerPath = path.join(printersDir, `${printer.id}.json`)
         await fs.writeFile(printerPath, JSON.stringify(printer, null, 2))
         processed++

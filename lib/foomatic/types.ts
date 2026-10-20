@@ -71,6 +71,14 @@ export interface PrinterSummary {
   driverCount?: number
   functionality?: string
   color?: boolean | "unknown"
+  // Capability fields below are omitted when the source data does not
+  // establish them (never null/[]): an absent key means "not recorded in
+  // Foomatic", not "the printer lacks this". Built by lib/foomatic/catalog.ts.
+  maxDpi?: number
+  psLevel?: number
+  pclLevel?: number
+  cs?: string[] // commandsetTokens from the full Printer record
+  rd?: string // recommended driver family (normalizeDriverFamily)
 }
 
 export interface DriverPrinterRef {
