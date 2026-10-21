@@ -67,10 +67,10 @@ async function generateRss() {
       // Aggregators consume <link> verbatim, so it must be the canonical
       // slashless URL (#207).
       const url = `${SITE_URL}/${post.slug}`;
-      // <guid> is the item's identity: it keeps the historical trailing-slash
-      // URL readers already stored, or they re-announce old articles as new.
-      // The alias stubs keep that URL resolvable, so isPermaLink stays true.
-      const guid = `${SITE_URL}/${post.slug}/`;
+      // Keep the historical origin and trailing slash: changing either would
+      // make readers re-announce old articles. Pages redirects the old domain,
+      // and the alias stubs preserve the paths, so isPermaLink stays true.
+      const guid = `${siteConfig.urls.rssGuidOrigin}/${post.slug}/`;
       const lines = [
         `    <item>`,
         `      <title>${escapeXml(post.title)}</title>`,
