@@ -94,14 +94,19 @@ The canonical domain is configured in `config/site.config.ts`. For previews,
 override it with `NEXT_PUBLIC_BASE_URL`. RSS item GUIDs deliberately keep the
 old domain so feed readers do not treat existing articles as new.
 
-Coordinate deployment with the maintainers: configure `openprinting.org` in the
-upstream repository's Pages settings before switching DNS, then enable HTTPS
-when the certificate is ready. This repository deploys through GitHub Actions,
-so a `CNAME` file is not needed ([GitHub's custom-domain guide](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site)).
+`openprinting.org` does not point to GitHub Pages. It is served by an Apache
+server hosted by OSUOSL, which proxies the site from `openprinting.github.io`
+and serves `/download/` and `/.well-known/` itself, so the driver downloads and
+the site's HTTPS certificate keep working. `openprinting.github.io` stays
+reachable, and the canonical URLs point search engines to `openprinting.org`.
 
-Before switching, confirm how existing services on `openprinting.org` will be
-handled, especially the legacy PHP query/PPD endpoints described below. Check
-the separate CUPS Pages site at `/cups/` and redirects from the old domain too.
+Leave the custom domain **unset** in the repository's GitHub Pages settings. If
+it is set to `openprinting.org`, GitHub redirects back to the proxy and the
+pages loop.
+
+The proxy and the legacy redirects (such as `/printers` to
+`/foomatic/printers`) live in OSUOSL's server configuration, not in this
+repository. Changes to them go through OSUOSL support (support@osuosl.org).
 
 ## Generating build-time data
 
