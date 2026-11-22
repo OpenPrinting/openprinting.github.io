@@ -1,6 +1,6 @@
 # OpenPrinting Website
 
-The official website for [OpenPrinting](https://openprinting.github.io/), built with Next.js, Tailwind CSS, and Framer Motion.
+The official website for [OpenPrinting](https://openprinting.org/), built with Next.js, Tailwind CSS, and Framer Motion.
 
 OpenPrinting is a Linux Foundation workgroup that manages the printing architecture for Linux and UNIX-like operating systems.
 
@@ -88,6 +88,26 @@ yarn build
 
 This will generate an `out/` directory containing the static HTML/CSS/JS files which are then hosted on GitHub Pages.
 
+### Custom domain
+
+The canonical domain is configured in `config/site.config.ts`. For previews,
+override it with `NEXT_PUBLIC_BASE_URL`. RSS item GUIDs deliberately keep the
+old domain so feed readers do not treat existing articles as new.
+
+`openprinting.org` does not point to GitHub Pages. It is served by an Apache
+server hosted by OSUOSL, which proxies the site from `openprinting.github.io`
+and serves `/download/` and `/.well-known/` itself, so the driver downloads and
+the site's HTTPS certificate keep working. `openprinting.github.io` stays
+reachable, and the canonical URLs point search engines to `openprinting.org`.
+
+Leave the custom domain **unset** in the repository's GitHub Pages settings. If
+it is set to `openprinting.org`, GitHub redirects back to the proxy and the
+pages loop.
+
+The proxy and the legacy redirects (such as `/printers` to
+`/foomatic/printers`) live in OSUOSL's server configuration, not in this
+repository. Changes to them go through OSUOSL support (support@osuosl.org).
+
 ## Generating build-time data
 
 Several parts of the site are **generated data, not source**, and `yarn build` is required to
@@ -147,9 +167,9 @@ readable index of all printers (id, make, model, command sets) is at `/query/ind
 Example:
 
 ```bash
-wget -O HP.txt        'https://openprinting.github.io/query/printers/HP.txt'
-wget -O 4050.txt      'https://openprinting.github.io/query/drivers/HP-LaserJet_4050.txt'
-wget -O printer.ppd   'https://openprinting.github.io/ppds/Alps-MD-2010-ppmtomd.ppd'
+wget -O HP.txt        'https://openprinting.org/query/printers/HP.txt'
+wget -O 4050.txt      'https://openprinting.org/query/drivers/HP-LaserJet_4050.txt'
+wget -O printer.ppd   'https://openprinting.org/ppds/Alps-MD-2010-ppmtomd.ppd'
 ```
 
 Two original `query.php` features have **no static equivalent** because they require

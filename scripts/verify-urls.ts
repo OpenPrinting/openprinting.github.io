@@ -88,12 +88,14 @@ function checkGeneratedUrls(file: string, label: string) {
 
   const origin = siteConfig.urls.canonicalOrigin;
   const contents = fs.readFileSync(full, "utf8");
-  // Ignore XML namespace URLs and outbound links.
-  const urls = (contents.match(/https?:\/\/[^<\s"]+/g) ?? []).filter((url) =>
-    url.startsWith(`${origin}/`),
-  );
+  // Check every sitemap entry, including stale URLs on the previous domain.
+  const urls = [...contents.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
 
   for (const url of urls) {
+    if (!url.startsWith(`${origin}/`)) {
+      fail(file, `${label} advertises a URL outside ${origin}: ${url}`);
+      continue;
+    }
     if (!url.endsWith("/")) continue;
     // The bare origin (".../") is the site root and stays as it is.
     if (url === `${origin}/`) continue;
@@ -150,7 +152,7 @@ function resolves(pathname: string): { page: boolean; alias: boolean } {
 }
 
 // <link> must be canonical and slashless -- that is what aggregators publish.
-// <guid> is the item's identity and keeps its historical trailing-slash form,
+// <guid> is the item's identity and keeps its historical origin and slash,
 // so it is exempt from the slash rule but must still resolve.
 function checkFeed() {
   const feed = path.join(OUT_DIR, "feed.xml");
@@ -170,8 +172,15 @@ function checkFeed() {
   if (channelLink !== `${origin}/`) {
     fail("feed.xml", `channel <link> should be ${origin}/ but is ${channelLink}`);
   }
+  const selfLink = contents.match(/<atom:link\s+href="([^"]+)"/)?.[1];
+  if (selfLink !== `${origin}${siteConfig.urls.rssPath}`) {
+    fail("feed.xml", `feed self-link uses the wrong URL: ${selfLink}`);
+  }
 
   for (const link of links.slice(1)) {
+    if (!link.startsWith(`${origin}/`)) {
+      fail("feed.xml", `item <link> is outside ${origin}: ${link}`);
+    }
     if (link.endsWith("/")) {
       fail("feed.xml", `item <link> ends with a slash: ${link}`);
     }
@@ -179,7 +188,15 @@ function checkFeed() {
     if (!page) fail("feed.xml", `no exported page for item <link> ${link}`);
   }
 
-  for (const guid of guids) {
+  for (const [index, guid] of guids.entries()) {
+    const link = links[index + 1];
+    if (link) {
+      const pathname = new URL(link).pathname.replace(/\/$/, "");
+      const expectedGuid = `${siteConfig.urls.rssGuidOrigin}${pathname}/`;
+      if (guid !== expectedGuid) {
+        fail("feed.xml", `<guid> must keep its historical identity: expected ${expectedGuid}, got ${guid}`);
+      }
+    }
     const { page, alias } = resolves(new URL(guid).pathname);
     if (!page || !alias) {
       fail("feed.xml", `<guid> ${guid} does not resolve in the export`);
@@ -188,6 +205,9 @@ function checkFeed() {
 
   if (links.length < 2 || guids.length === 0) {
     fail("feed.xml", "feed contains no items");
+  }
+  if (guids.length !== links.length - 1) {
+    fail("feed.xml", "each RSS item must have one link and one guid");
   }
 
   console.log(
