@@ -2,21 +2,19 @@
 title: "Sponsors & Supporters"
 permalink: /sponsors/
 author_profile: false
+# The sponsor list and the tier table on this page come from
+# data/sponsors/sponsors.yaml and data/sponsors/tiers.yaml.
+intro: |
+  OpenPrinting keeps printing working across Linux, ChromeOS, and other operating systems — from CUPS and the new Printer Applications to the printer/driver database. Historically this work was largely carried by maintainers funded through their employers. Today it is increasingly made possible by organizations that sponsor and support the project directly.
 ---
-
-OpenPrinting keeps printing working across Linux, ChromeOS, and other operating systems — from CUPS and the new Printer Applications to the printer/driver database. Historically this work was largely carried by maintainers funded through their employers. Today it is increasingly made possible by organizations that sponsor and support the project directly.
-
-## Current Sponsors
-
-### Sovereign Tech Agency — Platinum Member
-
-The [Sovereign Tech Agency](https://www.sovereign.tech/) invests in the open-source infrastructure the world depends on. Its support helps fund ongoing OpenPrinting development and maintenance.
 
 ## Become a Sponsor
 
-If your organization would like to sponsor OpenPrinting — for example to fund development, maintenance, infrastructure, or events — we would love to hear from you. Sponsorship can be recognized with a logo and a membership level (such as "Platinum Member") on this site.
+If your organization would like to sponsor OpenPrinting — for example to fund development, maintenance, infrastructure, or events — choose a tier above and sign up on our [Open Collective page](https://opencollective.com/openprinting). Sponsors are shown on this page, on our front page and on our news posts, with bigger logos and more visibility for higher tiers. The tier price is the minimum to get into that tier.
 
-Please reach out to [Till Kamppeter](mailto:till.kamppeter@gmail.com) to discuss sponsorship.
+One-time donations are shown for one year, in the tier whose annual price the amount reaches.
+
+For any questions about sponsorship, please reach out to [Till Kamppeter](mailto:till.kamppeter@gmail.com).
 
 ## Donations
 

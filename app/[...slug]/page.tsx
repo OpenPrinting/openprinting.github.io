@@ -10,6 +10,7 @@ import { MarkdownRenderer } from "@/components/markdown-renderer";
 import { TableOfContents } from "@/components/table-of-contents";
 import GiscusComments from "@/components/giscus-comment";
 import AuthorCard from "@/components/AuthorCard";
+import SponsorBox from "@/components/sponsor-box";
 import authors from "@/data/authors";
 import { getAuthorImageSrc, getImageSrc } from "@/lib/utils";
 import { getTeaserImage } from "@/lib/get-latest-posts";
@@ -17,6 +18,7 @@ import { getAllPostRecords } from "@/lib/posts";
 import { getLegacyRedirect, legacyRedirectParams } from "@/lib/legacy-redirects";
 import { siteConfig } from "@/config/site.config";
 import { getSiteUrl } from "@/lib/site";
+import { getSponsorData } from "@/lib/load-sponsors";
 
 const defaultOgImageUrl = getSiteUrl(siteConfig.brand.defaultOgImagePath);
 
@@ -215,6 +217,9 @@ export default async function PostPage({
         !!frontmatter &&
         (frontmatter.toc === true || String(frontmatter.toc) === "true");
 
+    const sponsorData = getSponsorData();
+    const sponsorTiers = sponsorData.tiers.map(({ key, weight }) => ({ key, weight }));
+
     return (
         <main className="w-full min-h-screen pt-24 pb-16 bg-background text-foreground">
             <div className="max-w-[1400px] mx-auto px-6 lg:pl-8 lg:pr-4 py-8 w-full">
@@ -222,6 +227,11 @@ export default async function PostPage({
                     {authorKey && (
                         <aside className="w-full lg:w-[260px] flex-shrink-0 lg:sticky lg:top-24 lg:self-start">
                             <AuthorCard authorKey={authorKey} />
+                            <SponsorBox
+                                sponsors={sponsorData.sponsors}
+                                tiers={sponsorTiers}
+                                className="mx-4 mt-2 lg:mx-0 lg:ml-6 lg:max-w-[236px]"
+                            />
                         </aside>
                     )}
 

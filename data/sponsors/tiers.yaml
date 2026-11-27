@@ -1,0 +1,63 @@
+# Sponsorship tiers, highest first. The order here is the ranking used
+# everywhere on the site (front page strip, /sponsors page, blog sponsor box).
+#
+# Fields:
+#   key          Identifier used by `tier:` in sponsors.yaml.
+#   name         Display name.
+#   group        Heading the tier is listed under on /sponsors ("Corporate", "Personal", ...).
+#   annual       Minimum annual payment to get into this tier (EUR or USD).
+#   monthly      Minimum monthly payment to get into this tier.
+#   weight       Relative chance for one of this tier's sponsors to be picked for the
+#                sponsor box on blog posts. A Diamond sponsor with weight 16 is shown
+#                16 times as often as a Supporter with weight 1. 0 = never picked.
+#   logo_height  Logo height in pixels on /sponsors. Higher tiers get bigger logos.
+#   front_page   Whether sponsors of this tier may appear in the strip on the front page.
+#   image        Optional icon/illustration for the tier, a path under public/.
+#   info         Optional Markdown text describing the tier.
+
+- key: diamond
+  name: Diamond
+  group: Corporate
+  annual: 100000
+  monthly: 10000
+  weight: 16
+  logo_height: 112
+  front_page: true
+
+- key: platinum
+  name: Platinum
+  group: Corporate
+  annual: 50000
+  monthly: 5000
+  weight: 8
+  logo_height: 88
+  front_page: true
+
+- key: gold
+  name: Gold
+  group: Corporate
+  annual: 10000
+  monthly: 1000
+  weight: 4
+  logo_height: 64
+  front_page: true
+
+- key: silver
+  name: Silver
+  group: Corporate
+  annual: 5000
+  monthly: 500
+  weight: 2
+  logo_height: 48
+  front_page: true
+
+- key: supporter
+  name: Supporter
+  group: Personal
+  annual: 100
+  monthly: 10
+  weight: 1
+  logo_height: 32
+  front_page: false
+  info: |
+    For individuals who want to support OpenPrinting.
