@@ -44,6 +44,7 @@ export interface SiteConfig {
     mailingList: string;
     mastodon: string;
     linkedin: string;
+    openCollective: string;
   };
   navigation: {
     primary: NavigationItem[];
@@ -109,6 +110,7 @@ export const siteConfig: SiteConfig = {
     mailingList: "mailto:printing-architecture@lists.linux-foundation.org",
     mastodon: "https://ubuntu.social/tags/OpenPrinting",
     linkedin: "https://www.linkedin.com/company/openprinting/posts/",
+    openCollective: "https://opencollective.com/openprinting",
   },
   navigation: {
     primary: [

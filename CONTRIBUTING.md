@@ -19,7 +19,7 @@ For all the other ways to help OpenPrinting, see the [Contribute](https://openpr
 | `contents/projects/` | The Projects section. |
 | `contents/upcoming-technologies/` | The Upcoming Technologies section. |
 | `contents/gsoc/` | Google Summer of Code project ideas, one folder per year. |
-| `data/` | Structured data, for example post authors in `data/authors.ts`. |
+| `data/` | Structured data, for example post authors in `data/authors.ts` and sponsors in `data/sponsors/`. |
 | `public/` | Images and other static files. A file in `public/assets/images/` is linked as `/assets/images/...`. |
 | `app/`, `components/`, `lib/` | The Next.js pages, React components and helper code. |
 | `config/site.config.ts` | Navigation, footer links and other site-wide settings. |
@@ -41,6 +41,24 @@ date: '2026-10-05'
 - `date` decides where the post appears on the news page, newest first.
 - `excerpt` is shown in the post lists and in search results.
 - Add `toc: true` for a table of contents on long posts.
+
+## Updating sponsors
+
+Sponsors are listed in `data/sponsors/sponsors.yaml` and the sponsorship tiers in `data/sponsors/tiers.yaml`; no code changes are needed. The comments at the top of each file explain the fields. A typical entry:
+
+```yaml
+- name: Acme Corp
+  url: https://acme.example
+  logo: /sponsors/acme.svg      # put the file in public/sponsors/
+  tier: gold                    # or leave out and give amount/period instead
+  amount: 12000
+  currency: EUR
+  expires: 2027-12-31           # not shown after this day; extend it when they renew
+  about: |
+    Short Markdown text about Acme.
+```
+
+Sponsors appear on the [Sponsors](/sponsors) page, in the strip on the front page (the 4 highest ranked) and, one at a time picked at random by tier weight, under the author box on news posts. Expired sponsors are dropped at build time and, since the site is rebuilt only weekly, again in the browser. A typo such as an unknown tier, a bad date or a missing logo file fails the build with a message naming the entry.
 
 ## Setting up the site locally
 

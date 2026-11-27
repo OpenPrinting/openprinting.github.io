@@ -1,0 +1,35 @@
+# OpenPrinting sponsors. Tiers are defined in tiers.yaml.
+#
+# Add one entry per sponsor; the order of entries does not matter. Sponsors are
+# ranked by tier, then by annualized amount, then by name.
+#
+# Fields:
+#   name       Required. Sponsor name.
+#   url        Link to the sponsor's site.
+#   logo       Path under public/, e.g. /sponsors/acme.png. Without a logo the name is shown.
+#   logo_dark  Logo for dark mode: another path, or `invert` to show the normal
+#              logo inverted (works for single-color dark logos).
+#   logo_has_name  true if the logo already spells out the name (a wordmark), so
+#              the name is not printed again next to it.
+#   tier       Key from tiers.yaml. If left out, the tier is derived from amount/period.
+#   amount     What the sponsor actually pays. Optional. Used for ranking within a
+#              tier and to derive the tier; the build warns if it is below the tier minimum.
+#   currency   EUR or USD (default EUR).
+#   period     annual, monthly or one-time (default annual). A one-time donation is
+#              treated like an annual payment and shown for one year.
+#   since      Date of (the latest) payment, YYYY-MM-DD.
+#   expires    Last day the sponsor is shown, YYYY-MM-DD. Extend it when they pay again.
+#              For one-time donations it defaults to one year after `since`.
+#              Without either, the sponsor is shown until removed.
+#   about      Optional Markdown text about (or from) the sponsor.
+
+- name: Sovereign Tech Agency
+  url: https://www.sovereign.tech/
+  logo: /sponsors/sovereign-tech-agency.png
+  logo_dark: invert
+  logo_has_name: true
+  tier: platinum
+  about: |
+    The [Sovereign Tech Agency](https://www.sovereign.tech/) invests in the open-source
+    infrastructure the world depends on. Its support helps fund ongoing OpenPrinting
+    development and maintenance.
